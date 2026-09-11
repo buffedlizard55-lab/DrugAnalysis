@@ -11,7 +11,7 @@ import csv
 
 decisions = list(csv.DictReader(open("data/fda_decisions_master.csv")))
 crls = list(csv.DictReader(open("data/fda_crl_master.csv")))
-snapshots = {r["ticker"]: r for r in csv.DictReader(open("data/stock_price_snapshots.csv"))}
+snapshots = {(r["ticker"], r["decision_date"]): r for r in csv.DictReader(open("data/stock_price_snapshots.csv"))}
 scorecards = {r["ticker"]: r for r in csv.DictReader(open("data/company_scorecards.csv"))}
 
 HEADER = ["company_name","ticker","drug_name","decision_type","decision_date",
@@ -23,7 +23,7 @@ rows = []
 
 for d in decisions:
     t = d["ticker"]
-    snap = snapshots.get(t)
+    snap = snapshots.get((t, d["decision_date"]))
     sc = scorecards.get(t)
     if snap and snap.get("decision_date") == d["decision_date"]:
         before = snap.get("close_before","")
@@ -45,7 +45,7 @@ for d in decisions:
 
 for c in crls:
     t = c["ticker"]
-    snap = snapshots.get(t)
+    snap = snapshots.get((t, d["decision_date"]))
     sc = scorecards.get(t)
     if snap and snap.get("decision_date") == c["crl_date"]:
         before = snap.get("close_before","")
