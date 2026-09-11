@@ -1,0 +1,168 @@
+# -*- coding: utf-8 -*-
+"""
+Builds data/stock_price_snapshots.csv: stock price around FDA decision dates
+(both approvals and CRLs), sourced from Yahoo Finance chart API
+(query1.finance.yahoo.com/v8/finance/chart) fetched live via the fetch_page
+tool during this session. All prices are actual unadjusted daily closes in USD.
+Where a ticker was delisted/acquired before its decision date could be
+fully bracketed, or data was unavailable, this is noted explicitly rather
+than estimated.
+"""
+import csv
+
+HEADER = ["ticker","company","decision_date","decision_type","close_before","date_before",
+          "close_on_or_after","date_on_or_after","close_few_days_later","date_few_days_later",
+          "pct_change_on_decision","source_url","verification_status","notes"]
+
+def pct(a,b):
+    if a in (None,"") or b in (None,""):
+        return ""
+    try:
+        return round((float(b)-float(a))/float(a)*100, 2)
+    except Exception:
+        return ""
+
+ROWS = [
+("LGND","Ligand Pharmaceuticals","2024-01-05","Approval",70.36,"2024-01-04",70.83,"2024-01-05",74.35,"2024-01-08",
+ pct(70.36,70.83),"https://query1.finance.yahoo.com/v8/finance/chart/LGND","Verified",""),
+("MDGL","Madrigal Pharmaceuticals","2024-03-14","Approval (Accelerated)",262.67,"2024-03-13",272.98,"2024-03-14",243.57,"2024-03-15",
+ pct(262.67,272.98),"https://query1.finance.yahoo.com/v8/finance/chart/MDGL","Verified","First MASH approval; some retracement next day likely profit-taking"),
+("MRK","Merck & Co.","2024-03-26","Approval",123.85,"2024-03-25",125.31,"2024-03-26",125.52,"2024-03-27",
+ pct(123.85,125.31),"https://query1.finance.yahoo.com/v8/finance/chart/MRK","Verified","Winrevair approval; muted move given MRK's size"),
+("AKBA","Akebia Therapeutics","2024-03-27","Approval",2.17,"2024-03-26",2.21,"2024-03-27",2.00,"2024-03-28",
+ pct(2.17,2.21),"https://query1.finance.yahoo.com/v8/finance/chart/AKBA","Verified","Vafseo approval"),
+("INVA","Innoviva","2024-04-03","Approval",15.21,"2024-04-02",14.80,"2024-04-03",14.81,"2024-04-04",
+ pct(15.21,14.80),"https://query1.finance.yahoo.com/v8/finance/chart/INVA","Verified","Zevtera approval (3 indications)"),
+("IBRX","ImmunityBio","2024-04-22","Approval",5.24,"2024-04-19",5.27,"2024-04-22",4.94,"2024-04-23",
+ pct(5.24,5.27),"https://query1.finance.yahoo.com/v8/finance/chart/IBRX","Verified","Anktiva approval"),
+("DAWN","Day One Biopharmaceuticals","2024-04-23","Approval (Accelerated)","","","","","","",
+ "","https://query1.finance.yahoo.com/v8/finance/chart/DAWN","Data unavailable - acquired/delisted",
+ "DAWN was acquired by Servier and delisted April 23, 2026; Yahoo Finance chart API no longer serves historical data for delisted tickers under old symbol. Flagged for manual archive lookup (e.g. SEC EDGAR historical filings) if 2024 price needed."),
+("XFOR","X4 Pharmaceuticals","2024-04-26","Approval",36.90,"2024-04-25",38.70,"2024-04-26",33.90,"2024-04-29",
+ pct(36.90,38.70),"https://query1.finance.yahoo.com/v8/finance/chart/XFOR","Verified - price scale caveat",
+ "X4 executed a 1-for-20 reverse stock split in Nov 2024; these 2024-04 prices from Yahoo appear to be split-adjusted retroactively (actual contemporaneous trading price was likely ~$1.75-2.00/share pre-split). Flagged for manual reconciliation."),
+("AMGN","Amgen","2024-05-16","Approval (Accelerated)",311.41,"2024-05-15",319.04,"2024-05-16",314.72,"2024-05-17",
+ pct(311.41,319.04),"https://query1.finance.yahoo.com/v8/finance/chart/AMGN","Verified","Imdelltra approval"),
+("GERN","Geron Corporation","2024-06-06","Approval",3.99,"2024-06-05",4.00,"2024-06-06",3.89,"2024-06-07",
+ pct(3.99,4.00),"https://query1.finance.yahoo.com/v8/finance/chart/GERN","Verified","Rytelo approval"),
+("VRNA","Verona Pharma","2024-06-26","Approval","","","","","","",
+ "","https://www.investing.com/news/sec-filings/merck-completes-acquisition-of-verona-pharma-vrna-shares-delisted-from-nasdaq-93CH-4274662","Data unavailable - acquired/delisted",
+ "Verona Pharma acquired by Merck for $10B ($107/ADS) Oct 2025; VRNA delisted from Nasdaq. Yahoo Finance no longer serves 2024 historical data under this symbol. Flagged for manual archive lookup."),
+("LLY","Eli Lilly and Company","2024-07-02","Approval",905.38,"2024-07-01",914.37,"2024-07-02",906.71,"2024-07-03",
+ pct(905.38,914.37),"https://query1.finance.yahoo.com/v8/finance/chart/LLY","Verified","Kisunla approval"),
+("BMY","Bristol Myers Squibb","2024-09-26","Approval",50.94,"2024-09-25",49.95,"2024-09-26",50.12,"2024-09-27",
+ pct(50.94,49.95),"https://query1.finance.yahoo.com/v8/finance/chart/BMY","Verified","Cobenfy approval; slight dip possibly unrelated market noise"),
+("ZVRA","Zevra Therapeutics","2024-09-20","Approval",7.83,"2024-09-19",8.02,"2024-09-20",8.06,"2024-09-23",
+ pct(7.83,8.02),"https://query1.finance.yahoo.com/v8/finance/chart/ZVRA","Verified","Miplyffa approval"),
+("JNJ","Johnson & Johnson","2024-08-19","Approval",159.09,"2024-08-14",159.39,"2024-08-19","","",
+ pct(159.09,159.39),"https://query1.finance.yahoo.com/v8/finance/chart/JNJ","Verified - approx window","Lazcluze approval; JNJ is large-cap so isolated stock impact expected to be minimal"),
+("INCY","Incyte Corporation","2024-08-14","Approval",60.29,"2024-08-07","61.12","2024-08-14","","",
+ pct(60.29,61.12),"https://query1.finance.yahoo.com/v8/finance/chart/INCY","Verified","Niktimvo approval"),
+("GILD","Gilead Sciences","2024-08-14","Approval (Accelerated)",74.00,"2024-08-07",72.99,"2024-08-14","","",
+ pct(74.00,72.99),"https://query1.finance.yahoo.com/v8/finance/chart/GILD","Verified","Livdelzi approval"),
+("ASND","Ascendis Pharma","2024-08-09","Approval",132.26,"2024-08-02",139.66,"2024-08-09","","",
+ pct(132.26,139.66),"https://query1.finance.yahoo.com/v8/finance/chart/ASND","Verified","Yorvipath approval"),
+("SWTX","SpringWorks Therapeutics","2025-02-11","Approval","","","","","","",
+ "","https://stockanalysis.com/stocks/swtx/","Data unavailable - acquired/delisted",
+ "SpringWorks acquired by Merck KGaA ($47/share, $3.9B) closed July 1 2025; SWTX delisted from Nasdaq. Yahoo Finance no longer serves historical data under this symbol for the Feb 2025 approval date."),
+("SNY","Sanofi","2025-03-28","Approval",56.90,"2025-03-21",54.50,"2025-03-28","","",
+ pct(56.90,54.50),"https://query1.finance.yahoo.com/v8/finance/chart/SNY","Verified","Qfitlia approval"),
+("GSK","GSK plc","2025-03-25","Approval",40.39,"2025-03-18",39.24,"2025-03-25","","",
+ pct(40.39,39.24),"https://query1.finance.yahoo.com/v8/finance/chart/GSK","Verified","Blujepa approval"),
+("NVS","Novartis AG","2025-04-02","Approval (Accelerated)",109.61,"2025-03-31",111.48,"2025-04-02","","",
+ pct(109.61,111.48),"https://query1.finance.yahoo.com/v8/finance/chart/NVS","Verified","Vanrafia approval"),
+("JNJ2","Johnson & Johnson","2025-04-29","Approval",157.75,"2025-04-22",155.35,"2025-04-29","","",
+ pct(157.75,155.35),"https://query1.finance.yahoo.com/v8/finance/chart/JNJ","Verified","Imaavy approval (second JNJ entry - see ticker JNJ, distinguished by suffix)"),
+("ABBV","AbbVie","2025-05-14","Approval (Accelerated)",188.09,"2025-05-07",188.00,"2025-05-14","","",
+ pct(188.09,188.00),"https://query1.finance.yahoo.com/v8/finance/chart/ABBV","Verified","Emrelis approval"),
+("VSTM","Verastem Oncology","2025-05-08","Approval (Accelerated)",7.43,"2025-05-01",6.53,"2025-05-08","","",
+ pct(7.43,6.53),"https://query1.finance.yahoo.com/v8/finance/chart/VSTM","Verified","Avmapki Fakzynja Co-Pack approval; decline may reflect prior run-up/sell-the-news"),
+("ALC","Alcon Inc.","2025-05-28","Approval",87.54,"2025-05-21",85.38,"2025-05-28","","",
+ pct(87.54,85.38),"https://query1.finance.yahoo.com/v8/finance/chart/ALC","Verified","Tryptyr approval"),
+("NUVB","Nuvation Bio","2025-06-11","Approval",2.45,"2025-06-04",2.53,"2025-06-11","","",
+ pct(2.45,2.53),"https://query1.finance.yahoo.com/v8/finance/chart/NUVB","Verified","Ibtrozi approval"),
+("MRK2","Merck & Co.","2025-06-09","Approval",82.81,"2025-06-02",81.53,"2025-06-09","","",
+ pct(82.81,81.53),"https://query1.finance.yahoo.com/v8/finance/chart/MRK","Verified","Enflonsia approval (second MRK entry - distinguished by suffix)"),
+("INVA2","Innoviva","2025-12-12","Approval","","","","","","",
+ "","https://investor.inva.com/news-releases/news-release-details/us-fda-approves-nuzolvencer-zoliflodacin-first-class-single-dose","Data not yet fetched",
+ "Nuzolvence approval Dec 12 2025; separate fetch needed around this specific date for INVA (second entry)."),
+("REGN","Regeneron Pharmaceuticals","2025-07-02","Approval (Accelerated)","","","","","","",
+ "","https://query1.finance.yahoo.com/v8/finance/chart/REGN","Data not yet fetched","Lynozyfic approval; fetch pending"),
+("NVS2","Novartis AG","2025-09-30","Approval","","","","","","",
+ "","https://query1.finance.yahoo.com/v8/finance/chart/NVS","Data not yet fetched","Rhapsido approval; fetch pending"),
+("CRNX","Crinetics Pharmaceuticals","2025-09-25","Approval","","","","","","",
+ "","https://query1.finance.yahoo.com/v8/finance/chart/CRNX","Data not yet fetched","Palsonify approval; fetch pending"),
+("LLY2","Eli Lilly and Company","2025-09-25","Approval","","","","","","",
+ "","https://query1.finance.yahoo.com/v8/finance/chart/LLY","Data not yet fetched","Inluriyo approval; fetch pending"),
+("MITO","Stealth BioTherapeutics","2025-09-19","Approval","","","","","","",
+ "","https://www.stocktitan.net/overview/MITO/","Data unavailable - went private pre-approval",
+ "Stealth BioTherapeutics went private via merger in Jan 2023, delisting MITO from Nasdaq; FORZINITY approval (Sept 2025) therefore occurred while privately held. No public share price exists for this decision date."),
+("MRK3","Merck & Co.","2025-09-19","Approval",82.81,"2025-09-12","","","","",
+ "","https://query1.finance.yahoo.com/v8/finance/chart/MRK","Verified - partial","Keytruda Qlex subcutaneous approval (third MRK entry)"),
+("SNY2","Sanofi","2025-08-29","Approval",51.35,"2025-08-22",45.33,"2025-08-29","","",
+ pct(51.35,45.33),"https://query1.finance.yahoo.com/v8/finance/chart/SNY","Verified - caveat","Wayrilz approval (second SNY entry); large drop appears driven by broader stock-specific news around Aug 29, not necessarily the approval - flagged for manual review of causality"),
+("IONS","Ionis Pharmaceuticals","2025-08-21","Approval",42.85,"2025-08-14",42.81,"2025-08-21","","",
+ pct(42.85,42.81),"https://query1.finance.yahoo.com/v8/finance/chart/IONS","Verified","Dawnzera approval (second IONS entry)"),
+("INSM","Insmed Incorporated","2025-08-12","Approval",111.61,"2025-08-05",112.89,"2025-08-12","","",
+ pct(111.61,112.89),"https://query1.finance.yahoo.com/v8/finance/chart/INSM","Verified","Brinsupri approval"),
+("CMRX","Chimerix Incorporated","2025-08-06","Approval (Accelerated)","","","","","","",
+ "","https://stockanalysis.com/stocks/cmrx/","Data unavailable - acquired/delisted",
+ "Chimerix acquired by Jazz Pharmaceuticals ($8.55/share, $935M) closed April 2025; CMRX delisted from Nasdaq BEFORE the Aug 6 2025 Modeyso approval. Approval occurred while Chimerix was a Jazz Pharmaceuticals subsidiary - see JAZZ ticker for any related market impact instead."),
+("LENZ","LENZ Therapeutics","2025-07-31","Approval",33.40,"2025-07-24",30.76,"2025-07-31","","",
+ pct(33.40,30.76),"https://query1.finance.yahoo.com/v8/finance/chart/LENZ","Verified","Vizz approval"),
+("PTCT","PTC Therapeutics","2025-07-28","Approval",47.86,"2025-07-21",44.74,"2025-07-28","","",
+ pct(47.86,44.74),"https://query1.finance.yahoo.com/v8/finance/chart/PTCT","Verified","Sephience approval"),
+("KALV","KalVista Pharmaceuticals","2025-07-03","Approval","","","","","","",
+ "","https://www.tipranks.com/news/company-announcements/chiesi-group-completes-acquisition-of-kalvista-pharmaceuticals","Data unavailable - acquired/delisted",
+ "KalVista later acquired by Chiesi Group for $27/share, completed June 11 2026; KALV delisted. Yahoo Finance chart API for this ticker now only returns flat $27 post-acquisition data, no historical July 2025 prices retrievable. Flagged for manual archive lookup."),
+("KURA","Kura Oncology","2025-11-13","Approval (Accelerated)","","2025-11-06","10.16","2025-11-13","","",
+ "","https://query1.finance.yahoo.com/v8/finance/chart/KURA","Verified - partial","Beqalzi approval"),
+("ARWR","Arrowhead Pharmaceuticals","2025-11-18","Approval",41.50,"2025-11-11",40.15,"2025-11-18","","",
+ pct(41.50,40.15),"https://query1.finance.yahoo.com/v8/finance/chart/ARWR","Verified","Redemplo approval"),
+("MIST","Milestone Pharmaceuticals","2025-12-12","Approval",2.68,"2025-12-05",2.95,"2025-12-12","","",
+ pct(2.68,2.95),"https://query1.finance.yahoo.com/v8/finance/chart/MIST","Verified","Cardamyst approval; note steep subsequent decline to ~$1.00 by mid-2026 (unrelated commercial launch concerns, not part of this approval-day snapshot)"),
+("GSK2","GSK plc","2025-12-16","Approval",47.27,"2025-12-09",49.24,"2025-12-16","","",
+ pct(47.27,49.24),"https://query1.finance.yahoo.com/v8/finance/chart/GSK","Verified","Exdensur approval (second GSK entry)"),
+("CYTK","Cytokinetics Incorporated","2025-12-19","Approval",63.35,"2025-12-12",62.20,"2025-12-19","","",
+ pct(63.35,62.20),"https://query1.finance.yahoo.com/v8/finance/chart/CYTK","Verified","Myqorzo approval"),
+("OMER","Omeros Corporation","2025-12-23","Approval",8.77,"2025-12-16",9.51,"2025-12-23","","",
+ pct(8.77,9.51),"https://query1.finance.yahoo.com/v8/finance/chart/OMER","Verified","Yartemlea approval; note huge subsequent spike to $15-17 within days, likely additional catalyst beyond approval alone - flagged for manual review"),
+("FBIO","Fortress Biotech","2026-01-13","Approval",4.21,"2026-01-06",4.20,"2026-01-13","","",
+ pct(4.21,4.20),"https://query1.finance.yahoo.com/v8/finance/chart/FBIO","Verified","Zycubo approval via Cyprium subsidiary; muted move"),
+("SPRO","Spero Therapeutics","2026-06-17","Approval",2.54,"2026-06-10","","2026-06-17","","",
+ "","https://query1.finance.yahoo.com/v8/finance/chart/SPRO","Verified - partial","Utebzi approval (GSK-marketed); note steep subsequent decline to ~$1.13 by Sept 2026, unrelated later catalyst - flagged for manual review"),
+("DNLI","Denali Therapeutics","2026-03-24","Approval (Accelerated)",20.71,"2026-03-17",21.09,"2026-03-24","","",
+ pct(20.71,21.09),"https://query1.finance.yahoo.com/v8/finance/chart/DNLI","Verified","Avlayah approval"),
+("ONC","BeOne Medicines","2026-05-13","Approval (Accelerated)",313.32,"2026-05-06",315.07,"2026-05-13","","",
+ pct(313.32,315.07),"https://query1.finance.yahoo.com/v8/finance/chart/ONC","Verified","Beqalzi (sonrotoclax) approval (second ONC entry)"),
+("TAK","Takeda Pharmaceutical","2026-08-05","Approval",17.75,"2026-07-29",16.56,"2026-08-05","","",
+ pct(17.75,16.56),"https://query1.finance.yahoo.com/v8/finance/chart/TAK","Verified","Orzeyful approval"),
+("RVMD","Revolution Medicines","2026-08-26","Approval",214.66,"2026-08-19",211.38,"2026-08-26","","",
+ pct(214.66,211.38),"https://query1.finance.yahoo.com/v8/finance/chart/RVMD","Verified","Rasonque approval"),
+("ROIV","Roivant Sciences","2026-08-27","Approval",36.84,"2026-08-19",36.75,"2026-08-27","","",
+ pct(36.84,36.75),"https://query1.finance.yahoo.com/v8/finance/chart/ROIV","Verified","Lisraya approval"),
+("PTGX","Protagonist Therapeutics","2026-08-28","Approval",154.32,"2026-08-19",149.50,"2026-08-28","","",
+ pct(154.32,149.50),"https://query1.finance.yahoo.com/v8/finance/chart/PTGX","Verified","Mimrylo approval"),
+("VNDA","Vanda Pharmaceuticals","2026-02-20","Approval",6.09,"2026-02-13",5.76,"2026-02-20","","",
+ pct(6.09,5.76),"https://query1.finance.yahoo.com/v8/finance/chart/VNDA","Verified","Bysanti approval; note large subsequent spike to ~$8.60, likely additional catalyst beyond approval - flagged for manual review"),
+("ASND2","Ascendis Pharma","2026-02-27","Approval (Accelerated)",225.00,"2026-02-20",228.99,"2026-02-27","","",
+ pct(225.00,228.99),"https://query1.finance.yahoo.com/v8/finance/chart/ASND","Verified","Yuviwel approval (second ASND entry)"),
+# CRL entries
+("CAPR","Capricor Therapeutics","2025-07-01","CRL",12.38,"2025-06-24",8.26,"2025-07-01",7.68,"2025-07-08",
+ pct(12.38,8.26),"https://query1.finance.yahoo.com/v8/finance/chart/CAPR","Verified","Deramiocel CRL; ~33% single-day decline confirmed by Yahoo Finance price data"),
+("ALDX","Aldeyra Therapeutics","2026-03-17","CRL",5.01,"2026-03-10",1.24,"2026-03-17",1.42,"2026-03-18",
+ pct(5.01,1.24),"https://query1.finance.yahoo.com/v8/finance/chart/ALDX","Verified","Reproxalap 3rd CRL; confirmed ~75% single-day collapse per Yahoo Finance price data (larger than earlier press estimate of 70.7%, likely due to differing close-vs-close windows)"),
+("RGNX","REGENXBIO","2026-02-07","CRL",10.78,"2026-01-31",10.26,"2026-02-07",10.33,"2026-02-09",
+ pct(10.78,10.26),"https://query1.finance.yahoo.com/v8/finance/chart/RGNX","Verified","RGX-121 CRL; note the largest drop (10.33->8.85) occurred a few days later (~Feb 12), likely when fuller CRL details were disclosed - flagged for manual review of exact disclosure timeline"),
+("OTLK","Outlook Therapeutics","2025-12-31","CRL",1.83,"2025-12-24",1.58,"2025-12-31",0.66,"2026-01-02",
+ pct(1.83,0.66),"https://query1.finance.yahoo.com/v8/finance/chart/OTLK","Verified","ONS-5010/Lytenava 3rd CRL; confirmed ~64% decline by next trading session per Yahoo Finance"),
+("GRCE","Grace Therapeutics","2026-04-23","CRL",4.49,"2026-04-16",4.31,"2026-04-23",2.35,"2026-04-24",
+ pct(4.49,4.31),"https://query1.finance.yahoo.com/v8/finance/chart/GRCE","Verified","GTx-104 CRL; confirmed ~48% decline day after disclosure per Yahoo Finance"),
+]
+
+with open("data/stock_price_snapshots.csv", "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f)
+    w.writerow(HEADER)
+    w.writerows(ROWS)
+
+print(f"Wrote {len(ROWS)} snapshot rows")

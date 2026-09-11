@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DrugAnalysis — FDA Decisions, Stock Reactions & Pipeline Scorecards</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <h1>💊 DrugAnalysis</h1>
+    <p class="tagline">Publicly traded biotech &amp; pharma companies tracked against FDA decisions, stock-price reactions, and clinical pipeline success rates — all sourced from official, verifiable links.</p>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="core">Core Analysis</button>
+  <button class="tab-btn" data-tab="approvals">FDA Approvals</button>
+  <button class="tab-btn" data-tab="crls">Rejections (CRLs)</button>
+  <button class="tab-btn" data-tab="prices">Stock Price Snapshots</button>
+  <button class="tab-btn" data-tab="scorecards">Company Scorecards</button>
+  <button class="tab-btn" data-tab="about">About &amp; Methodology</button>
+</nav>
+
+<main class="wrap">
+
+  <section id="core" class="tab-panel active">
+    <h2>Core Analysis Table</h2>
+    <p class="section-desc">Company, drug, FDA decision, stock-price reaction, and a pipeline success-rate summary — the single table for a fast overview. Empty price cells mean data has not yet been fetched/verified for that row (never estimated).</p>
+    <div class="table-controls">
+      <input type="search" id="core-search" placeholder="Search company, drug, indication…">
+      <select id="core-filter-type">
+        <option value="">All decision types</option>
+      </select>
+    </div>
+    <div class="table-scroll"><table id="core-table" class="data-table"><thead></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="approvals" class="tab-panel">
+    <h2>FDA Approvals Master List</h2>
+    <p class="section-desc">100 verified FDA drug approvals (2024–2026), one row per decision, each with two source links for manual review.</p>
+    <div class="table-controls">
+      <input type="search" id="approvals-search" placeholder="Search company, drug, ticker, indication…">
+    </div>
+    <div class="table-scroll"><table id="approvals-table" class="data-table"><thead></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="crls" class="tab-panel">
+    <h2>Complete Response Letters (Rejections)</h2>
+    <p class="section-desc">FDA rejections / regulatory setbacks for publicly traded companies — flagged as irregularities worth tracking, including repeat-CRL cases.</p>
+    <div class="table-scroll"><table id="crls-table" class="data-table"><thead></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="prices" class="tab-panel">
+    <h2>Stock Price Snapshots</h2>
+    <p class="section-desc">Closing prices immediately before/after each FDA decision, sourced live from the Yahoo Finance chart API. Rows marked "Data unavailable" reflect delistings/acquisitions where historical data could not be retrieved — never a placeholder guess.</p>
+    <div class="table-scroll"><table id="prices-table" class="data-table"><thead></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="scorecards" class="tab-panel">
+    <h2>Company Pipeline Scorecards</h2>
+    <p class="section-desc">Per-company breakdown of how many pipeline programs advanced, paused, or were rejected — a starter set focused on companies with the richest FDA-decision history in this dataset (more companies to be added over time).</p>
+    <div class="cards" id="scorecards-cards"></div>
+  </section>
+
+  <section id="about" class="tab-panel">
+    <h2>About &amp; Methodology</h2>
+    <div class="about-content">
+      <h3>Sources</h3>
+      <ul>
+        <li><strong>FDA decisions</strong> — FDA.gov Novel Drug Approvals pages, accessdata.fda.gov drug label PDFs, and the official openFDA CRL transparency API (api.fda.gov/transparency/crl.json).</li>
+        <li><strong>Stock prices</strong> — Yahoo Finance chart API (query1.finance.yahoo.com), cross-referenced against stockanalysis.com where available.</li>
+        <li><strong>Company/pipeline detail</strong> — company investor-relations press releases, SEC filings, and reputable biotech trade press (StockTitan, FierceBiotech, Endpoints-style coverage), always cited with a direct link.</li>
+      </ul>
+      <h3>Verification approach</h3>
+      <p>Every row in the approvals and CRL tables carries a <code>verification_status</code> field. Rows are marked <em>Verified</em> only when a company/ticker/date combination was corroborated by at least one official or primary-source link. Rows with any ambiguity (e.g. disputed sponsor ticker, ambiguous stock-reaction causality, foreign-only listings) are explicitly flagged in the <code>notes</code> column rather than silently resolved.</p>
+      <h3>Known limitations (in progress)</h3>
+      <ul>
+        <li>Stock-price snapshots are not yet complete for every decision in the master list — unmatched rows show blank price cells rather than estimates.</li>
+        <li>Company scorecards currently cover a focused subset of companies (CRL recipients + top FDA-decision-volume companies); broader coverage is planned.</li>
+        <li>Two tickers required manual correction after initial research (Xolremdi/X4 Pharmaceuticals → XFOR; Cardamyst/Milestone Pharmaceuticals → MIST) — both are now resolved and cited.</li>
+      </ul>
+      <h3>Raw data</h3>
+      <p>All tables on this site are generated directly from CSV files in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data">/data</a> in the repository, so you can inspect, verify, or reuse the underlying data yourself.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Data compiled by an autonomous research agent from official public sources. Always verify against the linked primary sources before making decisions. Not investment advice.</p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

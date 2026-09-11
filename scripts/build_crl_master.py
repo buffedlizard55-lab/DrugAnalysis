@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+"""
+Builds data/fda_crl_master.csv: Complete Response Letters (rejections/holds)
+for publicly traded biotech/pharma companies, 2025-2026, verified against
+company press releases, FDA statements, and financial news coverage.
+"""
+import csv
+
+HEADER = ["crl_id","company_name","ticker","exchange","drug_name","indication",
+          "crl_date","reason_category","stock_reaction","source_url_1","source_url_2",
+          "verification_status","notes"]
+
+ROWS = [
+("C001","Capricor Therapeutics","CAPR","NASDAQ","Deramiocel (CAP-1002)","Duchenne muscular dystrophy cardiomyopathy",
+ "2025-07-01","Insufficient efficacy evidence + CMC issues","Shares fell sharply on CRL disclosure; later resumed review with new PDUFA Aug 22, 2026 after HOPE-3 data submission",
+ "https://www.parentprojectmd.org/deramiocel-where-we-are-today/",
+ "https://www.neurologylive.com/view/fda-hands-capricor-complete-response-letter-deramiocel-dmd-cardiomyopathy-treatment",
+ "Verified","CRL lifted after resubmission; new PDUFA date Aug 22, 2026 (Class 2 resubmission)"),
+
+("C002","Aldeyra Therapeutics","ALDX","NASDAQ","Reproxalap","Dry eye disease",
+ "2026-03-17","Insufficient efficacy evidence (third CRL for this indication)","Stock collapsed ~70% intraday on March 17, 2026, closing around $1.24-$1.81",
+ "https://www.ainvest.com/news/aldeyra-legal-catalyst-outrun-1-81-price-floor-crl-fallout-priced-2603/",
+ "https://www.streetwisereports.com/article/2026/05/05/biotech-downgraded-to-neutral-after-second-fda-crl-for-reproxalap-in-dry-eye-disease.html",
+ "Verified - FLAGGED IRREGULARITY","Third rejection for the same drug/indication; subsequent securities-fraud litigation filed alleging prior disclosures overstated regulatory prospects"),
+
+("C003","REGENXBIO","RGNX","NASDAQ","Clemidsogene lanparvovec (RGX-121)","Mucopolysaccharidosis type II (Hunter syndrome)",
+ "2026-02-07","Trial design / surrogate endpoint concerns (D2S6 heparan sulfate)","Shares fell following Feb 9-10, 2026 disclosure and continued decline after full CRL text released in March 2026",
+ "https://mpssociety.org/en/news/rgx-121-crl2026/",
+ "https://www.neurologylive.com/view/regenxbio-mps-ii-gene-therapy-rgx-121-crl",
+ "Verified - FLAGGED IRREGULARITY","FDA agreed with study protocol in principle but questioned patient population comparability and surrogate endpoint validity; unrelated safety hold on sibling program RGX-111 cited as contributing factor"),
+
+("C004","Outlook Therapeutics","OTLK","NASDAQ","ONS-5010 / Lytenava (bevacizumab-vikg)","Wet age-related macular degeneration",
+ "2025-12-31","Confirmatory efficacy evidence requested (third CRL for this BLA)","Stock declined on disclosure; company had already logged 2 prior CRLs for the same asset",
+ "https://www.stocktitan.net/news/OTLK/outlook-therapeutics-provides-regulatory-update-on-u-s-food-and-drug-lx7gajngv7vk.html",
+ "https://www.ophthalmologytimes.com/view/outlook-therapeutics-receives-crl-for-resubmitted-ons-5010-bla",
+ "Verified - FLAGGED IRREGULARITY","Third CRL for same BLA; FDA acknowledged one adequate/well-controlled trial (NORSE TWO) showed efficacy but wants additional confirmatory evidence; product already approved in EU/UK as Lytenava"),
+
+("C005","Grace Therapeutics","GRCE","NASDAQ","GTx-104 (IV nimodipine)","Aneurysmal subarachnoid hemorrhage",
+ "2026-04-23","CMC / non-clinical toxicology and manufacturing deficiencies","Shares plunged on disclosure",
+ "https://www.neurologylive.com/view/fda-action-update-april-2026-acceptance-clearance-crl",
+ "https://www.rttnews.com/3662437/fda-complete-response-letter-crl-explained-what-it-means-for-biotech-stocks.aspx",
+ "Verified","CRL nearly 10 months after NDA submission; cited leachables data and CMO manufacturing deficiencies, not efficacy"),
+
+("C006","AbbVie","ABBV","NYSE","Trenibotulinumtoxin E","Aesthetic indication (glabellar lines)",
+ "2026-04-23","Facility/GMP related (per third-party CRL tracker)","Limited standalone stock impact given AbbVie's large diversified portfolio",
+ "https://www.rttnews.com/3662437/fda-complete-response-letter-crl-explained-what-it-means-for-biotech-stocks.aspx",
+ "https://crl.help/",
+ "Verified - lower confidence on category","Category classification sourced from third-party CRL tracker (crl.help); recommend manual review of primary FDA letter for exact deficiency language"),
+
+("C007","ITM Isotope Technologies / Lumara Bio USA (US agent)","ITM.DE","XETRA Germany; no US ticker","Lutetium Lu-177 edotreotide","Gastroenteropancreatic neuroendocrine tumors",
+ "2026-08-07","Product quality/microbiology and facility inspection deficiencies","Not a US-listed ticker; XETRA-listed parent price impact not tracked in this dataset",
+ "https://api.fda.gov/transparency/crl.json",
+ "https://open.fda.gov/apis/transparency/completeresponseletters/",
+ "Verified - foreign listing only","Sourced directly from openFDA CRL transparency database (NDA 218705); ITM Solucin GmbH is the applicant, a subsidiary of ITM Isotope Technologies Munich SE"),
+]
+
+with open("data/fda_crl_master.csv", "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f)
+    w.writerow(HEADER)
+    w.writerows(ROWS)
+
+print(f"Wrote {len(ROWS)} CRL rows")
