@@ -1,0 +1,81 @@
+{
+  "job": "probe",
+  "generated_utc": "2026-09-12T22:18:26Z",
+  "requests": [
+    {
+      "id": "drugsfda_sample_2010_orig_ap",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status_date:%5B20100101+TO+20101231%5D&limit=3",
+      "status": 200,
+      "bytes": 40992,
+      "sha256": "9da47f30a300cd22a897f72f9f7a896cccb78b709f038f334f5119f3e3443328",
+      "written_at_utc": "2026-09-12T22:18:03Z"
+    },
+    {
+      "id": "drugsfda_sample_2005_orig_ap",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status_date:%5B20050101+TO+20051231%5D&limit=3",
+      "status": 200,
+      "bytes": 61901,
+      "sha256": "d76c941e0a1977c568e2fdc3fc727197075b91265a14b937b1dac52ecce48bc6",
+      "written_at_utc": "2026-09-12T22:18:04Z"
+    },
+    {
+      "id": "drugsfda_sample_2000_orig_ap",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B20000101+TO+20001231%5D&limit=3",
+      "status": 200,
+      "bytes": 31151,
+      "sha256": "23fdcc527e47a1fd28caec7dc3aae4cb1531078ca390909b5802d7cbce6455c4",
+      "written_at_utc": "2026-09-12T22:18:05Z"
+    },
+    {
+      "id": "drugsfda_counts_by_year",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status_date:%5B20000101+TO+20261231%5D&count=submissions.submission_status_date",
+      "status": 200,
+      "bytes": 818930,
+      "sha256": "e67c6f8e99c5d108df6c4b8f2f9b22e855c7bc8698f2ef63add2e501432a76b3",
+      "written_at_utc": "2026-09-12T22:18:06Z"
+    },
+    {
+      "id": "sec_company_tickers",
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-12T22:18:25Z"
+    },
+    {
+      "id": "yahoo_probe_pfe",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PFE?period1=946684800&period2=980985600&interval=1d",
+      "status": 200,
+      "bytes": 31268,
+      "sha256": "5ccf6855ed7815e657e2a66546455901d1ca68696749ddd46693565f86e0ffb3",
+      "written_at_utc": "2026-09-12T22:18:25Z"
+    },
+    {
+      "id": "probe_pfe.us",
+      "url": "https://stooq.com/q/d/l/?s=pfe.us&d1=19900101&d2=20261231&i=d",
+      "status": "NO_DATA",
+      "symbol": "pfe.us",
+      "raw_sha256": "c1fa6c725a240fe0c49c05cdf2bbddbe391af9f92bcd03128e8e24c05d9a59a0",
+      "raw_bytes": 796,
+      "note": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
+    },
+    {
+      "id": "probe_aapl.us",
+      "url": "https://stooq.com/q/d/l/?s=aapl.us&d1=19900101&d2=20261231&i=d",
+      "status": "NO_DATA",
+      "symbol": "aapl.us",
+      "raw_sha256": "bfa8f3f5d7031eee6b9d67e21190eeeb21e97bcb49c34dfc1c16d63b16c81bc4",
+      "raw_bytes": 796,
+      "note": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
+    },
+    {
+      "id": "probe_amgn.us",
+      "url": "https://stooq.com/q/d/l/?s=amgn.us&d1=19900101&d2=20261231&i=d",
+      "status": "NO_DATA",
+      "symbol": "amgn.us",
+      "raw_sha256": "18f03972cec220a2b72e023353022c2b197eae98cfa5809968352db5b1727d39",
+      "raw_bytes": 796,
+      "note": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
+    }
+  ],
+  "job_file": "fetch_jobs/probe.json"
+}
