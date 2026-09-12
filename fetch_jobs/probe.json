@@ -1,65 +1,43 @@
 [
   {
     "type": "url",
-    "id": "fda_nme_compilation_1985_2025",
-    "url": "https://www.fda.gov/media/177921/download?attachment",
-    "out": "fda_nme_compilation_1985_2025.xlsx"
-  },
-  {
-    "type": "url",
-    "id": "fda_nme_compilation_data_dictionary",
-    "url": "https://www.fda.gov/media/177920/download?attachment",
-    "out": "fda_nme_compilation_data_dictionary.pdf"
-  },
-  {
-    "type": "url",
-    "id": "sec_company_tickers_v2",
+    "id": "sec_company_tickers_browser_ua",
     "url": "https://www.sec.gov/files/company_tickers.json",
     "out": "sec_company_tickers.json",
     "headers": {
-      "User-Agent": "DrugAnalysis Research Bot buffedlizard55-lab@users.noreply.github.com",
-      "Accept": "application/json",
-      "Accept-Encoding": "gzip, deflate"
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 DrugAnalysisResearch/1.0 (buffedlizard55-lab@users.noreply.github.com)",
+      "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Accept-Encoding": "gzip, deflate, br"
     }
   },
   {
     "type": "url",
-    "id": "sec_edgar_company_search_probe",
-    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=amgen&type=10-K&dateb=&owner=include&count=5&output=atom",
-    "out": "sec_edgar_probe_atom.xml",
+    "id": "sec_company_tickers_plain_ua",
+    "url": "https://www.sec.gov/files/company_tickers.json",
+    "out": "sec_company_tickers_alt.json",
     "headers": {
-      "User-Agent": "DrugAnalysis Research Bot buffedlizard55-lab@users.noreply.github.com",
-      "Accept-Encoding": "gzip, deflate"
+      "User-Agent": "DrugAnalysis Research Bot AdminContact@druganalysis.example.org",
+      "Accept": "*/*"
     }
   },
   {
     "type": "url",
-    "id": "openfda_drugsfda_2010_orig",
-    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B20100101+TO+20101231%5D&limit=1000",
-    "out": "drugsfda_2010.json",
-    "project": {
-      "application_number": true,
-      "sponsor_name": true,
-      "openfda": {"brand_name": true, "generic_name": true, "manufacturer_name": true,
-                  "pharm_class_epc": true, "route": true, "substance_name": true},
-      "products": [{"brand_name": true, "active_ingredients": [{"name": true, "strength": true}],
-                    "dosage_form": true, "route": true, "marketing_status": true}],
-      "submissions": {"__all__": true}
-    }
+    "id": "openfda_crl_probe",
+    "url": "https://api.fda.gov/transparency/crl.json?limit=1000",
+    "out": "crl_page1.json",
+    "project": {"meta": {"__all__": True}, "__all__": true}
   },
   {
     "type": "url",
-    "id": "openfda_drugsfda_2005_orig",
-    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B20050101+TO+20051231%5D&limit=1000",
-    "out": "drugsfda_2005.json",
-    "project": {
-      "application_number": true,
-      "sponsor_name": true,
-      "openfda": {"brand_name": true, "generic_name": true, "manufacturer_name": true,
-                  "pharm_class_epc": true, "route": true, "substance_name": true},
-      "products": [{"brand_name": true, "active_ingredients": [{"name": true, "strength": true}],
-                    "dosage_form": true, "route": true, "marketing_status": true}],
-      "submissions": {"__all__": true}
-    }
+    "id": "openfda_crl_count",
+    "url": "https://api.fda.gov/transparency/crl.json?count=letter_issue_date",
+    "out": "crl_counts.json"
+  },
+  {
+    "type": "url",
+    "id": "yahoo_symbol_search_probe",
+    "url": "https://query1.finance.yahoo.com/v1/finance/search?q=Pfizer&quotesCount=10&newsCount=0",
+    "out": "yahoo_search_probe.json"
   }
 ]

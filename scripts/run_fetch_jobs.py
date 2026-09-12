@@ -122,10 +122,18 @@ def job_url(spec: dict, outdir: str, entries: list) -> None:
     meta = {"id": sid, "url": url, "status": status}
     if spec.get("project") and spec.get("out", "").endswith(".json"):
         try:
-            trimmed = project(json.loads(body.decode("utf-8")), spec["project"])
-            body = json.dumps(trimmed, separators=(",", ":")).encode("utf-8")
-            meta["projected"] = True
+            decoded = json.loads(body.decode("utf-8"))
             meta["raw_sha256"] = hashlib.sha256(body).hexdigest()
+            meta["raw_bytes"] = len(body)
+            if isinstance(decoded, dict) and isinstance(decoded.get("results"), list):
+                decoded = {
+                    "meta": decoded.get("meta"),
+                    "results": [project(r, spec["project"]) for r in decoded["results"]],
+                }
+            else:
+                decoded = project(decoded, spec["project"])
+            body = json.dumps(decoded, separators=(",", ":")).encode("utf-8")
+            meta["projected"] = True
         except Exception as exc:  # noqa: BLE001
             meta["project_error"] = str(exc)
     write_payload(dest, body, meta)
