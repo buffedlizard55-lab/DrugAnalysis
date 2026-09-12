@@ -1,0 +1,18 @@
+== job openfda_approvals_2000_2010 (1 spec(s)) ==
+ok orig_ap_2000: 2746 records -> data/raw/openfda_approvals_2000_2010/2000.json
+ok orig_ap_2001: 2861 records -> data/raw/openfda_approvals_2000_2010/2001.json
+ok orig_ap_2002: 2954 records -> data/raw/openfda_approvals_2000_2010/2002.json
+ok orig_ap_2003: 1462 records -> data/raw/openfda_approvals_2000_2010/2003.json
+ok orig_ap_2004: 1649 records -> data/raw/openfda_approvals_2000_2010/2004.json
+ok orig_ap_2005: 1495 records -> data/raw/openfda_approvals_2000_2010/2005.json
+ok orig_ap_2006: 1500 records -> data/raw/openfda_approvals_2000_2010/2006.json
+ok orig_ap_2007: 1977 records -> data/raw/openfda_approvals_2000_2010/2007.json
+ok orig_ap_2008: 2015 records -> data/raw/openfda_approvals_2000_2010/2008.json
+ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
+ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
+== job probe (5 spec(s)) ==
+FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
+ok sec_company_tickers_plain_ua 200 797931 bytes -> data/raw/probe/sec_company_tickers_alt.json
+ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
+FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
+ok yahoo_symbol_search_probe 200 2759 bytes -> data/raw/probe/yahoo_search_probe.json
