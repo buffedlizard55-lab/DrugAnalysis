@@ -176,7 +176,7 @@ function DataTable(cfg) {
       <span class="row-count" id="${cfg.id}-count"></span>
     </div>
     ${cfg.note || ''}
-    <div class="hscroll hscroll-top" id="${cfg.id}-topscroll" role="scrollbar" tabindex="0" aria-label="Horizontal column navigator"><div class="hscroll-inner"></div></div>
+    <div class="hscroll hscroll-top" id="${cfg.id}-topscroll" role="region" tabindex="0" aria-label="Horizontal column navigator"><div class="hscroll-inner"></div></div>
     <p class="hscroll-hint" id="${cfg.id}-hint"></p>
     <div class="table-scroll" id="${cfg.id}-scroll">
       <table class="data-table" id="${cfg.id}-table"><thead></thead><tbody></tbody></table>
