@@ -1,6 +1,6 @@
 {
   "job": "probe",
-  "generated_utc": "2026-09-12T22:18:26Z",
+  "generated_utc": "2026-09-12T22:22:01Z",
   "requests": [
     {
       "id": "drugsfda_sample_2010_orig_ap",
@@ -75,6 +75,56 @@
       "raw_sha256": "18f03972cec220a2b72e023353022c2b197eae98cfa5809968352db5b1727d39",
       "raw_bytes": 796,
       "note": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T"
+    },
+    {
+      "id": "fda_nme_compilation_1985_2025",
+      "url": "https://www.fda.gov/media/177921/download?attachment",
+      "status": 200,
+      "bytes": 294422,
+      "sha256": "0dd3e4683901e3b8c41ee6bd0f54bac1c33eaae95f1fae8679e6b3b0b45502cd",
+      "written_at_utc": "2026-09-12T22:21:22Z"
+    },
+    {
+      "id": "fda_nme_compilation_data_dictionary",
+      "url": "https://www.fda.gov/media/177920/download?attachment",
+      "status": 200,
+      "bytes": 210293,
+      "sha256": "916110c7b58ebd7016c87de1d9922c13e40f5c6a75fd2e8e3898a7442b5e58b1",
+      "written_at_utc": "2026-09-12T22:21:22Z"
+    },
+    {
+      "id": "sec_company_tickers_v2",
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-12T22:21:41Z"
+    },
+    {
+      "id": "sec_edgar_company_search_probe",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=amgen&type=10-K&dateb=&owner=include&count=5&output=atom",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-12T22:21:59Z"
+    },
+    {
+      "id": "openfda_drugsfda_2010_orig",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B20100101+TO+20101231%5D&limit=1000",
+      "status": 200,
+      "projected": true,
+      "raw_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "written_at_utc": "2026-09-12T22:22:00Z"
+    },
+    {
+      "id": "openfda_drugsfda_2005_orig",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B20050101+TO+20051231%5D&limit=1000",
+      "status": 200,
+      "projected": true,
+      "raw_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "written_at_utc": "2026-09-12T22:22:01Z"
     }
   ],
   "job_file": "fetch_jobs/probe.json"
