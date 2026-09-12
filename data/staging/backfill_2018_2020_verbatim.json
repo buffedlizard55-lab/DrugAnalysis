@@ -13,7 +13,7 @@
   },
   "coverage_and_gaps": {
     "rows_captured_2018": "FDA table rows 59 down to 13 were read from the archived page; rows 59-24 (36 drugs) are used in this pass. Rows 23-1 are captured-but-not-yet-sponsor-verified backlog (Krintafel, Tibsovo, TPOXX, Braftovi, Mektovi, Zemdri, Epidiolex [printed 'Epidioloex' on the FDA page], Moxidectin, Olumiant, Palynziq, Doptelet).",
-    "rows_captured_2020": "FDA rows 50 down to 1 were read; Orgovyx (row 51 boundary item) is now verified from FDA approval package and added. Rows 52 and 53 remain unverified because their table lines were not readable in the archive chunk.",
+    "rows_captured_2020": "All 53 2020 novel-drug entries are now represented: rows 51-53 boundary items Orgovyx, Ebanga, and Gemtesa were verified from FDA approval packages. Public-equity classification is explicit; no private sponsor is placed in the investable universe.",
     "rows_captured_2019": "24 of the 25 missing 2019 drugs. Zulresso is excluded (see flags.zulresso)."
   },
   "fda_2018_rows_verbatim": [
