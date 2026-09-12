@@ -3,99 +3,322 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DrugAnalysis — FDA Decisions, Stock Reactions & Pipeline Scorecards</title>
+<title>DrugAnalysis — FDA Decisions, Stock Reactions &amp; Numeric Company Scorecards</title>
+<meta name="description" content="Publicly traded biotech and pharma companies tracked against FDA decisions, verified stock-price reactions and numeric regulatory track-record scores. Every row links to an official source.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <h1>💊 DrugAnalysis</h1>
-    <p class="tagline">Publicly traded biotech &amp; pharma companies tracked against FDA decisions, stock-price reactions, and clinical pipeline success rates — all sourced from official, verifiable links.</p>
+    <div class="top-row">
+      <div>
+        <h1>💊 DrugAnalysis — FDA Decision Engine</h1>
+        <p class="tagline">US-investable biotech &amp; pharma issuers tracked against <strong>FDA decisions</strong>, <strong>verified stock-price reactions</strong>, and a
+        <strong>numeric regulatory track-record score</strong>. Every row carries official source links for manual review; nothing is estimated, and every irregularity is flagged.</p>
+      </div>
+      <div class="header-meta">
+        <span class="chip"><span data-count="master">…</span> FDA decisions</span>
+        <span class="chip"><span data-count="us">…</span> US-investable rows</span>
+        <span class="chip"><span data-count="prices">…</span> verified price snapshots</span>
+        <span class="chip"><span data-count="scores">…</span> companies scored</span>
+        <span class="chip">latest action <span data-count="latest">…</span></span>
+      </div>
+    </div>
   </div>
 </header>
 
-<nav class="tabs" id="tabs">
-  <button class="tab-btn active" data-tab="core">Core Analysis</button>
-  <button class="tab-btn" data-tab="approvals">FDA Approvals</button>
+<nav class="tabs" id="tabs" aria-label="Sections">
+  <button class="tab-btn active" data-tab="overview">Overview</button>
+  <button class="tab-btn" data-tab="core">Core Analysis</button>
+  <button class="tab-btn" data-tab="approvals">FDA Approvals Master List</button>
+  <button class="tab-btn" data-tab="scorecards">Company Scorecards (numeric)</button>
+  <button class="tab-btn" data-tab="engine">Decision Engine</button>
+  <button class="tab-btn" data-tab="prices">Stock Prices</button>
   <button class="tab-btn" data-tab="crls">Rejections (CRLs)</button>
-  <button class="tab-btn" data-tab="prices">Stock Price Snapshots</button>
-  <button class="tab-btn" data-tab="scorecards">Company Scorecards</button>
+  <button class="tab-btn" data-tab="private">Private Companies</button>
+  <button class="tab-btn" data-tab="nonus">Non-US &amp; Unverified</button>
   <button class="tab-btn" data-tab="about">About &amp; Methodology</button>
 </nav>
 
 <main class="wrap">
 
-  <section id="core" class="tab-panel active">
-    <h2>Core Analysis Table</h2>
-    <p class="section-desc">Company, drug, FDA decision, stock-price reaction, and a pipeline success-rate summary — the single table for a fast overview. Empty price cells mean data has not yet been fetched/verified for that row (never estimated). <strong>%&nbsp;T+1</strong> is the move from the pre-decision close to the next trading session's close, which is where several approvals actually moved (e.g. Celcuity +7.0% on the day, then −17.6% the next session).</p>
-    <div id="core-stats" class="stats"></div>
-    <div class="table-controls">
-      <input type="search" id="core-search" placeholder="Search company, drug, indication…">
-      <select id="core-filter-type">
-        <option value="">All decision types</option>
-      </select>
-      <select id="core-filter-flag">
-        <option value="">All rows (incl. flagged)</option>
-      </select>
-      <span id="core-count" class="row-count"></span>
+  <!-- ================= OVERVIEW ================= -->
+  <section id="overview" class="tab-panel active">
+    <h2>Overview</h2>
+    <p class="section-desc">Headline numbers computed live from the CSVs in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank" rel="noopener">/data</a> —
+      no hard-coded totals. Median moves use only rows with verified prices; blank cells are never filled with an estimate.</p>
+    <div id="overview-stats" class="stats"></div>
+    <div class="two-col">
+      <div class="panel">
+        <h3>Highest-scoring US-investable issuers</h3>
+        <p class="section-desc">Composite regulatory track-record score (0–100) with at least 3 verified FDA decisions — see the Scorecards tab for the full formula.</p>
+        <div id="overview-top"></div>
+      </div>
+      <div class="panel">
+        <h3>Weakest verified track records</h3>
+        <p class="section-desc">Lowest composite scores among issuers with ≥3 tracked decisions. A low score is not a short-selling thesis — it means the verified record contains CRLs, withdrawals, or poor post-decision price behaviour.</p>
+        <div id="overview-bottom"></div>
+      </div>
     </div>
-    <div class="table-scroll"><table id="core-table" class="data-table"><thead></thead><tbody></tbody></table></div>
+    <div class="two-col">
+      <div class="panel">
+        <h3>Most recent verified FDA actions</h3>
+        <div id="overview-latest"></div>
+      </div>
+      <div class="panel">
+        <h3>How the market actually reacts</h3>
+        <p class="section-desc">Distribution of decision-day moves across every row with a verified price. Approvals are <em>not</em> automatically positive: a large share are already priced in, which is exactly why the T+1 column exists.</p>
+        <div id="overview-dist"></div>
+      </div>
+    </div>
   </section>
 
+  <!-- ================= CORE ANALYSIS ================= -->
+  <section id="core" class="tab-panel">
+    <h2>Core Analysis Table</h2>
+    <p class="section-desc">The single joined table: company, drug, FDA decision, verified stock-price reaction and the company's numeric track-record score.
+      <strong>%&nbsp;on&nbsp;decision</strong> is the move from the last close before the action to the close on the decision date; <strong>%&nbsp;T+1</strong> continues to the next session,
+      which is where several approvals actually moved (e.g. Celcuity +7.0% on the day, then −17.6% the next session).</p>
+    <div id="core-view"></div>
+  </section>
+
+  <!-- ================= APPROVALS ================= -->
   <section id="approvals" class="tab-panel">
     <h2>FDA Approvals Master List</h2>
-    <p class="section-desc">310 verified FDA novel drug approvals, one row per decision, each with two source links for manual review. Coverage of FDA’s official novel-approval tables is complete for 2021 (50/50), 2024 (50/50), 2025 (46/46) and 2026 (39/39 to date), plus 23 of the 48 novel approvals from FDA’s 2019 annual report and 10 of the 53 from 2020. FDA has taken its 2019 and 2020 pages offline, so those rows cite the annual-report PDF and the Internet Archive’s capture of the official 2020 page. Where the applicant of record has changed since approval (asset sale, acquisition, or licence-out), <strong>both</strong> the current holder and the original applicant are shown and the row is flagged.</p>
-    <div class="table-controls">
-      <input type="search" id="approvals-search" placeholder="Search company, drug, ticker, indication…">
+    <p class="section-desc">Every verified FDA novel-drug decision, one row per action, each with two source links for manual review.
+      Where the applicant of record changed after approval (asset sale, acquisition, licence-out) <strong>both</strong> the current holder and the original applicant are shown and the row is flagged.
+      Column order follows the project spec: <strong>Exchange is second-to-last</strong> and the row <strong>ID is last</strong>.</p>
+    <div class="notice info">
+      <strong>Reading a wide table:</strong> each table now has a <strong>scrollbar above it</strong> that stays in sync with the one underneath, a header row that stays pinned while you scroll down,
+      a pinned first column while you scroll right, <strong>click any row to expand it</strong> and read every field in full (notes, both links, verification status),
+      a <em>Columns ⚙</em> menu to hide what you don't need, <em>Density</em> and <em>Full text</em> toggles, and <em>Export CSV</em> for the rows currently on screen.
     </div>
-    <div class="table-scroll"><table id="approvals-table" class="data-table"><thead></thead><tbody></tbody></table></div>
+    <div id="approvals-view"></div>
   </section>
 
-  <section id="crls" class="tab-panel">
-    <h2>Complete Response Letters (Rejections)</h2>
-    <p class="section-desc">FDA rejections / regulatory setbacks for publicly traded companies — flagged as irregularities worth tracking, including repeat-CRL cases. C004 (Outlook Therapeutics / Lytenava) is marked <em>RESOLVED</em>: after a third CRL on 2025-12-31 the BLA was resubmitted and approved on 2026-07-24.</p>
-    <div class="table-scroll"><table id="crls-table" class="data-table"><thead></thead><tbody></tbody></table></div>
+  <!-- ================= SCORECARDS ================= -->
+  <section id="scorecards" class="tab-panel">
+    <h2>Company Scorecards — numeric track-record analysis</h2>
+    <p class="section-desc">One numeric score per company, built only from rows already verified in this repository. The score answers:
+      <em>how often does this company's drug actually get approved, how many programs advance versus get paused or put on hold, and does the market agree with the outcome?</em>
+      Click any row to see the full component breakdown and inputs.</p>
+
+    <div class="panel">
+      <h3>The scoring model</h3>
+      <div class="formula">Total score (0–100) = Outcome (30) + Market validation (25) + Experience (20) + Pathway quality (15) + Pipeline progression (10)
+
+Outcome (30 pts)           = 30 × clamp( (shrunk_rate − 0.75) / 0.25, 0, 1 )
+                             where shrunk_rate = (approvals + k·p₀) / (decisions + k),  k = 3,  p₀ = 0.906
+                             p₀ is the VERIFIED population base rate for a filed NDA/BLA
+                             (BIO / Biomedtracker / Informa, 2011–2020, n = 1,453)
+Market validation (25 pts)  = 25 × [ 0.6 × share of priced approval events with a positive T+1 move
+                                   + 0.4 × clamp(median T+1 move / +25%, 0, 1) ]
+Experience (20 pts)         = 20 × clamp( log2(1 + decisions tracked) / log2(1 + 12), 0, 1 )
+Pathway quality (15 pts)    = 15 × [ share of approvals granted Priority Review
+                                   − 0.5 × share of approvals that were Accelerated Approval ]   (clamped 0…1)
+Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/clinical-hold)
+                             — only where the pipeline scorecard is a verified deep dive; otherwise the 10 pts are
+                               redistributed pro-rata and the company is labelled lower confidence.</div>
+      <ul class="section-desc" style="margin-top:12px">
+        <li><strong>Shrinkage toward a verified external base rate, not toward zero.</strong> The Outcome component used to be the Wilson 95% lower bound of the approval rate. That punished thin evidence asymmetrically: a company with 1 approval and 0 CRLs scored ~21%, which implies a 79% failure rate that <em>no</em> published dataset supports — FDA approves roughly 90.6% of filed applications (BIO / Biomedtracker / Informa 2011–2020, n = 1,453 including resubmissions). The score now shrinks each company's record toward that verified prior with k = 3 pseudo-observations, so one approval scores 92.9% and a company only departs from the base rate once it has enough verified decisions to justify it.</li>
+        <li><strong>A calibration band keeps the component discriminating.</strong> Because shrinkage compresses everything toward 90.6%, the shrunk rate is mapped through a 75%–100% band anchored on the published spread (BIO's per-disease-area filing-to-approval rates run from 82.5% in cardiovascular, n = 80, to 100% in allergy, n = 20; antisense is the weakest modality at 66.7%). The population base rate therefore earns 0.62 of the 30 points — an average filer, not a top score — while a sponsor with a CRL on the record falls sharply. The raw rate and the Wilson lower bound are still published next to the score as statistics.</li>
+        <li><strong>Market validation and Experience were re-weighted upward</strong> (20→25 and 15→20) to pay for the Outcome change: the market term is the only component built on exchange data rather than on our own counting of FDA outcomes, and a longer verified record is the main protection against reading luck as skill.</li>
+        <li><strong>Accelerated approval is treated as a risk factor</strong> (−0.5 weight) because it is granted on a surrogate endpoint that a confirmatory trial must later verify; several accelerated approvals in this dataset were later withdrawn (Ukoniq, Relyvrio, Pepaxto, Exkivity).</li>
+        <li><strong>Market validation</strong> uses only verified closes from the price-snapshot table. If the market repeatedly sells a company's approvals, the score reflects that even though the FDA said yes.</li>
+        <li><strong>Confidence</strong> is reported alongside every score: <em>High</em> = ≥8 verified decisions <em>and</em> a deep-dive pipeline scorecard; <em>Moderate</em> = ≥3 verified decisions; <em>Low</em> = fewer, or an FDA-decisions-only view. Scores are never presented without their confidence tier.</li>
+        <li><strong>Grades:</strong> A ≥ 80, B 65–79, C 50–64, D 35–49, E &lt; 35.</li>
+      </ul>
+      <p class="section-desc">Regenerated by <code>scripts/build_company_scores.py</code> from <code>fda_decisions_master.csv</code>, <code>fda_crl_master.csv</code>,
+      <code>stock_price_snapshots.csv</code> and <code>company_scorecards.csv</code>. No number in it is typed by hand.</p>
+    </div>
+
+    <div id="scores-view"></div>
+
+    <div class="panel" style="margin-top:22px">
+      <h3>Pipeline detail behind the numbers</h3>
+      <p class="section-desc">The numeric score tells you <em>how much</em>; these cards tell you <em>which program is in which phase</em>, what advanced, and what was paused, put on clinical hold, or rejected.
+        <span data-count="deepcards">…</span> deep-dive pipeline scorecards were compiled from company disclosures and cited sources;
+        <span data-count="restcards">…</span> cover the remaining companies and count only the FDA decisions verified in this repository.</p>
+      <details>
+        <summary class="btn" style="display:inline-block;margin-bottom:14px">Show deep-dive pipeline scorecards (<span id="cards-deep-count">0</span>)</summary>
+        <div class="cards" id="cards-deep"></div>
+      </details>
+      <details style="margin-top:14px">
+        <summary class="btn" style="display:inline-block;margin-bottom:14px">Show FDA-decisions-only scorecards (<span id="cards-rest-count">0</span>)</summary>
+        <div class="cards" id="cards-rest"></div>
+      </details>
+    </div>
   </section>
 
+  <!-- ================= DECISION ENGINE ================= -->
+  <section id="engine" class="tab-panel">
+    <h2>Decision Engine — modelled probability of a positive FDA action</h2>
+    <p class="section-desc">A transparent Bayesian odds calculator. It starts from a <strong>published base rate</strong> (FDA / BIO-Informa-QLS / FDA accelerated-approval programme),
+      then applies a small number of documented odds multipliers — review pathway, the company's own verified track record, asset characteristics, advisory-committee status —
+      and prints the arithmetic so any reviewer can redo it. Every prior and every multiplier is listed with its source.</p>
+    <div class="notice">This is a decision-support model, not a forecast and not investment advice. Multipliers are deliberately coarse and are stated openly so they can be challenged; the base rates are citable published figures, not fitted numbers.</div>
+    <div class="engine-grid">
+      <div class="panel">
+        <h3>Scenario</h3>
+        <div class="engine-form" id="engine-form"></div>
+      </div>
+      <div>
+        <div class="engine-out" id="engine-out"></div>
+        <div class="panel" style="margin-top:18px">
+          <h3>Priors used</h3>
+          <div id="engine-priors"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICES ================= -->
   <section id="prices" class="tab-panel">
     <h2>Stock Price Snapshots</h2>
-    <p class="section-desc">239 closing-price snapshots around FDA decisions, taken from the Yahoo Finance chart API (<code>/v8/finance/chart/&lt;TICKER&gt;?interval=1d</code>) and stored as raw captures in <code>data/staging/</code> so every number can be re-checked. Rows with blank prices are delisted/acquired tickers whose history the API no longer serves, or a bar that had not published yet at capture time — never a placeholder guess. One series (Nuvalent, 2026-07-22) was <strong>rejected</strong> rather than recorded because the API returned a degenerate zero-volume series.</p>
-    <div class="table-scroll"><table id="prices-table" class="data-table"><thead></thead><tbody></tbody></table></div>
+    <p class="section-desc">Closing prices immediately before, on, and after each FDA decision, pulled from the Yahoo Finance chart API
+      (<code>/v8/finance/chart/&lt;TICKER&gt;?interval=1d</code>). Each fetch's reported company name was checked against the expected issuer before the row was used,
+      and the raw captures are stored verbatim in <code>data/staging/</code> so any number can be re-checked. Non-US listings are in native currency (JPY/EUR/CHF) and noted.
+      Rows are left <strong>blank</strong> — never estimated — where history could not be retrieved (delisted or acquired tickers, or a bar not yet published at capture time).
+      Two series were <strong>rejected</strong> rather than recorded because the API returned data that could not be trusted as traded prices: Nuvalent (2026-07-22, degenerate zero-volume series) and Trevena/TRVN (Aug 2020 closes of 1,450–1,956 against a current price of $0.011, i.e. a large reverse-split factor applied to raw and adjusted closes alike). ESPR, YMAB and CPRX returned no data for their windows, so those cells are blank.</p>
+    <div id="prices-view"></div>
   </section>
 
-  <section id="scorecards" class="tab-panel">
-    <h2>Company Pipeline Scorecards</h2>
-    <p class="section-desc">155 per-company scorecards. 36 are deep-dive pipeline scorecards (which programs are in which phase, which advanced, which were paused or put on clinical hold). The remainder cover every other company in the dataset and count <strong>only</strong> the FDA decisions verified and tracked in this repository — they are labelled <em>“Verified – FDA decisions only (partial pipeline view)”</em> and report phase progression as 0 rather than estimating it.</p>
-    <div class="cards" id="scorecards-cards"></div>
+  <!-- ================= CRLS ================= -->
+  <section id="crls" class="tab-panel">
+    <h2>Complete Response Letters (Rejections)</h2>
+    <p class="section-desc">FDA rejections and regulatory setbacks for publicly traded companies — the irregularities worth tracking, including repeat-CRL cases.
+      C004 (Outlook Therapeutics / Lytenava) is marked <em>RESOLVED</em>: after a third CRL on 2025-12-31 the BLA was resubmitted and approved on 2026-07-24.</p>
+    <div id="crls-view"></div>
   </section>
 
+  <!-- ================= PRIVATE ================= -->
+  <section id="private" class="tab-panel">
+    <h2>Private Companies (no investable equity)</h2>
+    <p class="section-desc">Kept out of the master analysis on purpose: these applicants have no listed equity a US investor can buy, so there is no price reaction to track and no position to take.
+      They are retained here because the FDA action itself is still real and still matters — as a competitor read-through, a partner read-through, or a future IPO/acquisition signal.
+      <span data-count="private">…</span> rows.</p>
+    <div id="private-view"></div>
+  </section>
+
+  <!-- ================= NON-US ================= -->
+  <section id="nonus" class="tab-panel">
+    <h2>Non-US Listings &amp; Unverified Issuers</h2>
+    <p class="section-desc">Public companies whose shares trade only on a non-US exchange with no ADR available to US investors (Tokyo, SIX, Euronext Paris/Brussels, HKEX, NSE India, ASX, TPEx, SZSE, Nasdaq Stockholm…).
+      Excluded from the investable universe for the same reason as private companies, but retained with full sourcing.
+      Where a thinly traded OTC ADR does exist, the row stays in the master list and is labelled <em>US-LISTED (ADR)</em>.
+      This tab also carries the rows classified <code>NOT US-INVESTABLE (UNVERIFIED)</code> — decisions that are fully sourced but whose issuer could not be matched to a listed security without guessing. <span data-count="nonus">…</span> rows
+      (<span data-count="unverified">…</span> of them unverified issuers).</p>
+    <div id="nonus-view"></div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
   <section id="about" class="tab-panel">
     <h2>About &amp; Methodology</h2>
     <div class="about-content">
+      <h3>What this project is</h3>
+      <p>A decision engine for FDA catalysts in publicly traded biotech and pharma: collect the FDA action, the verified stock-price reaction around it, and the company's
+      numeric regulatory track record, in one place, with an official source link on every row. Scope is deliberately limited to <strong>equities a US investor can actually buy</strong>
+      (US listings and US OTC ADRs); private applicants and non-US-only listings live on their own tabs.</p>
+
       <h3>Sources</h3>
       <ul>
-        <li><strong>FDA decisions</strong> — FDA.gov <em>Novel Drug Approvals</em> pages (2021–2026), the application overview pages on accessdata.fda.gov, the official openFDA Drugs@FDA API (<code>api.fda.gov/drug/drugsfda.json</code>, used to resolve the applicant of record for every application number), the official openFDA CRL transparency API (<code>api.fda.gov/transparency/crl.json</code>), and FDA Drug Trials Snapshots.</li>
-        <li><strong>Stock prices</strong> — Yahoo Finance chart API (<code>query1.finance.yahoo.com</code>), captured for a ±6-day window around every decision date and stored verbatim in <code>data/staging/prices_new_2026_09.py</code>.</li>
-        <li><strong>Company / ownership changes</strong> — the company’s own press release (for example Scholar Rock’s ISEMBYLD approval release and GSK’s Lynavoy release) plus SEC-filing summaries, always cited with a direct link. This is how ownership changes such as Veppanu → Rigel and Lynavoy → Alfasigma were confirmed.</li>
+        <li><strong>FDA decisions</strong> — FDA.gov <em>Novel Drug Approvals</em> pages, FDA's official annual <em>New Drug Therapy Approvals</em> reports (Appendix A = the novel-approval list, Appendix B = designations),
+          the Internet Archive's captures of FDA pages that have since been taken offline, the official openFDA Drugs@FDA API (<code>api.fda.gov/drug/drugsfda.json</code>, used to resolve the applicant of record and the review priority for every application number),
+          the official openFDA CRL transparency API (<code>api.fda.gov/transparency/crl.json</code>), <code>accessdata.fda.gov</code> approval letters and labels, and FDA Drug Trials Snapshots.</li>
+        <li><strong>Stock prices</strong> — Yahoo Finance chart API (<code>query1.finance.yahoo.com/v8/finance/chart/&lt;TICKER&gt;</code>), captured for a window around every decision date and stored verbatim in <code>data/staging/</code>.
+          Each response's <code>meta.longName</code> and <code>meta.fullExchangeName</code> were checked against the expected issuer and exchange before the row was accepted.</li>
+        <li><strong>Company / pipeline detail</strong> — the company's own press releases and SEC filings plus reputable biotech trade press, always cited with a direct link.</li>
+        <li><strong>Base rates for the decision engine</strong> — FDA PDUFA / CDER reporting, BIO–QLS–Informa <em>Clinical Development Success Rates 2011–2020</em>, and FDA's accelerated-approval programme pages, each linked next to the figure.</li>
       </ul>
+
       <h3>Verification approach</h3>
-      <p>Every row in the approvals and CRL tables carries a <code>verification_status</code> field. Rows are marked <em>Verified</em> only when the company/ticker/date combination was corroborated by at least one official or primary-source link. Anything ambiguous is <strong>flagged in the notes rather than silently resolved</strong>. Examples of what is flagged rather than smoothed over:</p>
+      <p>Every row carries a <code>verification_status</code>. Rows are marked <em>Verified</em> only when the company / ticker / date combination was corroborated by at least one official or primary source.
+      Anything ambiguous is <strong>flagged in the notes rather than silently resolved</strong>:</p>
       <ul>
-        <li><strong>Applicant vs. current holder.</strong> FDA lists the <em>current</em> applicant of record, which changes after a licence-out or acquisition. Veppanu (NDA 219835) was approved to Arvinas/Pfizer and then licensed to Rigel eleven days later; Lynavoy (NDA 220295) was approved to GSK and then licensed to Alfasigma, so the FDA record now reads “INTERCEPT”. Both rows state the change.</li>
-        <li><strong>Withdrawn products.</strong> Pepaxto (NDA 214383) no longer exists in the FDA application database because it was withdrawn in Oct 2021 after its confirmatory trial failed; its sponsor is marked as not machine-verifiable instead of being guessed. Exkivity and Truseltiq are flagged as voluntarily withdrawn.</li>
-        <li><strong>Data conflicts.</strong> FDA records Lynavoy’s approval as 2026-03-17 while GSK announced it on 2026-03-19; both dates are given. Outlook Therapeutics was <em>approved</em> on 2026-07-24 yet fell 24.2% and 15.1% over the next two sessions — the cause is flagged for manual review rather than attributed.</li>
+        <li><strong>Applicant vs. current holder.</strong> FDA lists the <em>current</em> applicant of record, which changes after a licence-out or acquisition. Veppanu (NDA 219835) was approved to Arvinas/Pfizer and licensed to Rigel eleven days later;
+          Lynavoy (NDA 220295) was approved to GSK and then licensed to Alfasigma, so the FDA record now reads "INTERCEPT". Both rows state the change.</li>
+        <li><strong>Withdrawn products.</strong> Pepaxto (NDA 214383) no longer exists in the FDA application database because it was withdrawn in Oct 2021 after its confirmatory trial failed; its sponsor is marked not machine-verifiable instead of being guessed.
+          Exkivity, Truseltiq, Ukoniq and Relyvrio are flagged as voluntarily withdrawn.</li>
+        <li><strong>Data conflicts.</strong> FDA records Lynavoy's approval as 2026-03-17 while GSK announced it 2026-03-19; both dates are given. Outlook Therapeutics was <em>approved</em> on 2026-07-24 yet fell 24.2% and 15.1% over the next two sessions — the cause is flagged for manual review, not attributed.</li>
         <li><strong>Rejected data.</strong> One price series (Nuvalent) was discarded because the API returned a degenerate zero-volume series; the cells are blank, not filled in.</li>
+        <li><strong>Blank beats guessed.</strong> No price, date, pathway or outcome anywhere in this dataset is estimated. Where a value could not be verified in the pass that produced it, the cell is empty and the reason is written into <code>notes</code>.</li>
       </ul>
-      <h3>Known limitations (as of 2026-09-12)</h3>
+
+      <h3>US-investability classification</h3>
+      <p>Each master-list row is classified so the investable universe can be separated from everything else:</p>
+      <table>
+        <thead><tr><th>Class</th><th>Meaning</th><th>Where it appears</th></tr></thead>
+        <tbody>
+          <tr><td><code>US-LISTED</code></td><td>Primary listing on NASDAQ / NYSE / NYSE American</td><td>Master list</td></tr>
+          <tr><td><code>US-LISTED (ADR)</code></td><td>Foreign issuer with a US ADR/ADS a US investor can buy (including OTC ADRs)</td><td>Master list</td></tr>
+          <tr><td><code>FORMERLY US-LISTED (DELISTED/ACQUIRED)</code></td><td>US-listed at the time of the decision; since acquired or delisted. Its price reaction is still part of the historical record.</td><td>Master list</td></tr>
+          <tr><td><code>NON-US LISTING ONLY</code></td><td>Publicly traded abroad with no US-accessible equity</td><td>Non-US Listings tab</td></tr>
+          <tr><td><code>PRIVATE / NO EQUITY</code></td><td>Privately held applicant (or subsidiary of a private group)</td><td>Private Companies tab</td></tr>
+          <tr><td><code>NOT US-INVESTABLE (UNVERIFIED)</code></td><td>Real, source-verified FDA decision whose <em>issuer</em> could not be tied to a listed security without guessing — openFDA no longer returns the applicant, the returned sponsor term is unresolvable (e.g. <code>HONG KONG</code>, <code>LXO IRELAND</code>), or the symbol stopped returning price data. No ticker is asserted.</td><td>Non-US &amp; Unverified tab, with the reason in the row notes</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Irregularities flagged in the 2018–2020 backfill (2026-09-12)</h3>
       <ul>
-        <li><code>review_pathway</code> (Priority / Standard / Accelerated) is populated for D001–D200 and for D278–D310 (both from FDA’s official annual reports) but is <strong>deliberately blank</strong> for D201–D277: FDA publishes those designations in its annual <em>New Drug Therapy Approvals</em> reports, which do not exist yet for 2026 and were not re-parsed in this pass. Blank beats guessed.</li>
-        <li>FDA has removed its 2019 and 2020 novel-approval web pages. 2021–2026 is complete (185 approvals); 23 of the 48 drugs in FDA’s 2019 annual report and 10 of the 53 drugs from 2020 are covered from those sources. The remaining 2019/2020 drugs were skipped because the applicant could not be machine-verified or no US-listed ticker exists.</li>
-        <li>Pre-2021 approvals that were later delisted (ChemoCentryx, Seagen, Kadmon, AVEO) have no retrievable price history from the chart API; those rows are explicit about it.</li>
-        <li>The 2026-09-11 Scholar Rock daily bar had not been published when it was captured, so that one <code>close_on</code> cell is pending a re-fetch.</li>
-        <li>Scorecards added in this pass count FDA decisions tracked here, not full corporate pipelines — see the Scorecards tab.</li>
+        <li><strong>100 new verified rows</strong> — 36 from 2018, 24 from 2019 and 40 from 2020 — were added, taking the master list to 410 decisions. 44 of the new rows carry an explicit <code>FLAGGED</code> verification status.</li>
+        <li><strong>FDA's own page has a date typo.</strong> The archived 2018 table prints Firdapse's approval as <code>11/28/2028</code>. The row sits between Xospata (11/28/2018) and Vitrakvi (11/26/2018) and links the November 2018 press release, so 2018-11-28 is recorded and the typo is flagged in the row.</li>
+        <li><strong>openFDA reports the CURRENT holder, which is often not the 2020 applicant.</strong> Gavreto now resolves to <code>RIGEL PHARMS</code>, Zokinvy to <code>SENTYNL THERAPS INC</code>, Nurtec ODT to <code>PfIZER</code>, Copiktra to <code>SECURA</code>, Sunosi to <code>AXSOME MALTA</code>, Vyleesi to <code>COSETTE</code>, Scenesse to <code>CLIVUNEL INC</code>, Vitrakvi to <code>BAYER HEALTHCARE</code>, Tepezza to <code>HORIZON THERAPEUTICS IRELAND</code>, Trodelvy to <code>IMMUNOMEDICS INC</code>, Tazverik to <code>EPIZYME INC</code>, Uplizna to <code>VIELA BIO</code> and Ongentys to <code>AMNEAL</code>. The original approval letters were not re-read in this pass, so the issuer at the decision date is left unverified rather than guessed — and for those rows no price reaction is attributed, because a price for the wrong issuer would be worse than no price.</li>
+        <li><strong>Unresolvable sponsor terms.</strong> openFDA returns <code>HONG KONG</code> for Xenleta/lefamulin, <code>LXO IRELAND</code> for Barhemsys, <code>VANCOCIN ITALIA</code> for Mulpleta and <code>ACACIA</code> for Byfavo. Recorded verbatim; no company name or ticker is asserted.</li>
+        <li><strong>Applications that openFDA can no longer resolve:</strong> Aemcolo, Lumoxiti, Tegsedi, Xeglyze, Pizensy, Artesunate, Gallium 68 PSMA-11, fluorodopa F 18 and gallium Ga 68 DOTATOC. The approvals themselves are verified by the FDA tables, so the rows are kept with <code>company_name = applicant not machine-verifiable</code>.</li>
+        <li><strong>Zulresso (brexanolone, 19 March 2019) is excluded.</strong> openFDA returns no record for the brand, the generic or <code>NDA212773</code>, so the applicant cannot be machine-verified — the same rule already applied to Pepaxto. Excluded rather than attributed from memory.</li>
+        <li><strong>Coverage gaps, stated rather than filled:</strong> rows 51–53 of FDA's 2020 table (row 51 is Orgovyx, whose table line was not readable in the archive chunk) and rows 23–1 of the 2018 table are captured but not yet sponsor-verified. 2019 is complete except Zulresso (47 of FDA's 48).</li>
+        <li><strong>Ten existing rows were reclassified.</strong> Sun Pharma (<code>NSE/BSE India; no US ADR</code>), CSL (<code>ASX Australia; no US ADR primary</code>), Aurobindo, four Tokyo-only listings and Oncopeptides (<code>Nasdaq Stockholm; no US listing</code>) had been counted as <em>US-LISTED (ADR)</em> because the classifier matched the substring "ADR" inside the phrase "no US ADR". They are now <code>NON-US LISTING ONLY</code>, and the classifier tests non-US venues and explicit "no US equity" statements before the ADR rule.</li>
+        <li><strong>Row D113 needs review.</strong> It attributes "Recordati Rare Diseases (current holder)" to Sanofi's ADR (SNY). Recordati S.p.A. is a Milan-listed issuer; the new Isturisa row is classified non-US and flags the inconsistency.</li>
       </ul>
-            <h3>Raw data</h3>
-      <p>All tables on this site are generated directly from CSV files in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data">/data</a> in the repository, so you can inspect, verify, or reuse the underlying data yourself.</p>
+
+      <h3>Verified base rates used by the decision engine</h3>
+      <p>All figures below were read from BIO / Biomedtracker / Informa Pharma Intelligence, <em>Clinical Development Success Rates 2011–2020</em>
+        (<a href="https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf">PDF</a>) on 2026-09-12. Sample sizes are shown because several cells are small.</p>
+      <table>
+        <thead><tr><th>Disease area</th><th>NDA/BLA filed → approval</th><th>n</th><th>LOA from Phase III</th><th>Phase III → NDA/BLA</th></tr></thead>
+        <tbody>
+          <tr><td>All areas</td><td class="num">90.6%</td><td class="num">1,453</td><td class="num">52.4%</td><td class="num">57.8%</td></tr>
+          <tr><td>Oncology (all)</td><td class="num">92.0%</td><td class="num">324</td><td class="num">43.9%</td><td class="num">47.7%</td></tr>
+          <tr><td>— solid tumours</td><td class="num">92.9%</td><td class="num">212</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>— haematologic</td><td class="num">90.0%</td><td class="num">100</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>— immuno-oncology</td><td class="num">98.4%</td><td class="num">62</td><td class="num">12.4% from Phase I</td><td class="num">—</td></tr>
+          <tr><td>Haematology</td><td class="num">93.1%</td><td class="num">72</td><td class="num">71.5%</td><td class="num">76.8%</td></tr>
+          <tr><td>Autoimmune / inflammation</td><td class="num">94.1%</td><td class="num">202</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Infectious disease</td><td class="num">92.9%</td><td class="num">156</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Neurology</td><td class="num">86.7%</td><td class="num">165</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Endocrine</td><td class="num">86.3%</td><td class="num">124</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Cardiovascular</td><td class="num">82.5%</td><td class="num">80</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Metabolic</td><td class="num">87.5%</td><td class="num">48</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Respiratory</td><td class="num">95.6%</td><td class="num">45</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Ophthalmology</td><td class="num">91.1%</td><td class="num">45</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Psychiatry</td><td class="num">91.2%</td><td class="num">57</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Gastroenterology</td><td class="num">90.9%</td><td class="num">33</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Allergy / immunology</td><td class="num">100%</td><td class="num">20</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Urology</td><td class="num">84.6%</td><td class="num">13</td><td class="num">3.6%</td><td class="num">—</td></tr>
+          <tr><td>Rare disease</td><td class="num">93.6%</td><td class="num">172</td><td class="num">17.0% from Phase I</td><td class="num">—</td></tr>
+          <tr><td>Chronic, high-prevalence</td><td class="num">92.6%</td><td class="num">217</td><td class="num">5.9% from Phase I</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+      <p class="section-desc">Phase gates for all areas: Phase I → II 52.0%, Phase II → III 28.9%, Phase III → NDA/BLA 57.8%, NDA/BLA → approval 90.6%, Phase I → approval 7.9%.
+        Only 137 of the tracked programmes were suspended between 2011 and 2020. Modality filing-to-approval rates: mAb 95.4%, protein 89.7%, small molecule 89.5%, peptide 88.1%, antisense 66.7%; vaccine (n = 27), ADC (n = 12), CAR-T (n = 4), siRNA (n = 3) and gene therapy (n = 2) were all 100% — small samples, shown for completeness.</p>
+      <p class="section-desc">Accelerated approval is a separate question from filing success. HHS OIG (OEI-01-21-00401) found FDA and sponsors withdrew 13% of all accelerated approvals, half of them since January 2021.
+        For oncology, 205 indications approved 1992–2024 show 52% converted to regular approval, 15% withdrawn and 33% still ongoing; a Lancet eClinicalMedicine series of 133 oncology indications found 77% converted and 23% withdrawn (median 3.81 years to withdrawal); non-oncology indications convert more often (75% of 57 indications, 1992–2018, with 10% of confirmatory trials failing on efficacy). The engine uses 52% as the conservative oncology conversion prior and 13% as the all-indication withdrawal prior.</p>
+
+      <h3>Known limitations</h3>
+      <ul>
+        <li><code>review_pathway</code> is populated from FDA's official annual reports and from the <code>review_priority</code> field of openFDA Drugs@FDA. Where neither source is unambiguous, the cell is deliberately blank.</li>
+        <li>FDA has taken its 2018–2020 <em>Novel Drug Approvals</em> web pages offline; those cohorts cite the surviving official annual-report PDFs and Internet Archive captures of the official FDA pages.</li>
+        <li>Approvals whose applicant was later acquired often have no retrievable price history from the chart API; those rows say so explicitly.</li>
+        <li>Pipeline scorecards that are not deep dives count only the FDA decisions verified in this repository and report phase progression as 0 rather than estimating it — they are labelled <em>"Verified – FDA decisions only (partial pipeline view)"</em> and score at lower confidence.</li>
+      </ul>
+
+      <h3>Raw data &amp; regeneration</h3>
+      <p>All tables are generated directly from the CSVs in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank" rel="noopener">/data</a>; each has a matching builder in
+      <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/scripts" target="_blank" rel="noopener">/scripts</a> that writes it from explicit, source-cited data, so any number can be diffed and re-verified.
+      Use the <em>Export CSV</em> button on any table to download the rows you are currently looking at.</p>
+
+      <h3>Disclaimer</h3>
+      <p>This is a research/analysis project, not investment advice. Always verify against the linked primary sources before making any decisions.</p>
     </div>
   </section>
 
@@ -104,6 +327,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p>Data compiled by an autonomous research agent from official public sources. Always verify against the linked primary sources before making decisions. Not investment advice.</p>
+    <p><a href="https://github.com/buffedlizard55-lab/DrugAnalysis" target="_blank" rel="noopener">Source repository</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank" rel="noopener">Raw CSVs</a></p>
   </div>
 </footer>
 
