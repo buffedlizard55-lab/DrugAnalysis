@@ -48,6 +48,11 @@
     <p class="section-desc">Headline numbers computed live from the CSVs in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank" rel="noopener">/data</a> —
       no hard-coded totals. Median moves use only rows with verified prices; blank cells are never filled with an estimate.</p>
     <div id="overview-stats" class="stats"></div>
+    <div class="panel" id="coverage-panel">
+      <h3>Historical FDA decision coverage audit</h3>
+      <p class="section-desc">Coverage is shown by decision year, not implied. Blank years are an explicit research backlog; this project will not fill them with unverified or invented entries.</p>
+      <div id="coverage-view"></div>
+    </div>
     <div class="two-col">
       <div class="panel">
         <h3>Highest-scoring US-investable issuers</h3>
@@ -89,9 +94,13 @@
       Where the applicant of record changed after approval (asset sale, acquisition, licence-out) <strong>both</strong> the current holder and the original applicant are shown and the row is flagged.
       Column order follows the project spec: <strong>Exchange is second-to-last</strong> and the row <strong>ID is last</strong>.</p>
     <div class="notice info">
-      <strong>Reading a wide table:</strong> each table now has a <strong>scrollbar above it</strong> that stays in sync with the one underneath, a header row that stays pinned while you scroll down,
-      a pinned first column while you scroll right, <strong>click any row to expand it</strong> and read every field in full (notes, both links, verification status),
-      a <em>Columns ⚙</em> menu to hide what you don't need, <em>Density</em> and <em>Full text</em> toggles, and <em>Export CSV</em> for the rows currently on screen.
+      <strong>Reading a wide table:</strong> the <strong>horizontal review bar is pinned near the top of the viewport</strong> and stays synced with the bar under the table. Drag it to review every field while scrolling down; the header stays pinned and the first column stays visible.
+      <strong>Click any row to expand it</strong> and read every field in full (notes, both links, verification status). Use <em>Columns ⚙</em> to hide fields, <em>Show all rows</em> to review the complete list in one scroll, and <em>Export CSV</em> to preserve the filtered view.
+    </div>
+    <div class="review-actions" aria-label="Master list review actions">
+      <button type="button" class="btn primary" id="approvals-review-all">Review all master-list rows</button>
+      <button type="button" class="btn" id="approvals-jump-table">Jump to table</button>
+      <span class="review-actions-note">The master list excludes private and non-US-only issuers; use their dedicated tabs when needed.</span>
     </div>
     <div id="approvals-view"></div>
   </section>

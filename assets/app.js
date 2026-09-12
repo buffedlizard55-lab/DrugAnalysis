@@ -541,6 +541,25 @@ function median(arr) {
   return v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2;
 }
 
+function drawCoverage(master) {
+  const years = Array.from({ length: 27 }, (_, i) => String(2000 + i));
+  const counts = Object.fromEntries(years.map(y => [y, 0]));
+  master.forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
+  const covered = years.filter(y => counts[y]);
+  const missing = years.filter(y => !counts[y]);
+  const sourceNote = y => master.filter(r => String(r.decision_date || '').startsWith(y))
+    .filter(r => [r.source_url_1, r.source_url_2].some(u => /(^|\\.)fda\\.gov\\//i.test(u || ''))).length;
+  document.getElementById('coverage-view').innerHTML = `
+    <div class="coverage-summary"><strong>${covered.length} of ${years.length} years represented</strong>
+      <span>${master.length} rows currently published · ${missing.length ? 'research backlog: ' + missing.join(', ') : 'no year gaps detected'}</span></div>
+    <div class="coverage-grid" role="list" aria-label="FDA decision rows by year">
+      ${years.map(y => `<div class="coverage-year ${counts[y] ? 'has-data' : 'no-data'}" role="listitem">
+        <strong>${y}</strong><span>${counts[y] ? counts[y] + ' rows' : 'not populated'}</span>
+        ${counts[y] ? `<small>${sourceNote(y)} FDA-domain source${sourceNote(y) === 1 ? '' : 's'}</small>` : ''}
+      </div>`).join('')}
+    </div>`;
+}
+
 function drawOverview() {
   const core = overview.core, master = overview.master, scores = overview.scores;
   if (!core.length) return;
@@ -554,6 +573,10 @@ function drawOverview() {
   const medApprT1 = median(approvals.map(r => r.pct_change_t1));
   const fmt = v => v === null ? 'n/a' : (v >= 0 ? '+' : '') + v.toFixed(2) + '%';
   const latest = core.map(r => r.decision_date).sort().pop();
+  /* 2026 is a separate audit slice: do not imply that a secondary article is
+     an official FDA record. Count rows with an FDA-domain source explicitly. */
+  const y2026 = master.filter(r => String(r.decision_date || '').startsWith('2026'));
+  const official2026 = y2026.filter(r => [r.source_url_1, r.source_url_2].some(u => /(^|\.)fda\.gov\//i.test(u || '')));
 
   const cards = [
     { k: 'FDA decisions tracked', v: core.length, s: 'latest verified action ' + latest },
@@ -562,7 +585,8 @@ function drawOverview() {
     { k: 'US-investable issuers', v: usRows.length, s: 'of ' + master.length + ' approval rows in the master list' },
     { k: 'Rows with verified prices', v: priced.length, s: 'blank cells are never estimated' },
     { k: 'Rows flagged for review', v: flagged.length, s: 'irregularities explained in Notes' },
-    { k: 'Companies scored', v: scores.length, s: 'numeric track-record score 0–100' }
+    { k: 'Companies scored', v: scores.length, s: 'numeric track-record score 0–100' },
+    { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' }
   ];
   document.getElementById('overview-stats').innerHTML = cards.map(x => `
     <div class="stat-card"><div class="stat-card-value">${escapeHtml(String(x.v))}</div>
@@ -896,6 +920,7 @@ Promise.all([
   overview.snapshots = snapshots; overview.crls = crls;
 
   fillCounts();
+  drawCoverage(master);
   drawOverview();
   initEngine();
 
@@ -927,6 +952,18 @@ Promise.all([
       { key: 'pathway', label: 'All pathways', field: 'review_pathway' },
       { key: 'exch', label: 'All exchanges', field: 'exchange' }],
     note: '<p class="hscroll-hint">This view shows the <strong>investable universe</strong>: US-listed issuers, US OTC ADRs, and companies that were US-listed at the time of the decision but have since been acquired or delisted (their price reaction is still part of the historical record). Private companies and non-US-only listings are on their own tabs. Exchange is the second-to-last column and the row ID is last.</p>'
+  });
+
+  /* Keep the two review modes available at the top of the section. The
+     generated DataTable owns pagination/state, so these buttons delegate to
+     its existing controls rather than creating a second source of truth. */
+  document.getElementById('approvals-review-all').addEventListener('click', () => {
+    const allRows = document.getElementById('approvals-allrows');
+    if (allRows) allRows.click();
+    document.getElementById('approvals-view').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  document.getElementById('approvals-jump-table').addEventListener('click', () => {
+    document.getElementById('approvals-view').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   /* Private companies — their own subpage, out of the investable universe */
