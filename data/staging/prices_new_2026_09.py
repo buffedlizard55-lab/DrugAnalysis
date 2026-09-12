@@ -539,3 +539,83 @@ CAPTURES.update({
         "note": "4 Jul 2019 was a market holiday, so the next session after the approval is 5 Jul.",
     },
 })
+
+# ---------------- 2020 cohort (from FDA's New Drug Therapy Approvals 2020 report) ----------------
+CAPTURES.update({
+    "BPMC@2020-01-09": {
+        "name": None, "exchange": None, "currency": None, "decision": "2020-01-09", "series": [],
+        "unavailable": "Yahoo Finance returned \"No data found, symbol may be delisted\" - Blueprint "
+                       "Medicines (BPMC) was acquired by Sanofi in 2025 and its history has been "
+                       "withdrawn from the chart API.",
+    },
+    "BMY@2020-03-25": {
+        "name": "Bristol-Myers Squibb Company", "exchange": "NYSE", "currency": "USD",
+        "decision": "2020-03-25",
+        "series": [(1584624600, 48.79), (1584711000, 48.40), (1584970200, 46.40),
+                   (1585056600, 49.24), (1585143000, 49.35), (1585229400, 52.25),
+                   (1585315800, 52.79), (1585575000, 54.39)],
+        "note": "Approved during the Mar-2020 COVID crash; the +6% move into 26 Mar cannot be "
+                "separated from the market-wide rally of that week.",
+    },
+    "AZN@2020-04-10": {
+        "name": "AstraZeneca PLC", "exchange": "NYSE", "currency": "USD", "decision": "2020-04-10",
+        "series": [(1586179800, 88.62), (1586266200, 86.20), (1586352600, 87.70),
+                   (1586439000, 89.32), (1586784600, 94.72), (1586871000, 97.36),
+                   (1586957400, 96.06)],
+        "note": "2020-04-10 was Good Friday - US markets were CLOSED. The first session after the "
+                "approval is Mon 13 Apr, so the +6.0% move is measured to that session rather than "
+                "to the approval date itself.",
+    },
+    "INCY@2020-04-17": {
+        "name": "Incyte Corporation", "exchange": "NasdaqGS", "currency": "USD",
+        "decision": "2020-04-17",
+        "series": [(1586784600, 88.01), (1586871000, 91.28), (1586957400, 90.95),
+                   (1587043800, 95.66), (1587130200, 100.00), (1587389400, 101.19),
+                   (1587475800, 99.46), (1587562200, 100.97)],
+    },
+    "LLY@2020-05-08": {
+        "name": "Eli Lilly and Company", "exchange": "NYSE", "currency": "USD",
+        "decision": "2020-05-08",
+        "series": [(1588599000, 153.28), (1588685400, 157.89), (1588771800, 156.68),
+                   (1588858200, 152.97), (1588944600, 153.51), (1589203800, 158.55),
+                   (1589290200, 157.72), (1589376600, 157.93)],
+    },
+    "GSK@2020-08-05": {
+        "name": "GSK plc", "exchange": "NYSE", "currency": "USD", "decision": "2020-08-05",
+        "series": [(1596115800, 40.25), (1596202200, 40.32), (1596461400, 41.29),
+                   (1596547800, 41.24), (1596634200, 41.21), (1596720600, 40.97),
+                   (1596807000, 40.79), (1597066200, 40.94)],
+    },
+    "RHHBY@2020-08-07": {
+        "name": "Roche Holding AG", "exchange": "OTC Markets OTCQX", "currency": "USD",
+        "decision": "2020-08-07",
+        "series": [(1596461400, 44.16), (1596547800, 43.83), (1596634200, 43.40),
+                   (1596720600, 43.43), (1596807000, 43.01), (1597066200, 42.80),
+                   (1597152600, 42.17), (1597239000, 43.37)],
+    },
+    "GILD@2020-10-22": {
+        "name": "Gilead Sciences, Inc.", "exchange": "NasdaqGS", "currency": "USD",
+        "decision": "2020-10-22",
+        "series": [(1602855000, 62.00), (1603114200, 60.57), (1603200600, 60.55),
+                   (1603287000, 60.21), (1603373400, 60.67), (1603459800, 60.79),
+                   (1603719000, 59.96), (1603805400, 60.01)],
+        "note": "Full approval of remdesivir ~3 weeks after the Oct-2020 US election-period "
+                "volatility; the move is small and confounded.",
+    },
+    "ALNY@2020-11-23": {
+        "name": "Alnylam Pharmaceuticals, Inc.", "exchange": "NasdaqGS", "currency": "USD",
+        "decision": "2020-11-23",
+        "series": [(1605623400, 129.30), (1605709800, 125.45), (1605796200, 123.81),
+                   (1605882600, 124.70), (1606141800, 123.02), (1606228200, 125.66),
+                   (1606314600, 125.45), (1606487400, 129.86)],
+    },
+    "RYTM@2020-11-25": {
+        "name": "Rhythm Pharmaceuticals, Inc.", "exchange": "NasdaqGM", "currency": "USD",
+        "decision": "2020-11-25",
+        "series": [(1605796200, 21.83), (1605882600, 21.37), (1606141800, 22.00),
+                   (1606228200, 23.20), (1606314600, 24.16), (1606487400, 29.27),
+                   (1606746600, 30.95)],
+        "note": "26 Nov 2020 was Thanksgiving (market holiday), so the next session after the "
+                "approval is Fri 27 Nov, when the stock closed +21.1%.",
+    },
+})
