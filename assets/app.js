@@ -541,6 +541,25 @@ function median(arr) {
   return v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2;
 }
 
+function drawCoverage(master) {
+  const years = Array.from({ length: 27 }, (_, i) => String(2000 + i));
+  const counts = Object.fromEntries(years.map(y => [y, 0]));
+  master.forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
+  const covered = years.filter(y => counts[y]);
+  const missing = years.filter(y => !counts[y]);
+  const sourceNote = y => master.filter(r => String(r.decision_date || '').startsWith(y))
+    .filter(r => [r.source_url_1, r.source_url_2].some(u => /(^|\\.)fda\\.gov\\//i.test(u || ''))).length;
+  document.getElementById('coverage-view').innerHTML = `
+    <div class="coverage-summary"><strong>${covered.length} of ${years.length} years represented</strong>
+      <span>${master.length} rows currently published · ${missing.length ? 'research backlog: ' + missing.join(', ') : 'no year gaps detected'}</span></div>
+    <div class="coverage-grid" role="list" aria-label="FDA decision rows by year">
+      ${years.map(y => `<div class="coverage-year ${counts[y] ? 'has-data' : 'no-data'}" role="listitem">
+        <strong>${y}</strong><span>${counts[y] ? counts[y] + ' rows' : 'not populated'}</span>
+        ${counts[y] ? `<small>${sourceNote(y)} FDA-domain source${sourceNote(y) === 1 ? '' : 's'}</small>` : ''}
+      </div>`).join('')}
+    </div>`;
+}
+
 function drawOverview() {
   const core = overview.core, master = overview.master, scores = overview.scores;
   if (!core.length) return;
@@ -901,6 +920,7 @@ Promise.all([
   overview.snapshots = snapshots; overview.crls = crls;
 
   fillCounts();
+  drawCoverage(master);
   drawOverview();
   initEngine();
 

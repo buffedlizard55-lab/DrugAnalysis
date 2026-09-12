@@ -300,6 +300,14 @@ body.wide-text td.trunc .clip { -webkit-line-clamp: unset; overflow: visible; }
 .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; box-shadow: var(--shadow); margin-bottom: 18px; }
 .panel h3 { margin-top: 0; }
 .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; }
+.coverage-summary { display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline; margin-bottom: 12px; }
+.coverage-summary span { color: var(--muted); font-size: .82rem; }
+.coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 7px; }
+.coverage-year { border: 1px solid var(--border); border-radius: 8px; padding: 8px 9px; display: flex; flex-direction: column; gap: 1px; font-size: .82rem; }
+.coverage-year.has-data { background: var(--good-soft); border-color: #bfe6cd; }
+.coverage-year.no-data { background: var(--warn-soft); border-style: dashed; color: var(--warn); }
+.coverage-year span, .coverage-year small { color: var(--muted); font-size: .7rem; }
+.coverage-year.no-data span { color: var(--warn); }
 
 .notice { background: var(--warn-soft); border: 1px solid #f0dca6; color: #6f4c05; border-radius: 10px; padding: 10px 14px; font-size: .86rem; margin: 10px 0; }
 .notice.info { background: var(--accent-soft); border-color: #c8dcff; color: #1d3f8f; }
