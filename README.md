@@ -2,7 +2,7 @@
 
 Tracking publicly traded biotech &amp; pharma companies against **FDA drug decisions**, **stock-price reactions**, and **clinical-pipeline success rates** — built entirely from official, verifiable sources.
 
-**Live site:** enable GitHub Pages on this repo (Settings → Pages → source: `main` branch, `/docs` folder) to publish the dashboard at `https://<org>.github.io/DrugAnalysis/`.
+**Live site:** https://buffedlizard55-lab.github.io/DrugAnalysis/ — served directly from this repository's root by GitHub Pages. The site reads the CSVs in [`/data`](https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data) directly, so there is no separate copy to keep in sync: every commit to `main` publishes the current data automatically.
 
 ## What's here
 
@@ -13,7 +13,7 @@ Tracking publicly traded biotech &amp; pharma companies against **FDA drug decis
 | `data/stock_price_snapshots.csv` | 154 rows of closing prices immediately before/after each FDA decision, pulled live from the Yahoo Finance chart API (each fetch's reported company name was checked against the expected issuer before use). Non-US listings are in native currency (JPY/EUR/CHF) and noted. Rows are left blank (never estimated) where historical data could not be retrieved, e.g. for delisted/acquired tickers — the 2021–2023 cohort includes several applicants later acquired (Reata, Iveric, ImmunoGen, Mirati, CTI BioPharma, Marinus, Spectrum, G1, SpringWorks, Amicus, Revance, Mallinckrodt, Polarean, Cidara). |
 | `data/company_scorecards.csv` | 36 per-company scorecards: 7 deep-dive scorecards (CRL recipients) plus 29 generated scorecards for every company with two or more tracked FDA decisions 2021–2026 (Pfizer, Lilly, BMS, Roche/Genentech, GSK, AstraZeneca, Novartis, J&J, UCB, Sanofi, Merck, Ionis, Takeda, Otsuka, and more) — each lists every tracked approval with pathway and verified post-approval status (withdrawals, accelerated-to-traditional conversions). |
 | `data/core_analysis_table.csv` | The primary joined table (207 rows: 200 approvals + 7 CRLs) — company, drug, FDA decision, stock-price reaction, and a pipeline success-rate summary in one place, joined on ticker + decision date. |
-| `docs/` | A static GitHub Pages site (plain HTML/CSS/JS, no build step) that renders all of the above as searchable tables and scorecards. |
+| `index.html` + `assets/` | A static GitHub Pages site (plain HTML/CSS/JS, no build step) that renders all of the above as searchable tables and scorecards. It is served from the repository root and loads the CSVs from `/data` directly. |
 | `scripts/` | Python scripts used to (re)generate each CSV from the sourced data. |
 
 ## Sourcing &amp; verification approach
