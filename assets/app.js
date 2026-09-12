@@ -554,6 +554,10 @@ function drawOverview() {
   const medApprT1 = median(approvals.map(r => r.pct_change_t1));
   const fmt = v => v === null ? 'n/a' : (v >= 0 ? '+' : '') + v.toFixed(2) + '%';
   const latest = core.map(r => r.decision_date).sort().pop();
+  /* 2026 is a separate audit slice: do not imply that a secondary article is
+     an official FDA record. Count rows with an FDA-domain source explicitly. */
+  const y2026 = master.filter(r => String(r.decision_date || '').startsWith('2026'));
+  const official2026 = y2026.filter(r => [r.source_url_1, r.source_url_2].some(u => /(^|\.)fda\.gov\//i.test(u || '')));
 
   const cards = [
     { k: 'FDA decisions tracked', v: core.length, s: 'latest verified action ' + latest },
@@ -562,7 +566,8 @@ function drawOverview() {
     { k: 'US-investable issuers', v: usRows.length, s: 'of ' + master.length + ' approval rows in the master list' },
     { k: 'Rows with verified prices', v: priced.length, s: 'blank cells are never estimated' },
     { k: 'Rows flagged for review', v: flagged.length, s: 'irregularities explained in Notes' },
-    { k: 'Companies scored', v: scores.length, s: 'numeric track-record score 0–100' }
+    { k: 'Companies scored', v: scores.length, s: 'numeric track-record score 0–100' },
+    { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' }
   ];
   document.getElementById('overview-stats').innerHTML = cards.map(x => `
     <div class="stat-card"><div class="stat-card-value">${escapeHtml(String(x.v))}</div>
