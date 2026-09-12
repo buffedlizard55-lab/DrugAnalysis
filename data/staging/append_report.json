@@ -1,0 +1,2594 @@
+{
+  "appended": 1035,
+  "rejected": 35,
+  "flagged_for_review": 300,
+  "sources": {
+    "drugs_at_fda": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo={}",
+    "nme_compilation_xlsx": "https://www.fda.gov/media/177921/download?attachment",
+    "nme_compilation_page": "https://www.fda.gov/drugs/drug-approvals-and-databases/compilation-cder-new-molecular-entity-nme-drug-and-new-biologic-approvals"
+  },
+  "rejections": [
+    {
+      "appl": "NDA021084",
+      "brand": "Skin Exposure Reduction Paste Against Chemical Warfare Agents (SERPACWA)",
+      "reason": "brand and generic both absent from openFDA products"
+    },
+    {
+      "appl": "NDA021131",
+      "brand": "Zyvox",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021132",
+      "brand": "Zyvox",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021025",
+      "brand": "Exelon",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021176",
+      "brand": "Welchol",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021251",
+      "brand": "Kaletra",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021363",
+      "brand": "CLARINEX",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021423",
+      "brand": "NEURONTIN",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021424",
+      "brand": "NEURONTIN",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021267",
+      "brand": "Vfend",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021626",
+      "brand": "Radiogardase",
+      "reason": "brand and generic both absent from openFDA products"
+    },
+    {
+      "appl": "NDA021466",
+      "brand": "VFEND",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021681",
+      "brand": "Tindamax",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021682",
+      "brand": "Tindamax",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021751",
+      "brand": "[drug marketed without a proprietary name]",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021563",
+      "brand": "CLARINEX",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021358",
+      "brand": "Multihance",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA020988",
+      "brand": "PROTONIX IV",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021723",
+      "brand": "Lyrica",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021754",
+      "brand": "Mycamine",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021798",
+      "brand": "Baraclude",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "BLA021859",
+      "brand": "Hylenex",
+      "reason": "brand and generic both absent from openFDA products"
+    },
+    {
+      "appl": "NDA021394",
+      "brand": "ADVIL PM",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021968",
+      "brand": "Sutent",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021948",
+      "brand": "Eraxis",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021708",
+      "brand": "EMSAM",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA022072",
+      "brand": "Sprycel",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA022223",
+      "brand": "TRIESENCE",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA022207",
+      "brand": "MORPHINE SULFATE",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA022292",
+      "brand": "APTIVUS",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA021591",
+      "brand": "RIOMET",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA022254",
+      "brand": "Vimpat",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA022012",
+      "brand": "COREG CR",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA022006",
+      "brand": "Sabril",
+      "reason": "already present in fda_decisions_master.csv"
+    },
+    {
+      "appl": "NDA200535",
+      "brand": "OXYCODONE HYDROCHLORIDE",
+      "reason": "already present in fda_decisions_master.csv"
+    }
+  ],
+  "flags": [
+    {
+      "decision_id": "D637",
+      "appl": "074973",
+      "brand": "PRIMSOL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D642",
+      "appl": "021107",
+      "brand": "Lotronex",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D643",
+      "appl": "021151",
+      "brand": "BETAPACE AF",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D652",
+      "appl": "021124",
+      "brand": "LAMISIL AT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D654",
+      "appl": "020971",
+      "brand": "Septocaine",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D667",
+      "appl": "021127",
+      "brand": "OPTIVAR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D669",
+      "appl": "021142",
+      "brand": "OLUX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D673",
+      "appl": "020715",
+      "brand": "Trelstar Depot",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient",
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D676",
+      "appl": "020883",
+      "brand": "Acova",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient"
+      ]
+    },
+    {
+      "decision_id": "D695",
+      "appl": "021210",
+      "brand": "UNITHROID",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D716",
+      "appl": "020985",
+      "brand": "CARAC",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D718",
+      "appl": "021135",
+      "brand": "VENOFER",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D737",
+      "appl": "103949",
+      "brand": "Peg-Intron",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient"
+      ]
+    },
+    {
+      "decision_id": "D749",
+      "appl": "021169",
+      "brand": "Reminyl",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient"
+      ]
+    },
+    {
+      "decision_id": "D754",
+      "appl": "020950",
+      "brand": "DUONEB",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D761",
+      "appl": "020949",
+      "brand": "ACCUNEB",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D770",
+      "appl": "050755",
+      "brand": "AUGMENTIN ES-600",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D772",
+      "appl": "021105",
+      "brand": "SULFAMETHOXAZOLE AND TRIMETHOPRIM AND PHENAZOPYRIDINE HYDROCHLORIDE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D775",
+      "appl": "021288",
+      "brand": "TRELSTAR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D783",
+      "appl": "021222",
+      "brand": "Spectracef",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D799",
+      "appl": "021319",
+      "brand": "Avodart",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D818",
+      "appl": "021342",
+      "brand": "LEVO-T",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D825",
+      "appl": "021310",
+      "brand": "ALORA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D836",
+      "appl": "021191",
+      "brand": "Imagent",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D847",
+      "appl": "021200",
+      "brand": "Zelnorm",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D852",
+      "appl": "050741",
+      "brand": "DUAC",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D854",
+      "appl": "021447",
+      "brand": "ZANAFLEX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D859",
+      "appl": "050785",
+      "brand": "AUGMENTIN XR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D865",
+      "appl": "103964",
+      "brand": "Pegasys",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D867",
+      "appl": "021408",
+      "brand": "MENTAX-TC",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D870",
+      "appl": "021116",
+      "brand": "THYRO-TABS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D874",
+      "appl": "021456",
+      "brand": "ACIPHEX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D875",
+      "appl": "050763",
+      "brand": "MITOZYTREX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D884",
+      "appl": "021314",
+      "brand": "IDKIT:HP",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D886",
+      "appl": "021375",
+      "brand": "ALAVERT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D889",
+      "appl": "020782",
+      "brand": "DEPAKOTE ER",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D890",
+      "appl": "021321",
+      "brand": "Extraneal",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D898",
+      "appl": "021305",
+      "brand": "HICON",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D899",
+      "appl": "125036",
+      "brand": "Amevive",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D907",
+      "appl": "021367",
+      "brand": "FEMRING",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D912",
+      "appl": "021158",
+      "brand": "Factive",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D919",
+      "appl": "021503",
+      "brand": "VIRACEPT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D923",
+      "appl": "021496",
+      "brand": "DUOCAINE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D925",
+      "appl": "020800",
+      "brand": "ADRENACLICK",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D929",
+      "appl": "021485",
+      "brand": "STALEVO 75",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D931",
+      "appl": "021543",
+      "brand": "STRIANT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D936",
+      "appl": "125011",
+      "brand": "Bexxar",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D938",
+      "appl": "021299",
+      "brand": "PEXEVA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D939",
+      "appl": "020452",
+      "brand": "PARAPLATIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D947",
+      "appl": "021525",
+      "brand": "PHOTOFRIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D954",
+      "appl": "021591",
+      "brand": "RIOMET",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D955",
+      "appl": "021572",
+      "brand": "Cubicin",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D958",
+      "appl": "021371",
+      "brand": "ESTRASORB",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D967",
+      "appl": "021435",
+      "brand": "AMVAZ",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D968",
+      "appl": "021490",
+      "brand": "FEMCON FE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D973",
+      "appl": "021320",
+      "brand": "Plenaxis",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D975",
+      "appl": "021385",
+      "brand": "Ertaczo",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D976",
+      "appl": "021388",
+      "brand": "TALC",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D977",
+      "appl": "021451",
+      "brand": "ORAQIX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D980",
+      "appl": "021604",
+      "brand": "CHILDREN'S ELIXSURE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D984",
+      "appl": "021395",
+      "brand": "Spiriva Handihaler",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient"
+      ]
+    },
+    {
+      "decision_id": "D985",
+      "appl": "021594",
+      "brand": "AMIODARONE HYDROCHLORIDE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D987",
+      "appl": "021644",
+      "brand": "CLOBEX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D988",
+      "appl": "021166",
+      "brand": "ESTROGEL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D990",
+      "appl": "125084",
+      "brand": "Erbitux",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D999",
+      "appl": "021211",
+      "brand": "FOLLISTIM AQ",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1007",
+      "appl": "021264",
+      "brand": "Apokyn",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1008",
+      "appl": "021574",
+      "brand": "FORTAMET",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1011",
+      "appl": "021504",
+      "brand": "LIDOSITE TOPICAL SYSTEM KIT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1012",
+      "appl": "021443",
+      "brand": "ENJUVIA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1015",
+      "appl": "021618",
+      "brand": "Tindamax",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1016",
+      "appl": "021671",
+      "brand": "DEPODUR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1023",
+      "appl": "021530",
+      "brand": "MELOXICAM",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1026",
+      "appl": "021667",
+      "brand": "NutreStore",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1028",
+      "appl": "021369",
+      "brand": "CODEPREX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1030",
+      "appl": "050665",
+      "brand": "Cefzil",
+      "flags": [
+        "IRREGULARITY: CDER NME compilation approval date ['1991-12-23'] differs from Drugs@FDA 2004-06-23",
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1032",
+      "appl": "103928",
+      "brand": "NeutroSpec",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1042",
+      "appl": "021768",
+      "brand": "FLUDEOXYGLUCOSE F18",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1043",
+      "appl": "021749",
+      "brand": "[drug marketed without a proprietary name]",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient",
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1045",
+      "appl": "021633",
+      "brand": "FEMTRACE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1050",
+      "appl": "021756",
+      "brand": "Macugen",
+      "flags": [
+        "IRREGULARITY: CDER NME compilation approval date ['2004-12-17'] differs from Drugs@FDA 2004-09-17"
+      ]
+    },
+    {
+      "decision_id": "D1052",
+      "appl": "021044",
+      "brand": "PALLADONE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1053",
+      "appl": "021727",
+      "brand": "AMLEXANOX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1060",
+      "appl": "050801",
+      "brand": "EVOCLIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1061",
+      "appl": "021665",
+      "brand": "Amphadase",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1063",
+      "appl": "021486",
+      "brand": "LIDOCAINE HYDROCHLORIDE AND EPINEPHRINE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1067",
+      "appl": "021654",
+      "brand": "Omacor",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient",
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1069",
+      "appl": "021743",
+      "brand": "Tarceva",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1071",
+      "appl": "020564",
+      "brand": "Epivir",
+      "flags": [
+        "IRREGULARITY: CDER NME compilation approval date ['1995-11-17'] differs from Drugs@FDA 2004-11-22"
+      ]
+    },
+    {
+      "decision_id": "D1078",
+      "appl": "021710",
+      "brand": "EQUETRO",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1082",
+      "appl": "021476",
+      "brand": "Lunesta",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1083",
+      "appl": "021670",
+      "brand": "VisionBlue",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1086",
+      "appl": "021609",
+      "brand": "ENJUVIA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1091",
+      "appl": "021060",
+      "brand": "Prialt",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1115",
+      "appl": "021669",
+      "brand": "CHLORHEXIDINE GLUCONATE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1117",
+      "appl": "021693",
+      "brand": "RYBIX ODT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1119",
+      "appl": "021350",
+      "brand": "TRIGLIDE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1120",
+      "appl": "021690",
+      "brand": "ORTHO TRI-CYCLEN 28",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1121",
+      "appl": "021744",
+      "brand": "PROQUIN XR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1126",
+      "appl": "021748",
+      "brand": "GLUMETZA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1127",
+      "appl": "021524",
+      "brand": "PREVANTICS SWABSTICK",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1129",
+      "appl": "021724",
+      "brand": "LYRICA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1137",
+      "appl": "021623",
+      "brand": "SYNERA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1143",
+      "appl": "021823",
+      "brand": "ACTONEL WITH CALCIUM (COPACKAGED)",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1144",
+      "appl": "021406",
+      "brand": "FORTICAL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1145",
+      "appl": "021799",
+      "brand": "QUALAQUIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1149",
+      "appl": "021273",
+      "brand": "FOLLISTIM AQ",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1151",
+      "appl": "021839",
+      "brand": "Increlex",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1153",
+      "appl": "021692",
+      "brand": "ULTRAM ER",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1158",
+      "appl": "021716",
+      "brand": "Hydase",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1162",
+      "appl": "021807",
+      "brand": "SOLTAMOX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1165",
+      "appl": "021923",
+      "brand": "Nexavar",
+      "flags": [
+        "IRREGULARITY: CDER NME compilation approval date ['2005-12-20'] differs from Drugs@FDA 2005-12-01"
+      ]
+    },
+    {
+      "decision_id": "D1166",
+      "appl": "021884",
+      "brand": "Iplex",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1170",
+      "appl": "021885",
+      "brand": "CLIMARA PRO",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1177",
+      "appl": "021938",
+      "brand": "Sutent",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1178",
+      "appl": "021247",
+      "brand": "AEROSPAN HFA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1179",
+      "appl": "021526",
+      "brand": "Ranexa",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1182",
+      "appl": "021026",
+      "brand": "VUSION",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1183",
+      "appl": "021632",
+      "brand": "Eraxis",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1186",
+      "appl": "021336",
+      "brand": "EMSAM",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1193",
+      "appl": "021483",
+      "brand": "GEODON",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1194",
+      "appl": "022010",
+      "brand": "SEPTOCAINE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1195",
+      "appl": "021514",
+      "brand": "DAYTRANA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1197",
+      "appl": "021897",
+      "brand": "VIVITROL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1202",
+      "appl": "021641",
+      "brand": "Azilect",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1203",
+      "appl": "021860",
+      "brand": "SARAFEM",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1204",
+      "appl": "021338",
+      "brand": "IONSYS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1214",
+      "appl": "021611",
+      "brand": "OPANA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1216",
+      "appl": "021976",
+      "brand": "Prezista",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1218",
+      "appl": "021717",
+      "brand": "PLIAGLIS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1225",
+      "appl": "125151",
+      "brand": "Elaprase",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1226",
+      "appl": "021958",
+      "brand": "LAMISIL AT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1227",
+      "appl": "021910",
+      "brand": "NORMOCARB HF 35",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1228",
+      "appl": "021569",
+      "brand": "SODIUM CHLORIDE 0.9% IN PLASTIC CONTAINER",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1230",
+      "appl": "021946",
+      "brand": "XOLEGEL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1234",
+      "appl": "021956",
+      "brand": "DUTOPROL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1237",
+      "appl": "021978",
+      "brand": "VERDESO",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1242",
+      "appl": "021983",
+      "brand": "DUODOTE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1243",
+      "appl": "050786",
+      "brand": "Pylera",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1254",
+      "appl": "022012",
+      "brand": "COREG CR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1259",
+      "appl": "021703",
+      "brand": "PRISMASOL B22GK 2/0 IN PLASTIC CONTAINER",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1262",
+      "appl": "021780",
+      "brand": "NITROMIST",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1266",
+      "appl": "022041",
+      "brand": "CYANOKIT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1269",
+      "appl": "050809",
+      "brand": "AZITHROMYCIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1272",
+      "appl": "022013",
+      "brand": "OLUX E",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1276",
+      "appl": "021777",
+      "brand": "AMRIX",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1280",
+      "appl": "022016",
+      "brand": "VAPRISOL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1281",
+      "appl": "021985",
+      "brand": "Tekturna",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1283",
+      "appl": "125166",
+      "brand": "Soliris",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1290",
+      "appl": "022043",
+      "brand": "INVEGA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1293",
+      "appl": "022007",
+      "brand": "PERFOROMIST",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1301",
+      "appl": "022038",
+      "brand": "DIVIGEL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1302",
+      "appl": "021738",
+      "brand": "EXTINA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1303",
+      "appl": "021853",
+      "brand": "OMACOR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1306",
+      "appl": "021875",
+      "brand": "NUVIGIL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1311",
+      "appl": "022070",
+      "brand": "ATRALIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1313",
+      "appl": "022102",
+      "brand": "CALOMIST",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1319",
+      "appl": "022114",
+      "brand": "ZINGO",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1321",
+      "appl": "022119",
+      "brand": "[drug marketed without a proprietary name]",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient"
+      ]
+    },
+    {
+      "decision_id": "D1322",
+      "appl": "022074",
+      "brand": "Somatuline Depot",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1324",
+      "appl": "022025",
+      "brand": "TOTECT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1326",
+      "appl": "022137",
+      "brand": "FLUDARABINE PHOSPHATE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1328",
+      "appl": "022026",
+      "brand": "AMLODIPINE BESYLATE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1330",
+      "appl": "021961",
+      "brand": "SIMVASTATIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1334",
+      "appl": "022065",
+      "brand": "Ixempra",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient",
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1339",
+      "appl": "125164",
+      "brand": "Mircera",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1341",
+      "appl": "022172",
+      "brand": "SEROQUEL XR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1343",
+      "appl": "022124",
+      "brand": "OMNARIS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1345",
+      "appl": "022032",
+      "brand": "OMEPRAZOLE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1346",
+      "appl": "022181",
+      "brand": "Kuvan",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1351",
+      "appl": "022187",
+      "brand": "Intelence",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1352",
+      "appl": "022107",
+      "brand": "TEKTURNA HCT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1353",
+      "appl": "021538",
+      "brand": "ACCRETROPIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1354",
+      "appl": "050813",
+      "brand": "MOXATAG",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1355",
+      "appl": "022023",
+      "brand": "Emend",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1357",
+      "appl": "022029",
+      "brand": "SALONPAS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1359",
+      "appl": "125249",
+      "brand": "Arcalyst",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1363",
+      "appl": "020140",
+      "brand": "FUSILEV",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1378",
+      "appl": "022159",
+      "brand": "ORAVERSE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1380",
+      "appl": "021775",
+      "brand": "Entereg",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1381",
+      "appl": "022104",
+      "brand": "VENLAFAXINE HYDROCHLORIDE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1393",
+      "appl": "022276",
+      "brand": "NICARDIPINE HYDROCHLORIDE IN 0.9% SODIUM CHLORIDE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1397",
+      "appl": "022186",
+      "brand": "AK-FLUOR 25%",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1415",
+      "appl": "022304",
+      "brand": "Nucynta",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1417",
+      "appl": "021788",
+      "brand": "SYNTHETIC CONJUGATED ESTROGENS A",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1420",
+      "appl": "022244",
+      "brand": "Lusedra",
+      "flags": [
+        "IRREGULARITY: CDER NME compilation approval date ['2008-12-12'] differs from Drugs@FDA 2008-12-08"
+      ]
+    },
+    {
+      "decision_id": "D1425",
+      "appl": "022196",
+      "brand": "ZOLPIMIST",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1426",
+      "appl": "021711",
+      "brand": "Vasovist",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient"
+      ]
+    },
+    {
+      "decision_id": "D1430",
+      "appl": "021745",
+      "brand": "RYZOLT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1437",
+      "appl": "022278",
+      "brand": "MEMBRANEBLUE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1446",
+      "appl": "125274",
+      "brand": "Dysport",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1449",
+      "appl": "021918",
+      "brand": "CETRAXAL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1450",
+      "appl": "020866",
+      "brand": "CYCLOSET",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1451",
+      "appl": "022192",
+      "brand": "Fanapt",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1455",
+      "appl": "022327",
+      "brand": "PREVACID 24 HR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1457",
+      "appl": "022332",
+      "brand": "ADCIRCA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1463",
+      "appl": "125319",
+      "brand": "Ilaris",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1467",
+      "appl": "022306",
+      "brand": "SOTALOL HYDROCHLORIDE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1469",
+      "appl": "021998",
+      "brand": "PLAN B ONE-STEP",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1472",
+      "appl": "022266",
+      "brand": "ONSOLIS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1475",
+      "appl": "022294",
+      "brand": "ZIDOVUDINE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1477",
+      "appl": "022351",
+      "brand": "COLCRYS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1482",
+      "appl": "022363",
+      "brand": "Livalo",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1485",
+      "appl": "022321",
+      "brand": "EMBEDA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1487",
+      "appl": "022418",
+      "brand": "FIBRICOR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1488",
+      "appl": "020427",
+      "brand": "Sabril",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1489",
+      "appl": "022210",
+      "brand": "ZENPEP",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1498",
+      "appl": "022468",
+      "brand": "Folotyn",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1500",
+      "appl": "022331",
+      "brand": "KAPVAY",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1502",
+      "appl": "022353",
+      "brand": "COLCRYS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1506",
+      "appl": "021919",
+      "brand": "BYETTA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1507",
+      "appl": "020947",
+      "brand": "PENNSAID",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1509",
+      "appl": "022430",
+      "brand": "LYSTEDA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1510",
+      "appl": "022395",
+      "brand": "Qutenza",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1511",
+      "appl": "078405",
+      "brand": "NICARDIPINE HYDROCHLORIDE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1514",
+      "appl": "125277",
+      "brand": "Kalbitor",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1515",
+      "appl": "022281",
+      "brand": "ZEGERID OTC",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1516",
+      "appl": "022499",
+      "brand": "CLONIDINE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1517",
+      "appl": "022500",
+      "brand": "NEXICLON XR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1522",
+      "appl": "022250",
+      "brand": "Ampyra",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1524",
+      "appl": "022509",
+      "brand": "LAMICTAL XR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1525",
+      "appl": "022411",
+      "brand": "OLEPTRO",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1526",
+      "appl": "125338",
+      "brand": "Xiaflex",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1530",
+      "appl": "022466",
+      "brand": "ORABLOC",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1531",
+      "appl": "022575",
+      "brand": "Vpriv",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1533",
+      "appl": "022437",
+      "brand": "TRELSTAR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1536",
+      "appl": "022036",
+      "brand": "SILENOR",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1541",
+      "appl": "021201",
+      "brand": "Asclera",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1542",
+      "appl": "022272",
+      "brand": "OXYCONTIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1543",
+      "appl": "022523",
+      "brand": "PANCREAZE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1544",
+      "appl": "022404",
+      "brand": "ORAVIG",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1547",
+      "appl": "022484",
+      "brand": "ONMEL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1548",
+      "appl": "022511",
+      "brand": "VIMOVO",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1556",
+      "appl": "022555",
+      "brand": "CYSVIEW KIT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1558",
+      "appl": "022460",
+      "brand": "JALYN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1559",
+      "appl": "201023",
+      "brand": "Jevtana",
+      "flags": [
+        "brand name not in openFDA product list; matched on active ingredient"
+      ]
+    },
+    {
+      "decision_id": "D1564",
+      "appl": "022377",
+      "brand": "ALSUMA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1565",
+      "appl": "021306",
+      "brand": "BUTRANS",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1566",
+      "appl": "022524",
+      "brand": "ZUPLENZ",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1567",
+      "appl": "050803",
+      "brand": "VELTIN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1574",
+      "appl": "022474",
+      "brand": "Ella",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1579",
+      "appl": "125293",
+      "brand": "Krystexxa",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1582",
+      "appl": "022368",
+      "brand": "ARIDOL KIT",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1584",
+      "appl": "022560",
+      "brand": "ATELVIA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1585",
+      "appl": "022432",
+      "brand": "H.P. ACTHAR GEL",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1588",
+      "appl": "022501",
+      "brand": "LO LOESTRIN FE",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1589",
+      "appl": "200603",
+      "brand": "Latuda",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1590",
+      "appl": "021879",
+      "brand": "NUEDEXTA",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1592",
+      "appl": "022450",
+      "brand": "OFIRMEV",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1595",
+      "appl": "022505",
+      "brand": "Egrifta",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1597",
+      "appl": "022462",
+      "brand": "GABLOFEN",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1599",
+      "appl": "022504",
+      "brand": "AXIRON",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1605",
+      "appl": "022408",
+      "brand": "Natroba",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1606",
+      "appl": "201277",
+      "brand": "Gadavist",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1608",
+      "appl": "202379",
+      "brand": "Zytiga",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1609",
+      "appl": "202022",
+      "brand": "Edurant",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1610",
+      "appl": "022345",
+      "brand": "Potiga",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1612",
+      "appl": "022150",
+      "brand": "Firazyr",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1613",
+      "appl": "021825",
+      "brand": "Ferriprox",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1614",
+      "appl": "125359",
+      "brand": "Erwinaze",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1615",
+      "appl": "202833",
+      "brand": "Picato",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1619",
+      "appl": "021746",
+      "brand": "Surfaxin",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1620",
+      "appl": "202799",
+      "brand": "Omontys",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1621",
+      "appl": "202008",
+      "brand": "Amyvid",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1622",
+      "appl": "202276",
+      "brand": "Stendra",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1623",
+      "appl": "022458",
+      "brand": "Elelyso",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1625",
+      "appl": "022529",
+      "brand": "Belviq",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1626",
+      "appl": "202611",
+      "brand": "Myrbetriq",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1627",
+      "appl": "202535",
+      "brand": "Prepopik",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1628",
+      "appl": "202450",
+      "brand": "Tudorza Pressair",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1629",
+      "appl": "125294",
+      "brand": "Granix",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1630",
+      "appl": "203155",
+      "brand": "[drug marketed without a proprietary name]",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1631",
+      "appl": "125422",
+      "brand": "Jetrea",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1632",
+      "appl": "203585",
+      "brand": "Synribo",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1633",
+      "appl": "125349",
+      "brand": "[drug marketed without a proprietary name]",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1635",
+      "appl": "203469",
+      "brand": "Iclusig",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1636",
+      "appl": "203858",
+      "brand": "Juxtapid",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1637",
+      "appl": "022271",
+      "brand": "Nesina",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1641",
+      "appl": "202207",
+      "brand": "Lymphoseek",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1642",
+      "appl": "204781",
+      "brand": "Dotarem",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1644",
+      "appl": "204042",
+      "brand": "Invokana",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1647",
+      "appl": "204410",
+      "brand": "Opsumit",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1649",
+      "appl": "206494",
+      "brand": "Avycaz",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1650",
+      "appl": "205750",
+      "brand": "Cholbam",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1651",
+      "appl": "208169",
+      "brand": "Xuriden",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1652",
+      "appl": "125561",
+      "brand": "Kanuma",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1653",
+      "appl": "209570",
+      "brand": "[drug marketed without a proprietary name]",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1654",
+      "appl": "208945",
+      "brand": "Xepi",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1655",
+      "appl": "208700",
+      "brand": "Lutathera",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1657",
+      "appl": "210491",
+      "brand": "Symdeko",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1658",
+      "appl": "210951",
+      "brand": "Erleada",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1659",
+      "appl": "761065",
+      "brand": "Trogarzo",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1661",
+      "appl": "761068",
+      "brand": "Crysvita",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1662",
+      "appl": "209299",
+      "brand": "Tavalisse",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1663",
+      "appl": "210493",
+      "brand": "Akynzeo",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1664",
+      "appl": "209229",
+      "brand": "Lucemyra",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1666",
+      "appl": "207078",
+      "brand": "Lokelma",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1667",
+      "appl": "211371",
+      "brand": "Zulresso",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1668",
+      "appl": "210828",
+      "brand": "[drug marketed without a proprietary name]",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    },
+    {
+      "decision_id": "D1669",
+      "appl": "215152",
+      "brand": "Voquezna Triple Pak",
+      "flags": [
+        "sponsor not yet resolved to a verified issuer"
+      ]
+    }
+  ]
+}

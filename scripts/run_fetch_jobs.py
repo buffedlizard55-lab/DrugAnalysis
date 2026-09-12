@@ -160,10 +160,8 @@ def job_openfda_years(spec: dict, outdir: str, entries: list) -> None:
         collected, page, requests = [], 0, []
         while page < max_pages:
             skip = page * limit
-            url = (
-                f"{endpoint}?search={urllib.parse.quote(search, safe=':+[]\"')}"
-                f"&limit={limit}&skip={skip}"
-            )
+            qsearch = urllib.parse.quote(search, safe=':+[]"')
+            url = f"{endpoint}?search={qsearch}&limit={limit}&skip={skip}"
             try:
                 status, body = http_get(url, timeout=spec.get("timeout", 180), retries=spec.get("retries", 4))
             except RuntimeError as exc:
@@ -202,6 +200,77 @@ def job_openfda_years(spec: dict, outdir: str, entries: list) -> None:
         write_payload(dest, body, meta)
         entries.append(meta)
         print(f"ok {sid}: {len(collected)} records -> {dest}", flush=True)
+
+
+def job_openfda_decisions(spec: dict, outdir: str, entries: list) -> None:
+    """Fetch openFDA Drugs@FDA pages per year and commit *only* the extracted
+    original-approval decisions.
+
+    The raw payloads for a single year run to ~10-15 MB (every supplement ever
+    filed against every application), which is far too large to keep in git.
+    The extraction is a pure, deterministic filter implemented in
+    scripts/openfda_decisions.py: it emits one record per NDA/BLA whose ORIG
+    submission was approved in the target year. The manifest records every
+    request URL and the SHA-256 of each raw payload, so the extraction can be
+    reproduced and audited at any time.
+    """
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
+    from openfda_decisions import extract_year  # noqa: WPS433
+
+    endpoint = spec["endpoint"]
+    template = spec["search_template"]
+    limit = int(spec.get("limit", 1000))
+    max_pages = int(spec.get("max_pages", 25))
+    for year in spec["years"]:
+        sid = f"{spec['id']}_{year}"
+        out_name = spec.get("out_template", "decisions_{year}.json").format(year=year)
+        dest = os.path.join(outdir, out_name)
+        if spec.get("skip_existing") and os.path.exists(dest) and os.path.getsize(dest) > 0:
+            entries.append({"id": sid, "status": "skipped-existing", "out": out_name})
+            continue
+        search = template.format(year=year, start=f"{year}0101", end=f"{year}1231")
+        collected, page, requests = [], 0, []
+        while page < max_pages:
+            skip = page * limit
+            qsearch = urllib.parse.quote(search, safe=':+[]"')
+            url = f"{endpoint}?search={qsearch}&limit={limit}&skip={skip}"
+            try:
+                status, body = http_get(url, timeout=spec.get("timeout", 180),
+                                        retries=spec.get("retries", 4))
+            except RuntimeError as exc:
+                entries.append({"id": sid, "url": url, "status": "FAILED", "error": str(exc),
+                                "at_utc": _now()})
+                print(f"FAIL {sid} page {page}: {exc}", flush=True)
+                break
+            try:
+                payload = json.loads(body.decode("utf-8"))
+            except Exception as exc:  # noqa: BLE001
+                entries.append({"id": sid, "url": url, "status": "BAD_JSON", "error": str(exc)})
+                break
+            results = payload.get("results", [])
+            requests.append({"url": url, "status": status, "n_raw_records": len(results),
+                             "raw_sha256": hashlib.sha256(body).hexdigest(), "at_utc": _now()})
+            collected.extend(extract_year(payload, year, url))
+            if len(results) < limit:
+                break
+            page += 1
+            time.sleep(spec.get("sleep", 0.3))
+        # de-duplicate across pages
+        seen, uniq = set(), []
+        for d in collected:
+            key = (d["application_number"], d["decision_date"])
+            if key not in seen:
+                seen.add(key)
+                uniq.append(d)
+        uniq.sort(key=lambda d: (d["decision_date"], d["application_number"]))
+        body = json.dumps({"year": year, "source_endpoint": endpoint, "search": search,
+                           "count": len(uniq), "extracted_utc": _now(), "decisions": uniq},
+                          separators=(",", ":")).encode("utf-8")
+        meta = {"id": sid, "endpoint": endpoint, "search": search, "pages": requests,
+                "decisions": len(uniq), "status": 200}
+        write_payload(dest, body, meta)
+        entries.append(meta)
+        print(f"ok {sid}: {len(uniq)} decisions -> {dest}", flush=True)
 
 
 def job_stooq(spec: dict, outdir: str, entries: list) -> None:
@@ -276,6 +345,7 @@ def job_generic_csv(spec: dict, outdir: str, entries: list) -> None:
 KINDS = {
     "url": job_url,
     "openfda_years": job_openfda_years,
+    "openfda_decisions": job_openfda_decisions,
     "stooq": job_stooq,
     "generic": job_generic_csv,
 }
