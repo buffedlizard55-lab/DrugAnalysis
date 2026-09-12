@@ -124,6 +124,18 @@ h3 { font-size: 1.05rem; }
 
 .row-count { font-size: .8rem; color: var(--muted); white-space: nowrap; }
 
+/* High-visibility controls for the wide FDA master list. These sit above the
+   generated table so the two common review modes are available before a user
+   has to find the table's own controls. */
+.review-actions {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin: 12px 0 4px; padding: 10px 12px;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; box-shadow: var(--shadow);
+}
+.review-actions-note { color: var(--muted); font-size: .8rem; }
+.review-actions:focus-within { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+
 details.colmenu { position: relative; }
 details.colmenu > summary {
   list-style: none; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px;

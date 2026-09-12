@@ -929,6 +929,18 @@ Promise.all([
     note: '<p class="hscroll-hint">This view shows the <strong>investable universe</strong>: US-listed issuers, US OTC ADRs, and companies that were US-listed at the time of the decision but have since been acquired or delisted (their price reaction is still part of the historical record). Private companies and non-US-only listings are on their own tabs. Exchange is the second-to-last column and the row ID is last.</p>'
   });
 
+  /* Keep the two review modes available at the top of the section. The
+     generated DataTable owns pagination/state, so these buttons delegate to
+     its existing controls rather than creating a second source of truth. */
+  document.getElementById('approvals-review-all').addEventListener('click', () => {
+    const allRows = document.getElementById('approvals-allrows');
+    if (allRows) allRows.click();
+    document.getElementById('approvals-view').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  document.getElementById('approvals-jump-table').addEventListener('click', () => {
+    document.getElementById('approvals-view').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
   /* Private companies — their own subpage, out of the investable universe */
   DataTable({
     id: 'private', mount: '#private-view', csv: 'data/fda_decisions_master.csv',
