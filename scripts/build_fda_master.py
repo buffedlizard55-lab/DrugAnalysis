@@ -25,7 +25,7 @@ ROWS = [
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
  "Verified - no public ticker","Allecra Therapeutics and Advanz Pharma are both privately held; no listed equity to track"),
 
-("D003","Sun Pharmaceutical Industries","SUNPHARMA","NSE/BSE India; no US ADR","Letybo","letibotulinumtoxinA-wlbg",
+("D003","Sun Pharmaceutical Industries","SUNPHARMA.NS","NSE/BSE India; no US ADR","Letybo","letibotulinumtoxinA-wlbg",
  "Approval","2024-02-29","Glabellar lines","Standard",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761225s000lbl.pdf",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
@@ -43,7 +43,7 @@ ROWS = [
  "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-patients-liver-scarring-due-fatty-liver-disease",
  "Verified","First FDA-approved MASH treatment"),
 
-("D006","Idorsia Pharmaceuticals","IDIA","SIX Swiss Exchange; no US ticker","Tryvio","aprocitentan",
+("D006","Idorsia Pharmaceuticals","IDIA.SW","SIX Swiss Exchange; no US ticker","Tryvio","aprocitentan",
  "Approval","2024-03-19","Hypertension (add-on)","Standard",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/217686s000lbl.pdf",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
@@ -61,7 +61,7 @@ ROWS = [
  "https://www.ajmc.com/view/fda-approves-sotatercept-first-in-class-treatment-for-adults-with-pah",
  "Verified","Asset acquired via Merck's 2021 buyout of Acceleron Pharma"),
 
-("D009","CSL Limited","CSL","ASX Australia; no US ADR primary","Voydeya","danicopan",
+("D009","CSL Limited","CSL.AX","ASX Australia; no US ADR primary","Voydeya","danicopan",
  "Approval","2024-03-29","Extravascular hemolysis in PNH (add-on)","Standard",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/218037s000lbl.pdf",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
@@ -115,13 +115,13 @@ ROWS = [
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
  "Verified",""),
 
-("D018","Ipsen S.A.","IPN","Euronext Paris; no US ticker","Iqirvo","elafibranor",
+("D018","Ipsen S.A.","IPN.PA","Euronext Paris; no US ticker","Iqirvo","elafibranor",
  "Approval (Accelerated)","2024-06-10","Primary biliary cholangitis (add-on)","Priority/Accelerated",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/218860s000lbl.pdf",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
  "Verified - foreign listing only","Ipsen S.A. trades on Euronext Paris; no primary US listing"),
 
-("D019","Botanix Pharmaceuticals","BOT","ASX Australia; US OTC as BTXXY","Sofdra","sofpironium",
+("D019","Botanix Pharmaceuticals","BOT.AX","ASX Australia; US OTC as BTXXY","Sofdra","sofpironium",
  "Approval","2024-06-20","Primary axillary hyperhidrosis","Standard",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/217347s000lbl.pdf",
  "https://biotechdispatch.com.au/news/fda-approves-botanixs-sofdra-the-first-new-drug-for-primary-axillary-hyperhidrosis",
@@ -145,7 +145,7 @@ ROWS = [
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
  "Verified",""),
 
-("D023","Sun Pharmaceutical Industries","SUNPHARMA","NSE/BSE India; no US ADR","Leqselvi","deuruxolitinib",
+("D023","Sun Pharmaceutical Industries","SUNPHARMA.NS","NSE/BSE India; no US ADR","Leqselvi","deuruxolitinib",
  "Approval","2024-07-25","Severe alopecia areata","Standard",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/217900Orig1s000correctedlbl.pdf",
  "https://synapse.patsnap.com/article/sun-pharmas-leqselvi-gets-fda-approval-for-severe-alopecia",
@@ -193,7 +193,7 @@ ROWS = [
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
  "Verified","Gilead acquired CymaBay Therapeutics in 2024"),
 
-("D031","Galderma Group AG","GALD","SIX Swiss Exchange; no US ticker","Nemluvio","nemolizumab-ilto",
+("D031","Galderma Group AG","GALD.SW","SIX Swiss Exchange; no US ticker","Nemluvio","nemolizumab-ilto",
  "Approval","2024-08-12","Prurigo nodularis","Standard",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761390s000lbl.pdf",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024",
@@ -313,7 +313,7 @@ ROWS = [
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2025",
  "Verified",""),
 
-("D051","Akeso Inc.","9926","HKEX Hong Kong; no US ticker","penpulimab-kcqx","penpulimab-kcqx",
+("D051","Akeso Inc.","9926.HK","HKEX Hong Kong; no US ticker","penpulimab-kcqx","penpulimab-kcqx",
  "Approval","2025-04-23","Nasopharyngeal carcinoma","Standard",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761258Orig1s000correctedlbl.pdf",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2025",
@@ -373,7 +373,7 @@ ROWS = [
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2025",
  "Verified",""),
 
-("D061","CSL Limited","CSL","ASX Australia; no US ADR primary","Andembry","garadacimab-gxii",
+("D061","CSL Limited","CSL.AX","ASX Australia; no US ADR primary","Andembry","garadacimab-gxii",
  "Approval","2025-06-16","Hereditary angioedema prophylaxis","Standard",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761367s000lbl.pdf",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2025",
@@ -469,7 +469,7 @@ ROWS = [
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2025",
  "Verified",""),
 
-("D077","UCB S.A.","UCB","Euronext Brussels; no US ticker","Kygevvi","doxecitine and doxribtimine",
+("D077","UCB S.A.","UCB.BR","Euronext Brussels; no US ticker","Kygevvi","doxecitine and doxribtimine",
  "Approval","2025-11-03","Thymidine kinase 2 deficiency","Priority",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2025",
  "https://www.neurologylive.com/view/fda-approves-doxecitine-doxribtimine-combination-therapy-first-treatment-thymidine-kinase-2-deficiency",
@@ -499,7 +499,7 @@ ROWS = [
  "https://www.drugs.com/pro/lerochol.html",
  "Verified - no public ticker","LIB Therapeutics is privately held"),
 
-("D082","Otsuka Holdings (parent) / Visterra (private US subsidiary)","4578","TSE Japan (parent only)","Voyxact","sibeprenlimab-szsi",
+("D082","Otsuka Holdings (parent) / Visterra (private US subsidiary)","4578.T","TSE Japan (parent only)","Voyxact","sibeprenlimab-szsi",
  "Approval","2025-11-25","IgA nephropathy (proteinuria reduction)","Priority",
  "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219434s000lbl.pdf",
  "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2025",
@@ -583,7 +583,7 @@ ROWS = [
  "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/protagonist-therapeutics-announces-u.s.-fda-approval-of-hepcidin-mime-1214342",
  "Verified","Takeda holds global commercial rights via partnership with Protagonist Therapeutics; supported by Phase 3 VERIFY trial"),
 
-("D096","Aurobindo Pharma (parent, India-listed) / Acrotech Biopharma (private US subsidiary)","AUROPHARMA","NSE/BSE India; no US ADR","Adquey","difamilast",
+("D096","Aurobindo Pharma (parent, India-listed) / Acrotech Biopharma (private US subsidiary)","AUROPHARMA.NS","NSE/BSE India; no US ADR","Adquey","difamilast",
  "Approval","2026-02-13","Mild-to-moderate atopic dermatitis","Standard",
  "https://www.pharmaindiamagazine.com/acrotech-biopharma-inc-announces-fda-approval-of-adquey-ointment/",
  "https://scanx.trade/stock-market-news/stocks/aurobindo-pharma-s-subsidiary-acrotech-receives-fda-approval-for-adquey-ointment-for-atopic-dermatitis-treatment/32536601",
@@ -601,13 +601,13 @@ ROWS = [
  "https://finance.yahoo.com/news/ascendis-pharma-maps-2026-u-025442951.html",
  "Verified","Ascendis's third FDA-approved TransCon product"),
 
-("D099","Haisco Pharmaceutical Group","002653","SZSE China; no US ticker","Cypsedo","cipepofol",
+("D099","Haisco Pharmaceutical Group","002653.SZ","SZSE China; no US ticker","Cypsedo","cipepofol",
  "Approval","2026-05-31","General anesthesia induction (adults)","Standard",
  "https://chemxpert.com/all-news/haiscos-cipepofol-becomes-the-first-china-originated-innovative-intravenous-anesthetic-approved-by-the-us-fda",
  "https://filingreader.com/news-wire/shenzhen/2026-06-01/haisco-pharmaceutical-drug-cipepofol-wins-us-fda-approval",
  "Verified - foreign listing only","First China-originated innovative IV anesthetic approved by FDA"),
 
-("D100","Otsuka Pharmaceutical (parent Otsuka Holdings)","4578","TSE Japan; no US ticker","Simtriyo","centanafadine",
+("D100","Otsuka Pharmaceutical (parent Otsuka Holdings)","4578.T","TSE Japan; no US ticker","Simtriyo","centanafadine",
  "Approval","2026-07-24","Attention-deficit hyperactivity disorder","Standard",
  "https://www.psychiatrictimes.com/view/fda-approves-centanafadine-for-adhd-in-children-adolescents-and-adults",
  "https://www.delveinsight.com/blog/simtriyo-approval-for-adhd",

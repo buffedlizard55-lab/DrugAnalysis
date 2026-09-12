@@ -39,7 +39,7 @@
 
   <section id="approvals" class="tab-panel">
     <h2>FDA Approvals Master List</h2>
-    <p class="section-desc">100 verified FDA drug approvals (2024–2026), one row per decision, each with two source links for manual review.</p>
+    <p class="section-desc">200 verified FDA novel drug approvals (2021–2026), one row per decision, each with two source links for manual review. Review pathway (Priority / Standard / Accelerated) is taken from FDA’s official annual reports; current holders and original applicants are both shown where ownership changed.</p>
     <div class="table-controls">
       <input type="search" id="approvals-search" placeholder="Search company, drug, ticker, indication…">
     </div>
@@ -60,7 +60,7 @@
 
   <section id="scorecards" class="tab-panel">
     <h2>Company Pipeline Scorecards</h2>
-    <p class="section-desc">Per-company breakdown of how many pipeline programs advanced, paused, or were rejected — a starter set focused on companies with the richest FDA-decision history in this dataset (more companies to be added over time).</p>
+    <p class="section-desc">Per-company breakdown of how many pipeline programs advanced, paused, or were rejected — covering every company with two or more tracked FDA decisions 2021–2026, plus deep-dive scorecards for CRL recipients.</p>
     <div class="cards" id="scorecards-cards"></div>
   </section>
 
@@ -77,8 +77,8 @@
       <p>Every row in the approvals and CRL tables carries a <code>verification_status</code> field. Rows are marked <em>Verified</em> only when a company/ticker/date combination was corroborated by at least one official or primary-source link. Rows with any ambiguity (e.g. disputed sponsor ticker, ambiguous stock-reaction causality, foreign-only listings) are explicitly flagged in the <code>notes</code> column rather than silently resolved.</p>
       <h3>Known limitations (in progress)</h3>
       <ul>
-        <li>Stock-price snapshots are not yet complete for every decision in the master list — unmatched rows show blank price cells rather than estimates.</li>
-        <li>Company scorecards currently cover a focused subset of companies (CRL recipients + top FDA-decision-volume companies); broader coverage is planned.</li>
+        <li>Stock-price snapshots cover all listed companies in the 2021–2023 cohort (delisted/acquired applicants carry explicit unavailable-data notes); roughly 35 of the 2024–2026 approvals still await price fetches — unmatched rows show blank price cells rather than estimates.</li>
+        <li>Company scorecards cover all CRL recipients plus every company with two or more tracked FDA decisions 2021–2026; single-approval companies from 2021–2023 do not yet have generated scorecards.</li>
         <li>Two tickers required manual correction after initial research (Xolremdi/X4 Pharmaceuticals → XFOR; Cardamyst/Milestone Pharmaceuticals → MIST) — both are now resolved and cited.</li>
       </ul>
       <h3>Raw data</h3>
