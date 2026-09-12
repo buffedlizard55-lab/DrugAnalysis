@@ -43,7 +43,7 @@ function statusBadge(status) {
   if (!status) return '<span class="badge neutral">—</span>';
   const s = status.toLowerCase();
   if (s.includes('correction') || s.includes('flag')) return `<span class="badge flagged">${escapeHtml(status)}</span>`;
-  if (s.includes('caveat') || s.includes('foreign') || s.includes('no public') || s.includes('unavailable') || s.includes('partial')) return `<span class="badge caveat">${escapeHtml(status)}</span>`;
+  if (s.includes('caveat') || s.includes('foreign') || s.includes('no public') || s.includes('unavailable') || s.includes('partial') || s.includes('incomplete')) return `<span class="badge caveat">${escapeHtml(status)}</span>`;
   if (s.includes('verified')) return `<span class="badge verified">${escapeHtml(status)}</span>`;
   return `<span class="badge neutral">${escapeHtml(status)}</span>`;
 }
@@ -97,6 +97,42 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 
 // ----- Core Analysis Table -----
 let coreRecords = [];
+
+// Average % move for a set of rows, ignoring blanks. Returned to 1dp.
+function avgPct(rows, field) {
+  const vals = rows.map(r => parseFloat(r[field])).filter(v => !isNaN(v));
+  if (!vals.length) return null;
+  return vals.reduce((a, b) => a + b, 0) / vals.length;
+}
+
+function drawCoreStats() {
+  const approvals = coreRecords.filter(r => r.decision_type === 'Approval');
+  const crls = coreRecords.filter(r => r.decision_type.indexOf('Complete Response') === 0);
+  const priced = coreRecords.filter(r => r.pct_change !== '' && !isNaN(parseFloat(r.pct_change)));
+  const flagged = coreRecords.filter(r => r.flags);
+  const latest = coreRecords.length ? coreRecords[0].decision_date : '—';
+  const avgAppr = avgPct(approvals, 'pct_change');
+  const avgAppr1 = avgPct(approvals, 'pct_change_t1');
+  const avgCrl = avgPct(crls, 'pct_change');
+  const avgCrl1 = avgPct(crls, 'pct_change_t1');
+  const fmt = v => (v === null ? 'n/a' : (v >= 0 ? '+' : '') + v.toFixed(2) + '%');
+
+  const cards = [
+    { k: 'Decisions tracked', v: coreRecords.length, s: 'latest ' + latest },
+    { k: 'Approvals', v: approvals.length, s: 'avg move on decision day ' + fmt(avgAppr) },
+    { k: 'Approvals — next session', v: approvals.length, s: 'avg move by T+1 ' + fmt(avgAppr1) },
+    { k: 'Rejections (CRLs)', v: crls.length, s: 'avg move on CRL day ' + fmt(avgCrl) + ' / T+1 ' + fmt(avgCrl1) },
+    { k: 'Rows with verified prices', v: priced.length, s: 'blank cells are never estimated' },
+    { k: 'Rows flagged for review', v: flagged.length, s: 'irregularities listed in notes' },
+  ];
+  document.getElementById('core-stats').innerHTML = cards.map(c => `
+    <div class="stat-card">
+      <div class="stat-card-value">${escapeHtml(String(c.v))}</div>
+      <div class="stat-card-key">${escapeHtml(c.k)}</div>
+      <div class="stat-card-sub">${escapeHtml(c.s)}</div>
+    </div>`).join('');
+}
+
 loadCSV('data/core_analysis_table.csv').then(({ records }) => {
   coreRecords = records;
   const types = [...new Set(records.map(r => r.decision_type))].sort();
@@ -106,14 +142,24 @@ loadCSV('data/core_analysis_table.csv').then(({ records }) => {
     opt.value = t; opt.textContent = t;
     sel.appendChild(opt);
   });
+  const fsel = document.getElementById('core-filter-flag');
+  ['IRREGULARITY', 'OWNERSHIP-CHANGE', 'WITHDRAWN', 'PRICE-GAP'].forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t; opt.textContent = t;
+    fsel.appendChild(opt);
+  });
+  drawCoreStats();
   drawCore();
 });
 
 function drawCore() {
   const q = document.getElementById('core-search').value;
   const typeFilter = document.getElementById('core-filter-type').value;
+  const flagFilter = document.getElementById('core-filter-flag').value;
   let rows = filterRows(coreRecords, q, ['company_name', 'drug_name', 'indication', 'ticker']);
   if (typeFilter) rows = rows.filter(r => r.decision_type === typeFilter);
+  if (flagFilter) rows = rows.filter(r => (r.flags || '').indexOf(flagFilter) !== -1);
+  document.getElementById('core-count').textContent = rows.length + ' of ' + coreRecords.length + ' rows';
   renderTable(document.getElementById('core-table'), null, rows, [
     { label: 'Company', render: r => escapeHtml(r.company_name) },
     { label: 'Ticker', render: r => escapeHtml(r.ticker) },
@@ -121,17 +167,23 @@ function drawCore() {
     { label: 'Decision', render: r => escapeHtml(r.decision_type) },
     { label: 'Date', render: r => escapeHtml(r.decision_date) },
     { label: 'Indication', render: r => escapeHtml(r.indication) },
+    { label: 'Pathway', render: r => escapeHtml(r.review_pathway || '—') },
     { label: 'Price Before', render: r => escapeHtml(r.stock_price_before) },
     { label: 'Price After', render: r => escapeHtml(r.stock_price_after) },
     { label: '% Change', render: r => pctCell(r.pct_change) },
+    { label: 'Price T+1', render: r => escapeHtml(r.price_t1) },
+    { label: '% T+1', render: r => pctCell(r.pct_change_t1) },
     { label: 'Price Data', render: r => statusBadge(r.price_data_status) },
+    { label: 'Flags', render: r => r.flags ? `<span class="badge flagged">${escapeHtml(r.flags)}</span>` : '' },
     { label: 'Pipeline Success Summary', render: r => escapeHtml(r.company_success_rate_summary) },
     { label: 'FDA Source', render: r => linkify(r.fda_source_url, 'FDA link') },
+    { label: 'Secondary Source', render: r => linkify(r.secondary_source_url, 'source 2') },
     { label: 'Verification', render: r => statusBadge(r.verification_status) },
   ]);
 }
 document.getElementById('core-search').addEventListener('input', drawCore);
 document.getElementById('core-filter-type').addEventListener('change', drawCore);
+document.getElementById('core-filter-flag').addEventListener('change', drawCore);
 
 // ----- Approvals Table -----
 let approvalRecords = [];
