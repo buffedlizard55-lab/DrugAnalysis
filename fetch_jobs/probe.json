@@ -1,0 +1,12 @@
+[
+  {
+    "id": "probe_drugsfda_2020_orig_ap",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status_date:%5B20200101+TO+20201231%5D&limit=1000",
+    "out": "probe_2020.json"
+  },
+  {
+    "id": "probe_sec_company_tickers",
+    "url": "https://www.sec.gov/files/company_tickers.json",
+    "out": "probe_sec_company_tickers.json"
+  }
+]
