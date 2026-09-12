@@ -416,3 +416,126 @@ CAPTURES = {
                 "2026-03-19. Both dates fall in the captured window.",
     },
 }
+
+# ---------------- 2019 cohort (backfilled from FDA's 2019 New Drug Therapy Approvals report) ----------------
+CAPTURES.update({
+    "NVS@2019-11-15": {
+        "name": "Novartis AG", "exchange": "NYSE", "currency": "USD", "decision": "2019-11-15",
+        "series": [(1573482600, 88.63), (1573569000, 89.29), (1573655400, 89.86),
+                   (1573741800, 89.51), (1573828200, 90.04), (1574087400, 90.33),
+                   (1574173800, 90.40), (1574260200, 90.53)],
+    },
+    "JNJ@2019-04-12": {
+        "name": "Johnson & Johnson", "exchange": "NYSE", "currency": "USD", "decision": "2019-04-12",
+        "series": [(1554730200, 136.14), (1554816600, 135.57), (1554903000, 135.58),
+                   (1554989400, 135.21), (1555075800, 135.98), (1555335000, 136.52),
+                   (1555421400, 138.02), (1555507800, 138.52)],
+    },
+    "ONC@2019-11-14": {
+        "name": "BeOne Medicines AG", "exchange": "NasdaqGS", "currency": "USD",
+        "decision": "2019-11-14",
+        "series": [(1573223400, 199.44), (1573482600, 191.72), (1573569000, 196.31),
+                   (1573655400, 197.30), (1573741800, 196.40), (1573828200, 198.25),
+                   (1574087400, 196.01), (1574173800, 203.90)],
+        "note": "Ticker ONC is the CURRENT symbol (BeiGene renamed to BeOne Medicines). The API "
+                "reports 'BeOne Medicines AG' for ONC and its history extends back through the "
+                "BeiGene era, so this is the approval-window history for the same issuer.",
+    },
+    "SNY@2019-02-06": {
+        "name": "Sanofi", "exchange": "NasdaqGS", "currency": "USD", "decision": "2019-02-06",
+        "series": [(1548945000, 43.45), (1549031400, 43.26), (1549290600, 43.75),
+                   (1549377000, 43.60), (1549463400, 43.39), (1549549800, 42.51),
+                   (1549636200, 42.64), (1549895400, 42.33)],
+    },
+    "ITCI@2019-12-20": {
+        "name": None, "exchange": None, "currency": None, "decision": "2019-12-20", "series": [],
+        "unavailable": "Yahoo Finance returned \"No data found, symbol may be delisted\" - Intra-"
+                       "Cellular Therapies (ITCI) was acquired by Johnson & Johnson in 2025 and its "
+                       "history has been withdrawn from the chart API.",
+    },
+    "AMGN@2019-04-09": {
+        "name": "Amgen Inc.", "exchange": "NasdaqGS", "currency": "USD", "decision": "2019-04-09",
+        "series": [(1554298200, 192.92), (1554384600, 192.33), (1554471000, 195.41),
+                   (1554730200, 194.88), (1554816600, 192.98), (1554903000, 193.89),
+                   (1554989400, 192.11), (1555075800, 191.42)],
+    },
+    "ALNY@2019-11-20": {
+        "name": "Alnylam Pharmaceuticals, Inc.", "exchange": "NasdaqGS", "currency": "USD",
+        "decision": "2019-11-20",
+        "series": [(1573741800, 90.46), (1573828200, 92.05), (1574087400, 92.73),
+                   (1574173800, 97.93), (1574260200, 108.21), (1574346600, 111.20),
+                   (1574433000, 106.91), (1574692200, 112.42)],
+    },
+    "BMY@2019-08-16": {
+        "name": "Bristol-Myers Squibb Company", "exchange": "NYSE", "currency": "USD",
+        "decision": "2019-08-16",
+        "series": [(1565616600, 46.51), (1565703000, 46.49), (1565789400, 45.64),
+                   (1565875800, 45.75), (1565962200, 46.98), (1566221400, 47.46),
+                   (1566307800, 47.63), (1566394200, 47.77)],
+    },
+    "NVS@2019-03-26": {
+        "name": "Novartis AG", "exchange": "NYSE", "currency": "USD", "decision": "2019-03-26",
+        "series": [(1553088600, 83.7634), (1553175000, 83.9247), (1553261400, 83.7097),
+                   (1553520600, 83.6111), (1553607000, 85.1434), (1553693400, 85.2240),
+                   (1553779800, 85.6900), (1553866200, 86.1469)],
+    },
+    "GBT@2019-11-25": {
+        "name": None, "exchange": None, "currency": None, "decision": "2019-11-25", "series": [],
+        "unavailable": "Yahoo Finance returned \"No data found, symbol may be delisted\" - Global "
+                       "Blood Therapeutics (GBT) was acquired by Pfizer in 2022 and its history has "
+                       "been withdrawn from the chart API.",
+    },
+    "NVS@2019-05-24": {
+        "name": "Novartis AG", "exchange": "NYSE", "currency": "USD", "decision": "2019-05-24",
+        "series": [(1558359000, 82.01), (1558445400, 82.39), (1558531800, 83.91),
+                   (1558618200, 84.44), (1558704600, 87.52), (1559050200, 86.92),
+                   (1559136600, 85.81)],
+    },
+    "RHHBY@2019-06-10": {
+        "name": "Roche Holding AG", "exchange": "OTC Markets OTCQX", "currency": "USD",
+        "decision": "2019-06-10",
+        "series": [(1559655000, 33.18), (1559741400, 33.27), (1559827800, 33.80),
+                   (1559914200, 34.24), (1560173400, 34.22), (1560259800, 34.10),
+                   (1560346200, 34.64), (1560432600, 34.72), (1560519000, 34.55)],
+    },
+    "BMY@2019-11-08": {
+        "name": "Bristol-Myers Squibb Company", "exchange": "NYSE", "currency": "USD",
+        "decision": "2019-11-08",
+        "series": [(1572877800, 56.64), (1572964200, 56.39), (1573050600, 56.96),
+                   (1573137000, 57.58), (1573223400, 58.02), (1573482600, 58.15),
+                   (1573569000, 58.39), (1573655400, 58.79)],
+    },
+    "ABBV@2019-04-23": {
+        "name": "AbbVie Inc.", "exchange": "NYSE", "currency": "USD", "decision": "2019-04-23",
+        "series": [(1555507800, 77.98), (1555594200, 77.57), (1555939800, 78.15),
+                   (1556026200, 78.66), (1556112600, 78.67), (1556199000, 79.34),
+                   (1556285400, 79.70)],
+    },
+    "VRTX@2019-10-21": {
+        "name": "Vertex Pharmaceuticals Incorporated", "exchange": "NasdaqGS", "currency": "USD",
+        "decision": "2019-10-21",
+        "series": [(1571146200, 176.14), (1571232600, 176.09), (1571319000, 177.72),
+                   (1571405400, 176.23), (1571664600, 183.53), (1571751000, 191.06),
+                   (1571837400, 190.51), (1571923800, 194.47), (1572010200, 194.49)],
+    },
+    "ABBV@2019-12-23": {
+        "name": "AbbVie Inc.", "exchange": "NYSE", "currency": "USD", "decision": "2019-12-23",
+        "series": [(1576593000, 90.08), (1576679400, 89.33), (1576765800, 88.77),
+                   (1576852200, 89.29), (1577111400, 90.25), (1577197800, 89.85),
+                   (1577370600, 89.83), (1577457000, 89.20)],
+    },
+    "PFE@2019-05-03": {
+        "name": "Pfizer Inc.", "exchange": "NYSE", "currency": "USD", "decision": "2019-05-03",
+        "series": [(1556544600, 37.5617), (1556631000, 38.5294), (1556717400, 38.6812),
+                   (1556803800, 38.9089), (1556890200, 39.2695), (1557149400, 39.5161),
+                   (1557235800, 38.7381), (1557322200, 38.8520)],
+    },
+    "KPTI@2019-07-03": {
+        "name": "Karyopharm Therapeutics Inc.", "exchange": "NasdaqGS", "currency": "USD",
+        "decision": "2019-07-03",
+        "series": [(1561642200, 91.95), (1561728600, 89.85), (1561987800, 84.90),
+                   (1562074200, 98.10), (1562160600, 133.44), (1562333400, 132.15),
+                   (1562592600, 125.10)],
+        "note": "4 Jul 2019 was a market holiday, so the next session after the approval is 5 Jul.",
+    },
+})

@@ -44,7 +44,7 @@
 
   <section id="approvals" class="tab-panel">
     <h2>FDA Approvals Master List</h2>
-    <p class="section-desc">277 verified FDA novel drug approvals (2021–2026), one row per decision, each with two source links for manual review. Coverage of FDA’s official novel-approval tables is now complete for 2021 (50/50), 2024 (50/50), 2025 (46/46) and 2026 (39/39 to date). Where the applicant of record has changed since approval (asset sale, acquisition, or licence-out), <strong>both</strong> the current holder and the original applicant are shown and the row is flagged.</p>
+    <p class="section-desc">300 verified FDA novel drug approvals, one row per decision, each with two source links for manual review. Coverage of FDA’s official novel-approval tables is complete for 2021 (50/50), 2024 (50/50), 2025 (46/46) and 2026 (39/39 to date), plus 23 of the 48 novel approvals from FDA’s 2019 annual report. FDA has taken its 2019 and 2020 web pages offline, so the 2019 rows cite the annual report PDF instead. Where the applicant of record has changed since approval (asset sale, acquisition, or licence-out), <strong>both</strong> the current holder and the original applicant are shown and the row is flagged.</p>
     <div class="table-controls">
       <input type="search" id="approvals-search" placeholder="Search company, drug, ticker, indication…">
     </div>
@@ -59,13 +59,13 @@
 
   <section id="prices" class="tab-panel">
     <h2>Stock Price Snapshots</h2>
-    <p class="section-desc">211 closing-price snapshots around FDA decisions, taken from the Yahoo Finance chart API (<code>/v8/finance/chart/&lt;TICKER&gt;?interval=1d</code>) and stored as raw captures in <code>data/staging/</code> so every number can be re-checked. Rows with blank prices are delisted/acquired tickers whose history the API no longer serves, or a bar that had not published yet at capture time — never a placeholder guess. One series (Nuvalent, 2026-07-22) was <strong>rejected</strong> rather than recorded because the API returned a degenerate zero-volume series.</p>
+    <p class="section-desc">229 closing-price snapshots around FDA decisions, taken from the Yahoo Finance chart API (<code>/v8/finance/chart/&lt;TICKER&gt;?interval=1d</code>) and stored as raw captures in <code>data/staging/</code> so every number can be re-checked. Rows with blank prices are delisted/acquired tickers whose history the API no longer serves, or a bar that had not published yet at capture time — never a placeholder guess. One series (Nuvalent, 2026-07-22) was <strong>rejected</strong> rather than recorded because the API returned a degenerate zero-volume series.</p>
     <div class="table-scroll"><table id="prices-table" class="data-table"><thead></thead><tbody></tbody></table></div>
   </section>
 
   <section id="scorecards" class="tab-panel">
     <h2>Company Pipeline Scorecards</h2>
-    <p class="section-desc">149 per-company scorecards. 36 are deep-dive pipeline scorecards (which programs are in which phase, which advanced, which were paused or put on clinical hold). The remainder cover every other company in the dataset and count <strong>only</strong> the FDA decisions verified and tracked in this repository — they are labelled <em>“Verified – FDA decisions only (partial pipeline view)”</em> and report phase progression as 0 rather than estimating it.</p>
+    <p class="section-desc">153 per-company scorecards. 36 are deep-dive pipeline scorecards (which programs are in which phase, which advanced, which were paused or put on clinical hold). The remainder cover every other company in the dataset and count <strong>only</strong> the FDA decisions verified and tracked in this repository — they are labelled <em>“Verified – FDA decisions only (partial pipeline view)”</em> and report phase progression as 0 rather than estimating it.</p>
     <div class="cards" id="scorecards-cards"></div>
   </section>
 
@@ -88,8 +88,8 @@
       </ul>
       <h3>Known limitations (as of 2026-09-12)</h3>
       <ul>
-        <li><code>review_pathway</code> (Priority / Standard / Accelerated) is populated for the original 200 rows but is <strong>deliberately blank</strong> for D201–D277: FDA publishes those designations in its annual <em>New Drug Therapy Approvals</em> reports, which do not exist yet for 2026 and were not re-parsed in this pass. Blank beats guessed.</li>
-        <li>FDA has removed its 2019 and 2020 novel-approval pages, so those years are not covered. 2021–2026 is complete.</li>
+        <li><code>review_pathway</code> (Priority / Standard / Accelerated) is populated for D001–D200 and for D278–D300 (both from FDA’s official annual reports) but is <strong>deliberately blank</strong> for D201–D277: FDA publishes those designations in its annual <em>New Drug Therapy Approvals</em> reports, which do not exist yet for 2026 and were not re-parsed in this pass. Blank beats guessed.</li>
+        <li>FDA has removed its 2019 and 2020 novel-approval web pages. 2021–2026 is complete (185 approvals); 23 of the 48 drugs in FDA’s 2019 annual report are covered, sourced from that report rather than a web page. 2020 is not yet covered.</li>
         <li>Pre-2021 approvals that were later delisted (ChemoCentryx, Seagen, Kadmon, AVEO) have no retrievable price history from the chart API; those rows are explicit about it.</li>
         <li>The 2026-09-11 Scholar Rock daily bar had not been published when it was captured, so that one <code>close_on</code> cell is pending a re-fetch.</li>
         <li>Scorecards added in this pass count FDA decisions tracked here, not full corporate pipelines — see the Scorecards tab.</li>
