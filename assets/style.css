@@ -165,6 +165,26 @@ table.data-table tbody tr:hover { background: #f5f8ff; }
 .badge.caveat { background: #fdf3dc; color: var(--warn); }
 .badge.neutral { background: #eef1f6; color: var(--muted); }
 
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.stat-card-value { font-size: 1.6rem; font-weight: 800; line-height: 1.1; }
+.stat-card-key { font-size: 0.82rem; color: var(--ink); font-weight: 600; margin-top: 2px; }
+.stat-card-sub { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+
+.row-count { font-size: 0.8rem; color: var(--muted); align-self: center; }
+
 .pct-pos { color: var(--good); font-weight: 700; }
 .pct-neg { color: var(--bad); font-weight: 700; }
 

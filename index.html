@@ -27,19 +27,24 @@
 
   <section id="core" class="tab-panel active">
     <h2>Core Analysis Table</h2>
-    <p class="section-desc">Company, drug, FDA decision, stock-price reaction, and a pipeline success-rate summary — the single table for a fast overview. Empty price cells mean data has not yet been fetched/verified for that row (never estimated).</p>
+    <p class="section-desc">Company, drug, FDA decision, stock-price reaction, and a pipeline success-rate summary — the single table for a fast overview. Empty price cells mean data has not yet been fetched/verified for that row (never estimated). <strong>%&nbsp;T+1</strong> is the move from the pre-decision close to the next trading session's close, which is where several approvals actually moved (e.g. Celcuity +7.0% on the day, then −17.6% the next session).</p>
+    <div id="core-stats" class="stats"></div>
     <div class="table-controls">
       <input type="search" id="core-search" placeholder="Search company, drug, indication…">
       <select id="core-filter-type">
         <option value="">All decision types</option>
       </select>
+      <select id="core-filter-flag">
+        <option value="">All rows (incl. flagged)</option>
+      </select>
+      <span id="core-count" class="row-count"></span>
     </div>
     <div class="table-scroll"><table id="core-table" class="data-table"><thead></thead><tbody></tbody></table></div>
   </section>
 
   <section id="approvals" class="tab-panel">
     <h2>FDA Approvals Master List</h2>
-    <p class="section-desc">200 verified FDA novel drug approvals (2021–2026), one row per decision, each with two source links for manual review. Review pathway (Priority / Standard / Accelerated) is taken from FDA’s official annual reports; current holders and original applicants are both shown where ownership changed.</p>
+    <p class="section-desc">310 verified FDA novel drug approvals, one row per decision, each with two source links for manual review. Coverage of FDA’s official novel-approval tables is complete for 2021 (50/50), 2024 (50/50), 2025 (46/46) and 2026 (39/39 to date), plus 23 of the 48 novel approvals from FDA’s 2019 annual report and 10 of the 53 from 2020. FDA has taken its 2019 and 2020 pages offline, so those rows cite the annual-report PDF and the Internet Archive’s capture of the official 2020 page. Where the applicant of record has changed since approval (asset sale, acquisition, or licence-out), <strong>both</strong> the current holder and the original applicant are shown and the row is flagged.</p>
     <div class="table-controls">
       <input type="search" id="approvals-search" placeholder="Search company, drug, ticker, indication…">
     </div>
@@ -48,19 +53,19 @@
 
   <section id="crls" class="tab-panel">
     <h2>Complete Response Letters (Rejections)</h2>
-    <p class="section-desc">FDA rejections / regulatory setbacks for publicly traded companies — flagged as irregularities worth tracking, including repeat-CRL cases.</p>
+    <p class="section-desc">FDA rejections / regulatory setbacks for publicly traded companies — flagged as irregularities worth tracking, including repeat-CRL cases. C004 (Outlook Therapeutics / Lytenava) is marked <em>RESOLVED</em>: after a third CRL on 2025-12-31 the BLA was resubmitted and approved on 2026-07-24.</p>
     <div class="table-scroll"><table id="crls-table" class="data-table"><thead></thead><tbody></tbody></table></div>
   </section>
 
   <section id="prices" class="tab-panel">
     <h2>Stock Price Snapshots</h2>
-    <p class="section-desc">Closing prices immediately before/after each FDA decision, sourced live from the Yahoo Finance chart API. Rows marked "Data unavailable" reflect delistings/acquisitions where historical data could not be retrieved — never a placeholder guess.</p>
+    <p class="section-desc">239 closing-price snapshots around FDA decisions, taken from the Yahoo Finance chart API (<code>/v8/finance/chart/&lt;TICKER&gt;?interval=1d</code>) and stored as raw captures in <code>data/staging/</code> so every number can be re-checked. Rows with blank prices are delisted/acquired tickers whose history the API no longer serves, or a bar that had not published yet at capture time — never a placeholder guess. One series (Nuvalent, 2026-07-22) was <strong>rejected</strong> rather than recorded because the API returned a degenerate zero-volume series.</p>
     <div class="table-scroll"><table id="prices-table" class="data-table"><thead></thead><tbody></tbody></table></div>
   </section>
 
   <section id="scorecards" class="tab-panel">
     <h2>Company Pipeline Scorecards</h2>
-    <p class="section-desc">Per-company breakdown of how many pipeline programs advanced, paused, or were rejected — covering every company with two or more tracked FDA decisions 2021–2026, plus deep-dive scorecards for CRL recipients.</p>
+    <p class="section-desc">155 per-company scorecards. 36 are deep-dive pipeline scorecards (which programs are in which phase, which advanced, which were paused or put on clinical hold). The remainder cover every other company in the dataset and count <strong>only</strong> the FDA decisions verified and tracked in this repository — they are labelled <em>“Verified – FDA decisions only (partial pipeline view)”</em> and report phase progression as 0 rather than estimating it.</p>
     <div class="cards" id="scorecards-cards"></div>
   </section>
 
@@ -69,19 +74,27 @@
     <div class="about-content">
       <h3>Sources</h3>
       <ul>
-        <li><strong>FDA decisions</strong> — FDA.gov Novel Drug Approvals pages, accessdata.fda.gov drug label PDFs, and the official openFDA CRL transparency API (api.fda.gov/transparency/crl.json).</li>
-        <li><strong>Stock prices</strong> — Yahoo Finance chart API (query1.finance.yahoo.com), cross-referenced against stockanalysis.com where available.</li>
-        <li><strong>Company/pipeline detail</strong> — company investor-relations press releases, SEC filings, and reputable biotech trade press (StockTitan, FierceBiotech, Endpoints-style coverage), always cited with a direct link.</li>
+        <li><strong>FDA decisions</strong> — FDA.gov <em>Novel Drug Approvals</em> pages (2021–2026), the application overview pages on accessdata.fda.gov, the official openFDA Drugs@FDA API (<code>api.fda.gov/drug/drugsfda.json</code>, used to resolve the applicant of record for every application number), the official openFDA CRL transparency API (<code>api.fda.gov/transparency/crl.json</code>), and FDA Drug Trials Snapshots.</li>
+        <li><strong>Stock prices</strong> — Yahoo Finance chart API (<code>query1.finance.yahoo.com</code>), captured for a ±6-day window around every decision date and stored verbatim in <code>data/staging/prices_new_2026_09.py</code>.</li>
+        <li><strong>Company / ownership changes</strong> — the company’s own press release (for example Scholar Rock’s ISEMBYLD approval release and GSK’s Lynavoy release) plus SEC-filing summaries, always cited with a direct link. This is how ownership changes such as Veppanu → Rigel and Lynavoy → Alfasigma were confirmed.</li>
       </ul>
       <h3>Verification approach</h3>
-      <p>Every row in the approvals and CRL tables carries a <code>verification_status</code> field. Rows are marked <em>Verified</em> only when a company/ticker/date combination was corroborated by at least one official or primary-source link. Rows with any ambiguity (e.g. disputed sponsor ticker, ambiguous stock-reaction causality, foreign-only listings) are explicitly flagged in the <code>notes</code> column rather than silently resolved.</p>
-      <h3>Known limitations (in progress)</h3>
+      <p>Every row in the approvals and CRL tables carries a <code>verification_status</code> field. Rows are marked <em>Verified</em> only when the company/ticker/date combination was corroborated by at least one official or primary-source link. Anything ambiguous is <strong>flagged in the notes rather than silently resolved</strong>. Examples of what is flagged rather than smoothed over:</p>
       <ul>
-        <li>Stock-price snapshots cover all listed companies in the 2021–2023 cohort (delisted/acquired applicants carry explicit unavailable-data notes); roughly 35 of the 2024–2026 approvals still await price fetches — unmatched rows show blank price cells rather than estimates.</li>
-        <li>Company scorecards cover all CRL recipients plus every company with two or more tracked FDA decisions 2021–2026; single-approval companies from 2021–2023 do not yet have generated scorecards.</li>
-        <li>Two tickers required manual correction after initial research (Xolremdi/X4 Pharmaceuticals → XFOR; Cardamyst/Milestone Pharmaceuticals → MIST) — both are now resolved and cited.</li>
+        <li><strong>Applicant vs. current holder.</strong> FDA lists the <em>current</em> applicant of record, which changes after a licence-out or acquisition. Veppanu (NDA 219835) was approved to Arvinas/Pfizer and then licensed to Rigel eleven days later; Lynavoy (NDA 220295) was approved to GSK and then licensed to Alfasigma, so the FDA record now reads “INTERCEPT”. Both rows state the change.</li>
+        <li><strong>Withdrawn products.</strong> Pepaxto (NDA 214383) no longer exists in the FDA application database because it was withdrawn in Oct 2021 after its confirmatory trial failed; its sponsor is marked as not machine-verifiable instead of being guessed. Exkivity and Truseltiq are flagged as voluntarily withdrawn.</li>
+        <li><strong>Data conflicts.</strong> FDA records Lynavoy’s approval as 2026-03-17 while GSK announced it on 2026-03-19; both dates are given. Outlook Therapeutics was <em>approved</em> on 2026-07-24 yet fell 24.2% and 15.1% over the next two sessions — the cause is flagged for manual review rather than attributed.</li>
+        <li><strong>Rejected data.</strong> One price series (Nuvalent) was discarded because the API returned a degenerate zero-volume series; the cells are blank, not filled in.</li>
       </ul>
-      <h3>Raw data</h3>
+      <h3>Known limitations (as of 2026-09-12)</h3>
+      <ul>
+        <li><code>review_pathway</code> (Priority / Standard / Accelerated) is populated for D001–D200 and for D278–D310 (both from FDA’s official annual reports) but is <strong>deliberately blank</strong> for D201–D277: FDA publishes those designations in its annual <em>New Drug Therapy Approvals</em> reports, which do not exist yet for 2026 and were not re-parsed in this pass. Blank beats guessed.</li>
+        <li>FDA has removed its 2019 and 2020 novel-approval web pages. 2021–2026 is complete (185 approvals); 23 of the 48 drugs in FDA’s 2019 annual report and 10 of the 53 drugs from 2020 are covered from those sources. The remaining 2019/2020 drugs were skipped because the applicant could not be machine-verified or no US-listed ticker exists.</li>
+        <li>Pre-2021 approvals that were later delisted (ChemoCentryx, Seagen, Kadmon, AVEO) have no retrievable price history from the chart API; those rows are explicit about it.</li>
+        <li>The 2026-09-11 Scholar Rock daily bar had not been published when it was captured, so that one <code>close_on</code> cell is pending a re-fetch.</li>
+        <li>Scorecards added in this pass count FDA decisions tracked here, not full corporate pipelines — see the Scorecards tab.</li>
+      </ul>
+            <h3>Raw data</h3>
       <p>All tables on this site are generated directly from CSV files in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data">/data</a> in the repository, so you can inspect, verify, or reuse the underlying data yourself.</p>
     </div>
   </section>
