@@ -163,6 +163,7 @@ function DataTable(cfg) {
         ${[25, 50, 100, 250].map(n => `<option value="${n}" ${state.pageSize === n ? 'selected' : ''}>${n} rows</option>`).join('')}
         <option value="0" ${state.pageSize === 0 ? 'selected' : ''}>All rows</option>
       </select>
+      <button type="button" class="btn" id="${cfg.id}-allrows" title="Show every filtered row in one scrollable table">Show all rows</button>
       ${cfg.hideColumns === false ? '' : `<details class="colmenu" id="${cfg.id}-colmenu">
         <summary>Columns ⚙</summary>
         <div class="colmenu-panel">
@@ -175,7 +176,7 @@ function DataTable(cfg) {
       <span class="row-count" id="${cfg.id}-count"></span>
     </div>
     ${cfg.note || ''}
-    <div class="hscroll hscroll-top" id="${cfg.id}-topscroll"><div class="hscroll-inner"></div></div>
+    <div class="hscroll hscroll-top" id="${cfg.id}-topscroll" role="scrollbar" tabindex="0" aria-label="Horizontal column navigator"><div class="hscroll-inner"></div></div>
     <p class="hscroll-hint" id="${cfg.id}-hint"></p>
     <div class="table-scroll" id="${cfg.id}-scroll">
       <table class="data-table" id="${cfg.id}-table"><thead></thead><tbody></tbody></table>
@@ -405,6 +406,13 @@ function DataTable(cfg) {
   el('q').addEventListener('input', e => { state.q = e.target.value; state.page = 0; state.expanded = null; draw(); });
   el('size').addEventListener('change', e => {
     state.pageSize = +e.target.value; LS.set('dt:' + cfg.id + ':size', state.pageSize); state.page = 0; draw();
+  });
+  el('allrows').addEventListener('click', () => {
+    state.pageSize = 0; state.page = 0;
+    LS.set('dt:' + cfg.id + ':size', 0);
+    el('size').value = '0';
+    draw();
+    scrollBox.scrollTop = 0;
   });
   el('density').addEventListener('click', () => { state.compact = !state.compact; LS.set('dt:' + cfg.id + ':compact', state.compact); draw(); });
   el('expand-text').addEventListener('click', () => {
