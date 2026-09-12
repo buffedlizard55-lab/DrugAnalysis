@@ -43,17 +43,18 @@ def _now() -> str:
     return _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
-def http_get(url: str, timeout: float = 180.0, retries: int = 4, sleep: float = 3.0):
+def http_get(url: str, timeout: float = 180.0, retries: int = 4, sleep: float = 3.0,
+             headers: dict | None = None):
     """Return (status, body_bytes). Raises on final failure."""
     last = None
+    hdrs = {
+        "User-Agent": USER_AGENT,
+        "Accept": "application/json,text/csv,text/plain,*/*",
+    }
+    if headers:
+        hdrs.update(headers)
     for attempt in range(retries):
-        req = urllib.request.Request(
-            url,
-            headers={
-                "User-Agent": USER_AGENT,
-                "Accept": "application/json,text/csv,text/plain,*/*",
-            },
-        )
+        req = urllib.request.Request(url, headers=hdrs)
         try:
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.status, r.read()
@@ -112,7 +113,8 @@ def job_url(spec: dict, outdir: str, entries: list) -> None:
         return
     url = spec["url"]
     try:
-        status, body = http_get(url, timeout=spec.get("timeout", 180), retries=spec.get("retries", 4))
+        status, body = http_get(url, timeout=spec.get("timeout", 180), retries=spec.get("retries", 4),
+                                headers=spec.get("headers"))
     except RuntimeError as exc:
         entries.append({"id": sid, "url": url, "status": "FAILED", "error": str(exc), "at_utc": _now()})
         print(f"FAIL {sid}: {exc}", flush=True)

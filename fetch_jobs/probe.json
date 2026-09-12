@@ -1,46 +1,65 @@
 [
   {
     "type": "url",
-    "id": "drugsfda_sample_2010_orig_ap",
-    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status_date:%5B20100101+TO+20101231%5D&limit=3",
-    "out": "sample_2010_orig_ap.json"
+    "id": "fda_nme_compilation_1985_2025",
+    "url": "https://www.fda.gov/media/177921/download?attachment",
+    "out": "fda_nme_compilation_1985_2025.xlsx"
   },
   {
     "type": "url",
-    "id": "drugsfda_sample_2005_orig_ap",
-    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status_date:%5B20050101+TO+20051231%5D&limit=3",
-    "out": "sample_2005_orig_ap.json"
+    "id": "fda_nme_compilation_data_dictionary",
+    "url": "https://www.fda.gov/media/177920/download?attachment",
+    "out": "fda_nme_compilation_data_dictionary.pdf"
   },
   {
     "type": "url",
-    "id": "drugsfda_sample_2000_orig_ap",
-    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B20000101+TO+20001231%5D&limit=3",
-    "out": "sample_2000_any_ap.json"
-  },
-  {
-    "type": "url",
-    "id": "drugsfda_counts_by_year",
-    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_status:%22AP%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status_date:%5B20000101+TO+20261231%5D&count=submissions.submission_status_date",
-    "out": "counts_ap_orig_all_years.json"
-  },
-  {
-    "type": "url",
-    "id": "sec_company_tickers",
+    "id": "sec_company_tickers_v2",
     "url": "https://www.sec.gov/files/company_tickers.json",
-    "out": "sec_company_tickers.json"
+    "out": "sec_company_tickers.json",
+    "headers": {
+      "User-Agent": "DrugAnalysis Research Bot buffedlizard55-lab@users.noreply.github.com",
+      "Accept": "application/json",
+      "Accept-Encoding": "gzip, deflate"
+    }
   },
   {
     "type": "url",
-    "id": "yahoo_probe_pfe",
-    "url": "https://query1.finance.yahoo.com/v8/finance/chart/PFE?period1=946684800&period2=980985600&interval=1d",
-    "out": "yahoo_probe_pfe.json"
+    "id": "sec_edgar_company_search_probe",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=amgen&type=10-K&dateb=&owner=include&count=5&output=atom",
+    "out": "sec_edgar_probe_atom.xml",
+    "headers": {
+      "User-Agent": "DrugAnalysis Research Bot buffedlizard55-lab@users.noreply.github.com",
+      "Accept-Encoding": "gzip, deflate"
+    }
   },
   {
-    "type": "stooq",
-    "id": "probe",
-    "symbols": ["pfe.us", "aapl.us", "amgn.us"],
-    "d1": "19900101",
-    "d2": "20261231",
-    "out_template": "stooq_{sym}.csv"
+    "type": "url",
+    "id": "openfda_drugsfda_2010_orig",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B20100101+TO+20101231%5D&limit=1000",
+    "out": "drugsfda_2010.json",
+    "project": {
+      "application_number": true,
+      "sponsor_name": true,
+      "openfda": {"brand_name": true, "generic_name": true, "manufacturer_name": true,
+                  "pharm_class_epc": true, "route": true, "substance_name": true},
+      "products": [{"brand_name": true, "active_ingredients": [{"name": true, "strength": true}],
+                    "dosage_form": true, "route": true, "marketing_status": true}],
+      "submissions": {"__all__": true}
+    }
+  },
+  {
+    "type": "url",
+    "id": "openfda_drugsfda_2005_orig",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B20050101+TO+20051231%5D&limit=1000",
+    "out": "drugsfda_2005.json",
+    "project": {
+      "application_number": true,
+      "sponsor_name": true,
+      "openfda": {"brand_name": true, "generic_name": true, "manufacturer_name": true,
+                  "pharm_class_epc": true, "route": true, "substance_name": true},
+      "products": [{"brand_name": true, "active_ingredients": [{"name": true, "strength": true}],
+                    "dosage_form": true, "route": true, "marketing_status": true}],
+      "submissions": {"__all__": true}
+    }
   }
 ]
