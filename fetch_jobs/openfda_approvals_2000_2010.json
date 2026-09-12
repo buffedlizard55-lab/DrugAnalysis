@@ -1,0 +1,44 @@
+{
+  "type": "openfda_years",
+  "id": "orig_ap",
+  "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+  "search_template": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[{start} TO {end}]",
+  "years": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010],
+  "limit": 1000,
+  "max_pages": 10,
+  "out_template": "{year}.json",
+  "project": [
+    {
+      "application_number": true,
+      "sponsor_name": true,
+      "openfda": {
+        "brand_name": true,
+        "generic_name": true,
+        "manufacturer_name": true,
+        "pharm_class_epc": true,
+        "route": true,
+        "substance_name": true
+      },
+      "products": [
+        {
+          "brand_name": true,
+          "active_ingredients": [{"name": true, "strength": true}],
+          "dosage_form": true,
+          "route": true,
+          "marketing_status": true
+        }
+      ],
+      "submissions": [
+        {
+          "submission_type": true,
+          "submission_number": true,
+          "submission_status": true,
+          "submission_status_date": true,
+          "submission_class_code": true,
+          "submission_class_code_description": true,
+          "review_priority": true
+        }
+      ]
+    }
+  ]
+}

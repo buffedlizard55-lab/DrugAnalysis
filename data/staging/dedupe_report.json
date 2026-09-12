@@ -1,0 +1,7859 @@
+{
+ "generated_by": "scripts/build_backfill_2000_2010.py",
+ "count": 582,
+ "note": "CDER NME compilation rows 2011-2025 suppressed because the master list already appears to cover them - review before trusting",
+ "rows": [
+  {
+   "brand": "Viibryd",
+   "generic": "vilazodone hydrochloride",
+   "date": "2011-01-21",
+   "application_numbers": [
+    "NDA022567"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Edarbi",
+   "generic": "azilsartan medoxomil",
+   "date": "2011-02-25",
+   "application_numbers": [
+    "NDA200796"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Daliresp",
+   "generic": "roflumilast",
+   "date": "2011-02-28",
+   "application_numbers": [
+    "NDA022522"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Benlysta",
+   "generic": "belimumab",
+   "date": "2011-03-09",
+   "application_numbers": [
+    "BLA125370"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Yervoy",
+   "generic": "ipilimumab",
+   "date": "2011-03-25",
+   "application_numbers": [
+    "BLA125377"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Caprelsa",
+   "generic": "vandetanib",
+   "date": "2011-04-06",
+   "application_numbers": [
+    "NDA022405"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tradjenta",
+   "generic": "linagliptin",
+   "date": "2011-05-02",
+   "application_numbers": [
+    "NDA201280"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Victrelis",
+   "generic": "boceprevir",
+   "date": "2011-05-13",
+   "application_numbers": [
+    "NDA202258"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Incivek",
+   "generic": "telaprevir",
+   "date": "2011-05-23",
+   "application_numbers": [
+    "NDA201917"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Dificid",
+   "generic": "fidaxomicin",
+   "date": "2011-05-27",
+   "application_numbers": [
+    "NDA201699"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nulojix",
+   "generic": "belatacept",
+   "date": "2011-06-15",
+   "application_numbers": [
+    "BLA125288"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xarelto",
+   "generic": "rivaroxaban",
+   "date": "2011-07-01",
+   "application_numbers": [
+    "NDA022406"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Brilinta",
+   "generic": "ticagrelor",
+   "date": "2011-07-20",
+   "application_numbers": [
+    "NDA022433"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zelboraf",
+   "generic": "vemurafenib",
+   "date": "2011-08-17",
+   "application_numbers": [
+    "NDA202429"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Adcetris",
+   "generic": "brentuximab vedotin",
+   "date": "2011-08-19",
+   "application_numbers": [
+    "BLA125388"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xalkori",
+   "generic": "crizotinib",
+   "date": "2011-08-26",
+   "application_numbers": [
+    "NDA202570"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Onfi",
+   "generic": "clobazam",
+   "date": "2011-10-21",
+   "application_numbers": [
+    "NDA202067"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Jakafi",
+   "generic": "ruxolitinib",
+   "date": "2011-11-16",
+   "application_numbers": [
+    "NDA202192"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Eylea",
+   "generic": "aflibercept",
+   "date": "2011-11-18",
+   "application_numbers": [
+    "BLA125387"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Voraxaze",
+   "generic": "glucarpidase",
+   "date": "2012-01-17",
+   "application_numbers": [
+    "BLA125327"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kalydeco",
+   "generic": "ivacaftor",
+   "date": "2012-01-31",
+   "application_numbers": [
+    "NDA203188"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kyprolis",
+   "generic": "carfilzomib",
+   "date": "2012-07-20",
+   "application_numbers": [
+    "NDA202714"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zaltrap",
+   "generic": "ziv-aflibercept",
+   "date": "2012-08-03",
+   "application_numbers": [
+    "BLA125418"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Stribild",
+   "generic": "elvitegravir, cobicistat, emtricitabine, tenofovir disoproxil fumarate",
+   "date": "2012-08-27",
+   "application_numbers": [
+    "NDA203100"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Linzess",
+   "generic": "linaclotide",
+   "date": "2012-08-30",
+   "application_numbers": [
+    "NDA202811"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xtandi",
+   "generic": "enzalutamide",
+   "date": "2012-08-31",
+   "application_numbers": [
+    "NDA203415"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Bosulif",
+   "generic": "bosutinib",
+   "date": "2012-09-04",
+   "application_numbers": [
+    "NDA203341"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Aubagio",
+   "generic": "teriflunomide",
+   "date": "2012-09-12",
+   "application_numbers": [
+    "NDA202992"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Stivarga",
+   "generic": "regorafenib",
+   "date": "2012-09-27",
+   "application_numbers": [
+    "NDA203085"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Fycompa",
+   "generic": "perampanel",
+   "date": "2012-10-22",
+   "application_numbers": [
+    "NDA202834"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xeljanz",
+   "generic": "tofacitinib",
+   "date": "2012-11-06",
+   "application_numbers": [
+    "NDA203214"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cometriq",
+   "generic": "cabozantinib",
+   "date": "2012-11-29",
+   "application_numbers": [
+    "NDA203756"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Gattex",
+   "generic": "teduglutide\u00a0(rDNA\u00a0origin)",
+   "date": "2012-12-21",
+   "application_numbers": [
+    "NDA203441"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Eliquis",
+   "generic": "apixaban",
+   "date": "2012-12-28",
+   "application_numbers": [
+    "NDA202155"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sirturo",
+   "generic": "bedaquiline",
+   "date": "2012-12-28",
+   "application_numbers": [
+    "NDA204384"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Fulyzaq",
+   "generic": "crofelemer",
+   "date": "2012-12-31",
+   "application_numbers": [
+    "NDA202292"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kadcyla",
+   "generic": "ado-trastuzumab emtansine",
+   "date": "2013-02-22",
+   "application_numbers": [
+    "BLA125427"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xofigo",
+   "generic": "radium Ra 223 dichloride",
+   "date": "2013-05-15",
+   "application_numbers": [
+    "NDA203971"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tafinlar",
+   "generic": "dabrafenib",
+   "date": "2013-05-29",
+   "application_numbers": [
+    "NDA202806"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Mekinist",
+   "generic": "trametinib",
+   "date": "2013-05-29",
+   "application_numbers": [
+    "NDA204114"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tivicay",
+   "generic": "dolutegravir",
+   "date": "2013-08-12",
+   "application_numbers": [
+    "NDA204790"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Brintellix",
+   "generic": "vortioxetine",
+   "date": "2013-09-30",
+   "application_numbers": [
+    "NDA204447"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Duavee",
+   "generic": "conjugated estrogens and bazedoxifene",
+   "date": "2013-10-03",
+   "application_numbers": [
+    "NDA022247"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Adempas",
+   "generic": "riociguat",
+   "date": "2013-10-08",
+   "application_numbers": [
+    "NDA204819"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vizamyl",
+   "generic": "flutemetamol F 18",
+   "date": "2013-10-25",
+   "application_numbers": [
+    "NDA203137"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Gazyva",
+   "generic": "obinutuzumab",
+   "date": "2013-11-01",
+   "application_numbers": [
+    "BLA125486"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Aptiom",
+   "generic": "eslicarbazepine acetate",
+   "date": "2013-11-08",
+   "application_numbers": [
+    "NDA022416"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Imbruvica",
+   "generic": "ibrutinib",
+   "date": "2013-11-13",
+   "application_numbers": [
+    "NDA205552"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Luzu",
+   "generic": "luliconazole",
+   "date": "2013-11-14",
+   "application_numbers": [
+    "NDA204153"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Olysio",
+   "generic": "simeprevir",
+   "date": "2013-11-22",
+   "application_numbers": [
+    "NDA205123"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sovaldi",
+   "generic": "sofosbuvir",
+   "date": "2013-12-06",
+   "application_numbers": [
+    "NDA204671"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Anoro Ellipta",
+   "generic": "umeclidinium, vilanterol",
+   "date": "2013-12-18",
+   "application_numbers": [
+    "NDA203975"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Farxiga",
+   "generic": "dapagliflozin",
+   "date": "2014-01-08",
+   "application_numbers": [
+    "NDA202293"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Hetlioz",
+   "generic": "tasimelteon",
+   "date": "2014-01-31",
+   "application_numbers": [
+    "NDA205677"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vimizim",
+   "generic": "elosulfase alfa",
+   "date": "2014-02-14",
+   "application_numbers": [
+    "BLA125460"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Northera",
+   "generic": "droxidopa",
+   "date": "2014-02-18",
+   "application_numbers": [
+    "NDA203202"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Myalept",
+   "generic": "metreleptin",
+   "date": "2014-02-24",
+   "application_numbers": [
+    "BLA125390"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Impavido",
+   "generic": "miltefosine",
+   "date": "2014-03-19",
+   "application_numbers": [
+    "NDA204684"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Neuraceq",
+   "generic": "florbetaben F 18",
+   "date": "2014-03-19",
+   "application_numbers": [
+    "NDA204677"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Otezla",
+   "generic": "apremilast",
+   "date": "2014-03-21",
+   "application_numbers": [
+    "NDA205437"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tanzeum",
+   "generic": "albiglutide",
+   "date": "2014-04-15",
+   "application_numbers": [
+    "BLA125431"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cyramza",
+   "generic": "ramucirumab",
+   "date": "2014-04-21",
+   "application_numbers": [
+    "BLA125477"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sylvant",
+   "generic": "siltuximab",
+   "date": "2014-04-23",
+   "application_numbers": [
+    "BLA125496"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zykadia",
+   "generic": "ceritinib",
+   "date": "2014-04-29",
+   "application_numbers": [
+    "NDA205755"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zontivity",
+   "generic": "vorapaxar",
+   "date": "2014-05-08",
+   "application_numbers": [
+    "NDA204886"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Entyvio",
+   "generic": "vedolizumab",
+   "date": "2014-05-20",
+   "application_numbers": [
+    "BLA125476"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Dalvance",
+   "generic": "dalbavancin",
+   "date": "2014-05-23",
+   "application_numbers": [
+    "NDA021883"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Jublia",
+   "generic": "efinaconazole",
+   "date": "2014-06-06",
+   "application_numbers": [
+    "NDA203567"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sivextro",
+   "generic": "tedizolid phosphate",
+   "date": "2014-06-20",
+   "application_numbers": [
+    "NDA205435",
+    "NDA205436"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Beleodaq",
+   "generic": "belinostat",
+   "date": "2014-07-03",
+   "application_numbers": [
+    "NDA206256"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kerydin",
+   "generic": "tavaborole",
+   "date": "2014-07-07",
+   "application_numbers": [
+    "NDA204427"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zydelig",
+   "generic": "idelalisib",
+   "date": "2014-07-23",
+   "application_numbers": [
+    "NDA206545",
+    "NDA205858"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Striverdi Respimat",
+   "generic": "olodaterol",
+   "date": "2014-07-31",
+   "application_numbers": [
+    "NDA203108"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Jardiance",
+   "generic": "empagliflozin",
+   "date": "2014-08-01",
+   "application_numbers": [
+    "NDA204629"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Orbactiv",
+   "generic": "oritavancin diphosphate",
+   "date": "2014-08-06",
+   "application_numbers": [
+    "NDA206334"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Belsomra",
+   "generic": "suvorexant",
+   "date": "2014-08-13",
+   "application_numbers": [
+    "NDA204569"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Plegridy",
+   "generic": "peginterferon beta-1a",
+   "date": "2014-08-15",
+   "application_numbers": [
+    "BLA125499"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cerdelga",
+   "generic": "eliglustat",
+   "date": "2014-08-19",
+   "application_numbers": [
+    "NDA205494"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Keytruda",
+   "generic": "pembrolizumab",
+   "date": "2014-09-04",
+   "application_numbers": [
+    "BLA125514"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Movantik",
+   "generic": "naloxegol",
+   "date": "2014-09-16",
+   "application_numbers": [
+    "NDA204760"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Trulicity",
+   "generic": "dulaglutide",
+   "date": "2014-09-18",
+   "application_numbers": [
+    "BLA125469"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Akynzeo",
+   "generic": "netupitant, palonosetron",
+   "date": "2014-10-10",
+   "application_numbers": [
+    "NDA205718"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lumason",
+   "generic": "sulfur hexafluoride lipid-type A microspheres",
+   "date": "2014-10-10",
+   "application_numbers": [
+    "NDA203684"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Harvoni",
+   "generic": "ledipasvir, sofosbuvir",
+   "date": "2014-10-10",
+   "application_numbers": [
+    "NDA205834"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Esbriet",
+   "generic": "pirfenidone",
+   "date": "2014-10-15",
+   "application_numbers": [
+    "NDA022535"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Blincyto",
+   "generic": "blinatumomab",
+   "date": "2014-12-03",
+   "application_numbers": [
+    "BLA125557"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xtoro",
+   "generic": "finafloxacin",
+   "date": "2014-12-17",
+   "application_numbers": [
+    "NDA206307"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lynparza",
+   "generic": "olaparib",
+   "date": "2014-12-19",
+   "application_numbers": [
+    "NDA206162"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zerbaxa",
+   "generic": "ceftolozane, tazobactam",
+   "date": "2014-12-19",
+   "application_numbers": [
+    "NDA206829"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rapivab",
+   "generic": "peramivir",
+   "date": "2014-12-19",
+   "application_numbers": [
+    "NDA206426"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Viekira Pak",
+   "generic": "ombitasvir, paritaprevir, ritonavir; dasabuvir (co-packaged)",
+   "date": "2014-12-19",
+   "application_numbers": [
+    "NDA206619"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Opdivo",
+   "generic": "nivolumab",
+   "date": "2014-12-22",
+   "application_numbers": [
+    "BLA125554"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Savaysa",
+   "generic": "edoxaban tosylate",
+   "date": "2015-01-08",
+   "application_numbers": [
+    "NDA206316"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Cosentyx",
+   "generic": "secukinumab",
+   "date": "2015-01-21",
+   "application_numbers": [
+    "BLA125504"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Natpara",
+   "generic": "parathyroid hormone",
+   "date": "2015-01-23",
+   "application_numbers": [
+    "BLA125511"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ibrance",
+   "generic": "palbociclib",
+   "date": "2015-02-03",
+   "application_numbers": [
+    "NDA207103"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lenvima",
+   "generic": "lenvatinib",
+   "date": "2015-02-13",
+   "application_numbers": [
+    "NDA206947"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Farydak",
+   "generic": "panobinostat",
+   "date": "2015-02-23",
+   "application_numbers": [
+    "NDA205353"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cresemba",
+   "generic": "isavuconazonium sulfate",
+   "date": "2015-03-06",
+   "application_numbers": [
+    "NDA207500",
+    "NDA207501"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Unituxin",
+   "generic": "dinutuximab",
+   "date": "2015-03-10",
+   "application_numbers": [
+    "BLA125516"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Corlanor",
+   "generic": "ivabradine",
+   "date": "2015-04-15",
+   "application_numbers": [
+    "NDA206143"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kybella",
+   "generic": "deoxycholic acid",
+   "date": "2015-04-29",
+   "application_numbers": [
+    "NDA206333"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Viberzi",
+   "generic": "eluxadoline",
+   "date": "2015-05-27",
+   "application_numbers": [
+    "NDA206940"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kengreal",
+   "generic": "cangrelor",
+   "date": "2015-06-22",
+   "application_numbers": [
+    "NDA204958"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Orkambi",
+   "generic": "lumacaftor, ivacaftor",
+   "date": "2015-07-02",
+   "application_numbers": [
+    "NDA206038"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Entresto",
+   "generic": "sacubitril, valsartan",
+   "date": "2015-07-07",
+   "application_numbers": [
+    "NDA207620"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rexulti",
+   "generic": "brexpiprazole",
+   "date": "2015-07-10",
+   "application_numbers": [
+    "NDA205422"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Odomzo",
+   "generic": "sonidegib",
+   "date": "2015-07-24",
+   "application_numbers": [
+    "NDA205266"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Praluent",
+   "generic": "alirocumab",
+   "date": "2015-07-24",
+   "application_numbers": [
+    "BLA125559"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Daklinza",
+   "generic": "daclatasvir",
+   "date": "2015-07-24",
+   "application_numbers": [
+    "NDA206843"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Addyi",
+   "generic": "flibanserin",
+   "date": "2015-08-18",
+   "application_numbers": [
+    "NDA022526"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Repatha",
+   "generic": "evolocumab",
+   "date": "2015-08-27",
+   "application_numbers": [
+    "BLA125522"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Varubi",
+   "generic": "rolapitant",
+   "date": "2015-09-01",
+   "application_numbers": [
+    "NDA206500"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vraylar",
+   "generic": "cariprazine",
+   "date": "2015-09-17",
+   "application_numbers": [
+    "NDA204370"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lonsurf",
+   "generic": "trifluridine and tipiracil",
+   "date": "2015-09-22",
+   "application_numbers": [
+    "NDA207981"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Tresiba",
+   "generic": "insulin degludec",
+   "date": "2015-09-25",
+   "application_numbers": [
+    "BLA203314"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Aristada",
+   "generic": "aripiprazole lauroxil",
+   "date": "2015-10-05",
+   "application_numbers": [
+    "NDA207533"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Praxbind",
+   "generic": "idarucizumab",
+   "date": "2015-10-16",
+   "application_numbers": [
+    "BLA761025"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Veltassa",
+   "generic": "patiromer",
+   "date": "2015-10-21",
+   "application_numbers": [
+    "NDA205739"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Strensiq",
+   "generic": "asfotase alfa",
+   "date": "2015-10-23",
+   "application_numbers": [
+    "BLA125513"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Yondelis",
+   "generic": "trabectedin",
+   "date": "2015-10-23",
+   "application_numbers": [
+    "NDA207953"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nucala",
+   "generic": "mepolizumab",
+   "date": "2015-11-04",
+   "application_numbers": [
+    "BLA125526"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Genvoya",
+   "generic": "elvitegravir, cobicistat, emtricitabine, tenofovir alafenamide",
+   "date": "2015-11-05",
+   "application_numbers": [
+    "NDA207561"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cotellic",
+   "generic": "cobimetinib",
+   "date": "2015-11-10",
+   "application_numbers": [
+    "NDA206192"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tagrisso",
+   "generic": "osimertinib",
+   "date": "2015-11-13",
+   "application_numbers": [
+    "NDA208065"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Darzalex",
+   "generic": "daratumumab",
+   "date": "2015-11-16",
+   "application_numbers": [
+    "BLA761036"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ninlaro",
+   "generic": "ixazomib",
+   "date": "2015-11-20",
+   "application_numbers": [
+    "NDA208462"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Portrazza",
+   "generic": "necitumumab",
+   "date": "2015-11-24",
+   "application_numbers": [
+    "BLA125547"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Empliciti",
+   "generic": "elotuzumab",
+   "date": "2015-11-30",
+   "application_numbers": [
+    "BLA761035"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Alecensa",
+   "generic": "alectinib",
+   "date": "2015-12-11",
+   "application_numbers": [
+    "NDA208434"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Bridion",
+   "generic": "sugammadex",
+   "date": "2015-12-15",
+   "application_numbers": [
+    "NDA022225"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Uptravi",
+   "generic": "selexipag",
+   "date": "2015-12-21",
+   "application_numbers": [
+    "NDA207947"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zurampic",
+   "generic": "lesinurad",
+   "date": "2015-12-22",
+   "application_numbers": [
+    "NDA207988"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zepatier",
+   "generic": "elbasvir and grazoprevir",
+   "date": "2016-01-28",
+   "application_numbers": [
+    "NDA208261"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Briviact",
+   "generic": "brivaracetam",
+   "date": "2016-02-18",
+   "application_numbers": [
+    "NDA205836",
+    "NDA205837",
+    "NDA205838"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Anthim",
+   "generic": "obiltoxaximab",
+   "date": "2016-03-18",
+   "application_numbers": [
+    "BLA125509"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Taltz",
+   "generic": "ixekizumab",
+   "date": "2016-03-22",
+   "application_numbers": [
+    "BLA125521"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cinqair",
+   "generic": "reslizumab",
+   "date": "2016-03-23",
+   "application_numbers": [
+    "BLA761033"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Defitelio",
+   "generic": "defibrotide sodium",
+   "date": "2016-03-30",
+   "application_numbers": [
+    "NDA208114"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Venclexta",
+   "generic": "venetoclax",
+   "date": "2016-04-11",
+   "application_numbers": [
+    "NDA208573"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nuplazid",
+   "generic": "pimavanserin",
+   "date": "2016-04-29",
+   "application_numbers": [
+    "NDA207318"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tecentriq",
+   "generic": "atezolizumab",
+   "date": "2016-05-18",
+   "application_numbers": [
+    "BLA761034"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zinbryta",
+   "generic": "daclizumab",
+   "date": "2016-05-27",
+   "application_numbers": [
+    "BLA761029"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Axumin",
+   "generic": "fluciclovine F 18",
+   "date": "2016-05-27",
+   "application_numbers": [
+    "NDA208054"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ocaliva",
+   "generic": "obeticholic acid",
+   "date": "2016-05-27",
+   "application_numbers": [
+    "NDA207999"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Netspot",
+   "generic": "gallium Ga 68 dotatate",
+   "date": "2016-06-01",
+   "application_numbers": [
+    "NDA208547"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Epclusa",
+   "generic": "sofosbuvir and velpatasvir",
+   "date": "2016-06-28",
+   "application_numbers": [
+    "NDA208341"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Xiidra",
+   "generic": "lifitegrast",
+   "date": "2016-07-11",
+   "application_numbers": [
+    "NDA208073"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Adlyxin",
+   "generic": "lixisenatide",
+   "date": "2016-07-27",
+   "application_numbers": [
+    "BLA208471"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Exondys 51",
+   "generic": "eteplirsen",
+   "date": "2016-09-19",
+   "application_numbers": [
+    "NDA206488"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lartruvo",
+   "generic": "olaratumab",
+   "date": "2016-10-19",
+   "application_numbers": [
+    "BLA761038"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zinplava",
+   "generic": "bezlotoxumab",
+   "date": "2016-10-21",
+   "application_numbers": [
+    "BLA761046"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Eucrisa",
+   "generic": "crisaborole",
+   "date": "2016-12-14",
+   "application_numbers": [
+    "NDA207695"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rubraca",
+   "generic": "rucaparib",
+   "date": "2016-12-19",
+   "application_numbers": [
+    "NDA209115"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Spinraza",
+   "generic": "nusinersen",
+   "date": "2016-12-23",
+   "application_numbers": [
+    "NDA209531"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Trulance",
+   "generic": "plecanatide",
+   "date": "2017-01-19",
+   "application_numbers": [
+    "NDA208745"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Parsabiv",
+   "generic": "etelcalcetide",
+   "date": "2017-02-07",
+   "application_numbers": [
+    "NDA208325"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Emflaza",
+   "generic": "deflazacort",
+   "date": "2017-02-09",
+   "application_numbers": [
+    "NDA208684",
+    "NDA208685"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Siliq",
+   "generic": "brodalumab",
+   "date": "2017-02-15",
+   "application_numbers": [
+    "BLA761032"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xermelo",
+   "generic": "telotristat ethyl",
+   "date": "2017-02-28",
+   "application_numbers": [
+    "NDA208794"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kisqali",
+   "generic": "ribociclib",
+   "date": "2017-03-13",
+   "application_numbers": [
+    "NDA209092"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xadago",
+   "generic": "safinamide",
+   "date": "2017-03-21",
+   "application_numbers": [
+    "NDA207145"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Bavencio",
+   "generic": "avelumab",
+   "date": "2017-03-23",
+   "application_numbers": [
+    "BLA761049"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Symproic",
+   "generic": "naldemedine",
+   "date": "2017-03-23",
+   "application_numbers": [
+    "NDA208854"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zejula",
+   "generic": "niraparib",
+   "date": "2017-03-27",
+   "application_numbers": [
+    "NDA208447"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ocrevus",
+   "generic": "ocrelizumab",
+   "date": "2017-03-28",
+   "application_numbers": [
+    "BLA761053"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Dupixent",
+   "generic": "dupilumab",
+   "date": "2017-03-28",
+   "application_numbers": [
+    "BLA761055"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Austedo",
+   "generic": "deutetrabenazine",
+   "date": "2017-04-03",
+   "application_numbers": [
+    "NDA208082"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ingrezza",
+   "generic": "valbenazine",
+   "date": "2017-04-11",
+   "application_numbers": [
+    "NDA209241"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Brineura",
+   "generic": "cerliponase alfa",
+   "date": "2017-04-27",
+   "application_numbers": [
+    "BLA761052"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rydapt",
+   "generic": "midostaurin",
+   "date": "2017-04-28",
+   "application_numbers": [
+    "NDA207997"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tymlos",
+   "generic": "abaloparatide",
+   "date": "2017-04-28",
+   "application_numbers": [
+    "NDA208743"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Alunbrig",
+   "generic": "brigatinib",
+   "date": "2017-04-28",
+   "application_numbers": [
+    "NDA208772"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Imfinzi",
+   "generic": "durvalumab",
+   "date": "2017-05-01",
+   "application_numbers": [
+    "BLA761069"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Radicava",
+   "generic": "edaravone",
+   "date": "2017-05-05",
+   "application_numbers": [
+    "NDA209176"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kevzara",
+   "generic": "sarilumab",
+   "date": "2017-05-22",
+   "application_numbers": [
+    "BLA761037"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Baxdela",
+   "generic": "delafloxacin",
+   "date": "2017-06-19",
+   "application_numbers": [
+    "NDA208610",
+    "NDA208611"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Bevyxxa",
+   "generic": "betrixaban",
+   "date": "2017-06-23",
+   "application_numbers": [
+    "NDA208383"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tremfya",
+   "generic": "guselkumab",
+   "date": "2017-07-13",
+   "application_numbers": [
+    "BLA761061"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nerlynx",
+   "generic": "neratinib",
+   "date": "2017-07-17",
+   "application_numbers": [
+    "NDA208051"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Vosevi",
+   "generic": "sofosbuvir, velpatasvir, voxilaprevir",
+   "date": "2017-07-18",
+   "application_numbers": [
+    "NDA209195"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Idhifa",
+   "generic": "enasidenib",
+   "date": "2017-08-01",
+   "application_numbers": [
+    "NDA209606"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Mavyret",
+   "generic": "glecaprevir, pibrentasvir",
+   "date": "2017-08-03",
+   "application_numbers": [
+    "NDA209394"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Besponsa",
+   "generic": "inotuzumab ozogamicin",
+   "date": "2017-08-17",
+   "application_numbers": [
+    "BLA761040"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vabomere",
+   "generic": "meropenem and vaborbactam",
+   "date": "2017-08-29",
+   "application_numbers": [
+    "NDA209776"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Aliqopa",
+   "generic": "copanlisib",
+   "date": "2017-09-14",
+   "application_numbers": [
+    "NDA209936"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Solosec",
+   "generic": "secnidazole",
+   "date": "2017-09-15",
+   "application_numbers": [
+    "NDA209363"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Verzenio",
+   "generic": "abemaciclib",
+   "date": "2017-09-28",
+   "application_numbers": [
+    "NDA208716"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Calquence",
+   "generic": "acalabrutinib",
+   "date": "2017-10-31",
+   "application_numbers": [
+    "NDA210259"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vyzulta",
+   "generic": "latanoprostene bunod",
+   "date": "2017-11-02",
+   "application_numbers": [
+    "NDA207795"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Prevymis",
+   "generic": "letermovir",
+   "date": "2017-11-08",
+   "application_numbers": [
+    "NDA209939",
+    "NDA209940"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Fasenra",
+   "generic": "benralizumab",
+   "date": "2017-11-14",
+   "application_numbers": [
+    "BLA761070"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Mepsevii",
+   "generic": "vestronidase alfa-vjbk",
+   "date": "2017-11-15",
+   "application_numbers": [
+    "BLA761047"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Hemlibra",
+   "generic": "emicizumab-kxwh",
+   "date": "2017-11-16",
+   "application_numbers": [
+    "BLA761083"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Ozempic",
+   "generic": "semaglutide",
+   "date": "2017-12-05",
+   "application_numbers": [
+    "NDA209637"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rhopressa",
+   "generic": "netarsudil",
+   "date": "2017-12-18",
+   "application_numbers": [
+    "NDA208254"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Steglatro",
+   "generic": "ertugliflozin",
+   "date": "2017-12-19",
+   "application_numbers": [
+    "NDA209803"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Macrilen",
+   "generic": "macimorelin",
+   "date": "2017-12-20",
+   "application_numbers": [
+    "NDA205598"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Giapreza",
+   "generic": "angiotensin II",
+   "date": "2017-12-21",
+   "application_numbers": [
+    "NDA209360"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Doptelet",
+   "generic": "avatrombopag",
+   "date": "2018-05-21",
+   "application_numbers": [
+    "NDA210238"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Palynziq",
+   "generic": "pegvaliase-pqpz",
+   "date": "2018-05-24",
+   "application_numbers": [
+    "BLA761079"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Olumiant",
+   "generic": "baricitinib",
+   "date": "2018-05-31",
+   "application_numbers": [
+    "NDA207924"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "[drug marketed without a proprietary name]",
+   "generic": "moxidectin",
+   "date": "2018-06-13",
+   "application_numbers": [
+    "NDA210867"
+   ],
+   "skipped_because": [
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zemdri",
+   "generic": "plazomicin",
+   "date": "2018-06-25",
+   "application_numbers": [
+    "NDA210303"
+   ],
+   "skipped_because": [
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Epidiolex",
+   "generic": "cannabidiol",
+   "date": "2018-06-25",
+   "application_numbers": [
+    "NDA210365"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Braftovi",
+   "generic": "encorafenib",
+   "date": "2018-06-27",
+   "application_numbers": [
+    "NDA210496"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Mektovi",
+   "generic": "binimetinib",
+   "date": "2018-06-27",
+   "application_numbers": [
+    "NDA210498"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tpoxx",
+   "generic": "tecovirimat",
+   "date": "2018-07-13",
+   "application_numbers": [
+    "NDA208627"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Krintafel",
+   "generic": "tafenoquine",
+   "date": "2018-07-20",
+   "application_numbers": [
+    "NDA210795"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tibsovo",
+   "generic": "ivosidenib",
+   "date": "2018-07-20",
+   "application_numbers": [
+    "NDA211192"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Orilissa",
+   "generic": "elagolix",
+   "date": "2018-07-23",
+   "application_numbers": [
+    "NDA210450"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Omegaven",
+   "generic": "fish oil triglycerides",
+   "date": "2018-07-27",
+   "application_numbers": [
+    "NDA210589"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Mulpleta",
+   "generic": "lusutrombopag",
+   "date": "2018-07-31",
+   "application_numbers": [
+    "NDA210923"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Poteligeo",
+   "generic": "mogamulizumab-kpkc",
+   "date": "2018-08-08",
+   "application_numbers": [
+    "BLA761051"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Galafold",
+   "generic": "migalastat",
+   "date": "2018-08-10",
+   "application_numbers": [
+    "NDA208623"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Annovera",
+   "generic": "segesterone acetate, ethinyl estradiol",
+   "date": "2018-08-10",
+   "application_numbers": [
+    "NDA209627"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Onpattro",
+   "generic": "patisiran",
+   "date": "2018-08-10",
+   "application_numbers": [
+    "NDA210922"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Diacomit",
+   "generic": "stiripentol",
+   "date": "2018-08-20",
+   "application_numbers": [
+    "NDA206709",
+    "NDA207223"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Oxervate",
+   "generic": "cenegermin-bkbj",
+   "date": "2018-08-22",
+   "application_numbers": [
+    "BLA761094"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Takhzyro",
+   "generic": "lanadelumab-flyo",
+   "date": "2018-08-23",
+   "application_numbers": [
+    "BLA761090"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Xerava",
+   "generic": "eravacycline",
+   "date": "2018-08-27",
+   "application_numbers": [
+    "NDA211109"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Pifeltro",
+   "generic": "doravirine",
+   "date": "2018-08-30",
+   "application_numbers": [
+    "NDA210806"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lumoxiti",
+   "generic": "moxetumomab pasudotox-tdfk",
+   "date": "2018-09-13",
+   "application_numbers": [
+    "BLA761104"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ajovy",
+   "generic": "fremanezumab-vfrm",
+   "date": "2018-09-14",
+   "application_numbers": [
+    "BLA761089"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Copiktra",
+   "generic": "duvelisib",
+   "date": "2018-09-24",
+   "application_numbers": [
+    "NDA211155"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Emgality",
+   "generic": "galcanezumab-gnlm",
+   "date": "2018-09-27",
+   "application_numbers": [
+    "BLA761063"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vizimpro",
+   "generic": "dacomitinib",
+   "date": "2018-09-27",
+   "application_numbers": [
+    "NDA211288"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Libtayo",
+   "generic": "cemiplimab-rwlc",
+   "date": "2018-09-28",
+   "application_numbers": [
+    "BLA761097"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Seysara",
+   "generic": "sarecycline",
+   "date": "2018-10-01",
+   "application_numbers": [
+    "NDA209521"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nuzyra",
+   "generic": "omadacycline",
+   "date": "2018-10-02",
+   "application_numbers": [
+    "NDA209816",
+    "NDA209817"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Revcovi",
+   "generic": "elapegademase-lvlr",
+   "date": "2018-10-05",
+   "application_numbers": [
+    "BLA761092"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tegsedi",
+   "generic": "inotersen",
+   "date": "2018-10-05",
+   "application_numbers": [
+    "NDA211172"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Talzenna",
+   "generic": "talazoparib",
+   "date": "2018-10-16",
+   "application_numbers": [
+    "NDA211651"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xofluza",
+   "generic": "baloxavir marboxil",
+   "date": "2018-10-24",
+   "application_numbers": [
+    "NDA210854"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lorbrena",
+   "generic": "lorlatinib",
+   "date": "2018-11-02",
+   "application_numbers": [
+    "NDA210868"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Yupelri",
+   "generic": "revefenacin",
+   "date": "2018-11-09",
+   "application_numbers": [
+    "NDA210598"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Aemcolo",
+   "generic": "rifamycin",
+   "date": "2018-11-16",
+   "application_numbers": [
+    "NDA210910"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Gamifant",
+   "generic": "emapalumab-lzsg",
+   "date": "2018-11-20",
+   "application_numbers": [
+    "BLA761107"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Daurismo",
+   "generic": "glasdegib",
+   "date": "2018-11-21",
+   "application_numbers": [
+    "NDA210656"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vitrakvi",
+   "generic": "larotrectinib",
+   "date": "2018-11-26",
+   "application_numbers": [
+    "NDA210861",
+    "NDA211710"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Firdapse",
+   "generic": "amifampridine",
+   "date": "2018-11-28",
+   "application_numbers": [
+    "NDA208078"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xospata",
+   "generic": "gilteritinib",
+   "date": "2018-11-28",
+   "application_numbers": [
+    "NDA211349"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Motegrity",
+   "generic": "prucalopride",
+   "date": "2018-12-14",
+   "application_numbers": [
+    "NDA210166"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Asparlas",
+   "generic": "calaspargase pegol-mknl",
+   "date": "2018-12-20",
+   "application_numbers": [
+    "BLA761102"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ultomiris",
+   "generic": "ravulizumab-cwvz",
+   "date": "2018-12-21",
+   "application_numbers": [
+    "BLA761108"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Elzonris",
+   "generic": "tagraxofusp-erzs",
+   "date": "2018-12-21",
+   "application_numbers": [
+    "BLA761116"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Jeuveau",
+   "generic": "prabotulinumtoxinA-xvfs",
+   "date": "2019-02-01",
+   "application_numbers": [
+    "BLA761085"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cablivi",
+   "generic": "caplacizumab-yhdp",
+   "date": "2019-02-06",
+   "application_numbers": [
+    "BLA761112"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Egaten",
+   "generic": "triclabendazole",
+   "date": "2019-02-13",
+   "application_numbers": [
+    "NDA208711"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sunosi",
+   "generic": "solriamfetol",
+   "date": "2019-03-20",
+   "application_numbers": [
+    "NDA211230"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Mayzent",
+   "generic": "siponimod",
+   "date": "2019-03-26",
+   "application_numbers": [
+    "NDA209884"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Evenity",
+   "generic": "romosozumab-aqqg",
+   "date": "2019-04-09",
+   "application_numbers": [
+    "BLA761062"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Balversa",
+   "generic": "erdafitinib",
+   "date": "2019-04-12",
+   "application_numbers": [
+    "NDA212018"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Skyrizi",
+   "generic": "risankizumab-rzaa",
+   "date": "2019-04-23",
+   "application_numbers": [
+    "BLA761105"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vyndaqel",
+   "generic": "tafamidis meglumine",
+   "date": "2019-05-03",
+   "application_numbers": [
+    "NDA211996"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Piqray",
+   "generic": "alpelisib",
+   "date": "2019-05-24",
+   "application_numbers": [
+    "NDA212526"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Polivy",
+   "generic": "polatuzumab vedotin-piiq",
+   "date": "2019-06-10",
+   "application_numbers": [
+    "BLA761121"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vyleesi",
+   "generic": "bremelanotide",
+   "date": "2019-06-21",
+   "application_numbers": [
+    "NDA210557"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xpovio",
+   "generic": "selinexor",
+   "date": "2019-07-03",
+   "application_numbers": [
+    "NDA212306"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Recarbrio",
+   "generic": "imipenem, cilastatin, and relebactam",
+   "date": "2019-07-16",
+   "application_numbers": [
+    "NDA212819"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Accrufer",
+   "generic": "ferric maltol",
+   "date": "2019-07-25",
+   "application_numbers": [
+    "NDA212320"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nubeqa",
+   "generic": "darolutamide",
+   "date": "2019-07-30",
+   "application_numbers": [
+    "NDA212099"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Turalio",
+   "generic": "pexidartinib",
+   "date": "2019-08-02",
+   "application_numbers": [
+    "NDA211810"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Wakix",
+   "generic": "pitolisant",
+   "date": "2019-08-14",
+   "application_numbers": [
+    "NDA211150"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "[drug marketed without a proprietary name]",
+   "generic": "pretomanid",
+   "date": "2019-08-14",
+   "application_numbers": [
+    "NDA212862"
+   ],
+   "skipped_because": [
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rozlytrek",
+   "generic": "entrectinib",
+   "date": "2019-08-15",
+   "application_numbers": [
+    "NDA212725",
+    "NDA212726"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Inrebic",
+   "generic": "fedratinib",
+   "date": "2019-08-16",
+   "application_numbers": [
+    "NDA212327"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rinvoq",
+   "generic": "upadacitinib",
+   "date": "2019-08-16",
+   "application_numbers": [
+    "NDA211675"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xenleta",
+   "generic": "lefamulin",
+   "date": "2019-08-19",
+   "application_numbers": [
+    "NDA211672",
+    "NDA211673"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nourianz",
+   "generic": "istradefylline",
+   "date": "2019-08-27",
+   "application_numbers": [
+    "NDA022075"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ibsrela",
+   "generic": "tenapanor",
+   "date": "2019-09-12",
+   "application_numbers": [
+    "NDA211801"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Aklief",
+   "generic": "trifarotene",
+   "date": "2019-10-04",
+   "application_numbers": [
+    "NDA211527"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Beovu",
+   "generic": "brolucizumab-dbll",
+   "date": "2019-10-07",
+   "application_numbers": [
+    "BLA761125"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Scenesse",
+   "generic": "afamelanotide",
+   "date": "2019-10-08",
+   "application_numbers": [
+    "NDA210797"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "[drug marketed without a proprietary name]",
+   "generic": "fluorodopa F 18",
+   "date": "2019-10-10",
+   "application_numbers": [
+    "NDA200655"
+   ],
+   "skipped_because": [
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Reyvow",
+   "generic": "lasmiditan",
+   "date": "2019-10-11",
+   "application_numbers": [
+    "NDA211280"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Trikafta",
+   "generic": "elexacaftor, ivacaftor, tezacaftor; ivacaftor (co-packaged)",
+   "date": "2019-10-21",
+   "application_numbers": [
+    "NDA212273"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "ExEm Foam",
+   "generic": "air polymer-type A",
+   "date": "2019-11-07",
+   "application_numbers": [
+    "NDA212279"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Reblozyl",
+   "generic": "luspatercept-aamt",
+   "date": "2019-11-08",
+   "application_numbers": [
+    "BLA761136"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Brukinsa",
+   "generic": "zanubrutinib",
+   "date": "2019-11-14",
+   "application_numbers": [
+    "NDA213217"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Fetroja",
+   "generic": "cefiderocol",
+   "date": "2019-11-14",
+   "application_numbers": [
+    "NDA209445"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Adakveo",
+   "generic": "crizanlizumab-tmca",
+   "date": "2019-11-15",
+   "application_numbers": [
+    "BLA761128"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Givlaari",
+   "generic": "givosiran",
+   "date": "2019-11-20",
+   "application_numbers": [
+    "NDA212194"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xcopri",
+   "generic": "cenobamate",
+   "date": "2019-11-21",
+   "application_numbers": [
+    "NDA212839"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Oxbryta",
+   "generic": "voxelotor",
+   "date": "2019-11-25",
+   "application_numbers": [
+    "NDA213137"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vyondys 53",
+   "generic": "golodirsen",
+   "date": "2019-12-12",
+   "application_numbers": [
+    "NDA211970"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Padcev",
+   "generic": "enfortumab vedotin-ejfv",
+   "date": "2019-12-18",
+   "application_numbers": [
+    "BLA761137"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Caplyta",
+   "generic": "lumateperone",
+   "date": "2019-12-20",
+   "application_numbers": [
+    "NDA209500"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Enhertu",
+   "generic": "fam-trastuzumab deruxtecan-nxki",
+   "date": "2019-12-20",
+   "application_numbers": [
+    "BLA761139"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "TissueBlue",
+   "generic": "Brilliant Blue G",
+   "date": "2019-12-20",
+   "application_numbers": [
+    "NDA209569"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Dayvigo",
+   "generic": "lemborexant",
+   "date": "2019-12-20",
+   "application_numbers": [
+    "NDA212028"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ubrelvy",
+   "generic": "ubrogepant",
+   "date": "2019-12-23",
+   "application_numbers": [
+    "NDA211765"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ayvakit",
+   "generic": "avapritinib",
+   "date": "2020-01-09",
+   "application_numbers": [
+    "NDA212608"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tepezza",
+   "generic": "teprotumumab-trbw",
+   "date": "2020-01-21",
+   "application_numbers": [
+    "BLA761143"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tazverik",
+   "generic": "tazemetostat",
+   "date": "2020-01-23",
+   "application_numbers": [
+    "NDA211723"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Pizensy",
+   "generic": "lactitol",
+   "date": "2020-02-12",
+   "application_numbers": [
+    "NDA211281"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nexletol",
+   "generic": "bempedoic acid",
+   "date": "2020-02-21",
+   "application_numbers": [
+    "NDA211616"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vyepti",
+   "generic": "eptinezumab-jjmr",
+   "date": "2020-02-21",
+   "application_numbers": [
+    "BLA761119"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Barhemsys",
+   "generic": "amisulpride",
+   "date": "2020-02-26",
+   "application_numbers": [
+    "NDA209510"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nurtec ODT",
+   "generic": "rimegepant",
+   "date": "2020-02-27",
+   "application_numbers": [
+    "NDA212728"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sarclisa",
+   "generic": "isatuximab-irfc",
+   "date": "2020-03-02",
+   "application_numbers": [
+    "BLA761113"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Isturisa",
+   "generic": "osilodrostat",
+   "date": "2020-03-06",
+   "application_numbers": [
+    "NDA212801"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zeposia",
+   "generic": "ozanimod",
+   "date": "2020-03-25",
+   "application_numbers": [
+    "NDA209899"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Koselugo",
+   "generic": "selumetinib",
+   "date": "2020-04-10",
+   "application_numbers": [
+    "NDA213756"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Pemazyre",
+   "generic": "pemigatinib",
+   "date": "2020-04-17",
+   "application_numbers": [
+    "NDA213736"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tukysa",
+   "generic": "tucatinib",
+   "date": "2020-04-17",
+   "application_numbers": [
+    "NDA213411"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Trodelvy",
+   "generic": "sacituzumab govitecan-hziy",
+   "date": "2020-04-22",
+   "application_numbers": [
+    "BLA761115"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ongentys",
+   "generic": "opicapone",
+   "date": "2020-04-24",
+   "application_numbers": [
+    "NDA212489"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tabrecta",
+   "generic": "capmatinib",
+   "date": "2020-05-06",
+   "application_numbers": [
+    "NDA213591"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Retevmo",
+   "generic": "selpercatinib",
+   "date": "2020-05-08",
+   "application_numbers": [
+    "NDA213246"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Qinlock",
+   "generic": "ripretinib",
+   "date": "2020-05-15",
+   "application_numbers": [
+    "NDA213973"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cerianna",
+   "generic": "fluoroestradiol F 18",
+   "date": "2020-05-20",
+   "application_numbers": [
+    "NDA212155"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "[drug marketed without a proprietary name]",
+   "generic": "artesunate",
+   "date": "2020-05-26",
+   "application_numbers": [
+    "NDA213036"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tauvid",
+   "generic": "flortaucipir F 18",
+   "date": "2020-05-28",
+   "application_numbers": [
+    "NDA212123"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Uplizna",
+   "generic": "inebilizumab-cdon",
+   "date": "2020-06-11",
+   "application_numbers": [
+    "BLA761142"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zepzelca",
+   "generic": "lurbinectedin",
+   "date": "2020-06-15",
+   "application_numbers": [
+    "NDA213702"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Dojolvi",
+   "generic": "triheptanoin",
+   "date": "2020-06-30",
+   "application_numbers": [
+    "NDA213687"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Byfavo",
+   "generic": "remimazolam",
+   "date": "2020-07-02",
+   "application_numbers": [
+    "NDA212295"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rukobia",
+   "generic": "fostemsavir",
+   "date": "2020-07-02",
+   "application_numbers": [
+    "NDA212950"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Inqovi",
+   "generic": "decitabine and cedazuridine",
+   "date": "2020-07-07",
+   "application_numbers": [
+    "NDA212576"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xeglyze",
+   "generic": "abametapir",
+   "date": "2020-07-24",
+   "application_numbers": [
+    "NDA206966"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Monjuvi",
+   "generic": "tafasitamab-cxix",
+   "date": "2020-07-31",
+   "application_numbers": [
+    "BLA761163"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Blenrep",
+   "generic": "belantamab mafodotin-blmf",
+   "date": "2020-08-05",
+   "application_numbers": [
+    "BLA761158"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lampit",
+   "generic": "nifurtimox",
+   "date": "2020-08-06",
+   "application_numbers": [
+    "NDA213464"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Evrysdi",
+   "generic": "risdiplam",
+   "date": "2020-08-07",
+   "application_numbers": [
+    "NDA213535"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Olinvyk",
+   "generic": "oliceridine",
+   "date": "2020-08-07",
+   "application_numbers": [
+    "NDA210730"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Viltepso",
+   "generic": "viltolarsen",
+   "date": "2020-08-12",
+   "application_numbers": [
+    "NDA212154"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Enspryng",
+   "generic": "satralizumab-mwge",
+   "date": "2020-08-14",
+   "application_numbers": [
+    "BLA761149"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Winlevi",
+   "generic": "clascoterone",
+   "date": "2020-08-26",
+   "application_numbers": [
+    "NDA213433"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sogroya",
+   "generic": "somapacitan-beco",
+   "date": "2020-08-28",
+   "application_numbers": [
+    "BLA761156"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Detectnet",
+   "generic": "copper Cu 64 dotatate",
+   "date": "2020-09-03",
+   "application_numbers": [
+    "NDA213227"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Gavreto",
+   "generic": "pralsetinib",
+   "date": "2020-09-04",
+   "application_numbers": [
+    "NDA213721"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Inmazeb",
+   "generic": "atoltivimab, maftivimab, and odesivimab-ebgn",
+   "date": "2020-10-14",
+   "application_numbers": [
+    "BLA761169"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Veklury",
+   "generic": "remdesivir",
+   "date": "2020-10-22",
+   "application_numbers": [
+    "NDA214787"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zokinvy",
+   "generic": "lonafarnib",
+   "date": "2020-11-20",
+   "application_numbers": [
+    "NDA213969"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Oxlumo",
+   "generic": "lumasiran",
+   "date": "2020-11-23",
+   "application_numbers": [
+    "NDA214103"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Imcivree",
+   "generic": "setmelanotide",
+   "date": "2020-11-25",
+   "application_numbers": [
+    "NDA213793"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Danyelza",
+   "generic": "naxitamab-gqgk",
+   "date": "2020-11-25",
+   "application_numbers": [
+    "BLA761171"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "[drug marketed without a proprietary name]",
+   "generic": "gallium Ga 68 PSMA-11",
+   "date": "2020-12-01",
+   "application_numbers": [
+    "NDA212642"
+   ],
+   "skipped_because": [
+    "application number already in master"
+   ]
+  },
+  {
+   "brand": "Orladeyo",
+   "generic": "berotralstat",
+   "date": "2020-12-03",
+   "application_numbers": [
+    "NDA214094"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Klisyri",
+   "generic": "tirbanibulin",
+   "date": "2020-12-14",
+   "application_numbers": [
+    "NDA213189"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Margenza",
+   "generic": "margetuximab-cmkb",
+   "date": "2020-12-16",
+   "application_numbers": [
+    "BLA761150"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Orgovyx",
+   "generic": "relugolix",
+   "date": "2020-12-18",
+   "application_numbers": [
+    "NDA214621"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ebanga",
+   "generic": "ansuvimab-zykl",
+   "date": "2020-12-21",
+   "application_numbers": [
+    "BLA761172"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Gemtesa",
+   "generic": "vibegron",
+   "date": "2020-12-23",
+   "application_numbers": [
+    "NDA213006"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Verquvo",
+   "generic": "vericiguat",
+   "date": "2021-01-19",
+   "application_numbers": [
+    "NDA214377"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cabenuva",
+   "generic": "cabotegravir; rilpivirine (co-packaged)",
+   "date": "2021-01-21",
+   "application_numbers": [
+    "NDA212888"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Lupkynis",
+   "generic": "voclosporin",
+   "date": "2021-01-22",
+   "application_numbers": [
+    "NDA213716"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tepmetko",
+   "generic": "tepotinib",
+   "date": "2021-02-03",
+   "application_numbers": [
+    "NDA214096"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ukoniq",
+   "generic": "umbralisib",
+   "date": "2021-02-05",
+   "application_numbers": [
+    "NDA213176"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Evkeeza",
+   "generic": "evinacumab-dgnb",
+   "date": "2021-02-11",
+   "application_numbers": [
+    "BLA761181"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cosela",
+   "generic": "trilaciclib",
+   "date": "2021-02-12",
+   "application_numbers": [
+    "NDA214200"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Amondys 45",
+   "generic": "casimersen",
+   "date": "2021-02-25",
+   "application_numbers": [
+    "NDA213026"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nulibry",
+   "generic": "fosdenopterin",
+   "date": "2021-02-26",
+   "application_numbers": [
+    "NDA214018"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Pepaxto",
+   "generic": "melphalan flufenamide",
+   "date": "2021-02-26",
+   "application_numbers": [
+    "NDA214383"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Azstarys",
+   "generic": "serdexmethylphenidate and dexmethylphenidate",
+   "date": "2021-03-02",
+   "application_numbers": [
+    "NDA212994"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Fotivda",
+   "generic": "tivozanib",
+   "date": "2021-03-10",
+   "application_numbers": [
+    "NDA212904"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ponvory",
+   "generic": "ponesimod",
+   "date": "2021-03-18",
+   "application_numbers": [
+    "NDA213498"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zegalogue",
+   "generic": "dasiglucagon",
+   "date": "2021-03-22",
+   "application_numbers": [
+    "NDA214231"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Qelbree",
+   "generic": "viloxazine",
+   "date": "2021-04-02",
+   "application_numbers": [
+    "NDA211964"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nextstellis",
+   "generic": "drospirenone and estetrol",
+   "date": "2021-04-15",
+   "application_numbers": [
+    "NDA214154"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Jemperli",
+   "generic": "dostarlimab-gxly",
+   "date": "2021-04-22",
+   "application_numbers": [
+    "BLA761174"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zynlonta",
+   "generic": "loncastuximab tesirine-lpyl",
+   "date": "2021-04-23",
+   "application_numbers": [
+    "BLA761196"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Empaveli",
+   "generic": "pegcetacoplan",
+   "date": "2021-05-14",
+   "application_numbers": [
+    "NDA215014"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rybrevant",
+   "generic": "amivantamab-vmjw",
+   "date": "2021-05-21",
+   "application_numbers": [
+    "BLA761210"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Pylarify",
+   "generic": "piflufolastat F 18",
+   "date": "2021-05-26",
+   "application_numbers": [
+    "NDA214793"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lumakras",
+   "generic": "sotorasib",
+   "date": "2021-05-28",
+   "application_numbers": [
+    "NDA214665"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lybalvi",
+   "generic": "olanzapine and samidorphan",
+   "date": "2021-05-28",
+   "application_numbers": [
+    "NDA213378"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Truseltiq",
+   "generic": "infigratinib",
+   "date": "2021-05-28",
+   "application_numbers": [
+    "NDA214622"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Brexafemme",
+   "generic": "ibrexafungerp",
+   "date": "2021-06-01",
+   "application_numbers": [
+    "NDA214900"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Aduhelm",
+   "generic": "aducanumab-avwa",
+   "date": "2021-06-07",
+   "application_numbers": [
+    "BLA761178"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rylaze",
+   "generic": "asparaginase erwinia chrysanthemi (recombinant)-rywn",
+   "date": "2021-06-30",
+   "application_numbers": [
+    "BLA761179"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kerendia",
+   "generic": "finerenone",
+   "date": "2021-07-09",
+   "application_numbers": [
+    "NDA215341"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "[drug marketed without a proprietary name]",
+   "generic": "fexinidazole",
+   "date": "2021-07-16",
+   "application_numbers": [
+    "NDA214429"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rezurock",
+   "generic": "belumosudil",
+   "date": "2021-07-16",
+   "application_numbers": [
+    "NDA214783"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Bylvay",
+   "generic": "odevixibat",
+   "date": "2021-07-20",
+   "application_numbers": [
+    "NDA215498"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Saphnelo",
+   "generic": "anifrolumab-fnia",
+   "date": "2021-07-30",
+   "application_numbers": [
+    "BLA761123"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nexviazyme",
+   "generic": "avalglucosidase alfa-ngpt",
+   "date": "2021-08-06",
+   "application_numbers": [
+    "BLA761194"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Welireg",
+   "generic": "belzutifan",
+   "date": "2021-08-13",
+   "application_numbers": [
+    "NDA215383"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Korsuva",
+   "generic": "difelikefalin",
+   "date": "2021-08-23",
+   "application_numbers": [
+    "NDA214916"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Skytrofa",
+   "generic": "lonapegsomatropin-tcgd",
+   "date": "2021-08-25",
+   "application_numbers": [
+    "BLA761177"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Exkivity",
+   "generic": "mobocertinib",
+   "date": "2021-09-15",
+   "application_numbers": [
+    "NDA215310"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tivdak",
+   "generic": "tisotumab vedotin-tftv",
+   "date": "2021-09-20",
+   "application_numbers": [
+    "BLA761208"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Qulipta",
+   "generic": "atogepant",
+   "date": "2021-09-28",
+   "application_numbers": [
+    "NDA215206"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Livmarli",
+   "generic": "maralixibat",
+   "date": "2021-09-29",
+   "application_numbers": [
+    "NDA214662"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tavneos",
+   "generic": "avacopan",
+   "date": "2021-10-07",
+   "application_numbers": [
+    "NDA214487"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Scemblix",
+   "generic": "asciminib",
+   "date": "2021-10-29",
+   "application_numbers": [
+    "NDA215358"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Besremi",
+   "generic": "ropeginterferon alfa-2b-njft",
+   "date": "2021-11-12",
+   "application_numbers": [
+    "BLA761166"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Voxzogo",
+   "generic": "vosoritide",
+   "date": "2021-11-19",
+   "application_numbers": [
+    "NDA214938"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Livtencity",
+   "generic": "maribavir",
+   "date": "2021-11-23",
+   "application_numbers": [
+    "NDA215596"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cytalux",
+   "generic": "pafolacianine",
+   "date": "2021-11-29",
+   "application_numbers": [
+    "NDA214907"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tezspire",
+   "generic": "tezepelumab-ekko",
+   "date": "2021-12-17",
+   "application_numbers": [
+    "BLA761224"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vyvgart",
+   "generic": "efgartigimod alfa-fcab",
+   "date": "2021-12-17",
+   "application_numbers": [
+    "BLA761195"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Leqvio",
+   "generic": "inclisiran",
+   "date": "2021-12-22",
+   "application_numbers": [
+    "NDA214012"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Adbry",
+   "generic": "tralokinumab-ldrm",
+   "date": "2021-12-27",
+   "application_numbers": [
+    "BLA761180"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Quviviq",
+   "generic": "daridorexant",
+   "date": "2022-01-07",
+   "application_numbers": [
+    "NDA214985"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cibinqo",
+   "generic": "abrocitinib",
+   "date": "2022-01-14",
+   "application_numbers": [
+    "NDA213871"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kimmtrak",
+   "generic": "tebentafusp-tebn",
+   "date": "2022-01-25",
+   "application_numbers": [
+    "BLA761228"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vabysmo",
+   "generic": "faricimab-svoa",
+   "date": "2022-01-28",
+   "application_numbers": [
+    "BLA761235"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Enjaymo",
+   "generic": "sutimlimab-jome",
+   "date": "2022-02-04",
+   "application_numbers": [
+    "BLA761164"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Pyrukynd",
+   "generic": "mitapivat",
+   "date": "2022-02-17",
+   "application_numbers": [
+    "NDA216196"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vonjo",
+   "generic": "pacritinib",
+   "date": "2022-02-28",
+   "application_numbers": [
+    "NDA208712"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Opdualag",
+   "generic": "nivolumab and relatlimab-rmbw",
+   "date": "2022-03-18",
+   "application_numbers": [
+    "BLA761234"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ztalmy",
+   "generic": "ganaxolone",
+   "date": "2022-03-18",
+   "application_numbers": [
+    "NDA215904"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Pluvicto",
+   "generic": "lutetium Lu 177 vipivotide tetraxetan",
+   "date": "2022-03-23",
+   "application_numbers": [
+    "NDA215833"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vivjoa",
+   "generic": "oteseconazole",
+   "date": "2022-04-26",
+   "application_numbers": [
+    "NDA215888"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Camzyos",
+   "generic": "mavacamten",
+   "date": "2022-04-28",
+   "application_numbers": [
+    "NDA214998"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Mounjaro",
+   "generic": "tirzepatide",
+   "date": "2022-05-13",
+   "application_numbers": [
+    "NDA215866"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vtama",
+   "generic": "tapinarof",
+   "date": "2022-05-23",
+   "application_numbers": [
+    "NDA215272"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Amvuttra",
+   "generic": "vutrisiran",
+   "date": "2022-06-13",
+   "application_numbers": [
+    "NDA215515"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xenpozyme",
+   "generic": "olipudase alfa-rpcp",
+   "date": "2022-08-31",
+   "application_numbers": [
+    "BLA761261"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Spevigo",
+   "generic": "spesolimab-sbzo",
+   "date": "2022-09-01",
+   "application_numbers": [
+    "BLA761244"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Daxxify",
+   "generic": "daxibotulinumtoxinA-lanm",
+   "date": "2022-09-07",
+   "application_numbers": [
+    "BLA761127"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rolvedon",
+   "generic": "eflapegrastim-xnst",
+   "date": "2022-09-09",
+   "application_numbers": [
+    "BLA761148"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sotyktu",
+   "generic": "deucravacitinib",
+   "date": "2022-09-09",
+   "application_numbers": [
+    "NDA214958"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Terlivaz",
+   "generic": "terlipressin",
+   "date": "2022-09-14",
+   "application_numbers": [
+    "NDA022231"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Elucirem",
+   "generic": "gadopiclenol",
+   "date": "2022-09-21",
+   "application_numbers": [
+    "NDA216986"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Omlonti",
+   "generic": "omidenepag isopropyl",
+   "date": "2022-09-22",
+   "application_numbers": [
+    "NDA215092"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Relyvrio",
+   "generic": "sodium phenylbutyrate and taurursodiol",
+   "date": "2022-09-29",
+   "application_numbers": [
+    "NDA216660"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lytgobi",
+   "generic": "futibatinib",
+   "date": "2022-09-30",
+   "application_numbers": [
+    "NDA214801"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Imjudo",
+   "generic": "tremelimumab-actl",
+   "date": "2022-10-21",
+   "application_numbers": [
+    "BLA761289"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tecvayli",
+   "generic": "teclistamab-cqyv",
+   "date": "2022-10-25",
+   "application_numbers": [
+    "BLA761291"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Elahere",
+   "generic": "mirvetuximab soravtansine-gynx",
+   "date": "2022-11-14",
+   "application_numbers": [
+    "BLA761310"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tzield",
+   "generic": "teplizumab-mzwv",
+   "date": "2022-11-17",
+   "application_numbers": [
+    "BLA761183"
+   ],
+   "skipped_because": [
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rezlidhia",
+   "generic": "olutasidenib",
+   "date": "2022-12-01",
+   "application_numbers": [
+    "NDA215814"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Krazati",
+   "generic": "adagrasib",
+   "date": "2022-12-12",
+   "application_numbers": [
+    "NDA216340"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lunsumio",
+   "generic": "mosunetuzumab-axgb",
+   "date": "2022-12-22",
+   "application_numbers": [
+    "BLA761263"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sunlenca",
+   "generic": "lenacapavir",
+   "date": "2022-12-22",
+   "application_numbers": [
+    "NDA215973"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xenoview",
+   "generic": "xenon Xe 129 hyperpolarized",
+   "date": "2022-12-23",
+   "application_numbers": [
+    "NDA214375"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Briumvi",
+   "generic": "ublituximab-xiiy",
+   "date": "2022-12-28",
+   "application_numbers": [
+    "BLA761238"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "NexoBrid",
+   "generic": "anacaulase-bcdb",
+   "date": "2022-12-28",
+   "application_numbers": [
+    "BLA761192"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Leqembi",
+   "generic": "lecanemab-irmb",
+   "date": "2023-01-06",
+   "application_numbers": [
+    "BLA761269"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Brenzavvy",
+   "generic": "bexagliflozin",
+   "date": "2023-01-20",
+   "application_numbers": [
+    "NDA214373"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Jaypirca",
+   "generic": "pirtobrutinib",
+   "date": "2023-01-27",
+   "application_numbers": [
+    "NDA216059"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Orserdu",
+   "generic": "elacestrant",
+   "date": "2023-01-27",
+   "application_numbers": [
+    "NDA217639"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Jesduvroq",
+   "generic": "daprodustat",
+   "date": "2023-02-01",
+   "application_numbers": [
+    "NDA216951"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lamzede",
+   "generic": "velmanase alfa-tycv",
+   "date": "2023-02-16",
+   "application_numbers": [
+    "BLA761278"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Filspari",
+   "generic": "sparsentan",
+   "date": "2023-02-17",
+   "application_numbers": [
+    "NDA216403"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Skyclarys",
+   "generic": "omaveloxolone",
+   "date": "2023-02-28",
+   "application_numbers": [
+    "NDA216718"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zavzpret",
+   "generic": "zavegepant",
+   "date": "2023-03-09",
+   "application_numbers": [
+    "NDA216386"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Daybue",
+   "generic": "trofinetide",
+   "date": "2023-03-10",
+   "application_numbers": [
+    "NDA217026"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rezzayo",
+   "generic": "rezafungin",
+   "date": "2023-03-22",
+   "application_numbers": [
+    "NDA217417"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zynyz",
+   "generic": "retifanlimab-dlwr",
+   "date": "2023-03-22",
+   "application_numbers": [
+    "BLA761334"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Joenja",
+   "generic": "leniolisib",
+   "date": "2023-03-24",
+   "application_numbers": [
+    "NDA217759"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Qalsody",
+   "generic": "tofersen",
+   "date": "2023-04-25",
+   "application_numbers": [
+    "NDA215887"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Elfabrio",
+   "generic": "pegunigalsidase alfa-iwxj",
+   "date": "2023-05-09",
+   "application_numbers": [
+    "BLA761161"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Veozah",
+   "generic": "fezolinetant",
+   "date": "2023-05-12",
+   "application_numbers": [
+    "NDA216578"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Miebo",
+   "generic": "perfluorohexyloctane",
+   "date": "2023-05-18",
+   "application_numbers": [
+    "NDA216675"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Epkinly",
+   "generic": "epcoritamab-bysp",
+   "date": "2023-05-19",
+   "application_numbers": [
+    "BLA761324"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xacduro",
+   "generic": "sulbactam; durlobactam (co-packaged)",
+   "date": "2023-05-23",
+   "application_numbers": [
+    "NDA216974"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Posluma",
+   "generic": "flotufolastat F 18",
+   "date": "2023-05-25",
+   "application_numbers": [
+    "NDA216023"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Paxlovid",
+   "generic": "nirmatrelvir; ritonavir (co-packaged)",
+   "date": "2023-05-25",
+   "application_numbers": [
+    "NDA217188"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Inpefa",
+   "generic": "sotagliflozin",
+   "date": "2023-05-26",
+   "application_numbers": [
+    "NDA216203"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Columvi",
+   "generic": "glofitamab-gxbm",
+   "date": "2023-06-15",
+   "application_numbers": [
+    "BLA761309"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Litfulo",
+   "generic": "ritlecitinib",
+   "date": "2023-06-23",
+   "application_numbers": [
+    "NDA215830"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rystiggo",
+   "generic": "rozanolixizumab-noli",
+   "date": "2023-06-26",
+   "application_numbers": [
+    "BLA761286"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ngenla",
+   "generic": "somatrogon-ghla",
+   "date": "2023-06-27",
+   "application_numbers": [
+    "BLA761184"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Beyfortus",
+   "generic": "nirsevimab-alip",
+   "date": "2023-07-17",
+   "application_numbers": [
+    "BLA761328"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vanflyta",
+   "generic": "quizartinib",
+   "date": "2023-07-20",
+   "application_numbers": [
+    "NDA216993"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xdemvy",
+   "generic": "lotilaner",
+   "date": "2023-07-24",
+   "application_numbers": [
+    "NDA217603"
+   ],
+   "skipped_because": [
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Izervay",
+   "generic": "avacincaptad pegol",
+   "date": "2023-08-04",
+   "application_numbers": [
+    "NDA217225"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zurzuvae",
+   "generic": "zuranolone",
+   "date": "2023-08-04",
+   "application_numbers": [
+    "NDA217369"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Talvey",
+   "generic": "talquetamab-tgvs",
+   "date": "2023-08-09",
+   "application_numbers": [
+    "BLA761342"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Elrexfio",
+   "generic": "elranatamab-bcmm",
+   "date": "2023-08-14",
+   "application_numbers": [
+    "BLA761345"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sohonos",
+   "generic": "palovarotene",
+   "date": "2023-08-16",
+   "application_numbers": [
+    "NDA215559"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Veopoz",
+   "generic": "pozelimab-bbfg",
+   "date": "2023-08-18",
+   "application_numbers": [
+    "BLA761339"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Aphexda",
+   "generic": "motixafortide",
+   "date": "2023-09-08",
+   "application_numbers": [
+    "NDA217159"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ojjaara",
+   "generic": "momelotinib",
+   "date": "2023-09-15",
+   "application_numbers": [
+    "NDA216873"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Exxua",
+   "generic": "gepirone",
+   "date": "2023-09-22",
+   "application_numbers": [
+    "NDA021164"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Pombiliti",
+   "generic": "cipaglucosidase alfa-atga",
+   "date": "2023-09-28",
+   "application_numbers": [
+    "BLA761204"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rivfloza",
+   "generic": "nedosiran",
+   "date": "2023-09-29",
+   "application_numbers": [
+    "NDA215842"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Velsipity",
+   "generic": "etrasimod",
+   "date": "2023-10-12",
+   "application_numbers": [
+    "NDA216956"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zilbrysq",
+   "generic": "zilucoplan",
+   "date": "2023-10-17",
+   "application_numbers": [
+    "NDA216834"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Bimzelx",
+   "generic": "bimekizumab-bkzx",
+   "date": "2023-10-17",
+   "application_numbers": [
+    "BLA761151"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Agamree",
+   "generic": "vamorolone",
+   "date": "2023-10-26",
+   "application_numbers": [
+    "NDA215239"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Omvoh",
+   "generic": "mirikizumab-mrkz",
+   "date": "2023-10-26",
+   "application_numbers": [
+    "BLA761279"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Loqtorzi",
+   "generic": "toripalimab-tpzi",
+   "date": "2023-10-27",
+   "application_numbers": [
+    "BLA761240"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Fruzaqla",
+   "generic": "fruquintinib",
+   "date": "2023-11-08",
+   "application_numbers": [
+    "NDA217564"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Defencath",
+   "generic": "taurolidine and heparin",
+   "date": "2023-11-15",
+   "application_numbers": [
+    "NDA214520"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Augtyro",
+   "generic": "repotrectinib",
+   "date": "2023-11-15",
+   "application_numbers": [
+    "NDA218213"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Truqap",
+   "generic": "capivasertib",
+   "date": "2023-11-16",
+   "application_numbers": [
+    "NDA218197"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ryzneuta",
+   "generic": "efbemalenograstim alfa-vuxw",
+   "date": "2023-11-16",
+   "application_numbers": [
+    "BLA761134"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ogsiveo",
+   "generic": "nirogacestat",
+   "date": "2023-11-27",
+   "application_numbers": [
+    "NDA217677"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Fabhalta",
+   "generic": "iptacopan",
+   "date": "2023-12-05",
+   "application_numbers": [
+    "NDA218276"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Filsuvez",
+   "generic": "birch triterpenes",
+   "date": "2023-12-18",
+   "application_numbers": [
+    "NDA215064"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Wainua",
+   "generic": "eplontersen",
+   "date": "2023-12-21",
+   "application_numbers": [
+    "NDA217388"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zelsuvmi",
+   "generic": "berdazimer",
+   "date": "2024-01-05",
+   "application_numbers": [
+    "NDA217424"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Exblifep",
+   "generic": "cefepime and enmetazobactam",
+   "date": "2024-02-22",
+   "application_numbers": [
+    "NDA216165"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Letybo",
+   "generic": "letibotulinumtoxinA-wlbg",
+   "date": "2024-02-29",
+   "application_numbers": [
+    "BLA761225"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tevimbra",
+   "generic": "tislelizumab-jsgr",
+   "date": "2024-03-13",
+   "application_numbers": [
+    "BLA761232"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rezdiffra",
+   "generic": "resmetirom",
+   "date": "2024-03-14",
+   "application_numbers": [
+    "NDA217785"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tryvio",
+   "generic": "aprocitentan",
+   "date": "2024-03-19",
+   "application_numbers": [
+    "NDA217686"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Duvyzat",
+   "generic": "givinostat",
+   "date": "2024-03-21",
+   "application_numbers": [
+    "NDA217865"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Winrevair",
+   "generic": "sotatercept-csrk",
+   "date": "2024-03-26",
+   "application_numbers": [
+    "BLA761363"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vafseo",
+   "generic": "vadadustat",
+   "date": "2024-03-27",
+   "application_numbers": [
+    "NDA215192"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Voydeya",
+   "generic": "danicopan",
+   "date": "2024-03-29",
+   "application_numbers": [
+    "NDA218037"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zevtera",
+   "generic": "ceftobiprole medocaril sodium",
+   "date": "2024-04-03",
+   "application_numbers": [
+    "NDA218275"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lumisight",
+   "generic": "pegulicianine",
+   "date": "2024-04-17",
+   "application_numbers": [
+    "NDA214511"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Anktiva",
+   "generic": "nogapendekin alfa inbakicept-pmln",
+   "date": "2024-04-22",
+   "application_numbers": [
+    "BLA761336"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ojemda",
+   "generic": "tovorafenib",
+   "date": "2024-04-23",
+   "application_numbers": [
+    "NDA217700",
+    "NDA218033"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Xolremdi",
+   "generic": "mavorixafor",
+   "date": "2024-04-26",
+   "application_numbers": [
+    "NDA218709"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Imdelltra",
+   "generic": "tarlatamab-dlle",
+   "date": "2024-05-16",
+   "application_numbers": [
+    "BLA761344"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rytelo",
+   "generic": "imetelstat",
+   "date": "2024-06-06",
+   "application_numbers": [
+    "NDA217779"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Iqirvo",
+   "generic": "elafibranor",
+   "date": "2024-06-10",
+   "application_numbers": [
+    "NDA218860"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sofdra",
+   "generic": "sofpironium",
+   "date": "2024-06-18",
+   "application_numbers": [
+    "NDA217347"
+   ],
+   "skipped_because": [
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Piasky",
+   "generic": "crovalimab-akkz",
+   "date": "2024-06-20",
+   "application_numbers": [
+    "BLA761388"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ohtuvayre",
+   "generic": "ensifentrine",
+   "date": "2024-06-26",
+   "application_numbers": [
+    "NDA217389"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kisunla",
+   "generic": "donanemab-azbt",
+   "date": "2024-07-02",
+   "application_numbers": [
+    "BLA761248"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Leqselvi",
+   "generic": "deuruxolitinib",
+   "date": "2024-07-25",
+   "application_numbers": [
+    "NDA217900"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Voranigo",
+   "generic": "vorasidenib",
+   "date": "2024-08-06",
+   "application_numbers": [
+    "NDA218784"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Yorvipath",
+   "generic": "palopegteriparatide",
+   "date": "2024-08-09",
+   "application_numbers": [
+    "NDA216490"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nemluvio",
+   "generic": "nemolizumab-ilto",
+   "date": "2024-08-12",
+   "application_numbers": [
+    "BLA761390"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Livdelzi",
+   "generic": "seladelpar",
+   "date": "2024-08-14",
+   "application_numbers": [
+    "NDA217899"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Niktimvo",
+   "generic": "axatilimab-csfr",
+   "date": "2024-08-14",
+   "application_numbers": [
+    "BLA761411"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lazcluze",
+   "generic": "lazertinib",
+   "date": "2024-08-19",
+   "application_numbers": [
+    "NDA219008"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ebglyss",
+   "generic": "lebrikizumab-lbkz",
+   "date": "2024-09-13",
+   "application_numbers": [
+    "BLA761306"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Miplyffa",
+   "generic": "arimoclomol",
+   "date": "2024-09-20",
+   "application_numbers": [
+    "NDA214927"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Aqneursa",
+   "generic": "levacetylleucine",
+   "date": "2024-09-24",
+   "application_numbers": [
+    "NDA219132"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cobenfy",
+   "generic": "xanomeline and trospium chloride",
+   "date": "2024-09-26",
+   "application_numbers": [
+    "NDA216158"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Flyrcado",
+   "generic": "flurpiridaz F 18",
+   "date": "2024-09-27",
+   "application_numbers": [
+    "NDA215168"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Itovebi",
+   "generic": "inavolisib",
+   "date": "2024-10-10",
+   "application_numbers": [
+    "NDA219249"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Hympavzi",
+   "generic": "marstacimab-hncq",
+   "date": "2024-10-11",
+   "application_numbers": [
+    "BLA761369"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vyloy",
+   "generic": "zolbetuximab-clzb",
+   "date": "2024-10-18",
+   "application_numbers": [
+    "BLA761365"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Orlynvah",
+   "generic": "sulopenem etzadroxil and probenecid",
+   "date": "2024-10-25",
+   "application_numbers": [
+    "NDA213972"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Revuforj",
+   "generic": "revumenib",
+   "date": "2024-11-15",
+   "application_numbers": [
+    "NDA218944"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ziihera",
+   "generic": "zanidatamab-hrii",
+   "date": "2024-11-20",
+   "application_numbers": [
+    "BLA761416"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Attruby",
+   "generic": "acoramidis",
+   "date": "2024-11-22",
+   "application_numbers": [
+    "NDA216540"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rapiblyk",
+   "generic": "landiolol",
+   "date": "2024-11-22",
+   "application_numbers": [
+    "NDA217202"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Iomervu",
+   "generic": "iomeprol",
+   "date": "2024-11-27",
+   "application_numbers": [
+    "NDA216017",
+    "NDA216016"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Bizengri",
+   "generic": "zenocutuzumab-zbco",
+   "date": "2024-12-04",
+   "application_numbers": [
+    "BLA761352"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Crenessity",
+   "generic": "crinecerfont",
+   "date": "2024-12-13",
+   "application_numbers": [
+    "NDA218808",
+    "NDA218820"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Unloxcyt",
+   "generic": "cosibelimab-ipdl",
+   "date": "2024-12-13",
+   "application_numbers": [
+    "BLA761297"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ensacove",
+   "generic": "ensartinib",
+   "date": "2024-12-18",
+   "application_numbers": [
+    "NDA218171"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tryngolza",
+   "generic": "olezarsen",
+   "date": "2024-12-19",
+   "application_numbers": [
+    "NDA218614"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Alhemo",
+   "generic": "concizumab-mtci",
+   "date": "2024-12-20",
+   "application_numbers": [
+    "BLA761315"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Alyftrek",
+   "generic": "vanzacaftor, tezacaftor and deutivacaftor",
+   "date": "2024-12-20",
+   "application_numbers": [
+    "NDA218730"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Datroway",
+   "generic": "datopotamab deruxtecan-dlnk",
+   "date": "2025-01-17",
+   "application_numbers": [
+    "BLA761394"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Grafapex",
+   "generic": "treosulfan",
+   "date": "2025-01-21",
+   "application_numbers": [
+    "NDA214759"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Journavx",
+   "generic": "suzetrigine",
+   "date": "2025-01-30",
+   "application_numbers": [
+    "NDA219209"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Gomekli",
+   "generic": "mirdametinib",
+   "date": "2025-02-11",
+   "application_numbers": [
+    "NDA219379",
+    "NDA219389"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Romvimza",
+   "generic": "vimseltinib",
+   "date": "2025-02-14",
+   "application_numbers": [
+    "NDA219304"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Blujepa",
+   "generic": "gepotidacin",
+   "date": "2025-03-25",
+   "application_numbers": [
+    "NDA218230"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Qfitlia",
+   "generic": "fitusiran",
+   "date": "2025-03-28",
+   "application_numbers": [
+    "NDA219019"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vanrafia",
+   "generic": "atrasentan",
+   "date": "2025-04-02",
+   "application_numbers": [
+    "NDA219208"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "[drug marketed without a proprietary name]",
+   "generic": "penpulimab-kcqx",
+   "date": "2025-04-23",
+   "application_numbers": [
+    "BLA761258"
+   ],
+   "skipped_because": [
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Imaavy",
+   "generic": "nipocalimab-aahu",
+   "date": "2025-04-29",
+   "application_numbers": [
+    "BLA761430"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Avmapki Fakzynja Co-Pack",
+   "generic": "avutometinib; defactinib (co-packaged)",
+   "date": "2025-05-08",
+   "application_numbers": [
+    "NDA219616"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master"
+   ]
+  },
+  {
+   "brand": "Emrelis",
+   "generic": "telisotuzumab vedotin-tllv",
+   "date": "2025-05-14",
+   "application_numbers": [
+    "BLA761384"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Tryptyr",
+   "generic": "acoltremon",
+   "date": "2025-05-28",
+   "application_numbers": [
+    "NDA217370"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Enflonsia",
+   "generic": "clesrovimab-cfor",
+   "date": "2025-06-09",
+   "application_numbers": [
+    "BLA761432"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ibtrozi",
+   "generic": "taletrectinib",
+   "date": "2025-06-11",
+   "application_numbers": [
+    "NDA219713"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Andembry",
+   "generic": "garadacimab-gxii",
+   "date": "2025-06-16",
+   "application_numbers": [
+    "BLA761367"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lynozyfic",
+   "generic": "linvoseltamab-gcpt",
+   "date": "2025-07-02",
+   "application_numbers": [
+    "BLA761400"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Zegfrovy",
+   "generic": "sunvozertinib",
+   "date": "2025-07-02",
+   "application_numbers": [
+    "NDA219839"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Ekterly",
+   "generic": "sebetralstat",
+   "date": "2025-07-03",
+   "application_numbers": [
+    "NDA219301"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Anzupgo",
+   "generic": "delgocitinib",
+   "date": "2025-07-23",
+   "application_numbers": [
+    "NDA219155"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Sephience",
+   "generic": "sepiapterin",
+   "date": "2025-07-28",
+   "application_numbers": [
+    "NDA219666"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Vizz",
+   "generic": "aceclidine",
+   "date": "2025-07-31",
+   "application_numbers": [
+    "NDA218585"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Modeyso",
+   "generic": "dordaviprone",
+   "date": "2025-08-06",
+   "application_numbers": [
+    "NDA219876"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Hernexeos",
+   "generic": "zongertinib",
+   "date": "2025-08-08",
+   "application_numbers": [
+    "NDA219042"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Brinsupri",
+   "generic": "brensocatib",
+   "date": "2025-08-12",
+   "application_numbers": [
+    "NDA217673"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Dawnzera",
+   "generic": "donidalorsen",
+   "date": "2025-08-21",
+   "application_numbers": [
+    "NDA219407"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Wayrilz",
+   "generic": "rilzabrutinib",
+   "date": "2025-08-29",
+   "application_numbers": [
+    "NDA219685"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Forzinity",
+   "generic": "elamipretide",
+   "date": "2025-09-19",
+   "application_numbers": [
+    "NDA215244"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Keytruda Qlex",
+   "generic": "pembrolizumab and berahyaluronidase alfa-pmph",
+   "date": "2025-09-19",
+   "application_numbers": [
+    "BLA761467"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Inluriyo",
+   "generic": "imlunestrant",
+   "date": "2025-09-25",
+   "application_numbers": [
+    "NDA218881"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Palsonify",
+   "generic": "paltusotine",
+   "date": "2025-09-25",
+   "application_numbers": [
+    "NDA219070"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Rhapsido",
+   "generic": "remibrutinib",
+   "date": "2025-09-30",
+   "application_numbers": [
+    "NDA218436"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lynkuet",
+   "generic": "elinzanetant",
+   "date": "2025-10-24",
+   "application_numbers": [
+    "NDA219469"
+   ],
+   "skipped_because": [
+    "application number already in master",
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Jascayd",
+   "generic": "nerandomilast",
+   "date": "2025-10-07",
+   "application_numbers": [
+    "NDA218764"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Komzifti",
+   "generic": "ziftomenib",
+   "date": "2025-11-13",
+   "application_numbers": [
+    "NDA220305"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Redemplo",
+   "generic": "plozasiran",
+   "date": "2025-11-18",
+   "application_numbers": [
+    "NDA219947"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Hyrnuo",
+   "generic": "sevabertinib",
+   "date": "2025-11-19",
+   "application_numbers": [
+    "NDA219972"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Voyxact",
+   "generic": "sibeprenlimab-szsi",
+   "date": "2025-11-25",
+   "application_numbers": [
+    "BLA761434"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Kygevvi",
+   "generic": "doxecitine and doxribtimine",
+   "date": "2025-11-03",
+   "application_numbers": [
+    "NDA219792"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Cardamyst",
+   "generic": "etripamil",
+   "date": "2025-12-12",
+   "application_numbers": [
+    "NDA218571"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Lerochol",
+   "generic": "lerodalcibep-liga",
+   "date": "2025-12-12",
+   "application_numbers": [
+    "BLA761427"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nuzolvence",
+   "generic": "zoliflodacin",
+   "date": "2025-12-12",
+   "application_numbers": [
+    "NDA219491"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Exdensur",
+   "generic": "depemokimab-ulaa",
+   "date": "2025-12-16",
+   "application_numbers": [
+    "BLA761458"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Myqorzo",
+   "generic": "aficamten",
+   "date": "2025-12-19",
+   "application_numbers": [
+    "NDA219083"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Yartemlea",
+   "generic": "narsoplimab-wuug",
+   "date": "2025-12-23",
+   "application_numbers": [
+    "BLA761152"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  },
+  {
+   "brand": "Nereus",
+   "generic": "tradipitant",
+   "date": "2025-12-30",
+   "application_numbers": [
+    "NDA220152"
+   ],
+   "skipped_because": [
+    "brand+date already in master",
+    "brand+year already in master",
+    "generic+year already in master"
+   ]
+  }
+ ]
+}
