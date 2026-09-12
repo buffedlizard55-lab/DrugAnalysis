@@ -13,6 +13,15 @@ Columns answer the brief directly:
                                      (e.g. Celcuity +7.0% on the day then
                                      -17.6% the next session)
   company_success_rate_summary    -> the company's tracked hit rate
+  company_score / _grade / _confidence
+                                  -> the NUMERIC company scorecard from
+                                     data/company_scores.csv (see
+                                     scripts/build_company_scores.py for the
+                                     formula). Blank where no verified FDA
+                                     decision exists for that entity.
+  us_investable_class             -> scope filter: US-LISTED / US-LISTED (ADR) /
+                                     FORMERLY US-LISTED / NON-US LISTING ONLY /
+                                     PRIVATE / NO EQUITY
   flags                           -> rows that need manual review
 
 Fix applied 2026-09-12: the CRL loop previously looked the price snapshot up
@@ -27,11 +36,36 @@ snapshots = {(r["ticker"], r["decision_date"]): r
              for r in csv.DictReader(open("data/stock_price_snapshots.csv"))}
 scorecards = {r["ticker"]: r for r in csv.DictReader(open("data/company_scorecards.csv"))}
 
+# numeric company scorecard (scripts/build_company_scores.py)
+_scores = list(csv.DictReader(open("data/company_scores.csv")))
+scores_by_ticker = {r["ticker"].strip(): r for r in _scores if r["ticker"].strip()}
+scores_by_name = {r["company_name"].strip().lower(): r for r in _scores if not r["ticker"].strip()}
+# verified US-investability class per ticker (scripts/classify_listing.py)
+class_by_ticker = {}
+for r in decisions:
+    t = (r["ticker"] or "").strip()
+    if t and t != "NO_TICKER":
+        class_by_ticker.setdefault(t, r.get("us_investable_class", ""))
+
+
+def score_cells(ticker, company):
+    """(score, grade, confidence, class) for a decision row."""
+    t = (ticker or "").strip()
+    s = scores_by_ticker.get(t) if t and t != "NO_TICKER" else scores_by_name.get((company or "").strip().lower())
+    cls = ""
+    if t and t != "NO_TICKER":
+        cls = class_by_ticker.get(t, "")
+    if not s:
+        return "", "", "Not scored - no verified FDA decisions tracked", cls
+    return (s["total_score_0_100"], s["grade"], s["confidence"], cls or s.get("us_investable_class", ""))
+
 HEADER = ["company_name", "ticker", "drug_name", "decision_type", "decision_date",
           "indication", "review_pathway",
           "stock_price_before", "stock_price_after", "pct_change",
           "price_t1", "pct_change_t1",
           "price_data_status", "company_success_rate_summary",
+          "company_score", "company_score_grade", "company_score_confidence",
+          "us_investable_class",
           "fda_source_url", "secondary_source_url", "flags", "verification_status"]
 
 
@@ -83,10 +117,12 @@ for d in decisions:
     t = d["ticker"]
     snap = snapshots.get((t, d["decision_date"]))
     before, after, pct, t1, t1_pct, status = price_cells(snap, t)
+    score, grade, conf, cls = score_cells(t, d["company_name"])
     rows.append([
         d["company_name"], t, f"{d['drug_brand']} ({d['drug_generic']})",
         d["decision_type"], d["decision_date"], d["indication"], d.get("review_pathway", ""),
         before, after, pct, t1, t1_pct, status, summary_for(t),
+        score, grade, conf, cls or d.get("us_investable_class", ""),
         d["source_url_1"], d.get("source_url_2", ""),
         flag_of(d["verification_status"], d.get("notes", "")), d["verification_status"],
     ])
@@ -95,10 +131,12 @@ for c in crls:
     t = c["ticker"]
     snap = snapshots.get((t, c["crl_date"]))          # <- was d["decision_date"] (bug)
     before, after, pct, t1, t1_pct, status = price_cells(snap, t)
+    score, grade, conf, cls = score_cells(t, c["company_name"])
     rows.append([
         c["company_name"], t, c["drug_name"],
         "Complete Response Letter (Rejection)", c["crl_date"], c["indication"], "",
         before, after, pct, t1, t1_pct, status, summary_for(t),
+        score, grade, conf, cls or c.get("us_investable_class", ""),
         c["source_url_1"], c.get("source_url_2", ""),
         flag_of(c["verification_status"], c.get("notes", "")), c["verification_status"],
     ])
@@ -111,5 +149,5 @@ with open("data/core_analysis_table.csv", "w", newline="", encoding="utf-8") as 
     w.writerow(HEADER)
     w.writerows(rows)
 
-matched = sum(1 for r in rows if r[12] in ("Verified",))
+matched = sum(1 for r in rows if str(r[12]).startswith("Verified"))
 print(f"Wrote {len(rows)} core analysis rows ({matched} with verified price data)")
