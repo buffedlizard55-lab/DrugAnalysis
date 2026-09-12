@@ -1,0 +1,24 @@
+{
+  "year": 2013,
+  "page_title": "New Molecular Entity Approvals for 2013 (FDA Drug Innovation)",
+  "capture_url": "https://web.archive.org/web/20140327204457/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/DrugInnovation/ucm381263.htm",
+  "original_url": "http://www.fda.gov/Drugs/DevelopmentApprovalProcess/DrugInnovation/ucm381263.htm",
+  "official_row_count": 27,
+  "note": "FDA correction on page: Simponi Aria posted 7/18/2013 was removed 9/17/2013 (inadvertently posted). These rows are candidates missing from master (master had 16 of 27); builder must dedupe by brand name and report any final mismatch.",
+  "rows_to_add": [
+    {"appl_no": "N204790", "brand": "Tivicay", "generic": "dolutegravir", "date": "2013-08-12", "indication": "To treat HIV-1 infection.", "applicant_on_table": "ViiV Healthcare (GSK/Shaghai? - GSK/Pfizer/Shionogi JV)"}
+    ,{"appl_no": "N203137", "brand": "Vizamyl", "generic": "flutemetamol F 18 injection", "date": "2013-10-25", "indication": "A radioactive diagnostic drug for use with PET imaging of the brain in adults being evaluated for Alzheimer's disease and dementia.", "applicant_on_table": "GE Healthcare"}
+    ,{"appl_no": "N204410", "brand": "Opsumit", "generic": "macitentan", "date": "2013-10-18", "indication": "To treat adults with pulmonary arterial hypertension (PAH).", "applicant_on_table": "Actelion Pharmaceuticals (acquired by J&J 2017)"}
+    ,{"appl_no": "N022247", "brand": "Duavee", "generic": "conjugated estrogens/bazedoxifene", "date": "2013-10-03", "indication": "To treat moderate-to-severe vasomotor symptoms associated with menopause and to prevent osteoporosis after menopause.", "applicant_on_table": "Pfizer (Wyeth legacy)"}
+    ,{"appl_no": "N204781", "brand": "Dotarem", "generic": "gadoterate meglumine", "date": "2013-03-20", "indication": "For use in MRI of the brain, spine and associated tissues of patients ages 2 years and older.", "applicant_on_table": "Guerbet LLC (private, France)"}
+    ,{"appl_no": "N202207", "brand": "Lymphoseek", "generic": "technetium Tc 99m tilmanocept", "date": "2013-03-13", "indication": "A radioactive diagnostic imaging agent that helps locate lymph nodes in patients with breast cancer or melanoma undergoing surgery.", "applicant_on_table": "Navidea Biopharmaceuticals. IRREGULARITY: Navidea licensee Cardinal Health terminated; Lymphoseek US marketing later Cardinal Health (private) then Sorrento? - card., later discontinued."}
+    ,{"appl_no": "N203505", "brand": "Osphena", "generic": "ospemifene", "date": "2013-02-26", "indication": "To treat women experiencing moderate to severe dyspareunia, a symptom of vulvar and vaginal atrophy due to menopause.", "applicant_on_table": "Shionogi Inc. (Shionogi & Co, Japan; US OTC:SGIOY)"}
+    ,{"appl_no": "N204026", "brand": "Pomalyst", "generic": "pomalidomide", "date": "2013-02-08", "indication": "To treat patients with multiple myeloma whose disease progressed after being treated with other cancer drugs.", "applicant_on_table": "Celgene (BMS from 2019)"}
+    ,{"appl_no": "N203568", "brand": "Kynamro", "generic": "mipomersen sodium", "date": "2013-01-29", "indication": "To treat patients with homozygous familial hypercholesterolemia (HoFH).", "applicant_on_table": "Kowa Pharmaceuticals America (parent Kowa Company, private). IRREGULARITY: Kynamro withdrawn from US market ~2019."}
+    ,{"appl_no": "N022271", "brand": "Nesina", "generic": "alogliptin", "date": "2013-01-25", "indication": "To improve blood sugar control in adults with type 2 diabetes.", "applicant_on_table": "Takeda Pharmaceuticals America. IRREGULARITY: FDA warned alogliptin heart-failure risk 2016."}
+    ,{"appl_no": "N204275", "brand": "Breo Ellipta", "generic": "fluticasone furoate and vilanterol inhalation powder", "date": "2013-05-10", "indication": "For the long-term, once-daily maintenance treatment of airflow obstruction in patients with COPD.", "applicant_on_table": "GlaxoSmithKline/Theravance Biopharma collaboration (Trelegy later Innoviva)"}
+    ,{"appl_no": "N201292", "brand": "Gilotrif", "generic": "afatinib", "date": "2013-07-12", "indication": "For patients with late stage (metastatic) non-small cell lung cancer (NSCLC) whose tumors express specific types of epidermal growth factor receptor (EGFR) gene mutations, as detected by an FDA-approved test.", "applicant_on_table": "Boehringer Ingelheim"}
+    ,{"appl_no": "N204042", "brand": "Invokana", "generic": "canagliflozin", "date": "2013-03-29", "indication": "Used with diet and exercise, to improve glycemic control in adults with type 2 diabetes.", "applicant_on_table": "Janssen (licensed from Mitsubishi Tanabe)"}
+    ,{"appl_no": "N204063", "brand": "Tecfidera", "generic": "dimethyl fumarate", "date": "2013-03-27", "indication": "To treat adults with relapsing forms of multiple sclerosis (MS).", "applicant_on_table": "Biogen Idec"}
+  ]
+}

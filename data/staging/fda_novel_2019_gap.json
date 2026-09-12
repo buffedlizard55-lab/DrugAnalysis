@@ -1,0 +1,12 @@
+{
+  "year": 2019,
+  "page_title": "CDER 2019 novel drugs (official count 48; master had 47)",
+  "capture_url": "https://www.fda.gov/media/133911/download (Advancing Health Through Innovation: New Drug Therapy Approvals 2019)",
+  "original_url": "https://www.fda.gov/media/133911/download",
+  "official_row_count": 48,
+  "already_in_master": 47,
+  "note": "Diff = Zulresso. Zolgensma (BL125620, 5/24/2019) is CBER-licensed and NOT part of CDER's 48 (consistent with Xyntha 2008 / Luxterna 2017 exclusions); openFDA drugsfda has no BL125620 record.",
+  "rows_to_add": [
+    {"appl_no": "NDA211371", "brand": "Zulresso", "generic": "brexanolone", "date": "2019-03-19", "indication": "For the treatment of postpartum depression in adult women.", "applicant_on_table": "Sage Therapeutics (openFDA sponsor_name 'SAGE THERAP SUPERNUS'); openFDA ORIG-1 20190319 Type 1 NME PRIORITY; submission_public_notes: 'FR Notice on DEA Scheduling; Date of Approval June 17, 2019' [DEA scheduling date, not approval date; flagged]."}
+  ]
+}
