@@ -6,6 +6,7 @@ on:
     paths:
       - 'docs/**'
       - 'data/**'
+      - '.github/workflows/pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +21,9 @@ concurrency:
 jobs:
   sync-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - name: Sync data/ into docs/data/

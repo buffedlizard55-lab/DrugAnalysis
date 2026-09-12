@@ -2,7 +2,7 @@
 
 Tracking publicly traded biotech &amp; pharma companies against **FDA drug decisions**, **stock-price reactions**, and **clinical-pipeline success rates** — built entirely from official, verifiable sources.
 
-**Live site:** enable GitHub Pages on this repo (Settings → Pages → source: `main` branch, `/docs` folder) to publish the dashboard at `https://<org>.github.io/DrugAnalysis/`.
+**Live site:** https://buffedlizard55-lab.github.io/DrugAnalysis/ (deployed from `docs/` by the "Deploy GitHub Pages" workflow, which also syncs `data/*.csv` into `docs/data/` on every push).
 
 ## What's here
 
