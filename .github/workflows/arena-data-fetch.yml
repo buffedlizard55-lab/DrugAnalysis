@@ -44,12 +44,16 @@ jobs:
           fetch-depth: 0
 
       - name: Run declarative fetch jobs
+        id: runjobs
+        continue-on-error: true
         run: |
           set -euo pipefail
           shopt -s nullglob
+          mkdir -p data/raw
           JOBS=(fetch_jobs/*.json)
           echo "job files: ${JOBS[*]:-none}"
-          python3 scripts/run_fetch_jobs.py "${JOBS[@]}"
+          python3 scripts/run_fetch_jobs.py "${JOBS[@]}" 2>&1 | tee data/raw/last_run.log
+          exit "${PIPESTATUS[0]}"
 
       - name: Commit fetched raw payloads
         run: |
@@ -66,4 +70,8 @@ jobs:
             git push origin "HEAD:$BRANCH"
           else
             echo "no new raw data to commit"
+          fi
+          if [ "${{ steps.runjobs.outcome }}" = "failure" ]; then
+            echo "::warning::fetch step reported failure - see data/raw/last_run.log"
+            exit 1
           fi

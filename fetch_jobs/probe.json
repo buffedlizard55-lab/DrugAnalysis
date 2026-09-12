@@ -26,7 +26,7 @@
     "id": "openfda_crl_probe",
     "url": "https://api.fda.gov/transparency/crl.json?limit=1000",
     "out": "crl_page1.json",
-    "project": {"meta": {"__all__": True}, "__all__": true}
+    "project": {}
   },
   {
     "type": "url",
