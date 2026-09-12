@@ -135,6 +135,11 @@ def main():
                                      " from verified exchange/ticker fields; " + basis)
         counts[cls] = counts.get(cls, 0) + 1
 
+    # Keep the public master-list layout human-readable: the stable row ID is
+    # last, while exchange remains immediately before it for quick investability
+    # review. DictReader keeps this independent of the order used by builders.
+    header = [c for c in header if c not in ("exchange", "decision_id")] + ["exchange", "decision_id"]
+
     with open(MASTER, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=header, lineterminator="\r\n")
         w.writeheader()

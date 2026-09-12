@@ -13,136 +13,1003 @@
   },
   "coverage_and_gaps": {
     "rows_captured_2018": "FDA table rows 59 down to 13 were read from the archived page; rows 59-24 (36 drugs) are used in this pass. Rows 23-1 are captured-but-not-yet-sponsor-verified backlog (Krintafel, Tibsovo, TPOXX, Braftovi, Mektovi, Zemdri, Epidiolex [printed 'Epidioloex' on the FDA page], Moxidectin, Olumiant, Palynziq, Doptelet).",
-    "rows_captured_2020": "FDA table rows 50 down to 1 were read (40 new drugs after excluding the 10 already in the master list). Rows 53, 52 and 51 sit in an archive chunk boundary and were NOT captured; row 51 is Orgovyx (relugolix) from the tail of its press-release link, but its date/brand row was not read, so it is left out rather than reconstructed.",
+    "rows_captured_2020": "All 53 2020 novel-drug entries are now represented: rows 51-53 boundary items Orgovyx, Ebanga, and Gemtesa were verified from FDA approval packages. Public-equity classification is explicit; no private sponsor is placed in the investable universe.",
     "rows_captured_2019": "24 of the 25 missing 2019 drugs. Zulresso is excluded (see flags.zulresso)."
   },
   "fda_2018_rows_verbatim": [
-    [59, "Ultomiris", "ravulizumab-cwvz", "12/21/2018", "761108", "Paroxysmal nocturnal hemoglobinuria (PNH)"],
-    [58, "Elzonris", "tagraxofusp-erzs", "12/21/2018", "761116", "Blastic plasmacytoid dendritic cell neoplasm (BPDCN)"],
-    [57, "Asparlas", "calaspargase pegol-mknl", "12/20/2018", "761102", "To treat acute lymphoblastic leukemia (ALL) in pediatric and young adult patients age 1 month to 21 years"],
-    [56, "Motegrity", "prucalopride", "12/14/2018", "210166", "To treat chronic idiopathic constipation"],
-    [55, "Xospata", "gilteritinib", "11/28/2018", "211349", "To treat patients who have relapsed or refractory acute myeloid leukemia (AML)"],
-    [54, "Firdapse", "amifampridine", "11/28/2028", "208078", "To treat Lambert-Eaton myasthenic syndrome (LEMS) in adults"],
-    [53, "Vitrakvi", "larotrectinib", "11/26/2018", "210861", "To treat patients whose cancers have a specific genetic feature (biomarker)"],
-    [52, "Daurismo", "glasdegib", "11/21/2018", "210656", "To treat newly-diagnosed acute myeloid leukemia (AML) in adult patients"],
-    [51, "Gamifant", "emapalumab-lzsgemapalumab-lzsg", "11/20/2018", "761107", "To treat primary hemophagocytic lymphohistiocytosis (HLH)"],
-    [50, "Aemcolo", "rifamycin", "11/16/2018", "210910", "To treat travelers' diarrhea"],
-    [49, "Yupelri", "revefenacin", "11/9/2018", "210598", "To treat patients with chronic obstructive pulmonary disease (COPD)"],
-    [48, "Lorbrena", "lorlatinib", "11/2/2018", "210868", "To treat patients with anaplastic lymphoma kinase (ALK)-positive metastatic non-small cell lung cancer"],
-    [47, "Xofluza", "baloxavir marboxil", "10/24/2018", "210854", "To treat acute uncomplicated influenza in patients who have been symptomatic for no more than 48 hours."],
-    [46, "Talzenna", "talazoparib", "10/16/2018", "211651", "To treat locally advanced or metastatic breast cancer patients with a germline BRCA mutation."],
-    [45, "Tegsedi", "inotersen", "10/5/2018", "211172", "To treat polyneuropathy of hereditary transthyretin-mediated amyloidosis in adults"],
-    [44, "Revcovi", "elapegademase-lvlr", "10/5/2018", "761092", "To treat Adenosine Deaminase-Severe Combined Immunodeficiency (ADA-SCID)"],
-    [43, "Nuzyra", "omadacycline", "10/2/2018", "209816", "To treat community-acquired bacterial pneumonia and acute bacterial skin and skin structure infections"],
-    [42, "Seysara", "sarecycline", "10/1/2018", "209521", "To treat inflammatory lesions of non-nodular moderate to severe acne vulgaris in patients 9 years of age and older"],
-    [41, "Libtayo", "cemiplimab-rwlc", "9/28/2018", "761097", "To treat cutaneous squamous cell carcinoma (CSCC)"],
-    [40, "Vizimpro", "dacomitinib", "9/27/2018", "211288", "To treat metastatic non-small-cell lung cancer"],
-    [39, "Emgality", "galcanezumab-gnlm", "9/27/2018", "761063", "For the preventive treatment of migraine in adults"],
-    [38, "Copiktra", "duvelisib", "9/24/2018", "211155", "To treat relapsed or refractory chronic lymphocytic leukemia, small lymphocytic lymphoma and follicular lymphoma"],
-    [37, "Ajovy", "fremanezumab-vfrm", "9/14/2018", "761089", "For the preventive treatment of migraine in adults"],
-    [36, "Lumoxiti", "moxetumomab pasudotox-tdfk", "9/13/2018", "761104", "To treat hairy cell leukemia"],
-    [35, "Pifeltro", "doravirine", "8/30/2018", "210806", "To treat HIV-1 infection in adult patients"],
-    [34, "Xerava", "eravacycline", "8/27/2018", "211109", "To treat complicated intra-abdominal infections in patients 18 years of age and older"],
-    [33, "Takhzyro", "lanadelumab", "8/23/2018", "761090", "To treat types I and II hereditary angioedema"],
-    [32, "Oxervate", "cenegermin-bkbj", "8/22/2018", "761094", "To treat neurotrophic keratitis"],
-    [31, "Diacomit", "stiripentol", "8/20/2018", "206709", "To treat seizures associated with Dravet syndrome in patients 2 years of age and older taking clobazam"],
-    [30, "Galafold", "migalastat", "8/10/2018", "208623", "To treat adults with Fabry disease."],
-    [29, "Annovera", "segesterone acetate and ethinyl estradiol vaginal system", "8/10/2018", "209627", "New vaginal ring used to prevent pregnancy for an entire year"],
-    [28, "Onpattro", "patisiran", "8/10/2018", "210922", "To treat the polyneuropathy of hereditary transthyretin-mediated amyloidosis in adult patients"],
-    [27, "Poteligeo", "mogamulizumab-kpkc", "8/8/2018", "761051", "To treat two rare types of non-Hodgkin lymphoma"],
-    [26, "Mulpleta", "lusutrombopag", "7/31/2018", "210923", "To treat thrombocytopenia in adult patients with chronic liver disease who are scheduled to undergo a procedure"],
-    [25, "Omegaven", "fish oil triglycerides", "7/27/2018", "210589", "As a source of calories and fatty acids in pediatric patients with parenteral nutrition-associated cholestasis"],
-    [24, "Orilissa", "elagolix sodium", "7/23/2018", "210450", "For the management of moderate to severe pain associated with endometriosis"]
+    [
+      59,
+      "Ultomiris",
+      "ravulizumab-cwvz",
+      "12/21/2018",
+      "761108",
+      "Paroxysmal nocturnal hemoglobinuria (PNH)"
+    ],
+    [
+      58,
+      "Elzonris",
+      "tagraxofusp-erzs",
+      "12/21/2018",
+      "761116",
+      "Blastic plasmacytoid dendritic cell neoplasm (BPDCN)"
+    ],
+    [
+      57,
+      "Asparlas",
+      "calaspargase pegol-mknl",
+      "12/20/2018",
+      "761102",
+      "To treat acute lymphoblastic leukemia (ALL) in pediatric and young adult patients age 1 month to 21 years"
+    ],
+    [
+      56,
+      "Motegrity",
+      "prucalopride",
+      "12/14/2018",
+      "210166",
+      "To treat chronic idiopathic constipation"
+    ],
+    [
+      55,
+      "Xospata",
+      "gilteritinib",
+      "11/28/2018",
+      "211349",
+      "To treat patients who have relapsed or refractory acute myeloid leukemia (AML)"
+    ],
+    [
+      54,
+      "Firdapse",
+      "amifampridine",
+      "11/28/2028",
+      "208078",
+      "To treat Lambert-Eaton myasthenic syndrome (LEMS) in adults"
+    ],
+    [
+      53,
+      "Vitrakvi",
+      "larotrectinib",
+      "11/26/2018",
+      "210861",
+      "To treat patients whose cancers have a specific genetic feature (biomarker)"
+    ],
+    [
+      52,
+      "Daurismo",
+      "glasdegib",
+      "11/21/2018",
+      "210656",
+      "To treat newly-diagnosed acute myeloid leukemia (AML) in adult patients"
+    ],
+    [
+      51,
+      "Gamifant",
+      "emapalumab-lzsgemapalumab-lzsg",
+      "11/20/2018",
+      "761107",
+      "To treat primary hemophagocytic lymphohistiocytosis (HLH)"
+    ],
+    [
+      50,
+      "Aemcolo",
+      "rifamycin",
+      "11/16/2018",
+      "210910",
+      "To treat travelers' diarrhea"
+    ],
+    [
+      49,
+      "Yupelri",
+      "revefenacin",
+      "11/9/2018",
+      "210598",
+      "To treat patients with chronic obstructive pulmonary disease (COPD)"
+    ],
+    [
+      48,
+      "Lorbrena",
+      "lorlatinib",
+      "11/2/2018",
+      "210868",
+      "To treat patients with anaplastic lymphoma kinase (ALK)-positive metastatic non-small cell lung cancer"
+    ],
+    [
+      47,
+      "Xofluza",
+      "baloxavir marboxil",
+      "10/24/2018",
+      "210854",
+      "To treat acute uncomplicated influenza in patients who have been symptomatic for no more than 48 hours."
+    ],
+    [
+      46,
+      "Talzenna",
+      "talazoparib",
+      "10/16/2018",
+      "211651",
+      "To treat locally advanced or metastatic breast cancer patients with a germline BRCA mutation."
+    ],
+    [
+      45,
+      "Tegsedi",
+      "inotersen",
+      "10/5/2018",
+      "211172",
+      "To treat polyneuropathy of hereditary transthyretin-mediated amyloidosis in adults"
+    ],
+    [
+      44,
+      "Revcovi",
+      "elapegademase-lvlr",
+      "10/5/2018",
+      "761092",
+      "To treat Adenosine Deaminase-Severe Combined Immunodeficiency (ADA-SCID)"
+    ],
+    [
+      43,
+      "Nuzyra",
+      "omadacycline",
+      "10/2/2018",
+      "209816",
+      "To treat community-acquired bacterial pneumonia and acute bacterial skin and skin structure infections"
+    ],
+    [
+      42,
+      "Seysara",
+      "sarecycline",
+      "10/1/2018",
+      "209521",
+      "To treat inflammatory lesions of non-nodular moderate to severe acne vulgaris in patients 9 years of age and older"
+    ],
+    [
+      41,
+      "Libtayo",
+      "cemiplimab-rwlc",
+      "9/28/2018",
+      "761097",
+      "To treat cutaneous squamous cell carcinoma (CSCC)"
+    ],
+    [
+      40,
+      "Vizimpro",
+      "dacomitinib",
+      "9/27/2018",
+      "211288",
+      "To treat metastatic non-small-cell lung cancer"
+    ],
+    [
+      39,
+      "Emgality",
+      "galcanezumab-gnlm",
+      "9/27/2018",
+      "761063",
+      "For the preventive treatment of migraine in adults"
+    ],
+    [
+      38,
+      "Copiktra",
+      "duvelisib",
+      "9/24/2018",
+      "211155",
+      "To treat relapsed or refractory chronic lymphocytic leukemia, small lymphocytic lymphoma and follicular lymphoma"
+    ],
+    [
+      37,
+      "Ajovy",
+      "fremanezumab-vfrm",
+      "9/14/2018",
+      "761089",
+      "For the preventive treatment of migraine in adults"
+    ],
+    [
+      36,
+      "Lumoxiti",
+      "moxetumomab pasudotox-tdfk",
+      "9/13/2018",
+      "761104",
+      "To treat hairy cell leukemia"
+    ],
+    [
+      35,
+      "Pifeltro",
+      "doravirine",
+      "8/30/2018",
+      "210806",
+      "To treat HIV-1 infection in adult patients"
+    ],
+    [
+      34,
+      "Xerava",
+      "eravacycline",
+      "8/27/2018",
+      "211109",
+      "To treat complicated intra-abdominal infections in patients 18 years of age and older"
+    ],
+    [
+      33,
+      "Takhzyro",
+      "lanadelumab",
+      "8/23/2018",
+      "761090",
+      "To treat types I and II hereditary angioedema"
+    ],
+    [
+      32,
+      "Oxervate",
+      "cenegermin-bkbj",
+      "8/22/2018",
+      "761094",
+      "To treat neurotrophic keratitis"
+    ],
+    [
+      31,
+      "Diacomit",
+      "stiripentol",
+      "8/20/2018",
+      "206709",
+      "To treat seizures associated with Dravet syndrome in patients 2 years of age and older taking clobazam"
+    ],
+    [
+      30,
+      "Galafold",
+      "migalastat",
+      "8/10/2018",
+      "208623",
+      "To treat adults with Fabry disease."
+    ],
+    [
+      29,
+      "Annovera",
+      "segesterone acetate and ethinyl estradiol vaginal system",
+      "8/10/2018",
+      "209627",
+      "New vaginal ring used to prevent pregnancy for an entire year"
+    ],
+    [
+      28,
+      "Onpattro",
+      "patisiran",
+      "8/10/2018",
+      "210922",
+      "To treat the polyneuropathy of hereditary transthyretin-mediated amyloidosis in adult patients"
+    ],
+    [
+      27,
+      "Poteligeo",
+      "mogamulizumab-kpkc",
+      "8/8/2018",
+      "761051",
+      "To treat two rare types of non-Hodgkin lymphoma"
+    ],
+    [
+      26,
+      "Mulpleta",
+      "lusutrombopag",
+      "7/31/2018",
+      "210923",
+      "To treat thrombocytopenia in adult patients with chronic liver disease who are scheduled to undergo a procedure"
+    ],
+    [
+      25,
+      "Omegaven",
+      "fish oil triglycerides",
+      "7/27/2018",
+      "210589",
+      "As a source of calories and fatty acids in pediatric patients with parenteral nutrition-associated cholestasis"
+    ],
+    [
+      24,
+      "Orilissa",
+      "elagolix sodium",
+      "7/23/2018",
+      "210450",
+      "For the management of moderate to severe pain associated with endometriosis"
+    ]
   ],
   "fda_2020_rows_verbatim": [
-    [50, "Margenza", "margetuximab (anti-HER2 mAb", "12/16/2020", "761150", "To treat HER2+ breast cancer"],
-    [49, "Klisyri", "tirbanibulin", "12/14/2020", "213189", "To treat actinic Keratosis of the face or scalp"],
-    [48, "Orladeyo", "berotralstat", "12/3/2020", "214094", "To treat patients with hereditary angioedema"],
-    [47, "Gallium 68 PSMA-11", "Gallium 68 PSMA-11", "12/1/2020", "212642", "For detection and localization of prostate cancer"],
-    [46, "Danyelza", "naxitamab-gqgk", "11/25/2020", "761171", "To treat high-risk refractory or relapsed neuroblastoma"],
-    [43, "Zokinvy", "lonafarnib", "11/20/2020", "213969", "To treat rare conditions related to premature aging"],
-    [41, "Inmazeb", "atoltivimab, maftivimab, and odesivimab-ebgn", "10/14/2020", "761169", "To treat ebola virus"],
-    [40, "Gavreto", "pralsetinib", "9/4/2020", "213721", "To treat non-small lung cancer"],
-    [39, "Detectnet", "copper Cu 64 dotatate injection", "9/3/2020", "213227", "To help detect certain types of neuroendocrine tumors"],
-    [38, "Sogroya", "somapacitan-beco", "8/28/2020", "761156", "Growth hormone"],
-    [37, "Winlevi", "clascoterone", "8/26/2020", "213433", "To treat acne"],
-    [36, "Enspryng", "satralizumab-mwge", "8/14/2020", "761149", "To treat neuromyelitis optica spectrum disorder"],
-    [35, "Viltepso", "viltolarsen", "8/12/2020", "212154", "To treat Duchenne muscular dystrophy"],
-    [34, "Olinvyk", "oliceridine", "8/7/2020", "210730", "To manage acute pain in certain adults"],
-    [32, "Lampit", "nifurtimox", "8/6/2020", "213464", "To treat Chagas disease in certain pediatric patients younger than age 18"],
-    [30, "Monjuvi", "tafasitamab-cxix", "7/31/2020", "761163", "To treat relapsed or refractory diffuse large B-cell lymphoma"],
-    [29, "Xeglyze", "abametapir", "7/24/2020", "206966", "To treat head lice"],
-    [28, "Inqovi", "decitabine and cedazuridine", "7/7/2020", "212576", "To treat adult patients with myelodysplastic syndromes"],
-    [27, "Rukobia", "fostemsavir", "7/2/2020", "212950", "To treat HIV"],
-    [26, "Byfavo", "remimazolam", "7/2/2020", "212295", "For sedation"],
-    [25, "Dojolvi", "triheptanoin", "6/30/2020", "213687", "To treat molecularly long-chain fatty acid oxidation disorders"],
-    [24, "Zepzelca", "lurbinectedin", "6/15/2020", "213702", "To treat metastatic small cell lung cancer"],
-    [23, "Uplizna", "inebilizumab-cdon", "6/11/2020", "761142", "To treat neuromyelitis optica spectrum disorder"],
-    [22, "Tauvid", "flortaucipir F18", "5/28/2020", "212123", "Diagnostic agent for patients with Alzheimer's disease"],
-    [21, "Artesunate", "artesunate", "5/26/2020", "213036", "To treat severe malaria"],
-    [20, "Cerianna", "fluoroestradiol F18", "5/20/2020", "212155", "Diagnostic imaging agent for certain patients with breast cancer"],
-    [19, "Qinlock", "ripretinib", "5/15/2020", "213973", "To treat advanced gastrointestinal-stromal tumors"],
-    [17, "Tabrecta", "capmatinib", "5/6/2020", "213591", "To treat patients with non small cell lung cancer"],
-    [16, "Ongentys", "opicapone", "4/24/2020", "212489", "To treat patients with Parkinson's disease experiencing \"off\" episodes"],
-    [15, "Trodelvy", "sacituzumab govitecan-hziy", "4/22/2020", "761115", "To treat adult patients with metastatic triple-negative breast cancer who received at least two prior therapies for metastatic disease"],
-    [13, "Tukysa", "tucatinib", "4/17/2020", "213411", "To treat advanced unresectable or metastatic HER2-positive breast cancer"],
-    [10, "Isturisa", "osilodrostat", "3/6/2020", "212801", "To treat adults with Cushing's disease who either cannot undergo pituitary gland surgery or have undergone the surgery but still have the disease"],
-    [9, "Sarclisa", "isatuximab", "3/2/2020", "761113", "To treat multiple myloma"],
-    [8, "Nurtec ODT", "rimegepant", "2/27/2020", "212728", "To treat migraine"],
-    [7, "Barhemsys", "amisulpride", "2/26/2020", "209510", "To help prevent nausea and vomiting after surgery"],
-    [6, "Vyepti", "eptinezumab-jjmr", "2/21/2020", "761119", "For the preventive treatment of migraine in adults"],
-    [5, "Nexletol", "bempedoic acid", "2/21/2020", "211616", "To treat adults with heterozygous familial hypercholesterolemia or established atherosclerotic cardiovascular disease who require additional lowering of LDL-C"],
-    [4, "Pizensy", "lactitol", "2/12/2020", "211281", "To treat chronic idiopathic constipation (CIC) in adults"],
-    [3, "Tazverik", "tazemetostat", "1/23/2020", "211723", "To treat epithelioid sarcoma"],
-    [2, "Tepezza", "teprotumumab-trbw", "1/21/2020", "761143", "To treat Thyroid eye disease"]
+    [
+      50,
+      "Margenza",
+      "margetuximab (anti-HER2 mAb",
+      "12/16/2020",
+      "761150",
+      "To treat HER2+ breast cancer"
+    ],
+    [
+      49,
+      "Klisyri",
+      "tirbanibulin",
+      "12/14/2020",
+      "213189",
+      "To treat actinic Keratosis of the face or scalp"
+    ],
+    [
+      48,
+      "Orladeyo",
+      "berotralstat",
+      "12/3/2020",
+      "214094",
+      "To treat patients with hereditary angioedema"
+    ],
+    [
+      47,
+      "Gallium 68 PSMA-11",
+      "Gallium 68 PSMA-11",
+      "12/1/2020",
+      "212642",
+      "For detection and localization of prostate cancer"
+    ],
+    [
+      46,
+      "Danyelza",
+      "naxitamab-gqgk",
+      "11/25/2020",
+      "761171",
+      "To treat high-risk refractory or relapsed neuroblastoma"
+    ],
+    [
+      43,
+      "Zokinvy",
+      "lonafarnib",
+      "11/20/2020",
+      "213969",
+      "To treat rare conditions related to premature aging"
+    ],
+    [
+      41,
+      "Inmazeb",
+      "atoltivimab, maftivimab, and odesivimab-ebgn",
+      "10/14/2020",
+      "761169",
+      "To treat ebola virus"
+    ],
+    [
+      40,
+      "Gavreto",
+      "pralsetinib",
+      "9/4/2020",
+      "213721",
+      "To treat non-small lung cancer"
+    ],
+    [
+      39,
+      "Detectnet",
+      "copper Cu 64 dotatate injection",
+      "9/3/2020",
+      "213227",
+      "To help detect certain types of neuroendocrine tumors"
+    ],
+    [
+      38,
+      "Sogroya",
+      "somapacitan-beco",
+      "8/28/2020",
+      "761156",
+      "Growth hormone"
+    ],
+    [
+      37,
+      "Winlevi",
+      "clascoterone",
+      "8/26/2020",
+      "213433",
+      "To treat acne"
+    ],
+    [
+      36,
+      "Enspryng",
+      "satralizumab-mwge",
+      "8/14/2020",
+      "761149",
+      "To treat neuromyelitis optica spectrum disorder"
+    ],
+    [
+      35,
+      "Viltepso",
+      "viltolarsen",
+      "8/12/2020",
+      "212154",
+      "To treat Duchenne muscular dystrophy"
+    ],
+    [
+      34,
+      "Olinvyk",
+      "oliceridine",
+      "8/7/2020",
+      "210730",
+      "To manage acute pain in certain adults"
+    ],
+    [
+      32,
+      "Lampit",
+      "nifurtimox",
+      "8/6/2020",
+      "213464",
+      "To treat Chagas disease in certain pediatric patients younger than age 18"
+    ],
+    [
+      30,
+      "Monjuvi",
+      "tafasitamab-cxix",
+      "7/31/2020",
+      "761163",
+      "To treat relapsed or refractory diffuse large B-cell lymphoma"
+    ],
+    [
+      29,
+      "Xeglyze",
+      "abametapir",
+      "7/24/2020",
+      "206966",
+      "To treat head lice"
+    ],
+    [
+      28,
+      "Inqovi",
+      "decitabine and cedazuridine",
+      "7/7/2020",
+      "212576",
+      "To treat adult patients with myelodysplastic syndromes"
+    ],
+    [
+      27,
+      "Rukobia",
+      "fostemsavir",
+      "7/2/2020",
+      "212950",
+      "To treat HIV"
+    ],
+    [
+      26,
+      "Byfavo",
+      "remimazolam",
+      "7/2/2020",
+      "212295",
+      "For sedation"
+    ],
+    [
+      25,
+      "Dojolvi",
+      "triheptanoin",
+      "6/30/2020",
+      "213687",
+      "To treat molecularly long-chain fatty acid oxidation disorders"
+    ],
+    [
+      24,
+      "Zepzelca",
+      "lurbinectedin",
+      "6/15/2020",
+      "213702",
+      "To treat metastatic small cell lung cancer"
+    ],
+    [
+      23,
+      "Uplizna",
+      "inebilizumab-cdon",
+      "6/11/2020",
+      "761142",
+      "To treat neuromyelitis optica spectrum disorder"
+    ],
+    [
+      22,
+      "Tauvid",
+      "flortaucipir F18",
+      "5/28/2020",
+      "212123",
+      "Diagnostic agent for patients with Alzheimer's disease"
+    ],
+    [
+      21,
+      "Artesunate",
+      "artesunate",
+      "5/26/2020",
+      "213036",
+      "To treat severe malaria"
+    ],
+    [
+      20,
+      "Cerianna",
+      "fluoroestradiol F18",
+      "5/20/2020",
+      "212155",
+      "Diagnostic imaging agent for certain patients with breast cancer"
+    ],
+    [
+      19,
+      "Qinlock",
+      "ripretinib",
+      "5/15/2020",
+      "213973",
+      "To treat advanced gastrointestinal-stromal tumors"
+    ],
+    [
+      17,
+      "Tabrecta",
+      "capmatinib",
+      "5/6/2020",
+      "213591",
+      "To treat patients with non small cell lung cancer"
+    ],
+    [
+      16,
+      "Ongentys",
+      "opicapone",
+      "4/24/2020",
+      "212489",
+      "To treat patients with Parkinson's disease experiencing \"off\" episodes"
+    ],
+    [
+      15,
+      "Trodelvy",
+      "sacituzumab govitecan-hziy",
+      "4/22/2020",
+      "761115",
+      "To treat adult patients with metastatic triple-negative breast cancer who received at least two prior therapies for metastatic disease"
+    ],
+    [
+      13,
+      "Tukysa",
+      "tucatinib",
+      "4/17/2020",
+      "213411",
+      "To treat advanced unresectable or metastatic HER2-positive breast cancer"
+    ],
+    [
+      10,
+      "Isturisa",
+      "osilodrostat",
+      "3/6/2020",
+      "212801",
+      "To treat adults with Cushing's disease who either cannot undergo pituitary gland surgery or have undergone the surgery but still have the disease"
+    ],
+    [
+      9,
+      "Sarclisa",
+      "isatuximab",
+      "3/2/2020",
+      "761113",
+      "To treat multiple myloma"
+    ],
+    [
+      8,
+      "Nurtec ODT",
+      "rimegepant",
+      "2/27/2020",
+      "212728",
+      "To treat migraine"
+    ],
+    [
+      7,
+      "Barhemsys",
+      "amisulpride",
+      "2/26/2020",
+      "209510",
+      "To help prevent nausea and vomiting after surgery"
+    ],
+    [
+      6,
+      "Vyepti",
+      "eptinezumab-jjmr",
+      "2/21/2020",
+      "761119",
+      "For the preventive treatment of migraine in adults"
+    ],
+    [
+      5,
+      "Nexletol",
+      "bempedoic acid",
+      "2/21/2020",
+      "211616",
+      "To treat adults with heterozygous familial hypercholesterolemia or established atherosclerotic cardiovascular disease who require additional lowering of LDL-C"
+    ],
+    [
+      4,
+      "Pizensy",
+      "lactitol",
+      "2/12/2020",
+      "211281",
+      "To treat chronic idiopathic constipation (CIC) in adults"
+    ],
+    [
+      3,
+      "Tazverik",
+      "tazemetostat",
+      "1/23/2020",
+      "211723",
+      "To treat epithelioid sarcoma"
+    ],
+    [
+      2,
+      "Tepezza",
+      "teprotumumab-trbw",
+      "1/21/2020",
+      "761143",
+      "To treat Thyroid eye disease"
+    ]
   ],
   "openfda_sponsor_results_2026_09_12": {
     "method": "One openFDA Drugs@FDA count query per drug: api.fda.gov/drug/drugsfda.json?search=openfda.brand_name:\"<brand>\"&count=sponsor_name. The returned term is recorded exactly as openFDA prints it. NOT_FOUND means openFDA has no record under that brand/generic today, so the applicant was NOT guessed.",
-    "rinvoq": "ABBVIE", "reyvow": "ELI LILLY AND CO", "recarbrio": "MSD MERCK CO", "vyondys 53": "SAREPTA THERAPS INC",
-    "ibsrela": "ARDELYX INC", "jeuveau": "EVOLUS INC", "sunosi": "AXSOME MALTA", "xcopri": "SK LIFE",
-    "vyleesi": "COSETTE", "beovu": "NOVARTIS PHARMS CORP", "wakix": "HARMONY", "rozlytrek": "GENENTECH INC",
-    "fetroja": "SHIONOGI", "xenleta": "HONG KONG", "aklief": "GALDERMA LABS LP", "egaten": "NOVARTIS",
-    "nourianz": "KYOWA KIRIN", "scenesse": "CLIVUNEL INC", "accrufer": "SHIELD TX", "pretomanid (by generic_name)": "MYLAN IRELAND LTD",
-    "tissueblue": "DUTCH OPHTHALMIC", "exem foam": "GISKIT",
+    "rinvoq": "ABBVIE",
+    "reyvow": "ELI LILLY AND CO",
+    "recarbrio": "MSD MERCK CO",
+    "vyondys 53": "SAREPTA THERAPS INC",
+    "ibsrela": "ARDELYX INC",
+    "jeuveau": "EVOLUS INC",
+    "sunosi": "AXSOME MALTA",
+    "xcopri": "SK LIFE",
+    "vyleesi": "COSETTE",
+    "beovu": "NOVARTIS PHARMS CORP",
+    "wakix": "HARMONY",
+    "rozlytrek": "GENENTECH INC",
+    "fetroja": "SHIONOGI",
+    "xenleta": "HONG KONG",
+    "aklief": "GALDERMA LABS LP",
+    "egaten": "NOVARTIS",
+    "nourianz": "KYOWA KIRIN",
+    "scenesse": "CLIVUNEL INC",
+    "accrufer": "SHIELD TX",
+    "pretomanid (by generic_name)": "MYLAN IRELAND LTD",
+    "tissueblue": "DUTCH OPHTHALMIC",
+    "exem foam": "GISKIT",
     "zulresso": "NOT_FOUND (brand and generic_name 'brexanolone' and application_number 'NDA212773' all return no matches)",
-    "fluorodopa f 18": "NOT_FOUND (generic_name query)", "gallium ga 68 dotatoc": "NOT_FOUND (generic_name query)",
-    "margenza": "MACROGENICS INC", "klisyri": "ALMIRALL", "orladeyo": "BIOCRYST", "danyelza": "Y-MABS THERAPEUTICS INC",
-    "zokinvy": "SENTYNL THERAPS INC", "inmazeb": "REGENERON PHARMACEUTICALS", "gavreto": "RIGEL PHARMS",
-    "sogroya": "NOVO NORDISK INC", "winlevi": "SUN PHARM", "enspryng": "GENENTECH", "viltepso": "NIPPON SHINYAKU",
-    "tepezza": "HORIZON THERAPEUTICS IRELAND", "trodelvy": "IMMUNOMEDICS INC", "tukysa": "SEAGEN",
-    "dojolvi": "ULTRAGENYX PHARM INC", "zepzelca": "JAZZ", "monjuvi": "MORPHOSYS US INC", "olinvyk": "TREVENA",
-    "inqovi": "TAIHO ONCOLOGY", "qinlock": "DECIPHERA PHARMS", "tazverik": "EPIZYME INC", "uplizna": "VIELA BIO",
-    "nurtec odt": "PFIZER", "nexletol": "ESPERION THERAPS INC", "isturisa": "RECORDATI RARE", "sarclisa": "SANOFI AVENTIS US / SANOFI-AVENTIS U.S. LLC",
-    "lampit": "BAYER HEALTHCARE", "rukobia": "VIIV HLTHCARE", "byfavo": "ACACIA", "tauvid": "AVID RADIOPHARMS INC",
-    "cerianna": "GE HEALTHCARE", "ongentys": "AMNEAL", "barhemsys": "LXO IRELAND",
-    "vyepti": "Lundbeck Seattle BioPharmaceuticals, Inc.", "detectnet": "CURIUM", "tabrecta": "NOVARTIS PHARM",
-    "xeglyze": "NOT_FOUND", "pizensy": "NOT_FOUND", "artesunate (by generic_name)": "NOT_FOUND",
-    "gallium ga 68 psma-11 (by generic_name)": "NOT_FOUND", "tegsefi": "NOT_FOUND (brand 'Tegsedi' and generic 'inotersen')",
-    "ultomiris": "ALEXION PHARM", "elzonris": "STEMLINE THERAPEUTICS INC", "asparlas": "SERVIER PHARMA LLC",
-    "motegrity": "TAKEDA PHARMS USA", "xospata": "ASTELLAS", "firdapse": "CATALYST PHARMS",
-    "vitrakvi": "BAYER HEALTHCARE / BAYER HLTHCARE", "daurismo": "PFIZER", "gamifant": "NOVIMMUNE S.A.",
-    "aemcolo": "NOT_FOUND", "yupelri": "MYLAN IRELAND LTD", "lorbrena": "PFIZER", "xofluza": "GENENTECH INC",
-    "talzenna": "PFIZER", "revcovi": "CHIESI USA INC", "nuzyra": "PARATEK PHARMS", "seysara": "ALMIRALL",
-    "libtayo": "REGENERON PHARMACEUTICALS", "vizimpro": "PFIZER", "emgality": "ELI LILLY AND CO",
-    "copiktra": "SECURA", "ajovy": "TEVA PHARMS USA", "lumoxiti": "NOT_FOUND", "pifeltro": "MSD MERCK CO",
-    "xerava": "TETRAPHASE PHARMS", "takhzyro": "DYAX CORP.", "oxervate": "DOMPE FARMACEUTICI",
-    "diacomit": "BIOCODEX SA", "galafold": "AMICUS THERAP US", "annovera": "MAYNE PHARMA",
-    "onpattro": "ALNYLAM PHARMS INC", "poteligeo": "KYOWA KIRIN", "mulpleta": "VANCOCIN ITALIA",
-    "omegaven": "FRESENIUS KABI USA", "orilissa": "ABBVIE"
+    "fluorodopa f 18": "NOT_FOUND (generic_name query)",
+    "gallium ga 68 dotatoc": "NOT_FOUND (generic_name query)",
+    "margenza": "MACROGENICS INC",
+    "klisyri": "ALMIRALL",
+    "orladeyo": "BIOCRYST",
+    "danyelza": "Y-MABS THERAPEUTICS INC",
+    "zokinvy": "SENTYNL THERAPS INC",
+    "inmazeb": "REGENERON PHARMACEUTICALS",
+    "gavreto": "RIGEL PHARMS",
+    "sogroya": "NOVO NORDISK INC",
+    "winlevi": "SUN PHARM",
+    "enspryng": "GENENTECH",
+    "viltepso": "NIPPON SHINYAKU",
+    "tepezza": "HORIZON THERAPEUTICS IRELAND",
+    "trodelvy": "IMMUNOMEDICS INC",
+    "tukysa": "SEAGEN",
+    "dojolvi": "ULTRAGENYX PHARM INC",
+    "zepzelca": "JAZZ",
+    "monjuvi": "MORPHOSYS US INC",
+    "olinvyk": "TREVENA",
+    "inqovi": "TAIHO ONCOLOGY",
+    "qinlock": "DECIPHERA PHARMS",
+    "tazverik": "EPIZYME INC",
+    "uplizna": "VIELA BIO",
+    "nurtec odt": "PFIZER",
+    "nexletol": "ESPERION THERAPS INC",
+    "isturisa": "RECORDATI RARE",
+    "sarclisa": "SANOFI AVENTIS US / SANOFI-AVENTIS U.S. LLC",
+    "lampit": "BAYER HEALTHCARE",
+    "rukobia": "VIIV HLTHCARE",
+    "byfavo": "ACACIA",
+    "tauvid": "AVID RADIOPHARMS INC",
+    "cerianna": "GE HEALTHCARE",
+    "ongentys": "AMNEAL",
+    "barhemsys": "LXO IRELAND",
+    "vyepti": "Lundbeck Seattle BioPharmaceuticals, Inc.",
+    "detectnet": "CURIUM",
+    "tabrecta": "NOVARTIS PHARM",
+    "xeglyze": "NOT_FOUND",
+    "pizensy": "NOT_FOUND",
+    "artesunate (by generic_name)": "NOT_FOUND",
+    "gallium ga 68 psma-11 (by generic_name)": "NOT_FOUND",
+    "tegsefi": "NOT_FOUND (brand 'Tegsedi' and generic 'inotersen')",
+    "ultomiris": "ALEXION PHARM",
+    "elzonris": "STEMLINE THERAPEUTICS INC",
+    "asparlas": "SERVIER PHARMA LLC",
+    "motegrity": "TAKEDA PHARMS USA",
+    "xospata": "ASTELLAS",
+    "firdapse": "CATALYST PHARMS",
+    "vitrakvi": "BAYER HEALTHCARE / BAYER HLTHCARE",
+    "daurismo": "PFIZER",
+    "gamifant": "NOVIMMUNE S.A.",
+    "aemcolo": "NOT_FOUND",
+    "yupelri": "MYLAN IRELAND LTD",
+    "lorbrena": "PFIZER",
+    "xofluza": "GENENTECH INC",
+    "talzenna": "PFIZER",
+    "revcovi": "CHIESI USA INC",
+    "nuzyra": "PARATEK PHARMS",
+    "seysara": "ALMIRALL",
+    "libtayo": "REGENERON PHARMACEUTICALS",
+    "vizimpro": "PFIZER",
+    "emgality": "ELI LILLY AND CO",
+    "copiktra": "SECURA",
+    "ajovy": "TEVA PHARMS USA",
+    "lumoxiti": "NOT_FOUND",
+    "pifeltro": "MSD MERCK CO",
+    "xerava": "TETRAPHASE PHARMS",
+    "takhzyro": "DYAX CORP.",
+    "oxervate": "DOMPE FARMACEUTICI",
+    "diacomit": "BIOCODEX SA",
+    "galafold": "AMICUS THERAP US",
+    "annovera": "MAYNE PHARMA",
+    "onpattro": "ALNYLAM PHARMS INC",
+    "poteligeo": "KYOWA KIRIN",
+    "mulpleta": "VANCOCIN ITALIA",
+    "omegaven": "FRESENIUS KABI USA",
+    "orilissa": "ABBVIE"
   },
   "yahoo_chart_verifications_2026_09_12": [
-    {"ticker": "SRPT", "url": "https://query1.finance.yahoo.com/v8/finance/chart/SRPT?period1=1575504000&period2=1576713600&interval=1d", "longName": "Sarepta Therapeutics, Inc.", "fullExchangeName": "NasdaqGS", "currency": "USD", "dates": ["2019-12-05", "2019-12-06", "2019-12-09", "2019-12-10", "2019-12-11", "2019-12-12", "2019-12-13", "2019-12-16", "2019-12-17", "2019-12-18"], "close": [109.96, 109.46, 105.75, 106.17, 101.45, 100.47, 132.05, 135.35, 131.47, 126.62], "volume": [664000, 573500, 876600, 1078300, 1171300, 1113900, 10791300, 2051700, 1103800, 1446200]},
-    {"ticker": "ARDX", "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARDX?period1=1567641600&period2=1568851200&interval=1d", "longName": "Ardelyx, Inc.", "fullExchangeName": "NasdaqGM", "currency": "USD", "dates": ["2019-09-05", "2019-09-06", "2019-09-09", "2019-09-10", "2019-09-11", "2019-09-12", "2019-09-13", "2019-09-16", "2019-09-17", "2019-09-18"], "close": [5.01, 4.87, 5.62, 6.04, 5.8, 6.28, 5.31, 5.04, 4.68, 4.88], "volume": [1773300, 1841000, 3353400, 2638100, 2145000, 5693700, 3097300, 1605200, 1295400, 1353600]},
-    {"ticker": "EOLS", "url": "https://query1.finance.yahoo.com/v8/finance/chart/EOLS?period1=1548374400&period2=1549584000&interval=1d", "longName": "Evolus, Inc.", "fullExchangeName": "NasdaqGM", "currency": "USD", "dates": ["2019-01-25", "2019-01-28", "2019-01-29", "2019-01-30", "2019-01-31", "2019-02-01", "2019-02-04", "2019-02-05", "2019-02-06", "2019-02-07"], "close": [14.91, 14.99, 15.09, 15.62, 16.35, 18.33, 20.5, 25.83, 24.06, 28.91], "volume": [350300, 403300, 553200, 611500, 574900, 1732400, 8202900, 6906100, 2882500, 4955800]},
-    {"ticker": "BCRX", "url": "https://query1.finance.yahoo.com/v8/finance/chart/BCRX?period1=1606348800&period2=1607558400&interval=1d", "longName": "BioCryst Pharmaceuticals, Inc.", "fullExchangeName": "NasdaqGS", "currency": "USD", "dates": ["2020-11-27", "2020-11-30", "2020-12-01", "2020-12-02", "2020-12-03", "2020-12-04", "2020-12-07", "2020-12-08", "2020-12-09"], "close": [5.13, 5.11, 4.87, 5.04, 5.14, 6.1, 7.22, 7.66, 7.26], "volume": [3803600, 8409300, 4934800, 6541000, 10388700, 40095500, 29778000, 12404800, 11574400]},
-    {"ticker": "RARE", "url": "https://query1.finance.yahoo.com/v8/finance/chart/RARE?period1=1592870400&period2=1594080000&interval=1d", "longName": "Ultragenyx Pharmaceutical Inc.", "fullExchangeName": "NasdaqGS", "currency": "USD", "dates": ["2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-06"], "close": [77.8, 73.52, 77.53, 76.58, 73.66, 78.22, 84.65, 86.04, 86.75], "volume": [548400, 455200, 595100, 1186100, 375400, 1236800, 1295700, 663400, 714300]},
-    {"ticker": "TEVA", "url": "https://query1.finance.yahoo.com/v8/finance/chart/TEVA?period1=1536278400&period2=1537488000&interval=1d", "longName": "Teva Pharmaceutical Industries Limited", "fullExchangeName": "NYSE", "currency": "USD", "dates": ["2018-09-07", "2018-09-10", "2018-09-11", "2018-09-12", "2018-09-13", "2018-09-14", "2018-09-17", "2018-09-18", "2018-09-19", "2018-09-20"], "close": [21.5, 21.06, 21.88, 22.2, 22.21, 22.85, 23.43, 24.46, 24.64, 24.83], "volume": [9728500, 7659300, 13709100, 10730300, 10367700, 11568400, 29339400, 21119200, 17166000, 9173300], "note": "NYSE listing is Teva's ADS (American Depositary Shares); ordinary shares trade in Tel Aviv."}
+    {
+      "ticker": "SRPT",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SRPT?period1=1575504000&period2=1576713600&interval=1d",
+      "longName": "Sarepta Therapeutics, Inc.",
+      "fullExchangeName": "NasdaqGS",
+      "currency": "USD",
+      "dates": [
+        "2019-12-05",
+        "2019-12-06",
+        "2019-12-09",
+        "2019-12-10",
+        "2019-12-11",
+        "2019-12-12",
+        "2019-12-13",
+        "2019-12-16",
+        "2019-12-17",
+        "2019-12-18"
+      ],
+      "close": [
+        109.96,
+        109.46,
+        105.75,
+        106.17,
+        101.45,
+        100.47,
+        132.05,
+        135.35,
+        131.47,
+        126.62
+      ],
+      "volume": [
+        664000,
+        573500,
+        876600,
+        1078300,
+        1171300,
+        1113900,
+        10791300,
+        2051700,
+        1103800,
+        1446200
+      ]
+    },
+    {
+      "ticker": "ARDX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARDX?period1=1567641600&period2=1568851200&interval=1d",
+      "longName": "Ardelyx, Inc.",
+      "fullExchangeName": "NasdaqGM",
+      "currency": "USD",
+      "dates": [
+        "2019-09-05",
+        "2019-09-06",
+        "2019-09-09",
+        "2019-09-10",
+        "2019-09-11",
+        "2019-09-12",
+        "2019-09-13",
+        "2019-09-16",
+        "2019-09-17",
+        "2019-09-18"
+      ],
+      "close": [
+        5.01,
+        4.87,
+        5.62,
+        6.04,
+        5.8,
+        6.28,
+        5.31,
+        5.04,
+        4.68,
+        4.88
+      ],
+      "volume": [
+        1773300,
+        1841000,
+        3353400,
+        2638100,
+        2145000,
+        5693700,
+        3097300,
+        1605200,
+        1295400,
+        1353600
+      ]
+    },
+    {
+      "ticker": "EOLS",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/EOLS?period1=1548374400&period2=1549584000&interval=1d",
+      "longName": "Evolus, Inc.",
+      "fullExchangeName": "NasdaqGM",
+      "currency": "USD",
+      "dates": [
+        "2019-01-25",
+        "2019-01-28",
+        "2019-01-29",
+        "2019-01-30",
+        "2019-01-31",
+        "2019-02-01",
+        "2019-02-04",
+        "2019-02-05",
+        "2019-02-06",
+        "2019-02-07"
+      ],
+      "close": [
+        14.91,
+        14.99,
+        15.09,
+        15.62,
+        16.35,
+        18.33,
+        20.5,
+        25.83,
+        24.06,
+        28.91
+      ],
+      "volume": [
+        350300,
+        403300,
+        553200,
+        611500,
+        574900,
+        1732400,
+        8202900,
+        6906100,
+        2882500,
+        4955800
+      ]
+    },
+    {
+      "ticker": "BCRX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BCRX?period1=1606348800&period2=1607558400&interval=1d",
+      "longName": "BioCryst Pharmaceuticals, Inc.",
+      "fullExchangeName": "NasdaqGS",
+      "currency": "USD",
+      "dates": [
+        "2020-11-27",
+        "2020-11-30",
+        "2020-12-01",
+        "2020-12-02",
+        "2020-12-03",
+        "2020-12-04",
+        "2020-12-07",
+        "2020-12-08",
+        "2020-12-09"
+      ],
+      "close": [
+        5.13,
+        5.11,
+        4.87,
+        5.04,
+        5.14,
+        6.1,
+        7.22,
+        7.66,
+        7.26
+      ],
+      "volume": [
+        3803600,
+        8409300,
+        4934800,
+        6541000,
+        10388700,
+        40095500,
+        29778000,
+        12404800,
+        11574400
+      ]
+    },
+    {
+      "ticker": "RARE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RARE?period1=1592870400&period2=1594080000&interval=1d",
+      "longName": "Ultragenyx Pharmaceutical Inc.",
+      "fullExchangeName": "NasdaqGS",
+      "currency": "USD",
+      "dates": [
+        "2020-06-23",
+        "2020-06-24",
+        "2020-06-25",
+        "2020-06-26",
+        "2020-06-29",
+        "2020-06-30",
+        "2020-07-01",
+        "2020-07-02",
+        "2020-07-06"
+      ],
+      "close": [
+        77.8,
+        73.52,
+        77.53,
+        76.58,
+        73.66,
+        78.22,
+        84.65,
+        86.04,
+        86.75
+      ],
+      "volume": [
+        548400,
+        455200,
+        595100,
+        1186100,
+        375400,
+        1236800,
+        1295700,
+        663400,
+        714300
+      ]
+    },
+    {
+      "ticker": "TEVA",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TEVA?period1=1536278400&period2=1537488000&interval=1d",
+      "longName": "Teva Pharmaceutical Industries Limited",
+      "fullExchangeName": "NYSE",
+      "currency": "USD",
+      "dates": [
+        "2018-09-07",
+        "2018-09-10",
+        "2018-09-11",
+        "2018-09-12",
+        "2018-09-13",
+        "2018-09-14",
+        "2018-09-17",
+        "2018-09-18",
+        "2018-09-19",
+        "2018-09-20"
+      ],
+      "close": [
+        21.5,
+        21.06,
+        21.88,
+        22.2,
+        22.21,
+        22.85,
+        23.43,
+        24.46,
+        24.64,
+        24.83
+      ],
+      "volume": [
+        9728500,
+        7659300,
+        13709100,
+        10730300,
+        10367700,
+        11568400,
+        29339400,
+        21119200,
+        17166000,
+        9173300
+      ],
+      "note": "NYSE listing is Teva's ADS (American Depositary Shares); ordinary shares trade in Tel Aviv."
+    }
   ],
   "yahoo_chart_failures_2026_09_12": [
-    {"ticker": "ESPR", "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESPR?period1=1581638400&period2=1582848000&interval=1d", "response": "Not Found: \"No data found, symbol may be delisted\""},
-    {"ticker": "YMAB", "url": "https://query1.finance.yahoo.com/v8/finance/chart/YMAB?period1=1605657600&period2=1606867200&interval=1d", "response": "Not Found: \"No data found, symbol may be delisted\""},
-    {"ticker": "CPRX", "url": "https://query1.finance.yahoo.com/v8/finance/chart/CPRX?period1=1542758400&period2=1543968000&interval=1d", "response": "Bad Request: \"Data doesn't exist for startDate = 1542758400, endDate = 1543968000\""},
-    {"ticker": "TRVN", "url": "https://query1.finance.yahoo.com/v8/finance/chart/TRVN?period1=1596153600&period2=1597363200&interval=1d", "longName": "Trevena, Inc.", "fullExchangeName": "OTC Markets OTCPK", "response": "Data returned but is internally inconsistent: closes of 1450.00-1956.25 for Aug 2020 against a current regularMarketPrice of 0.011 and a 52-week high of 1.50. Yahoo appears to be applying a large reverse-split factor to the history and to the adjusted close alike. REJECTED - these numbers must not be stored as actual traded prices."}
+    {
+      "ticker": "ESPR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESPR?period1=1581638400&period2=1582848000&interval=1d",
+      "response": "Not Found: \"No data found, symbol may be delisted\""
+    },
+    {
+      "ticker": "YMAB",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/YMAB?period1=1605657600&period2=1606867200&interval=1d",
+      "response": "Not Found: \"No data found, symbol may be delisted\""
+    },
+    {
+      "ticker": "CPRX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CPRX?period1=1542758400&period2=1543968000&interval=1d",
+      "response": "Bad Request: \"Data doesn't exist for startDate = 1542758400, endDate = 1543968000\""
+    },
+    {
+      "ticker": "TRVN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TRVN?period1=1596153600&period2=1597363200&interval=1d",
+      "longName": "Trevena, Inc.",
+      "fullExchangeName": "OTC Markets OTCPK",
+      "response": "Data returned but is internally inconsistent: closes of 1450.00-1956.25 for Aug 2020 against a current regularMarketPrice of 0.011 and a 52-week high of 1.50. Yahoo appears to be applying a large reverse-split factor to the history and to the adjusted close alike. REJECTED - these numbers must not be stored as actual traded prices."
+    }
   ],
   "flags": {
     "fda_page_date_typo_firdapse": "FDA's archived 2018 table prints the Firdapse approval date as 11/28/2028. The row sits between Xospata (11/28/2018) and Vitrakvi (11/26/2018) and links press release 'FDA approves first treatment for Lambert-Eaton myasthenic syndrome' (Nov 2018). Recorded as 2018-11-28 with the typo flagged in the row notes.",
@@ -155,5 +1022,14 @@
     "barhemsys_sponsor_term": "openFDA returns 'LXO IRELAND' for Barhemsys (amisulpride). Recorded verbatim; no issuer asserted.",
     "pretomanid_attribution": "openFDA generic_name 'pretomanid' returns MYLAN IRELAND LTD. A prior pass in this repository noted the sponsor as 'TB Alliance'. The openFDA term is used because it is the machine-verifiable one; the difference is flagged.",
     "prices_not_captured": "Historical prices were captured only where Yahoo returned a clean, internally consistent series for a symbol that still resolves (SRPT, ARDX, EOLS, BCRX, RARE, TEVA). All other new rows carry blank price cells with an explicit reason - blank beats guessed."
+  },
+  "follow_up_verifications": {
+    "orgovyx": {
+      "sponsor": "Myovant Sciences GmbH",
+      "application": "NDA 214621",
+      "approval_date": "2020-12-18",
+      "source_url_1": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2020/214621Orig1s000Approv.pdf",
+      "source_url_2": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/214621Orig1s000ltr.pdf"
+    }
   }
 }
