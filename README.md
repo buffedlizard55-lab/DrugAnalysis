@@ -42,6 +42,16 @@ Tracking publicly traded biotech &amp; pharma companies against **FDA drug decis
 - Two ticker assignments required correction after initial research and are now fixed and re-verified: Xolremdi/X4 Pharmaceuticals → `XFOR`; Cardamyst/Milestone Pharmaceuticals → `MIST`.
 - 2021–2023 verification status: every drug's brand/generic/date/label link was captured from FDA.gov Novel Drug Approvals pages; every application holder was verified via openFDA; original applicants (where ownership changed) were verified from the original FDA approval letters; review priority and Accelerated Approval status were taken from FDA's official annual reports; Drugs@FDA pages were used to confirm action dates (e.g. Quviviq 01/07/2022, Kimmtrak 01/25/2022, Verquvo 01/19/2021). Flagged irregularities: Ukoniq and Relyvrio voluntary market withdrawals; multiple approval-time applicants later acquired (see notes columns).
 
+## Reproducible QA gate
+
+Before publishing or adding rows, run:
+
+```bash
+python3 scripts/validate_data.py
+```
+
+The validator does not invent or fill facts. It checks required fields, ISO dates, unique decision IDs, numeric score ranges, verification labels, and URL syntax, while reporting flagged rows separately for manual review. A failing check should block a data refresh rather than being overridden.
+
 ## Regenerating the data
 
 Each CSV has a matching builder script in `scripts/` (e.g. `scripts/build_fda_master.py`) that writes the file from an explicit, source-cited Python list — this avoids CSV-escaping bugs and makes every entry easy to diff/review in version control.
