@@ -168,6 +168,22 @@ COMPANY = [
     ("EUSA", "EUSA Pharma (private; US commercialization by Jazz)", "JAZN", "NASDAQ", "US-LISTED", "Erwinaze US rights Jazz Pharmaceuticals"),
     ("APOPHARMA", "ApoPharma (Apotex group, private)", "", "N/A - privately held", "PRIVATE / NO EQUITY", "Ferrirox US"),
     ("NEW RIVER", "New River Pharmaceuticals (acquired by Shire 2007)", "", "", "FORMERLY US-LISTED (DELISTED/ACQUIRED)", "NASDAQ:NRPH delisted 2007"),
+    ("LIGAND", "Ligand Pharmaceuticals", "LGND", "NASDAQ", "US-LISTED", "also Ontak via Seragen acquisition 1998"),
+    ("SERAGEN", "Seragen (acquired by Ligand 1998)", "LGND", "NASDAQ", "US-LISTED", "Ontak; Seragen merged into Ligand 1998"),
+    ("SKB PHARMS", "SmithKline Beecham (GSK lineage)", "GSK", "NYSE (ADR)", "US-LISTED (ADR)", "primary LSE:GSK"),
+    ("SMITHKLINE BEECHAM", "SmithKline Beecham (GSK lineage)", "GSK", "NYSE (ADR)", "US-LISTED (ADR)", "Avandia era; merged into GSK 2000"),
+    ("BONE CARE", "Bone Care International (acquired by Genzyme 2005)", "BCII", "NASDAQ", "FORMERLY US-LISTED (DELISTED/ACQUIRED)", "NASDAQ:BCII delisted 2005"),
+    ("DIATIDE", "Diatide Research Labs (acquired by Nycomed Amersham 1999; GE 2004)", "GE", "NYSE", "US-LISTED", "NeoTect; lineage ends GE Healthcare"),
+    ("RHONE-POULENC", "Rhone-Poulenc Rorer (Aventis lineage)", "SNY", "NYSE (ADR)", "US-LISTED (ADR)", "merged into Aventis 1999; Sanofi 2004"),
+    ("RHONE POULENC", "Rhone-Poulenc Rorer (Aventis lineage)", "SNY", "NYSE (ADR)", "US-LISTED (ADR)", "merged into Aventis 1999"),
+    ("SANTEN", "Santen Pharmaceutical (Japan)", "4536", "TSE", "NON-US LISTING ONLY", "primary TSE:4536"),
+    ("ORION", "Orion Corp (Finland)", "ORNBV", "Nasdaq Helsinki", "NON-US LISTING ONLY", "Comtan developer"),
+    ("DUSA", "DUSA Pharmaceuticals (delisted ~2013)", "DSUS", "NASDAQ", "FORMERLY US-LISTED (DELISTED/ACQUIRED)", "NASDAQ:DSUS delisted ~2013"),
+    ("MALLINCKRODT", "Mallinckrodt (MKN at approval; MNK 2013+; Ch.11 2020/2023)", "MNK", "NYSE", "FORMERLY US-LISTED (DELISTED/ACQUIRED)", "NYSE:MKN split 2000; Mallinckrodt plc MNK bankruptcies 2020-2023"),
+    ("INO THERAPEUTICS", "INO Therapeutics (Ikaria lineage, private; Mallinckrodt 2017)", "", "N/A - privately held at approval", "PRIVATE / NO EQUITY", "INOmax"),
+    ("DEY LABS", "Dey Laboratories (Nattermann/Merck KGaA lineage, private)", "", "N/A - privately held", "PRIVATE / NO EQUITY", "Curosurf US"),
+    ("MAKOFF R&D LABS", "R&D Laboratories Inc (private; Makoff R&D Labs per Compilation)", "", "N/A - privately held", "PRIVATE / NO EQUITY", "Ferrlecit"),
+    ("R&D LAB", "R&D Laboratories Inc (private)", "", "N/A - privately held", "PRIVATE / NO EQUITY", "Ferrlecit; FDA year table prints 'R&D Lab'"),
     ("INDEVUS", "Indevus Pharmaceuticals (acquired by Endo 2009)", "IDEV", "NASDAQ", "FORMERLY US-LISTED (DELISTED/ACQUIRED)", "NASDAQ:IDEV delisted 2009"),
     ("BRACCO", "Bracco Diagnostics (private, Italy)", "", "N/A - privately held", "PRIVATE / NO EQUITY", "Bracco Group"),
     ("ALCON UNIVERSAL", "Alcon Inc. (NYSE:ACL delisted 2011 Novartis buyout; relisted ALC 2019)", "ALC", "NYSE", "US-LISTED", "Travatan era NYSE:ACL (delisted 2011); Alcon Inc. relisted 2019"),
@@ -292,7 +308,7 @@ GAP_FILES_11_13 = ["fda_nme_2011_gap.json", "fda_nme_2012_gap.json", "fda_nme_20
 GAP_FILES_LATER = ["fda_novel_2015_gap.json", "fda_novel_2018_gap.json", "fda_novel_2019_gap.json"]
 
 rows_out = []
-for fn in [f"fda_nme_{y}_verbatim.json" for y in range(2000, 2011)] + GAP_FILES_11_13 + GAP_FILES_LATER:
+for fn in ["fda_nme_1999_verbatim.json"] + [f"fda_nme_{y}_verbatim.json" for y in range(2000, 2011)] + GAP_FILES_11_13 + GAP_FILES_LATER:
     d = json.load(open(STG / fn))
     rws = d.get("rows") or d.get("rows_to_add") or []
     for r in rws:
