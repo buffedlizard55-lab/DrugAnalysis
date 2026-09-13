@@ -1,6 +1,6 @@
 {
   "job": "probe",
-  "generated_utc": "2026-09-12T22:27:59Z",
+  "generated_utc": "2026-09-13T03:48:19Z",
   "requests": [
     {
       "id": "drugsfda_sample_2010_orig_ap",
@@ -163,6 +163,44 @@
       "bytes": 2759,
       "sha256": "64ddb5786767e2277d4949c34bd9e1e730d16b2ff557e2a5c1bcdb53f7f9d7e5",
       "written_at_utc": "2026-09-12T22:27:58Z"
+    },
+    {
+      "id": "sec_company_tickers_browser_ua",
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-13T03:47:59Z"
+    },
+    {
+      "id": "sec_company_tickers_plain_ua",
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "status": 200,
+      "bytes": 797931,
+      "sha256": "26602b2fd871aa1815bdc33fa234308f9c82f0ee6b939d16b2e2b9b1b4bfdaef",
+      "written_at_utc": "2026-09-13T03:47:59Z"
+    },
+    {
+      "id": "openfda_crl_probe",
+      "url": "https://api.fda.gov/transparency/crl.json?limit=1000",
+      "status": 200,
+      "bytes": 5266330,
+      "sha256": "1e49599d6adcf3330659d5287150309e2ec92471fe698a55c85f231ef32a7eb8",
+      "written_at_utc": "2026-09-13T03:48:00Z"
+    },
+    {
+      "id": "openfda_crl_count",
+      "url": "https://api.fda.gov/transparency/crl.json?count=letter_issue_date",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-13T03:48:19Z"
+    },
+    {
+      "id": "yahoo_symbol_search_probe",
+      "url": "https://query1.finance.yahoo.com/v1/finance/search?q=Pfizer&quotesCount=10&newsCount=0",
+      "status": 200,
+      "bytes": 2780,
+      "sha256": "3e8dd9a901f19eb14b4ebba60c6be06053740d1c28a6234ee0de7eb517690218",
+      "written_at_utc": "2026-09-13T03:48:19Z"
     }
   ],
   "job_file": "fetch_jobs/probe.json"

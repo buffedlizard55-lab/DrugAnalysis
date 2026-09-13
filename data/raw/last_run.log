@@ -15,4 +15,4 @@ FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
 ok sec_company_tickers_plain_ua 200 797931 bytes -> data/raw/probe/sec_company_tickers_alt.json
 ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
-ok yahoo_symbol_search_probe 200 2759 bytes -> data/raw/probe/yahoo_search_probe.json
+ok yahoo_symbol_search_probe 200 2780 bytes -> data/raw/probe/yahoo_search_probe.json
