@@ -1,0 +1,248 @@
+{
+ "year": 2008,
+ "page_title": "CDER New Molecular Entity (NME) Drug and New Biologic Approvals for Calendar Year 2008 (FDA PDF, Updated through November 30, 2008)",
+ "updated_through": "November 30, 2008 (FDA never published a completed full-year 2008 table at this URL; official annual count chart states 24 novel approvals for 2008)",
+ "capture_url": "https://web.archive.org/web/20090709172207if_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/DrugandBiologicApprovalReports/NMEDrugandNewBiologicApprovals/UCM081805.pdf",
+ "original_url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/DrugandBiologicApprovalReports/NMEDrugandNewBiologicApprovals/UCM081805.pdf",
+ "columns": [
+  "Application Type",
+  "Application Number",
+  "Proprietary Name",
+  "Established Name",
+  "Applicant",
+  "Review Classification",
+  "Approval Date",
+  "Indications"
+ ],
+ "classification_legend": {
+  "P": "Priority Review",
+  "S": "Standard Review",
+  "O": "Orphan Designation"
+ },
+ "row_count": 24,
+ "row_count_note": "RESOLVED 2026-09-12 via CDER Novel Drug Approvals Compilation (media/177921): the 3 Dec-2008 entries = Lusedra (NDA022244, Eisai, 12/12), Vasovist (NDA022171, Epix, 12/22), Firmagon (NDA022201, Ferring, 12/24). Official count reconciliation: Compilation lists 25 rows with approval year 2008, but FDA's official novel count for 2008 is 24 (UCM242695 chart; 2017 NDTA report). The difference is Emend IV / fosaprepitant dimeglumine (NDA022023, 2008-01-25), which appears in the Compilation but is EXCLUDED from FDA's official 2008 NME/new-biologic year table (UCM081805 omitted it) and from the 24-novel count - fosaprepitant's active moiety (aprepitant, Emend oral) was already approved in 2003. Emend IV is therefore NOT added to master, keeping master at FDA's official 24. Mozobil row sourced from Drugs@FDA (ORIG-1 12/15/2008). Exclusions re-confirmed: Xyntha (BL125444, CBER-licensed), Cinryze/Berinert (CBER blood products), Veramyst (approved 2007).",
+ "rows": [
+  {
+   "appl_no": "N022187",
+   "brand": "Intelence",
+   "generic": "Etravirine",
+   "applicant": "TIBOTEC",
+   "class": "P",
+   "date": "2008-01-18",
+   "indication": "PROVIDES IN COMBINATION WITH OTHER ANTIRETROVIRAL AGENTS FOR THE TREATMENT OF HIV-1 INFECTION IN TREATMENT-EXPERIENCED ADULT PATIENTS, WHO HAVE EVIDENCE OF VIRAL REPLICATION AND HIV-1 STRAINS RESISTANT TO A KNOWN NON-NUCLEOSIDE REVERSE TRANSCRIPTASE INHIBITOR (NNRTI) AND OTHER ANTIRETROVIRAL AGENTS. [FDA PDF prints garbled 'POSITE REVERSE TRANSPIRITASE INHIBITOR (NNRIT)'; corrected with verbatim flag. Tibotec = J&J.]"
+  },
+  {
+   "appl_no": "N021992",
+   "brand": "Pristiq",
+   "generic": "Desvenlafaxine Succinate",
+   "applicant": "WYETH",
+   "class": "S",
+   "date": "2008-02-29",
+   "indication": "PROVIDES TREATMENT OF MAJOR DEPRESSIVE DISORDER. [Wyeth acquired by Pfizer Oct 2009.]"
+  },
+  {
+   "appl_no": "N022249",
+   "brand": "Treanda",
+   "generic": "Bendamustine Hydrochloride",
+   "applicant": "CEPHALON",
+   "class": "P",
+   "date": "2008-03-20",
+   "indication": "PROVIDES FOR THE TREATMENT OF PATIENTS WITH CHRONIC LYMPHOCYTIC LEUKEMIA (CLL). [Cephalon acquired by Teva 2011.]"
+  },
+  {
+   "appl_no": "N022161",
+   "brand": "Lexiscan",
+   "generic": "Regadenoson",
+   "applicant": "CV THERAPEUTICS",
+   "class": "S",
+   "date": "2008-04-10",
+   "indication": "PROVIDES FOR THE USE AS A PHARMACOLOGIC STRESS AGENT FOR RADIONUCLIDE MYOCARDIAL PERFUSION IMAGING. [FDA PDF prints 'RADIONUCIIDE'; corrected with verbatim flag. CV Therapeutics acquired by Gilead 2009.]"
+  },
+  {
+   "appl_no": "N021964",
+   "brand": "Relistor",
+   "generic": "Methylnaltrexone Bromide",
+   "applicant": "PROGENICS",
+   "class": "S",
+   "date": "2008-04-24",
+   "indication": "PROVIDES FOR THE TREATMENT OF OPIOID-INDUCED CONSTIPATION IN PATIENTS WITH ADVANCED ILLNESS WHO ARE RECEIVING PALLIATIVE CARE, WHEN RESPONSE TO LAXATIVE THERAPY HAS NOT BEEN SUFFICIENT. [FDA PDF prints 'ILNESS'/'LAKATIVE'; corrected with verbatim flag. Co-marketed with Wyeth.]"
+  },
+  {
+   "appl_no": "N021775",
+   "brand": "Entereg",
+   "generic": "Alvimopan",
+   "applicant": "ADOLOR",
+   "class": "S",
+   "date": "2008-05-20",
+   "indication": "PROVIDES FOR THE ACCELERATION OF TIME TO GASTROINTESTINAL RECOVERY FOLLOWING PARTIAL LARGE OR SMALL BOWEL RESECTION SURGERY WITH PRIMARY ANASTOMOSIS. [FDA PDF prints 'TREATMENT OF FOR THE'; corrected with verbatim flag. Adolor acquired by Cubist 2011; Entereg later Cubist/Merck.]"
+  },
+  {
+   "appl_no": "N022212",
+   "brand": "Durezol",
+   "generic": "Difluprednate",
+   "applicant": "SIRION",
+   "class": "P",
+   "date": "2008-06-23",
+   "indication": "PROVIDES TREATMENT OF INFLAMMATION AND PAIN ASSOCIATED WITH OCULAR SURGERY. [Sirion Therapeutics; Durezol US rights later to Alcon/Novartis.]"
+  },
+  {
+   "appl_no": "N022090",
+   "brand": "Eovist",
+   "generic": "Gadoxetate Disodium",
+   "applicant": "BAYER",
+   "class": "S",
+   "date": "2008-07-03",
+   "indication": "PROVIDES FOR USE IN MAGNETIC RESONANCE IMAGING (MRI) OF THE LIVER IN ADULT PATIENTS TO PROVIDE CONTRAST IN THE T1 WEIGHTED IMAGES TO AID IN THE DETECTION AND CHARACTERIZATION OF FOCAL LIVER PATHOLOGIES IN PRE-SURGICAL EVALUATION. [FDA PDF prints 'EOVIST INJECTION', 'T1 WIGHTED', 'PATHologies'; corrected with verbatim flag.]"
+  },
+  {
+   "appl_no": "N022156",
+   "brand": "Cleviprex",
+   "generic": "Clevidipine Butyrate",
+   "applicant": "MEDICINES COMPANY",
+   "class": "S",
+   "date": "2008-08-01",
+   "indication": "REDUCES BLOOD PRESSURE WHEN USE OF ORAL THERAPY IS NOT FEASIBLE OR DESIRABLE. [FDA PDF prints 'FENSIBLE'; corrected with verbatim flag.]"
+  },
+  {
+   "appl_no": "N021894",
+   "brand": "Xenazine",
+   "generic": "Tetrabenazine",
+   "applicant": "PRESTWICK",
+   "class": "P",
+   "date": "2008-08-15",
+   "indication": "PROVIDES TREATMENT FOR THE CHOREA OF HUNTINGTON'S DISEASE. [Prestwick Pharmaceuticals = Biovail; US rights later to Lundbeck.]"
+  },
+  {
+   "appl_no": "N022290",
+   "brand": "AdreView",
+   "generic": "Iobenguane I 123 Injection",
+   "applicant": "GE HEALTHCARE",
+   "class": "P",
+   "date": "2008-09-19",
+   "indication": "PROVIDES FOR THE DETECTION OF PRIMARY OR METASTATIC PHEOCHROMOCYTOMAS. [FDA PDF prints 'ADRE VIEW', 'IOBENJANE 1123', 'PHECHOCHROMOCYTOMAS'; corrected with verbatim flag.]"
+  },
+  {
+   "appl_no": "N022206",
+   "brand": "Rapaflo",
+   "generic": "Silodosin",
+   "applicant": "WATSON LABS",
+   "class": "S",
+   "date": "2008-10-08",
+   "indication": "PROVIDES TREATMENT OF THE SIGNS AND SYMPTOMS OF BENIGN PROSTATIC HYPERPLASIA. [FDA PDF prints 'PROSTHETIC'; corrected with verbatim flag. Licensed from Kissei.]"
+  },
+  {
+   "appl_no": "N022253",
+   "brand": "Vimpat",
+   "generic": "Lacosamide",
+   "applicant": "SCHWARZ BIOSCIENCES",
+   "class": "S",
+   "date": "2008-10-28",
+   "indication": "PROVIDES ADJUNCTIVE THERAPY IN THE TREATMENT OF PARTIAL-ONSET SEIZURES IN PATIENTS WITH EPILEPSY. [FDA PDF prints 'SEIZERS'; corrected with verbatim flag. Schwarz Biosciences = UCB subsidiary (UCB acquired Schwarz Pharma 2006).]"
+  },
+  {
+   "appl_no": "N022030",
+   "brand": "Toviaz",
+   "generic": "Fesoterodine Fumarate",
+   "applicant": "PFIZER",
+   "class": "S",
+   "date": "2008-10-31",
+   "indication": "PROVIDES FOR THE TREATMENT OF OVERACTIVE BLADDER. [Licensed from Schwarz Pharma; Pfizer acquired rights 2007.]"
+  },
+  {
+   "appl_no": "N021911",
+   "brand": "Banzel",
+   "generic": "Rufinamide",
+   "applicant": "EISAI",
+   "class": "S",
+   "date": "2008-11-14",
+   "indication": "PROVIDES FOR THE TREATMENT OF SEIZURES ASSOCIATED WITH LENNOX-GASTAUT SYNDROME. [Licensed from Novartis.]"
+  },
+  {
+   "appl_no": "N022291",
+   "brand": "Promacta",
+   "generic": "Eltrombopag Olamine",
+   "applicant": "GLAXOSMITHKLINE",
+   "class": "P",
+   "date": "2008-11-20",
+   "indication": "PROVIDES FOR THE TREATMENT OF THROMBOCYTOPENIA IN PATIENTS WITH CHRONIC IMMUNE (IDIOPATHIC) THROMBOCYTOPENIC PURPURA (ITP). [FDA PDF prints 'SHORT TERM IDIOPATHIC THROMBOCYTOPAENIC PUPURA'; corrected with verbatim flag.]"
+  },
+  {
+   "appl_no": "N022304",
+   "brand": "Nucynta [FDA PDF lists drug as 'TAPENTADOL'; brand name per Drugs@FDA]",
+   "generic": "Tapentadol",
+   "applicant": "ORTHO MCNEIL JANSSEN",
+   "class": "S",
+   "date": "2008-11-20",
+   "indication": "PROVIDES FOR THE TREATMENT OF MODERATE TO SEVERE ACUTE PAIN. [Ortho McNeil Janssen = J&J.]"
+  },
+  {
+   "appl_no": "BL125249",
+   "brand": "Arcalyst",
+   "generic": "Rilonacept",
+   "applicant": "REGENERON",
+   "class": "P, O",
+   "date": "2008-02-27",
+   "indication": "PROVIDES TREATMENT FOR CRYOPYRIN-ASSOCIATED PERIODIC SYNDROMES (CAPS)."
+  },
+  {
+   "appl_no": "BL125160",
+   "brand": "Cimzia",
+   "generic": "Certolizumab Pegol",
+   "applicant": "UCB",
+   "class": "S",
+   "date": "2008-04-22",
+   "indication": "PROVIDES FOR REDUCING THE SIGNS AND SYMPTOMS OF CROHN'S DISEASE AND MAINTAINING CLINICAL RESPONSE IN ADULT PATIENTS WITH MODERATELY TO SEVERELY ACTIVE DISEASE WHO HAVE AN INADEQUATE RESPONSE TO CONVENTIONAL THERAPY."
+  },
+  {
+   "appl_no": "BL125268",
+   "brand": "Nplate",
+   "generic": "Romiplostim",
+   "applicant": "AMGEN",
+   "class": "P",
+   "date": "2008-08-22",
+   "indication": "PROVIDES TREATMENT FOR THROMBOCYTOPENIA IN ADULTS WITH CHRONIC IMMUNE (IDIOPATHIC) THROMBOCYTOPENIC PURPURA. [FDA PDF prints 'IDIOPATHIC (IMMUNE) THROMBOCYTOPENIC PURPURA'; verbatim.]"
+  },
+  {
+   "appl_no": "N022311",
+   "brand": "Mozobil",
+   "generic": "Plerixafor",
+   "applicant": "GENZYME",
+   "class": "P, O",
+   "date": "2008-12-15",
+   "indication": "USE IN COMBINATION WITH GRANULOCYTE COLONY-STIMULATING FACTOR (G-CSF) TO MOBILIZE HEMATOPOIETIC STEM CELLS TO THE PERIPHERAL BLOOD FOR COLLECTION AND SUBSEQUENT AUTOLOGOUS TRANSPLANTATION IN PATIENTS WITH NON-HODGKIN'S LYMPHOMA AND MULTIPLE MYELOMA. [NOT on FDA's Nov-30-2008 PDF table (December approval). Verified from the official Drugs@FDA record: NDA 022311 ORIG-1 approved 12/15/2008, 'Type 1 - New Molecular Entity', Priority, Orphan, applicant GENZYME. Sources: Drugs@FDA overview + approval letter PDF.]"
+  },
+  {
+   "appl_no": "N022244",
+   "brand": "Lusedra",
+   "generic": "fospropofol disodium",
+   "applicant": "Eisai Medical Research",
+   "class": "S",
+   "date": "2008-12-12",
+   "indication": "LUSEDRA (fospropofol disodium) injection is an intravenous sedative-hypnotic agent indicated for monitored anesthesia care (MAC) sedation in adult patients undergoing diagnostic or therapeutic procedures.",
+   "source_url_1": "https://www.fda.gov/media/177921/download?attachment",
+   "source_note": "Identified via CDER Novel Drug Approvals Compilation (media/177921), 2026-09-12; absent from frozen UCM081805 PDF (through 11/30/2008). FDA receipt 2007-09-27."
+  },
+  {
+   "appl_no": "N021711",
+   "brand": "Vasovist",
+   "generic": "gadofosveset trisodium",
+   "applicant": "Epix Pharmaceuticals",
+   "class": "S",
+   "date": "2008-12-22",
+   "indication": "VASOVIST is indicated for use as a contrast agent in magnetic resonance angiography (MRA) to evaluate aortoiliac occlusive disease (AIOD) in adults with known or suspected peripheral vascular disease.",
+   "source_url_1": "https://www.fda.gov/media/177921/download?attachment",
+   "source_note": "Identified via CDER Compilation 2026-09-12. FDA receipt 2003-12-15 (long review). Epix was NASDAQ:EPIX; company wound down ~2009-2011 and Vasovist US rights later went to Lantheus."
+  },
+  {
+   "appl_no": "N022201",
+   "brand": "Firmagon",
+   "generic": "degarelix",
+   "applicant": "Ferring Pharmaceuticals",
+   "class": "S",
+   "date": "2008-12-24",
+   "indication": "degarelix is a GnRH receptor antagonist indicated for treatment of patients with advanced prostate cancer.",
+   "source_url_1": "https://www.fda.gov/media/177921/download?attachment",
+   "source_note": "Identified via CDER Compilation 2026-09-12. FDA receipt 2008-02-28."
+  }
+ ]
+}
