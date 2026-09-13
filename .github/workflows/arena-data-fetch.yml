@@ -1,0 +1,77 @@
+name: arena-data-fetch
+
+# Officially-sourced data collector for the DrugAnalysis project.
+#
+# The sandbox that edits this repository has no general outbound network
+# access, so every external fetch is performed here, on GitHub's runner, and
+# committed verbatim to the branch. Nothing is transformed or "cleaned" into
+# new facts: the payloads returned by each official endpoint are written
+# straight to data/raw/<job-id>/ together with a manifest.json that records the
+# exact request URL, HTTP status, byte count and SHA-256 of what was received,
+# so every downstream row can be re-verified against its primary source.
+#
+# Jobs are declarative: add or edit a JSON spec under fetch_jobs/ and push it.
+# Implementation: scripts/run_fetch_jobs.py
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'arena/**'
+    paths:
+      - 'fetch_jobs/**'
+      - 'scripts/run_fetch_jobs.py'
+      - '.github/workflows/arena-data-fetch.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: arena-data-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      BRANCH: ${{ github.ref_name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Run declarative fetch jobs
+        id: runjobs
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          mkdir -p data/raw
+          JOBS=(fetch_jobs/*.json)
+          echo "job files: ${JOBS[*]:-none}"
+          python3 scripts/run_fetch_jobs.py "${JOBS[@]}" 2>&1 | tee data/raw/last_run.log
+          exit "${PIPESTATUS[0]}"
+
+      - name: Commit fetched raw payloads
+        run: |
+          set -euo pipefail
+          git config user.name  "arena-ai-coding-agent[bot]"
+          git config user.email "298482267+arena-ai-coding-agent[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/raw)" ]; then
+            git add data/raw
+            git commit -m "data: raw official-source payloads (run ${{ github.run_number }})"
+            for i in 1 2 3 4 5; do
+              if git pull --rebase origin "$BRANCH"; then break; fi
+              sleep 5
+            done
+            git push origin "HEAD:$BRANCH"
+          else
+            echo "no new raw data to commit"
+          fi
+          if [ "${{ steps.runjobs.outcome }}" = "failure" ]; then
+            echo "::warning::fetch step reported failure - see data/raw/last_run.log"
+            exit 1
+          fi
