@@ -914,15 +914,38 @@ Promise.all([
   loadCSV('data/fda_decisions_master.csv').then(x => x.records).catch(() => []),
   loadCSV('data/company_scores.csv').then(x => x.records).catch(() => []),
   loadCSV('data/stock_price_snapshots.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/fda_crl_master.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls]) => {
+  loadCSV('data/fda_crl_master.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pipeline_tracker.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/upcoming_pdufa_calendar.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
+  overview.pipeline = pipeline; overview.pdufa = pdufa;
 
   fillCounts();
   drawCoverage(master);
   drawOverview();
   initEngine();
+
+  /* Pipeline tracker in overview */
+  const pipeEl = document.getElementById('pipeline-view');
+  if (pipeEl) {
+    if (pipeline && pipeline.length) {
+      pipeEl.innerHTML = `<table class="data-table" style="min-width:auto"><thead><tr><th>Company</th><th>Ticker</th><th class="num">Programs</th><th class="num">Approved</th><th class="num">Phase 3</th><th class="num">Success %</th><th>Source</th></tr></thead><tbody>` +
+        pipeline.slice(0,10).map(r => `<tr><td>${escapeHtml(r.company_name)}</td><td><strong>${escapeHtml(r.ticker)}</strong></td><td class="num">${escapeHtml(r.total_programs)}</td><td class="num">${escapeHtml(r.approved)}</td><td class="num">${escapeHtml(r.phase_3)}</td><td class="num">${pctCell(r.success_rate_pct)}</td><td>${linkify(r.source_url_1,'pipeline')}</td></tr>`).join('') + `</tbody></table><p class="hscroll-hint"><a href="#" onclick="document.querySelector('[data-tab=scorecards]').click(); return false;">View all ${pipeline.length} pipeline trackers in Scorecards tab →</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/pipeline_tracker.csv" target="_blank">Raw CSV</a></p>`;
+    } else {
+      pipeEl.innerHTML = '<p class="empty-note">Pipeline tracker not loaded — <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/pipeline_tracker.csv" target="_blank">view raw CSV</a></p>';
+    }
+  }
+  const pdufaEl = document.getElementById('pdufa-view');
+  if (pdufaEl) {
+    if (pdufa && pdufa.length) {
+      pdufaEl.innerHTML = `<table class="data-table" style="min-width:auto"><thead><tr><th>Company</th><th>Drug</th><th>PDUFA Date</th><th>Indication</th><th>Pathway</th></tr></thead><tbody>` +
+        pdufa.map(r => `<tr><td>${escapeHtml(r.company_name)} <strong>${escapeHtml(r.ticker)}</strong></td><td>${escapeHtml(r.drug_brand)}</td><td class="num"><span class="num-strong">${escapeHtml(r.pdufa_date)}</span></td><td>${escapeHtml((r.indication||'').slice(0,80))}</td><td>${escapeHtml(r.review_pathway)}</td></tr>`).join('') + `</tbody></table><p class="hscroll-hint">${pdufa.length} upcoming PDUFA dates tracked · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/upcoming_pdufa_calendar.csv" target="_blank">Raw CSV</a> · All with 2 source links for manual verification</p>`;
+    } else {
+      pdufaEl.innerHTML = '<p class="empty-note">PDUFA calendar not loaded — <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/upcoming_pdufa_calendar.csv" target="_blank">view raw CSV</a></p>';
+    }
+  }
 
   /* Core analysis */
   DataTable({

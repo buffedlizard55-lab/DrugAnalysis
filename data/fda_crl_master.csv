@@ -1,8 +1,770 @@
 crl_id,company_name,ticker,exchange,drug_name,indication,crl_date,reason_category,stock_reaction,source_url_1,source_url_2,verification_status,notes
-C001,Capricor Therapeutics,CAPR,NASDAQ,Deramiocel (CAP-1002),Duchenne muscular dystrophy cardiomyopathy,2025-07-01,Insufficient efficacy evidence + CMC issues,"Shares fell sharply on CRL disclosure; later resumed review with new PDUFA Aug 22, 2026 after HOPE-3 data submission",https://www.parentprojectmd.org/deramiocel-where-we-are-today/,https://www.neurologylive.com/view/fda-hands-capricor-complete-response-letter-deramiocel-dmd-cardiomyopathy-treatment,Verified,"CRL lifted after resubmission; new PDUFA date Aug 22, 2026 (Class 2 resubmission)"
-C002,Aldeyra Therapeutics,ALDX,NASDAQ,Reproxalap,Dry eye disease,2026-03-17,Insufficient efficacy evidence (third CRL for this indication),"Stock collapsed ~70% intraday on March 17, 2026, closing around $1.24-$1.81",https://www.ainvest.com/news/aldeyra-legal-catalyst-outrun-1-81-price-floor-crl-fallout-priced-2603/,https://www.streetwisereports.com/article/2026/05/05/biotech-downgraded-to-neutral-after-second-fda-crl-for-reproxalap-in-dry-eye-disease.html,Verified - FLAGGED IRREGULARITY,Third rejection for the same drug/indication; subsequent securities-fraud litigation filed alleging prior disclosures overstated regulatory prospects
-C003,REGENXBIO,RGNX,NASDAQ,Clemidsogene lanparvovec (RGX-121),Mucopolysaccharidosis type II (Hunter syndrome),2026-02-07,Trial design / surrogate endpoint concerns (D2S6 heparan sulfate),"Shares fell following Feb 9-10, 2026 disclosure and continued decline after full CRL text released in March 2026",https://mpssociety.org/en/news/rgx-121-crl2026/,https://www.neurologylive.com/view/regenxbio-mps-ii-gene-therapy-rgx-121-crl,Verified - FLAGGED IRREGULARITY,FDA agreed with study protocol in principle but questioned patient population comparability and surrogate endpoint validity; unrelated safety hold on sibling program RGX-111 cited as contributing factor
-C004,Outlook Therapeutics,OTLK,NASDAQ,ONS-5010 / Lytenava (bevacizumab-vikg),Wet age-related macular degeneration,2025-12-31,Confirmatory efficacy evidence requested (third CRL for this BLA),Stock declined on disclosure; company had already logged 2 prior CRLs for the same asset,https://www.stocktitan.net/news/OTLK/outlook-therapeutics-provides-regulatory-update-on-u-s-food-and-drug-lx7gajngv7vk.html,https://www.ophthalmologytimes.com/view/outlook-therapeutics-receives-crl-for-resubmitted-ons-5010-bla,Verified - RESOLVED (approved 2026-07-24),"Third CRL for same BLA; FDA acknowledged one adequate/well-controlled trial (NORSE TWO) showed efficacy but wants additional confirmatory evidence; product already approved in EU/UK as Lytenava. RESOLUTION (added 2026-09-12): the BLA was resubmitted and APPROVED on 2026-07-24 as Lytenava (bevacizumab-vikg) for neovascular (wet) AMD - see approval row D269 in fda_decisions_master.csv (openFDA applicant of record: OUTLOOK THERAPEUTICS, INC.; BLA 761320). This is therefore a tracked CRL-to-approval reversal, not an open rejection."
-C005,Grace Therapeutics,GRCE,NASDAQ,GTx-104 (IV nimodipine),Aneurysmal subarachnoid hemorrhage,2026-04-23,CMC / non-clinical toxicology and manufacturing deficiencies,Shares plunged on disclosure,https://www.neurologylive.com/view/fda-action-update-april-2026-acceptance-clearance-crl,https://www.rttnews.com/3662437/fda-complete-response-letter-crl-explained-what-it-means-for-biotech-stocks.aspx,Verified,"CRL nearly 10 months after NDA submission; cited leachables data and CMO manufacturing deficiencies, not efficacy"
-C006,AbbVie,ABBV,NYSE,Trenibotulinumtoxin E,Aesthetic indication (glabellar lines),2026-04-23,Facility/GMP related (per third-party CRL tracker),Limited standalone stock impact given AbbVie's large diversified portfolio,https://www.rttnews.com/3662437/fda-complete-response-letter-crl-explained-what-it-means-for-biotech-stocks.aspx,https://crl.help/,Verified - lower confidence on category,Category classification sourced from third-party CRL tracker (crl.help); recommend manual review of primary FDA letter for exact deficiency language
-C007,ITM Isotope Technologies / Lumara Bio USA (US agent),ITM.DE,XETRA Germany; no US ticker,Lutetium Lu-177 edotreotide,Gastroenteropancreatic neuroendocrine tumors,2026-08-07,Product quality/microbiology and facility inspection deficiencies,Not a US-listed ticker; XETRA-listed parent price impact not tracked in this dataset,https://api.fda.gov/transparency/crl.json,https://open.fda.gov/apis/transparency/completeresponseletters/,Verified - foreign listing only,"Sourced directly from openFDA CRL transparency database (NDA 218705); ITM Solucin GmbH is the applicant, a subsidiary of ITM Isotope Technologies Munich SE"
+C001,ITM Isotope Technologies / Lumara Bio USA (US agent),ITM.DE,XETRA Germany; no US ticker,Lutetium Lu-177 edotreotide,Gastroenteropancreatic neuroendocrine tumors,2026-08-07,Product quality/microbiology and facility inspection deficiencies,Not a US-listed ticker; XETRA-listed parent price impact not tracked in this dataset,https://api.fda.gov/transparency/crl.json,https://open.fda.gov/apis/transparency/completeresponseletters/,Verified - foreign listing only,"Sourced directly from openFDA CRL transparency database (NDA 218705); ITM Solucin GmbH is the applicant, a subsidiary of ITM Isotope Technologies Munich SE"
+C002,Grace Therapeutics,GRCE,NASDAQ,GTx-104 (IV nimodipine),Aneurysmal subarachnoid hemorrhage,2026-04-23,CMC / non-clinical toxicology and manufacturing deficiencies,Shares plunged on disclosure,https://www.neurologylive.com/view/fda-action-update-april-2026-acceptance-clearance-crl,https://www.rttnews.com/3662437/fda-complete-response-letter-crl-explained-what-it-means-for-biotech-stocks.aspx,Verified,"CRL nearly 10 months after NDA submission; cited leachables data and CMO manufacturing deficiencies, not efficacy"
+C003,AbbVie,ABBV,NYSE,Trenibotulinumtoxin E,Aesthetic indication (glabellar lines),2026-04-23,Facility/GMP related (per third-party CRL tracker),Limited standalone stock impact given AbbVie's large diversified portfolio,https://www.rttnews.com/3662437/fda-complete-response-letter-crl-explained-what-it-means-for-biotech-stocks.aspx,https://crl.help/,Verified - lower confidence on category,Category classification sourced from third-party CRL tracker (crl.help); recommend manual review of primary FDA letter for exact deficiency language
+C004,AbbVie Inc.,ABBV,NYSE,See FDA letter,See FDA CRL letter - indication in application,2026-04-22,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""AbbVie Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761459,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761459, letter date 04/22/2026, company AbbVie Inc.. File: CRL_BLA761459_20260422.pdf. Reason: Safety concerns. Text excerpt: nN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761459
+COMPLETE RESPONSE
+
+AbbVie Inc.
+
+Attention: Felipe Martins
+
+Associate Director, Regulatory Affairs
+2525 Dupont Drive
+
+Irvine, CA 92612
+
+Dear Felipe Marti..."
+C005,Aldeyra Therapeutics,ALDX,NASDAQ,Reproxalap,Dry eye disease,2026-03-17,Insufficient efficacy evidence (third CRL for this indication),"Stock collapsed ~70% intraday on March 17, 2026, closing around $1.24-$1.81",https://www.ainvest.com/news/aldeyra-legal-catalyst-outrun-1-81-price-floor-crl-fallout-priced-2603/,https://www.streetwisereports.com/article/2026/05/05/biotech-downgraded-to-neutral-after-second-fda-crl-for-reproxalap-in-dry-eye-disease.html,Verified - FLAGGED IRREGULARITY,Third rejection for the same drug/indication; subsequent securities-fraud litigation filed alleging prior disclosures overstated regulatory prospects
+C006,Fresenius SE & Co. KGaA,FSNUY,OTC,See FDA letter,See FDA CRL letter - indication in application,2026-02-27,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Fresenius Kabi USA, LLC""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=214610,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 214610, letter date 02/27/2026, company Fresenius Kabi USA, LLC. File: CRL_NDA214610_20260227.pdf. Reason: Safety concerns. Text excerpt: ¢ U.S. FOOD & DRUG
+Sy ADMINISTRATION
+
+NDA 214610
+COMPLETE RESPONSE
+
+Fresenius Kabi USA, LLC
+Attention: Jennifer Gross, M.S.
+Senior Regulatory Affairs Associate
+Three Corporate Drive
+
+Lake Zurich, IL 6..."
+C007,Fresenius SE & Co. KGaA,FSNUY,OTC,See FDA letter,See FDA CRL letter - indication in application,2026-02-27,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Fresenius Kabi USA, LLC""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=215818,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 215818, letter date 02/27/2026, company Fresenius Kabi USA, LLC. File: CRL_NDA215818_20260227.pdf. Reason: Safety concerns. Text excerpt: ¢ U.S. FOOD & DRUG
+Sy ADMINISTRATION
+
+NDA 215818
+COMPLETE RESPONSE
+
+Fresenius Kabi USA, LLC
+Attention: Jennifer Gross, MS
+Senior Regulatory Affairs Associate
+Three Corporate Drive
+
+Lake Zurich, IL 600..."
+C008,REGENXBIO,RGNX,NASDAQ,Clemidsogene lanparvovec (RGX-121),Mucopolysaccharidosis type II (Hunter syndrome),2026-02-07,Trial design / surrogate endpoint concerns (D2S6 heparan sulfate),"Shares fell following Feb 9-10, 2026 disclosure and continued decline after full CRL text released in March 2026",https://mpssociety.org/en/news/rgx-121-crl2026/,https://www.neurologylive.com/view/regenxbio-mps-ii-gene-therapy-rgx-121-crl,Verified - FLAGGED IRREGULARITY,FDA agreed with study protocol in principle but questioned patient population comparability and surrogate endpoint validity; unrelated safety hold on sibling program RGX-111 cited as contributing factor
+C009,Outlook Therapeutics,OTLK,NASDAQ,ONS-5010 / Lytenava (bevacizumab-vikg),Wet age-related macular degeneration,2025-12-31,Confirmatory efficacy evidence requested (third CRL for this BLA),Stock declined on disclosure; company had already logged 2 prior CRLs for the same asset,https://www.stocktitan.net/news/OTLK/outlook-therapeutics-provides-regulatory-update-on-u-s-food-and-drug-lx7gajngv7vk.html,https://www.ophthalmologytimes.com/view/outlook-therapeutics-receives-crl-for-resubmitted-ons-5010-bla,Verified - RESOLVED (approved 2026-07-24),"Third CRL for same BLA; FDA acknowledged one adequate/well-controlled trial (NORSE TWO) showed efficacy but wants additional confirmatory evidence; product already approved in EU/UK as Lytenava. RESOLUTION (added 2026-09-12): the BLA was resubmitted and APPROVED on 2026-07-24 as Lytenava (bevacizumab-vikg) for neovascular (wet) AMD - see approval row D269 in fda_decisions_master.csv (openFDA applicant of record: OUTLOOK THERAPEUTICS, INC.; BLA 761320). This is therefore a tracked CRL-to-approval reversal, not an open rejection."
+C010,Sanofi,SNY,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2025-12-23,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Genzyme Corporation""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=219624,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 219624, letter date 12/23/2025, company Genzyme Corporation. File: CRL_NDA219624_20251223.pdf. Reason: Efficacy + Safety. Text excerpt: i Lk YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 219624
+COMPLETE RESPONSE
+Genzyme Corporation
+Attention: Brant Hamel, PhD, RAC
+Director, Regulatory Affairs
+100 Morris St.
+Morristown, NJ 07960
+Dear Dr. Ha..."
+C011,AstraZeneca PLC,AZN,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2025-10-10,Clinical / Trial design,,"https://api.fda.gov/transparency/crl.json?search=company_name:""AstraZeneca Pharmaceuticals LP""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761451,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761451, letter date 10/10/2025, company AstraZeneca Pharmaceuticals LP. File: CRL_BLA761451_20251010.pdf. Reason: Clinical / Trial design. Text excerpt: Cg YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761451
+COMPLETE RESPONSE
+
+AstraZeneca Pharmaceuticals LP
+Attention: Osamah Al-Qaysi
+Associate Regulatory Affairs Director
+One Medimmune Way
+
+Gaithersburg, M..."
+C012,Biogen Inc.,BIIB,NASDAQ,Spinraza,See FDA CRL letter - indication in application,2025-09-22,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Biogen, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=209531/S-016,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 209531/S-016, letter date 09/22/2025, company Biogen, Inc.. File: CRL_NDA209531_20250922.pdf. Reason: Efficacy + Safety. Text excerpt: ‘4 ¢ BN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 209531/S-016
+COMPLETE RESPONSE
+
+Biogen, Inc.
+
+Attention: Charlene Wheeler, MSHS
+Director, Global Regulatory Sciences
+225 Binney Street
+
+Cambridge, MA 0214..."
+C013,Regeneron Pharmaceuticals,REGN,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2025-07-30,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Regeneron Pharmaceuticals, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761303,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761303, letter date 07/30/2025, company Regeneron Pharmaceuticals, Inc.. File: CRL_BLA761303_20250730.pdf. Reason: Safety concerns. Text excerpt: i Lk YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761303
+COMPLETE RESPONSE
+
+Regeneron Pharmaceuticals, Inc.
+Attention: Hsiao-Chi Lo, PhD
+Director, Regulatory Affairs
+
+777 Old Saw Mill River Road
+Tarrytown..."
+C014,Capricor Therapeutics,CAPR,NASDAQ,Deramiocel (CAP-1002),Duchenne muscular dystrophy cardiomyopathy,2025-07-01,Insufficient efficacy evidence + CMC issues,"Shares fell sharply on CRL disclosure; later resumed review with new PDUFA Aug 22, 2026 after HOPE-3 data submission",https://www.parentprojectmd.org/deramiocel-where-we-are-today/,https://www.neurologylive.com/view/fda-hands-capricor-complete-response-letter-deramiocel-dmd-cardiomyopathy-treatment,Verified,"CRL lifted after resubmission; new PDUFA date Aug 22, 2026 (Class 2 resubmission)"
+C015,Fresenius SE & Co. KGaA,FSNUY,OTC,See FDA letter,See FDA CRL letter - indication in application,2025-04-25,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Fresenius Kabi USA, LLC""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=215818,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 215818, letter date 04/25/2025, company Fresenius Kabi USA, LLC. File: CRL_NDA215818_20250425.pdf. Reason: Safety concerns. Text excerpt: ¢ IN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 215818
+COMPLETE RESPONSE
+
+Fresenius Kabi USA, LLC
+Attention: Jennifer Gross, MS
+Senior Regulatory Affairs Associate
+Three Corporate Drive
+
+Lake Zurich, IL 60..."
+C016,"Amneal Pharmaceuticals, Inc.",AMRX,NYSE,See FDA letter,See FDA CRL letter - indication in application,2025-04-02,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Amneal EU, Limited""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=218345,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 218345, letter date 04/02/2025, company Amneal EU, Limited. File: CRL_NDA218345_20250402.pdf. Reason: Safety concerns. Text excerpt: i Lk YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 218345
+COMPLETE RESPONSE
+
+Amneal EU, Limited
+
+c/o: Amneal Pharmaceuticals of New York, LLC
+Attention: Pamela Fitzpatrick
+
+Senior Director, Specialty Regul..."
+C017,Pfizer Inc.,PFE,NYSE,Diazepam Injection,See FDA CRL letter - indication in application,2025-01-17,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Hospira, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=219112,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 219112, letter date 01/17/2025, company Hospira, Inc.. File: CRL_NDA219112_20250117.pdf. Reason: Safety concerns. Text excerpt: a g PN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 219112
+COMPLETE RESPONSE
+
+Hospira, Inc.
+
+Attention: Arman Nolledo
+Regulatory Affairs Manager
+
+275 N Field Dr, D-389 BLDG H2
+Lake Forest, IL 60045
+
+Dear Arm..."
+C018,Fresenius SE & Co. KGaA,FSNUY,OTC,See FDA letter,See FDA CRL letter - indication in application,2024-12-11,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Fresenius Kabi USA, LLC""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=214610,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 214610, letter date 12/11/2024, company Fresenius Kabi USA, LLC. File: CRL_NDA214610_20241211.pdf. Reason: Safety concerns. Text excerpt: ( ¢ yy U.S. FOOD & DRUG
+
+ADMINISTRATION
+ent
+
+NDA 214610
+COMPLETE RESPONSE
+
+Fresenius Kabi USA, LLC
+Attention: Jennifer Gross, M.S.
+Senior Regulatory Affairs Associate
+Three Corporate Drive
+
+Lake Zuric..."
+C019,Regeneron Pharmaceuticals,REGN,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2024-08-20,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Regeneron Pharmaceuticals, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761400,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761400, letter date 08/20/2024, company Regeneron Pharmaceuticals, Inc.. File: CRL_BLA761400_20240820.pdf. Reason: Safety concerns. Text excerpt: Cg YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761400
+COMPLETE RESPONSE
+
+Regeneron Pharmaceuticals, Inc.
+Attention: Smita Abbi, PhD
+Director, Regulatory Affairs
+
+777 Old Saw Mill River Road
+Tarrytown, NY..."
+C020,Novo Nordisk A/S,NVO,NYSE,See FDA letter,See FDA CRL letter - indication in application,2024-07-10,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Novo Nordisk Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761326,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761326, letter date 07/10/2024, company Novo Nordisk Inc.. File: CRL_BLA761326_20240710.pdf. Reason: Safety concerns. Text excerpt: ( Lg IN U.S. FOOD & DRUG
+~ ADMINISTRATION
+
+BLA 761326/ Original 1
+BLA 761326/ Original 2
+COMPLETE RESPONSE
+
+Novo Nordisk Inc.
+
+Attention: Helen Chen, MSc, RAC
+Director, Regulatory Affairs
+
+800 Scudder..."
+C021,"Amneal Pharmaceuticals, Inc.",AMRX,NYSE,See FDA letter,See FDA CRL letter - indication in application,2024-07-01,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Amneal EU, Ltd.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=218345,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 218345, letter date 07/01/2024, company Amneal EU, Ltd.. File: CRL_NDA218345_20240701.pdf. Reason: Safety concerns. Text excerpt: f ¢ yy U.S. FOOD & DRUG
+
+ADMINISTRATION
+Net
+
+NDA 218345
+COMPLETE RESPONSE
+
+Amneal EU, Ltd.
+
+c/o Amneal Pharmaceuticals of New York, LLC.
+50 Horseblock Road
+
+Brookhaven, NY 11719
+
+Attention: | Candis E..."
+C022,AbbVie Inc.,ABBV,NYSE,Vyalev,See FDA CRL letter - indication in application,2024-06-18,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""AbbVie Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=216962,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 216962, letter date 06/18/2024, company AbbVie Inc.. File: 216962_2025_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: 4 YN U.S. FOOD & DRUG
+i ADMINISTRATION
+
+NDA 216962
+COMPLETE RESPONSE
+
+AbbVie Inc.
+
+Attention: Grace Chun, PharmD
+Associate Director, Regulatory Affairs
+5 Giralda Farms
+
+Madison, NJ 07940
+
+Dear Dr. Chu..."
+C023,Regeneron Pharmaceuticals,REGN,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2024-03-22,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Regeneron Pharmaceuticals, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=1,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761303/Original 1, letter date 03/22/2024, company Regeneron Pharmaceuticals, Inc.. File: CRL_BLA761303Original1_20240322.pdf. Reason: Safety concerns. Text excerpt: ADMINISTRATION
+
+¢ IN U.S. FOOD & DRUG
+Se
+
+BLA 761303/Original 1
+COMPLETE RESPONSE
+
+Regeneron Pharmaceuticals, Inc.
+Attention: Hsiao-Chi Lo, PhD
+Director, Regulatory Affairs
+
+777 Old Saw Mill River Roa..."
+C024,Regeneron Pharmaceuticals,REGN,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2024-03-22,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Regeneron Pharmaceuticals, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=2,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761303/Original 2, letter date 03/22/2024, company Regeneron Pharmaceuticals, Inc.. File: CRL_BLA761303Original2_20240322.pdf. Reason: Safety concerns. Text excerpt: ADMINISTRATION
+
+o FN U.S. FOOD & DRUG
+&
+
+BLA 761303/Original 2
+COMPLETE RESPONSE
+
+Regeneron Pharmaceuticals, Inc.
+Attention: Hsiao-Chi Lo, PhD
+Director, Regulatory Affairs
+
+777 Old Saw Mill River Road..."
+C025,Eli Lilly and Company,LLY,NYSE,See FDA letter,See FDA CRL letter - indication in application,2023-09-28,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Eli Lilly and Company""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761306,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761306, letter date 09/28/2023, company Eli Lilly and Company. File: 761306_2024_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: g YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761306
+
+COMPLETE RESPONSE
+
+Eli Lilly and Company
+Attention: Ana M. Vaz.
+Associate VP, GRA-NA
+Lilly Corporate Center
+Indianapolis, IN 46285
+
+Dear Ana Vaz:
+
+Pl..."
+C026,Regeneron Pharmaceuticals,REGN,NASDAQ,Eylea,See FDA CRL letter - indication in application,2023-06-27,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Regeneron Pharmaceuticals, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761355,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761355, letter date 06/27/2023, company Regeneron Pharmaceuticals, Inc.. File: 761355_2024_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: g YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761355
+COMPLETE RESPONSE
+
+Regeneron Pharmaceuticals, Inc.
+
+Attention: Donato Forlenza, PharmD, MBa
+Senior Director, Regulatory Affairs
+
+777 Old Saw Mill Rive..."
+C027,Fresenius SE & Co. KGaA,FSNUY,OTC,See FDA letter,See FDA CRL letter - indication in application,2023-05-31,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Fresenius Kabi USA, LLC""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761275,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761275, letter date 05/31/2023, company Fresenius Kabi USA, LLC. File: 761275_2024_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: ¢ Py U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761275
+COMPLETE RESPONSE
+
+Fresenius Kabi USA, LLC
+Three Corporate Drive
+Lake Zurich, Illinois 60047
+
+Attention: — Brittany Duke, PhD
+Associate Director, Regu..."
+C028,Novo Nordisk A/S,NVO,NYSE,See FDA letter,See FDA CRL letter - indication in application,2023-04-24,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Novo Nordisk""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761315,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761315, letter date 04/24/2023, company Novo Nordisk. File: 761315_2025_Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: iPyN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761315
+COMPLETE RESPONSE
+
+Novo Nordisk
+
+Attention: Ge (Larry) Bai
+Director, Regulatory Affairs
+P. O. Box 846
+
+800 Scudders Mill Road
+Plainsboro, NJ 08536
+
+De..."
+C029,Eli Lilly and Company,LLY,NYSE,See FDA letter,See FDA CRL letter - indication in application,2023-03-30,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Eli Lilly and Company""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761279,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761279, letter date 03/30/2023, company Eli Lilly and Company. File: 761279_2023_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: ¢ YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761279
+COMPLETE RESPONSE
+
+Eli Lilly and Company
+
+Attention: Conrad J. Wong, Ph.D.
+
+Senior Director
+
+Global Regulatory Affairs — North America
+Lilly Corporate..."
+C030,AbbVie Inc.,ABBV,NYSE,Vyalev,See FDA CRL letter - indication in application,2023-03-17,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""AbbVie Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=216962,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 216962, letter date 03/17/2023, company AbbVie Inc.. File: 216962_2025_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: g YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 216962
+COMPLETE RESPONSE
+
+AbbVie Inc.
+
+Attention: Grace Chun, PharmD
+Associate Director, Regulatory Affairs
+5 Giralda Farms
+
+Madison, NJ 07940
+
+Dear Dr. Chun..."
+C031,Eli Lilly and Company,LLY,NYSE,Kisunla,See FDA CRL letter - indication in application,2023-01-18,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Eli Lilly and Company""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761248,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761248, letter date 01/18/2023, company Eli Lilly and Company. File: 761248_2024_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: ¢ YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761248
+COMPLETE RESPONSE
+
+Eli Lilly and Company
+
+Attention: Angela Murff-Maxey
+
+Senior Director, Global Regulatory Affairs - NA
+Lilly Corporate Center
+
+Drop ..."
+C032,Viatris Inc,VTRS,NASDAQ,Mylan Laboratories Limited,See FDA CRL letter - indication in application,2023-01-13,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Mylan Pharmaceuticals Inc., a Viatris Company""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=204311,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 204311, letter date 01/13/2023, company Mylan Pharmaceuticals Inc., a Viatris Company. File: 204311_2024_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: iPyN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 204311
+COMPLETE RESPONSE
+
+Mylan Pharmaceuticals Inc., a Viatris Company
+
+U.S. Agent for Mylan Laboratories Limited, a Viatris Company, India
+Attention: Beth ..."
+C033,"Gilead Sciences, Inc.",GILD,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2022-02-28,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Gilead Sciences, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=215974,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 215974, letter date 02/28/2022, company Gilead Sciences, Inc.. File: 215973,215974Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: g YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 215974
+COMPLETE RESPONSE
+
+Gilead Sciences, Inc.
+
+Attention: Grace Gill, PharmD
+Associate Director, Regulatory Affairs
+333 Lakeside Drive
+
+Foster City, CA 944..."
+C034,"Gilead Sciences, Inc.",GILD,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2022-02-28,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Gilead Sciences, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=215973,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 215973, letter date 02/28/2022, company Gilead Sciences, Inc.. File: 215973,215974Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: g YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 215973
+COMPLETE RESPONSE
+
+Gilead Sciences, Inc.
+
+Attention: Grace Gill, PharmD
+Associate Director, Regulatory Affairs
+333 Lakeside Drive
+
+Foster City, CA 944..."
+C035,Pfizer Inc.,PFE,NYSE,See FDA letter,See FDA CRL letter - indication in application,2022-01-21,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Pfizer Ireland Pharmaceuticals""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761184,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761184, letter date 01/21/2022, company Pfizer Ireland Pharmaceuticals. File: 761184_2023_Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: g YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761184
+COMPLETE RESPONSE
+
+Pfizer Ireland Pharmaceuticals
+
+C/O Pfizer Inc.
+
+Attention: Gurunandan Mavinkurve, MS, RPh, US Agent
+Director, Global Regulator Aff..."
+C036,Takeda Pharmaceutical,TAK,NYSE,Eohilia,See FDA CRL letter - indication in application,2021-12-17,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Takeda Pharmaceuticals U.S.A., Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=213976,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 213976, letter date 12/17/2021, company Takeda Pharmaceuticals U.S.A., Inc.. File: 213976_2024_Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: ¢ YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 213976
+COMPLETE RESPONSE
+
+Takeda Pharmaceuticals U.S.A., Inc.
+Attention: Matthew Wang, Pharm.D.
+Director, Global Regulatory Affairs
+40 Landsdowne Street
+
+Cam..."
+C037,Eli Lilly and Company,LLY,NYSE,Rezvoglar,See FDA CRL letter - indication in application,2021-12-17,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Eli Lilly and Company""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761215,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761215/Original 2; BLA 761215, letter date 12/17/2021, company Eli Lilly and Company. File: 761215Orig2s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: g YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+BLA 761215/Original 2
+COMPLETE RESPONSE
+
+Eli Lilly and Company
+
+Attention: Ingrid Hensley, PhD
+
+Advisor, Global Regulatory Affairs- North America, Diabetes
+Lilly..."
+C038,United Therapeutics Corporation,UTHR,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2021-10-15,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""United Therapeutics Corp.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=214324,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 214324, letter date 10/15/2021, company United Therapeutics Corp.. File: 214324_2022_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: g YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 214324
+COMPLETE RESPONSE
+
+United Therapeutics Corp.
+
+Attention: Sarah Gemberling, PhD, RAC
+Manager, Regulatory Affairs
+
+55 TW Alexander Drive, PO Box 14186
+R..."
+C039,Novartis AG,NVS,NYSE,See FDA letter,See FDA CRL letter - indication in application,2020-12-18,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Novartis Pharmaceuticals Corporation""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=214012,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 214012, letter date 12/18/2020, company Novartis Pharmaceuticals Corporation. File: 214012_2022_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: iPyN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 214012
+COMPLETE RESPONSE
+
+Novartis Pharmaceuticals Corporation
+Attention: Andrew Friedman, PharmD
+Senior VP, Regulatory Affairs
+
+One Health Plaza
+
+East Hanov..."
+C040,Sanofi,SNY,NASDAQ,Fexinidazole,See FDA CRL letter - indication in application,2020-11-12,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""sanofi-aventis U.S. LLC""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=214429,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 214429, letter date 11/12/2020, company sanofi-aventis U.S. LLC. File: 214429_2021_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: ¢ YN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 214429
+COMPLETE RESPONSE
+
+sanofi-aventis U.S. LLC
+
+A SANOFI COMPANY
+
+Attention: Michael Macalush, MS
+
+Director, North America and Global Regulatory Affairs
+5..."
+C041,Takeda Pharmaceutical,TAK,NYSE,See FDA letter,See FDA CRL letter - indication in application,2019-12-17,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Takeda Pharmaceuticals, U.S.A., Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761133,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761133, letter date 12/17/2019, company Takeda Pharmaceuticals, U.S.A., Inc.. File: 761133_2024_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: g EY U.S. FOOD & DRUG
+
+ADMINISTRATION
+“non
+
+BLA 761133
+COMPLETE RESPONSE
+
+Takeda Pharmaceuticals, U.S.A., Inc.
+Attention: Mayuresh Gadre
+
+Senior Manager
+
+Global Regulatory Affairs Development, Gl
+40 L..."
+C042,AstraZeneca PLC,AZN,NASDAQ,Breztri Aerosphere,See FDA CRL letter - indication in application,2019-09-30,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""AstraZeneca AB""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=212122,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 212122, letter date 09/30/2019, company AstraZeneca AB. File: 212122_2021_Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: ¢ RYN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 212122
+COMPLETE RESPONSE
+
+AstraZeneca AB
+
+c/o AstraZeneca Pharmaceuticals
+1800 Concord Pike
+
+Wilmington, DE 19803
+
+Attention: Monique Small, PharmD
+Director..."
+C043,Sarepta Therapeutics,SRPT,NASDAQ,Vyondys,See FDA CRL letter - indication in application,2019-08-19,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Sarepta Therapeutics, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=211970,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 211970, letter date 08/19/2019, company Sarepta Therapeutics, Inc.. File: 211970_2019_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: (¢ GN U.S. FOOD & DRUG
+
+ADMINISTRATION
+
+NDA 211970
+COMPLETE RESPONSE
+
+Sarepta Therapeutics, Inc.
+Attention: Patrick O’Malley
+Executive Director, Regulatory Affairs
+215 First Street, Suite 415
+Cambridg..."
+C044,Bausch Health Companies Inc.,BHC,NYSE,See FDA letter,See FDA CRL letter - indication in application,2019-07-19,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Bausch Health Ireland Limited""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=211039,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 211039, letter date 07/19/2019, company Bausch Health Ireland Limited. File: 211039_2020_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: (¢ Fy U.S. FOOD & DRUG
+a ADMINISTRATION
+
+NDA 211039
+COMPLETE RESPONSE
+
+Bausch Health Ireland Limited
+c/o Paragon BioTeck Inc.
+Attention: Patrick Witham
+President and CEO
+4640 SW Macadam Avenue, Suite ..."
+C045,Amgen Inc.,AMGN,NASDAQ,Kanjinti,See FDA CRL letter - indication in application,2018-05-25,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Amgen Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761073,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761073, letter date 05/25/2018, company Amgen Inc.. File: 761073_2019_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: 9
+
+>
+
+i Ga OF HEALTH AND HUMAN SERVICES
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+BLA 761073
+COMPLETE RESPONSE
+
+Amgen Inc.
+
+Attention: Jennifer Khiem
+
+Manager, Global Biosimilars Regulator..."
+C046,Pfizer Inc.,PFE,NYSE,Trazimera,See FDA CRL letter - indication in application,2018-04-20,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Pfizer Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761081,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761081, letter date 04/20/2018, company Pfizer Inc.. File: 761081_2019_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: pute
+
+Mie
+
+OAL
+
+€ DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+a.
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+BLA 761081
+COMPLETE RESPONSE
+
+Pfizer Inc.
+
+Attention: Scott C. Anderson, MS
+
+Directo..."
+C047,Pfizer Inc.,PFE,NYSE,See FDA letter,See FDA CRL letter - indication in application,2018-03-19,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Hospira, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=210282,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 210282, letter date 03/19/2018, company Hospira, Inc.. File: 210282_2022_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: ser,
+GO ” y
+
+>
+i SC DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+%
+“amt Food and Drug Administration
+Silver Spring MD 20993
+
+NDA 210282
+COMPLETE RESPONSE
+
+Hospira, Inc.
+
+Attention: Kristina McIntyre
+
+Seni..."
+C048,Pfizer Inc.,PFE,NYSE,See FDA letter,See FDA CRL letter - indication in application,2018-02-22,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Hospira, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=209191,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 209191, letter date 02/22/2018, company Hospira, Inc.. File: 209191_2018_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: pute
+
+Mie
+
+OAL
+
+€ DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+a.
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+NDA 209191
+COMPLETE RESPONSE
+
+Hospira, Inc.
+
+Attention: Pamela Cabrera, PharmD
+
+Seni..."
+C049,Pfizer Inc.,PFE,NYSE,See FDA letter,See FDA CRL letter - indication in application,2017-11-03,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Hospira, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=209191,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 209191, letter date 11/03/2017, company Hospira, Inc.. File: 209191_2018_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: pute
+
+Mie
+
+OAL
+
+€ DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+a.
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+NDA 209191
+COMPLETE RESPONSE
+
+Hospira, Inc.
+
+Attention: Pamela Cabrera, PharmD
+
+Seni..."
+C050,Amgen Inc.,AMGN,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2017-07-13,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Amgen Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761062,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 761062, letter date 07/13/2017, company Amgen Inc.. File: 761062_2019_Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: pute,
+
+Mie
+
+OAL
+
+4 DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+BLA 761062
+COMPLETE RESPONSE
+
+Amgen Inc.
+
+Attention: Julia Zhu, Pharm.D., RAC
+Manager, ..."
+C051,United Therapeutics Corporation,UTHR,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2017-06-02,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""United Therapeutics Corporation""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=208276,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 208276, letter date 06/02/2017, company United Therapeutics Corporation. File: 208276_2018_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: some
+
+3
+i LC DEPARTMENT OF HEALTH AND HUMAN SERVICES
+2 oe
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+NDA 208276
+COMPLETE RESPONSE
+
+United Therapeutics Corporation
+
+Attention: Rex Mauthe, MB..."
+C052,Pfizer Inc.,PFE,NYSE,See FDA letter,See FDA CRL letter - indication in application,2017-04-26,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Hospira, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=209191,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 209191, letter date 04/26/2017, company Hospira, Inc.. File: 209191_2018_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: mg,
+
+i
+
+sottbinny
+
+Gama OF HEALTH AND HUMAN SERVICES
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+NDA 209191
+TENTATIVE APPROVAL
+
+Hospira, Inc.
+
+Attention: Pamela Cabrera, PharmD
+
+Senior Assoc..."
+C053,United Therapeutics Corporation,UTHR,NASDAQ,See FDA letter,See FDA CRL letter - indication in application,2016-10-07,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""United Therapeutics Corporation""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=208276,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 208276, letter date 10/07/2016, company United Therapeutics Corporation. File: 208276_2018_Orig1s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: some
+
+3
+i LC DEPARTMENT OF HEALTH AND HUMAN SERVICES
+2 oe
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+NDA 208276
+COMPLETE RESPONSE
+
+United Therapeutics Corporation
+
+Attention: Rex Mauthe, MB..."
+C054,Amgen Inc.,AMGN,NASDAQ,Repatha,See FDA CRL letter - indication in application,2015-08-27,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Amgen, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=125522,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application BLA 125522, letter date 08/27/2015, company Amgen, Inc.. File: 125522Orig2s000OtherActionLtrs.pdf. Reason: Safety concerns. Text excerpt: poten,
+
+4 DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+Mie
+
+OAL
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+BLA 125522/ Original 2
+
+COMPLETE RESPONSE
+
+Amgen, Inc.
+
+Attention: Marc Kubasak, PhD
+
+..."
+C055,Merck & Co.,MRK,NYSE,See FDA letter,See FDA CRL letter - indication in application,2013-06-28,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Merck & Co., Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=204569,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 204569, letter date 06/28/2013, company Merck & Co., Inc.. File: CRL_NDA204569_20130628.pdf. Reason: Efficacy + Safety. Text excerpt: suing,
+ey
+
+i St DEPARTMENT OF HEALTH AND HUMAN SERVICES
+
+et Food and Drug Administration
+Silver Spring MD 20993
+
+NDA 204569
+COMPLETE RESPONSE
+
+Merck & Co., Inc.
+
+126 Lincoln Avenue
+
+P.O. Box 2000, RY ..."
+C056,Bristol-Myers Squibb Company,BMY,NYSE,See FDA letter,See FDA CRL letter - indication in application,2012-01-17,Safety concerns,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Bristol-Myers Squibb""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=202293,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 202293, letter date 01/17/2012, company Bristol-Myers Squibb. File: CRL_NDA202293_20120117.pdf. Reason: Safety concerns. Text excerpt: pune,
+
+s ty
+
+i Covers OF HEALTH AND HUMAN SERVICES
+
+Noe
+
+Food and Drug Administration
+Silver Spring MD 20993
+
+NDA 202293
+COMPLETE RESPONSE
+
+Bristol-Myers Squibb
+
+Attention: Amy A. Jennings, Ph.D.
+Dire..."
+C057,Organon & Co.,OGN,NYSE,Gepirone,See FDA CRL letter - indication in application,2004-06-23,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Organon, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=021164,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 021164, letter date 06/23/2004, company Organon, Inc.. File: 021164Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: nets |
+
+4 DEPARTMENT OF HEALTH & HUMAN SERVICES Public Health Service
+
+BEAL
+oF BEAL,
+“ 44,
+
+Food and Drug Administration
+Rockville, MD 20857
+
+NDA 21-164
+
+Organon, Inc.
+
+Attention: Edna Gilvary, Ph.D.
+..."
+C058,Organon & Co.,OGN,NYSE,Gepirone,See FDA CRL letter - indication in application,2002-03-15,Efficacy + Safety,,"https://api.fda.gov/transparency/crl.json?search=company_name:""Organon, Inc.""",https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=021164,Verified - openFDA CRL transparency API,"openFDA CRL transparency API: application NDA 021164, letter date 03/15/2002, company Organon, Inc.. File: 021164Orig1s000OtherActionLtrs.pdf. Reason: Efficacy + Safety. Text excerpt: 4 DEPARTMENT OF HEALTH & HUMAN SERVICES Public Health Service
+
+Food and Drug Administration
+Rockville, MD 20857
+
+NDA 21-164
+
+Organon, Inc.
+
+Attention: Edna Gilvary, Ph.D.
+Regulatory Scientist II
+
+375 ..."
