@@ -1,0 +1,249 @@
+[
+  {
+    "type": "generic",
+    "id": "yahoo_chart_batch_2026_09",
+    "sleep": 0.4,
+    "items": [
+      {
+        "id": "SRRK_2026-09-11",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/SRRK?period1=1788048000&period2=1790207999&interval=1d&includePrePost=false",
+        "out": "SRRK_2026-09-11.json",
+        "ticker": "SRRK",
+        "decision_date": "2026-09-11",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "AZN_2026-09-04",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/AZN?period1=1787443200&period2=1789603199&interval=1d&includePrePost=false",
+        "out": "AZN_2026-09-04.json",
+        "ticker": "AZN",
+        "decision_date": "2026-09-04",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "IONS_2026-09-03",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/IONS?period1=1787356800&period2=1789516799&interval=1d&includePrePost=false",
+        "out": "IONS_2026-09-03.json",
+        "ticker": "IONS",
+        "decision_date": "2026-09-03",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "REGN_2026-08-19",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/REGN?period1=1786060800&period2=1788220799&interval=1d&includePrePost=false",
+        "out": "REGN_2026-08-19.json",
+        "ticker": "REGN",
+        "decision_date": "2026-08-19",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "BMY_2026-08-13",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/BMY?period1=1785542400&period2=1787702399&interval=1d&includePrePost=false",
+        "out": "BMY_2026-08-13.json",
+        "ticker": "BMY",
+        "decision_date": "2026-08-13",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "LNTH_2026-08-13",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/LNTH?period1=1785542400&period2=1787702399&interval=1d&includePrePost=false",
+        "out": "LNTH_2026-08-13.json",
+        "ticker": "LNTH",
+        "decision_date": "2026-08-13",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "OTLK_2026-07-24",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/OTLK?period1=1783814400&period2=1785974399&interval=1d&includePrePost=false",
+        "out": "OTLK_2026-07-24.json",
+        "ticker": "OTLK",
+        "decision_date": "2026-07-24",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "NUVL_2026-07-22",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/NUVL?period1=1783641600&period2=1785801599&interval=1d&includePrePost=false",
+        "out": "NUVL_2026-07-22.json",
+        "ticker": "NUVL",
+        "decision_date": "2026-07-22",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "MRK_2026-07-15",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/MRK?period1=1783036800&period2=1785196799&interval=1d&includePrePost=false",
+        "out": "MRK_2026-07-15.json",
+        "ticker": "MRK",
+        "decision_date": "2026-07-15",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "CELC_2026-07-14",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/CELC?period1=1782950400&period2=1785110399&interval=1d&includePrePost=false",
+        "out": "CELC_2026-07-14.json",
+        "ticker": "CELC",
+        "decision_date": "2026-07-14",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "VERA_2026-07-07",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/VERA?period1=1782345600&period2=1784505599&interval=1d&includePrePost=false",
+        "out": "VERA_2026-07-07.json",
+        "ticker": "VERA",
+        "decision_date": "2026-07-07",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "VRDN_2026-06-26",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/VRDN?period1=1781395200&period2=1783555199&interval=1d&includePrePost=false",
+        "out": "VRDN_2026-06-26.json",
+        "ticker": "VRDN",
+        "decision_date": "2026-06-26",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "BAYRY_2026-06-12",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/BAYRY?period1=1780185600&period2=1782345599&interval=1d&includePrePost=false",
+        "out": "BAYRY_2026-06-12.json",
+        "ticker": "BAYRY",
+        "decision_date": "2026-06-12",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "SGIOF_2026-05-29",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/SGIOF?period1=1778976000&period2=1781135999&interval=1d&includePrePost=false",
+        "out": "SGIOF_2026-05-29.json",
+        "ticker": "SGIOF",
+        "decision_date": "2026-05-29",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "ABBV_2026-05-27",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1778803200&period2=1780963199&interval=1d&includePrePost=false",
+        "out": "ABBV_2026-05-27.json",
+        "ticker": "ABBV",
+        "decision_date": "2026-05-27",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "GILD_2026-05-22",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/GILD?period1=1778371200&period2=1780531199&interval=1d&includePrePost=false",
+        "out": "GILD_2026-05-22.json",
+        "ticker": "GILD",
+        "decision_date": "2026-05-22",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "AZN_2026-05-15",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/AZN?period1=1777766400&period2=1779926399&interval=1d&includePrePost=false",
+        "out": "AZN_2026-05-15.json",
+        "ticker": "AZN",
+        "decision_date": "2026-05-15",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "RIGL_2026-05-01",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/RIGL?period1=1776556800&period2=1778716799&interval=1d&includePrePost=false",
+        "out": "RIGL_2026-05-01.json",
+        "ticker": "RIGL",
+        "decision_date": "2026-05-01",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "MRK_2026-04-20",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/MRK?period1=1775606400&period2=1777766399&interval=1d&includePrePost=false",
+        "out": "MRK_2026-04-20.json",
+        "ticker": "MRK",
+        "decision_date": "2026-04-20",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "LLY_2026-04-01",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/LLY?period1=1773964800&period2=1776124799&interval=1d&includePrePost=false",
+        "out": "LLY_2026-04-01.json",
+        "ticker": "LLY",
+        "decision_date": "2026-04-01",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "NVO_2026-03-26",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVO?period1=1773446400&period2=1775606399&interval=1d&includePrePost=false",
+        "out": "NVO_2026-03-26.json",
+        "ticker": "NVO",
+        "decision_date": "2026-03-26",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "CORT_2026-03-25",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/CORT?period1=1773360000&period2=1775519999&interval=1d&includePrePost=false",
+        "out": "CORT_2026-03-25.json",
+        "ticker": "CORT",
+        "decision_date": "2026-03-25",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "JNJ_2026-03-17",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/JNJ?period1=1772668800&period2=1774828799&interval=1d&includePrePost=false",
+        "out": "JNJ_2026-03-17.json",
+        "ticker": "JNJ",
+        "decision_date": "2026-03-17",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "GSK_2026-03-17",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/GSK?period1=1772668800&period2=1774828799&interval=1d&includePrePost=false",
+        "out": "GSK_2026-03-17.json",
+        "ticker": "GSK",
+        "decision_date": "2026-03-17",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "ASND_2026-02-27",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASND?period1=1771113600&period2=1773273599&interval=1d&includePrePost=false",
+        "out": "ASND_2026-02-27.json",
+        "ticker": "ASND",
+        "decision_date": "2026-02-27",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "VNDA_2025-12-30",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/VNDA?period1=1766016000&period2=1768175999&interval=1d&includePrePost=false",
+        "out": "VNDA_2025-12-30.json",
+        "ticker": "VNDA",
+        "decision_date": "2025-12-30",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "VRTX_2025-01-30",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/VRTX?period1=1737158400&period2=1739318399&interval=1d&includePrePost=false",
+        "out": "VRTX_2025-01-30.json",
+        "ticker": "VRTX",
+        "decision_date": "2025-01-30",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "NBIX_2024-12-13",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/NBIX?period1=1733011200&period2=1735171199&interval=1d&includePrePost=false",
+        "out": "NBIX_2024-12-13.json",
+        "ticker": "NBIX",
+        "decision_date": "2024-12-13",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "BBIO_2024-11-22",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/BBIO?period1=1731196800&period2=1733356799&interval=1d&includePrePost=false",
+        "out": "BBIO_2024-11-22.json",
+        "ticker": "BBIO",
+        "decision_date": "2024-11-22",
+        "source": "Yahoo Finance chart API"
+      },
+      {
+        "id": "ZYME_2024-11-20",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/ZYME?period1=1731024000&period2=1733183999&interval=1d&includePrePost=false",
+        "out": "ZYME_2024-11-20.json",
+        "ticker": "ZYME",
+        "decision_date": "2024-11-20",
+        "source": "Yahoo Finance chart API"
+      }
+    ]
+  }
+]
