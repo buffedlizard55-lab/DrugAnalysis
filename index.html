@@ -14,11 +14,12 @@
     <div class="header-content">
       <div class="header-title">
         <h1>💊 DrugAnalysis</h1>
-        <p class="tagline">FDA Decision Engine for Biotech Investors — <strong>980 verified FDA approvals</strong> (2000-2026) with <strong>official source links</strong>, <strong>verified stock reactions</strong>, and <strong>company success scores</strong>. Every row manually verified, no hallucinations.</p>
+        <p class="tagline">FDA Decision Engine for Biotech Investors — <strong><span data-count="alldecisions">…</span> verified FDA decisions</strong> (2000-2026): <span data-count="master">980</span> novel approvals plus <span data-count="suppl">…</span> label expansions, each with <strong>official FDA source links</strong>, alongside <strong>verified stock reactions</strong> and <strong>company success scores</strong>. <span data-count="auditconfirmed">…</span> rows machine-confirmed against primary FDA records; conflicts flagged, never guessed.</p>
       </div>
       <div class="header-stats">
-        <div class="stat"><span class="stat-num" data-count="master">980</span><span class="stat-label">FDA Decisions</span></div>
-        <div class="stat"><span class="stat-num" data-count="us">—</span><span class="stat-label">US Investable</span></div>
+        <div class="stat"><span class="stat-num" data-count="alldecisions">—</span><span class="stat-label">FDA Decisions</span></div>
+        <div class="stat"><span class="stat-num" data-count="master">980</span><span class="stat-label">Novel Approvals</span></div>
+        <div class="stat"><span class="stat-num" data-count="suppl">—</span><span class="stat-label">Label Expansions</span></div>
         <div class="stat"><span class="stat-num" data-count="prices">—</span><span class="stat-label">Price Snapshots</span></div>
         <div class="stat"><span class="stat-num" data-count="scores">—</span><span class="stat-label">Companies Scored</span></div>
       </div>
@@ -42,7 +43,10 @@
   <button class="tab-btn" data-tab="pdufa"><span class="tab-icon">📅</span> PDUFA Calendar</button>
   <button class="tab-btn" data-tab="trials"><span class="tab-icon">🧪</span> Trial Endpoints</button>
   <button class="tab-btn" data-tab="prices"><span class="tab-icon">💹</span> Stock Reactions</button>
+  <button class="tab-btn" data-tab="supplements"><span class="tab-icon">🔁</span> Label Expansions</button>
+  <button class="tab-btn" data-tab="expansion-scores"><span class="tab-icon">📶</span> Expansion Scorecard</button>
   <button class="tab-btn" data-tab="crls"><span class="tab-icon">⚠️</span> CRLs / Rejections</button>
+  <button class="tab-btn" data-tab="crosscheck"><span class="tab-icon">🔍</span> Verification Audit</button>
   <button class="tab-btn" data-tab="about"><span class="tab-icon">📚</span> Methodology</button>
 </nav>
 
@@ -63,6 +67,23 @@
     <h2>📊 Overview — Verified Data at a Glance</h2>
     <p class="section-desc">All numbers computed live from CSVs in <code>/data</code> — no hard-coded totals. Median price moves use only verified prices; blank cells are never filled with estimates.</p>
     <div id="overview-stats" class="stats"></div>
+
+    <div class="panel highlight">
+      <h3>🔍 Verification Audit — how much of this is machine-confirmed?</h3>
+      <p class="section-desc">Rather than simply asserting "no hallucinations", every novel-approval row is re-opened against its primary openFDA Drugs@FDA record and compared field by field. These counts are computed live from <code>data/verification_crosscheck.csv</code>.</p>
+      <div class="stats">
+        <div class="stat"><span class="stat-num" data-count="auditconfirmed">—</span><span class="stat-label">rows confirmed against primary FDA record</span></div>
+        <div class="stat"><span class="stat-num" data-count="auditconflicts">—</span><span class="stat-label">source-vs-source conflicts flagged for review</span></div>
+        <div class="stat"><span class="stat-num" data-count="supplletters">—</span><span class="stat-label">label expansions linking FDA's signed approval letter</span></div>
+        <div class="stat"><span class="stat-num" data-count="supplus">—</span><span class="stat-label">label expansions by US-investable issuers</span></div>
+      </div>
+      <div class="cta-row">
+        <button class="btn primary" onclick="document.querySelector('[data-tab=crosscheck]').click()">Open Verification Audit →</button>
+        <button class="btn" onclick="document.querySelector('[data-tab=supplements]').click()">Browse Label Expansions</button>
+        <button class="btn" onclick="document.querySelector('[data-tab=expansion-scores]').click()">Expansion Scorecard</button>
+      </div>
+      <p class="section-desc"><strong>Conflicts are not errors to hide — they are the point.</strong> Where two official FDA sources disagree (e.g. FDA's 2002 NME report prints Extraneal as 12-Dec-2002 while Drugs@FDA records 20-Dec-2002), the row is flagged with both dates and both links so a human can adjudicate. Nothing is silently overwritten.</p>
+    </div>
 
     <div class="panel">
       <h3>📅 Historical Coverage Audit (2000-2026)</h3>
@@ -256,11 +277,44 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
   </section>
 
   <!-- CRLS -->
+  <!-- EFFICACY SUPPLEMENTS / LABEL EXPANSIONS -->
+  <section id="supplements" class="tab-panel">
+    <h2>🔁 FDA Label Expansions — Efficacy Supplement Approvals (2000–2026)</h2>
+    <p class="section-desc"><strong>4,482 verified FDA decisions</strong> granting a <em>new indication</em>, <em>new population</em>, or <em>new efficacy claim</em> on an already-approved drug. These are the largest body of officially documented FDA efficacy decisions — several hundred per year versus ~50 novel approvals — and for an investor a label expansion is frequently the larger revenue event.</p>
+    <div class="notice"><strong>How to read this table.</strong> Every row comes verbatim from the openFDA Drugs@FDA API (submission type <code>SUPPL</code>, class <code>EFFICACY</code>, status <code>AP</code>). <strong>4,204 rows link FDA's own approval-letter PDF</strong> — click "letter" to read FDA's signed decision. The <em>indication text is deliberately not recorded</em>: FDA publishes no structured indication field for supplements, so rather than paraphrase (which would risk a hallucination) each row points at the FDA letter and label that state the indication. Sponsors that could not be tied to a listed security are marked <code>UNRESOLVED (REVIEW)</code> and never guessed; issuers that are identified but have no US-listed equity show <code>NO_US_TICKER</code>.</div>
+    <div id="supplements-view"></div>
+  </section>
+
+  <!-- EXPANSION SCORECARD -->
+  <section id="expansion-scores" class="tab-panel">
+    <h2>📶 Label-Expansion Scorecard — Which Companies Keep Winning FDA Decisions</h2>
+    <p class="section-desc">A company's approved efficacy supplements are directly observed evidence that its clinical programmes keep converting into FDA approvals — counted from FDA records, not from any company's self-reported pipeline page.</p>
+    <div class="notice"><strong>Why this complements the Company Scores tab.</strong> The main score is built on <em>novel</em> approvals, which are rare (~50/year across the whole industry), so most companies have too few for a stable estimate. Label expansions are far more numerous, so they discriminate much better. <strong>Breadth ratio</strong> = supplements per novel approval: how much additional indication value a company extracts from each molecule it gets approved. <strong>Expansions last 5y</strong> and <strong>velocity</strong> capture recency — an old record is weaker evidence about a company today. Every number is a count; nothing here is modelled or estimated.</div>
+    <div id="expansion-scores-view"></div>
+  </section>
+
   <section id="crls" class="tab-panel">
     <h2>⚠️ Complete Response Letters (Rejections) — Regulatory Setbacks</h2>
     <p class="section-desc">FDA rejections and regulatory setbacks for publicly traded companies — irregularities worth tracking, including repeat-CRL cases. C004 (Outlook Therapeutics / Lytenava) marked <em>RESOLVED</em>: after third CRL on 2025-12-31 BLA resubmitted and approved on 2026-07-24.</p>
     <div class="notice"><strong>CRL = Complete Response Letter</strong> — FDA's formal rejection stating application cannot be approved in present form. Requires sponsor to address deficiencies and resubmit. Track record of CRLs is critical for decision engine — repeat CRLs (e.g. Aldeyra/Reproxalap: 3 CRLs same indication) are strong negative signal.</div>
     <div id="crls-view"></div>
+  </section>
+
+  <!-- VERIFICATION AUDIT -->
+  <section id="crosscheck" class="tab-panel">
+    <h2>🔍 Verification Audit — Every Master Row Re-checked Against Its Primary Source</h2>
+    <p class="section-desc">A source link is only a <em>claim</em> that a row matches its source. This audit actually opens the primary openFDA Drugs@FDA record for each of the <strong>980</strong> novel-approval rows and compares the sponsor, brand name and decision date field by field, so a wrong date or a swapped company is caught mechanically rather than by eye.</p>
+    <div class="notice"><strong>What the statuses mean.</strong>
+      <code>MATCH</code> — date, brand and sponsor all agree with openFDA.
+      <code>MATCH_DATE_ONLY</code> — date and brand agree, sponsor wording differs (ownership change or legal-entity naming).
+      <code>MATCH_VIA_GENERIC</code> — openFDA publishes current labelling, so a discontinued or genericised product shows its generic/successor name; the generic reconciles.
+      <code>DATE_DIFFERS_FROM_DRUGSFDA_1_3D</code> — FDA's published NME approval report and Drugs@FDA differ by 1–3 days on the same approval; both sources are official, this is a known reporting difference, not an error.
+      <code>NO_APPL_NUMBER</code> — the row cites no Drugs@FDA application number, so it cannot be machine-cross-checked here (it still carries its FDA source links).
+      <code>NOT_IN_OPENFDA</code> — the application is cited but openFDA returns no ORIG/AP record (common for legacy BLAs and transferred applications).
+      <code>MISMATCH_DATE</code> / <code>MISMATCH_BRAND</code> — <strong>genuine source-vs-source conflicts, surfaced for human review rather than silently overwritten.</strong>
+    </div>
+    <div class="notice"><strong>Honest reading of the result.</strong> Rather than assert that all 980 rows are correct, this table shows exactly how many are machine-confirmed against a primary FDA record and how many are not. Rows that two official FDA sources disagree about are flagged, not resolved by guessing — for example FDA's 2002 NME report prints Extraneal as 12-Dec-2002 while Drugs@FDA records 20-Dec-2002. Regenerate with <code>python3 scripts/crosscheck_master_vs_openfda.py</code>.</div>
+    <div id="crosscheck-view"></div>
   </section>
 
   <!-- PRIVATE & NON-US (combined for simplicity, but still filtered) -->

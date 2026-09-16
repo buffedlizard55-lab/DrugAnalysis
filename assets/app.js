@@ -62,6 +62,14 @@ function linkify(url, label) {
 function statusBadge(status) {
   if (!status) return '<span class="badge neutral">—</span>';
   const s = status.toLowerCase();
+  /* Verification-audit statuses (data/verification_crosscheck.csv). A true
+     source-vs-source conflict must read as a warning; a confirmed match must
+     read as verified; "could not be machine-checked" must read as neither. */
+  if (s.startsWith('mismatch')) return `<span class="badge flagged">${escapeHtml(status)}</span>`;
+  if (s.startsWith('match')) return `<span class="badge verified">${escapeHtml(status)}</span>`;
+  if (s.startsWith('date_differs')) return `<span class="badge info">${escapeHtml(status)}</span>`;
+  if (s === 'no_appl_number' || s === 'not_in_openfda')
+    return `<span class="badge caveat">${escapeHtml(status)}</span>`;
   if (s.includes('flag') || s.includes('irregular') || s.includes('correction') || s.includes('rejected'))
     return `<span class="badge flagged">${escapeHtml(status)}</span>`;
   if (s.includes('caveat') || s.includes('foreign') || s.includes('no public') || s.includes('private') ||
@@ -877,6 +885,18 @@ function fillCounts() {
   setCount('pipeline', (overview.pipeline || []).length);
   setCount('pdufa', (overview.pdufa || []).length);
   setCount('trials', (overview.trials || []).length);
+
+  /* Efficacy supplements + verification audit */
+  const suppl = overview.suppl || [], audit = overview.audit || [];
+  setCount('suppl', suppl.length);
+  setCount('supplus', suppl.filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length);
+  setCount('supplletters', suppl.filter(r => (r.approval_letter_url || '').trim()).length);
+  setCount('alldecisions', (overview.master || []).length + suppl.length);
+  const confirmed = audit.filter(r => (r.crosscheck_status || '').startsWith('MATCH')).length;
+  const conflicts = audit.filter(r => (r.crosscheck_status || '').startsWith('MISMATCH')).length;
+  setCount('auditconfirmed', confirmed);
+  setCount('auditconflicts', conflicts);
+  setCount('auditrows', audit.length);
 }
 
 /* ---- qualitative pipeline cards (deep-dive scorecards) ---- */
@@ -920,11 +940,14 @@ Promise.all([
   loadCSV('data/fda_crl_master.csv').then(x => x.records).catch(() => []),
   loadCSV('data/pipeline_tracker.csv').then(x => x.records).catch(() => []),
   loadCSV('data/upcoming_pdufa_calendar.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/clinical_trial_endpoints.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials]) => {
+  loadCSV('data/clinical_trial_endpoints.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/fda_supplement_decisions.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/verification_crosscheck.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
+  overview.suppl = suppl; overview.audit = audit;
 
   fillCounts();
   drawCoverage(master);
@@ -1049,6 +1072,96 @@ Promise.all([
     searchFields: ['company_name', 'drug_name', 'indication', 'ticker'],
     searchPlaceholder: 'Search rejections…',
     sort: { key: 'crl_date', dir: 'desc' }, pageSize: 25
+  });
+
+  /* Efficacy supplements (label expansions) */
+  DataTable({
+    id: 'supplements', mount: '#supplements-view', csv: 'data/fda_supplement_decisions.csv',
+    columns: [
+      c('company_name', 'Company', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => `<strong>${escapeHtml(r.ticker)}</strong>` }),
+      c('drug_brand', 'Drug', { core: true }),
+      c('drug_generic', 'Generic', { trunc: true }),
+      c('decision_date', 'Approved', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.decision_date)}</span>` }),
+      c('review_priority', 'Review', { core: true, render: r => r.review_priority ? `<span class="badge ${/PRIORITY/i.test(r.review_priority) ? 'verified' : 'neutral'}">${escapeHtml(r.review_priority)}</span>` : '' }),
+      c('submission_property_type', 'Designations', { core: true, trunc: true }),
+      c('application_number', 'Application', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('submission_number', 'Suppl #', { render: r => `<code>${escapeHtml(r.submission_number)}</code>` }),
+      c('approval_letter_url', 'FDA letter', { core: true, render: r => linkify(r.approval_letter_url, 'letter'), detail: r => r.approval_letter_url }),
+      c('label_url', 'Label', { render: r => linkify(r.label_url, 'label'), detail: r => r.label_url }),
+      c('source_url_drugsatfda', 'Drugs@FDA', { render: r => linkify(r.source_url_drugsatfda, 'record'), detail: r => r.source_url_drugsatfda }),
+      c('pharm_class_epc', 'Class', { trunc: true }),
+      c('us_investable_class', 'US investable?', { core: true, render: r => classBadge(r.us_investable_class) }),
+      c('verification_status', 'Verification', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('openfda_sponsor_name', 'openFDA sponsor', { trunc: true }),
+      c('sponsor_resolution_basis', 'How resolved', { trunc: true, render: r => truncCell(r.sponsor_resolution_basis) }),
+      c('supplement_id', 'ID', { render: r => `<code>${escapeHtml(r.supplement_id)}</code>` })
+    ],
+    searchFields: ['company_name', 'drug_brand', 'drug_generic', 'ticker', 'application_number'],
+    searchPlaceholder: 'Search drug, company or application…',
+    sort: { key: 'decision_date', dir: 'desc' }, pageSize: 25,
+    filters: [
+      yearFilter('decision_date'),
+      { key: 'cls', label: 'All listing classes', field: 'us_investable_class' },
+      { key: 'prio', label: 'All review priorities', field: 'review_priority' }
+    ]
+  });
+
+  /* Label-expansion scorecard */
+  DataTable({
+    id: 'expansion-scores', mount: '#expansion-scores-view', csv: 'data/company_label_expansion_scorecard.csv',
+    columns: [
+      c('company_name', 'Company', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => `<strong>${escapeHtml(r.ticker)}</strong>` }),
+      c('total_efficacy_supplements', 'Label expansions', { core: true, num: true, render: r => num(r.total_efficacy_supplements, 0) }),
+      c('distinct_drugs_expanded', 'Drugs expanded', { core: true, num: true, render: r => num(r.distinct_drugs_expanded, 0) }),
+      c('priority_review_share_pct', 'Priority %', { core: true, num: true, render: r => pctCell(r.priority_review_share_pct) }),
+      c('priority_review_count', 'Priority count', { num: true, render: r => num(r.priority_review_count, 0) }),
+      c('orphan_supplement_count', 'Orphan', { num: true, render: r => num(r.orphan_supplement_count, 0) }),
+      c('expansions_last_5y', 'Last 5 yrs', { core: true, num: true, render: r => num(r.expansions_last_5y, 0) }),
+      c('expansion_velocity_per_yr', 'Per year', { core: true, num: true, render: r => num(r.expansion_velocity_per_yr, 2) }),
+      c('novel_approvals_tracked', 'Novel approvals', { core: true, num: true, render: r => num(r.novel_approvals_tracked, 0) }),
+      c('breadth_ratio_suppl_per_novel', 'Breadth ratio', { core: true, num: true, render: r => r.breadth_ratio_suppl_per_novel ? num(r.breadth_ratio_suppl_per_novel, 2) : '<span class="muted">n/a</span>' }),
+      c('first_expansion_date', 'First', { render: r => escapeHtml(r.first_expansion_date) }),
+      c('last_expansion_date', 'Most recent', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.last_expansion_date)}</span>` }),
+      c('rows_flagged_for_review', 'Flagged', { num: true, render: r => num(r.rows_flagged_for_review, 0) }),
+      c('us_investable_class', 'US investable?', { core: true, render: r => classBadge(r.us_investable_class) }),
+      c('evidence_basis', 'Evidence', { trunc: true, render: r => truncCell(r.evidence_basis) }),
+      c('verification_status', 'Verification', { render: r => statusBadge(r.verification_status) })
+    ],
+    searchFields: ['company_name', 'ticker'],
+    searchPlaceholder: 'Search company or ticker…',
+    sort: { key: 'total_efficacy_supplements', dir: 'desc' },
+    filters: [
+      { key: 'cls', label: 'All listing classes', field: 'us_investable_class' },
+      { key: 'min', label: 'Minimum label expansions', options: () => ['1', '5', '10', '25', '50'],
+        match: (r, v) => +r.total_efficacy_supplements >= +v }
+    ]
+  });
+
+  /* Verification audit */
+  DataTable({
+    id: 'crosscheck', mount: '#crosscheck-view', csv: 'data/verification_crosscheck.csv',
+    columns: [
+      c('decision_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.decision_id)}</code>` }),
+      c('crosscheck_status', 'Audit result', { core: true, render: r => statusBadge(r.crosscheck_status) }),
+      c('company_name', 'Company (master)', { core: true, trunc: true }),
+      c('drug_brand', 'Drug (master)', { core: true }),
+      c('decision_date', 'Date (master)', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.decision_date)}</span>` }),
+      c('openfda_decision_date', 'Date (openFDA)', { core: true, render: r => escapeHtml(r.openfda_decision_date) }),
+      c('openfda_brand_name', 'Brand (openFDA)', { core: true, trunc: true }),
+      c('openfda_sponsor_name', 'Sponsor (openFDA)', { trunc: true }),
+      c('application_number', 'Application', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('openfda_source_url', 'Primary source', { core: true, render: r => linkify(r.openfda_source_url, 'Drugs@FDA'), detail: r => r.openfda_source_url }),
+      c('detail', 'Audit detail', { core: true, trunc: true, render: r => truncCell(r.detail) })
+    ],
+    searchFields: ['decision_id', 'company_name', 'drug_brand', 'application_number', 'detail'],
+    searchPlaceholder: 'Search by drug, company or decision ID…',
+    sort: { key: 'decision_date', dir: 'desc' }, pageSize: 25,
+    filters: [
+      { key: 'status', label: 'All audit results', field: 'crosscheck_status' },
+      yearFilter('decision_date')
+    ]
   });
 
   /* Pipeline Tracker Full */
