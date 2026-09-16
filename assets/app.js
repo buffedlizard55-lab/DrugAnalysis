@@ -556,7 +556,7 @@ function drawCoverage(master) {
   const covered = years.filter(y => counts[y]);
   const missing = years.filter(y => !counts[y]);
   const sourceNote = y => master.filter(r => String(r.decision_date || '').startsWith(y))
-    .filter(r => [r.source_url_1, r.source_url_2].some(u => /(^|\\.)fda\\.gov\\//i.test(u || ''))).length;
+    .filter(r => [r.source_url_1, r.source_url_2].some(u => /(^|\.)fda\.gov\//i.test(u || ''))).length;
   document.getElementById('coverage-view').innerHTML = `
     <div class="coverage-summary"><strong>${covered.length} of ${years.length} years represented</strong>
       <span>${master.length} rows currently published · ${missing.length ? 'research backlog: ' + missing.join(', ') : 'no year gaps detected'}</span></div>
@@ -1140,7 +1140,9 @@ Promise.all([
       c('ticker', 'Ticker', { core: true, render: r => `<strong>${escapeHtml(r.ticker)}</strong>` }),
       c('total_efficacy_supplements', 'Label expansions', { core: true, num: true, render: r => num(r.total_efficacy_supplements, 0) }),
       c('distinct_drugs_expanded', 'Drugs expanded', { core: true, num: true, render: r => num(r.distinct_drugs_expanded, 0) }),
-      c('priority_review_share_pct', 'Priority %', { core: true, num: true, render: r => pctCell(r.priority_review_share_pct) }),
+      /* A share, not a change: pctCell() would colour it green and prefix "+". */
+      c('priority_review_share_pct', 'Priority %', { core: true, num: true,
+        render: r => `<span class="num-strong">${num(r.priority_review_share_pct, 1)}%</span>` }),
       c('priority_review_count', 'Priority count', { num: true, render: r => num(r.priority_review_count, 0) }),
       c('orphan_supplement_count', 'Orphan', { num: true, render: r => num(r.orphan_supplement_count, 0) }),
       c('expansions_last_5y', 'Last 5 yrs', { core: true, num: true, render: r => num(r.expansions_last_5y, 0) }),
