@@ -273,6 +273,73 @@ def job_openfda_decisions(spec: dict, outdir: str, entries: list) -> None:
         print(f"ok {sid}: {len(uniq)} decisions -> {dest}", flush=True)
 
 
+def job_openfda_supplements(spec: dict, outdir: str, entries: list) -> None:
+    """Fetch openFDA Drugs@FDA pages per year and commit *only* the extracted
+    **efficacy supplement** approvals (new indications / new populations).
+
+    Same contract as ``job_openfda_decisions``: the multi-megabyte raw payload
+    is never committed, but the manifest records every request URL and the
+    SHA-256 of each raw page so the deterministic extraction implemented in
+    scripts/openfda_supplements.py can be reproduced and audited.
+    """
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
+    from openfda_supplements import extract_year as extract_suppl_year  # noqa: WPS433
+
+    endpoint = spec["endpoint"]
+    template = spec["search_template"]
+    limit = int(spec.get("limit", 1000))
+    max_pages = int(spec.get("max_pages", 25))
+    for year in spec["years"]:
+        sid = f"{spec['id']}_{year}"
+        out_name = spec.get("out_template", "suppl_{year}.json").format(year=year)
+        dest = os.path.join(outdir, out_name)
+        if spec.get("skip_existing") and os.path.exists(dest) and os.path.getsize(dest) > 0:
+            entries.append({"id": sid, "status": "skipped-existing", "out": out_name})
+            continue
+        search = template.format(year=year, start=f"{year}0101", end=f"{year}1231")
+        collected, page, requests = [], 0, []
+        while page < max_pages:
+            skip = page * limit
+            qsearch = urllib.parse.quote(search, safe=':+[]"')
+            url = f"{endpoint}?search={qsearch}&limit={limit}&skip={skip}"
+            try:
+                status, body = http_get(url, timeout=spec.get("timeout", 180),
+                                        retries=spec.get("retries", 4))
+            except RuntimeError as exc:
+                entries.append({"id": sid, "url": url, "status": "FAILED", "error": str(exc),
+                                "at_utc": _now()})
+                print(f"FAIL {sid} page {page}: {exc}", flush=True)
+                break
+            try:
+                payload = json.loads(body.decode("utf-8"))
+            except Exception as exc:  # noqa: BLE001
+                entries.append({"id": sid, "url": url, "status": "BAD_JSON", "error": str(exc)})
+                break
+            results = payload.get("results", [])
+            requests.append({"url": url, "status": status, "n_raw_records": len(results),
+                             "raw_sha256": hashlib.sha256(body).hexdigest(), "at_utc": _now()})
+            collected.extend(extract_suppl_year(payload, year, url))
+            if len(results) < limit:
+                break
+            page += 1
+            time.sleep(spec.get("sleep", 0.3))
+        seen, uniq = set(), []
+        for s in collected:
+            key = (s["application_number"], s["submission_number"], s["decision_date"])
+            if key not in seen:
+                seen.add(key)
+                uniq.append(s)
+        uniq.sort(key=lambda s: (s["decision_date"], s["application_number"], s["submission_number"]))
+        body = json.dumps({"year": year, "source_endpoint": endpoint, "search": search,
+                           "count": len(uniq), "extracted_utc": _now(), "supplements": uniq},
+                          separators=(",", ":")).encode("utf-8")
+        meta = {"id": sid, "endpoint": endpoint, "search": search, "pages": requests,
+                "supplements": len(uniq), "status": 200}
+        write_payload(dest, body, meta)
+        entries.append(meta)
+        print(f"ok {sid}: {len(uniq)} efficacy supplements -> {dest}", flush=True)
+
+
 def job_stooq(spec: dict, outdir: str, entries: list) -> None:
     """Daily OHLC history per symbol from Stooq (verbatim CSV per symbol).
 
@@ -346,6 +413,7 @@ KINDS = {
     "url": job_url,
     "openfda_years": job_openfda_years,
     "openfda_decisions": job_openfda_decisions,
+    "openfda_supplements": job_openfda_supplements,
     "stooq": job_stooq,
     "generic": job_generic_csv,
 }

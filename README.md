@@ -4,7 +4,39 @@ Tracking publicly traded biotech & pharma companies against **FDA drug decisions
 
 **Live site:** https://buffedlizard55-lab.github.io/DrugAnalysis/ — served directly from this repository's root by GitHub Pages. The site reads CSVs in [`/data`](https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data) directly, so no separate copy to keep in sync: every commit to `main` publishes current data automatically.
 
-**Latest verified counts (2026-09-16 v2 — this session):**
+## 2026-09-16 v3 — this session
+
+**Headline: the decision universe grew from 1,038 rows to 5,520 verified FDA decisions, and the "no hallucinations" claim is now independently machine-checkable.**
+
+| Added this session | Count | Source | File |
+|---|---|---|---|
+| **FDA efficacy-supplement approvals** (new indications / populations) | **4,482** covering every year 2000-2026 | openFDA Drugs@FDA API, collected on GitHub Actions with per-request SHA-256 manifest | `data/fda_supplement_decisions.csv` |
+| — of those, US-investable issuers | 3,052 | sponsor resolved to a listed security | same |
+| — of those, linking FDA's signed approval-letter PDF | 4,204 | `accessdata.fda.gov` approval letters | same |
+| **Label-expansion scorecards** | 99 companies | counted from the rows above | `data/company_label_expansion_scorecard.csv` |
+| **Verification cross-check** of every novel-approval row | 980 audited | primary openFDA record re-opened and compared field by field | `data/verification_crosscheck.csv` |
+
+**Why efficacy supplements, and why this is the honest way to add 1,000+ entries.** The previous session's limitation note was correct: FDA approves only ~50 novel drugs per year, so *1,000 new novel approvals beyond the existing 980 do not exist* and could only have been fabricated. Efficacy supplements are the legitimate alternative — each is a real, dated FDA decision on a public company's drug, several hundred per year, with every field copyable verbatim from an official FDA record. For an investor a label expansion is frequently the larger revenue event; for the scorecard it is directly observed evidence that a company's late-stage trials keep converting into FDA approvals, rather than a self-reported pipeline page.
+
+**Verification audit results (run `python3 scripts/crosscheck_master_vs_openfda.py`):**
+
+| Audit result | Rows | Meaning |
+|---|---|---|
+| `MATCH` | 491 | date, brand and sponsor all agree with the primary openFDA record |
+| `MATCH_DATE_ONLY` | 193 | date and brand agree; sponsor wording differs (ownership change / legal entity) |
+| `MATCH_VIA_GENERIC` | 8 | openFDA shows current labelling (generic or successor brand); reconciles |
+| `DATE_DIFFERS_FROM_DRUGSFDA_1_3D` | 3 | FDA report vs Drugs@FDA differ 1-3 days — known reporting difference, both official |
+| `NO_APPL_NUMBER` | 265 | row cites no Drugs@FDA application number, so **cannot** be machine-checked here |
+| `NOT_IN_OPENFDA` | 11 | application cited but openFDA has no ORIG/AP record (legacy BLAs, transfers) |
+| `MISMATCH_DATE` / `MISMATCH_BRAND` | **9** | **genuine source-vs-source conflicts, flagged for human adjudication — never silently overwritten** |
+
+Concrete conflicts this audit surfaced (all real discrepancies inside FDA's own systems, all left flagged rather than "fixed"): FDA's 2002 NME report prints **Extraneal** as 12-Dec-2002 while Drugs@FDA records 20-Dec-2002; FDA's NME compilation and 2004 report give **Macugen** 17-Dec-2004 while Drugs@FDA records 17-Sep-2004; **Nexavar** 20-Dec-2005 (FDA report, corroborated by the FDA reviewers' own *Clin Cancer Res* paper) vs 01-Dec-2005 in Drugs@FDA.
+
+**New site tabs:** 🔁 Label Expansions · 📶 Expansion Scorecard · 🔍 Verification Audit. The decision engine's company selector now also loads each issuer's label-expansion record, because for most companies the novel-approval count alone is too small a sample to score on.
+
+---
+
+**Latest verified counts (2026-09-16 v2 — previous session):**
 - **980 FDA novel-drug approvals** (2000-2026, complete coverage of FDA official NME counts per year)
 - **58 CRLs** (Complete Response Letters, expanded from 7 to 58 via openFDA CRL transparency API)
 - **1038 core analysis rows** (980 approvals + 58 CRLs, newest first, with company scores and price reactions) — **83 with verified price data** (80 priced, 3 flagged degenerate but verified)
