@@ -12,7 +12,38 @@ ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
 ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
 == job probe (5 spec(s)) ==
 FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
-ok sec_company_tickers_plain_ua 200 797931 bytes -> data/raw/probe/sec_company_tickers_alt.json
+ok sec_company_tickers_plain_ua 200 797759 bytes -> data/raw/probe/sec_company_tickers_alt.json
 ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
 ok yahoo_symbol_search_probe 200 2759 bytes -> data/raw/probe/yahoo_search_probe.json
+== job stock_yahoo_batch_2026_09 (1 spec(s)) ==
+ok SRRK_2026-09-11 200 2480 bytes
+ok AZN_2026-09-04 200 3075 bytes
+ok IONS_2026-09-03 200 2922 bytes
+ok REGN_2026-08-19 200 2975 bytes
+ok BMY_2026-08-13 200 3010 bytes
+ok LNTH_2026-08-13 200 3050 bytes
+ok OTLK_2026-07-24 200 3206 bytes
+ok NUVL_2026-07-22 200 1085 bytes
+ok MRK_2026-07-15 200 2943 bytes
+ok CELC_2026-07-14 200 2883 bytes
+ok VERA_2026-07-07 200 2814 bytes
+ok VRDN_2026-06-26 200 2977 bytes
+ok BAYRY_2026-06-12 200 3029 bytes
+ok SGIOF_2026-05-29 200 2660 bytes
+ok ABBV_2026-05-27 200 2865 bytes
+ok GILD_2026-05-22 200 3029 bytes
+ok AZN_2026-05-15 200 3030 bytes
+ok RIGL_2026-05-01 200 3146 bytes
+ok MRK_2026-04-20 200 3174 bytes
+ok LLY_2026-04-01 200 2833 bytes
+ok NVO_2026-03-26 200 2901 bytes
+ok CORT_2026-03-25 200 2923 bytes
+ok JNJ_2026-03-17 200 3007 bytes
+ok GSK_2026-03-17 200 3023 bytes
+ok ASND_2026-02-27 200 2890 bytes
+ok VNDA_2025-12-30 200 2722 bytes
+ok VRTX_2025-01-30 200 2928 bytes
+ok NBIX_2024-12-13 200 3049 bytes
+ok BBIO_2024-11-22 200 3063 bytes
+ok ZYME_2024-11-20 200 2879 bytes
