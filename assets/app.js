@@ -808,6 +808,16 @@ function initEngine() {
       o.dataset.score = s.total_score_0_100 || ''; o.dataset.rate = s.success_rate_pct || '';
       o.dataset.wilson = s.success_rate_wilson_lower_pct || '';
       o.dataset.class = s.us_investable_class || '';
+      /* Label-expansion evidence: approved efficacy supplements are direct,
+         FDA-documented evidence that this company's trials keep converting.
+         Joined on ticker from data/company_label_expansion_scorecard.csv. */
+      const exp = (overview.expansion || []).find(e => e.ticker && e.ticker === s.ticker);
+      if (exp) {
+        o.dataset.suppl = exp.total_efficacy_supplements || 0;
+        o.dataset.suppl5y = exp.expansions_last_5y || 0;
+        o.dataset.supplprio = exp.priority_review_share_pct || '';
+        o.dataset.suppldrugs = exp.distinct_drugs_expanded || 0;
+      }
       compSel.appendChild(o);
     });
 
@@ -826,6 +836,20 @@ function initEngine() {
       `<strong>${escapeHtml(o.dataset.crls)}</strong> CRLs, FDA success rate <strong>${escapeHtml(o.dataset.rate)}%</strong> ` +
       `(95% Wilson lower bound ${escapeHtml(o.dataset.wilson)}%), composite score <strong>${escapeHtml(o.dataset.score)}</strong>/100, ` +
       `class ${escapeHtml(o.dataset.class)}.`;
+    if (o.dataset.suppl) {
+      note.innerHTML += `<br>Label-expansion record (FDA efficacy supplements, 2000-2026): ` +
+        `<strong>${escapeHtml(o.dataset.suppl)}</strong> approved across ` +
+        `<strong>${escapeHtml(o.dataset.suppldrugs)}</strong> drug(s), ` +
+        `<strong>${escapeHtml(o.dataset.suppl5y)}</strong> in the last 5 years, ` +
+        `${escapeHtml(o.dataset.supplprio)}% granted Priority Review. ` +
+        `<em>A long, recent expansion record is direct evidence the company's late-stage trials keep ` +
+        `converting into FDA approvals — weigh it alongside the novel-approval count above, which for ` +
+        `most companies is a very small sample.</em>`;
+    } else {
+      note.innerHTML += `<br><em>No approved FDA efficacy supplements recorded for this issuer 2000-2026 — ` +
+        `the track record here rests only on novel approvals, which is a small sample. Treat the estimate ` +
+        `as correspondingly uncertain.</em>`;
+    }
     compute();
   });
 
@@ -942,12 +966,13 @@ Promise.all([
   loadCSV('data/upcoming_pdufa_calendar.csv').then(x => x.records).catch(() => []),
   loadCSV('data/clinical_trial_endpoints.csv').then(x => x.records).catch(() => []),
   loadCSV('data/fda_supplement_decisions.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/verification_crosscheck.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit]) => {
+  loadCSV('data/verification_crosscheck.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/company_label_expansion_scorecard.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
-  overview.suppl = suppl; overview.audit = audit;
+  overview.suppl = suppl; overview.audit = audit; overview.expansion = expansion;
 
   fillCounts();
   drawCoverage(master);
