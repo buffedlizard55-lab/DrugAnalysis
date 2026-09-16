@@ -1,0 +1,520 @@
+{
+  "job": "openfda_efficacy_supplements",
+  "generated_utc": "2026-09-16T21:14:33Z",
+  "requests": [
+    {
+      "id": "eff_suppl_2000",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20000101 TO 20001231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20000101%20TO%2020001231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 531,
+          "raw_sha256": "2b0a32fed6f15623d8f80e6d5fb10523834e8a3acbe807043dfff5dfca57daab",
+          "at_utc": "2026-09-16T21:13:58Z"
+        }
+      ],
+      "supplements": 132,
+      "status": 200,
+      "bytes": 127317,
+      "sha256": "22d4d854dd54f602cfb67f3448ba8d6fa737a5ec2f2ab167bae29783461d8737",
+      "written_at_utc": "2026-09-16T21:13:58Z"
+    },
+    {
+      "id": "eff_suppl_2001",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20010101 TO 20011231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20010101%20TO%2020011231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 530,
+          "raw_sha256": "cfced0fdf8bfb724230ea1070fc9b58cf5a0867721631207703344f9a2d04a39",
+          "at_utc": "2026-09-16T21:13:59Z"
+        }
+      ],
+      "supplements": 96,
+      "status": 200,
+      "bytes": 94906,
+      "sha256": "0bc68f639bfa7e221db288bf31d6da5f45373c17269ddaccd92b2c1a22599fa1",
+      "written_at_utc": "2026-09-16T21:13:59Z"
+    },
+    {
+      "id": "eff_suppl_2002",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20020101 TO 20021231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20020101%20TO%2020021231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 593,
+          "raw_sha256": "755cd89746db4230350f9027b574c8484c47669c36de6a65e3e1467948fa19ad",
+          "at_utc": "2026-09-16T21:14:00Z"
+        }
+      ],
+      "supplements": 150,
+      "status": 200,
+      "bytes": 147538,
+      "sha256": "a863f7f8540f99e28734ac8b8462af55a5b6028c15956ec0b0a1189de4790356",
+      "written_at_utc": "2026-09-16T21:14:00Z"
+    },
+    {
+      "id": "eff_suppl_2003",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20030101 TO 20031231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20030101%20TO%2020031231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 417,
+          "raw_sha256": "c9c41b4d19ed99fffbd58f15cb37f2a1d10b3d99c82d468d1bbf1a14ee802dda",
+          "at_utc": "2026-09-16T21:14:01Z"
+        }
+      ],
+      "supplements": 140,
+      "status": 200,
+      "bytes": 143968,
+      "sha256": "964586952ebed7933f7820015bcfb42126d754702ff631ae15fd44087bbe6a33",
+      "written_at_utc": "2026-09-16T21:14:01Z"
+    },
+    {
+      "id": "eff_suppl_2004",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20040101 TO 20041231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20040101%20TO%2020041231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 479,
+          "raw_sha256": "fff624195c544bdab880e930dffbd4044c6e766bf6766019e8176e61ea456993",
+          "at_utc": "2026-09-16T21:14:03Z"
+        }
+      ],
+      "supplements": 133,
+      "status": 200,
+      "bytes": 135590,
+      "sha256": "c246931a45133a70b4672113ea9042d442e38bb6f87b57eae37dc1c96b2929be",
+      "written_at_utc": "2026-09-16T21:14:03Z"
+    },
+    {
+      "id": "eff_suppl_2005",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20050101 TO 20051231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20050101%20TO%2020051231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 408,
+          "raw_sha256": "1b3c8d418bfbccbb87de637a3cc020822ce612a1ec9c959715dfd0ca01a4767e",
+          "at_utc": "2026-09-16T21:14:04Z"
+        }
+      ],
+      "supplements": 131,
+      "status": 200,
+      "bytes": 133986,
+      "sha256": "fec387ba95ded1fba2ded92fc4359634453a95a252f489752bd29dd9c1139e9f",
+      "written_at_utc": "2026-09-16T21:14:04Z"
+    },
+    {
+      "id": "eff_suppl_2006",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20060101 TO 20061231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20060101%20TO%2020061231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 405,
+          "raw_sha256": "ae3caaf5850728253c823f793379f59099a4b82773c06a177357b086136eb571",
+          "at_utc": "2026-09-16T21:14:07Z"
+        }
+      ],
+      "supplements": 134,
+      "status": 200,
+      "bytes": 137289,
+      "sha256": "554e2995d1b7e8e6f5b6a8868393877ae53728bedbaf16b0e6acb0b94847a618",
+      "written_at_utc": "2026-09-16T21:14:07Z"
+    },
+    {
+      "id": "eff_suppl_2007",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20070101 TO 20071231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20070101%20TO%2020071231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 480,
+          "raw_sha256": "03b7f125ec6107980e3dc512f238f736bdbcd86ee8f1415d57a5b02a3bdd0368",
+          "at_utc": "2026-09-16T21:14:08Z"
+        }
+      ],
+      "supplements": 139,
+      "status": 200,
+      "bytes": 139188,
+      "sha256": "40817855f5f0f764d6bb11ae7269b6a95b3a716c9b58843d2e5a6470fb690acb",
+      "written_at_utc": "2026-09-16T21:14:08Z"
+    },
+    {
+      "id": "eff_suppl_2008",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20080101 TO 20081231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20080101%20TO%2020081231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 441,
+          "raw_sha256": "b2f132027e1cc9e71f4cebd899aedbb4661f5eb8c0acfd55a8e37082dcc217e3",
+          "at_utc": "2026-09-16T21:14:10Z"
+        }
+      ],
+      "supplements": 135,
+      "status": 200,
+      "bytes": 136441,
+      "sha256": "999eff2f30313b69deca8a091d14a410aabf26df93c21e2797016d6cb90bc039",
+      "written_at_utc": "2026-09-16T21:14:10Z"
+    },
+    {
+      "id": "eff_suppl_2009",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20090101 TO 20091231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20090101%20TO%2020091231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 486,
+          "raw_sha256": "964e77a6642e2bb48a55f854f04ab23fed8013b3d06f89d7c664fc6e891d678d",
+          "at_utc": "2026-09-16T21:14:11Z"
+        }
+      ],
+      "supplements": 129,
+      "status": 200,
+      "bytes": 128433,
+      "sha256": "93f7268bbd57d007aab9b79377c3e57ee8287f9eed0f95c9c72a4ad02f44edf3",
+      "written_at_utc": "2026-09-16T21:14:11Z"
+    },
+    {
+      "id": "eff_suppl_2010",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20100101 TO 20101231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20100101%20TO%2020101231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 489,
+          "raw_sha256": "cdfa31c112847805bbe89868f0640ee2824da0268526cddeeed13e5e82598468",
+          "at_utc": "2026-09-16T21:14:12Z"
+        }
+      ],
+      "supplements": 92,
+      "status": 200,
+      "bytes": 94789,
+      "sha256": "aecafa3c5ecc86bca7a6f505d40e9503447de743acf79af323b61a454c93a108",
+      "written_at_utc": "2026-09-16T21:14:12Z"
+    },
+    {
+      "id": "eff_suppl_2011",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20110101 TO 20111231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20110101%20TO%2020111231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 564,
+          "raw_sha256": "8653f4f0cc5f26fb12984ed6878be6becbee8750e0a32776aca43ced4f26691e",
+          "at_utc": "2026-09-16T21:14:13Z"
+        }
+      ],
+      "supplements": 111,
+      "status": 200,
+      "bytes": 114557,
+      "sha256": "346b833ee1033314be37f41ec35c737cced152f2c702c3d97821e108b2df97a9",
+      "written_at_utc": "2026-09-16T21:14:13Z"
+    },
+    {
+      "id": "eff_suppl_2012",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20120101 TO 20121231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20120101%20TO%2020121231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 591,
+          "raw_sha256": "b90f2dc622494a74da8fae4bcdf631f7ae3b1c999bf3a9f7db2f5e4be8b89c14",
+          "at_utc": "2026-09-16T21:14:15Z"
+        }
+      ],
+      "supplements": 123,
+      "status": 200,
+      "bytes": 128681,
+      "sha256": "5dfb6bc33c7edf47791b921d3b698df185f380d52564b8e06dd7b63b4ce47375",
+      "written_at_utc": "2026-09-16T21:14:15Z"
+    },
+    {
+      "id": "eff_suppl_2013",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20130101 TO 20131231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20130101%20TO%2020131231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 757,
+          "raw_sha256": "97122d5e1d75f13e6c79c7548eb61512b4b9fae87ccece14b899b9968234d2fc",
+          "at_utc": "2026-09-16T21:14:16Z"
+        }
+      ],
+      "supplements": 122,
+      "status": 200,
+      "bytes": 128201,
+      "sha256": "6c8e449f0dfa02e9bb58cbae707fe66faccf6721b05a549cf2a3d440b4bf37a7",
+      "written_at_utc": "2026-09-16T21:14:16Z"
+    },
+    {
+      "id": "eff_suppl_2014",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20140101 TO 20141231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20140101%20TO%2020141231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 773,
+          "raw_sha256": "afce4357e4904b1954dd634b8b493243d43e445044d4848de47c760b71ac4bd0",
+          "at_utc": "2026-09-16T21:14:17Z"
+        }
+      ],
+      "supplements": 148,
+      "status": 200,
+      "bytes": 154522,
+      "sha256": "098514fa411b4d0b2537111020ce43cb7588936abc2c02ce7198b3e0e449cb49",
+      "written_at_utc": "2026-09-16T21:14:17Z"
+    },
+    {
+      "id": "eff_suppl_2015",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20150101 TO 20151231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20150101%20TO%2020151231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 779,
+          "raw_sha256": "838b24222ab90c7e27c6c948675fe1e50a06b15b7e509596b2db27d748781c93",
+          "at_utc": "2026-09-16T21:14:19Z"
+        }
+      ],
+      "supplements": 141,
+      "status": 200,
+      "bytes": 148021,
+      "sha256": "eb460a43d49aaa4b1d83034a11c7891cae09df50bba3ba4b94f6c4c3a01ca1b6",
+      "written_at_utc": "2026-09-16T21:14:19Z"
+    },
+    {
+      "id": "eff_suppl_2016",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20160101 TO 20161231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20160101%20TO%2020161231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 758,
+          "raw_sha256": "88a62844140a8c2d55e073ce53b2076d8424471376fcb7aac473bdbedb87029d",
+          "at_utc": "2026-09-16T21:14:20Z"
+        }
+      ],
+      "supplements": 162,
+      "status": 200,
+      "bytes": 171516,
+      "sha256": "621dcded90e7806b6fa755f41842df3cb3b6fb10bb82f8ab58bad61bb8b0e8a4",
+      "written_at_utc": "2026-09-16T21:14:20Z"
+    },
+    {
+      "id": "eff_suppl_2017",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20170101 TO 20171231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20170101%20TO%2020171231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 740,
+          "raw_sha256": "55e68ba92a2ba06ad6e7ebba7700b3a072f4733270cc425321b7abbe8f446fb8",
+          "at_utc": "2026-09-16T21:14:21Z"
+        }
+      ],
+      "supplements": 209,
+      "status": 200,
+      "bytes": 221208,
+      "sha256": "67218275e15f06e60ecd9a7f3fed6566b376cb0456db0c0be5447c1c3ce163c5",
+      "written_at_utc": "2026-09-16T21:14:21Z"
+    },
+    {
+      "id": "eff_suppl_2018",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20180101 TO 20181231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20180101%20TO%2020181231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 721,
+          "raw_sha256": "d93ab3772e9be8d6f40506b93679236e496aa9f3feeb1b2855c9a936ebda7e08",
+          "at_utc": "2026-09-16T21:14:23Z"
+        }
+      ],
+      "supplements": 235,
+      "status": 200,
+      "bytes": 247869,
+      "sha256": "47d964df58513b411305fa6540b2fc1a7313f98deffcac9940f4fa221a7ee91e",
+      "written_at_utc": "2026-09-16T21:14:23Z"
+    },
+    {
+      "id": "eff_suppl_2019",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20190101 TO 20191231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20190101%20TO%2020191231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 737,
+          "raw_sha256": "886fefeac07408c73be2ac525445fce5249b88eaf7070d76e6993e9f7df98118",
+          "at_utc": "2026-09-16T21:14:24Z"
+        }
+      ],
+      "supplements": 254,
+      "status": 200,
+      "bytes": 270564,
+      "sha256": "dfd3ba1df463968459c5d62f3e0865e3c26dc5a31f2dd8a7acd54f13c10a3060",
+      "written_at_utc": "2026-09-16T21:14:24Z"
+    },
+    {
+      "id": "eff_suppl_2020",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20200101 TO 20201231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20200101%20TO%2020201231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 652,
+          "raw_sha256": "69fe13946aa26e0a67e9bb00bddbfa184d15c23acfd44abc39f3617b28128161",
+          "at_utc": "2026-09-16T21:14:26Z"
+        }
+      ],
+      "supplements": 259,
+      "status": 200,
+      "bytes": 275659,
+      "sha256": "b9bf710bb22cf7cc0a2beb5cd92c6301396c8fdd2ded008c04ebc4616d030f9c",
+      "written_at_utc": "2026-09-16T21:14:26Z"
+    },
+    {
+      "id": "eff_suppl_2021",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20210101 TO 20211231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20210101%20TO%2020211231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 635,
+          "raw_sha256": "5ef39aaced923978dba439dfb67c6a11a2a7529efc5369d15a196ad106e4d41d",
+          "at_utc": "2026-09-16T21:14:27Z"
+        }
+      ],
+      "supplements": 240,
+      "status": 200,
+      "bytes": 252865,
+      "sha256": "b4b553a8265044024a94dae3d2ce41bbdbf7e27611ca1584f94995783fb3e457",
+      "written_at_utc": "2026-09-16T21:14:27Z"
+    },
+    {
+      "id": "eff_suppl_2022",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20220101 TO 20221231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20220101%20TO%2020221231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 547,
+          "raw_sha256": "712343c9091b0271d8a46d45f0c2012e3380f08f68ab216806a384cb15a32b52",
+          "at_utc": "2026-09-16T21:14:28Z"
+        }
+      ],
+      "supplements": 220,
+      "status": 200,
+      "bytes": 231362,
+      "sha256": "ed6cf525f49e146ebcb61481e87bf9eda69af816d5f8a6c827ef75b90e1d3894",
+      "written_at_utc": "2026-09-16T21:14:28Z"
+    },
+    {
+      "id": "eff_suppl_2023",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20230101 TO 20231231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20230101%20TO%2020231231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 588,
+          "raw_sha256": "3fc967a52f4df07f226076e0262f761d4511556629b3b593c4b4bf5eb2640751",
+          "at_utc": "2026-09-16T21:14:29Z"
+        }
+      ],
+      "supplements": 217,
+      "status": 200,
+      "bytes": 229542,
+      "sha256": "6e31cebf4dc2ad182a09ef8b0fb8f80f0204155e669aa25b4de1d958bd342f3e",
+      "written_at_utc": "2026-09-16T21:14:29Z"
+    },
+    {
+      "id": "eff_suppl_2024",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20240101 TO 20241231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20240101%20TO%2020241231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 585,
+          "raw_sha256": "235ed4a6348fd7a192f257130e28240b823701469ca78521e2abdb30853570e4",
+          "at_utc": "2026-09-16T21:14:30Z"
+        }
+      ],
+      "supplements": 222,
+      "status": 200,
+      "bytes": 234248,
+      "sha256": "c3447de4c8a48fd177c6ca67cb66f02249a39322104497e2cf914a406abd4cf2",
+      "written_at_utc": "2026-09-16T21:14:30Z"
+    },
+    {
+      "id": "eff_suppl_2025",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20250101 TO 20251231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20250101%20TO%2020251231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 602,
+          "raw_sha256": "80c75eb4a1c0faa6e2e4835066bf6005cfb5059e2b3bc6197d069132c68f06ea",
+          "at_utc": "2026-09-16T21:14:32Z"
+        }
+      ],
+      "supplements": 253,
+      "status": 200,
+      "bytes": 268614,
+      "sha256": "7a02c505a4077516a82f46eea5a69998f6d96fb1c0a87a0956672a46d09d0160",
+      "written_at_utc": "2026-09-16T21:14:32Z"
+    },
+    {
+      "id": "eff_suppl_2026",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"SUPPL\" AND submissions.submission_class_code:\"EFFICACY\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[20260101 TO 20261231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"SUPPL\"%20AND%20submissions.submission_class_code:\"EFFICACY\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[20260101%20TO%2020261231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 413,
+          "raw_sha256": "a5966444133f98c2f49958feb450fa392770f7c155d3a9d58a9ffe4a65f0d836",
+          "at_utc": "2026-09-16T21:14:33Z"
+        }
+      ],
+      "supplements": 155,
+      "status": 200,
+      "bytes": 165466,
+      "sha256": "78052990035dfa041eef506eb55266355a0435805fa4bd85956d19da420be3eb",
+      "written_at_utc": "2026-09-16T21:14:33Z"
+    }
+  ],
+  "job_file": "fetch_jobs/openfda_efficacy_supplements.json"
+}
