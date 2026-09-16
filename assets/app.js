@@ -874,6 +874,9 @@ function fillCounts() {
   setCount('private', master.filter(isPrivate).length);
   setCount('nonus', master.filter(r => isNonUS(r) || isUnverified(r)).length);
   setCount('latest', core.map(r => r.decision_date).sort().pop() || '—');
+  setCount('pipeline', (overview.pipeline || []).length);
+  setCount('pdufa', (overview.pdufa || []).length);
+  setCount('trials', (overview.trials || []).length);
 }
 
 /* ---- qualitative pipeline cards (deep-dive scorecards) ---- */
@@ -916,11 +919,12 @@ Promise.all([
   loadCSV('data/stock_price_snapshots.csv').then(x => x.records).catch(() => []),
   loadCSV('data/fda_crl_master.csv').then(x => x.records).catch(() => []),
   loadCSV('data/pipeline_tracker.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/upcoming_pdufa_calendar.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa]) => {
+  loadCSV('data/upcoming_pdufa_calendar.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/clinical_trial_endpoints.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
-  overview.pipeline = pipeline; overview.pdufa = pdufa;
+  overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
 
   fillCounts();
   drawCoverage(master);
@@ -1045,6 +1049,79 @@ Promise.all([
     searchFields: ['company_name', 'drug_name', 'indication', 'ticker'],
     searchPlaceholder: 'Search rejections…',
     sort: { key: 'crl_date', dir: 'desc' }, pageSize: 25
+  });
+
+  /* Pipeline Tracker Full */
+  DataTable({
+    id: 'pipeline-full', mount: '#pipeline-full-view', csv: 'data/pipeline_tracker.csv',
+    columns: [
+      c('company_name', 'Company', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => `<strong>${escapeHtml(r.ticker)}</strong>` }),
+      c('total_programs', 'Total Programs', { core: true, num: true, render: r => num(r.total_programs,0) }),
+      c('approved', 'Approved', { core: true, num: true, render: r => num(r.approved,0) }),
+      c('phase_3', 'Phase 3', { core: true, num: true, render: r => num(r.phase_3,0) }),
+      c('phase_2', 'Phase 2', { num: true, render: r => num(r.phase_2,0) }),
+      c('phase_1', 'Phase 1', { num: true, render: r => num(r.phase_1,0) }),
+      c('preclinical', 'Preclinical', { num: true, render: r => num(r.preclinical,0) }),
+      c('paused_hold', 'Paused/Hold', { core: true, num: true, render: r => num(r.paused_hold,0) }),
+      c('advanced_next_phase', 'Advanced', { core: true, num: true, render: r => num(r.advanced_next_phase,0) }),
+      c('success_rate_pct', 'Success %', { core: true, num: true, render: r => pctCell(r.success_rate_pct) }),
+      c('source_url_1', 'Source', { render: r => linkify(r.source_url_1,'pipeline'), detail: r => r.source_url_1 }),
+      c('verification_status', 'Verification', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['company_name','ticker','notes'],
+    searchPlaceholder: 'Search pipeline…',
+    sort: { key: 'total_programs', dir: 'desc' },
+    filters: [{ key: 'status', label: 'All verification', field: 'verification_status' }]
+  });
+
+  /* PDUFA Calendar Full */
+  DataTable({
+    id: 'pdufa-full', mount: '#pdufa-full-view', csv: 'data/upcoming_pdufa_calendar.csv',
+    columns: [
+      c('company_name', 'Company', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => `<strong>${escapeHtml(r.ticker)}</strong>` }),
+      c('drug_brand', 'Drug', { core: true }),
+      c('drug_generic', 'Generic', { core: true }),
+      c('indication', 'Indication', { core: true, trunc: true }),
+      c('phase', 'Phase', { core: true }),
+      c('pdufa_date', 'PDUFA Date', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.pdufa_date)}</span>` }),
+      c('submission_type', 'Submission', { core: true }),
+      c('review_pathway', 'Pathway', { core: true, render: r => r.review_pathway ? `<span class="badge info">${escapeHtml(r.review_pathway)}</span>` : '' }),
+      c('source_url_1', 'Source 1', { render: r => linkify(r.source_url_1,'FDA source'), detail: r => r.source_url_1 }),
+      c('source_url_2', 'Source 2', { render: r => linkify(r.source_url_2,'verify'), detail: r => r.source_url_2 }),
+      c('verification_status', 'Verification', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) }),
+      c('exchange', 'Exchange', { core: true })
+    ],
+    searchFields: ['company_name','drug_brand','indication','ticker'],
+    searchPlaceholder: 'Search PDUFA…',
+    sort: { key: 'pdufa_date', dir: 'asc' },
+    filters: [yearFilter('pdufa_date'), { key: 'pathway', label: 'All pathways', field: 'review_pathway' }]
+  });
+
+  /* Clinical Trial Endpoints */
+  DataTable({
+    id: 'trials', mount: '#trials-view', csv: 'data/clinical_trial_endpoints.csv',
+    columns: [
+      c('company_name', 'Company', { core: true }),
+      c('ticker', 'Ticker', { core: true, render: r => `<strong>${escapeHtml(r.ticker)}</strong>` }),
+      c('drug', 'Drug', { core: true, trunc: true }),
+      c('indication', 'Indication', { core: true, trunc: true }),
+      c('phase', 'Phase', { core: true }),
+      c('endpoint_type', 'Endpoint', { core: true }),
+      c('expected_date', 'Expected', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.expected_date)}</span>` }),
+      c('status', 'Status', { core: true, render: r => statusBadge(r.status) }),
+      c('source_url_1', 'Source 1', { render: r => linkify(r.source_url_1,'source'), detail: r => r.source_url_1 }),
+      c('source_url_2', 'Source 2', { render: r => linkify(r.source_url_2,'source2'), detail: r => r.source_url_2 }),
+      c('verification_status', 'Verification', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['company_name','drug','indication','ticker'],
+    searchPlaceholder: 'Search trial endpoints…',
+    sort: { key: 'expected_date', dir: 'asc' },
+    filters: [{ key: 'phase', label: 'All phases', field: 'phase' }]
   });
 
   /* Prices */
