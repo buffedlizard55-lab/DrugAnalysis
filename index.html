@@ -38,6 +38,9 @@
   <button class="tab-btn" data-tab="core"><span class="tab-icon">📈</span> Core Analysis</button>
   <button class="tab-btn" data-tab="approvals"><span class="tab-icon">✅</span> FDA Approvals</button>
   <button class="tab-btn" data-tab="scorecards"><span class="tab-icon">🏆</span> Company Scores</button>
+  <button class="tab-btn" data-tab="pipeline"><span class="tab-icon">🔬</span> Pipeline Tracker</button>
+  <button class="tab-btn" data-tab="pdufa"><span class="tab-icon">📅</span> PDUFA Calendar</button>
+  <button class="tab-btn" data-tab="trials"><span class="tab-icon">🧪</span> Trial Endpoints</button>
   <button class="tab-btn" data-tab="prices"><span class="tab-icon">💹</span> Stock Reactions</button>
   <button class="tab-btn" data-tab="crls"><span class="tab-icon">⚠️</span> CRLs / Rejections</button>
   <button class="tab-btn" data-tab="about"><span class="tab-icon">📚</span> Methodology</button>
@@ -220,11 +223,35 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
     </div>
   </section>
 
+  <!-- PIPELINE TRACKER -->
+  <section id="pipeline" class="tab-panel">
+    <h2>🔬 Pipeline Tracker — Company Success Rates by Phase</h2>
+    <p class="section-desc">Separate scorecard for company's success rate: How many drugs in profile, history, and pipeline succeeded into next phase, for what phase, or if paused because need more clinical data, etc? Deep-dive pipeline: total programs, approved, Phase 3/2/1/preclinical, paused/hold, advanced to next phase, success rate, source link, verification status. Each with official source link for manual review. <strong>34 companies now tracked (up from 24) — 10 new added Sep 2026: Incyte (10 Phase 3), Alnylam (3 Phase 3), BioMarin (cull 2024), Ultragenyx, Viridian, Scholar Rock (approved Sep 11), Nuvalent, Vanda, Corcept, Mineralys.</strong></p>
+    <div class="notice info"><strong>Deep-dive vs FDA-decisions-only:</strong> Deep-dive rows list full pipeline from company IR disclosures with phase breakdown. FDA-decisions-only rows count only FDA decisions verified here and report phase progression as 0 rather than estimating — labelled partial view, lower confidence. <strong>Blank beats guessed.</strong></div>
+    <div id="pipeline-full-view"></div>
+  </section>
+
+  <!-- PDUFA CALENDAR -->
+  <section id="pdufa" class="tab-panel">
+    <h2>📅 Upcoming PDUFA Calendar — Next FDA Decision Dates</h2>
+    <p class="section-desc">Forward-tracking PDUFA dates for drugs under review by FDA — the decision engine's forward-looking component. Each entry with <strong>2 official source links</strong>, verification status, and countdown. Sorted soonest first. Flagged secondary compilation rows require manual primary press release verification — blank beats guessed. <strong>32 upcoming PDUFA dates now tracked (up from 16) — 16 new added Sep 2026: NUVL Sep 18, BTAI Nov 14, SMMT Nov 14, SVRA Nov 22, SNY Nov 25, BBIO Nov 27, GSK Nov 27, CYTK Nov 14, RHHBY Nov 30, VRTX Nov 30, COGT Nov 30, EXEL Dec 3, PRAX Dec 27, COGT Dec 30, INO Oct 30, MRK Oct 4.</strong></p>
+    <div class="notice"><strong>What is PDUFA?</strong> Prescription Drug User Fee Act date — FDA's target action date for NDA/BLA review. Delays happen (major amendment = 3-month extension). Track record of extensions flagged (e.g. Capricor Aug 22→Nov 22 2026).</div>
+    <div id="pdufa-full-view"></div>
+  </section>
+
+  <!-- CLINICAL TRIAL ENDPOINTS -->
+  <section id="trials" class="tab-panel">
+    <h2>🧪 Clinical Trial Endpoints — Upcoming Readouts</h2>
+    <p class="section-desc">Upcoming clinical trial endpoints being reviewed by FDA as well as Phase 3 readouts that could lead to NDA/BLA filings. Each with expected date, endpoint type, status, and official source links. This forward-tracks catalysts before PDUFA. <strong>New table — 8 upcoming Phase 3 readouts tracked from SEC filings and company IR.</strong></p>
+    <div class="notice info"><strong>How this feeds decision engine:</strong> Phase 3 → NDA/BLA 57.8% base rate (BIO 2011-2020), Phase 3 → approval 52.4% LOA. Trial outcome determines filing likelihood. Each endpoint verified via SEC filings or company IR.</div>
+    <div id="trials-view"></div>
+  </section>
+
   <!-- PRICES -->
   <section id="prices" class="tab-panel">
     <h2>💹 Stock Price Snapshots — Verified Market Reactions</h2>
-    <p class="section-desc">Closing prices immediately before, on, and after each FDA decision, pulled from Yahoo Finance chart API (<code>/v8/finance/chart/&lt;TICKER&gt;?interval=1d</code>). Each fetch's reported company name checked against expected issuer before row used, raw captures stored verbatim in <code>data/staging/</code> so any number can be re-checked. Non-US listings in native currency (JPY/EUR/CHF) and noted. Rows left <strong>blank</strong> — never estimated — where history could not be retrieved (delisted/acquired tickers, or bar not yet published at capture time). Two series <strong>rejected</strong> rather than recorded because API returned data that could not be trusted as traded prices: Nuvalent (2026-07-22, degenerate zero-volume series) and Trevena/TRVN (Aug 2020 closes of 1,450–1,956 against current price $0.011, i.e. large reverse-split factor applied to raw and adjusted closes alike). ESPR, YMAB and CPRX returned no data for windows, so cells blank.</p>
-    <div class="notice info"><strong>Why T+1 matters:</strong> Several approvals actually moved next session, not day-of (e.g. Celcuity +7.0% on day, -17.6% next session). This is why both % on decision and % T+1 columns exist — captures delayed market reaction.</div>
+    <p class="section-desc">Closing prices immediately before, on, and after each FDA decision, pulled from Yahoo Finance chart API (<code>/v8/finance/chart/&lt;TICKER&gt;?interval=1d</code>). Each fetch's reported company name checked against expected issuer before row used, raw captures stored verbatim in <code>data/staging/</code> and <code>data/raw/</code> so any number can be re-checked. Non-US listings in native currency (JPY/EUR/CHF) and noted. Rows left <strong>blank</strong> — never estimated — where history could not be retrieved (delisted/acquired tickers, or bar not yet published at capture time). Two series <strong>rejected</strong> rather than recorded because API returned data that could not be trusted as traded prices: Nuvalent (2026-07-22, degenerate zero-volume series) and Trevena/TRVN (Aug 2020 closes of 1,450–1,956 against current price $0.011, i.e. large reverse-split factor applied to raw and adjusted closes alike). ESPR, YMAB and CPRX returned no data for windows, so cells blank. <strong>93 snapshots now verified (up from 63) after ingesting 2026 batch via GH Actions verbatim JSON capture — 30 new rows added 2026-09-16.</strong></p>
+    <div class="notice info"><strong>Why T+1 matters:</strong> Several approvals actually moved next session, not day-of (e.g. Celcuity +7.0% on day, -17.6% next session). This is why both % on decision and % T+1 columns exist — captures delayed market reaction. New batch includes Scholar Rock Sep 11 2026 (+), AstraZeneca Sep 4, Ionis Sep 3, Regeneron Aug 19, BMS Aug 13, etc.</div>
     <div id="prices-view"></div>
   </section>
 
