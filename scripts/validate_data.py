@@ -127,7 +127,93 @@ if len(audit) != len(master):
     errors.append(f"crosscheck: {len(audit)} audit rows for {len(master)} master rows — rerun "
                   f"scripts/crosscheck_master_vs_openfda.py")
 
+# ---- original non-NME NDA/BLA approvals ------------------------------------
+orig = read("fda_original_non_nme_decisions.csv")
+seen_orig = set()
+for i, r in enumerate(orig, 2):
+    oid = r.get("orig_id", "").strip()
+    if not oid:
+        errors.append(f"orig:{i}: missing orig_id")
+    elif oid in seen_orig:
+        errors.append(f"orig:{i}: duplicate orig_id {oid}")
+    else:
+        seen_orig.add(oid)
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r.get("decision_date", "")):
+        errors.append(f"orig:{i}: invalid ISO date {r.get('decision_date','')!r}")
+    for k in ("source_url_1", "source_url_2"):
+        check_url(r.get(k, ""), f"orig:{i}:{k}")
+    if not any(r.get(k, "").strip() for k in ("source_url_1", "source_url_2", "source_query_url")):
+        errors.append(f"orig:{i}: no official FDA source link on row")
+    if not r.get("verification_status", "").strip():
+        errors.append(f"orig:{i}: missing verification_status")
+    # Type 1 NMEs must never leak into this file — they belong on the master list.
+    desc = r.get("chemical_type_description", "")
+    if "Type 1 - New Molecular Entity" in desc:
+        errors.append(f"orig:{i}: Type 1 NME leaked into non-NME file ({oid})")
+    tk = r.get("ticker", "").strip()
+    if tk and tk not in {"UNRESOLVED", "NO_US_TICKER"} and not r.get("sponsor_resolution_basis", "").strip():
+        errors.append(f"orig:{i}: ticker {tk} asserted with no sponsor_resolution_basis")
+    if "FLAG" in r.get("verification_status", "").upper():
+        warnings.append(f"orig:{i} flagged for manual review ({oid})")
+orig_unresolved = sum(1 for r in orig if r.get("ticker", "").strip() == "UNRESOLVED")
+if orig_unresolved:
+    warnings.append(f"orig: {orig_unresolved} row(s) have an unresolved sponsor — left unresolved, not guessed")
+# Every year 2000-2026 must be represented (coverage claim).
+orig_years = {r.get("decision_date", "")[:4] for r in orig}
+missing_years = [str(y) for y in range(2000, 2027) if str(y) not in orig_years]
+if missing_years:
+    errors.append(f"orig: missing years {', '.join(missing_years)} — coverage claim broken")
+
+# ---- original-approval scorecard -------------------------------------------
+oscores = read("company_original_approval_scorecard.csv")
+orig_by_ticker = {}
+for r in orig:
+    t = r.get("ticker", "").strip()
+    if t and t not in {"UNRESOLVED", "NO_US_TICKER"}:
+        orig_by_ticker[t] = orig_by_ticker.get(t, 0) + 1
+for i, r in enumerate(oscores, 2):
+    t = r.get("ticker", "").strip()
+    try:
+        n = int(r["total_original_non_nme"])
+    except (ValueError, KeyError):
+        errors.append(f"orig_scorecard:{i}: non-numeric total_original_non_nme")
+        continue
+    if orig_by_ticker.get(t, 0) != n:
+        errors.append(f"orig_scorecard:{i}: {t} claims {n} originals but "
+                      f"fda_original_non_nme_decisions.csv has {orig_by_ticker.get(t, 0)}")
+    try:
+        share = float(r["priority_review_share_pct"])
+        if not 0 <= share <= 100:
+            errors.append(f"orig_scorecard:{i}: priority_review_share_pct outside 0-100")
+    except (ValueError, KeyError):
+        errors.append(f"orig_scorecard:{i}: non-numeric priority_review_share_pct")
+    try:
+        clin = int(r["clinical_relevant_count"])
+        if clin > n:
+            errors.append(f"orig_scorecard:{i}: clinical_relevant_count {clin} > total {n}")
+    except (ValueError, KeyError):
+        errors.append(f"orig_scorecard:{i}: non-numeric clinical_relevant_count")
+
+# ---- Type 1 unmatched (flagged, not merged) --------------------------------
+t1gap = read("fda_type1_not_in_nme_master.csv")
+for i, r in enumerate(t1gap, 2):
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r.get("decision_date", "")):
+        errors.append(f"t1gap:{i}: invalid ISO date {r.get('decision_date','')!r}")
+    check_url(r.get("source_url_1", ""), f"t1gap:{i}:source_url_1")
+    if "FLAGGED" not in (r.get("verification_status") or "").upper():
+        errors.append(f"t1gap:{i}: Type 1 unmatched row is not flagged — must not look like a merged NME")
+warnings.append(f"t1gap: {len(t1gap)} Type 1 openFDA rows not matched to the NME master — flagged, not merged")
+
+# ---- orig year register ----------------------------------------------------
+yreg = read("fda_orig_year_register.csv")
+if len(yreg) != 27:
+    errors.append(f"orig_year_register: {len(yreg)} rows, expected 27 (2000-2026)")
+published_sum = sum(int(r.get("non_nme_published") or 0) for r in yreg)
+if published_sum != len(orig):
+    errors.append(f"orig_year_register: sum(non_nme_published)={published_sum} != {len(orig)} orig rows")
+
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
+      f"{len(orig)} original non-NME rows, {len(oscores)} orig scorecards, {len(t1gap)} Type-1-gap flags, "
       f"{len(exp)} label-expansion scorecards, {len(audit)} cross-check rows, "
       f"{len(scores)} company scorecards, and {len(prices)} price snapshots.")
 print(f"Warnings requiring manual review: {len(warnings)}")

@@ -136,6 +136,30 @@ const LS = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* private mode */ } }
 };
 
+/* Dark mode: honour prefers-color-scheme, remember the last explicit choice. */
+(function initTheme() {
+  const stored = LS.get('theme', null);
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = stored || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+  window.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    const sync = () => {
+      const t = document.documentElement.getAttribute('data-theme') || 'light';
+      btn.textContent = t === 'dark' ? '☀' : '◐';
+      btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    };
+    sync();
+    btn.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      LS.set('theme', next);
+      sync();
+    });
+  });
+})();
+
 function smartCompare(a, b) {
   const na = parseFloat(a), nb = parseFloat(b);
   const aNum = a !== '' && !isNaN(na), bNum = b !== '' && !isNaN(nb);
@@ -453,10 +477,12 @@ const REPO_DATA = 'https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/
 /* tabs */
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
+    if (!btn.dataset.tab) return;
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     const panel = document.getElementById(btn.dataset.tab);
+    if (!panel) return;
     panel.classList.add('active');
     if (location.hash !== '#' + btn.dataset.tab) history.replaceState(null, '', '#' + btn.dataset.tab);
     window.dispatchEvent(new Event('resize'));   // re-measure scrollbars
@@ -594,7 +620,9 @@ function drawOverview() {
     { k: 'Rows with verified prices', v: priced.length, s: 'blank cells are never estimated' },
     { k: 'Rows flagged for review', v: flagged.length, s: 'irregularities explained in Notes' },
     { k: 'Companies scored', v: scores.length, s: 'numeric track-record score 0–100' },
-    { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' }
+    { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' },
+    { k: 'Original non-NME approvals', v: (overview.orig || []).length, s: ((overview.orig || []).filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length) + ' US-listed · Type 2/3/4/5, biosimilars, new-indication originals' },
+    { k: 'Type 1 unmatched (flagged)', v: (overview.t1gap || []).length, s: 'openFDA Type 1 not merged into the NME master — CBER biologics / copacks, blank beats guessed' }
   ];
   document.getElementById('overview-stats').innerHTML = cards.map(x => `
     <div class="stat-card"><div class="stat-card-value">${escapeHtml(String(x.v))}</div>
@@ -850,6 +878,14 @@ function initEngine() {
         `the track record here rests only on novel approvals, which is a small sample. Treat the estimate ` +
         `as correspondingly uncertain.</em>`;
     }
+    if (o.dataset.origclin) {
+      note.innerHTML += `<br>Original non-NME approvals (2000–2026): ` +
+        `<strong>${escapeHtml(o.dataset.origclin)}</strong> clinical-relevant (Type 2/3/4 + new-indication originals) ` +
+        `out of <strong>${escapeHtml(o.dataset.origtot)}</strong> original non-NME decisions ` +
+        `(${escapeHtml(o.dataset.origt3)} Type 3 new dosage forms; ` +
+        `<strong>${escapeHtml(o.dataset.orig5y)}</strong> in the last 5 years). ` +
+        `<em>Type 5 manufacturer changes and medical gases are excluded from the clinical-relevant count.</em>`;
+    }
     compute();
   });
 
@@ -915,7 +951,11 @@ function fillCounts() {
   setCount('suppl', suppl.length);
   setCount('supplus', suppl.filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length);
   setCount('supplletters', suppl.filter(r => (r.approval_letter_url || '').trim()).length);
-  setCount('alldecisions', (overview.master || []).length + suppl.length);
+  const orig = overview.orig || [];
+  setCount('orig', orig.length);
+  setCount('origus', orig.filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length);
+  setCount('t1gap', (overview.t1gap || []).length);
+  setCount('alldecisions', (overview.master || []).length + suppl.length + orig.length);
   const confirmed = audit.filter(r => (r.crosscheck_status || '').startsWith('MATCH')).length;
   const conflicts = audit.filter(r => (r.crosscheck_status || '').startsWith('MISMATCH')).length;
   setCount('auditconfirmed', confirmed);
@@ -967,15 +1007,20 @@ Promise.all([
   loadCSV('data/clinical_trial_endpoints.csv').then(x => x.records).catch(() => []),
   loadCSV('data/fda_supplement_decisions.csv').then(x => x.records).catch(() => []),
   loadCSV('data/verification_crosscheck.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/company_label_expansion_scorecard.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion]) => {
+  loadCSV('data/company_label_expansion_scorecard.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/fda_original_non_nme_decisions.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/company_original_approval_scorecard.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/fda_type1_not_in_nme_master.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
   overview.suppl = suppl; overview.audit = audit; overview.expansion = expansion;
+  overview.orig = orig; overview.origScores = origScores; overview.t1gap = t1gap;
 
   fillCounts();
   drawCoverage(master);
+  drawOrigCoverage(orig || []);
   drawOverview();
   initEngine();
 
@@ -1166,6 +1211,77 @@ Promise.all([
     ]
   });
 
+  /* Original non-NME NDA/BLA approvals */
+  DataTable({
+    id: 'orig', mount: '#orig-view', csv: 'data/fda_original_non_nme_decisions.csv',
+    columns: [
+      c('company_name', 'Company', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => `<strong>${escapeHtml(r.ticker)}</strong>` }),
+      c('drug_brand', 'Drug', { core: true }),
+      c('drug_generic', 'Generic', { trunc: true }),
+      c('decision_date', 'Approved', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.decision_date)}</span>` }),
+      c('chemical_type_group', 'Chemical type', { core: true, trunc: true,
+        render: r => `<span class="badge info">${escapeHtml(r.chemical_type_group || r.chemical_type_description || '—')}</span>` }),
+      c('review_priority', 'Review', { core: true, render: r => r.review_priority ? `<span class="badge ${/PRIORITY/i.test(r.review_priority) ? 'verified' : 'neutral'}">${escapeHtml(r.review_priority)}</span>` : '' }),
+      c('application_kind', 'Kind', { core: true }),
+      c('application_number', 'Application', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('source_url_1', 'Drugs@FDA', { core: true, render: r => linkify(r.source_url_1, 'record'), detail: r => r.source_url_1 }),
+      c('source_url_2', 'openFDA query', { render: r => linkify(r.source_url_2, 'API'), detail: r => r.source_url_2 }),
+      c('us_investable_class', 'US investable?', { core: true, render: r => classBadge(r.us_investable_class) }),
+      c('verification_status', 'Verification', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('openfda_sponsor_name', 'openFDA sponsor', { trunc: true }),
+      c('sponsor_resolution_basis', 'How resolved', { trunc: true, render: r => truncCell(r.sponsor_resolution_basis) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) }),
+      c('orig_id', 'ID', { render: r => `<code>${escapeHtml(r.orig_id)}</code>` })
+    ],
+    searchFields: ['company_name', 'drug_brand', 'drug_generic', 'ticker', 'application_number', 'chemical_type_group', 'openfda_sponsor_name'],
+    searchPlaceholder: 'Search drug, company, ticker or application…',
+    sort: { key: 'decision_date', dir: 'desc' }, pageSize: 25,
+    filters: [
+      yearFilter('decision_date'),
+      { key: 'cls', label: 'All listing classes', field: 'us_investable_class' },
+      { key: 'chem', label: 'All chemical types', field: 'chemical_type_group' },
+      { key: 'prio', label: 'All review priorities', field: 'review_priority' },
+      { key: 'kind', label: 'NDA or BLA', field: 'application_kind' }
+    ]
+  });
+
+  /* Original-approval scorecard */
+  DataTable({
+    id: 'orig-scores', mount: '#orig-scores-view', csv: 'data/company_original_approval_scorecard.csv',
+    columns: [
+      c('company_name', 'Company', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => `<strong>${escapeHtml(r.ticker)}</strong>` }),
+      c('clinical_relevant_count', 'Clinical-relevant', { core: true, num: true, render: r => num(r.clinical_relevant_count, 0) }),
+      c('total_original_non_nme', 'Total originals', { core: true, num: true, render: r => num(r.total_original_non_nme, 0) }),
+      c('n_type2_new_active', 'Type 2', { core: true, num: true, render: r => num(r.n_type2_new_active, 0) }),
+      c('n_type3_new_dosage', 'Type 3 dosage', { core: true, num: true, render: r => num(r.n_type3_new_dosage, 0) }),
+      c('n_type4_new_combination', 'Type 4 combo', { core: true, num: true, render: r => num(r.n_type4_new_combination, 0) }),
+      c('n_type5_formulation_or_manufacturer', 'Type 5', { core: true, num: true, render: r => num(r.n_type5_formulation_or_manufacturer, 0) }),
+      c('n_new_indication_original', 'New-indication orig', { num: true, render: r => num(r.n_new_indication_original, 0) }),
+      c('n_biosimilar_or_unpublished_bla', 'Biosimilar / BLA', { num: true, render: r => num(r.n_biosimilar_or_unpublished_bla, 0) }),
+      c('n_medical_gas', 'Medical gas', { num: true, render: r => num(r.n_medical_gas, 0) }),
+      c('priority_review_count', 'Priority', { num: true, render: r => num(r.priority_review_count, 0) }),
+      c('priority_review_share_pct', 'Priority %', { core: true, num: true,
+        render: r => `<span class="num-strong">${num(r.priority_review_share_pct, 1)}%</span>` }),
+      c('orig_last_5y', 'Last 5 yrs', { core: true, num: true, render: r => num(r.orig_last_5y, 0) }),
+      c('orig_velocity_per_yr', 'Per year', { core: true, num: true, render: r => num(r.orig_velocity_per_yr, 2) }),
+      c('novel_approvals_tracked', 'Novel approvals', { core: true, num: true, render: r => num(r.novel_approvals_tracked, 0) }),
+      c('last_orig_date', 'Most recent', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.last_orig_date)}</span>` }),
+      c('us_investable_class', 'US investable?', { core: true, render: r => classBadge(r.us_investable_class) }),
+      c('evidence_basis', 'Evidence', { trunc: true, render: r => truncCell(r.evidence_basis) }),
+      c('verification_status', 'Verification', { render: r => statusBadge(r.verification_status) })
+    ],
+    searchFields: ['company_name', 'ticker'],
+    searchPlaceholder: 'Search company or ticker…',
+    sort: { key: 'clinical_relevant_count', dir: 'desc' },
+    filters: [
+      { key: 'cls', label: 'All listing classes', field: 'us_investable_class' },
+      { key: 'min', label: 'Minimum clinical-relevant', options: () => ['1', '5', '10', '20'],
+        match: (r, v) => +r.clinical_relevant_count >= +v }
+    ]
+  });
+
   /* Verification audit */
   DataTable({
     id: 'crosscheck', mount: '#crosscheck-view', csv: 'data/verification_crosscheck.csv',
@@ -1299,6 +1415,22 @@ Promise.all([
     filters: [
       { key: 'conf', label: 'All confidence levels', field: 'confidence' },
       { key: 'cls', label: 'All listing classes', field: 'us_investable_class' },
+      { key: 'min', label: 'Minimum decisions tracked', options: () => ['1', '2', '3', '5'],
+        match: (r, v) => +r.decisions_tracked >= +v }
+    ]
+  });
+
+  /* Qualitative pipeline cards */
+  loadCSV('data/company_scorecards.csv').then(({ records }) => drawPipelineCards(records)).catch(() => {
+    document.getElementById('cards-deep').innerHTML = '<div class="notice">company_scorecards.csv could not be loaded.</div>';
+  });
+}).catch(err => {
+  document.querySelector('main').insertAdjacentHTML('afterbegin',
+    `<div class="notice">Data load failed: ${escapeHtml(err.message)}</div>`);
+});
+
+openTabFromHash();
+es', field: 'us_investable_class' },
       { key: 'min', label: 'Minimum decisions tracked', options: () => ['1', '2', '3', '5'],
         match: (r, v) => +r.decisions_tracked >= +v }
     ]

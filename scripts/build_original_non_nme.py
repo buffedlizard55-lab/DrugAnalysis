@@ -1,0 +1,458 @@
+#!/usr/bin/env python3
+"""Build data/fda_original_non_nme_decisions.csv
+
+FDA original NDA/BLA approvals 2000-2026 that are *not* Type 1 NMEs
+(those already live in data/fda_decisions_master.csv).
+
+Why this file exists
+--------------------
+FDA approves only ~50 novel drugs a year. The 980-row NME master already
+matches FDA's official year counts, so 1,000 *new novel* approvals do not
+exist and must not be invented. Original approvals of other chemical types
+are the honest next body of FDA decisions:
+
+  Type 2  new active ingredient (includes many 351(k) biosimilars)
+  Type 3  new dosage form
+  Type 4  new combination
+  Type 5  new formulation or new manufacturer
+  Type 6/9/10  new indication filed as a distinct original
+  Type 7  already marketed without an approved NDA
+  Type 8  partial Rx-to-OTC
+  BLA class unpublished  — frequently a biosimilar; flagged, never guessed
+
+Source
+------
+data/raw/openfda_orig_decisions_2011_2026/decisions_<year>.json
+produced on GitHub Actions by fetch_jobs/openfda_orig_decisions_2011_2026.json
+from api.fda.gov/drug/drugsfda.json. Every request URL and payload SHA-256
+is in that directory's manifest.json.
+
+Hallucination controls
+----------------------
+* Every field is copied verbatim from the openFDA extract. Nothing is inferred.
+* Type 1 NMEs are excluded (they belong on the novel-approval master). They
+  are written instead to data/fda_type1_not_in_nme_master.csv IF they cannot
+  be matched to an existing master row — flagged for review, never silently
+  merged (that would break the official NME year-count audit).
+* Indication text is NOT synthesised: openFDA's original-approval extract has
+  no structured indication field. Each row links Drugs@FDA and the openFDA
+  application query instead.
+* Sponsor/ticker resolution reuses scripts/build_supplement_decisions.py
+  (SEC company_tickers.json + verified master lineage). Unresolved sponsors
+  get ticker UNRESOLVED — never guessed.
+* Medical-gas originals are kept (they are real FDA decisions) but labelled
+  so they are never scored as biotech clinical-trial conversions.
+"""
+
+from __future__ import annotations
+
+import csv
+import importlib.util
+import json
+import re
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / "data"
+RAW = DATA / "raw" / "openfda_orig_decisions_2011_2026"
+OUT = DATA / "fda_original_non_nme_decisions.csv"
+OUT_T1 = DATA / "fda_type1_not_in_nme_master.csv"
+OUT_YEAR = DATA / "fda_orig_year_register.csv"
+
+# Import the already-audited sponsor resolver rather than re-implementing it.
+_spec = importlib.util.spec_from_file_location(
+    "suppl_mod", ROOT / "scripts" / "build_supplement_decisions.py"
+)
+suppl_mod = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(suppl_mod)
+
+APPL_FROM_MASTER = re.compile(
+    r"(?:NDA|BLA|ANDA)\s*[- ]?(\d{5,6})"
+    r"|appl\s*N?(\d{5,6})"
+    r"|ApplNo[=:](\d{5,6})"
+    r"|varApplNo=(\d{5,6})"
+    r"|N(\d{6})",
+    re.I,
+)
+FR_NOISE = re.compile(r"\s*\*\*.*$")
+BIOSIM_SUFFIX = re.compile(r"-[A-Z]{4}\b", re.I)
+GAS_NAMES = {
+    "oxygen", "nitrogen", "nitrous oxide", "carbon dioxide", "helium",
+    "medical air", "air", "carbon dioxide usp", "oxygen usp",
+}
+
+
+def is_type1_nme(rec: dict) -> bool:
+    """True only for Type 1 (NME) and Type 1/4. Type 10 is a different class."""
+    code = (rec.get("submission_class_code") or "").strip().upper()
+    desc = (rec.get("submission_class_code_description") or "").strip()
+    if code in {"TYPE 1", "TYPE 1/4"}:
+        return True
+    if "Type 1 - New Molecular Entity" in desc:
+        return True
+    return False
+
+
+def chemical_group(rec: dict) -> str:
+    desc = (rec.get("submission_class_code_description") or "").strip()
+    code = (rec.get("submission_class_code") or "").strip()
+    kind = rec.get("application_kind") or ""
+    d = desc.lower()
+    brand = brand_of(rec).lower()
+    generic = generic_of(rec).lower()
+    if "medical gas" in d or any(g in brand or g in generic for g in GAS_NAMES if g in (brand, generic) or brand.startswith(g) or generic.startswith(g)):
+        if any(g == brand or g == generic or brand.startswith(g + ",") or generic.startswith(g)
+               for g in GAS_NAMES) or "medical air" in brand or "medical air" in generic \
+               or "carbon dioxide" in brand or "carbon dioxide" in generic \
+               or "nitrous oxide" in brand or brand in {"oxygen", "oxygen, usp", "nitrogen", "helium"}:
+            return "Medical gas"
+    if d.startswith("type 2"):
+        return "Type 2 — New active ingredient"
+    if d.startswith("type 3"):
+        return "Type 3 — New dosage form"
+    if d.startswith("type 4") or (d.startswith("new combination") and "type 1" not in d):
+        return "Type 4 — New combination"
+    if d.startswith("type 5"):
+        return "Type 5 — New formulation or manufacturer"
+    if d.startswith("type 6") or d.startswith("type 9") or d.startswith("type 10") or d.startswith("type 10"):
+        return "New indication filed as distinct original"
+    if d.startswith("type 7"):
+        return "Type 7 — Already marketed without approved NDA"
+    if d.startswith("type 8"):
+        return "Type 8 — Partial Rx-to-OTC"
+    if "efficacy" in d:
+        return "Efficacy class on an original submission"
+    # Biosimilar heuristic: 351(k) BLAs often have no class code and a 4-letter suffix.
+    if kind == "BLA" and BIOSIM_SUFFIX.search(generic_of(rec) or brand_of(rec) or ""):
+        return "Biosimilar (351(k)) — class unpublished or Type 2"
+    if kind == "BLA" and (not d or d in {"unknown", ""}):
+        return "BLA — class not published (possible biosimilar)"
+    if not d or d in {"unknown", ""}:
+        return "Class not published"
+    return desc or code or "Unclassified"
+
+
+def brand_of(rec: dict) -> str:
+    for p in rec.get("products") or []:
+        b = (p.get("brand_name") or "").strip()
+        if b:
+            return b
+    return (rec.get("brand_name_openfda") or "").strip()
+
+
+def generic_of(rec: dict) -> str:
+    g = (rec.get("generic_name_openfda") or "").strip()
+    if g:
+        return g
+    s = (rec.get("substance_name") or "").strip()
+    if s:
+        return s
+    for p in rec.get("products") or []:
+        ing = FR_NOISE.sub("", (p.get("active_ingredients") or "")).strip()
+        if ing:
+            return ing
+    return ""
+
+
+def dosage_form_of(rec: dict) -> str:
+    forms = []
+    for p in rec.get("products") or []:
+        f = (p.get("dosage_form") or "").strip()
+        if f and f not in forms:
+            forms.append(f)
+    return "; ".join(forms)
+
+
+def route_of(rec: dict) -> str:
+    r = (rec.get("route") or "").strip()
+    if r:
+        return r
+    routes = []
+    for p in rec.get("products") or []:
+        x = (p.get("route") or "").strip()
+        if x and x not in routes:
+            routes.append(x)
+    return "; ".join(routes)
+
+
+def master_application_numbers(master_rows) -> set[str]:
+    found = set()
+    for r in master_rows:
+        blob = " ".join([
+            r.get("notes", ""), r.get("source_url_1", ""), r.get("source_url_2", ""),
+            r.get("classification_basis", ""),
+        ])
+        for m in APPL_FROM_MASTER.finditer(blob):
+            digits = next(g for g in m.groups() if g)
+            found.add(digits.zfill(6))
+    return found
+
+
+def master_brand_date(master_rows) -> set[tuple[str, str]]:
+    out = set()
+    for r in master_rows:
+        b = re.sub(r"[^a-z0-9]+", "", (r.get("drug_brand") or "").lower())
+        d = (r.get("decision_date") or "").strip()
+        if b and d:
+            out.add((b, d))
+    return out
+
+
+def resolve_row(sponsor: str, reg: dict):
+    entry, basis = suppl_mod.resolve(sponsor, reg)
+    if entry:
+        company = entry.get("resolved_company", "") or sponsor
+        exchange = entry.get("exchange", "")
+        cls = entry.get("us_investable_class", "") or "UNRESOLVED (REVIEW)"
+        ticker = (entry.get("ticker", "") or "").strip()
+        if not ticker:
+            ticker = "NO_US_TICKER"
+    else:
+        company = sponsor
+        ticker = "UNRESOLVED"
+        exchange = ""
+        cls = "UNRESOLVED (REVIEW)"
+    historical = bool(re.search(
+        r"acquired by|merged|delisted|\bvia\b|applicant at approval",
+        company, re.I,
+    ))
+    if historical and cls.startswith("US-LISTED"):
+        cls = "FORMERLY US-LISTED (DELISTED/ACQUIRED)"
+    return company, ticker, exchange, cls, basis, historical
+
+
+def openfda_app_url(appl: str) -> str:
+    return f'https://api.fda.gov/drug/drugsfda.json?search=application_number:"{appl}"'
+
+
+def load_year_files():
+    files = []
+    for path in sorted(RAW.glob("decisions_*.json")):
+        payload = json.load(open(path))
+        year = payload.get("year")
+        if year is None or int(year) < 2000 or int(year) > 2026:
+            continue
+        files.append(payload)
+    return files
+
+
+def main() -> int:
+    reg = suppl_mod.load_registry()
+    print(f"sponsor registry keys: {len(reg)}")
+
+    master_rows = list(csv.DictReader((DATA / "fda_decisions_master.csv").open(
+        newline="", encoding="utf-8-sig")))
+    master_appls = master_application_numbers(master_rows)
+    master_bd = master_brand_date(master_rows)
+    print(f"master application numbers extracted: {len(master_appls)}")
+
+    rows, t1_gap, tally = [], [], Counter()
+    year_counts = {y: Counter() for y in range(2000, 2027)}
+    seen = set()
+
+    for payload in load_year_files():
+        year = int(payload["year"])
+        search = payload.get("search", "")
+        endpoint = payload.get("source_endpoint", "https://api.fda.gov/drug/drugsfda.json")
+        for rec in payload.get("decisions") or []:
+            appl = (rec.get("application_number") or "").strip()
+            date = (rec.get("decision_date") or "").strip()
+            key = (appl, date)
+            if not appl or not date or key in seen:
+                continue
+            seen.add(key)
+            year_counts[year]["raw_orig"] += 1
+
+            brand = brand_of(rec)
+            generic = generic_of(rec)
+            num = (rec.get("application_num") or "").zfill(6)
+            in_master_appl = num in master_appls
+            nb = re.sub(r"[^a-z0-9]+", "", brand.lower())
+            in_master_bd = (nb, date) in master_bd if nb else False
+
+            if is_type1_nme(rec):
+                year_counts[year]["type1"] += 1
+                if in_master_appl or in_master_bd:
+                    year_counts[year]["type1_in_master"] += 1
+                    continue
+                # Genuine Type 1 not matched to the NME master. Do NOT add to
+                # the non-NME file and do NOT silently merge into the master
+                # (that would break the official NME year-count audit).
+                t1_gap.append(rec)
+                year_counts[year]["type1_unmatched"] += 1
+                continue
+
+            if in_master_appl:
+                year_counts[year]["non_nme_already_in_master"] += 1
+                continue
+
+            group = chemical_group(rec)
+            company, ticker, exchange, cls, basis, historical = resolve_row(
+                rec.get("sponsor_name") or "", reg
+            )
+
+            flags = []
+            if group == "Medical gas":
+                flags.append("FLAGGED: medical gas — not a biotech clinical-trial conversion")
+            if group.startswith("Type 5"):
+                flags.append("Type 5 may be a new manufacturer rather than a new clinical programme")
+            if "possible biosimilar" in group.lower() or group.startswith("Biosimilar"):
+                flags.append("biosimilar/class unpublished — 351(k) status not asserted beyond the openFDA fields")
+            if group == "Class not published":
+                flags.append("FLAGGED: openFDA published no submission_class_code")
+            if historical:
+                flags.append("FLAGGED: ticker is historical (issuer since acquired/delisted)")
+            if ticker == "UNRESOLVED":
+                flags.append("FLAGGED: sponsor not resolved to a listed security")
+            if int(rec.get("n_orig_approvals_in_year") or 1) > 1:
+                flags.append(f"openFDA recorded {rec['n_orig_approvals_in_year']} ORIG/AP dates in this year; earliest kept")
+
+            vstatus = "Verified - openFDA Drugs@FDA ORIG/AP record"
+            if flags:
+                vstatus += " - " + "; ".join(flags)
+
+            letter_url = rec.get("source_url_drugsatfda") or ""
+            query_url = rec.get("source_query_url") or ""
+            app_url = openfda_app_url(appl)
+
+            tally[group] += 1
+            tally["resolved" if ticker not in {"UNRESOLVED"} else "unresolved_sponsor"] += 1
+            year_counts[year]["published"] += 1
+
+            rows.append({
+                "orig_id": f"O-{appl}",
+                "company_name": company,
+                "openfda_sponsor_name": rec.get("sponsor_name") or "",
+                "ticker": ticker,
+                "exchange": exchange,
+                "us_investable_class": cls,
+                "drug_brand": brand,
+                "drug_generic": generic,
+                "application_number": appl,
+                "application_kind": rec.get("application_kind") or "",
+                "decision_type": "Original Approval (non-NME)",
+                "decision_date": date,
+                "chemical_type_code": rec.get("submission_class_code") or "",
+                "chemical_type_description": rec.get("submission_class_code_description") or "",
+                "chemical_type_group": group,
+                "review_priority": rec.get("review_priority") or "",
+                "dosage_form": dosage_form_of(rec),
+                "route": route_of(rec),
+                "pharm_class_epc": rec.get("pharm_class_epc") or "",
+                "source_url_1": letter_url,
+                "source_url_2": app_url,
+                "source_query_url": query_url,
+                "verification_status": vstatus,
+                "sponsor_resolution_basis": basis,
+                "notes": (
+                    "Indication text is intentionally not recorded: openFDA's original-approval "
+                    "extract has no structured indication field. Read the linked Drugs@FDA "
+                    "application record. Chemical type is FDA's submission_class_code_description, "
+                    "copied verbatim. "
+                    + (" ".join(flags) if flags else "")
+                ),
+            })
+
+    rows.sort(key=lambda r: (r["decision_date"], r["application_number"]))
+    # orig_id uniqueness: same application can theoretically appear twice if
+    # two ORIG/AP dates exist in different years. Disambiguate.
+    seen_ids = {}
+    for r in rows:
+        oid = r["orig_id"]
+        if oid in seen_ids:
+            r["orig_id"] = f"{oid}-{r['decision_date']}"
+        seen_ids[r["orig_id"]] = True
+
+    with OUT.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+    print(f"wrote {OUT.relative_to(ROOT)}: {len(rows)} original non-NME decisions")
+    for k, v in tally.most_common():
+        print(f"  {k:<62} {v}")
+    us = sum(1 for r in rows if r["us_investable_class"].startswith("US-LISTED"))
+    print(f"  {'US-LISTED (investable universe)':<62} {us}")
+
+    # Type 1 unmatched — flagged review file, not merged into master.
+    t1_rows = []
+    for rec in t1_gap:
+        brand = brand_of(rec)
+        generic = generic_of(rec)
+        company, ticker, exchange, cls, basis, historical = resolve_row(
+            rec.get("sponsor_name") or "", reg
+        )
+        t1_rows.append({
+            "gap_id": f"T1GAP-{rec.get('application_number')}",
+            "company_name": company,
+            "openfda_sponsor_name": rec.get("sponsor_name") or "",
+            "ticker": ticker,
+            "exchange": exchange,
+            "us_investable_class": cls,
+            "drug_brand": brand,
+            "drug_generic": generic,
+            "application_number": rec.get("application_number") or "",
+            "application_kind": rec.get("application_kind") or "",
+            "decision_date": rec.get("decision_date") or "",
+            "chemical_type_description": rec.get("submission_class_code_description") or "",
+            "review_priority": rec.get("review_priority") or "",
+            "source_url_1": rec.get("source_url_drugsatfda") or "",
+            "source_url_2": openfda_app_url(rec.get("application_number") or ""),
+            "verification_status": (
+                "FLAGGED FOR REVIEW — Type 1 NME in openFDA Drugs@FDA but not matched "
+                "to fda_decisions_master.csv. NOT merged into the NME master (would break "
+                "the official CDER year-count audit). Early-2000s BLAs were often CBER-"
+                "licensed and excluded from CDER NME year tables; later rows may be "
+                "alternate presentations or copacks of an already-listed NME."
+            ),
+            "sponsor_resolution_basis": basis,
+            "notes": (
+                "Do not treat as a confirmed missing novel approval until a human "
+                "compares this row to FDA's official NME year table and the master list. "
+                "Blank beats guessed — left out of the 980-row NME count on purpose."
+            ),
+        })
+    t1_rows.sort(key=lambda r: (r["decision_date"], r["application_number"]))
+    with OUT_T1.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(t1_rows[0].keys()) if t1_rows else [
+            "gap_id", "company_name", "verification_status"])
+        w.writeheader()
+        w.writerows(t1_rows)
+    print(f"wrote {OUT_T1.relative_to(ROOT)}: {len(t1_rows)} Type 1 unmatched (FLAGGED, not merged)")
+
+    year_rows = []
+    for y in range(2000, 2027):
+        c = year_counts[y]
+        query = (
+            f"https://api.fda.gov/drug/drugsfda.json?search="
+            f'submissions.submission_type:"ORIG" AND submissions.submission_status:"AP" '
+            f"AND submissions.submission_status_date:[{y}0101 TO {y}1231]"
+        )
+        year_rows.append({
+            "year": y,
+            "openfda_orig_nda_bla_count": c["raw_orig"],
+            "type1_nme_in_openfda": c["type1"],
+            "type1_matched_to_nme_master": c["type1_in_master"],
+            "type1_unmatched_flagged": c["type1_unmatched"],
+            "non_nme_already_in_master": c["non_nme_already_in_master"],
+            "non_nme_published": c["published"],
+            "official_source_url": query,
+            "source_type": "openFDA Drugs@FDA ORIG/AP (NDA+BLA only; ANDA excluded at extract)",
+            "coverage_status": "Complete" if c["raw_orig"] else "No ORIG/AP NDA/BLA in openFDA for this year",
+            "raw_payload": f"data/raw/openfda_orig_decisions_2011_2026/decisions_{y}.json",
+            "notes": (
+                f"Type 1 NMEs belong on fda_decisions_master.csv "
+                f"({c['type1_in_master']} matched, {c['type1_unmatched']} flagged unmatched). "
+                f"{c['published']} non-NME originals published in fda_original_non_nme_decisions.csv."
+            ),
+        })
+    with OUT_YEAR.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(year_rows[0].keys()))
+        w.writeheader()
+        w.writerows(year_rows)
+    print(f"wrote {OUT_YEAR.relative_to(ROOT)}: {len(year_rows)} years")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
