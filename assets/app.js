@@ -932,7 +932,7 @@ Promise.all([
   if (pipeEl) {
     if (pipeline && pipeline.length) {
       pipeEl.innerHTML = `<table class="data-table" style="min-width:auto"><thead><tr><th>Company</th><th>Ticker</th><th class="num">Programs</th><th class="num">Approved</th><th class="num">Phase 3</th><th class="num">Success %</th><th>Source</th></tr></thead><tbody>` +
-        pipeline.slice(0,10).map(r => `<tr><td>${escapeHtml(r.company_name)}</td><td><strong>${escapeHtml(r.ticker)}</strong></td><td class="num">${escapeHtml(r.total_programs)}</td><td class="num">${escapeHtml(r.approved)}</td><td class="num">${escapeHtml(r.phase_3)}</td><td class="num">${pctCell(r.success_rate_pct)}</td><td>${linkify(r.source_url_1,'pipeline')}</td></tr>`).join('') + `</tbody></table><p class="hscroll-hint"><a href="#" onclick="document.querySelector('[data-tab=scorecards]').click(); return false;">View all ${pipeline.length} pipeline trackers in Scorecards tab →</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/pipeline_tracker.csv" target="_blank">Raw CSV</a></p>`;
+        pipeline.slice().sort((a,b)=> parseInt(b.total_programs||0)-parseInt(a.total_programs||0)).slice(0,12).map(r => `<tr><td>${escapeHtml(r.company_name)}</td><td><strong>${escapeHtml(r.ticker)}</strong></td><td class="num">${escapeHtml(r.total_programs)}</td><td class="num">${escapeHtml(r.approved)}</td><td class="num">${escapeHtml(r.phase_3)}</td><td class="num">${pctCell(r.success_rate_pct)}</td><td>${linkify(r.source_url_1,'pipeline')}</td></tr>`).join('') + `</tbody></table><p class="hscroll-hint"><a href="#" onclick="document.querySelector('[data-tab=scorecards]').click(); return false;">View all ${pipeline.length} pipeline trackers in Scorecards tab →</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/pipeline_tracker.csv" target="_blank">Raw CSV</a></p>`;
     } else {
       pipeEl.innerHTML = '<p class="empty-note">Pipeline tracker not loaded — <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/pipeline_tracker.csv" target="_blank">view raw CSV</a></p>';
     }
@@ -940,8 +940,23 @@ Promise.all([
   const pdufaEl = document.getElementById('pdufa-view');
   if (pdufaEl) {
     if (pdufa && pdufa.length) {
-      pdufaEl.innerHTML = `<table class="data-table" style="min-width:auto"><thead><tr><th>Company</th><th>Drug</th><th>PDUFA Date</th><th>Indication</th><th>Pathway</th></tr></thead><tbody>` +
-        pdufa.map(r => `<tr><td>${escapeHtml(r.company_name)} <strong>${escapeHtml(r.ticker)}</strong></td><td>${escapeHtml(r.drug_brand)}</td><td class="num"><span class="num-strong">${escapeHtml(r.pdufa_date)}</span></td><td>${escapeHtml((r.indication||'').slice(0,80))}</td><td>${escapeHtml(r.review_pathway)}</td></tr>`).join('') + `</tbody></table><p class="hscroll-hint">${pdufa.length} upcoming PDUFA dates tracked · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/upcoming_pdufa_calendar.csv" target="_blank">Raw CSV</a> · All with 2 source links for manual verification</p>`;
+      // Sort by PDUFA date ascending (soonest first) and add countdown
+      const today = new Date(); today.setHours(0,0,0,0);
+      const withDays = pdufa.map(r => {
+        let days = null;
+        try { const d = new Date(r.pdufa_date); if (!isNaN(d)) days = Math.round((d - today)/86400000); } catch(e){}
+        return {...r, _days: days};
+      }).sort((a,b) => String(a.pdufa_date).localeCompare(String(b.pdufa_date)));
+      const fmtDays = d => {
+        if (d===null || isNaN(d)) return '<span class="badge neutral">—</span>';
+        if (d < 0) return `<span class="badge flagged">${Math.abs(d)}d ago</span>`;
+        if (d === 0) return '<span class="badge verified">today</span>';
+        if (d <= 30) return `<span class="badge flagged">${d}d</span>`;
+        if (d <= 90) return `<span class="badge caveat">${d}d</span>`;
+        return `<span class="badge neutral">${d}d</span>`;
+      };
+      pdufaEl.innerHTML = `<table class="data-table" style="min-width:auto"><thead><tr><th>Company</th><th>Drug</th><th>PDUFA Date</th><th>Countdown</th><th>Indication</th><th>Pathway</th><th>Status</th></tr></thead><tbody>` +
+        withDays.map(r => `<tr><td>${escapeHtml(r.company_name)} <strong>${escapeHtml(r.ticker)}</strong></td><td>${escapeHtml(r.drug_brand)}</td><td class="num"><span class="num-strong">${escapeHtml(r.pdufa_date)}</span></td><td class="num">${fmtDays(r._days)}</td><td>${escapeHtml((r.indication||'').slice(0,80))}</td><td>${escapeHtml(r.review_pathway)}</td><td>${statusBadge(r.verification_status)}</td></tr>`).join('') + `</tbody></table><p class="hscroll-hint">${pdufa.length} upcoming PDUFA dates tracked (sorted soonest first, countdown from today) · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/upcoming_pdufa_calendar.csv" target="_blank">Raw CSV</a> · All with 2 source links for manual verification · Caps: extended Aug 22→Nov 22 2026 after major amendment</p>`;
     } else {
       pdufaEl.innerHTML = '<p class="empty-note">PDUFA calendar not loaded — <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/upcoming_pdufa_calendar.csv" target="_blank">view raw CSV</a></p>';
     }
