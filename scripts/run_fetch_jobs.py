@@ -409,6 +409,73 @@ def job_generic_csv(spec: dict, outdir: str, entries: list) -> None:
         time.sleep(spec.get("sleep", 0.2))
 
 
+def job_ctgov(spec: dict, outdir: str, entries: list) -> None:
+    """Page ClinicalTrials.gov API v2. Studies are written verbatim (or
+    projected through a whitelist). Nothing is rewritten or inferred.
+
+    Next-session universe: Phase 3 trials with a primary-completion date in
+    2026–2027. The sandbox cannot reach clinicaltrials.gov; this job runs on
+    GitHub Actions and commits the payload + per-request SHA-256.
+    """
+    endpoint = spec["endpoint"]
+    params = dict(spec.get("params") or {})
+    page_size = int(params.get("pageSize", 100))
+    max_pages = int(spec.get("max_pages", 10))
+    sid = spec["id"]
+    dest = os.path.join(outdir, spec.get("out", f"{sid}.json"))
+    if spec.get("skip_existing") and os.path.exists(dest) and os.path.getsize(dest) > 0:
+        entries.append({"id": sid, "status": "skipped-existing", "out": spec.get("out")})
+        return
+    collected, requests, token, page = [], [], None, 0
+    while page < max_pages:
+        q = dict(params)
+        q["pageSize"] = str(page_size)
+        if token:
+            q["pageToken"] = token
+        url = endpoint + "?" + urllib.parse.urlencode(q, safe="[]:,")
+        try:
+            status, body = http_get(url, timeout=spec.get("timeout", 180),
+                                    retries=spec.get("retries", 4),
+                                    headers=spec.get("headers"))
+        except RuntimeError as exc:
+            entries.append({"id": f"{sid}_p{page}", "url": url, "status": "FAILED",
+                            "error": str(exc), "at_utc": _now()})
+            print(f"FAIL {sid} page {page}: {exc}", flush=True)
+            break
+        try:
+            payload = json.loads(body.decode("utf-8"))
+        except Exception as exc:  # noqa: BLE001
+            entries.append({"id": f"{sid}_p{page}", "url": url, "status": "BAD_JSON",
+                            "error": str(exc)})
+            break
+        studies = payload.get("studies") or []
+        requests.append({"url": url, "status": status, "n": len(studies),
+                         "sha256": hashlib.sha256(body).hexdigest(), "at_utc": _now()})
+        if spec.get("project"):
+            studies = [project(s, spec["project"]) for s in studies]
+        collected.extend(studies)
+        token = payload.get("nextPageToken")
+        page += 1
+        print(f"ok {sid} page {page}: {len(studies)} studies (running {len(collected)})", flush=True)
+        if not token or len(studies) < page_size:
+            break
+        time.sleep(spec.get("sleep", 0.4))
+    out = {
+        "source_endpoint": endpoint,
+        "params": params,
+        "count": len(collected),
+        "pages": len(requests),
+        "fetched_utc": _now(),
+        "studies": collected,
+    }
+    body = json.dumps(out, separators=(",", ":")).encode("utf-8")
+    meta = {"id": sid, "endpoint": endpoint, "pages": requests,
+            "studies": len(collected), "status": 200}
+    write_payload(dest, body, meta)
+    entries.append(meta)
+    print(f"ok {sid}: {len(collected)} studies -> {dest}", flush=True)
+
+
 KINDS = {
     "url": job_url,
     "openfda_years": job_openfda_years,
@@ -416,6 +483,7 @@ KINDS = {
     "openfda_supplements": job_openfda_supplements,
     "stooq": job_stooq,
     "generic": job_generic_csv,
+    "ctgov": job_ctgov,
 }
 
 

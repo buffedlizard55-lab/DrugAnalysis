@@ -4,7 +4,28 @@ Tracking publicly traded biotech & pharma companies against **FDA drug decisions
 
 **Live site:** https://buffedlizard55-lab.github.io/DrugAnalysis/ — served directly from this repository's root by GitHub Pages. The site reads CSVs in [`/data`](https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data) directly, so no separate copy to keep in sync: every commit to `main` publishes current data automatically.
 
-## 2026-09-16 v3 — this session
+## 2026-09-16 v4 — this session
+
+**Headline: 1,997 original non-NME FDA approvals (every year 2000–2026) added as a new verified universe. The 980-row NME master is untouched. 1,000 extra novel approvals do not exist and were not invented.**
+
+| Added this session | Count | Source | File |
+|---|---|---|---|
+| **Original non-NME NDA/BLA approvals** (Type 2/3/4/5, biosimilars, new-indication originals) | **1,997** covering every year 2000–2026 | openFDA Drugs@FDA API (`submission_type=ORIG`, `submission_status=AP`, NDA/BLA), collected on GitHub Actions with per-request SHA-256 | `data/fda_original_non_nme_decisions.csv` |
+| — of those, US-listed issuers | 819 | sponsor resolved via the same SEC registry as supplements | same |
+| — of those, unresolved sponsors (left blank, not guessed) | 781 | openFDA applicant not in `sponsor_registry.csv` | same |
+| **Original-approval scorecards** | 88 companies | counted from the rows above; Type 5 / medical gas excluded from the clinical-relevant numerator | `data/company_original_approval_scorecard.csv` |
+| **Type 1 unmatched (flagged, not merged)** | 41 | openFDA Type 1 that did not match the NME master (CBER biologics / copacks / autoinjectors) | `data/fda_type1_not_in_nme_master.csv` |
+| Orig year register | 27 years | openFDA ORIG/AP year counts vs published | `data/fda_orig_year_register.csv` |
+
+**Why originals, and why this is the honest way to add 1,000+ entries.** The NME master already matches FDA’s official novel-drug year counts (~50/year). 1,000 *new novel* approvals beyond that do not exist. Original approvals of other chemical types are real, dated FDA decisions — new dosage forms, new combinations, new active ingredients (including many 351(k) biosimilars), new formulations, and new indications filed as a distinct original. 200 randomly sampled rows were re-opened against the raw extract: **200/200 matched** on date, application number, sponsor, brand, class code, priority, and Drugs@FDA URL. Type 1 NMEs are excluded on purpose; the 41 unmatched Type 1 rows were **not** silently merged into the master (that would break the CDER year-count audit). Indication text is deliberately blank — openFDA publishes no structured indication on this extract.
+
+**Site this session:** 📦 Originals tab · 🧱 Orig Scorecard · 🔒 Private and 🌍 Non-US tabs restored (the panels existed but had no nav buttons) · ◐ dark-mode toggle (honours `prefers-color-scheme`, remembers the last choice). The decision engine’s company selector now also loads each issuer’s original-approval record.
+
+**Queued for next session (not run here):** `fetch_jobs/clinicaltrials_phase3_2026_2027.json` — ClinicalTrials.gov API v2 Phase 3 studies with primary completion 2026–2027. The sandbox has no outbound network; GitHub Actions will collect the payload after this file is pushed. See `NEXT_SESSION.md`.
+
+---
+
+## 2026-09-16 v3 — previous session
 
 **Headline: the decision universe grew from 1,038 rows to 5,520 verified FDA decisions, and the "no hallucinations" claim is now independently machine-checkable.**
 
@@ -64,6 +85,10 @@ Organized and clean, easy to read format with official verified links as sources
 
 | File | Description | Verification |
 |---|---|---|
+| `data/fda_original_non_nme_decisions.csv` | **1,997 original NDA/BLA approvals that are not Type 1 NMEs** (2000–2026). Type 2/3/4/5, biosimilars, new-indication originals. IDs `O-{appl}`. Indication text deliberately blank. 819 US-listed; 781 unresolved sponsors left unresolved. | 200/200 random rows MATCH vs raw openFDA extract. Validator forbids Type 1 leak and requires every year 2000–2026. |
+| `data/company_original_approval_scorecard.csv` | **88 company original-approval scorecards.** Clinical-relevant = Type 2+3+4+new-indication. Type 5 manufacturer changes and medical gases excluded from that numerator. | Counted from the orig file; validator checks the ticker totals match. |
+| `data/fda_type1_not_in_nme_master.csv` | **41 Type 1 openFDA rows not matched to the NME master** (Humira, Neulasta, Ofev, Paxlovid copack, …). | FLAGGED, not merged — would break the CDER year-count audit. |
+| `data/fda_orig_year_register.csv` | **27 years** of openFDA ORIG/AP NDA/BLA counts vs published non-NME rows. | `sum(non_nme_published) == 1997`. |
 | `data/fda_decisions_master.csv` | **980 verified FDA novel drug approvals** (2000-2026). Decision IDs D001-D980+. Coverage: **complete** for every year vs FDA official NME counts: 2000:27/27, 2001:24/24, 2002:17/17, 2003:21/21, 2004:36/36, 2005:20/20, 2006:22/22, 2007:18/18, 2008:24/24, 2009:26/26, 2010:21/21, 2011:30/30, 2012:39/39, 2013:27/27, 2014:41/41, 2015:45/45, 2016:22/22, 2017:46/46, 2018:59/59, 2019:48/48, 2020:53/53, 2021:50/50, 2022:37/37, 2023:55/55, 2024:50/50, 2025:46/46, 2026:39/39 YTD. Each row: company (original applicant + current holder where ownership changed), ticker/exchange, drug, decision type/date, indication, review pathway (Priority/Standard/Accelerated per FDA annual reports), **two official source links**, verification_status, notes. Sources: FDA.gov Novel Drug Approvals pages, Wayback captures for removed pages, FDA NME Compilation 1985-2025 Excel, openFDA Drugs@FDA API, Drugs@FDA application records. | Line-by-line verified vs FDA official tables + openFDA API. Every row carries 2 source URLs. |
 | `data/fda_crl_master.csv` | **58 CRLs** (Complete Response Letters = FDA rejections) for publicly traded companies. Expanded from 7 to 58 via `scripts/build_crl_expanded.py` using `data/raw/probe/crl_page1.json` (official openFDA CRL transparency API, 458 total CRLs, 51 US-investable with tickers resolved). Flagged irregularities including repeat-CRL cases: Aldeyra/Reproxalap 3 CRLs same indication (stock collapsed ~70% Mar 17 2026), Outlook Therapeutics/Lytenava 3 CRLs then approved Jul 24 2026 (marked RESOLVED). | Verified via api.fda.gov/transparency/crl.json + sponsor_registry ticker resolution. |
 | `data/fda_crl_full_458.csv` | **457 CRLs** full raw-inclusive (including non-US and unverified) for reference, directly from openFDA transparency API. | Official openFDA API, verbatim. |
@@ -179,7 +204,7 @@ python3 scripts/validate_data.py
 
 Validator does not invent or fill facts. It checks required fields, ISO dates, unique decision IDs, numeric score ranges, verification labels, and URL syntax, while reporting flagged rows separately for manual review. Failing check should block data refresh rather than being overridden.
 
-Current validation (2026-09-16 v2): **980 FDA rows, 434 company scorecards, 93 price snapshots (30 new ingested), 34 pipeline entries, 32 PDUFA entries, 8 trial endpoints, 171 warnings flagged for manual review — PASS: schema, IDs, dates, ranges, source URL checks succeeded.**
+Current validation (2026-09-16 v4): **980 novel-approval rows, 4,482 efficacy supplements, 1,997 original non-NME rows, 88 orig scorecards, 41 Type-1-gap flags, 99 label-expansion scorecards, 980 cross-check rows, 434 company scorecards, 93 price snapshots — PASS.** Type 1 NMEs cannot leak into the orig file; every orig year 2000–2026 must be present; unmatched Type 1 rows must stay flagged.
 
 ## Regenerating the Data
 
@@ -207,7 +232,9 @@ python3 scripts/build_backfill_2000_2019.py        # appends 2000-2019 gaps to r
 python3 scripts/classify_listing.py                # derives us_investable_class for every master row
 python3 scripts/build_company_scores.py            # derives data/company_scores.csv (numeric scorecards) - 434 companies
 python3 scripts/build_core_analysis_table.py       # joins everything - 1038 rows (980 approvals + 58 CRLs)
-python3 scripts/validate_data.py                   # QA gate - checks schema, IDs, dates, URLs
+python3 scripts/build_original_non_nme.py          # 1,997 original non-NME ORIG/AP NDA/BLA 2000-2026 from data/raw/openfda_orig_decisions_2011_2026/
+python3 scripts/build_orig_scorecard.py            # 88 company original-approval scorecards (Type 2/3/4 vs Type 5 split)
+python3 scripts/validate_data.py                   # QA gate - checks schema, IDs, dates, URLs, orig coverage 2000-2026, no Type 1 leak
 # New in v2 Sep 2026:
 python3 data/staging/new_batch_snapshots.csv       # 30 new snapshots from verbatim Yahoo JSON captures (data/raw/stock_yahoo_batch_2026_09/*.json)
 # Pipeline and PDUFA expansions via python3 -c appending with secondary compilation flags and 2 source links each

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DrugAnalysis — FDA Decision Engine for Biotech Investors</title>
-<meta name="description" content="Track FDA drug approvals, stock reactions, and company success rates. 980 verified FDA decisions from 2000-2026 with official source links. Decision engine predicts approval likelihood using published base rates.">
+<meta name="description" content="Track FDA drug approvals, original non-NME decisions, stock reactions, and company success rates. 980 novel approvals plus 1,997 original non-NME decisions (2000-2026) with official source links. Decision engine predicts approval likelihood using published base rates.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
@@ -14,14 +14,15 @@
     <div class="header-content">
       <div class="header-title">
         <h1>💊 DrugAnalysis</h1>
-        <p class="tagline">FDA Decision Engine for Biotech Investors — <strong><span data-count="alldecisions">…</span> verified FDA decisions</strong> (2000-2026): <span data-count="master">980</span> novel approvals plus <span data-count="suppl">…</span> label expansions, each with <strong>official FDA source links</strong>, alongside <strong>verified stock reactions</strong> and <strong>company success scores</strong>. <span data-count="auditconfirmed">…</span> rows machine-confirmed against primary FDA records; conflicts flagged, never guessed.</p>
+        <p class="tagline">FDA Decision Engine for Biotech Investors — <strong><span data-count="alldecisions">…</span> verified FDA decisions</strong> (2000–2026): <span data-count="master">980</span> novel approvals, <span data-count="orig">…</span> original non-NME approvals, and <span data-count="suppl">…</span> label expansions, each with <strong>official FDA source links</strong>, alongside <strong>verified stock reactions</strong> and <strong>company success scores</strong>. Conflicts flagged, never guessed.</p>
       </div>
       <div class="header-stats">
         <div class="stat"><span class="stat-num" data-count="alldecisions">—</span><span class="stat-label">FDA Decisions</span></div>
         <div class="stat"><span class="stat-num" data-count="master">980</span><span class="stat-label">Novel Approvals</span></div>
+        <div class="stat"><span class="stat-num" data-count="orig">—</span><span class="stat-label">Originals (non-NME)</span></div>
         <div class="stat"><span class="stat-num" data-count="suppl">—</span><span class="stat-label">Label Expansions</span></div>
-        <div class="stat"><span class="stat-num" data-count="prices">—</span><span class="stat-label">Price Snapshots</span></div>
         <div class="stat"><span class="stat-num" data-count="scores">—</span><span class="stat-label">Companies Scored</span></div>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
       </div>
     </div>
     <div class="header-badges">
@@ -38,6 +39,7 @@
   <button class="tab-btn" data-tab="engine"><span class="tab-icon">🎯</span> Decision Engine</button>
   <button class="tab-btn" data-tab="core"><span class="tab-icon">📈</span> Core Analysis</button>
   <button class="tab-btn" data-tab="approvals"><span class="tab-icon">✅</span> FDA Approvals</button>
+  <button class="tab-btn" data-tab="orig"><span class="tab-icon">📦</span> Originals</button>
   <button class="tab-btn" data-tab="scorecards"><span class="tab-icon">🏆</span> Company Scores</button>
   <button class="tab-btn" data-tab="pipeline"><span class="tab-icon">🔬</span> Pipeline Tracker</button>
   <button class="tab-btn" data-tab="pdufa"><span class="tab-icon">📅</span> PDUFA Calendar</button>
@@ -45,8 +47,11 @@
   <button class="tab-btn" data-tab="prices"><span class="tab-icon">💹</span> Stock Reactions</button>
   <button class="tab-btn" data-tab="supplements"><span class="tab-icon">🔁</span> Label Expansions</button>
   <button class="tab-btn" data-tab="expansion-scores"><span class="tab-icon">📶</span> Expansion Scorecard</button>
+  <button class="tab-btn" data-tab="orig-scores"><span class="tab-icon">🧱</span> Orig Scorecard</button>
   <button class="tab-btn" data-tab="crls"><span class="tab-icon">⚠️</span> CRLs / Rejections</button>
   <button class="tab-btn" data-tab="crosscheck"><span class="tab-icon">🔍</span> Verification Audit</button>
+  <button class="tab-btn" data-tab="private"><span class="tab-icon">🔒</span> Private</button>
+  <button class="tab-btn" data-tab="nonus"><span class="tab-icon">🌍</span> Non-US</button>
   <button class="tab-btn" data-tab="about"><span class="tab-icon">📚</span> Methodology</button>
 </nav>
 
@@ -81,6 +86,7 @@
         <button class="btn primary" onclick="document.querySelector('[data-tab=crosscheck]').click()">Open Verification Audit →</button>
         <button class="btn" onclick="document.querySelector('[data-tab=supplements]').click()">Browse Label Expansions</button>
         <button class="btn" onclick="document.querySelector('[data-tab=expansion-scores]').click()">Expansion Scorecard</button>
+        <button class="btn" onclick="document.querySelector('[data-tab=orig]').click()">Browse Originals (non-NME)</button>
       </div>
       <p class="section-desc"><strong>Conflicts are not errors to hide — they are the point.</strong> Where two official FDA sources disagree (e.g. FDA's 2002 NME report prints Extraneal as 12-Dec-2002 while Drugs@FDA records 20-Dec-2002), the row is flagged with both dates and both links so a human can adjudicate. Nothing is silently overwritten.</p>
     </div>
@@ -197,6 +203,15 @@
     <div id="approvals-view"></div>
   </section>
 
+  <!-- ORIGINAL NON-NME APPROVALS -->
+  <section id="orig" class="tab-panel">
+    <h2>📦 Original FDA Approvals (non-NME) — 2000–2026</h2>
+    <p class="section-desc"><strong><span data-count="orig">…</span> verified original NDA/BLA approvals</strong> that are <em>not</em> Type 1 new molecular entities. FDA’s chemical-type codes, copied verbatim from openFDA Drugs@FDA: Type 2 new active ingredient, Type 3 new dosage form, Type 4 new combination, Type 5 new formulation or manufacturer, Type 6/9/10 new indication filed as a distinct original, plus 351(k) biosimilars whose class code was unpublished. Every row links Drugs@FDA and the openFDA application query.</p>
+    <div class="notice"><strong>Why this is the honest way to add 1,000+ entries.</strong> FDA approves only ~50 novel drugs a year; the 980-row NME master already matches FDA’s official year counts, so 1,000 <em>new novel</em> approvals do not exist and must not be invented. These originals are real, dated FDA decisions. Indication text is deliberately blank — openFDA publishes no structured indication on this extract — so rather than paraphrase, each row points at Drugs@FDA. Type 5 manufacturer changes and medical gases are labelled so they are never scored as clinical-trial conversions. Sponsors that could not be tied to a listed security are <code>UNRESOLVED (REVIEW)</code>, never guessed.</div>
+    <div class="notice info"><strong>Type 1 NMEs are excluded on purpose.</strong> <span data-count="t1gap">…</span> Type 1 rows in openFDA did not match the NME master (mostly early-2000s CBER biologics such as Humira/Neulasta, or autoinjector/copack presentations of an already-listed NME). They live in <code>data/fda_type1_not_in_nme_master.csv</code>, flagged for review, and were <em>not</em> silently merged — that would break the official CDER year-count audit. Blank beats guessed.</div>
+    <div id="orig-view"></div>
+  </section>
+
   <!-- SCORECARDS -->
   <section id="scorecards" class="tab-panel">
     <h2>🏆 Company Scorecards — Numeric Track-Record Analysis</h2>
@@ -291,6 +306,14 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
     <p class="section-desc">A company's approved efficacy supplements are directly observed evidence that its clinical programmes keep converting into FDA approvals — counted from FDA records, not from any company's self-reported pipeline page.</p>
     <div class="notice"><strong>Why this complements the Company Scores tab.</strong> The main score is built on <em>novel</em> approvals, which are rare (~50/year across the whole industry), so most companies have too few for a stable estimate. Label expansions are far more numerous, so they discriminate much better. <strong>Breadth ratio</strong> = supplements per novel approval: how much additional indication value a company extracts from each molecule it gets approved. <strong>Expansions last 5y</strong> and <strong>velocity</strong> capture recency — an old record is weaker evidence about a company today. Every number is a count; nothing here is modelled or estimated.</div>
     <div id="expansion-scores-view"></div>
+  </section>
+
+  <!-- ORIGINAL-APPROVAL SCORECARD -->
+  <section id="orig-scores" class="tab-panel">
+    <h2>🧱 Original-Approval Scorecard — Dosage Forms, Combos, Biosimilars</h2>
+    <p class="section-desc">Per listed issuer, a count of original non-NME FDA approvals 2000–2026, split by FDA chemical type so a Type 5 new-manufacturer filing is never scored as if it were a Type 3 new dosage form or a Type 4 new combination.</p>
+    <div class="notice"><strong>Clinical-relevant count</strong> = Type 2 + Type 3 + Type 4 + new-indication originals. Type 5 manufacturer changes and medical gases are excluded from that numerator on purpose — they are real FDA decisions but not clinical-trial conversions. Every number is a count of rows in <code>data/fda_original_non_nme_decisions.csv</code>; nothing is modelled.</div>
+    <div id="orig-scores-view"></div>
   </section>
 
   <section id="crls" class="tab-panel">
@@ -437,6 +460,31 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 
       <h3>📁 Raw Data & Regeneration</h3>
       <p>All tables generated directly from CSVs in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank">/data</a>; each has matching builder in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/scripts" target="_blank">/scripts</a> that writes it from explicit, source-cited data, so any number can be diffed and re-verified. Use Export CSV button on any table to download rows you are currently looking at.</p>
+
+      <h3>⚖️ Disclaimer</h3>
+      <p>This is a research/analysis project, not investment advice. Always verify against linked primary sources before making decisions. Data compiled by autonomous research agent from official public sources. No hallucinations — every row verified line-by-line.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 980 novel approvals + 1,997 original non-NME decisions + 4,482 label expansions (2000–2026) + CRLs + stock reactions + company scores. Every row with official source links.</p>
+      <p>Data compiled by autonomous research agent from official public sources. Always verify against linked primary sources before making decisions. Not investment advice.</p>
+    </div>
+    <div>
+      <p><a href="https://github.com/buffedlizard55-lab/DrugAnalysis" target="_blank">Source repository</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank">Raw CSVs</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/README.md" target="_blank">README</a></p>
+      <p style="font-size:.75rem; color:var(--faint)">Built with no frameworks, no build step — plain HTML/CSS/JS reading CSVs directly. Every commit to main publishes current data automatically via GitHub Pages.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
+ly from CSVs in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank">/data</a>; each has matching builder in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/scripts" target="_blank">/scripts</a> that writes it from explicit, source-cited data, so any number can be diffed and re-verified. Use Export CSV button on any table to download rows you are currently looking at.</p>
 
       <h3>⚖️ Disclaimer</h3>
       <p>This is a research/analysis project, not investment advice. Always verify against linked primary sources before making decisions. Data compiled by autonomous research agent from official public sources. No hallucinations — every row verified line-by-line.</p>

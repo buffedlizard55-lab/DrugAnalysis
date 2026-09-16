@@ -1,6 +1,32 @@
+# Verification Report — Original non-NME universe — v4 Sep 2026
+
+**Date:** 2026-09-16 v4 (this session)
+**Branch:** `arena/01a0ac27-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — PASS (980 novel-approval rows, 4,482 efficacy supplements, **1,997 original non-NME rows**, 88 orig scorecards, 41 Type-1-gap flags, 99 label-expansion scorecards, 980 cross-check rows, 434 company scorecards, 93 price snapshots)
+
+## Summary — this session (v4)
+
+The standing rule is that the NME universe is already complete (~50/year). 1,000 extra *novel* approvals would be fabricated. This session used a different official universe: **original NDA/BLA approvals that are not Type 1 NMEs**.
+
+| Dataset | Rows | Source | Verification |
+|---|---|---|---|
+| Original non-NME NDA/BLA | **1,997** | openFDA Drugs@FDA ORIG/AP, NDA/BLA only, 2000–2026 | 200/200 random rows MATCH vs raw JSON on date, appl #, sponsor, brand, class code, priority, Drugs@FDA URL. 0 Type 1 leaks. Every year 2000–2026 present. 1,997/1,997 `source_url_1` on fda.gov. |
+| US-listed originals | 819 | same + `sponsor_registry.csv` | Unresolved sponsors left `UNRESOLVED`, never guessed (781). |
+| Orig scorecards | 88 companies | counted from the 1,997 | Validator checks `total_original_non_nme` equals the ticker count in the orig file. Clinical-relevant = Type 2+3+4+new-indication; Type 5 and medical gas excluded from that numerator. |
+| Type 1 unmatched | 41 | openFDA Type 1 not in NME master | FLAGGED, **not merged**. Humira, Neulasta, Fabrazyme, Xolair, Ofev, Paxlovid copack, Trikafta copack, Pixclara, etc. |
+| Orig year register | 27 | per-year openFDA counts | `sum(non_nme_published) == 1997`. |
+
+**Hallucination controls that held:** indication text not synthesised; Type 1 detector uses code `TYPE 1`/`TYPE 1/4` or the exact string `Type 1 - New Molecular Entity` (so Type 10 is not treated as NME); medical gases labelled; Type 5 labelled as possibly a manufacturer change.
+
+**Site:** Originals tab, Orig Scorecard, Private/Non-US nav restored, dark mode.
+
+**Not done (see `NEXT_SESSION.md`):** ClinicalTrials.gov Phase 3 ingest (fetch job queued), remaining CRLs, CBER Type-1-gap adjudication, orig-event prices, 781 unresolved sponsors.
+
+---
+
 # Verification Report — 1000+ Entries, No Hallucinations, Line by Line — v3 Sep 2026
 
-**Date:** 2026-09-16 v2 (this session)
+**Date:** 2026-09-16 v3 (previous session)
 **Branch:** arena/01a0abbe-druganalysis
 **Validator:** python3 scripts/validate_data.py — PASS (980 FDA rows, 434 company scorecards, 93 price snapshots, 34 pipeline, 32 PDUFA, 8 trial endpoints, 171 warnings)
 

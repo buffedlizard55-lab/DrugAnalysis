@@ -1,0 +1,42 @@
+[
+  {
+    "type": "ctgov",
+    "id": "phase3_upcoming",
+    "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "AREA[Phase]PHASE3 AND AREA[PrimaryCompletionDate]RANGE[2026-01-01,2027-12-31]",
+      "pageSize": "50",
+      "format": "json"
+    },
+    "project": {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": {},
+          "briefTitle": {},
+          "officialTitle": {},
+          "organization": {"fullName": {}}
+        },
+        "statusModule": {
+          "overallStatus": {},
+          "primaryCompletionDateStruct": {"date": {}, "type": {}},
+          "completionDateStruct": {"date": {}, "type": {}}
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {"name": {}, "class": {}}
+        },
+        "designModule": {"phases": {}},
+        "armsInterventionsModule": {
+          "interventions": [{"name": {}, "type": {}}]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [{"measure": {}, "timeFrame": {}}]
+        },
+        "conditionsModule": {"conditions": {}}
+      }
+    },
+    "max_pages": 20,
+    "sleep": 0.5,
+    "out": "studies.json",
+    "skip_existing": true
+  }
+]
