@@ -23,12 +23,14 @@
         <div class="stat"><span class="stat-num" data-count="suppl">—</span><span class="stat-label">Label Expansions</span></div>
         <div class="stat"><span class="stat-num" data-count="crl">—</span><span class="stat-label">CRL Rejections</span></div>
         <div class="stat"><span class="stat-num" data-count="ctgov">—</span><span class="stat-label">Phase 3 Trials</span></div>
+        <div class="stat"><span class="stat-num" data-count="clinscores">—</span><span class="stat-label">Clinical Scorecards</span></div>
         <div class="stat"><span class="stat-num" data-count="scores">—</span><span class="stat-label">Companies Scored</span></div>
+        <div class="stat"><span class="stat-num" data-count="prices">—</span><span class="stat-label">Price Snapshots</span></div>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
       </div>
     </div>
     <div class="header-badges">
-      <span class="badge verified">✓ Verified from FDA.gov + openFDA API</span>
+      <span class="badge verified">✓ Verified from FDA.gov + openFDA API + ClinicalTrials.gov</span>
       <span class="badge info">✓ No estimated data — blank beats guessed</span>
       <span class="badge neutral">✓ All irregularities flagged for review</span>
       <span class="badge neutral">Latest: <span data-count="latest">—</span></span>
@@ -40,6 +42,7 @@
   <button class="tab-btn active" data-tab="overview"><span class="tab-icon">📊</span> Overview</button>
   <button class="tab-btn" data-tab="engine"><span class="tab-icon">🎯</span> Decision Engine</button>
   <button class="tab-btn" data-tab="core"><span class="tab-icon">📈</span> Core Analysis</button>
+  <button class="tab-btn" data-tab="clin-scores"><span class="tab-icon">🧬</span> Clinical Scorecard</button>
   <button class="tab-btn" data-tab="approvals"><span class="tab-icon">✅</span> FDA Approvals</button>
   <button class="tab-btn" data-tab="orig"><span class="tab-icon">📦</span> Originals</button>
   <button class="tab-btn" data-tab="scorecards"><span class="tab-icon">🏆</span> Company Scores</button>
@@ -323,6 +326,14 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
     <p class="section-desc">A company's approved efficacy supplements are directly observed evidence that its clinical programmes keep converting into FDA approvals — counted from FDA records, not from any company's self-reported pipeline page.</p>
     <div class="notice"><strong>Why this complements the Company Scores tab.</strong> The main score is built on <em>novel</em> approvals, which are rare (~50/year across the whole industry), so most companies have too few for a stable estimate. Label expansions are far more numerous, so they discriminate much better. <strong>Breadth ratio</strong> = supplements per novel approval: how much additional indication value a company extracts from each molecule it gets approved. <strong>Expansions last 5y</strong> and <strong>velocity</strong> capture recency — an old record is weaker evidence about a company today. Every number is a count; nothing here is modelled or estimated.</div>
     <div id="expansion-scores-view"></div>
+  </section>
+
+  <!-- CLINICAL TRIAL SCORECARD -->
+  <section id="clin-scores" class="tab-panel">
+    <h2>🧬 Company Clinical Trial & Phase Progression Scorecard</h2>
+    <p class="section-desc">Tracks each company's full clinical profile: <strong>Phase 3 trials (2026–2027 readouts)</strong> from the official ClinicalTrials.gov registry, <strong>deep-dive pipeline progression</strong> (programs advancing to the next phase vs. paused on clinical hold), and <strong>FDA regulatory conversion rates</strong> across novel approvals (NMEs), original non-NME approvals, label expansions, and Complete Response Letters (CRLs). <em>Blank beats guessed — all metrics derived from official sources.</em></p>
+    <div class="notice"><strong>Clinical-Regulatory Scorecard Methodology:</strong> Tracks both <em>forward-looking clinical execution</em> (Phase 3 active vs completed trials in the 2026–2027 window) and <em>historical regulatory conversion</em> (novel approvals, original non-NMEs, and label expansions vs CRL rejections). For companies with deep-dive pipeline filings, the progression rate reflects verified phase-to-phase advancement vs clinical holds. Every row provides direct links to ClinicalTrials.gov and FDA decision records for manual verification.</div>
+    <div id="clin-scores-view"></div>
   </section>
 
   <!-- ORIGINAL-APPROVAL SCORECARD -->

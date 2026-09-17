@@ -12,9 +12,9 @@ Scope of the capture (see fetch_jobs/clinicaltrials_phase3_2026_2027.json):
 Every output row:
   * carries the official source link https://clinicaltrials.gov/study/<NCT>
   * copies fields value-for-value from the capture (no rewriting)
-  * sponsor resolution uses the SAME strict policy as build_crl_master_v2.py
-    (repo-verified standalone rows; SEC company_tickers.json exact match after
-    legal-suffix removal; NO token matching; unresolved stays blank).
+  * sponsor resolution uses data/sponsor_registry.csv, repo-verified standalone rows,
+    and SEC company_tickers.json exact match after legal-suffix removal.
+    NO token matching; unresolved stays blank.
 
 Output: data/clinical_trials_phase3_registry.csv
         data/staging/ctgov_sponsor_resolution.json
@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_crl_master_v2 import build_repo_map_strict, build_sec_map_strict, norm_legal  # noqa: E402
+from build_crl_master_v2 import build_repo_map_strict, build_sec_map_strict, load_sponsor_reg, norm_legal  # noqa: E402
 
 DATA = ROOT / "data"
 RAW = DATA / "raw" / "clinicaltrials_phase3_2026_2027" / "studies.json"
@@ -61,6 +61,7 @@ def main() -> None:
     studies = d["studies"]
     repo = build_repo_map_strict()
     sec = build_sec_map_strict()
+    reg = load_sponsor_reg()
     resolutions: dict[str, dict] = {}
 
     rows = []
@@ -85,30 +86,45 @@ def main() -> None:
 
         if name not in resolutions:
             key = norm_legal(name)
-            if key in repo:
+            if key in reg:
+                r_item = reg[key]
+                tk = (r_item.get("ticker") or "").strip()
+                ex = (r_item.get("exchange") or "").strip()
+                uclass = (r_item.get("us_investable_class") or "").strip()
+                comp = (r_item.get("resolved_company") or name).strip()
+                basis = (r_item.get("basis") or "sponsor_registry exact match").strip()
+                if tk and tk not in {"UNRESOLVED", "NO_US_TICKER", "NO_TICKER"}:
+                    resolutions[name] = {"company": comp, "ticker": tk, "exchange": ex,
+                                         "method": "sponsor_registry exact", "inv": "US-LISTED", "basis": basis}
+                elif uclass in {"NON-US LISTING ONLY", "PRIVATE / NO EQUITY"}:
+                    resolutions[name] = {"company": comp, "ticker": "", "exchange": ex,
+                                         "method": uclass, "inv": uclass, "basis": basis}
+                else:
+                    resolutions[name] = {"company": comp, "ticker": "", "exchange": ex,
+                                         "method": "unresolved", "inv": "UNRESOLVED SPONSOR", "basis": basis}
+            elif key in repo:
                 tk, ex, rowname = repo[key]
                 resolutions[name] = {"company": name, "ticker": tk, "exchange": ex,
-                                     "method": "repo-verified exact",
+                                     "method": "repo-verified exact", "inv": "US-LISTED",
                                      "basis": "lead sponsor verified row-by-row earlier in this repository"}
             elif key in sec:
                 c = sec[key][0]
                 resolutions[name] = {"company": name, "ticker": c["ticker"], "exchange": "",
-                                     "method": "SEC exact",
+                                     "method": "SEC exact", "inv": "US-LISTED",
                                      "basis": "exact match (legal suffixes removed) against "
                                               "SEC company_tickers.json"}
+            elif sclass in ACADEMIC_CLASSES:
+                resolutions[name] = {"company": "", "ticker": "", "exchange": "",
+                                     "method": "academic", "inv": "NOT A COMPANY (academic/government/network sponsor)",
+                                     "basis": f"lead sponsor class: {sclass} (academic/government/network sponsor)"}
             else:
                 resolutions[name] = {"company": "", "ticker": "", "exchange": "",
-                                     "method": "unresolved",
+                                     "method": "unresolved", "inv": "UNRESOLVED SPONSOR",
                                      "basis": "no repository-verified row and no exact SEC "
                                               "registrant match (legal suffixes removed); blank beats guessed"}
         r = resolutions[name]
         ticker = r["ticker"]
-        if ticker:
-            inv = "US-LISTED"
-        elif r["method"] == "unresolved" and sclass in ACADEMIC_CLASSES:
-            inv = "NOT A COMPANY (academic/government/network sponsor)"
-        else:
-            inv = "UNRESOLVED SPONSOR"
+        inv = r.get("inv", "UNRESOLVED SPONSOR")
 
         notes = [f"lead sponsor class: {sclass}"]
         if phases and "Phase 2" in phases and "Phase 3" in phases:

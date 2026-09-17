@@ -1,8 +1,43 @@
-# Verification Report — Original non-NME universe — v4 Sep 2026
+# Verification Report — Clinical Trial & Regulatory Scorecard — v6 Sep 2026
 
-**Date:** 2026-09-17 v5 (this session)
-**Branch:** `arena/01a0acc2-druganalysis`
-**Validator:** `python3 scripts/validate_data.py` — PASS (980 novel-approval rows, 4,482 efficacy supplements, 1,997 original non-NME rows, 88 orig scorecards, 41 Type-1-gap flags, 99 label-expansion scorecards, 980 cross-check rows, 434 company scorecards, 93 price snapshots, **458 CRL rows (+400 new)**, **2,000 ClinicalTrials.gov Phase 3 rows**)
+**Date:** 2026-09-17 v6 (this session)
+**Branch:** `arena/01a0acd9-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — PASS (980 novel-approval rows, 4,482 efficacy supplements, 1,997 original non-NME rows, 88 orig scorecards, 41 Type-1-gap flags, 99 label-expansion scorecards, 980 cross-check rows, 659 company scorecards, **152 price snapshots**, **458 CRL rows**, **2,000 ClinicalTrials.gov Phase 3 rows**, and **402 company clinical trial scorecards**)
+
+## Summary — this session (v6): Clinical Trial Scorecards, Sponsor Resolution Expansion, Stock Price Reactions & Sunovion Fix
+
+| Dataset / Component | Metric / Scope | Source | Verification |
+|---|---|---|---|
+| **Company Clinical Trial Scorecard** | **402 companies scored** | ClinicalTrials.gov Phase 3 registry, pipeline tracker, FDA NME/non-NME/supplement approvals, and CRL transparency database | Multi-factor clinical-regulatory evaluation: Phase 3 active trial volume (2026–2027), pipeline phase progression vs clinical holds, and historical FDA conversion rates. Wilson 95% lower bounds and Bayesian shrinkage prevent small-sample distortion. Direct CT.gov and FDA evidence links on every row. |
+| **Sponsor Registry Expansion** | **265 companies (+94 new exact mappings)** | SEC company tickers (`company_tickers.json`), FDA applicant registers, Tokyo Stock Exchange, London Stock Exchange | Exact-match normalization only (no token/substring fuzzy matching). Resolved 94 previously unmapped biopharma sponsors to official tickers or verified Non-US/Private classifications. |
+| **Stock Price Reaction Snapshots** | **152 snapshots (+59 new verified reactions)** | Yahoo Finance historical daily close series around decision dates | Cleaned staging snapshots, eliminated synthetic test ticker `ASND2`, merged 59 verified historical price reactions before and after FDA approvals / CRLs. 152/152 rows carry timestamped source URLs. |
+| **Sunovion / Dainippon Fix** | Master rows D631, D640, D887 | Sumitomo Pharma IR / Tokyo Stock Exchange (TSE: 4506) | Resolved the long-standing master collision where Sunovion had been mislabelled with Daiichi Sankyo's ticker (TSE: 4568). Corrected uniformly to `Sumitomo Pharma Co., Ltd.` (TSE: 4506, NON-US LISTING ONLY). |
+| **CRL Master & CT.gov Resolution** | 156 CRLs resolved, 409 Phase 3 studies resolved | `data/sponsor_registry.csv` | Re-ran resolvers: 156 CRL rows and 409 CT.gov Phase 3 rows now have verified ticker mappings and investability classes. Zero ungrounded guesses. |
+| **Interactive Decision Engine & UI** | Full GitHub Pages frontend (`index.html`, `assets/app.js`, `assets/style.css`) | All 11 data tables | Added dedicated `🧬 Clinical Scorecard` view, wired DataTable with custom grade pills (A–F), linked clinical trial metrics into the Decision Engine company selector, and styled light/dark grade badges. |
+
+### Methodology & Formulas
+
+1. **Phase Progression Rate**:
+   $$\text{Progression Rate} = \frac{\text{Advanced to Next Phase}}{\text{Advanced to Next Phase} + \text{Paused or Clinical Hold}}$$
+   (Calculated for companies with deep-dive pipeline tracker filings; unfilmed/blank pipelines remain unestimated).
+
+2. **Overall FDA Regulatory Conversion Rate**:
+   $$\text{Conversion Rate} = \frac{\text{Novel (NME)} + \text{Clinical-Relevant Originals} + \text{Efficacy Supplements}}{\text{Novel (NME)} + \text{Clinical-Relevant Originals} + \text{Efficacy Supplements} + \text{CRLs}}$$
+
+3. **Clinical Composite Score (0–100) & Grade**:
+   Combines empirical regulatory conversion, pipeline progression, and active Phase 3 execution breadth, weighted by sample size using Bayesian shrinkage toward the industry base rate (65.0% for FDA actions):
+   - **Grade A**: Score $\ge 80.0$ (High conversion track record across multiple programs)
+   - **Grade B**: Score $70.0 - 79.9$ (Consistent above-average clinical execution)
+   - **Grade C**: Score $55.0 - 69.9$ (Average progression with mixed outcomes or standard base rate)
+   - **Grade D**: Score $40.0 - 54.9$ (Below-average progression or multiple CRLs)
+   - **Grade F / E**: Score $< 40.0$ (High failure / hold rate or repeat CRL rejections)
+
+### Verification Checklist & Integrity Checks
+
+- `scripts/validate_data.py`: **PASS** on all 11 core data files (no schema violations, no malformed ISO-8601 dates, no invalid URLs, no duplicate keys).
+- Ticker Matching: Zero fuzzy/substring false positives permitted; all 94 newly resolved sponsors verified against SEC EDGAR registrant records or foreign exchange filings.
+- Stock Price Snapshots: 152 verified historical snapshots; blank values strictly preserved where market data is missing/pre-IPO.
+- Zero-Hallucination Adherence: No dates, application IDs, or sponsor names invented. Missing fields are explicitly marked blank or flagged for review.
 
 ## Summary — this session (v5): +2,400 new verified rows (400 CRLs + 2,000 Phase 3 trials)
 
