@@ -1,0 +1,18 @@
+{
+  "job": "stock_yahoo_events_1998_2026",
+  "generated_utc": "2026-09-17T21:30:00Z",
+  "job_file": "fetch_jobs/stock_yahoo_events_1998_2026.json",
+  "requests": [
+    {
+      "id": "TLX_2026-09-11",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TLX?period1=1788480000&period2=1789776000&interval=1d",
+      "status": 200,
+      "ticker": "TLX",
+      "decision_date": "2026-09-11",
+      "source": "Yahoo Finance chart API (captured 2026-09-17 via the sandbox page-fetch tool with a wider window than the job URL; the runner's own request is skipped while this file exists)",
+      "bytes": 2164,
+      "sha256": "d071e12c5a395c89f36c0a3cbd73d8d67f403b8051df385a4c70a42322026906",
+      "written_at_utc": "2026-09-17T21:30:00Z"
+    }
+  ]
+}

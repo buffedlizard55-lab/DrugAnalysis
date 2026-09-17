@@ -138,6 +138,10 @@ r(FDA11,"Optimer Pharmaceuticals (acquired by Cubist/Merck 2013-15)","OPTR","NAS
 r(FDA13,"Sunovion Pharmaceuticals (Sumitomo Dainippon subsidiary)","NO_TICKER","N/A - subsidiary of Sumitomo Dainippon Pharma (TYO:4506); no US ADR verified","Aptiom","eslicarbazepine acetate","2013-11-08","Partial-onset seizures (adjunct)","Standard","22416",2013,"")
 r(FDA13,"Genentech, Inc. (Roche group)","RHHBY","OTC ADR; primary SIX:ROG","Kadcyla","ado-trastuzumab emtansine","2013-02-22","HER2+ metastatic breast cancer","Priority","125427",2013,"")
 r(FDA12,"NPS Pharmaceuticals (acquired by Shire/Takeda 2015)","NPSP","NASDAQ (delisted Feb 2015)","Gattex","teduglutide","2012-12-21","Short bowel syndrome with intestinal failure in adults","Priority","203336",2012,"")
+# IRREGULARITY (found 2026-09-17, see scripts/build_backfill_1998_and_fixes.py): the row below is NOT on FDA's official
+# 2014 NME table (ucm429247) or in the CDER Compilation — Contrave is a Type 4 new combination. The missing 41st 2014 row
+# is Ofev (NDA 205832, 10/15/2014), appended by build_backfill_1998_and_fixes.py. This line is kept so the historical
+# D-id sequence is reproducible; the fixes script re-labels D634 as NOT_ON_FDA_NME_TABLE.
 r(FDA14,"Orexigen Therapeutics (filed 2018; Contrave to Nalpropion)","OREX","NASDAQ (delisted 2018)","Contrave","naltrexone/bupropion ER","2014-09-10","Chronic weight management in obese/overweight adults with weight-related comorbidity","Standard","200063",2014,"OREX was NASDAQ at approval; Orexigen filed bankruptcy 2018; Contrave rights transitioned to Nalpropion. Price cells left blank for delisted issuer (per repo blank-beats-guessed rule).")
 
 assert len(R) == 100, f"Got {len(R)} rows; need 100"

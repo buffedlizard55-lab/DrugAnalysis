@@ -1,0 +1,62 @@
+[
+  {
+    "type": "url",
+    "id": "cder_nme_cy1998_table",
+    "url": "https://web.archive.org/web/20051016001622/http://www.fda.gov/cder/rdmt/nmecy98.htm",
+    "out": "cder_nmecy98.html"
+  },
+  {
+    "type": "url",
+    "id": "cder_nme_cy1999_table",
+    "url": "https://web.archive.org/web/20031206120537/http://www.fda.gov/cder/rdmt/nmecy99.htm",
+    "out": "cder_nmecy99.html"
+  },
+  {
+    "type": "url",
+    "id": "cder_nme_cy2000_table",
+    "url": "https://web.archive.org/web/20031206203139/http://www.fda.gov/cder/rdmt/nmecy2000.htm",
+    "out": "cder_nmecy2000.html"
+  },
+  {
+    "type": "url",
+    "id": "cder_rdmt_index_2003",
+    "url": "https://web.archive.org/web/20031208110717/http://www.fda.gov/CDER/rdmt/default.htm",
+    "out": "cder_rdmt_index_20031208.html"
+  },
+  {
+    "type": "url",
+    "id": "fda_novel_2014_table_wayback",
+    "url": "https://web.archive.org/web/20150123034253/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/DrugInnovation/ucm429247.htm",
+    "out": "fda_novel_2014_ucm429247.html"
+  },
+  {
+    "type": "url",
+    "id": "fda_novel_2026_live",
+    "url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+    "out": "fda_novel_2026_live.html"
+  },
+  {
+    "type": "url",
+    "id": "openfda_contrave_200063",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA200063%22&limit=1",
+    "out": "openfda_NDA200063_contrave.json"
+  },
+  {
+    "type": "url",
+    "id": "openfda_ofev_205832",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA205832%22&limit=1",
+    "out": "openfda_NDA205832_ofev.json"
+  },
+  {
+    "type": "url",
+    "id": "openfda_pixclara_218592",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA218592%22&limit=1",
+    "out": "openfda_NDA218592_pixclara.json"
+  },
+  {
+    "type": "url",
+    "id": "ctgov_total_2026_2027",
+    "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2026-01-01,2027-12-31]&pageSize=1&countTotal=true&format=json&fields=NCTId",
+    "out": "ctgov_totalcount_2026_2027.json"
+  }
+]

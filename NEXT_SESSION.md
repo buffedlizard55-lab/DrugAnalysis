@@ -1,59 +1,38 @@
-# Remaining work for the next session (written 2026-09-17 v6)
+# Remaining work for the next session (written 2026-09-17 v7)
 
-This file is the hand-off for future development. The sandbox that edits the repo has **no general outbound network**. Every external fetch must go through GitHub Actions (`fetch_jobs/*.json` → `scripts/run_fetch_jobs.py` → `data/raw/<job>/` + SHA-256 manifest). Blank beats guessed.
+This file is the hand-off for future development. The sandbox that edits the repo has **no general outbound network** (only a page-fetch tool that can reach api.fda.gov, web.archive.org and finance.yahoo.com one page at a time). Bulk external fetches must go through GitHub Actions (`fetch_jobs/*.json` → `scripts/run_fetch_jobs.py` → `data/raw/<job>/` + SHA-256 manifest). Nothing may be typed from memory: every row needs an official/primary source link, and blank beats guessed.
 
-## What this session shipped (v6)
+## What this session shipped (v7)
 
-- `data/company_clinical_trial_scorecard.csv` — **402 company scorecards** integrating Phase 3 trials (2026–2027 completion window), pipeline phase progression (advanced vs. clinical hold), and FDA conversion rates (NME, non-NME original approvals, efficacy supplements vs. CRLs). Builder: `scripts/build_clinical_trial_scorecard.py`.
-- `data/sponsor_registry.csv` — Expanded from 171 to **265 sponsors (+94 exact mappings)**, mapping biopharmas from FDA and ClinicalTrials.gov to exact US tickers or verified Non-US / Private status.
-- `data/fda_crl_master.csv` & `data/clinical_trials_phase3_registry.csv` — Regenerated with updated sponsor registry: **156 CRL rows** and **409 Phase 3 studies** resolved to US-listed issuers.
-- `data/stock_price_snapshots.csv` — Expanded from 93 to **152 verified price snapshots** around FDA decision dates (cleaned staging files and eliminated test artifact `ASND2`).
-- Master data integrity fix: Corrected Sunovion / Dainippon Pharmaceutical in rows D631, D640, and D887 to `Sumitomo Pharma Co., Ltd.` (TSE: 4506, NON-US LISTING ONLY), eliminating the Daiichi Sankyo (TSE: 4568) collision.
-- Decision Engine UI (`index.html`, `assets/app.js`, `assets/style.css`): Added `🧬 Clinical Scorecard` tab with interactive DataTable, live counters, dark-mode CSS styling, and Decision Engine company picker enrichments.
-- QA Validator (`scripts/validate_data.py`): Validates all 11 core datasets (980 NMEs, 4,482 efficacy supplements, 1,997 original non-NME approvals, 659 company scores, 152 stock price snapshots, 458 CRLs, 2,000 CT.gov Phase 3 trials, and 402 clinical trial scorecards).
-
-## Highest-value next steps
-
-1. **Continue resolving remaining unmapped sponsors:**
-   - 302 CRL rows and ~1,591 CT.gov studies remain unmapped (many are private biotechs, foreign entities, or non-commercial research institutes).
-   - Continue exact-matching against SEC `company_tickers.json` and European/Asian exchange registers (TSE, LSE, Euronext, SIX) using `norm_legal()` exact equality.
-   - Do NOT use substring/token fuzzy matching.
-2. **Paging beyond 2,000 ClinicalTrials.gov Phase 3 records:**
-   - The current registry contains the first 2,000 matching Phase 3 studies (primary completion 2026–2027).
-   - Queue a GitHub Actions fetch job with `pageToken` pagination to ingest subsequent pages.
-3. **Price reaction coverage expansion:**
-   - Queue a GitHub Actions Yahoo Finance chart job for newly resolved US-listed CRLs and novel approvals (e.g. 2024–2026 decision dates).
-   - Verify close prices on $T-1$, $T_0$, and $T+1$ trading days. Leave degenerate or pre-IPO price series blank.
-4. **CBER Type 1 biologics gap (41 rows):**
-   - Cross-check against FDA CBER annual approval lists and FDA Purple Book before considering any merge into the NME master list.
-5. **PDUFA Calendar updates:**
-   - For remaining secondary-aggregated rows in `data/upcoming_pdufa_calendar.csv`, capture company press releases / SEC Form 8-K filings directly into `data/raw/pdufa/` to ensure primary source verification for all rows.
-
-## Do not
-
-- Invent novel approvals to pad toward "1000 new NMEs" — the NME master matches FDA's official year counts.
-- Re-introduce token/substring ticker matching. Blank beats guessed.
-- Merge the 41 Type 1 gap rows without an official year-count check.
-- Treat Type 5 manufacturer changes or medical gases as clinical-trial conversions.
-- Fill missing prices, dates, indications, or tickers without verifiable primary sources.
-- Claim the 2,000-study CT.gov capture is exhaustive — it is the API's first 2,000 matches.
+- **1998 imported** — `data/fda_decisions_master.csv` 980 → **1,018 rows (1998–2026)**: 36 rows for 1998 (D991–D1026) from CDER's own "NMEs Approved in CY 1998" table + the CDER Compilation, re-verified in openFDA by application number + exact ORIG approval date (29/30; Refludan flagged). Verbatim staging: `data/staging/fda_nme_1998_verbatim.json`. Builder: `scripts/build_backfill_1998_and_fixes.py` (idempotent).
+- **Official-table reconciliation** — Ofev (2014, D1027) and Pixclara (2026, D1028) added; Contrave D634 relabelled `NOT_ON_FDA_NME_TABLE` (Type 4 combination, never on FDA's table); 2 dates, 7 application numbers and 2 issuer attributions corrected; 11 rows annotated where openFDA and FDA's table disagree (table kept). Full list: `VERIFICATION_REPORT.md` v7.
+- **Drugs@FDA links** — `scripts/add_drugsatfda_links.py` linked 262 rows by openFDA brand + exact date; `NO_APPL_NUMBER` 264 → 1 (Blenrep 2020, withdrawn BLA — deliberately unlinked).
+- **Cross-check** — `data/verification_crosscheck.csv` 1,018 rows: 732 MATCH / 227 MATCH_DATE_ONLY / 6 MATCH_VIA_GENERIC / 5 date ±1–3 d / 4 MISMATCH_DATE (flagged) / 43 NOT_IN_OPENFDA (36 = 1998, no payload yet) / 1 NO_APPL_NUMBER.
+- **Derived tables regenerated** — non-NME originals 1,995, Type-1-gap 21, 675 company scores, 1,476 core rows (145 priced), 99 orig scorecards, 153 price snapshots (+TLX/Pixclara from a verbatim Yahoo capture), PDUFA calendar 3 rows marked approved, `fda_year_source_register.csv` 1998 row added.
+- **Validator** now asserts one year-register row and ≥1 master row for every year 1998–2026.
+- **Site** — counts 980 → 1,018, coverage grid 1998–2026, D634 excluded from year counts.
 
 ## Highest-value next steps
 
-1. **Resolve the 314 flagged CRL sponsors + 609 unresolved CT.gov sponsors.** Extend `data/sponsor_registry.csv` from SEC `company_tickers.json` exact-title match only (the raw FDA strings need legal-suffix normalization — reuse `norm_legal()` from `build_crl_master_v2.py`). Do NOT fuzzy-match. For private/foreign applicants (Fresenius Kabi, Chiesi, Jiangsu Hengrui US agents, etc.) set an explicit foreign/private class instead of a ticker.
-2. **Capture the REST of the CT.gov window.** The 2,000-study capture is the API's first 2,000 matches. Queue a second fetch job with `query.term` + `countTotal=true` and page through with `pageToken` offsets beyond 2,000 (job type `ctgov` already supports paging via `max_pages`; add a `skip` param or use `query.term` sorts). Append with the same schema; never overwrite.
-3. **Price the US-listed CRL events.** 314 unresolved→86 resolved rows now have tickers but no stock snapshots. Queue a `generic` Yahoo-chart job for the resolved tickers × letter dates (start with 2024–2026 letters, ~30 per job per the 350-min runner limit). Degenerate series: flag, leave blank (precedents: NUVL, Trevena).
-4. **Adjudicate Sunovion** against Sumitomo Pharma's official IR (TSE 4506) and FDA letters; fix the disagreeing master rows with 2 official links each, or keep both with the flag.
-5. **CBER Type 1 gap (41 rows)** — still open. Adjudicate against FDA CBER year tables / Purple Book; merge into `fda_decisions_master.csv` only if an official year table confirms the count would still match.
-6. **Purple Book biosimilars** — label the 351(k) originals in `fda_original_non_nme_decisions.csv` without guessing class codes.
-7. **Indication text** for orig rows — copy from Drugs@FDA label/approval letter verbatim, never paraphrase.
-8. **PDUFA calendar** — 32 rows; the 16 secondary-aggregation rows still need primary press-release verification (fetch job capturing company IR/8-K verbatim).
+1. **Capture 1998 (and 1985–1999) openFDA payloads on the runner.** `fetch_jobs/openfda_orig_decisions_2011_2026.json` now lists 1985–2026 with `skip_existing`; once the workflow has run, re-run `crosscheck_master_vs_openfda.py` — the 36 1998 rows should move from NOT_IN_OPENFDA to MATCH (29 expected; Refludan + 4 CBER BLAs will stay absent).
+2. **Decide the CBER-transferred biologics question for 2000–2003 (largest known systematic gap).** FDA's Compilation lists 19 therapeutic biologics approved 2000–2003 (TNKase, Myobloc, Peg-Intron, Campath, Aranesp, Kineret, Xigris, Neulasta, Zevalin, Rebif, Elitek, Pegasys, Humira, Amevive, Fabrazyme, Aldurazyme, Xolair, Bexxar, Raptiva) that the contemporaneous CDER NME year tables did not carry (CBER licensed them until the 2003 transfer). 15 of them already sit in `data/fda_type1_not_in_nme_master.csv`. Either (a) add them from the Compilation with a `COMPILATION_ONLY_CBER` flag and raise the README year counts explicitly, or (b) keep the year-table pinning and say so on the site. Do **not** add them silently: 1998 and 1999 already include their Compilation-only biologics, so the master is currently inconsistent across the 1999/2000 boundary.
+3. **Pre-1998.** No CDER NME year table exists on fda.gov/Wayback for 1997 or earlier; the only official source is the Compilation (1985+). If the user wants 1997/1996, import from the Compilation with every row flagged `COMPILATION_ONLY`, verify each application number in openFDA (expect many misses), and resolve decision-date tickers only from contemporaneous primary sources (the 1998 pass shows this is feasible for ~15 issuers per year).
+4. **`scripts/classify_listing.py` fixed-point problem** (irregularity #1 in the report). Options: make it honour an explicit builder class when the exchange string is blank/"formerly …"; or normalise the 50 legacy blank-exchange rows to "formerly NYSE:XXX, delisted YYYY" strings. Delisting years are already researched: WYE 2009 (D637, D647, D765, D808, D822, D970, D974); PHA 2003 (D644, D668, D704, D973, D979); SGP 2009 (D685, D793, D969); MLNM 2008 (D708); FRX 2014 (D720, D888, D935); IMCL 2008 (D726); DNA 2009 (D727, D790, D870, D904, D911); SHPG 2019 (D745, D792, D874, D899); SEPR 2014 (D752); GENZ 2011 (D756, D784, D841, D878); AMLN 2012 (D761, D763); CELG 2019 (D778, D926); CEPH 2011 (D823); XNPT 2016 (D894); DSCO→WINT (D906); AFFY 2013 (D907); ARIA 2017 (D920); HGSI 2012 (D921); non-US: MKGAF→"ETR:MRK" (D656, D740), SOBI "STO:SOBI" (D686), REC "BIT:REC" (D875), TH "TSX:TH" (D889). Each still needs a primary citation before the string is written.
+5. **Sponsor-registry collisions** surfaced by regenerating the non-NME file: "SUN PHARM" (3 registry keys → UNRESOLVED), "NYCOMED" (no key after the D968 correction), "CUBIST" (2 keys). Add exact keys with SEC/exchange evidence; never token-match.
+6. **Hoechst AG / Glaxo Wellcome decision-date ADRs (1998).** Hoechst was Frankfurt-listed (WKN 575800); a NYSE ADR could not be confirmed from a primary source, so D994/D1008 have blank ticker/exchange. Glaxo Wellcome's 1998 NYSE ADR symbol was not re-verified (GSK used per master precedent). Search SEC 20-F filings 1997–1999 before writing anything.
+7. **Accelerated-approval labelling gap.** 71 Compilation rows with "Accelerated Approval = Yes" are plain "Approval" in the master (the 1998/1999 imports use "Approval (Accelerated)" + "Priority/Accelerated"). A notes-only pass from `data/raw/probe/fda_nme_compilation_1985_2025.xlsx` would make the pathway column consistent.
+8. **2014 dead Wayback URL.** All 41 rows of 2014 cite `…/20190207172014/…/ucm429249.htm` (dead); `…/20150123034253/…/ucm429247.htm` works. Rewrite in bulk with a script (source_url_1 only).
+9. **Type-1-gap file (21 rows).** Besides the 15 CBER biologics in item 2: Epivir NDA 020564 (2004 — HBV strength, moiety approved 1995), Emend IV NDA 022023 (2008 — FDA excluded it), Nexlizet NDA 211617 (2020 — combination), gallium Ga 68 gozetotide NDA 212643 (UCSF twin of D350), Nemluvio BLA 761391 and Datroway BLA 761464 (second BLAs for products already in the master). Annotate each in the file so nobody re-investigates them.
+10. **Price coverage.** 145/1,476 core rows priced. Queue a Yahoo chart job for the newly added US-listed rows (1998 rows with live successor tickers are *not* valid proxies — leave them blank) and for the 86 resolved CRL events.
+11. **Carry-overs from v5/v6**: 314 flagged CRL sponsors + 609 unresolved CT.gov sponsors (exact SEC-title matching only); page the CT.gov Phase 3 registry beyond the first 2,000; PDUFA calendar — 16 secondary-aggregation rows still need primary press-release/8-K captures; Purple Book 351(k) labelling for the non-NME file; verbatim indication text for orig rows.
 
 ## Do not
 
-- Invent novel approvals to pad toward "1000 new NMEs" — the NME master matches FDA's official year counts.
-- Re-introduce token/substring ticker matching. 7 documented false positives; blank beats guessed.
-- Merge the 41 Type 1 gap rows without an official year-count check.
+- Invent novel approvals to pad counts — the master matches FDA's official year tables 1998–2026; 1,000 extra novel approvals do not exist.
+- Re-run `scripts/classify_listing.py` on the committed master without fixing item 4 first (it flips 154 legacy rows).
+- Re-introduce token/substring ticker matching (7 documented false positives in v5). Blank beats guessed.
+- Merge the Type-1-gap rows or the 2000–2003 CBER biologics without an explicit, documented year-count decision (item 2).
+- Link Blenrep 2020 (D306) to BLA 761440 — that is the 2025 re-approval, a different decision.
 - Treat Type 5 manufacturer changes or medical gases as clinical-trial conversions.
 - Fill missing prices, dates, indications, or tickers; silently overwrite a source conflict; overwrite the 58 hand-verified CRL rows or the 8 hand-verified trial endpoints.
-- Claim the 2,000-study CT.gov capture is exhaustive — it is the API's first 2,000 matches (see item 2).
+- Claim the 2,000-study CT.gov capture is exhaustive — it is the API's first 2,000 matches.

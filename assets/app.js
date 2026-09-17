@@ -576,9 +576,13 @@ function median(arr) {
 }
 
 function drawCoverage(master) {
-  const years = Array.from({ length: 27 }, (_, i) => String(2000 + i));
+  // 1998-2026 since the 2026-09-17 v7 import (1998 CDER NME table + Compilation).
+  // Rows flagged NOT_ON_FDA_NME_TABLE (D634 Contrave, kept for transparency) are
+  // excluded so the per-year counts match FDA's official tables.
+  const years = Array.from({ length: 29 }, (_, i) => String(1998 + i));
   const counts = Object.fromEntries(years.map(y => [y, 0]));
-  master.forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
+  master.filter(r => !/NOT_ON_FDA_NME_TABLE/.test((r.verification_status || '') + (r.notes || '')))
+    .forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
   const covered = years.filter(y => counts[y]);
   const missing = years.filter(y => !counts[y]);
   const sourceNote = y => master.filter(r => String(r.decision_date || '').startsWith(y))

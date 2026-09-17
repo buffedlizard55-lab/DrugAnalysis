@@ -37,6 +37,23 @@ for i, r in enumerate(master, 2):
     if "FLAG" in r.get("verification_status", "").upper() or "FLAG" in r.get("notes", "").upper():
         warnings.append(f"master:{i} flagged for manual review ({r.get('decision_id','')})")
 ids = [r.get("decision_id") for r in master]
+# ---- NME master year coverage (1998-2026, added 2026-09-17 v7) ------------
+# Rows flagged NOT_ON_FDA_NME_TABLE (e.g. D634 Contrave, a Type 4 combination
+# kept only for transparency) do not count toward the official year totals.
+master_years = {}
+for r in master:
+    if "NOT_ON_FDA_NME_TABLE" in (r.get("verification_status", "") + r.get("notes", "")):
+        continue
+    y = r.get("decision_date", "")[:4]
+    master_years[y] = master_years.get(y, 0) + 1
+missing_master_years = [str(y) for y in range(1998, 2027) if str(y) not in master_years]
+if missing_master_years:
+    errors.append(f"master: no rows for year(s) {', '.join(missing_master_years)} — 1998-2026 coverage claim broken")
+year_reg = read("fda_year_source_register.csv")
+if len(year_reg) != 29 or {r.get("year") for r in year_reg} != {str(y) for y in range(1998, 2027)}:
+    errors.append(f"fda_year_source_register: {len(year_reg)} rows, expected exactly one row per year 1998-2026")
+for r in year_reg:
+    check_url(r.get("official_source_url", ""), f"year_register:{r.get('year')}")
 for x in {x for x in ids if x}:
     if ids.count(x) > 1: warnings.append(f"master: duplicate decision_id {x} — deduplicate before refresh")
 
