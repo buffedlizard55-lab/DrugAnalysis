@@ -212,10 +212,64 @@ published_sum = sum(int(r.get("non_nme_published") or 0) for r in yreg)
 if published_sum != len(orig):
     errors.append(f"orig_year_register: sum(non_nme_published)={published_sum} != {len(orig)} orig rows")
 
+# ---- CRL master (expanded 2026-09-17: 58 hand-verified + 400 from openFDA CRL API)
+crl = read("fda_crl_master.csv")
+if len(crl) < 458:
+    errors.append(f"crl: {len(crl)} rows, expected >= 458 (58 hand-verified + 400 openFDA)")
+crl_ids = [r.get("crl_id") for r in crl]
+for x in {x for x in crl_ids if x}:
+    if crl_ids.count(x) > 1:
+        errors.append(f"crl: duplicate crl_id {x}")
+for i, r in enumerate(crl, 2):
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r.get("crl_date", "")):
+        errors.append(f"crl:{i}: invalid ISO crl_date {r.get('crl_date','')!r}")
+    if not (2000 <= int(r["crl_date"][:4] or 0) <= 2026):
+        errors.append(f"crl:{i}: crl_date outside 2000-2026")
+    for k in ("source_url_1", "source_url_2"):
+        if not r.get(k, "").strip():
+            errors.append(f"crl:{i}: missing {k}")
+        check_url(r.get(k, ""), f"crl:{i}:{k}")
+    if not r.get("company_name", "").strip():
+        errors.append(f"crl:{i}: blank company_name")
+new_crl = [r for r in crl if r.get("crl_id", "").startswith("CR-")]
+if any(not r.get("stock_reaction") for r in new_crl):
+    pass  # blank price reaction is allowed and expected (blank beats guessed)
+if any(r.get("ticker") and r.get("verification_status", "") == "Verified - FLAGGED (sponsor/equity not yet resolved)"
+       for r in new_crl):
+    errors.append("crl: CR- row has both a ticker and an unresolved-sponsor flag")
+warnings.append(f"crl: {sum(1 for r in new_crl if not r.get('ticker'))} of {len(new_crl)} new CRL rows have "
+                f"unresolved sponsors (flagged, blank ticker — never guessed)")
+
+# ---- ClinicalTrials.gov Phase 3 registry (2026-09-17 capture)
+ctgov = read("clinical_trials_phase3_registry.csv")
+if len(ctgov) < 2000:
+    errors.append(f"ctgov: {len(ctgov)} rows, expected >= 2000 from the 2026-09-17 capture")
+ncts = [r.get("nct_id") for r in ctgov]
+if len(ncts) != len(set(ncts)):
+    errors.append("ctgov: duplicate nct_id")
+for i, r in enumerate(ctgov, 2):
+    if not re.fullmatch(r"NCT\d{8}", r.get("nct_id", "")):
+        errors.append(f"ctgov:{i}: bad nct_id {r.get('nct_id','')!r}")
+        continue
+    if r.get("source_url") != f"https://clinicaltrials.gov/study/{r['nct_id']}":
+        errors.append(f"ctgov:{i}: source_url does not match the official study page")
+    d = r.get("primary_completion_date", "")
+    # ClinicalTrials.gov publishes day- or month-precision dates; both kept verbatim
+    if d and not (re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) or re.fullmatch(r"\d{4}-\d{2}", d)):
+        errors.append(f"ctgov:{i}: primary_completion_date {d!r} not ISO YYYY-MM-DD / YYYY-MM")
+    if d and d[:4] not in {"2026", "2027"}:
+        errors.append(f"ctgov:{i}: primary_completion_date {d!r} outside capture window")
+    if not r.get("lead_sponsor", "").strip():
+        errors.append(f"ctgov:{i}: blank lead_sponsor")
+    if r.get("ticker") and r.get("investability_class") != "US-LISTED":
+        errors.append(f"ctgov:{i}: ticker present but investability_class is {r.get('investability_class')!r}")
+
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows, {len(oscores)} orig scorecards, {len(t1gap)} Type-1-gap flags, "
       f"{len(exp)} label-expansion scorecards, {len(audit)} cross-check rows, "
-      f"{len(scores)} company scorecards, and {len(prices)} price snapshots.")
+      f"{len(scores)} company scorecards, {len(prices)} price snapshots, "
+      f"{len(crl)} CRL rows (+{len(new_crl)} new from the openFDA CRL database), and "
+      f"{len(ctgov)} ClinicalTrials.gov Phase 3 rows.")
 print(f"Warnings requiring manual review: {len(warnings)}")
 for w in warnings[:12]: print("WARNING", w)
 if len(warnings) > 12: print(f"WARNING ... {len(warnings)-12} more")

@@ -945,6 +945,10 @@ function fillCounts() {
   setCount('pipeline', (overview.pipeline || []).length);
   setCount('pdufa', (overview.pdufa || []).length);
   setCount('trials', (overview.trials || []).length);
+  setCount('crl', (overview.crls || []).length);
+  setCount('crlunres', (overview.crls || []).filter(r => (r.verification_status || '').includes('FLAGGED')).length);
+  setCount('ctgov', (overview.ctgov || []).length);
+  setCount('ctgovus', (overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length);
 
   /* Efficacy supplements + verification audit */
   const suppl = overview.suppl || [], audit = overview.audit || [];
@@ -1010,13 +1014,15 @@ Promise.all([
   loadCSV('data/company_label_expansion_scorecard.csv').then(x => x.records).catch(() => []),
   loadCSV('data/fda_original_non_nme_decisions.csv').then(x => x.records).catch(() => []),
   loadCSV('data/company_original_approval_scorecard.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/fda_type1_not_in_nme_master.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap]) => {
+  loadCSV('data/fda_type1_not_in_nme_master.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/clinical_trials_phase3_registry.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
   overview.suppl = suppl; overview.audit = audit; overview.expansion = expansion;
   overview.orig = orig; overview.origScores = origScores; overview.t1gap = t1gap;
+  overview.ctgov = ctgov;
 
   fillCounts();
   drawCoverage(master);
@@ -1142,6 +1148,36 @@ Promise.all([
     searchFields: ['company_name', 'drug_name', 'indication', 'ticker'],
     searchPlaceholder: 'Search rejections…',
     sort: { key: 'crl_date', dir: 'desc' }, pageSize: 25
+  });
+
+  /* ClinicalTrials.gov Phase 3 registry (2026-2027 primary-completion window) */
+  DataTable({
+    id: 'ctgov', mount: '#ctgov-view', csv: 'data/clinical_trials_phase3_registry.csv',
+    columns: [
+      c('nct_id', 'NCT', { core: true, render: r => `<code>${escapeHtml(r.nct_id)}</code>` }),
+      c('primary_completion_date', 'Primary completion', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.primary_completion_date)}</span>` }),
+      c('lead_sponsor', 'Lead sponsor', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => r.ticker ? `<strong>${escapeHtml(r.ticker)}</strong>` : '<span class="badge neutral">—</span>' }),
+      c('conditions', 'Condition', { core: true, trunc: true }),
+      c('drug_interventions', 'Drug(s)', { core: true, trunc: true }),
+      c('primary_outcome_measure', 'Primary endpoint', { trunc: true }),
+      c('phases', 'Phase', { core: true }),
+      c('study_status', 'Status', { core: true }),
+      c('investability_class', 'Investable?', { core: true, render: r => classBadge(r.investability_class) }),
+      c('source_url', 'Official record', { core: true, render: r => linkify(r.source_url, 'CT.gov'), detail: r => r.source_url }),
+      c('brief_title', 'Title', { trunc: true }),
+      c('sponsor_class', 'Sponsor class'),
+      c('primary_completion_date_type', 'Date type'),
+      c('sponsor_resolution_basis', 'How resolved', { trunc: true, render: r => truncCell(r.sponsor_resolution_basis) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['nct_id', 'lead_sponsor', 'conditions', 'drug_interventions', 'ticker', 'brief_title'],
+    searchPlaceholder: 'Search NCT, sponsor, drug, condition…',
+    sort: { key: 'primary_completion_date', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'inv', label: 'All sponsor classes', field: 'investability_class' },
+      { key: 'stat', label: 'All statuses', field: 'study_status' }
+    ]
   });
 
   /* Efficacy supplements (label expansions) */
@@ -1415,22 +1451,6 @@ Promise.all([
     filters: [
       { key: 'conf', label: 'All confidence levels', field: 'confidence' },
       { key: 'cls', label: 'All listing classes', field: 'us_investable_class' },
-      { key: 'min', label: 'Minimum decisions tracked', options: () => ['1', '2', '3', '5'],
-        match: (r, v) => +r.decisions_tracked >= +v }
-    ]
-  });
-
-  /* Qualitative pipeline cards */
-  loadCSV('data/company_scorecards.csv').then(({ records }) => drawPipelineCards(records)).catch(() => {
-    document.getElementById('cards-deep').innerHTML = '<div class="notice">company_scorecards.csv could not be loaded.</div>';
-  });
-}).catch(err => {
-  document.querySelector('main').insertAdjacentHTML('afterbegin',
-    `<div class="notice">Data load failed: ${escapeHtml(err.message)}</div>`);
-});
-
-openTabFromHash();
-es', field: 'us_investable_class' },
       { key: 'min', label: 'Minimum decisions tracked', options: () => ['1', '2', '3', '5'],
         match: (r, v) => +r.decisions_tracked >= +v }
     ]
