@@ -1,8 +1,39 @@
 # Verification Report — Original non-NME universe — v4 Sep 2026
 
-**Date:** 2026-09-16 v4 (this session)
-**Branch:** `arena/01a0ac27-druganalysis`
-**Validator:** `python3 scripts/validate_data.py` — PASS (980 novel-approval rows, 4,482 efficacy supplements, **1,997 original non-NME rows**, 88 orig scorecards, 41 Type-1-gap flags, 99 label-expansion scorecards, 980 cross-check rows, 434 company scorecards, 93 price snapshots)
+**Date:** 2026-09-17 v5 (this session)
+**Branch:** `arena/01a0acc2-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — PASS (980 novel-approval rows, 4,482 efficacy supplements, 1,997 original non-NME rows, 88 orig scorecards, 41 Type-1-gap flags, 99 label-expansion scorecards, 980 cross-check rows, 434 company scorecards, 93 price snapshots, **458 CRL rows (+400 new)**, **2,000 ClinicalTrials.gov Phase 3 rows**)
+
+## Summary — this session (v5): +2,400 new verified rows (400 CRLs + 2,000 Phase 3 trials)
+
+| Dataset | Rows | Source | Verification |
+|---|---|---|---|
+| **CRL master expansion** | **+400** (58 → 458, every FDA-published CRL letter 2002–2026) | official openFDA CRL transparency database (458 total as of capture) | Every new row carries two official links: reproducible `api.fda.gov/transparency/crl.json` query + Drugs@FDA application page. Spot re-opened against the live FDA API this session: `CR-NDA219107-20260721` (Apiject Systems Corp., NDA 219107, letter 07/21/2026, "cannot approve … in its present form") — MATCH. Row identity = (application number, letter date); no duplicate pairs exist. |
+| — of which sponsor resolved | 86 | strict resolver (see below) | Ticker printed only when the FDA applicant name equals a repository-verified row or an exact SEC registrant title (case/punctuation/legal-suffix removal only). |
+| — of which unresolved | 314 | — | Left blank with explicit flag `Verified - FLAGGED (sponsor/equity not yet resolved)`. Drug/indication stay "See FDA letter" (no structured field exists upstream). |
+| **ClinicalTrials.gov Phase 3 registry** | **2,000** (primary completion 2026–2027) | official ClinicalTrials.gov API v2, verbatim 40-page capture on GitHub Actions with per-request SHA-256 (`data/raw/clinicaltrials_phase3_2026_2027/`) | 314 rows resolved to US-listed issuers; 1,077 academic/government/network sponsors labelled "NOT A COMPANY"; 609 unresolved — flagged, never guessed. Spot re-opened against the live registry: NCT05166889 (AstraZeneca tozorakimab COPD, primary completion 2026-01-19, Completed) — MATCH. Capture scope honestly stated: the API's first 2,000 matching studies — a verbatim window, not a claim of completeness. |
+
+### Ticker-resolution policy (new for this session) and the false positives it prevented
+
+`build_crl_master_v2.py` first trialled the repository's general resolver (`resolve_tickers.py`, which falls back to token matching). Line-by-line review found **7 provably wrong matches**, all from the token-fallback and over-aggressive generic-word stripping; the builder therefore admits only exact matches (repo-verified standalone rows; SEC title equality after removing legal suffixes only):
+
+| FDA applicant | Wrongly matched to (would-be) | Why it is wrong |
+|---|---|---|
+| Swedish Orphan Biovitrum AB | Eco Wave Power Global (WAVE) | wave-energy company; collision on token "publ" |
+| Cadence Pharmaceuticals | Cadence Design Systems (CDNS) | EDA software company |
+| InnoPharma Licensing LLC | Music Licensing Inc. (SONG) | collision on token "licensing" |
+| Armstrong Pharmaceuticals | Armstrong World Industries (AWI) | building products |
+| Clarus Therapeutics | Clarus Corp (CLAR) | outdoor products |
+| RB Health (US) LLC | RB Global (RBA) | auctioneers; collision on generic "us"/"health" stripping |
+| Conjupro Biotherapeutics | Protalix BioTherapeutics (PLX) | token "biotherapeutics" collision |
+
+**Flagged for manual adjudication (pre-existing master rows, not silently changed):** two `fda_decisions_master.csv` rows disagree on Sunovion — `NO_TICKER` ("Sumitomo Dainippon subsidiary") vs `TSE:4568`. TSE 4568 is Daiichi Sankyo; Sunovion's parent was Dainippon Sumitomo Pharma (TSE 4506). The CRL builder block-lists this key so the conflict does not propagate into new rows.
+
+### Verification statistics
+
+- CRL new rows: 400/400 have date + application number + 2 official links; 0 duplicate (app, date) pairs; 86 resolved, 314 flagged-blank.
+- CT.gov rows: 2,000/2,000 have valid NCT id + official study link; dates within 2026–2027 (day- or month-precision, kept verbatim); 314 US-listed, 1,077 non-commercial, 609 unresolved.
+- Both captures verbatim with manifest SHA-256 under `data/raw/`.
 
 ## Summary — this session (v4)
 

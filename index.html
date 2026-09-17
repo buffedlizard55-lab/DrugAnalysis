@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DrugAnalysis — FDA Decision Engine for Biotech Investors</title>
-<meta name="description" content="Track FDA drug approvals, original non-NME decisions, stock reactions, and company success rates. 980 novel approvals plus 1,997 original non-NME decisions (2000-2026) with official source links. Decision engine predicts approval likelihood using published base rates.">
+<meta name="description" content="Track FDA drug approvals, original non-NME decisions, label expansions, CRL rejections, upcoming Phase 3 trial endpoints, stock reactions, and company success rates. 980 novel approvals plus 1,997 original non-NME decisions and 4,482 label expansions (2000-2026) with official source links. Decision engine predicts approval likelihood using published base rates.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
@@ -14,13 +14,15 @@
     <div class="header-content">
       <div class="header-title">
         <h1>💊 DrugAnalysis</h1>
-        <p class="tagline">FDA Decision Engine for Biotech Investors — <strong><span data-count="alldecisions">…</span> verified FDA decisions</strong> (2000–2026): <span data-count="master">980</span> novel approvals, <span data-count="orig">…</span> original non-NME approvals, and <span data-count="suppl">…</span> label expansions, each with <strong>official FDA source links</strong>, alongside <strong>verified stock reactions</strong> and <strong>company success scores</strong>. Conflicts flagged, never guessed.</p>
+        <p class="tagline">FDA Decision Engine for Biotech Investors — <strong><span data-count="alldecisions">…</span> verified FDA decisions</strong> (2000–2026): <span data-count="master">980</span> novel approvals, <span data-count="orig">…</span> original non-NME approvals, <span data-count="suppl">…</span> label expansions, and <span data-count="crl">…</span> CRL rejections, plus <span data-count="ctgov">…</span> registered Phase 3 trials (2026–2027 readouts) — each with <strong>official source links</strong>, alongside <strong>verified stock reactions</strong> and <strong>company success scores</strong>. Conflicts flagged, never guessed.</p>
       </div>
       <div class="header-stats">
         <div class="stat"><span class="stat-num" data-count="alldecisions">—</span><span class="stat-label">FDA Decisions</span></div>
         <div class="stat"><span class="stat-num" data-count="master">980</span><span class="stat-label">Novel Approvals</span></div>
         <div class="stat"><span class="stat-num" data-count="orig">—</span><span class="stat-label">Originals (non-NME)</span></div>
         <div class="stat"><span class="stat-num" data-count="suppl">—</span><span class="stat-label">Label Expansions</span></div>
+        <div class="stat"><span class="stat-num" data-count="crl">—</span><span class="stat-label">CRL Rejections</span></div>
+        <div class="stat"><span class="stat-num" data-count="ctgov">—</span><span class="stat-label">Phase 3 Trials</span></div>
         <div class="stat"><span class="stat-num" data-count="scores">—</span><span class="stat-label">Companies Scored</span></div>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
       </div>
@@ -44,6 +46,7 @@
   <button class="tab-btn" data-tab="pipeline"><span class="tab-icon">🔬</span> Pipeline Tracker</button>
   <button class="tab-btn" data-tab="pdufa"><span class="tab-icon">📅</span> PDUFA Calendar</button>
   <button class="tab-btn" data-tab="trials"><span class="tab-icon">🧪</span> Trial Endpoints</button>
+  <button class="tab-btn" data-tab="ctgov"><span class="tab-icon">🗃️</span> Phase 3 Registry</button>
   <button class="tab-btn" data-tab="prices"><span class="tab-icon">💹</span> Stock Reactions</button>
   <button class="tab-btn" data-tab="supplements"><span class="tab-icon">🔁</span> Label Expansions</button>
   <button class="tab-btn" data-tab="expansion-scores"><span class="tab-icon">📶</span> Expansion Scorecard</button>
@@ -278,9 +281,17 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
   <!-- CLINICAL TRIAL ENDPOINTS -->
   <section id="trials" class="tab-panel">
     <h2>🧪 Clinical Trial Endpoints — Upcoming Readouts</h2>
-    <p class="section-desc">Upcoming clinical trial endpoints being reviewed by FDA as well as Phase 3 readouts that could lead to NDA/BLA filings. Each with expected date, endpoint type, status, and official source links. This forward-tracks catalysts before PDUFA. <strong>New table — 8 upcoming Phase 3 readouts tracked from SEC filings and company IR.</strong></p>
+    <p class="section-desc">Upcoming clinical trial endpoints being reviewed by FDA as well as Phase 3 readouts that could lead to NDA/BLA filings. Each with expected date, endpoint type, status, and official source links. This forward-tracks catalysts before PDUFA. <strong>8 upcoming Phase 3 readouts tracked from SEC filings and company IR.</strong></p>
     <div class="notice info"><strong>How this feeds decision engine:</strong> Phase 3 → NDA/BLA 57.8% base rate (BIO 2011-2020), Phase 3 → approval 52.4% LOA. Trial outcome determines filing likelihood. Each endpoint verified via SEC filings or company IR.</div>
     <div id="trials-view"></div>
+  </section>
+
+  <!-- CLINICALTRIALS.GOV PHASE 3 REGISTRY -->
+  <section id="ctgov" class="tab-panel">
+    <h2>🗃️ Phase 3 Trial Registry — ClinicalTrials.gov (2026–2027 readouts)</h2>
+    <p class="section-desc"><strong><span data-count="ctgov">…</span> registered Phase 3 studies</strong> with a primary completion date in 2026–2027, copied value-for-value from the official <a href="https://clinicaltrials.gov/api/v2/studies" target="_blank" rel="noopener noreferrer">ClinicalTrials.gov API v2</a> on 2026-09-17 (verbatim capture with per-request SHA-256 manifest in <code>data/raw/clinicaltrials_phase3_2026_2027/</code>). Every row links its official <code>clinicaltrials.gov/study/&lt;NCT&gt;</code> record. Lead sponsors are joined to listed securities with the repository's strict policy (repository-verified rows; exact SEC registrant-title match after removing only legal suffixes). Unresolved sponsors stay blank — never guessed.</p>
+    <div class="notice"><strong>Read this honestly:</strong> the capture is the API's first 2,000 matching studies (40 pages × 50); it is a large verbatim <em>window</em>, not a claim of every Phase 3 study completing 2026–2027. 1,077 rows have academic/government/network lead sponsors (no listed equity) and 609 have commercial sponsors not yet resolved to a security — both flagged, not dropped. The <code>US-LISTED</code> rows (<span data-count="ctgovus">…</span>) are the investable subset. Primary completion dates are sponsor-estimated; treat as catalyst windows, not certainties.</div>
+    <div id="ctgov-view"></div>
   </section>
 
   <!-- PRICES -->
@@ -317,9 +328,9 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
   </section>
 
   <section id="crls" class="tab-panel">
-    <h2>⚠️ Complete Response Letters (Rejections) — Regulatory Setbacks</h2>
-    <p class="section-desc">FDA rejections and regulatory setbacks for publicly traded companies — irregularities worth tracking, including repeat-CRL cases. C004 (Outlook Therapeutics / Lytenava) marked <em>RESOLVED</em>: after third CRL on 2025-12-31 BLA resubmitted and approved on 2026-07-24.</p>
-    <div class="notice"><strong>CRL = Complete Response Letter</strong> — FDA's formal rejection stating application cannot be approved in present form. Requires sponsor to address deficiencies and resubmit. Track record of CRLs is critical for decision engine — repeat CRLs (e.g. Aldeyra/Reproxalap: 3 CRLs same indication) are strong negative signal.</div>
+    <h2>⚠️ Complete Response Letters (Rejections) — 458 FDA Rejection Decisions</h2>
+    <p class="section-desc"><strong><span data-count="crl">…</span> CRL rows</strong>: the 58 deep-verified rows (news-corroborated, stock-reaction notes where available) plus <strong>400 rows added 2026-09-17</strong> from FDA's own <a href="https://open.fda.gov/apis/transparency/completeresponseletters/" target="_blank" rel="noopener noreferrer">CRL transparency database</a> — every FDA-published CRL 2002–2026 naming a letter date and application number, each row with two official source links (openFDA CRL API query + Drugs@FDA application page). Irregularities worth tracking, including repeat-CRL cases. C004 (Outlook Therapeutics / Lytenava) marked <em>RESOLVED</em>: after third CRL on 2025-12-31 BLA resubmitted and approved on 2026-07-24.</p>
+    <div class="notice"><strong>CRL = Complete Response Letter</strong> — FDA's formal rejection stating application cannot be approved in present form. Requires sponsor to address deficiencies and resubmit. Track record of CRLs is critical for decision engine — repeat CRLs (e.g. Aldeyra/Reproxalap: 3 CRLs same indication) are strong negative signal. <strong>How tickers were assigned to the 400 new rows:</strong> only a repository-verified name match or an exact SEC-registrant title match (legal suffixes removed) was accepted; the trial of a looser matcher produced 7 provably wrong matches (e.g. biotech "Swedish Orphan Biovitrum" → wave-energy company Eco Wave Power) and was rejected. <span data-count="crlunres">…</span> new rows therefore carry a blank ticker and an explicit unresolved-sponsor flag; drug/indication text stays "See FDA letter" because FDA's database has no structured field for them.</div>
     <div id="crls-view"></div>
   </section>
 
@@ -381,7 +392,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       </ul>
 
       <h3>📊 The 1000 Verified Entries — No Hallucinations</h3>
-      <p>This repository contains <strong>980 verified FDA novel-drug approvals</strong> covering every year 2000-2026, plus 58 CRLs and 63 verified stock snapshots (30 pending via fetch job). Total 1038 core analysis rows. Each row verified line-by-line from official sources:</p>
+      <p>This repository contains <strong>980 verified FDA novel-drug approvals</strong> covering every year 2000-2026, plus 4,482 efficacy supplements, 1,997 original non-NME approvals, 458 CRLs (58 deep-verified + 400 from FDA's CRL transparency database), 2,000 ClinicalTrials.gov Phase 3 records, 93 verified stock snapshots and 434 company scores. Each row verified line-by-line from official sources:</p>
       <ul>
         <li><strong>2000:</strong> 27 NMEs — FDA NME Drug and New Biologic Approvals in 2000 (Wayback capture of FDA.gov)</li>
         <li><strong>2001-2010:</strong> 24+17+21+36+20+22+18+24+26+21 = 229 NMEs — FDA year tables via Wayback</li>
@@ -395,7 +406,9 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 
       <h3>🔬 Sources — Official Verified Trusted Sources Only</h3>
       <ul>
-        <li><strong>FDA decisions:</strong> FDA.gov <em>Novel Drug Approvals</em> pages, FDA official annual <em>New Drug Therapy Approvals</em> reports (Appendix A = novel-approval list, Appendix B = designations), Internet Archive captures of FDA pages taken offline, official openFDA Drugs@FDA API (<code>api.fda.gov/drug/drugsfda.json</code>, used to resolve applicant of record and review priority for every application number), official openFDA CRL transparency API (<code>api.fda.gov/transparency/crl.json</code>), <code>accessdata.fda.gov</code> approval letters and labels, FDA Drug Trials Snapshots, FDA NME Compilation 1985-2025 (official Excel).</li>
+        <li><strong>FDA decisions:</strong> FDA.gov <em>Novel Drug Approvals</em> pages, FDA official annual <em>New Drug Therapy Approvals</em> reports (Appendix A = novel-approval list, Appendix B = designations), Internet Archive captures of FDA pages taken offline, official openFDA Drugs@FDA API (<code>api.fda.gov/drug/drugsfda.json</code>, used to resolve applicant of record and review priority for every application number), official openFDA CRL transparency API (<code>api.fda.gov/transparency/crl.json</code> — the 400 CRL rows added 2026-09-17), <code>accessdata.fda.gov</code> approval letters and labels, FDA Drug Trials Snapshots, FDA NME Compilation 1985-2025 (official Excel).</li>
+        <li><strong>Trial endpoints:</strong> official <a href="https://clinicaltrials.gov/api/v2/studies" target="_blank" rel="noopener noreferrer">ClinicalTrials.gov API v2</a> (Phase 3 studies with primary completion 2026–2027, verbatim capture 2026-09-17 with SHA-256 manifest; every row links <code>clinicaltrials.gov/study/&lt;NCT&gt;</code>); company SEC filings and IR releases for the 8 hand-verified endpoint rows.</li>
+        <li><strong>Ticker resolution:</strong> official SEC <code>company_tickers.json</code> exact registrant-title match (legal suffixes removed only) plus names already verified row-by-row in this repository. A looser token matcher was trialled for the CRL expansion, produced 7 provably wrong matches, and was excluded; unresolved sponsors stay blank with an explicit flag.</li>
         <li><strong>Stock prices:</strong> Yahoo Finance chart API (<code>query1.finance.yahoo.com/v8/finance/chart/&lt;TICKER&gt;</code>), captured for window around every decision date and stored verbatim in <code>data/staging/</code>. Each response's <code>meta.longName</code> and <code>meta.fullExchangeName</code> checked against expected issuer and exchange before row accepted.</li>
         <li><strong>Company/pipeline detail:</strong> Company's own press releases and SEC filings plus reputable biotech trade press, always cited with direct link.</li>
         <li><strong>Base rates for decision engine:</strong> FDA PDUFA/CDER reporting, BIO–QLS–Informa <em>Clinical Development Success Rates 2011–2020</em>, FDA accelerated-approval programme pages, each linked next to figure.</li>
@@ -471,7 +484,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 <footer class="site-footer">
   <div class="wrap">
     <div>
-      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 980 novel approvals + 1,997 original non-NME decisions + 4,482 label expansions (2000–2026) + CRLs + stock reactions + company scores. Every row with official source links.</p>
+      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 980 novel approvals + 1,997 original non-NME decisions + 4,482 label expansions + 458 CRLs (2000–2026) + 2,000 ClinicalTrials.gov Phase 3 records + stock reactions + company scores. Every row with official source links.</p>
       <p>Data compiled by autonomous research agent from official public sources. Always verify against linked primary sources before making decisions. Not investment advice.</p>
     </div>
     <div>

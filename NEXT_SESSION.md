@@ -1,50 +1,31 @@
-# Remaining work for the next session (written 2026-09-16 v4)
+# Remaining work for the next session (written 2026-09-17 v5)
 
-This file is the hand-off. The sandbox that edits the repo has **no general outbound network**. Every external fetch must go through GitHub Actions (`fetch_jobs/*.json` → `scripts/run_fetch_jobs.py` → `data/raw/<job>/` + SHA-256 manifest). Blank beats guessed. Do not invent 1,000 novel approvals — the NME master already matches FDA’s official year counts.
+This file is the hand-off. The sandbox that edits the repo has **no general outbound network**. Every external fetch must go through GitHub Actions (`fetch_jobs/*.json` → `scripts/run_fetch_jobs.py` → `data/raw/<job>/` + SHA-256 manifest). Blank beats guessed.
 
 ## What this session shipped
 
-- `data/fda_original_non_nme_decisions.csv` — **1,997** original NDA/BLA approvals 2000–2026 that are **not** Type 1 NMEs. IDs `O-{appl}`. 819 US-listed, 781 unresolved sponsors left unresolved.
-- `data/company_original_approval_scorecard.csv` — 88 issuers, clinical-relevant = Type 2+3+4+new-indication originals. Type 5 and medical gases excluded from that numerator.
-- `data/fda_type1_not_in_nme_master.csv` — 41 Type 1 openFDA rows not matched to the NME master. **FLAGGED, not merged.**
-- `data/fda_orig_year_register.csv` — 27 years, `sum(non_nme_published)=1997`.
-- Site: Originals tab, Orig Scorecard, Private & Non-US tabs restored, dark mode.
-- Validator: orig schema, no Type 1 leak, 2000–2026 coverage, scorecard counts must match.
+- `data/fda_crl_master.csv` — **458 CRL rows** (58 deep-verified untouched + 400 new from the official openFDA CRL transparency database, ids `CR-<APP>-<YYYYMMDD>`). Builder: `scripts/build_crl_master_v2.py`. Resolution audit: `data/staging/crl_sponsor_resolution_v2.json`. **86 resolved, 314 flagged-blank.**
+- `data/clinical_trials_phase3_registry.csv` — **2,000 Phase 3 studies** with primary completion 2026–2027 from the official ClinicalTrials.gov API v2 (verbatim capture `data/raw/clinicaltrials_phase3_2026_2027/`, 40 pages × 50, SHA-256 manifest). Builder: `scripts/build_ctgov_phase3_registry.py`. 314 US-listed / 1,077 non-commercial / 609 unresolved-flagged. Every row links `https://clinicaltrials.gov/study/<NCT>`.
+- A looser token-based ticker matcher was trialled for the CRL expansion, produced **7 provably wrong matches** (Swedish Orphan Biovitrum→Eco Wave Power, Cadence Pharma→Cadence Design, InnoPharma→Music Licensing, Armstrong Pharma→Armstrong World, Clarus Therapeutics→Clarus Corp, RB Health→RB Global, Conjupro→Protalix) and was **excluded**. Published resolver = repo-verified standalone rows + exact SEC titles (legal suffixes only).
+- Flagged (not fixed): two master rows disagree on Sunovion (`NO_TICKER` vs `TSE:4568` = Daiichi Sankyo; Sunovion's parent was Dainippon Sumitomo, TSE 4506). Block-listed in the CRL builder so it cannot propagate.
+- Site: 🗃️ Phase 3 Registry tab, ⚠️ CRLs tab (458), header counts, methodology updates. Validator extended to both new tables — PASS.
 
-Do **not** recount the 980 NMEs or the 4,482 efficacy supplements. Do **not** run `scripts/build_crl_expanded.py`.
+## Highest-value next steps
 
-## Highest-value next universe: ClinicalTrials.gov Phase 3
-
-Queued, not yet collected:
-
-- `fetch_jobs/clinicaltrials_phase3_2026_2027.json` (type `ctgov`, implemented in `scripts/run_fetch_jobs.py`)
-- After Actions writes `data/raw/clinicaltrials_phase3_2026_2027/studies.json`, build a **new** table `data/clinical_trial_endpoints.csv` expansion (do not overwrite the existing 8 hand-verified rows — append with a distinct id scheme, e.g. `CT-{nctid}`).
-- Join lead sponsor to `sponsor_registry.csv`. Unresolved sponsors stay `UNRESOLVED`. Never guess a ticker.
-- Official source on every row: `https://clinicaltrials.gov/study/{NCTId}`.
-- Do not fill expected dates that CT.gov left blank.
-
-## Other official universes still unused
-
-1. **Remaining CRLs.** `data/fda_crl_full_458.csv` has the raw 457. The published master has 58. Write a *new* builder (do not reuse `build_crl_expanded.py`) that only adds US-investable CRLs with two official source links. Flag letters that name no public company.
-2. **CBER Type 1 gap (41 rows).** Humira, Neulasta, Fabrazyme, Xolair, Aranesp, etc. are real CBER biologics missing from the CDER NME master. Adjudicate against FDA CBER year tables / Purple Book. Merge into `fda_decisions_master.csv` **only** if an official year table confirms the count would still match; otherwise leave them in the gap file. Blank beats guessed.
-3. **Purple Book biosimilars.** 351(k) originals in the orig file often have unpublished class codes. A dedicated Purple Book extract would label them without guessing.
-4. **Orig-event prices.** 819 US-listed original approvals have no Yahoo/Stooq snapshot. Queue a `generic`/`stooq` fetch job for a *sample* of high-signal Type 2/3/4 dates — not Type 5 manufacturer changes, not medical gases. Degenerate series: flag, leave blank.
-5. **781 unresolved orig sponsors.** Extend `data/sponsor_registry.csv` from SEC `company_tickers.json` exact-title match only. No fuzzy “looks like Pfizer”.
-6. **Indication text.** Orig rows deliberately have none. If a next session adds indications, copy from the Drugs@FDA label / approval letter, never paraphrase.
-
-## Known limitations that still apply
-
-- NME master is CDER-complete vs official year counts; CBER 2000–2003 biologics (Humira, Neulasta, …) are still absent from it on purpose.
-- 9 source-vs-source date/brand mismatches on the NME audit (`verification_crosscheck.csv`) remain flagged, not overwritten.
-- `review_pathway` still blank for most pre-2021 NME rows (FDA archived tables publish no designation column).
-- Only 93 priced NME/CRL events; orig events unpriced.
-- Pipeline tracker is 34 deep-dives; the rest of the 434 scorecards are FDA-decisions-only.
-- Sandbox network is dead — do not retry `curl` to FDA/CT.gov from the editor.
+1. **Resolve the 314 flagged CRL sponsors + 609 unresolved CT.gov sponsors.** Extend `data/sponsor_registry.csv` from SEC `company_tickers.json` exact-title match only (the raw FDA strings need legal-suffix normalization — reuse `norm_legal()` from `build_crl_master_v2.py`). Do NOT fuzzy-match. For private/foreign applicants (Fresenius Kabi, Chiesi, Jiangsu Hengrui US agents, etc.) set an explicit foreign/private class instead of a ticker.
+2. **Capture the REST of the CT.gov window.** The 2,000-study capture is the API's first 2,000 matches. Queue a second fetch job with `query.term` + `countTotal=true` and page through with `pageToken` offsets beyond 2,000 (job type `ctgov` already supports paging via `max_pages`; add a `skip` param or use `query.term` sorts). Append with the same schema; never overwrite.
+3. **Price the US-listed CRL events.** 314 unresolved→86 resolved rows now have tickers but no stock snapshots. Queue a `generic` Yahoo-chart job for the resolved tickers × letter dates (start with 2024–2026 letters, ~30 per job per the 350-min runner limit). Degenerate series: flag, leave blank (precedents: NUVL, Trevena).
+4. **Adjudicate Sunovion** against Sumitomo Pharma's official IR (TSE 4506) and FDA letters; fix the disagreeing master rows with 2 official links each, or keep both with the flag.
+5. **CBER Type 1 gap (41 rows)** — still open. Adjudicate against FDA CBER year tables / Purple Book; merge into `fda_decisions_master.csv` only if an official year table confirms the count would still match.
+6. **Purple Book biosimilars** — label the 351(k) originals in `fda_original_non_nme_decisions.csv` without guessing class codes.
+7. **Indication text** for orig rows — copy from Drugs@FDA label/approval letter verbatim, never paraphrase.
+8. **PDUFA calendar** — 32 rows; the 16 secondary-aggregation rows still need primary press-release verification (fetch job capturing company IR/8-K verbatim).
 
 ## Do not
 
-- Invent novel approvals to pad toward “1000 new NMEs”.
-- Merge the 41 Type 1 gap rows into the master without an official year-count check.
+- Invent novel approvals to pad toward "1000 new NMEs" — the NME master matches FDA's official year counts.
+- Re-introduce token/substring ticker matching. 7 documented false positives; blank beats guessed.
+- Merge the 41 Type 1 gap rows without an official year-count check.
 - Treat Type 5 manufacturer changes or medical gases as clinical-trial conversions.
-- Fill missing prices, dates, indications, or tickers.
-- Silently overwrite a source conflict.
+- Fill missing prices, dates, indications, or tickers; silently overwrite a source conflict; overwrite the 58 hand-verified CRL rows or the 8 hand-verified trial endpoints.
+- Claim the 2,000-study CT.gov capture is exhaustive — it is the API's first 2,000 matches (see item 2).
