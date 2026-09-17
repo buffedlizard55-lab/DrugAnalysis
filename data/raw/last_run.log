@@ -1,3 +1,45 @@
+== job clinicaltrials_phase3_2026_2027 (1 spec(s)) ==
+ok phase3_upcoming page 1: 50 studies (running 50)
+ok phase3_upcoming page 2: 50 studies (running 100)
+ok phase3_upcoming page 3: 50 studies (running 150)
+ok phase3_upcoming page 4: 50 studies (running 200)
+ok phase3_upcoming page 5: 50 studies (running 250)
+ok phase3_upcoming page 6: 50 studies (running 300)
+ok phase3_upcoming page 7: 50 studies (running 350)
+ok phase3_upcoming page 8: 50 studies (running 400)
+ok phase3_upcoming page 9: 50 studies (running 450)
+ok phase3_upcoming page 10: 50 studies (running 500)
+ok phase3_upcoming page 11: 50 studies (running 550)
+ok phase3_upcoming page 12: 50 studies (running 600)
+ok phase3_upcoming page 13: 50 studies (running 650)
+ok phase3_upcoming page 14: 50 studies (running 700)
+ok phase3_upcoming page 15: 50 studies (running 750)
+ok phase3_upcoming page 16: 50 studies (running 800)
+ok phase3_upcoming page 17: 50 studies (running 850)
+ok phase3_upcoming page 18: 50 studies (running 900)
+ok phase3_upcoming page 19: 50 studies (running 950)
+ok phase3_upcoming page 20: 50 studies (running 1000)
+ok phase3_upcoming page 21: 50 studies (running 1050)
+ok phase3_upcoming page 22: 50 studies (running 1100)
+ok phase3_upcoming page 23: 50 studies (running 1150)
+ok phase3_upcoming page 24: 50 studies (running 1200)
+ok phase3_upcoming page 25: 50 studies (running 1250)
+ok phase3_upcoming page 26: 50 studies (running 1300)
+ok phase3_upcoming page 27: 50 studies (running 1350)
+ok phase3_upcoming page 28: 50 studies (running 1400)
+ok phase3_upcoming page 29: 50 studies (running 1450)
+ok phase3_upcoming page 30: 50 studies (running 1500)
+ok phase3_upcoming page 31: 50 studies (running 1550)
+ok phase3_upcoming page 32: 50 studies (running 1600)
+ok phase3_upcoming page 33: 50 studies (running 1650)
+ok phase3_upcoming page 34: 50 studies (running 1700)
+ok phase3_upcoming page 35: 50 studies (running 1750)
+ok phase3_upcoming page 36: 50 studies (running 1800)
+ok phase3_upcoming page 37: 50 studies (running 1850)
+ok phase3_upcoming page 38: 50 studies (running 1900)
+ok phase3_upcoming page 39: 50 studies (running 1950)
+ok phase3_upcoming page 40: 50 studies (running 2000)
+ok phase3_upcoming: 2000 studies -> data/raw/clinicaltrials_phase3_2026_2027/studies.json
 == job openfda_approvals_2000_2010 (1 spec(s)) ==
 ok orig_ap_2000: 2746 records -> data/raw/openfda_approvals_2000_2010/2000.json
 ok orig_ap_2001: 2861 records -> data/raw/openfda_approvals_2000_2010/2001.json
@@ -12,52 +54,24 @@ ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
 ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
 == job openfda_efficacy_supplements (1 spec(s)) ==
 == job openfda_orig_decisions_2011_2026 (1 spec(s)) ==
-ok orig_decisions_1999: 84 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1999.json
-ok orig_decisions_2000: 105 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2000.json
-ok orig_decisions_2001: 73 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2001.json
-ok orig_decisions_2002: 92 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2002.json
-ok orig_decisions_2003: 82 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2003.json
-ok orig_decisions_2004: 120 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2004.json
-ok orig_decisions_2005: 83 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2005.json
-ok orig_decisions_2006: 103 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2006.json
-ok orig_decisions_2007: 78 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2007.json
-ok orig_decisions_2008: 87 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2008.json
-ok orig_decisions_2009: 90 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2009.json
-ok orig_decisions_2010: 85 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2010.json
-ok orig_decisions_2011: 84 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2011.json
-ok orig_decisions_2012: 89 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2012.json
-ok orig_decisions_2013: 152 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2013.json
-ok orig_decisions_2014: 111 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2014.json
-ok orig_decisions_2015: 117 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2015.json
-ok orig_decisions_2016: 100 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2016.json
-ok orig_decisions_2017: 145 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2017.json
-ok orig_decisions_2018: 152 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2018.json
-ok orig_decisions_2019: 131 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2019.json
-ok orig_decisions_2020: 131 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2020.json
-ok orig_decisions_2021: 120 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2021.json
-ok orig_decisions_2022: 126 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2022.json
-ok orig_decisions_2023: 136 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2023.json
-ok orig_decisions_2024: 135 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2024.json
-ok orig_decisions_2025: 155 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2025.json
-ok orig_decisions_2026: 87 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_2026.json
 == job probe (5 spec(s)) ==
 FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
 ok sec_company_tickers_plain_ua 200 797759 bytes -> data/raw/probe/sec_company_tickers_alt.json
 ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
-ok yahoo_symbol_search_probe 200 2766 bytes -> data/raw/probe/yahoo_search_probe.json
+ok yahoo_symbol_search_probe 200 2596 bytes -> data/raw/probe/yahoo_search_probe.json
 == job stock_yahoo_batch_2026_09 (1 spec(s)) ==
-ok SRRK_2026-09-11 200 2480 bytes
-ok AZN_2026-09-04 200 3077 bytes
+ok SRRK_2026-09-11 200 2453 bytes
+ok AZN_2026-09-04 200 3049 bytes
 ok IONS_2026-09-03 200 2919 bytes
 ok REGN_2026-08-19 200 2975 bytes
 ok BMY_2026-08-13 200 3010 bytes
 ok LNTH_2026-08-13 200 3055 bytes
-ok OTLK_2026-07-24 200 3204 bytes
+ok OTLK_2026-07-24 200 3205 bytes
 ok NUVL_2026-07-22 200 1085 bytes
 ok MRK_2026-07-15 200 2942 bytes
 ok CELC_2026-07-14 200 2887 bytes
-ok VERA_2026-07-07 200 2814 bytes
+ok VERA_2026-07-07 200 2812 bytes
 ok VRDN_2026-06-26 200 2974 bytes
 ok BAYRY_2026-06-12 200 3032 bytes
 ok SGIOF_2026-05-29 200 2660 bytes
@@ -65,15 +79,15 @@ ok ABBV_2026-05-27 200 2866 bytes
 ok GILD_2026-05-22 200 3034 bytes
 ok AZN_2026-05-15 200 3031 bytes
 ok RIGL_2026-05-01 200 3147 bytes
-ok MRK_2026-04-20 200 3173 bytes
+ok MRK_2026-04-20 200 3172 bytes
 ok LLY_2026-04-01 200 2835 bytes
 ok NVO_2026-03-26 200 2895 bytes
 ok CORT_2026-03-25 200 2920 bytes
 ok JNJ_2026-03-17 200 3003 bytes
 ok GSK_2026-03-17 200 3024 bytes
-ok ASND_2026-02-27 200 2890 bytes
+ok ASND_2026-02-27 200 2891 bytes
 ok VNDA_2025-12-30 200 2716 bytes
-ok VRTX_2025-01-30 200 2928 bytes
-ok NBIX_2024-12-13 200 3056 bytes
+ok VRTX_2025-01-30 200 2929 bytes
+ok NBIX_2024-12-13 200 3055 bytes
 ok BBIO_2024-11-22 200 3062 bytes
 ok ZYME_2024-11-20 200 2881 bytes
