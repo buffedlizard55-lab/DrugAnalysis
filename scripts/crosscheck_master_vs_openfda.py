@@ -194,8 +194,24 @@ def main() -> int:
 
                     mb = norm(r.get("drug_brand", ""))
                     mg = norm(r.get("drug_generic", ""))
-                    brand_ok = bool(mb) and any(mb in n or n in mb for n in names)
-                    generic_ok = bool(mg) and any(mg in n or n in mg for n in names)
+
+                    def _same(a: str, b: str) -> bool:
+                        # Substring either way, OR identical once whitespace is
+                        # dropped ("Neotect" vs "NEO TECT KIT"), OR every master
+                        # token present in the openFDA name ("Gallium 68 PSMA-11"
+                        # vs "GALLIUM GA 68 PSMA-11"). Purely lexical — no lookup.
+                        if not a or not b:
+                            return False
+                        if a in b or b in a:
+                            return True
+                        aa, bb = a.replace(" ", ""), b.replace(" ", "")
+                        if aa in bb or bb in aa:
+                            return True
+                        ta = set(a.split())
+                        return bool(ta) and ta <= set(b.split())
+
+                    brand_ok = bool(mb) and any(_same(mb, n) for n in names)
+                    generic_ok = bool(mg) and any(_same(mg, n) for n in names)
                     comp_ok = bool(company_tokens(r.get("company_name", "")) &
                                    company_tokens(openfda_sponsor))
 

@@ -1,0 +1,266 @@
+[
+  {
+    "type": "ctgov",
+    "id": "phase3_2026H1",
+    "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "AREA[Phase]PHASE3 AND AREA[PrimaryCompletionDate]RANGE[2026-01-01,2026-06-30]",
+      "pageSize": "50",
+      "format": "json",
+      "countTotal": "true"
+    },
+    "project": {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": {},
+          "briefTitle": {},
+          "officialTitle": {},
+          "organization": {
+            "fullName": {}
+          }
+        },
+        "statusModule": {
+          "overallStatus": {},
+          "primaryCompletionDateStruct": {
+            "date": {},
+            "type": {}
+          },
+          "completionDateStruct": {
+            "date": {},
+            "type": {}
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": {},
+            "class": {}
+          }
+        },
+        "designModule": {
+          "phases": {}
+        },
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "name": {},
+              "type": {}
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": {},
+              "timeFrame": {}
+            }
+          ]
+        },
+        "conditionsModule": {
+          "conditions": {}
+        }
+      }
+    },
+    "max_pages": 30,
+    "sleep": 0.5,
+    "out": "studies_2026H1.json",
+    "skip_existing": true
+  },
+  {
+    "type": "ctgov",
+    "id": "phase3_2026H2",
+    "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "AREA[Phase]PHASE3 AND AREA[PrimaryCompletionDate]RANGE[2026-07-01,2026-12-31]",
+      "pageSize": "50",
+      "format": "json",
+      "countTotal": "true"
+    },
+    "project": {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": {},
+          "briefTitle": {},
+          "officialTitle": {},
+          "organization": {
+            "fullName": {}
+          }
+        },
+        "statusModule": {
+          "overallStatus": {},
+          "primaryCompletionDateStruct": {
+            "date": {},
+            "type": {}
+          },
+          "completionDateStruct": {
+            "date": {},
+            "type": {}
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": {},
+            "class": {}
+          }
+        },
+        "designModule": {
+          "phases": {}
+        },
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "name": {},
+              "type": {}
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": {},
+              "timeFrame": {}
+            }
+          ]
+        },
+        "conditionsModule": {
+          "conditions": {}
+        }
+      }
+    },
+    "max_pages": 35,
+    "sleep": 0.5,
+    "out": "studies_2026H2.json",
+    "skip_existing": true
+  },
+  {
+    "type": "ctgov",
+    "id": "phase3_2027H1",
+    "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "AREA[Phase]PHASE3 AND AREA[PrimaryCompletionDate]RANGE[2027-01-01,2027-06-30]",
+      "pageSize": "50",
+      "format": "json",
+      "countTotal": "true"
+    },
+    "project": {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": {},
+          "briefTitle": {},
+          "officialTitle": {},
+          "organization": {
+            "fullName": {}
+          }
+        },
+        "statusModule": {
+          "overallStatus": {},
+          "primaryCompletionDateStruct": {
+            "date": {},
+            "type": {}
+          },
+          "completionDateStruct": {
+            "date": {},
+            "type": {}
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": {},
+            "class": {}
+          }
+        },
+        "designModule": {
+          "phases": {}
+        },
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "name": {},
+              "type": {}
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": {},
+              "timeFrame": {}
+            }
+          ]
+        },
+        "conditionsModule": {
+          "conditions": {}
+        }
+      }
+    },
+    "max_pages": 45,
+    "sleep": 0.5,
+    "out": "studies_2027H1.json",
+    "skip_existing": true
+  },
+  {
+    "type": "ctgov",
+    "id": "phase3_2027H2",
+    "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "AREA[Phase]PHASE3 AND AREA[PrimaryCompletionDate]RANGE[2027-07-01,2027-12-31]",
+      "pageSize": "50",
+      "format": "json",
+      "countTotal": "true"
+    },
+    "project": {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": {},
+          "briefTitle": {},
+          "officialTitle": {},
+          "organization": {
+            "fullName": {}
+          }
+        },
+        "statusModule": {
+          "overallStatus": {},
+          "primaryCompletionDateStruct": {
+            "date": {},
+            "type": {}
+          },
+          "completionDateStruct": {
+            "date": {},
+            "type": {}
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": {},
+            "class": {}
+          }
+        },
+        "designModule": {
+          "phases": {}
+        },
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "name": {},
+              "type": {}
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": {},
+              "timeFrame": {}
+            }
+          ]
+        },
+        "conditionsModule": {
+          "conditions": {}
+        }
+      }
+    },
+    "max_pages": 45,
+    "sleep": 0.5,
+    "out": "studies_2027H2.json",
+    "skip_existing": true
+  }
+]
