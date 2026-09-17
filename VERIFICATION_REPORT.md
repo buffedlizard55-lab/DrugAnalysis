@@ -29,6 +29,10 @@
 
 **Flagged for manual adjudication (pre-existing master rows, not silently changed):** two `fda_decisions_master.csv` rows disagree on Sunovion — `NO_TICKER` ("Sumitomo Dainippon subsidiary") vs `TSE:4568`. TSE 4568 is Daiichi Sankyo; Sunovion's parent was Dainippon Sumitomo Pharma (TSE 4506). The CRL builder block-lists this key so the conflict does not propagate into new rows.
 
+### Site irregularity found and fixed this session (PR #18)
+
+During live-site verification after the v5 merge, the published page rendered `Data load failed: drawOrigCoverage is not defined`. Root cause: the v4 merge (PR #16) added a call to `drawOrigCoverage(orig)` in the boot sequence **without ever defining the function** (confirmed via `git log -S drawOrigCoverage` — the call arrived with no definition in any commit). Because all panels render inside one `Promise.all().then()`, the exception silently blanked every dynamic table below it (scores, pipeline, PDUFA, trials, prices, CRLs, supplements, verification audit). Fixed by implementing `drawOrigCoverage` (27-year coverage grid for the 1,997 originals, verified against the CSV: all 27 years populated, 1,997/1,997 rows carry an fda.gov source), adding the missing `#orig-coverage-view` container, and wrapping boot render calls in `safe()` try/catch so one failing panel can never blank the site again.
+
 ### Verification statistics
 
 - CRL new rows: 400/400 have date + application number + 2 official links; 0 duplicate (app, date) pairs; 86 resolved, 314 flagged-blank.
