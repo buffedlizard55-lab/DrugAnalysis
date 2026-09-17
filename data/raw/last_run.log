@@ -1,45 +1,95 @@
 == job clinicaltrials_phase3_2026_2027 (1 spec(s)) ==
-ok phase3_upcoming page 1: 50 studies (running 50)
-ok phase3_upcoming page 2: 50 studies (running 100)
-ok phase3_upcoming page 3: 50 studies (running 150)
-ok phase3_upcoming page 4: 50 studies (running 200)
-ok phase3_upcoming page 5: 50 studies (running 250)
-ok phase3_upcoming page 6: 50 studies (running 300)
-ok phase3_upcoming page 7: 50 studies (running 350)
-ok phase3_upcoming page 8: 50 studies (running 400)
-ok phase3_upcoming page 9: 50 studies (running 450)
-ok phase3_upcoming page 10: 50 studies (running 500)
-ok phase3_upcoming page 11: 50 studies (running 550)
-ok phase3_upcoming page 12: 50 studies (running 600)
-ok phase3_upcoming page 13: 50 studies (running 650)
-ok phase3_upcoming page 14: 50 studies (running 700)
-ok phase3_upcoming page 15: 50 studies (running 750)
-ok phase3_upcoming page 16: 50 studies (running 800)
-ok phase3_upcoming page 17: 50 studies (running 850)
-ok phase3_upcoming page 18: 50 studies (running 900)
-ok phase3_upcoming page 19: 50 studies (running 950)
-ok phase3_upcoming page 20: 50 studies (running 1000)
-ok phase3_upcoming page 21: 50 studies (running 1050)
-ok phase3_upcoming page 22: 50 studies (running 1100)
-ok phase3_upcoming page 23: 50 studies (running 1150)
-ok phase3_upcoming page 24: 50 studies (running 1200)
-ok phase3_upcoming page 25: 50 studies (running 1250)
-ok phase3_upcoming page 26: 50 studies (running 1300)
-ok phase3_upcoming page 27: 50 studies (running 1350)
-ok phase3_upcoming page 28: 50 studies (running 1400)
-ok phase3_upcoming page 29: 50 studies (running 1450)
-ok phase3_upcoming page 30: 50 studies (running 1500)
-ok phase3_upcoming page 31: 50 studies (running 1550)
-ok phase3_upcoming page 32: 50 studies (running 1600)
-ok phase3_upcoming page 33: 50 studies (running 1650)
-ok phase3_upcoming page 34: 50 studies (running 1700)
-ok phase3_upcoming page 35: 50 studies (running 1750)
-ok phase3_upcoming page 36: 50 studies (running 1800)
-ok phase3_upcoming page 37: 50 studies (running 1850)
-ok phase3_upcoming page 38: 50 studies (running 1900)
-ok phase3_upcoming page 39: 50 studies (running 1950)
-ok phase3_upcoming page 40: 50 studies (running 2000)
-ok phase3_upcoming: 2000 studies -> data/raw/clinicaltrials_phase3_2026_2027/studies.json
+== job clinicaltrials_phase3_2026_2027_windows (4 spec(s)) ==
+ok phase3_2026H1 page 1: 50 studies (running 50)
+ok phase3_2026H1 page 2: 50 studies (running 100)
+ok phase3_2026H1 page 3: 50 studies (running 150)
+ok phase3_2026H1 page 4: 50 studies (running 200)
+ok phase3_2026H1 page 5: 50 studies (running 250)
+ok phase3_2026H1 page 6: 50 studies (running 300)
+ok phase3_2026H1 page 7: 50 studies (running 350)
+ok phase3_2026H1 page 8: 50 studies (running 400)
+ok phase3_2026H1 page 9: 50 studies (running 450)
+ok phase3_2026H1 page 10: 50 studies (running 500)
+ok phase3_2026H1 page 11: 50 studies (running 550)
+ok phase3_2026H1 page 12: 50 studies (running 600)
+ok phase3_2026H1 page 13: 50 studies (running 650)
+ok phase3_2026H1 page 14: 50 studies (running 700)
+ok phase3_2026H1 page 15: 50 studies (running 750)
+ok phase3_2026H1 page 16: 50 studies (running 800)
+ok phase3_2026H1 page 17: 50 studies (running 850)
+ok phase3_2026H1 page 18: 50 studies (running 900)
+ok phase3_2026H1 page 19: 50 studies (running 950)
+ok phase3_2026H1 page 20: 22 studies (running 972)
+ok phase3_2026H1: 972 studies -> data/raw/clinicaltrials_phase3_2026_2027_windows/studies_2026H1.json
+ok phase3_2026H2 page 1: 50 studies (running 50)
+ok phase3_2026H2 page 2: 50 studies (running 100)
+ok phase3_2026H2 page 3: 50 studies (running 150)
+ok phase3_2026H2 page 4: 50 studies (running 200)
+ok phase3_2026H2 page 5: 50 studies (running 250)
+ok phase3_2026H2 page 6: 50 studies (running 300)
+ok phase3_2026H2 page 7: 50 studies (running 350)
+ok phase3_2026H2 page 8: 50 studies (running 400)
+ok phase3_2026H2 page 9: 50 studies (running 450)
+ok phase3_2026H2 page 10: 50 studies (running 500)
+ok phase3_2026H2 page 11: 50 studies (running 550)
+ok phase3_2026H2 page 12: 50 studies (running 600)
+ok phase3_2026H2 page 13: 50 studies (running 650)
+ok phase3_2026H2 page 14: 50 studies (running 700)
+ok phase3_2026H2 page 15: 50 studies (running 750)
+ok phase3_2026H2 page 16: 50 studies (running 800)
+ok phase3_2026H2 page 17: 50 studies (running 850)
+ok phase3_2026H2 page 18: 50 studies (running 900)
+ok phase3_2026H2 page 19: 50 studies (running 950)
+ok phase3_2026H2 page 20: 50 studies (running 1000)
+ok phase3_2026H2 page 21: 50 studies (running 1050)
+ok phase3_2026H2 page 22: 50 studies (running 1100)
+ok phase3_2026H2 page 23: 50 studies (running 1150)
+ok phase3_2026H2 page 24: 50 studies (running 1200)
+ok phase3_2026H2 page 25: 50 studies (running 1250)
+ok phase3_2026H2 page 26: 43 studies (running 1293)
+ok phase3_2026H2: 1293 studies -> data/raw/clinicaltrials_phase3_2026_2027_windows/studies_2026H2.json
+ok phase3_2027H1 page 1: 50 studies (running 50)
+ok phase3_2027H1 page 2: 50 studies (running 100)
+ok phase3_2027H1 page 3: 50 studies (running 150)
+ok phase3_2027H1 page 4: 50 studies (running 200)
+ok phase3_2027H1 page 5: 50 studies (running 250)
+ok phase3_2027H1 page 6: 50 studies (running 300)
+ok phase3_2027H1 page 7: 50 studies (running 350)
+ok phase3_2027H1 page 8: 50 studies (running 400)
+ok phase3_2027H1 page 9: 50 studies (running 450)
+ok phase3_2027H1 page 10: 50 studies (running 500)
+ok phase3_2027H1 page 11: 50 studies (running 550)
+ok phase3_2027H1 page 12: 50 studies (running 600)
+ok phase3_2027H1 page 13: 50 studies (running 650)
+ok phase3_2027H1 page 14: 50 studies (running 700)
+ok phase3_2027H1 page 15: 50 studies (running 750)
+ok phase3_2027H1 page 16: 50 studies (running 800)
+ok phase3_2027H1 page 17: 50 studies (running 850)
+ok phase3_2027H1 page 18: 50 studies (running 900)
+ok phase3_2027H1 page 19: 36 studies (running 936)
+ok phase3_2027H1: 936 studies -> data/raw/clinicaltrials_phase3_2026_2027_windows/studies_2027H1.json
+ok phase3_2027H2 page 1: 50 studies (running 50)
+ok phase3_2027H2 page 2: 50 studies (running 100)
+ok phase3_2027H2 page 3: 50 studies (running 150)
+ok phase3_2027H2 page 4: 50 studies (running 200)
+ok phase3_2027H2 page 5: 50 studies (running 250)
+ok phase3_2027H2 page 6: 50 studies (running 300)
+ok phase3_2027H2 page 7: 50 studies (running 350)
+ok phase3_2027H2 page 8: 50 studies (running 400)
+ok phase3_2027H2 page 9: 50 studies (running 450)
+ok phase3_2027H2 page 10: 50 studies (running 500)
+ok phase3_2027H2 page 11: 50 studies (running 550)
+ok phase3_2027H2 page 12: 50 studies (running 600)
+ok phase3_2027H2 page 13: 50 studies (running 650)
+ok phase3_2027H2 page 14: 50 studies (running 700)
+ok phase3_2027H2 page 15: 50 studies (running 750)
+ok phase3_2027H2 page 16: 50 studies (running 800)
+ok phase3_2027H2 page 17: 50 studies (running 850)
+ok phase3_2027H2 page 18: 50 studies (running 900)
+ok phase3_2027H2 page 19: 50 studies (running 950)
+ok phase3_2027H2 page 20: 50 studies (running 1000)
+ok phase3_2027H2 page 21: 11 studies (running 1011)
+ok phase3_2027H2: 1011 studies -> data/raw/clinicaltrials_phase3_2026_2027_windows/studies_2027H2.json
 == job openfda_approvals_2000_2010 (1 spec(s)) ==
 ok orig_ap_2000: 2746 records -> data/raw/openfda_approvals_2000_2010/2000.json
 ok orig_ap_2001: 2861 records -> data/raw/openfda_approvals_2000_2010/2001.json
@@ -54,40 +104,721 @@ ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
 ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
 == job openfda_efficacy_supplements (1 spec(s)) ==
 == job openfda_orig_decisions_2011_2026 (1 spec(s)) ==
+ok orig_decisions_1985: 82 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1985.json
+ok orig_decisions_1986: 80 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1986.json
+ok orig_decisions_1987: 60 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1987.json
+ok orig_decisions_1988: 59 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1988.json
+ok orig_decisions_1989: 88 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1989.json
+ok orig_decisions_1990: 61 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1990.json
+ok orig_decisions_1991: 64 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1991.json
+ok orig_decisions_1992: 89 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1992.json
+ok orig_decisions_1993: 70 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1993.json
+ok orig_decisions_1994: 63 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1994.json
+ok orig_decisions_1995: 89 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1995.json
+ok orig_decisions_1996: 144 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1996.json
+ok orig_decisions_1997: 125 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1997.json
+ok orig_decisions_1998: 102 decisions -> data/raw/openfda_orig_decisions_2011_2026/decisions_1998.json
 == job probe (5 spec(s)) ==
 FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
 ok sec_company_tickers_plain_ua 200 797759 bytes -> data/raw/probe/sec_company_tickers_alt.json
 ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
-ok yahoo_symbol_search_probe 200 2596 bytes -> data/raw/probe/yahoo_search_probe.json
+ok yahoo_symbol_search_probe 200 2783 bytes -> data/raw/probe/yahoo_search_probe.json
+== job source_captures_2026_09_17 (10 spec(s)) ==
+ok cder_nme_cy1998_table 200 22078 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
+ok cder_nme_cy1999_table 200 38946 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
+ok cder_nme_cy2000_table 200 31729 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
+ok cder_rdmt_index_2003 200 15823 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
+ok fda_novel_2014_table_wayback 200 64204 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
+ok fda_novel_2026_live 200 41773 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
+ok openfda_contrave_200063 200 12628 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA200063_contrave.json
+ok openfda_ofev_205832 200 15334 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA205832_ofev.json
+ok openfda_pixclara_218592 200 2096 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA218592_pixclara.json
+ok ctgov_total_2026_2027 200 159 bytes -> data/raw/source_captures_2026_09_17/ctgov_totalcount_2026_2027.json
 == job stock_yahoo_batch_2026_09 (1 spec(s)) ==
-ok SRRK_2026-09-11 200 2453 bytes
-ok AZN_2026-09-04 200 3049 bytes
-ok IONS_2026-09-03 200 2919 bytes
-ok REGN_2026-08-19 200 2975 bytes
-ok BMY_2026-08-13 200 3010 bytes
-ok LNTH_2026-08-13 200 3055 bytes
-ok OTLK_2026-07-24 200 3205 bytes
+ok SRRK_2026-09-11 200 2577 bytes
+ok AZN_2026-09-04 200 3076 bytes
+ok IONS_2026-09-03 200 2914 bytes
+ok REGN_2026-08-19 200 2978 bytes
+ok BMY_2026-08-13 200 3011 bytes
+ok LNTH_2026-08-13 200 3049 bytes
+ok OTLK_2026-07-24 200 3210 bytes
 ok NUVL_2026-07-22 200 1085 bytes
-ok MRK_2026-07-15 200 2942 bytes
-ok CELC_2026-07-14 200 2887 bytes
-ok VERA_2026-07-07 200 2812 bytes
-ok VRDN_2026-06-26 200 2974 bytes
-ok BAYRY_2026-06-12 200 3032 bytes
+ok MRK_2026-07-15 200 2945 bytes
+ok CELC_2026-07-14 200 2883 bytes
+ok VERA_2026-07-07 200 2811 bytes
+ok VRDN_2026-06-26 200 2977 bytes
+ok BAYRY_2026-06-12 200 3028 bytes
 ok SGIOF_2026-05-29 200 2660 bytes
-ok ABBV_2026-05-27 200 2866 bytes
-ok GILD_2026-05-22 200 3034 bytes
-ok AZN_2026-05-15 200 3031 bytes
-ok RIGL_2026-05-01 200 3147 bytes
-ok MRK_2026-04-20 200 3172 bytes
-ok LLY_2026-04-01 200 2835 bytes
-ok NVO_2026-03-26 200 2895 bytes
-ok CORT_2026-03-25 200 2920 bytes
-ok JNJ_2026-03-17 200 3003 bytes
-ok GSK_2026-03-17 200 3024 bytes
-ok ASND_2026-02-27 200 2891 bytes
-ok VNDA_2025-12-30 200 2716 bytes
-ok VRTX_2025-01-30 200 2929 bytes
-ok NBIX_2024-12-13 200 3055 bytes
-ok BBIO_2024-11-22 200 3062 bytes
-ok ZYME_2024-11-20 200 2881 bytes
+ok ABBV_2026-05-27 200 2864 bytes
+ok GILD_2026-05-22 200 3035 bytes
+ok AZN_2026-05-15 200 3030 bytes
+ok RIGL_2026-05-01 200 3145 bytes
+ok MRK_2026-04-20 200 3175 bytes
+ok LLY_2026-04-01 200 2837 bytes
+ok NVO_2026-03-26 200 2892 bytes
+ok CORT_2026-03-25 200 2918 bytes
+ok JNJ_2026-03-17 200 3000 bytes
+ok GSK_2026-03-17 200 3027 bytes
+ok ASND_2026-02-27 200 2892 bytes
+ok VNDA_2025-12-30 200 2718 bytes
+ok VRTX_2025-01-30 200 2922 bytes
+ok NBIX_2024-12-13 200 3056 bytes
+ok BBIO_2024-11-22 200 3063 bytes
+ok ZYME_2024-11-20 200 2882 bytes
+== job stock_yahoo_events_1998_2026 (1 spec(s)) ==
+ok ABBV_2018-07-23 200 3097 bytes
+ok ALNY_2018-08-10 200 2960 bytes
+ok MRK_2018-08-30 200 2921 bytes
+ok AZN_2018-09-13 200 2877 bytes
+ok TEVA_2018-09-14 200 3008 bytes
+ok VSTM_2018-09-24 200 3024 bytes
+ok PFE_2018-09-27 200 3064 bytes
+ok LLY_2018-09-27 200 3077 bytes
+ok REGN_2018-09-28 200 3058 bytes
+ok IONS_2018-10-05 200 3038 bytes
+ok PFE_2018-10-16 200 3064 bytes
+ok RHHBY_2018-10-24 200 3076 bytes
+ok PFE_2018-11-02 200 3184 bytes
+ok BHC_2018-11-16 200 2995 bytes
+ok PFE_2018-11-21 200 2957 bytes
+FAIL LOXO_2018-11-26: HTTPError: HTTP Error 404: Not Found
+ok ALPMY_2018-11-28 200 2770 bytes
+FAIL CPRX_2018-11-28: HTTPError: HTTP Error 404: Not Found
+ok TAK_2018-12-14 200 2962 bytes
+ok EOLS_2019-02-01 200 2880 bytes
+ok NVS_2019-02-13 200 2919 bytes
+ok JAZZ_2019-03-20 200 3079 bytes
+FAIL AMAG_2019-06-21: HTTPError: HTTP Error 404: Not Found
+ok MRK_2019-07-16 200 2932 bytes
+ok BAYRY_2019-07-30 200 3033 bytes
+ok DSNKY_2019-08-02 200 3194 bytes
+FAIL HRMY_2019-08-14: HTTPError: HTTP Error 400: Bad Request
+ok RHHBY_2019-08-15 200 3065 bytes
+ok ABBV_2019-08-16 200 3101 bytes
+ok ARDX_2019-09-12 200 2890 bytes
+ok NVS_2019-10-07 200 3106 bytes
+ok LLY_2019-10-11 200 3152 bytes
+ok SGIOF_2019-11-14 200 2985 bytes
+ok SRPT_2019-12-12 200 3070 bytes
+ok ALPMY_2019-12-18 200 2839 bytes
+FAIL ESALY_2019-12-20: HTTPError: HTTP Error 404: Not Found
+ok DSNKY_2019-12-20 200 2935 bytes
+FAIL HZNP_2020-01-21: HTTPError: HTTP Error 404: Not Found
+FAIL EPZM_2020-01-23: HTTPError: HTTP Error 404: Not Found
+FAIL BHVN_2020-02-27: HTTPError: HTTP Error 400: Bad Request
+ok SNY_2020-03-02 200 3097 bytes
+FAIL IMMU_2020-04-22: HTTPError: HTTP Error 404: Not Found
+ok NBIX_2020-04-24 200 3090 bytes
+ok NVS_2020-05-06 200 2953 bytes
+FAIL GEHC_2020-05-20: HTTPError: HTTP Error 400: Bad Request
+ok LLY_2020-05-28 200 2946 bytes
+FAIL VIE_2020-06-11: HTTPError: HTTP Error 404: Not Found
+ok JAZZ_2020-06-15 200 3125 bytes
+ok RARE_2020-06-30 200 2869 bytes
+ok GSK_2020-07-02 200 2909 bytes
+ok BAYRY_2020-08-06 200 3027 bytes
+ok RHHBY_2020-08-14 200 3153 bytes
+ok NVO_2020-08-28 200 2997 bytes
+FAIL BPMC_2020-09-04: HTTPError: HTTP Error 404: Not Found
+ok REGN_2020-10-14 200 2929 bytes
+FAIL EIGR_2020-11-20: HTTPError: HTTP Error 404: Not Found
+FAIL YMAB_2020-11-25: HTTPError: HTTP Error 404: Not Found
+ok BCRX_2020-12-03 200 2881 bytes
+ok MGNX_2020-12-16 200 2844 bytes
+ok MRK_2021-01-19 200 2939 bytes
+ok GSK_2021-01-21 200 2920 bytes
+ok AUPH_2021-01-22 200 3093 bytes
+ok TGTX_2021-02-05 200 2945 bytes
+ok REGN_2021-02-11 200 2910 bytes
+ok SRPT_2021-02-25 200 2797 bytes
+ok ZLDPF_2021-03-22 200 3010 bytes
+ok BAYRY_2021-07-09 200 3045 bytes
+ok PFE_2022-01-14 200 3006 bytes
+ok IMCR_2022-01-25 200 2914 bytes
+ok RHHBY_2022-01-28 200 2992 bytes
+ok SNY_2022-02-04 200 3083 bytes
+ok AGIO_2022-02-17 200 2936 bytes
+ok BMY_2022-03-18 200 3134 bytes
+ok NVS_2022-03-23 200 2981 bytes
+ok BMY_2022-04-28 200 2994 bytes
+ok PHAT_2022-05-03 200 3047 bytes
+ok LLY_2022-05-13 200 3071 bytes
+ok ROIV_2022-05-23 200 3054 bytes
+ok ALNY_2022-06-13 200 3022 bytes
+ok SNY_2022-08-31 200 2930 bytes
+ok BMY_2022-09-09 200 2991 bytes
+ok AMLX_2022-09-29 200 2966 bytes
+ok AZN_2022-10-21 200 3168 bytes
+ok JNJ_2022-10-25 200 3000 bytes
+ok RIGL_2022-12-01 200 2645 bytes
+ok RHHBY_2022-12-22 200 2843 bytes
+ok GILD_2022-12-22 200 2733 bytes
+ok TGTX_2022-12-28 200 2817 bytes
+ok MDWD_2022-12-28 200 2723 bytes
+ok LLY_2023-01-27 200 2982 bytes
+ok GSK_2023-02-01 200 3025 bytes
+ok TVTX_2023-02-17 200 3051 bytes
+ok PFE_2023-03-09 200 3057 bytes
+ok ACAD_2023-03-10 200 3167 bytes
+ok INCY_2023-03-22 200 2985 bytes
+ok PHAR_2023-03-24 200 2981 bytes
+ok BIIB_2023-04-25 200 2933 bytes
+ok PLX_2023-05-09 200 3079 bytes
+ok BLCO_2023-05-18 200 2897 bytes
+ok GMAB_2023-05-19 200 3039 bytes
+ok INVA_2023-05-23 200 2933 bytes
+ok PFE_2023-05-25 200 2897 bytes
+ok LNTH_2023-05-25 200 2885 bytes
+ok LXRX_2023-05-26 200 3068 bytes
+ok RHHBY_2023-06-15 200 2895 bytes
+ok PFE_2023-06-23 200 2895 bytes
+ok PFE_2023-06-27 200 2789 bytes
+ok AZN_2023-07-17 200 3198 bytes
+ok DSNKY_2023-07-20 200 2997 bytes
+ok TARS_2023-07-25 200 3026 bytes
+ok BIIB_2023-08-04 200 3038 bytes
+ok JNJ_2023-08-09 200 3060 bytes
+ok PFE_2023-08-14 200 3179 bytes
+ok REGN_2023-08-18 200 3007 bytes
+ok BLRX_2023-09-08 200 2633 bytes
+ok GSK_2023-09-15 200 3025 bytes
+ok NVO_2023-09-29 200 3065 bytes
+ok PFE_2023-10-12 200 3039 bytes
+FAIL CPRX_2023-10-26: HTTPError: HTTP Error 404: Not Found
+ok LLY_2023-10-26 200 2919 bytes
+ok CHRS_2023-10-27 200 3166 bytes
+ok TAK_2023-11-08 200 3087 bytes
+ok BMY_2023-11-15 200 2941 bytes
+ok CRMD_2023-11-15 200 2927 bytes
+ok AZN_2023-11-16 200 2956 bytes
+ok NVS_2023-12-05 200 2896 bytes
+ok IONS_2023-12-21 200 2808 bytes
+ok ONC_2024-03-13 200 2960 bytes
+ok RHHBY_2024-06-20 200 2949 bytes
+ok LLY_2024-09-13 200 2899 bytes
+ok GEHC_2024-09-27 200 3114 bytes
+ok RHHBY_2024-10-10 200 3036 bytes
+ok PFE_2024-10-11 200 3175 bytes
+ok ALPMY_2024-10-18 200 3095 bytes
+FAIL ITRM_2024-10-25: HTTPError: HTTP Error 404: Not Found
+ok SNDX_2024-11-15 200 3113 bytes
+ok IONS_2024-12-19 200 2892 bytes
+ok VRTX_2024-12-20 200 2913 bytes
+ok NVO_2024-12-20 200 2887 bytes
+ok AZN_2025-01-17 200 2943 bytes
+ok BAYRY_2025-10-24 200 3094 bytes
+ok BAYRY_2025-11-19 200 2908 bytes
+ok GSK_2018-07-20 200 3090 bytes
+ok AGIO_2018-07-20 200 3099 bytes
+ok SIGA_2018-07-13 200 2971 bytes
+FAIL ARRY_2018-06-27: HTTPError: HTTP Error 400: Bad Request
+FAIL AKAO_2018-06-26: HTTPError: HTTP Error 404: Not Found
+FAIL GWPH_2018-06-25: HTTPError: HTTP Error 404: Not Found
+ok LLY_2018-05-31 200 2925 bytes
+ok BMRN_2018-05-24 200 2921 bytes
+FAIL DOVA_2018-05-21: HTTPError: HTTP Error 404: Not Found
+FAIL MYOV_2020-12-18: HTTPError: HTTP Error 404: Not Found
+ok AZN_2015-12-22 200 2734 bytes
+ok RHHBY_2015-12-11 200 3137 bytes
+ok BMY_2015-11-30 200 3014 bytes
+ok LLY_2015-11-24 200 2871 bytes
+ok TAK_2015-11-20 200 3079 bytes
+ok JNJ_2015-11-16 200 3042 bytes
+ok AZN_2015-11-13 200 3136 bytes
+ok RHHBY_2015-11-10 200 3078 bytes
+ok GILD_2015-11-05 200 3049 bytes
+ok GSK_2015-11-04 200 3004 bytes
+FAIL ALXN_2015-10-23: HTTPError: HTTP Error 404: Not Found
+ok JNJ_2015-10-23 200 3131 bytes
+ok RLYP_2015-10-21 200 783 bytes
+ok ALKS_2015-10-06 200 2939 bytes
+ok NVO_2015-09-25 200 3181 bytes
+ok OTSKY_2015-09-22 200 3032 bytes
+ok TSRO_2015-09-02 200 802 bytes
+ok AMGN_2015-08-27 200 2883 bytes
+ok BMY_2015-07-24 200 3168 bytes
+ok NVS_2015-07-24 200 3130 bytes
+ok REGN_2015-07-24 200 2955 bytes
+ok OTSKY_2015-07-10 200 3025 bytes
+ok NVS_2015-07-07 200 2915 bytes
+ok VRTX_2015-07-02 200 2939 bytes
+FAIL MDCO_2015-06-22: HTTPError: HTTP Error 404: Not Found
+ok KYTH_2015-04-29 200 749 bytes
+ok AMGN_2015-04-15 200 2934 bytes
+ok NVS_2015-02-23 200 3021 bytes
+FAIL ESALY_2015-02-13: HTTPError: HTTP Error 404: Not Found
+ok PFE_2015-02-03 200 3091 bytes
+ok NVS_2015-01-21 200 2888 bytes
+ok DSNKY_2015-01-08 200 2833 bytes
+ok BIIB_2016-12-23 200 2821 bytes
+FAIL CLVS_2016-12-19: HTTPError: HTTP Error 404: Not Found
+ok PFE_2016-12-14 200 2985 bytes
+ok MRK_2016-10-21 200 3197 bytes
+ok LLY_2016-10-19 200 2971 bytes
+ok SRPT_2016-09-19 200 3178 bytes
+ok SNY_2016-07-27 200 3001 bytes
+ok SHPG_2016-07-11 200 771 bytes
+ok GILD_2016-06-28 200 2895 bytes
+FAIL ICPT_2016-05-27: HTTPError: HTTP Error 404: Not Found
+ok BIIB_2016-05-27 200 2968 bytes
+ok RHHBY_2016-05-18 200 2921 bytes
+ok ACAD_2016-04-29 200 3026 bytes
+ok ABBV_2016-04-11 200 3078 bytes
+ok JAZZ_2016-03-30 200 2918 bytes
+ok TEVA_2016-03-23 200 2932 bytes
+ok LLY_2016-03-22 200 2900 bytes
+ok MRK_2016-01-28 200 2976 bytes
+FAIL LJPC_2017-12-21: HTTPError: HTTP Error 404: Not Found
+FAIL AEZS_2017-12-20: HTTPError: HTTP Error 404: Not Found
+ok MRK_2017-12-19 200 2972 bytes
+FAIL AERI_2017-12-18: HTTPError: HTTP Error 404: Not Found
+ok NVO_2017-12-05 200 2957 bytes
+ok RHHBY_2017-11-16 200 2976 bytes
+ok AZN_2017-11-14 200 2855 bytes
+ok MRK_2017-11-08 200 3103 bytes
+ok BHC_2017-11-02 200 3117 bytes
+ok AZN_2017-10-31 200 2988 bytes
+ok LLY_2017-09-28 200 3010 bytes
+ok BAYRY_2017-09-14 200 2918 bytes
+FAIL MDCO_2017-08-29: HTTPError: HTTP Error 404: Not Found
+ok PFE_2017-08-17 200 3113 bytes
+ok ABBV_2017-08-03 200 3006 bytes
+FAIL CELG_2017-08-01: HTTPError: HTTP Error 404: Not Found
+ok GILD_2017-07-18 200 2998 bytes
+ok PBYI_2017-07-17 200 2898 bytes
+ok JNJ_2017-07-13 200 2946 bytes
+FAIL PTLA_2017-06-23: HTTPError: HTTP Error 404: Not Found
+FAIL MLNT_2017-06-19: HTTPError: HTTP Error 404: Not Found
+ok REGN_2017-05-22 200 2988 bytes
+ok AZN_2017-05-01 200 3093 bytes
+FAIL RDUS_2017-04-28: HTTPError: HTTP Error 404: Not Found
+ok NVS_2017-04-28 200 3137 bytes
+ok TAK_2017-04-28 200 3151 bytes
+ok BMRN_2017-04-27 200 2970 bytes
+ok NBIX_2017-04-11 200 2894 bytes
+ok TEVA_2017-04-03 200 3038 bytes
+ok RHHBY_2017-03-28 200 3049 bytes
+ok REGN_2017-03-28 200 3001 bytes
+ok TSRO_2017-03-27 200 802 bytes
+ok MKGAY_2017-03-23 200 744 bytes
+ok NVS_2017-03-13 200 3118 bytes
+ok LXRX_2017-02-28 200 2984 bytes
+ok BHC_2017-02-15 200 2948 bytes
+ok AMGN_2017-02-07 200 2984 bytes
+FAIL SGYP_2017-01-19: HTTPError: HTTP Error 404: Not Found
+ok MRK_2015-12-15 200 2973 bytes
+ok ALPMY_2015-03-06 200 3162 bytes
+ok BMY_2014-01-08 200 2822 bytes
+ok VNDA_2014-01-31 200 3017 bytes
+ok BMRN_2014-02-14 200 2968 bytes
+ok CHTP_2014-02-18 200 743 bytes
+ok AZN_2014-02-24 200 3001 bytes
+FAIL CELG_2014-03-21: HTTPError: HTTP Error 404: Not Found
+ok GSK_2014-04-15 200 2885 bytes
+ok LLY_2014-04-21 200 3047 bytes
+ok JNJ_2014-04-23 200 2873 bytes
+ok NVS_2014-04-29 200 2906 bytes
+ok MRK_2014-05-08 200 3085 bytes
+ok TAK_2014-05-20 200 2925 bytes
+ok DRTX_2014-05-23 200 743 bytes
+ok CBST_2014-06-20 200 764 bytes
+FAIL SPPI_2014-07-03: HTTPError: HTTP Error 404: Not Found
+FAIL ANAC_2014-07-07: HTTPError: HTTP Error 404: Not Found
+ok GILD_2014-07-23 200 2921 bytes
+ok MRK_2014-08-13 200 3065 bytes
+ok BIIB_2014-08-15 200 3073 bytes
+ok SNY_2014-08-19 200 3014 bytes
+ok MRK_2014-09-04 200 2964 bytes
+ok AZN_2014-09-16 200 2979 bytes
+ok LLY_2014-09-18 200 2949 bytes
+ok GILD_2014-10-10 200 3115 bytes
+ok ITMN_2014-10-15 200 764 bytes
+ok AMGN_2014-12-03 200 2888 bytes
+ok NVS_2014-12-17 200 2910 bytes
+ok AZN_2014-12-19 200 2960 bytes
+ok CBST_2014-12-19 200 764 bytes
+ok BCRX_2014-12-19 200 3057 bytes
+ok ABBV_2014-12-19 200 2958 bytes
+ok BMY_2014-12-22 200 2913 bytes
+ok JNJ_2013-11-22 200 2954 bytes
+ok RHHBY_2013-11-01 200 3145 bytes
+ok GILD_2013-12-06 200 3008 bytes
+ok PCYC_2013-11-13 200 764 bytes
+ok GSK_2013-12-18 200 2870 bytes
+ok BAYRY_2013-10-08 200 3043 bytes
+ok GSK_2013-05-29 200 2917 bytes
+ok GSK_2013-08-12 200 3170 bytes
+ok TAK_2013-09-30 200 3144 bytes
+ok PFE_2013-10-03 200 3097 bytes
+ok BAYRY_2013-05-15 200 2909 bytes
+ok GE_2013-10-25 200 3195 bytes
+ok NPSP_2015-01-23 200 764 bytes
+ok UTHR_2015-03-10 200 3057 bytes
+FAIL AAAP_2016-06-01: HTTPError: HTTP Error 400: Bad Request
+ok RARE_2017-11-15 200 2929 bytes
+ok VRTX_2012-01-31 200 3032 bytes
+ok PFE_2012-09-04 200 2989 bytes
+ok GILD_2012-08-27 200 3053 bytes
+ok SNY_2012-08-03 200 3152 bytes
+ok PFE_2012-08-31 200 3110 bytes
+FAIL ESALY_2012-10-22: HTTPError: HTTP Error 404: Not Found
+ok BMY_2011-03-25 200 3200 bytes
+ok AZN_2011-04-06 200 2995 bytes
+ok MRK_2011-05-13 200 3210 bytes
+ok VRTX_2011-05-23 200 2975 bytes
+ok BMY_2011-06-15 200 3120 bytes
+ok JNJ_2011-07-01 200 2968 bytes
+ok RHHBY_2011-08-17 200 2960 bytes
+FAIL SGEN_2011-08-19: HTTPError: HTTP Error 404: Not Found
+ok PFE_2011-08-26 200 3078 bytes
+ok INCY_2011-11-16 200 2994 bytes
+ok REGN_2011-11-18 200 2951 bytes
+FAIL HLUYY_2011-10-21: HTTPError: HTTP Error 404: Not Found
+ok TAK_2011-02-25 200 3036 bytes
+ok AZN_2011-07-20 200 3042 bytes
+ok GSK_2011-03-09 200 3035 bytes
+ok AZN_2012-09-12 200 2890 bytes
+ok BAYRY_2012-09-27 200 3015 bytes
+ok ONXX_2012-07-20 200 2759 bytes
+FAIL MDCO_2014-08-06: HTTPError: HTTP Error 404: Not Found
+ok BHC_2014-06-06 200 3049 bytes
+FAIL ENDP_2014-03-19: HTTPError: HTTP Error 404: Not Found
+ok SLXP_2012-12-31 200 764 bytes
+ok PFE_2012-11-06 200 2865 bytes
+ok BMY_2012-12-28 200 2939 bytes
+ok JNJ_2012-12-28 200 2832 bytes
+ok IRWD_2012-08-30 200 2957 bytes
+ok EXEL_2012-11-29 200 2910 bytes
+ok BHC_2013-11-14 200 3101 bytes
+ok OPTR_2011-05-27 200 749 bytes
+ok RHHBY_2013-02-22 200 3012 bytes
+ok NPSP_2012-12-21 200 764 bytes
+ok OREX_2014-09-10 200 785 bytes
+ok NVS_2000-01-14 200 3032 bytes
+ok GSK_2000-02-09 200 2187 bytes
+FAIL SNY_2000-04-20: HTTPError: HTTP Error 400: Bad Request
+ok NVS_2000-04-21 200 3020 bytes
+ok NVO_2000-06-07 200 2928 bytes
+ok GSK_2000-07-25 200 2248 bytes
+FAIL ALC_2000-08-03: HTTPError: HTTP Error 400: Bad Request
+ok ABT_2000-09-15 200 3093 bytes
+ok NVS_2000-12-22 200 2925 bytes
+ok MRK_2001-01-26 200 3025 bytes
+ok PFE_2001-02-05 200 3167 bytes
+ok NVS_2001-02-16 200 3013 bytes
+ok JNJ_2001-02-28 200 2824 bytes
+FAIL ALC_2001-03-16: HTTPError: HTTP Error 400: Bad Request
+ok NVS_2001-05-10 200 3030 bytes
+ok NVS_2001-08-20 200 3159 bytes
+ok GILD_2001-10-26 200 3131 bytes
+ok GSK_2001-11-20 200 2827 bytes
+ok JNJ_2001-11-20 200 2791 bytes
+ok MRK_2001-11-21 200 2967 bytes
+ok NVS_2001-12-13 200 2958 bytes
+ok AZN_2002-04-25 200 2960 bytes
+ok UTHR_2002-05-21 200 2785 bytes
+ok PFE_2002-05-24 200 3074 bytes
+ok NVS_2002-07-24 200 3073 bytes
+ok SNY_2002-08-09 200 3081 bytes
+ok GILD_2002-09-20 200 3105 bytes
+ok MRK_2002-10-25 200 3190 bytes
+ok LLY_2002-11-26 200 2824 bytes
+ok BAX_2002-12-12 200 3115 bytes
+ok PFE_2002-12-26 200 2869 bytes
+ok MRK_2003-03-26 200 3074 bytes
+ok AZN_2003-05-05 200 3067 bytes
+ok SNY_2003-06-12 200 2996 bytes
+ok BMY_2003-06-20 200 3139 bytes
+ok GILD_2003-07-02 200 2876 bytes
+ok AZN_2003-08-12 200 2960 bytes
+ok LLY_2003-11-21 200 2945 bytes
+ok VTRS_2003-12-10 200 3018 bytes
+ok LLY_2004-02-04 200 2883 bytes
+ok AMGN_2004-03-08 200 3087 bytes
+ok SNY_2004-04-01 200 2834 bytes
+ok SNY_2004-04-16 200 3003 bytes
+ok VTRS_2004-04-20 200 2930 bytes
+ok PTN_2004-07-02 200 2123 bytes
+ok LLY_2004-08-03 200 2992 bytes
+FAIL AMPH_2004-10-26: HTTPError: HTTP Error 400: Bad Request
+ok ABT_2004-11-10 200 3118 bytes
+ok BIIB_2004-11-23 200 2898 bytes
+ok AMGN_2004-12-15 200 2790 bytes
+ok NVS_2004-12-22 200 2937 bytes
+ok PFE_2004-12-30 200 2972 bytes
+ok BMY_2005-03-29 200 2955 bytes
+ok BMRN_2005-05-31 200 2881 bytes
+ok NVO_2005-06-16 200 3068 bytes
+FAIL ALC_2005-08-19: HTTPError: HTTP Error 400: Bad Request
+ok GSK_2005-10-28 200 3116 bytes
+ok NVS_2005-11-02 200 3059 bytes
+ok HALO_2005-12-02 200 2945 bytes
+ok INSM_2005-12-12 200 2821 bytes
+ok BMY_2005-12-23 200 2981 bytes
+ok PFE_2006-01-26 200 2982 bytes
+ok PFE_2006-05-10 200 3089 bytes
+ok TEVA_2006-05-16 200 3054 bytes
+ok JNJ_2006-06-23 200 2970 bytes
+ok BMY_2006-06-28 200 2976 bytes
+ok AMGN_2006-09-27 200 2986 bytes
+ok MRK_2006-10-06 200 3197 bytes
+ok MRK_2006-10-16 200 3197 bytes
+ok JNJ_2006-12-19 200 2821 bytes
+ok NVS_2007-03-05 200 3170 bytes
+ok GSK_2007-03-13 200 2991 bytes
+ok GSK_2007-04-12 200 2872 bytes
+ok GILD_2007-06-15 200 3183 bytes
+ok PFE_2007-08-06 200 3203 bytes
+ok JNJ_2007-10-12 200 3072 bytes
+ok MRK_2007-10-12 200 3188 bytes
+ok BMY_2007-10-16 200 3088 bytes
+ok NVS_2007-10-29 200 3190 bytes
+ok BMRN_2007-12-13 200 2906 bytes
+ok VTRS_2007-12-17 200 3010 bytes
+ok JNJ_2008-01-18 200 2947 bytes
+ok REGN_2008-02-27 200 2948 bytes
+ok AMGN_2008-08-22 200 2988 bytes
+ok GE_2008-09-19 200 3204 bytes
+ok PFE_2008-10-31 200 3187 bytes
+ok JNJ_2008-11-20 200 2847 bytes
+ok GSK_2008-11-20 200 2909 bytes
+ok NVS_2009-03-30 200 3059 bytes
+ok NVS_2009-04-07 200 2948 bytes
+ok JNJ_2009-04-24 200 3120 bytes
+ok VNDA_2009-05-06 200 3010 bytes
+ok NVS_2009-06-17 200 3031 bytes
+ok SNY_2009-07-01 200 2929 bytes
+ok LLY_2009-07-10 200 3058 bytes
+ok BMY_2009-07-31 200 3164 bytes
+ok INVA_2009-09-11 200 3089 bytes
+ok JNJ_2009-09-25 200 3160 bytes
+ok GSK_2009-10-19 200 3125 bytes
+ok GSK_2009-10-26 200 3136 bytes
+ok NVO_2010-01-25 200 3042 bytes
+ok AMGN_2010-06-01 200 2929 bytes
+ok SNY_2010-06-17 200 3047 bytes
+ok JNJ_2010-07-28 200 2945 bytes
+ok NVS_2010-09-21 200 3050 bytes
+ok GE_2011-01-14 200 3026 bytes
+ok JNJ_2011-04-28 200 2904 bytes
+ok JNJ_2011-05-20 200 2999 bytes
+ok GSK_2011-06-10 200 3010 bytes
+ok NVS_2011-07-01 200 3060 bytes
+FAIL JAZN_2011-11-18: HTTPError: HTTP Error 404: Not Found
+ok PFE_2012-01-27 200 3083 bytes
+ok MRK_2012-02-10 200 3096 bytes
+ok LLY_2012-04-06 200 3071 bytes
+FAIL VVUS_2012-04-27: HTTPError: HTTP Error 404: Not Found
+ok PLX_2012-05-01 200 2746 bytes
+ok TEVA_2012-08-29 200 2962 bytes
+ok TEVA_2012-10-26 200 2930 bytes
+ok NVS_2012-12-14 200 3045 bytes
+ok BIIB_2013-03-27 200 2951 bytes
+ok JNJ_2013-03-29 200 2991 bytes
+ok GSK_2013-05-10 200 3128 bytes
+ok GILD_2018-02-07 200 2929 bytes
+ok VRTX_2018-02-12 200 3113 bytes
+ok JNJ_2018-02-14 200 2932 bytes
+ok RARE_2018-04-17 200 3028 bytes
+ok RIGL_2018-04-17 200 2785 bytes
+ok AMGN_2018-05-17 200 2920 bytes
+ok AZN_2018-05-18 200 2992 bytes
+FAIL SAGE_2019-03-19: HTTPError: HTTP Error 404: Not Found
+ok LGND_1999-02-02 200 3041 bytes
+ok LGND_1999-02-05 200 3048 bytes
+ok GSK_1999-03-25 200 2179 bytes
+ok GSK_1999-04-15 200 2232 bytes
+ok MRK_1999-05-20 200 2919 bytes
+ok GSK_1999-05-25 200 2192 bytes
+FAIL ALC_1999-07-02: HTTPError: HTTP Error 400: Bad Request
+ok GSK_1999-07-26 200 2311 bytes
+ok GE_1999-08-03 200 3053 bytes
+ok PFE_1999-10-01 200 3152 bytes
+ok BMY_1999-12-10 200 3170 bytes
+ok ABT_1999-12-17 200 3091 bytes
+ok BMY_1999-12-17 200 3069 bytes
+ok LGND_1999-12-29 200 2953 bytes
+ok ABBV_2026-04-23 200 2990 bytes
+ok ABBV_2026-04-22 200 2976 bytes
+ok FSNUY_2026-02-27 200 3057 bytes
+ok SNY_2025-12-23 200 2777 bytes
+ok AZN_2025-10-10 200 3197 bytes
+ok BIIB_2025-09-22 200 3113 bytes
+ok REGN_2025-07-30 200 2885 bytes
+ok FSNUY_2025-04-25 200 3014 bytes
+ok AMRX_2025-04-02 200 3008 bytes
+ok PFE_2025-01-17 200 2968 bytes
+ok FSNUY_2024-12-11 200 3008 bytes
+ok REGN_2024-08-20 200 3021 bytes
+ok NVO_2024-07-10 200 2915 bytes
+ok AMRX_2024-07-01 200 2812 bytes
+ok ABBV_2024-06-18 200 2873 bytes
+ok REGN_2024-03-22 200 2935 bytes
+ok LLY_2023-09-28 200 2895 bytes
+ok REGN_2023-06-27 200 2763 bytes
+ok FSNUY_2023-05-31 200 2857 bytes
+ok NVO_2023-04-24 200 3121 bytes
+ok LLY_2023-03-30 200 2883 bytes
+ok ABBV_2023-03-17 200 3139 bytes
+ok LLY_2023-01-18 200 2802 bytes
+ok VTRS_2023-01-13 200 2891 bytes
+ok GILD_2022-02-28 200 3008 bytes
+ok PFE_2022-01-21 200 2992 bytes
+ok TAK_2021-12-17 200 3059 bytes
+ok LLY_2021-12-17 200 3051 bytes
+ok UTHR_2021-10-15 200 3136 bytes
+ok NVS_2020-12-18 200 2942 bytes
+ok SNY_2020-11-12 200 2995 bytes
+ok TAK_2019-12-17 200 2953 bytes
+ok AZN_2019-09-30 200 3108 bytes
+ok SRPT_2019-08-19 200 3104 bytes
+ok BHC_2019-07-19 200 3165 bytes
+ok AMGN_2018-05-25 200 3061 bytes
+ok PFE_2018-04-20 200 3173 bytes
+ok PFE_2018-03-19 200 3080 bytes
+ok PFE_2018-02-22 200 2952 bytes
+ok PFE_2017-11-03 200 3169 bytes
+ok AMGN_2017-07-13 200 2966 bytes
+ok UTHR_2017-06-02 200 3043 bytes
+ok PFE_2017-04-26 200 2976 bytes
+ok UTHR_2016-10-07 200 3172 bytes
+ok MRK_2013-06-28 200 3076 bytes
+ok BMY_2012-01-17 200 2930 bytes
+FAIL OGN_2004-06-23: HTTPError: HTTP Error 400: Bad Request
+FAIL OGN_2002-03-15: HTTPError: HTTP Error 400: Bad Request
+ok UNCY_2026-06-29 200 2863 bytes
+ok ACHV_2026-06-20 200 3053 bytes
+ok CING_2026-05-29 200 2958 bytes
+ok EGRX_2026-04-13 200 3005 bytes
+ok TLX_2026-04-10 200 3029 bytes
+ok REPL_2026-04-10 200 3037 bytes
+ok ALDX_2026-03-16 200 3145 bytes
+ok AMPH_2026-02-26 200 2990 bytes
+ok IRON_2026-02-13 200 2917 bytes
+ok AQST_2026-01-30 200 2942 bytes
+ok CORT_2026-01-28 200 2942 bytes
+ok RDY_2025-12-30 200 2881 bytes
+ok OTLK_2025-12-30 200 2884 bytes
+ok ALVO_2025-11-26 200 2860 bytes
+ok ALVO_2025-11-24 200 2967 bytes
+ok BHVN_2025-11-04 200 2997 bytes
+ok ALVO_2025-10-31 200 3059 bytes
+ok GSK_2025-10-23 200 2988 bytes
+ok RDY_2025-10-16 200 3059 bytes
+ok SRRK_2025-09-22 200 3092 bytes
+ok OTLK_2025-08-27 200 2960 bytes
+ok PTCT_2025-08-18 200 3124 bytes
+ok TEVA_2025-07-30 200 3093 bytes
+ok REPL_2025-07-21 200 3146 bytes
+ok CAPR_2025-07-09 200 2904 bytes
+ok RARE_2025-07-07 200 3098 bytes
+ok UNCY_2025-06-27 200 2883 bytes
+FAIL MITO_2025-05-15: HTTPError: HTTP Error 404: Not Found
+ok TLX_2025-04-25 200 3017 bytes
+ok ALDX_2025-04-02 200 3019 bytes
+ok MIST_2025-03-27 200 3037 bytes
+ok ATRA_2025-01-15 200 2803 bytes
+ok LXRX_2024-12-20 200 2973 bytes
+ok ZLDPF_2024-12-19 200 2774 bytes
+ok JNJ_2024-12-13 200 2977 bytes
+FAIL APLT_2024-11-27: HTTPError: HTTP Error 404: Not Found
+ok ZLDPF_2024-10-08 200 2685 bytes
+ok DSNKY_2024-06-26 200 2810 bytes
+ok RCKT_2024-06-14 200 3111 bytes
+ok BAYRY_2024-06-13 200 2864 bytes
+ok RDY_2024-04-19 200 3236 bytes
+ok ABEO_2024-04-16 200 3016 bytes
+ok BAX_2024-03-29 200 3013 bytes
+ok BAX_2024-03-27 200 2917 bytes
+ok NERV_2024-02-26 200 2961 bytes
+FAIL CKPT_2023-12-15: HTTPError: HTTP Error 404: Not Found
+ok ALVO_2023-10-11 200 2927 bytes
+ok SPRY_2023-09-19 200 3026 bytes
+ok MESO_2023-08-01 200 2884 bytes
+ok CTXR_2023-07-28 200 2296 bytes
+ok ALVO_2023-06-28 200 2717 bytes
+ok PHAT_2023-02-07 200 2999 bytes
+ok ALVO_2022-12-20 200 2679 bytes
+ok CRMD_2022-08-04 200 2886 bytes
+ok VRCA_2022-05-23 200 2633 bytes
+ok CHRS_2022-04-29 200 3090 bytes
+ok RDY_2022-04-18 200 3121 bytes
+ok AKBA_2022-03-29 200 3021 bytes
+ok FENC_2021-11-26 200 2938 bytes
+FAIL EYEN_2021-10-22: HTTPError: HTTP Error 404: Not Found
+ok OMER_2021-10-15 200 3104 bytes
+FAIL RVNC_2021-10-14: HTTPError: HTTP Error 404: Not Found
+ok VRCA_2021-09-16 200 2713 bytes
+FAIL SPPI_2021-08-03: HTTPError: HTTP Error 404: Not Found
+ok ARDX_2021-07-28 200 3028 bytes
+ok MDWD_2021-06-25 200 2973 bytes
+ok BAX_2021-04-29 200 3014 bytes
+ok CRMD_2021-02-26 200 2954 bytes
+ok RHHBY_2020-11-23 200 3043 bytes
+ok ALKS_2020-11-13 200 3110 bytes
+FAIL ADMP_2020-11-13: HTTPError: HTTP Error 404: Not Found
+ok SUPN_2020-11-06 200 3189 bytes
+ok RDY_2020-11-06 200 3231 bytes
+ok FENC_2020-08-10 200 3094 bytes
+ok DBVT_2020-08-03 200 3069 bytes
+ok VRCA_2020-07-13 200 2651 bytes
+ok HRTX_2020-06-26 200 3070 bytes
+ok RDY_2020-05-21 200 2989 bytes
+ok GSK_2019-12-19 200 2905 bytes
+FAIL ADMP_2019-11-22: HTTPError: HTTP Error 404: Not Found
+ok RDY_2019-11-20 200 2906 bytes
+FAIL CLSD_2019-10-18: HTTPError: HTTP Error 404: Not Found
+ok KALA_2019-08-07 200 2124 bytes
+ok RDY_2019-05-03 200 3152 bytes
+ok HRTX_2019-04-30 200 2842 bytes
+FAIL EVOK_2019-04-01: HTTPError: HTTP Error 404: Not Found
+FAIL IMMU_2019-01-17: HTTPError: HTTP Error 404: Not Found
+ok TRVN_2018-11-02 200 2144 bytes
+ok DSNKY_2018-08-24 200 3080 bytes
+ok RDY_2018-07-24 200 3072 bytes
+ok EOLS_2018-05-15 200 2937 bytes
+FAIL AGRX_2017-12-21: HTTPError: HTTP Error 404: Not Found
+ok TEVA_2017-10-26 200 3132 bytes
+ok OCUL_2017-07-10 200 2943 bytes
+ok CHRS_2017-06-09 200 2825 bytes
+ok TEVA_2017-06-02 200 3104 bytes
+ok TXMD_2017-05-05 200 2034 bytes
+ok AMPH_2017-02-17 200 2985 bytes
+ok TEVA_2016-09-30 200 3183 bytes
+ok RDY_2016-08-30 200 2915 bytes
+ok OCUL_2016-07-21 200 2926 bytes
+ok TEVA_2016-06-01 200 2938 bytes
+ok TEVA_2016-05-27 200 3032 bytes
+FAIL SCLX_2016-05-10: HTTPError: HTTP Error 400: Bad Request
+ok RDY_2016-05-04 200 3041 bytes
+ok RDY_2014-12-17 200 2965 bytes
+FAIL DRRX_2014-02-12: HTTPError: HTTP Error 404: Not Found
+ok RDHL_2014-01-31 200 2105 bytes
+FAIL DCTH_2013-09-12: HTTPError: HTTP Error 400: Bad Request
+FAIL AGRX_2013-07-17: HTTPError: HTTP Error 404: Not Found
+FAIL AVEO_2013-06-06: HTTPError: HTTP Error 404: Not Found
+FAIL AGRX_2013-02-13: HTTPError: HTTP Error 404: Not Found
+ok CHTP_2012-03-28 200 743 bytes
+ok MRK_1998-02-20 200 3068 bytes
+ok MRK_1998-05-14 200 2950 bytes
+ok MRK_1998-06-29 200 3039 bytes
+ok PFE_1998-03-27 200 3180 bytes
+ok ABT_1998-04-17 200 3082 bytes
+ok PG_1998-03-27 200 2455 bytes
+ok IONS_1998-08-26 200 1975 bytes
+ok NVS_1998-05-12 200 3012 bytes
+ok GSK_1998-02-10 200 2169 bytes
+ok GSK_1998-12-17 200 2168 bytes
+FAIL RHHBY_1998-01-29: HTTPError: HTTP Error 400: Bad Request
+FAIL RHHBY_1998-04-30: HTTPError: HTTP Error 400: Bad Request
+ok AZN_1998-06-04 200 2169 bytes
+ok AMGN_2001-09-17 200 2585 bytes
+ok AMGN_2001-11-14 200 2871 bytes
+ok AMGN_2002-01-31 200 2801 bytes
+ok LLY_2001-11-21 200 2864 bytes
+ok ABT_2002-12-31 200 2870 bytes
+ok BMRN_2003-04-30 200 2870 bytes
+ok SNY_2002-07-12 200 2905 bytes
+FAIL RHHBY_2002-10-16: HTTPError: HTTP Error 400: Bad Request
+ok MRK_2008-01-25 200 3102 bytes
