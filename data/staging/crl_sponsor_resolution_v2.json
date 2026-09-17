@@ -1,0 +1,2536 @@
+{
+ "generated_by": "scripts/build_crl_master_v2.py",
+ "policy": "R1 repo-verified exact (standalone rows only); R2 SEC company_tickers.json exact (legal suffixes removed); no token matching; unresolved stays blank",
+ "sources": [
+  "https://open.fda.gov/apis/transparency/completeresponseletters/",
+  "https://www.sec.gov/files/company_tickers.json"
+ ],
+ "resolutions": {
+  "Apiject Systems Corp.": {
+   "input_name": "Apiject Systems Corp.",
+   "normalized": "apijectsystems",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Elevar Therapeutics Inc.": {
+   "input_name": "Elevar Therapeutics Inc.",
+   "normalized": "elevartherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Jiangsu Hengrui Pharmaceuticals Co., Ltd.": {
+   "input_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+   "normalized": "jiangsuhengruipharmaceuticals",
+   "ticker": "JHPCY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd./ADR",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Ascelia Pharma AB": {
+   "input_name": "Ascelia Pharma AB",
+   "normalized": "asceliapharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ipsen Biopharm Ltd.": {
+   "input_name": "Ipsen Biopharm Ltd.",
+   "normalized": "ipsenbiopharm",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Unicycive Therapeutics Inc.": {
+   "input_name": "Unicycive Therapeutics Inc.",
+   "normalized": "unicycivetherapeutics",
+   "ticker": "UNCY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Unicycive Therapeutics, Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Evergreen Theragnostics, Inc.": {
+   "input_name": "Evergreen Theragnostics, Inc.",
+   "normalized": "evergreentheragnostics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Swedish Orphan Biovitrum AB (publ)": {
+   "input_name": "Swedish Orphan Biovitrum AB (publ)",
+   "normalized": "swedishorphanbiovitrum",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Tanvex BioPharma USA, Inc.": {
+   "input_name": "Tanvex BioPharma USA, Inc.",
+   "normalized": "tanvexbiopharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Achieve Life Sciences, Inc.": {
+   "input_name": "Achieve Life Sciences, Inc.",
+   "normalized": "achievelifesciences",
+   "ticker": "ACHV",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "ACHIEVE LIFE SCIENCES, INC.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Tris Pharma, Inc.": {
+   "input_name": "Tris Pharma, Inc.",
+   "normalized": "trispharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Bridge Regulatory Affairs, LLC": {
+   "input_name": "Bridge Regulatory Affairs, LLC",
+   "normalized": "bridgeregulatoryaffairs",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Xspray Pharma AB": {
+   "input_name": "Xspray Pharma AB",
+   "normalized": "xspraypharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Cingulate Therapeutics, LLC": {
+   "input_name": "Cingulate Therapeutics, LLC",
+   "normalized": "cingulatetherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ocuvex Therapeutics, Inc.": {
+   "input_name": "Ocuvex Therapeutics, Inc.",
+   "normalized": "ocuvextherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Eagle Pharmaceuticals, Inc.": {
+   "input_name": "Eagle Pharmaceuticals, Inc.",
+   "normalized": "eaglepharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Replimune, Inc.": {
+   "input_name": "Replimune, Inc.",
+   "normalized": "replimune",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Telix Pharmaceuticals (US) Inc.": {
+   "input_name": "Telix Pharmaceuticals (US) Inc.",
+   "normalized": "telixpharmaceuticals",
+   "ticker": "TLX",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Telix Pharmaceuticals Ltd",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Aldeyra Therapeutics, Inc.": {
+   "input_name": "Aldeyra Therapeutics, Inc.",
+   "normalized": "aldeyratherapeutics",
+   "ticker": "ALDX",
+   "exchange": "see price snapshot source",
+   "method": "repo-verified exact",
+   "matched_name": "Aldeyra Therapeutics",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Rosemont Pharmaceuticals Holdings, Inc.": {
+   "input_name": "Rosemont Pharmaceuticals Holdings, Inc.",
+   "normalized": "rosemontpharmaceuticalsholdings",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Chiesi Farmaceutici S.p.A": {
+   "input_name": "Chiesi Farmaceutici S.p.A",
+   "normalized": "chiesifarmaceuticispa",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ferring Pharmaceuticals Inc.": {
+   "input_name": "Ferring Pharmaceuticals Inc.",
+   "normalized": "ferringpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Amphastar Pharmaceuticals, Inc.": {
+   "input_name": "Amphastar Pharmaceuticals, Inc.",
+   "normalized": "amphastarpharmaceuticals",
+   "ticker": "AMPH",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Amphastar Pharmaceuticals",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Disc Medicine, Inc.": {
+   "input_name": "Disc Medicine, Inc.",
+   "normalized": "discmedicine",
+   "ticker": "IRON",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Disc Medicine, Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Aquestive Therapeutics Inc.": {
+   "input_name": "Aquestive Therapeutics Inc.",
+   "normalized": "aquestivetherapeutics",
+   "ticker": "AQST",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Aquestive Therapeutics, Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Corcept Therapeutics": {
+   "input_name": "Corcept Therapeutics",
+   "normalized": "corcepttherapeutics",
+   "ticker": "CORT",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Corcept Therapeutics Incorporated",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Pierre Fabre Pharmaceuticals Inc.": {
+   "input_name": "Pierre Fabre Pharmaceuticals Inc.",
+   "normalized": "pierrefabrepharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Outlook Therapeutics, Inc.": {
+   "input_name": "Outlook Therapeutics, Inc.",
+   "normalized": "outlooktherapeutics",
+   "ticker": "OTLK",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Outlook Therapeutics, Inc.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Dr. Reddy\u2019s Laboratories, Inc.": {
+   "input_name": "Dr. Reddy\u2019s Laboratories, Inc.",
+   "normalized": "drreddyslaboratories",
+   "ticker": "RDY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "DR REDDYS LABORATORIES LTD",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "MedicaSafe, Inc.": {
+   "input_name": "MedicaSafe, Inc.",
+   "normalized": "medicasafe",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "GlaxoSmithKline LLC": {
+   "input_name": "GlaxoSmithKline LLC",
+   "normalized": "glaxosmithkline",
+   "ticker": "GSK",
+   "exchange": "NYSE",
+   "method": "repo-verified exact",
+   "matched_name": "GlaxoSmithKline plc",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "LIB Therapeutics, Inc.": {
+   "input_name": "LIB Therapeutics, Inc.",
+   "normalized": "libtherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Sandoz Inc.": {
+   "input_name": "Sandoz Inc.",
+   "normalized": "sandoz",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Alvotech USA Inc.": {
+   "input_name": "Alvotech USA Inc.",
+   "normalized": "alvotech",
+   "ticker": "ALVO",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Alvotech",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Accord Healthcare Inc.": {
+   "input_name": "Accord Healthcare Inc.",
+   "normalized": "accordhealthcare",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Biohaven Therapeutics, Ltd.": {
+   "input_name": "Biohaven Therapeutics, Ltd.",
+   "normalized": "biohaventherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Shanghai Auzone Biological Technology Co., Ltd.": {
+   "input_name": "Shanghai Auzone Biological Technology Co., Ltd.",
+   "normalized": "shanghaiauzonebiologicaltechnology",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "SYDNEXIS Inc.": {
+   "input_name": "SYDNEXIS Inc.",
+   "normalized": "sydnexis",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "NeuroDerm, Ltd.": {
+   "input_name": "NeuroDerm, Ltd.",
+   "normalized": "neuroderm",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Dr. Reddy\u2019s Laboratories SA": {
+   "input_name": "Dr. Reddy\u2019s Laboratories SA",
+   "normalized": "drreddyslaboratories",
+   "ticker": "RDY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "DR REDDYS LABORATORIES LTD",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Sentynl Therapeutics, Inc.": {
+   "input_name": "Sentynl Therapeutics, Inc.",
+   "normalized": "sentynltherapeutics",
+   "ticker": "ZYDUSLIFE.NS",
+   "exchange": "NSE",
+   "method": "repo-verified exact",
+   "matched_name": "Sentynl Therapeutics (wholly owned by Zydus Lifesciences Ltd, India)",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Scholar Rock, Inc.": {
+   "input_name": "Scholar Rock, Inc.",
+   "normalized": "scholarrock",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Saol International Development Limited": {
+   "input_name": "Saol International Development Limited",
+   "normalized": "saolinternationaldevelopment",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Vyluma, Inc.": {
+   "input_name": "Vyluma, Inc.",
+   "normalized": "vyluma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "PTC Therapeutics, Inc.": {
+   "input_name": "PTC Therapeutics, Inc.",
+   "normalized": "ptctherapeutics",
+   "ticker": "PTCT",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "PTC Therapeutics",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Immedica Pharma AB": {
+   "input_name": "Immedica Pharma AB",
+   "normalized": "immedicapharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Accord BioPharma, Inc.": {
+   "input_name": "Accord BioPharma, Inc.",
+   "normalized": "accordbiopharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Conjupro Biotherapeutics Inc.": {
+   "input_name": "Conjupro Biotherapeutics Inc.",
+   "normalized": "conjuprobiotherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Teva Pharmaceuticals, Inc.": {
+   "input_name": "Teva Pharmaceuticals, Inc.",
+   "normalized": "tevapharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Heritage Pharmaceuticals Inc. d/b/a/ Avet Pharmaceuticals Inc.": {
+   "input_name": "Heritage Pharmaceuticals Inc. d/b/a/ Avet Pharmaceuticals Inc.",
+   "normalized": "heritagepharmaceuticalsdbaavetpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Capricor, Inc.": {
+   "input_name": "Capricor, Inc.",
+   "normalized": "capricor",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ultragenyx Pharmaceutical Inc.": {
+   "input_name": "Ultragenyx Pharmaceutical Inc.",
+   "normalized": "ultragenyxpharmaceutical",
+   "ticker": "RARE",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Ultragenyx Pharmaceutical Inc.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Accord BioPharma Inc.": {
+   "input_name": "Accord BioPharma Inc.",
+   "normalized": "accordbiopharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Sun Pharmaceutical Industries Limited": {
+   "input_name": "Sun Pharmaceutical Industries Limited",
+   "normalized": "sunpharmaceuticalindustries",
+   "ticker": "SUNPHARMA.NS",
+   "exchange": "NSE/BSE India; no US ADR",
+   "method": "repo-verified exact",
+   "matched_name": "Sun Pharmaceutical Industries Ltd.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Cipla USA, Inc.": {
+   "input_name": "Cipla USA, Inc.",
+   "normalized": "cipla",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "ResQ Pharma": {
+   "input_name": "ResQ Pharma",
+   "normalized": "resqpharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Chemo Research, S.L.": {
+   "input_name": "Chemo Research, S.L.",
+   "normalized": "chemoresearchsl",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Stealth BioTherapeutics Inc.": {
+   "input_name": "Stealth BioTherapeutics Inc.",
+   "normalized": "stealthbiotherapeutics",
+   "ticker": "MITO",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Stealth BioTherapeutics",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "University of California San Francisco": {
+   "input_name": "University of California San Francisco",
+   "normalized": "universityofcaliforniasanfrancisco",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Milestone Pharmaceuticals USA, Inc.": {
+   "input_name": "Milestone Pharmaceuticals USA, Inc.",
+   "normalized": "milestonepharmaceuticals",
+   "ticker": "MIST",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Milestone Pharmaceuticals",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "CELLTRION, Inc.": {
+   "input_name": "CELLTRION, Inc.",
+   "normalized": "celltrion",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Elevar Therapeutics, Inc.": {
+   "input_name": "Elevar Therapeutics, Inc.",
+   "normalized": "elevartherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Jiangsu Hengrui Pharmaceuticals Co., Ltd": {
+   "input_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd",
+   "normalized": "jiangsuhengruipharmaceuticals",
+   "ticker": "JHPCY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd./ADR",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Seikagaku Corporation": {
+   "input_name": "Seikagaku Corporation",
+   "normalized": "seikagaku",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Laurus Generics, Inc.": {
+   "input_name": "Laurus Generics, Inc.",
+   "normalized": "laurusgenerics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "SFJ Pharmaceuticals, Inc.": {
+   "input_name": "SFJ Pharmaceuticals, Inc.",
+   "normalized": "sfjpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Atara Biotherapeutics, Inc.": {
+   "input_name": "Atara Biotherapeutics, Inc.",
+   "normalized": "atarabiotherapeutics",
+   "ticker": "ATRA",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Atara Biotherapeutics, Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "OWP Pharmaceuticals, Inc.": {
+   "input_name": "OWP Pharmaceuticals, Inc.",
+   "normalized": "owppharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Hikma Pharmaceuticals USA Inc.": {
+   "input_name": "Hikma Pharmaceuticals USA Inc.",
+   "normalized": "hikmapharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Lexicon Pharmaceuticals, Inc.": {
+   "input_name": "Lexicon Pharmaceuticals, Inc.",
+   "normalized": "lexiconpharmaceuticals",
+   "ticker": "LXRX",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Lexicon Pharmaceuticals",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Zealand Pharma US, Inc.": {
+   "input_name": "Zealand Pharma US, Inc.",
+   "normalized": "zealandpharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Janssen Biotech, Inc.": {
+   "input_name": "Janssen Biotech, Inc.",
+   "normalized": "janssenbiotech",
+   "ticker": "JNJ",
+   "exchange": "NYSE",
+   "method": "repo-verified exact",
+   "matched_name": "Janssen Biotech (Johnson & Johnson)",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Meitheal Pharmaceuticals Inc.": {
+   "input_name": "Meitheal Pharmaceuticals Inc.",
+   "normalized": "meithealpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Applied Therapeutics, Inc.": {
+   "input_name": "Applied Therapeutics, Inc.",
+   "normalized": "appliedtherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Astellas Pharma US, Inc": {
+   "input_name": "Astellas Pharma US, Inc",
+   "normalized": "astellaspharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Lupin Limited (Biotech Division)": {
+   "input_name": "Lupin Limited (Biotech Division)",
+   "normalized": "lupinbiotechdivision",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Azurity Pharmaceuticals, Inc.": {
+   "input_name": "Azurity Pharmaceuticals, Inc.",
+   "normalized": "azuritypharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Conjupro Biotherapeutics, Inc.": {
+   "input_name": "Conjupro Biotherapeutics, Inc.",
+   "normalized": "conjuprobiotherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "CSL Behring LLC": {
+   "input_name": "CSL Behring LLC",
+   "normalized": "cslbehring",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Celltrion Inc.": {
+   "input_name": "Celltrion Inc.",
+   "normalized": "celltrion",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Scienture Inc.": {
+   "input_name": "Scienture Inc.",
+   "normalized": "scienture",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Antares Pharma, Inc.": {
+   "input_name": "Antares Pharma, Inc.",
+   "normalized": "antarespharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Lykos Therapeutics": {
+   "input_name": "Lykos Therapeutics",
+   "normalized": "lykostherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "RB Health (US) LLC": {
+   "input_name": "RB Health (US) LLC",
+   "normalized": "rbhealth",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Orexo AB": {
+   "input_name": "Orexo AB",
+   "normalized": "orexo",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "MEDRx USA, Inc.": {
+   "input_name": "MEDRx USA, Inc.",
+   "normalized": "medrx",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Samsung Bioepis Co., Ltd.": {
+   "input_name": "Samsung Bioepis Co., Ltd.",
+   "normalized": "samsungbioepis",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Daiichi Sankyo, Inc.": {
+   "input_name": "Daiichi Sankyo, Inc.",
+   "normalized": "daiichisankyo",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Nanocopoeia, LLC": {
+   "input_name": "Nanocopoeia, LLC",
+   "normalized": "nanocopoeia",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Rocket Pharmaceuticals, Inc.": {
+   "input_name": "Rocket Pharmaceuticals, Inc.",
+   "normalized": "rocketpharmaceuticals",
+   "ticker": "RCKT",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "ROCKET PHARMACEUTICALS, INC.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Bayer HealthCare LLC": {
+   "input_name": "Bayer HealthCare LLC",
+   "normalized": "bayerhealthcare",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "XTM Consulting LLC": {
+   "input_name": "XTM Consulting LLC",
+   "normalized": "xtmconsulting",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Xbrane Biopharma AB": {
+   "input_name": "Xbrane Biopharma AB",
+   "normalized": "xbranebiopharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Abeona Therapeutics, Inc.": {
+   "input_name": "Abeona Therapeutics, Inc.",
+   "normalized": "abeonatherapeutics",
+   "ticker": "ABEO",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "ABEONA THERAPEUTICS INC.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Gan & Lee Pharmaceuticals": {
+   "input_name": "Gan & Lee Pharmaceuticals",
+   "normalized": "ganleepharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Fidelity BioPharma Co.": {
+   "input_name": "Fidelity BioPharma Co.",
+   "normalized": "fidelitybiopharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Baxter Healthcare Corporation": {
+   "input_name": "Baxter Healthcare Corporation",
+   "normalized": "baxterhealthcare",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Mapi Pharma Ltd.": {
+   "input_name": "Mapi Pharma Ltd.",
+   "normalized": "mapipharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Minerva Neurosciences, Inc": {
+   "input_name": "Minerva Neurosciences, Inc",
+   "normalized": "minervaneurosciences",
+   "ticker": "NERV",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Minerva Neurosciences, Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Venatorx Pharmaceuticals, Inc.": {
+   "input_name": "Venatorx Pharmaceuticals, Inc.",
+   "normalized": "venatorxpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Xeris Pharmaceuticals, Inc.": {
+   "input_name": "Xeris Pharmaceuticals, Inc.",
+   "normalized": "xerispharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "AFT Pharmaceuticals Ltd": {
+   "input_name": "AFT Pharmaceuticals Ltd",
+   "normalized": "aftpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Defender Pharmaceuticals, Inc": {
+   "input_name": "Defender Pharmaceuticals, Inc",
+   "normalized": "defenderpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Hikma Pharmaceuticals USA, Inc.": {
+   "input_name": "Hikma Pharmaceuticals USA, Inc.",
+   "normalized": "hikmapharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Akeso Biopharma Co., Ltd.": {
+   "input_name": "Akeso Biopharma Co., Ltd.",
+   "normalized": "akesobiopharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "BendaRx USA Corporation": {
+   "input_name": "BendaRx USA Corporation",
+   "normalized": "bendarx",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "SQ Innovation, Inc.": {
+   "input_name": "SQ Innovation, Inc.",
+   "normalized": "sqinnovation",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Astellas Pharma US, Inc.": {
+   "input_name": "Astellas Pharma US, Inc.",
+   "normalized": "astellaspharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "CooperSurgical, Inc.": {
+   "input_name": "CooperSurgical, Inc.",
+   "normalized": "coopersurgical",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Checkpoint Therapeutics, Incorporated": {
+   "input_name": "Checkpoint Therapeutics, Incorporated",
+   "normalized": "checkpointtherapeutics",
+   "ticker": "CKPT",
+   "exchange": "formerly NASDAQ:CKPT, delisted 2025",
+   "method": "repo-verified exact",
+   "matched_name": "Checkpoint Therapeutics, Inc. (acquired by Sun Pharma, 2025)",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Galderma R&D, LLC": {
+   "input_name": "Galderma R&D, LLC",
+   "normalized": "galdermard",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Botanix SB Inc.": {
+   "input_name": "Botanix SB Inc.",
+   "normalized": "botanixsb",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "ARS Pharmaceuticals, Inc.": {
+   "input_name": "ARS Pharmaceuticals, Inc.",
+   "normalized": "arspharmaceuticals",
+   "ticker": "SPRY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "ARS Pharmaceuticals, Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Shilpa Medicare Limited": {
+   "input_name": "Shilpa Medicare Limited",
+   "normalized": "shilpamedicare",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Mesoblast, Inc.": {
+   "input_name": "Mesoblast, Inc.",
+   "normalized": "mesoblast",
+   "ticker": "MESO",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "MESOBLAST LTD",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Citius Pharmaceuticals, Inc.": {
+   "input_name": "Citius Pharmaceuticals, Inc.",
+   "normalized": "citiuspharmaceuticals",
+   "ticker": "CTXR",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Citius Pharmaceuticals, Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Laboratorios Farmac\u00e9uticos ROVI, S.A.": {
+   "input_name": "Laboratorios Farmac\u00e9uticos ROVI, S.A.",
+   "normalized": "laboratoriosfarmacuticosrovisa",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Impax Laboratories, LLC": {
+   "input_name": "Impax Laboratories, LLC",
+   "normalized": "impaxlaboratories",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Alvotech USA, Inc.": {
+   "input_name": "Alvotech USA, Inc.",
+   "normalized": "alvotech",
+   "ticker": "ALVO",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Alvotech",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "AOP Orphan Pharmaceuticals GmbH": {
+   "input_name": "AOP Orphan Pharmaceuticals GmbH",
+   "normalized": "aoporphanpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Galephar Pharmaceutical Research Inc.": {
+   "input_name": "Galephar Pharmaceutical Research Inc.",
+   "normalized": "galepharpharmaceuticalresearch",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ascendis Pharma Bone Diseases A/S": {
+   "input_name": "Ascendis Pharma Bone Diseases A/S",
+   "normalized": "ascendispharmabonediseasesas",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Hugel, Inc": {
+   "input_name": "Hugel, Inc",
+   "normalized": "hugel",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Zydus Worldwide DMCC": {
+   "input_name": "Zydus Worldwide DMCC",
+   "normalized": "zydusworldwidedmcc",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Phathom Pharmaceuticals, Inc.": {
+   "input_name": "Phathom Pharmaceuticals, Inc.",
+   "normalized": "phathompharmaceuticals",
+   "ticker": "PHAT",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Phathom Pharmaceuticals",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "StemCyte, Inc.": {
+   "input_name": "StemCyte, Inc.",
+   "normalized": "stemcyte",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Almatica Pharma, LLC": {
+   "input_name": "Almatica Pharma, LLC",
+   "normalized": "almaticapharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Liqmeds Worldwide Limited": {
+   "input_name": "Liqmeds Worldwide Limited",
+   "normalized": "liqmedsworldwide",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "lpsen Biopharmaceuticals Inc.": {
+   "input_name": "lpsen Biopharmaceuticals Inc.",
+   "normalized": "lpsenbiopharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Celitrion, Inc.": {
+   "input_name": "Celitrion, Inc.",
+   "normalized": "celitrion",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Spes Pharmaceuticals Inc.": {
+   "input_name": "Spes Pharmaceuticals Inc.",
+   "normalized": "spespharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "CorMedix Inc.": {
+   "input_name": "CorMedix Inc.",
+   "normalized": "cormedix",
+   "ticker": "CRMD",
+   "exchange": "NYSE American",
+   "method": "repo-verified exact",
+   "matched_name": "CorMedix",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Laboratorios Farmaceuticos Rovi, S.A.": {
+   "input_name": "Laboratorios Farmaceuticos Rovi, S.A.",
+   "normalized": "laboratoriosfarmaceuticosrovisa",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "AFT Pharmaceuticals Ltd.": {
+   "input_name": "AFT Pharmaceuticals Ltd.",
+   "normalized": "aftpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Acer Therapeutics Inc.": {
+   "input_name": "Acer Therapeutics Inc.",
+   "normalized": "acertherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Braintree Laboratories, Inc.": {
+   "input_name": "Braintree Laboratories, Inc.",
+   "normalized": "braintreelaboratories",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Verrica Pharmaceuticals Inc.": {
+   "input_name": "Verrica Pharmaceuticals Inc.",
+   "normalized": "verricapharmaceuticals",
+   "ticker": "VRCA",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "Verrica Pharmaceuticals Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "UGB, Inc.": {
+   "input_name": "UGB, Inc.",
+   "normalized": "ugb",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Coherus BioSciences, Inc.": {
+   "input_name": "Coherus BioSciences, Inc.",
+   "normalized": "coherusbiosciences",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "CMP Development LLC": {
+   "input_name": "CMP Development LLC",
+   "normalized": "cmpdevelopment",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Dr. Reddy\u2019s Laboratories Limited": {
+   "input_name": "Dr. Reddy\u2019s Laboratories Limited",
+   "normalized": "drreddyslaboratories",
+   "ticker": "RDY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "DR REDDYS LABORATORIES LTD",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Teva Neuroscience, Inc.": {
+   "input_name": "Teva Neuroscience, Inc.",
+   "normalized": "tevaneuroscience",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Akebia Therapeutics, Inc.": {
+   "input_name": "Akebia Therapeutics, Inc.",
+   "normalized": "akebiatherapeutics",
+   "ticker": "AKBA",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Akebia Therapeutics",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Amryt Pharmaceuticals DAC": {
+   "input_name": "Amryt Pharmaceuticals DAC",
+   "normalized": "amrytpharmaceuticalsdac",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Green Cross Corporation": {
+   "input_name": "Green Cross Corporation",
+   "normalized": "greencross",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Shandong Luye Pharmaceutical Co., Ltd.": {
+   "input_name": "Shandong Luye Pharmaceutical Co., Ltd.",
+   "normalized": "shandongluyepharmaceutical",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Mallinckrodt Pharmaceuticals Ireland Ltd": {
+   "input_name": "Mallinckrodt Pharmaceuticals Ireland Ltd",
+   "normalized": "mallinckrodtpharmaceuticalsireland",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Therakind Limited": {
+   "input_name": "Therakind Limited",
+   "normalized": "therakind",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Braeburn Inc.": {
+   "input_name": "Braeburn Inc.",
+   "normalized": "braeburn",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Fennec Pharmaceuticals, Inc.": {
+   "input_name": "Fennec Pharmaceuticals, Inc.",
+   "normalized": "fennecpharmaceuticals",
+   "ticker": "FENC",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "FENNEC PHARMACEUTICALS INC.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Bio-Thera Solutions Ltd.": {
+   "input_name": "Bio-Thera Solutions Ltd.",
+   "normalized": "biotherasolutions",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Santen, Inc.": {
+   "input_name": "Santen, Inc.",
+   "normalized": "santen",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Eyenovia, Inc.": {
+   "input_name": "Eyenovia, Inc.",
+   "normalized": "eyenovia",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Marius Pharmaceuticals, LLC": {
+   "input_name": "Marius Pharmaceuticals, LLC",
+   "normalized": "mariuspharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Omeros Corporation": {
+   "input_name": "Omeros Corporation",
+   "normalized": "omeros",
+   "ticker": "OMER",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Omeros Corporation",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Revance Therapeutics, Inc.": {
+   "input_name": "Revance Therapeutics, Inc.",
+   "normalized": "revancetherapeutics",
+   "ticker": "RVNC",
+   "exchange": "formerly NASDAQ:RVNC, delisted Feb 2025",
+   "method": "repo-verified exact",
+   "matched_name": "Revance Therapeutics",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Polarean Inc.": {
+   "input_name": "Polarean Inc.",
+   "normalized": "polarean",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "HQ Specialty Pharma Corporation": {
+   "input_name": "HQ Specialty Pharma Corporation",
+   "normalized": "hqspecialtypharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Zhejiang Novus Pharmaceuticals Co. Ltd.": {
+   "input_name": "Zhejiang Novus Pharmaceuticals Co. Ltd.",
+   "normalized": "zhejiangnovuspharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "CellTrans Inc.": {
+   "input_name": "CellTrans Inc.",
+   "normalized": "celltrans",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Kashiv BioSciences, LLC": {
+   "input_name": "Kashiv BioSciences, LLC",
+   "normalized": "kashivbiosciences",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "LLC": {
+   "input_name": "LLC",
+   "normalized": "",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "empty name"
+  },
+  "Spectrum Pharmaceuticals, Inc.": {
+   "input_name": "Spectrum Pharmaceuticals, Inc.",
+   "normalized": "spectrumpharmaceuticals",
+   "ticker": "SPPI",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Spectrum Pharmaceuticals",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "medac Gesellschaft fur klinische Spezialpraparate mbH": {
+   "input_name": "medac Gesellschaft fur klinische Spezialpraparate mbH",
+   "normalized": "medacgesellschaftfurklinischespezialpraparatembh",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ardelyx, Inc.": {
+   "input_name": "Ardelyx, Inc.",
+   "normalized": "ardelyx",
+   "ticker": "ARDX",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Ardelyx, Inc.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "lterum Therapeutics U.S. Ltd.": {
+   "input_name": "lterum Therapeutics U.S. Ltd.",
+   "normalized": "lterumtherapeuticsus",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Provention Bio, Inc.": {
+   "input_name": "Provention Bio, Inc.",
+   "normalized": "proventionbio",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "MediWound, Ltd.": {
+   "input_name": "MediWound, Ltd.",
+   "normalized": "mediwound",
+   "ticker": "MDWD",
+   "exchange": "NASDAQ (ADS)",
+   "method": "repo-verified exact",
+   "matched_name": "MediWound",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Cyclomedica Australia Pty Ltd.": {
+   "input_name": "Cyclomedica Australia Pty Ltd.",
+   "normalized": "cyclomedicaaustraliapty",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Orphazyme A/S": {
+   "input_name": "Orphazyme A/S",
+   "normalized": "orphazymeas",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Nevakar, Inc.": {
+   "input_name": "Nevakar, Inc.",
+   "normalized": "nevakar",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Accord Healthcare, Inc.": {
+   "input_name": "Accord Healthcare, Inc.",
+   "normalized": "accordhealthcare",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Chiesi USA": {
+   "input_name": "Chiesi USA",
+   "normalized": "chiesi",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "LEO Pharma A/S": {
+   "input_name": "LEO Pharma A/S",
+   "normalized": "leopharmaas",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "PharmaEssentia Corporation": {
+   "input_name": "PharmaEssentia Corporation",
+   "normalized": "pharmaessentia",
+   "ticker": "6446.TW",
+   "exchange": "Taiwan Stock Exchange (TPEx); no US listing",
+   "method": "repo-verified exact",
+   "matched_name": "PharmaEssentia Corp.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Novitium Pharma LLC": {
+   "input_name": "Novitium Pharma LLC",
+   "normalized": "novitiumpharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Emory Partners, LLC": {
+   "input_name": "Emory Partners, LLC",
+   "normalized": "emorypartners",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "InnoPharma Licensing LLC": {
+   "input_name": "InnoPharma Licensing LLC",
+   "normalized": "innopharmalicensing",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "scPharmaceuticals Services, Inc": {
+   "input_name": "scPharmaceuticals Services, Inc",
+   "normalized": "scpharmaceuticalsservices",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Genentech, Incorporated": {
+   "input_name": "Genentech, Incorporated",
+   "normalized": "genentech",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Alkermes, Inc.": {
+   "input_name": "Alkermes, Inc.",
+   "normalized": "alkermes",
+   "ticker": "ALKS",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Alkermes plc",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Adamis Pharmaceuticals Corporation": {
+   "input_name": "Adamis Pharmaceuticals Corporation",
+   "normalized": "adamispharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Bioverativ USA, Inc.": {
+   "input_name": "Bioverativ USA, Inc.",
+   "normalized": "bioverativ",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Supernus Pharmaceuticals, Inc.": {
+   "input_name": "Supernus Pharmaceuticals, Inc.",
+   "normalized": "supernuspharmaceuticals",
+   "ticker": "SUPN",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Supernus Pharmaceuticals, Inc.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "AFT Pharmaceuticals, Inc.": {
+   "input_name": "AFT Pharmaceuticals, Inc.",
+   "normalized": "aftpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Mallinckrodt Hospital Products IP Limited": {
+   "input_name": "Mallinckrodt Hospital Products IP Limited",
+   "normalized": "mallinckrodthospitalproductsip",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Nobelpharma Co., Ltd.": {
+   "input_name": "Nobelpharma Co., Ltd.",
+   "normalized": "nobelpharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "DBV Technologies S.A.": {
+   "input_name": "DBV Technologies S.A.",
+   "normalized": "dbvtechnologiessa",
+   "ticker": "DBVT",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "DBV Technologies S.A.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Corium, Inc.": {
+   "input_name": "Corium, Inc.",
+   "normalized": "corium",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Heron Therapeutics, Inc.": {
+   "input_name": "Heron Therapeutics, Inc.",
+   "normalized": "herontherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Esteve Pharmaceuticals, S.A.": {
+   "input_name": "Esteve Pharmaceuticals, S.A.",
+   "normalized": "estevepharmaceuticalssa",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Althera Life Sciences, LLC": {
+   "input_name": "Althera Life Sciences, LLC",
+   "normalized": "altheralifesciences",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Par Sterile Products, LLC": {
+   "input_name": "Par Sterile Products, LLC",
+   "normalized": "parsterileproducts",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "B. Braun Medical, Inc.": {
+   "input_name": "B. Braun Medical, Inc.",
+   "normalized": "bbraunmedical",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "IntelGenx Corp.": {
+   "input_name": "IntelGenx Corp.",
+   "normalized": "intelgenx",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Xellia Pharmaceuticals, ApS": {
+   "input_name": "Xellia Pharmaceuticals, ApS",
+   "normalized": "xelliapharmaceuticalsaps",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Recordati Rare Diseases Inc.": {
+   "input_name": "Recordati Rare Diseases Inc.",
+   "normalized": "recordatirarediseases",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ingenus Pharmaceuticals, LLC": {
+   "input_name": "Ingenus Pharmaceuticals, LLC",
+   "normalized": "ingenuspharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Sarfez Pharmaceuticals Inc.": {
+   "input_name": "Sarfez Pharmaceuticals Inc.",
+   "normalized": "sarfezpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Sedor Pharmaceuticals, LLC": {
+   "input_name": "Sedor Pharmaceuticals, LLC",
+   "normalized": "sedorpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "ViiV Healthcare Company": {
+   "input_name": "ViiV Healthcare Company",
+   "normalized": "viivhealthcare",
+   "ticker": "GSK",
+   "exchange": "NYSE",
+   "method": "repo-verified exact",
+   "matched_name": "ViiV Healthcare (GSK group)",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "CLASS 2 RESUBMISSION": {
+   "input_name": "CLASS 2 RESUBMISSION",
+   "normalized": "class2resubmission",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Clearside Biomedical, Inc.": {
+   "input_name": "Clearside Biomedical, Inc.",
+   "normalized": "clearsidebiomedical",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "AuroMedics Pharma LLC": {
+   "input_name": "AuroMedics Pharma LLC",
+   "normalized": "auromedicspharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Mylan GmbH": {
+   "input_name": "Mylan GmbH",
+   "normalized": "mylan",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Bioprojet Pharma": {
+   "input_name": "Bioprojet Pharma",
+   "normalized": "bioprojetpharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Kala Pharmaceuticals, Inc.": {
+   "input_name": "Kala Pharmaceuticals, Inc.",
+   "normalized": "kalapharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ricon Pharma, LLC": {
+   "input_name": "Ricon Pharma, LLC",
+   "normalized": "riconpharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Glenmark Pharmaceuticals, Inc.": {
+   "input_name": "Glenmark Pharmaceuticals, Inc.",
+   "normalized": "glenmarkpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Chiesi USA, Inc.": {
+   "input_name": "Chiesi USA, Inc.",
+   "normalized": "chiesi",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Mylan Laboratories Limited": {
+   "input_name": "Mylan Laboratories Limited",
+   "normalized": "mylanlaboratories",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Dr. Reddy\u2019s Laboratories, Inc": {
+   "input_name": "Dr. Reddy\u2019s Laboratories, Inc",
+   "normalized": "drreddyslaboratories",
+   "ticker": "RDY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "DR REDDYS LABORATORIES LTD",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Acacia Pharma Ltd": {
+   "input_name": "Acacia Pharma Ltd",
+   "normalized": "acaciapharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Evoke Pharma, Inc.": {
+   "input_name": "Evoke Pharma, Inc.",
+   "normalized": "evokepharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Proximagen, LLC": {
+   "input_name": "Proximagen, LLC",
+   "normalized": "proximagen",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Fera Pharmaceuticals, LLC": {
+   "input_name": "Fera Pharmaceuticals, LLC",
+   "normalized": "ferapharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Recro Pharma Inc.": {
+   "input_name": "Recro Pharma Inc.",
+   "normalized": "recropharma",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Sunovion Pharmaceuticals Inc.": {
+   "input_name": "Sunovion Pharmaceuticals Inc.",
+   "normalized": "sunovionpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "unresolved: repository master rows disagree (NO_TICKER vs TSE:4568); TSE 4568 is Daiichi Sankyo while Sunovion's parent was Dainippon Sumitomo Pharma (TSE 4506) - flagged for manual adjudication"
+  },
+  "Vero Biotech, LLC": {
+   "input_name": "Vero Biotech, LLC",
+   "normalized": "verobiotech",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Immunomedics, Inc": {
+   "input_name": "Immunomedics, Inc",
+   "normalized": "immunomedics",
+   "ticker": "IMMU",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Immunomedics, Inc.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Braeburn Pharmaceuticals Inc.": {
+   "input_name": "Braeburn Pharmaceuticals Inc.",
+   "normalized": "braeburnpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "International Medication Systems, Limited": {
+   "input_name": "International Medication Systems, Limited",
+   "normalized": "internationalmedicationsystems",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Innocoll Pharmaceuticals": {
+   "input_name": "Innocoll Pharmaceuticals",
+   "normalized": "innocollpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Valeant Pharmaceuticals Ireland": {
+   "input_name": "Valeant Pharmaceuticals Ireland",
+   "normalized": "valeantpharmaceuticalsireland",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Trevena, Inc.": {
+   "input_name": "Trevena, Inc.",
+   "normalized": "trevena",
+   "ticker": "TRVN",
+   "exchange": "formerly NASDAQ:TRVN; now quoted on OTC Markets - Yahoo history rejected",
+   "method": "repo-verified exact",
+   "matched_name": "Trevena, Inc.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "AB Pharmaceuticals, LLC": {
+   "input_name": "AB Pharmaceuticals, LLC",
+   "normalized": "pharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Daiichi Sankyo Inc.": {
+   "input_name": "Daiichi Sankyo Inc.",
+   "normalized": "daiichisankyo",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Lannett Holdings, Inc.": {
+   "input_name": "Lannett Holdings, Inc.",
+   "normalized": "lannettholdings",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Actavis LLC, an indirect, wholly-owned subsidiary of Teva Pharmaceuticals U.S.A. Inc.": {
+   "input_name": "Actavis LLC, an indirect, wholly-owned subsidiary of Teva Pharmaceuticals U.S.A. Inc.",
+   "normalized": "actavisanindirectwhollyownedsubsidiaryoftevapharmaceuticalsusa",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Metacel Pharmaceuticals, LLC": {
+   "input_name": "Metacel Pharmaceuticals, LLC",
+   "normalized": "metacelpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Dow Pharmaceutical Sciences, Inc.": {
+   "input_name": "Dow Pharmaceutical Sciences, Inc.",
+   "normalized": "dowpharmaceuticalsciences",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "scPharmaceuticals, Inc.": {
+   "input_name": "scPharmaceuticals, Inc.",
+   "normalized": "scpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Evolus, Inc.": {
+   "input_name": "Evolus, Inc.",
+   "normalized": "evolus",
+   "ticker": "EOLS",
+   "exchange": "NASDAQ",
+   "method": "repo-verified exact",
+   "matched_name": "Evolus, Inc.",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Adello Biologics, LLC": {
+   "input_name": "Adello Biologics, LLC",
+   "normalized": "adellobiologics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Clarus Therapeutics, Inc.": {
+   "input_name": "Clarus Therapeutics, Inc.",
+   "normalized": "clarustherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "AFT Pharmaceuticals, Ltd.": {
+   "input_name": "AFT Pharmaceuticals, Ltd.",
+   "normalized": "aftpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Agile Therapeutics, Inc.": {
+   "input_name": "Agile Therapeutics, Inc.",
+   "normalized": "agiletherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Teva Pharmaceuticals USA, Inc.": {
+   "input_name": "Teva Pharmaceuticals USA, Inc.",
+   "normalized": "tevapharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "AcelRx Pharmaceuticals, Inc.": {
+   "input_name": "AcelRx Pharmaceuticals, Inc.",
+   "normalized": "acelrxpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Actavis, L.L.C.": {
+   "input_name": "Actavis, L.L.C.",
+   "normalized": "actavisllc",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "3M Health Care (Infection Prevention Division)": {
+   "input_name": "3M Health Care (Infection Prevention Division)",
+   "normalized": "3mhealthcareinfectionpreventiondivision",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ironshore Pharmaceuticals & Development, Inc.": {
+   "input_name": "Ironshore Pharmaceuticals & Development, Inc.",
+   "normalized": "ironshorepharmaceuticalsdevelopment",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ocular Therapeutix, Inc.": {
+   "input_name": "Ocular Therapeutix, Inc.",
+   "normalized": "oculartherapeutix",
+   "ticker": "OCUL",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "OCULAR THERAPEUTIX, INC",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Teva Pharmaceuticals USA Inc.": {
+   "input_name": "Teva Pharmaceuticals USA Inc.",
+   "normalized": "tevapharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "TherapeuticsMD, Inc.": {
+   "input_name": "TherapeuticsMD, Inc.",
+   "normalized": "therapeuticsmd",
+   "ticker": "TXMD",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "TherapeuticsMD, Inc.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Institut Biochimique SA (IBSA)": {
+   "input_name": "Institut Biochimique SA (IBSA)",
+   "normalized": "institutbiochimiqueibsa",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Sun Pharma Advanced Research Company Limited": {
+   "input_name": "Sun Pharma Advanced Research Company Limited",
+   "normalized": "sunpharmaadvancedresearch",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Armstrong Pharmaceuticals, Inc.": {
+   "input_name": "Armstrong Pharmaceuticals, Inc.",
+   "normalized": "armstrongpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Ferring Pharmaceuticals, Inc.": {
+   "input_name": "Ferring Pharmaceuticals, Inc.",
+   "normalized": "ferringpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Teva Pharmaceuticals USA": {
+   "input_name": "Teva Pharmaceuticals USA",
+   "normalized": "tevapharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "The Feinstein Institute for Medical Research": {
+   "input_name": "The Feinstein Institute for Medical Research",
+   "normalized": "feinsteininstituteformedicalresearch",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Dr. Reddy\u2019s Laboratories, SA": {
+   "input_name": "Dr. Reddy\u2019s Laboratories, SA",
+   "normalized": "drreddyslaboratories",
+   "ticker": "RDY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "DR REDDYS LABORATORIES LTD",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Salamandra, LLC": {
+   "input_name": "Salamandra, LLC",
+   "normalized": "salamandra",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Scilex Pharmaceuticals, Inc.": {
+   "input_name": "Scilex Pharmaceuticals, Inc.",
+   "normalized": "scilexpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Dr. Reddy\u2019s Laboratories, Limited-": {
+   "input_name": "Dr. Reddy\u2019s Laboratories, Limited-",
+   "normalized": "drreddyslaboratories",
+   "ticker": "RDY",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "DR REDDYS LABORATORIES LTD",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "Evofem, Inc.": {
+   "input_name": "Evofem, Inc.",
+   "normalized": "evofem",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Camargo Pharmaceutical Services": {
+   "input_name": "Camargo Pharmaceutical Services",
+   "normalized": "camargopharmaceuticalservices",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Belcher Pharmaceuticals, LLC.": {
+   "input_name": "Belcher Pharmaceuticals, LLC.",
+   "normalized": "belcherpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "ELC Group": {
+   "input_name": "ELC Group",
+   "normalized": "elcgroup",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "nnoPharma Licensing LLC": {
+   "input_name": "nnoPharma Licensing LLC",
+   "normalized": "nnopharmalicensing",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Mylan Pharmaceuticals, Inc.": {
+   "input_name": "Mylan Pharmaceuticals, Inc.",
+   "normalized": "mylanpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Armstrong Pharmaceuticals": {
+   "input_name": "Armstrong Pharmaceuticals",
+   "normalized": "armstrongpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "DURECT Corporation": {
+   "input_name": "DURECT Corporation",
+   "normalized": "durect",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "RedHill Biopharma Ltd.": {
+   "input_name": "RedHill Biopharma Ltd.",
+   "normalized": "redhillbiopharma",
+   "ticker": "RDHL",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "RedHill Biopharma Ltd.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "NorthStar Medical Radioisotopes, LLC": {
+   "input_name": "NorthStar Medical Radioisotopes, LLC",
+   "normalized": "northstarmedicalradioisotopes",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Thomas Chaly, Ph.D., FAIC": {
+   "input_name": "Thomas Chaly, Ph.D., FAIC",
+   "normalized": "thomaschalyphdfaic",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Delcath Systems, Incorporated": {
+   "input_name": "Delcath Systems, Incorporated",
+   "normalized": "delcathsystems",
+   "ticker": "DCTH",
+   "exchange": "",
+   "method": "SEC exact",
+   "matched_name": "DELCATH SYSTEMS, INC.",
+   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+  },
+  "GeNO LLC": {
+   "input_name": "GeNO LLC",
+   "normalized": "geno",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "AVEO Pharmaceuticals, Inc.": {
+   "input_name": "AVEO Pharmaceuticals, Inc.",
+   "normalized": "aveopharmaceuticals",
+   "ticker": "AVEO",
+   "exchange": "formerly NASDAQ:AVEO, delisted 2023",
+   "method": "repo-verified exact",
+   "matched_name": "AVEO Pharmaceuticals, Inc. (acquired by LG Chem, 2023)",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Roxane Laboratories, Inc.": {
+   "input_name": "Roxane Laboratories, Inc.",
+   "normalized": "roxanelaboratories",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Sun Pharma Global FZE": {
+   "input_name": "Sun Pharma Global FZE",
+   "normalized": "sunpharmaglobalfze",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Pharmaxis Ltd.": {
+   "input_name": "Pharmaxis Ltd.",
+   "normalized": "pharmaxis",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Otsuka Pharmaceutical Company, Ltd.": {
+   "input_name": "Otsuka Pharmaceutical Company, Ltd.",
+   "normalized": "otsukapharmaceutical",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Chelsea Therapeutics, Inc.": {
+   "input_name": "Chelsea Therapeutics, Inc.",
+   "normalized": "chelseatherapeutics",
+   "ticker": "CHTP",
+   "exchange": "NASDAQ (delisted 2014)",
+   "method": "repo-verified exact",
+   "matched_name": "Chelsea Therapeutics (acquired by Lundbeck 2014)",
+   "basis": "name verified row-by-row earlier in this repository"
+  },
+  "Teva Women\u2019s Health, Inc.": {
+   "input_name": "Teva Women\u2019s Health, Inc.",
+   "normalized": "tevawomenshealth",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "EMD Serono, Inc.": {
+   "input_name": "EMD Serono, Inc.",
+   "normalized": "emdserono",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Cadence Pharmaceuticals": {
+   "input_name": "Cadence Pharmaceuticals",
+   "normalized": "cadencepharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Orphan Therapeutics, LLC": {
+   "input_name": "Orphan Therapeutics, LLC",
+   "normalized": "orphantherapeutics",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "King Pharmaceuticals, Inc.": {
+   "input_name": "King Pharmaceuticals, Inc.",
+   "normalized": "kingpharmaceuticals",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  },
+  "Kyowa Pharmaceutical, Inc.": {
+   "input_name": "Kyowa Pharmaceutical, Inc.",
+   "normalized": "kyowapharmaceutical",
+   "ticker": "",
+   "exchange": "",
+   "method": "unresolved",
+   "matched_name": "",
+   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+  }
+ },
+ "full_rows": 457,
+ "master_before": 58,
+ "covered_by_master": 44,
+ "new_rows": 400,
+ "resolved_ticker": 86,
+ "unresolved": 314
+}
