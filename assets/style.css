@@ -278,6 +278,7 @@ body.wide-text td.trunc .clip { -webkit-line-clamp: unset; overflow: visible; }
 .grade-C { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
 .grade-D { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
 .grade-E { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+.grade-F { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
 .grade-N { background: #f1f5f9; color: var(--muted); border: 1px solid var(--border); }
 
 /* cards */
@@ -419,6 +420,7 @@ html[data-theme="dark"] .grade-B { background: #1e3a5f; color: #93c5fd; border-c
 html[data-theme="dark"] .grade-C { background: #78350f; color: #fde68a; border-color: #92400e; }
 html[data-theme="dark"] .grade-D { background: #7c2d12; color: #fdba74; border-color: #9a3412; }
 html[data-theme="dark"] .grade-E { background: #4c1d95; color: #e9d5ff; border-color: #6b21a8; }
+html[data-theme="dark"] .grade-F { background: #7f1d1d; color: #fca5a5; border-color: #991b1b; }
 html[data-theme="dark"] .score-bar { background: #1e293b; }
 
 @media print {

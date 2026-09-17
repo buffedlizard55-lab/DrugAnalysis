@@ -1,14 +1,42 @@
-# Remaining work for the next session (written 2026-09-17 v5)
+# Remaining work for the next session (written 2026-09-17 v6)
 
-This file is the hand-off. The sandbox that edits the repo has **no general outbound network**. Every external fetch must go through GitHub Actions (`fetch_jobs/*.json` → `scripts/run_fetch_jobs.py` → `data/raw/<job>/` + SHA-256 manifest). Blank beats guessed.
+This file is the hand-off for future development. The sandbox that edits the repo has **no general outbound network**. Every external fetch must go through GitHub Actions (`fetch_jobs/*.json` → `scripts/run_fetch_jobs.py` → `data/raw/<job>/` + SHA-256 manifest). Blank beats guessed.
 
-## What this session shipped
+## What this session shipped (v6)
 
-- `data/fda_crl_master.csv` — **458 CRL rows** (58 deep-verified untouched + 400 new from the official openFDA CRL transparency database, ids `CR-<APP>-<YYYYMMDD>`). Builder: `scripts/build_crl_master_v2.py`. Resolution audit: `data/staging/crl_sponsor_resolution_v2.json`. **86 resolved, 314 flagged-blank.**
-- `data/clinical_trials_phase3_registry.csv` — **2,000 Phase 3 studies** with primary completion 2026–2027 from the official ClinicalTrials.gov API v2 (verbatim capture `data/raw/clinicaltrials_phase3_2026_2027/`, 40 pages × 50, SHA-256 manifest). Builder: `scripts/build_ctgov_phase3_registry.py`. 314 US-listed / 1,077 non-commercial / 609 unresolved-flagged. Every row links `https://clinicaltrials.gov/study/<NCT>`.
-- A looser token-based ticker matcher was trialled for the CRL expansion, produced **7 provably wrong matches** (Swedish Orphan Biovitrum→Eco Wave Power, Cadence Pharma→Cadence Design, InnoPharma→Music Licensing, Armstrong Pharma→Armstrong World, Clarus Therapeutics→Clarus Corp, RB Health→RB Global, Conjupro→Protalix) and was **excluded**. Published resolver = repo-verified standalone rows + exact SEC titles (legal suffixes only).
-- Flagged (not fixed): two master rows disagree on Sunovion (`NO_TICKER` vs `TSE:4568` = Daiichi Sankyo; Sunovion's parent was Dainippon Sumitomo, TSE 4506). Block-listed in the CRL builder so it cannot propagate.
-- Site: 🗃️ Phase 3 Registry tab, ⚠️ CRLs tab (458), header counts, methodology updates. Validator extended to both new tables — PASS.
+- `data/company_clinical_trial_scorecard.csv` — **402 company scorecards** integrating Phase 3 trials (2026–2027 completion window), pipeline phase progression (advanced vs. clinical hold), and FDA conversion rates (NME, non-NME original approvals, efficacy supplements vs. CRLs). Builder: `scripts/build_clinical_trial_scorecard.py`.
+- `data/sponsor_registry.csv` — Expanded from 171 to **265 sponsors (+94 exact mappings)**, mapping biopharmas from FDA and ClinicalTrials.gov to exact US tickers or verified Non-US / Private status.
+- `data/fda_crl_master.csv` & `data/clinical_trials_phase3_registry.csv` — Regenerated with updated sponsor registry: **156 CRL rows** and **409 Phase 3 studies** resolved to US-listed issuers.
+- `data/stock_price_snapshots.csv` — Expanded from 93 to **152 verified price snapshots** around FDA decision dates (cleaned staging files and eliminated test artifact `ASND2`).
+- Master data integrity fix: Corrected Sunovion / Dainippon Pharmaceutical in rows D631, D640, and D887 to `Sumitomo Pharma Co., Ltd.` (TSE: 4506, NON-US LISTING ONLY), eliminating the Daiichi Sankyo (TSE: 4568) collision.
+- Decision Engine UI (`index.html`, `assets/app.js`, `assets/style.css`): Added `🧬 Clinical Scorecard` tab with interactive DataTable, live counters, dark-mode CSS styling, and Decision Engine company picker enrichments.
+- QA Validator (`scripts/validate_data.py`): Validates all 11 core datasets (980 NMEs, 4,482 efficacy supplements, 1,997 original non-NME approvals, 659 company scores, 152 stock price snapshots, 458 CRLs, 2,000 CT.gov Phase 3 trials, and 402 clinical trial scorecards).
+
+## Highest-value next steps
+
+1. **Continue resolving remaining unmapped sponsors:**
+   - 302 CRL rows and ~1,591 CT.gov studies remain unmapped (many are private biotechs, foreign entities, or non-commercial research institutes).
+   - Continue exact-matching against SEC `company_tickers.json` and European/Asian exchange registers (TSE, LSE, Euronext, SIX) using `norm_legal()` exact equality.
+   - Do NOT use substring/token fuzzy matching.
+2. **Paging beyond 2,000 ClinicalTrials.gov Phase 3 records:**
+   - The current registry contains the first 2,000 matching Phase 3 studies (primary completion 2026–2027).
+   - Queue a GitHub Actions fetch job with `pageToken` pagination to ingest subsequent pages.
+3. **Price reaction coverage expansion:**
+   - Queue a GitHub Actions Yahoo Finance chart job for newly resolved US-listed CRLs and novel approvals (e.g. 2024–2026 decision dates).
+   - Verify close prices on $T-1$, $T_0$, and $T+1$ trading days. Leave degenerate or pre-IPO price series blank.
+4. **CBER Type 1 biologics gap (41 rows):**
+   - Cross-check against FDA CBER annual approval lists and FDA Purple Book before considering any merge into the NME master list.
+5. **PDUFA Calendar updates:**
+   - For remaining secondary-aggregated rows in `data/upcoming_pdufa_calendar.csv`, capture company press releases / SEC Form 8-K filings directly into `data/raw/pdufa/` to ensure primary source verification for all rows.
+
+## Do not
+
+- Invent novel approvals to pad toward "1000 new NMEs" — the NME master matches FDA's official year counts.
+- Re-introduce token/substring ticker matching. Blank beats guessed.
+- Merge the 41 Type 1 gap rows without an official year-count check.
+- Treat Type 5 manufacturer changes or medical gases as clinical-trial conversions.
+- Fill missing prices, dates, indications, or tickers without verifiable primary sources.
+- Claim the 2,000-study CT.gov capture is exhaustive — it is the API's first 2,000 matches.
 
 ## Highest-value next steps
 

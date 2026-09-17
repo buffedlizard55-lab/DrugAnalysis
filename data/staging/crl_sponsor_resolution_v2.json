@@ -10,10 +10,11 @@
    "input_name": "Apiject Systems Corp.",
    "normalized": "apijectsystems",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Apiject Systems Corp.",
+   "basis": "Private medical technology company (Stamford, CT)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Elevar Therapeutics Inc.": {
    "input_name": "Elevar Therapeutics Inc.",
@@ -27,11 +28,12 @@
   "Jiangsu Hengrui Pharmaceuticals Co., Ltd.": {
    "input_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
    "normalized": "jiangsuhengruipharmaceuticals",
-   "ticker": "JHPCY",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd./ADR",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "ticker": "600276.SS",
+   "exchange": "SSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+   "basis": "Listed on Shanghai Stock Exchange (SSE:600276)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Ascelia Pharma AB": {
    "input_name": "Ascelia Pharma AB",
@@ -64,28 +66,31 @@
    "input_name": "Evergreen Theragnostics, Inc.",
    "normalized": "evergreentheragnostics",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Evergreen Theragnostics, Inc.",
+   "basis": "Private radiopharmaceutical company (Springfield, NJ)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Swedish Orphan Biovitrum AB (publ)": {
    "input_name": "Swedish Orphan Biovitrum AB (publ)",
    "normalized": "swedishorphanbiovitrum",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "SOBI.ST",
+   "exchange": "Nasdaq Stockholm",
+   "method": "sponsor_registry exact",
+   "matched_name": "Swedish Orphan Biovitrum AB (publ)",
+   "basis": "Listed on Nasdaq Stockholm (SOBI.ST)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Tanvex BioPharma USA, Inc.": {
    "input_name": "Tanvex BioPharma USA, Inc.",
    "normalized": "tanvexbiopharma",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "6541.TW",
+   "exchange": "TWSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Tanvex BioPharma, Inc.",
+   "basis": "Listed on Taiwan Stock Exchange (TWSE:6541)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Achieve Life Sciences, Inc.": {
    "input_name": "Achieve Life Sciences, Inc.",
@@ -100,10 +105,11 @@
    "input_name": "Tris Pharma, Inc.",
    "normalized": "trispharma",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Tris Pharma, Inc.",
+   "basis": "Private specialty pharmaceutical company (Monmouth Junction, NJ)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Bridge Regulatory Affairs, LLC": {
    "input_name": "Bridge Regulatory Affairs, LLC",
@@ -117,20 +123,22 @@
   "Xspray Pharma AB": {
    "input_name": "Xspray Pharma AB",
    "normalized": "xspraypharma",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "XSPRAY.ST",
+   "exchange": "Nasdaq Stockholm",
+   "method": "sponsor_registry exact",
+   "matched_name": "Xspray Pharma AB",
+   "basis": "Listed on Nasdaq Stockholm (XSPRAY.ST)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Cingulate Therapeutics, LLC": {
    "input_name": "Cingulate Therapeutics, LLC",
    "normalized": "cingulatetherapeutics",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "CING",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Cingulate Inc.",
+   "basis": "Operating subsidiary of Cingulate Inc. (NASDAQ:CING)",
+   "us_investable_class": "US-LISTED"
   },
   "Ocuvex Therapeutics, Inc.": {
    "input_name": "Ocuvex Therapeutics, Inc.",
@@ -144,29 +152,32 @@
   "Eagle Pharmaceuticals, Inc.": {
    "input_name": "Eagle Pharmaceuticals, Inc.",
    "normalized": "eaglepharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "EGRX",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Eagle Pharmaceuticals, Inc.",
+   "basis": "Exact SEC registrant Eagle Pharmaceuticals, Inc. (NASDAQ:EGRX)",
+   "us_investable_class": "US-LISTED"
   },
   "Replimune, Inc.": {
    "input_name": "Replimune, Inc.",
    "normalized": "replimune",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "REPL",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Replimune Group, Inc.",
+   "basis": "Operating subsidiary of Replimune Group, Inc. (NASDAQ:REPL)",
+   "us_investable_class": "US-LISTED"
   },
   "Telix Pharmaceuticals (US) Inc.": {
    "input_name": "Telix Pharmaceuticals (US) Inc.",
    "normalized": "telixpharmaceuticals",
    "ticker": "TLX",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "Telix Pharmaceuticals Ltd",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Telix Pharmaceuticals Limited",
+   "basis": "US-listed ADR on NASDAQ:TLX and ASX:TLX",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Aldeyra Therapeutics, Inc.": {
    "input_name": "Aldeyra Therapeutics, Inc.",
@@ -190,19 +201,21 @@
    "input_name": "Chiesi Farmaceutici S.p.A",
    "normalized": "chiesifarmaceuticispa",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Chiesi Farmaceutici S.p.A.",
+   "basis": "US operating entity of Chiesi Farmaceutici S.p.A. (Private, Italy)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Ferring Pharmaceuticals Inc.": {
    "input_name": "Ferring Pharmaceuticals Inc.",
    "normalized": "ferringpharmaceuticals",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Ferring Pharmaceuticals",
+   "basis": "Private biopharmaceutical group (Saint-Prex, Switzerland)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Amphastar Pharmaceuticals, Inc.": {
    "input_name": "Amphastar Pharmaceuticals, Inc.",
@@ -244,10 +257,11 @@
    "input_name": "Pierre Fabre Pharmaceuticals Inc.",
    "normalized": "pierrefabrepharmaceuticals",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Pierre Fabre S.A.",
+   "basis": "Majority foundation-owned private company (Castres, France)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Outlook Therapeutics, Inc.": {
    "input_name": "Outlook Therapeutics, Inc.",
@@ -262,10 +276,11 @@
    "input_name": "Dr. Reddy\u2019s Laboratories, Inc.",
    "normalized": "drreddyslaboratories",
    "ticker": "RDY",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "DR REDDYS LABORATORIES LTD",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Dr. Reddy's Laboratories Ltd",
+   "basis": "SEC company_tickers.json exact title match (ADR)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "MedicaSafe, Inc.": {
    "input_name": "MedicaSafe, Inc.",
@@ -298,10 +313,11 @@
    "input_name": "Sandoz Inc.",
    "normalized": "sandoz",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "SIX",
+   "method": "NON-US LISTING ONLY",
+   "matched_name": "Sandoz Group AG",
+   "basis": "Spun off from Novartis 2023; lists on SIX Swiss Exchange only; no SEC registrant entry",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Alvotech USA Inc.": {
    "input_name": "Alvotech USA Inc.",
@@ -316,19 +332,21 @@
    "input_name": "Accord Healthcare Inc.",
    "normalized": "accordhealthcare",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Accord Healthcare (Intas Pharmaceuticals)",
+   "basis": "Wholly owned subsidiary of Intas Pharmaceuticals (Private, India)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Biohaven Therapeutics, Ltd.": {
    "input_name": "Biohaven Therapeutics, Ltd.",
    "normalized": "biohaventherapeutics",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "BHVN",
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Biohaven Ltd.",
+   "basis": "Therapeutics division of Biohaven Ltd. (NYSE:BHVN)",
+   "us_investable_class": "US-LISTED"
   },
   "Shanghai Auzone Biological Technology Co., Ltd.": {
    "input_name": "Shanghai Auzone Biological Technology Co., Ltd.",
@@ -361,10 +379,11 @@
    "input_name": "Dr. Reddy\u2019s Laboratories SA",
    "normalized": "drreddyslaboratories",
    "ticker": "RDY",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "DR REDDYS LABORATORIES LTD",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Dr. Reddy's Laboratories Ltd",
+   "basis": "SEC company_tickers.json exact title match (ADR)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Sentynl Therapeutics, Inc.": {
    "input_name": "Sentynl Therapeutics, Inc.",
@@ -378,11 +397,12 @@
   "Scholar Rock, Inc.": {
    "input_name": "Scholar Rock, Inc.",
    "normalized": "scholarrock",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "SRRK",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Scholar Rock Holding Corporation",
+   "basis": "Operating subsidiary of Scholar Rock Holding Corp. (NASDAQ:SRRK)",
+   "us_investable_class": "US-LISTED"
   },
   "Saol International Development Limited": {
    "input_name": "Saol International Development Limited",
@@ -424,10 +444,11 @@
    "input_name": "Accord BioPharma, Inc.",
    "normalized": "accordbiopharma",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Accord BioPharma (Intas Pharmaceuticals)",
+   "basis": "Wholly owned subsidiary of Intas Pharmaceuticals (Private, India)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Conjupro Biotherapeutics Inc.": {
    "input_name": "Conjupro Biotherapeutics Inc.",
@@ -441,11 +462,12 @@
   "Teva Pharmaceuticals, Inc.": {
    "input_name": "Teva Pharmaceuticals, Inc.",
    "normalized": "tevapharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "TEVA",
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Teva Pharmaceutical Industries Ltd.",
+   "basis": "US operating subsidiary of Teva Pharmaceutical Industries Ltd. (NYSE:TEVA)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Heritage Pharmaceuticals Inc. d/b/a/ Avet Pharmaceuticals Inc.": {
    "input_name": "Heritage Pharmaceuticals Inc. d/b/a/ Avet Pharmaceuticals Inc.",
@@ -459,11 +481,12 @@
   "Capricor, Inc.": {
    "input_name": "Capricor, Inc.",
    "normalized": "capricor",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "CAPR",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Capricor Therapeutics, Inc.",
+   "basis": "Operating subsidiary of Capricor Therapeutics, Inc. (NASDAQ:CAPR)",
+   "us_investable_class": "US-LISTED"
   },
   "Ultragenyx Pharmaceutical Inc.": {
    "input_name": "Ultragenyx Pharmaceutical Inc.",
@@ -478,28 +501,31 @@
    "input_name": "Accord BioPharma Inc.",
    "normalized": "accordbiopharma",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Accord BioPharma (Intas Pharmaceuticals)",
+   "basis": "Wholly owned subsidiary of Intas Pharmaceuticals (Private, India)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Sun Pharmaceutical Industries Limited": {
    "input_name": "Sun Pharmaceutical Industries Limited",
    "normalized": "sunpharmaceuticalindustries",
-   "ticker": "SUNPHARMA.NS",
-   "exchange": "NSE/BSE India; no US ADR",
-   "method": "repo-verified exact",
-   "matched_name": "Sun Pharmaceutical Industries Ltd.",
-   "basis": "name verified row-by-row earlier in this repository"
+   "ticker": "",
+   "exchange": "NSE/BSE",
+   "method": "NON-US LISTING ONLY",
+   "matched_name": "Sun Pharmaceutical Industries Ltd",
+   "basis": "Sun Pharma lists on Indian exchanges; no SEC registrant entry",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Cipla USA, Inc.": {
    "input_name": "Cipla USA, Inc.",
    "normalized": "cipla",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "CIPLA.NS",
+   "exchange": "NSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Cipla Limited",
+   "basis": "US subsidiary of Cipla Limited (NSE:CIPLA / BSE:500087)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "ResQ Pharma": {
    "input_name": "ResQ Pharma",
@@ -549,11 +575,12 @@
   "CELLTRION, Inc.": {
    "input_name": "CELLTRION, Inc.",
    "normalized": "celltrion",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "068270.KS",
+   "exchange": "KRX",
+   "method": "sponsor_registry exact",
+   "matched_name": "Celltrion, Inc.",
+   "basis": "Listed on Korea Exchange (KRX:068270)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Elevar Therapeutics, Inc.": {
    "input_name": "Elevar Therapeutics, Inc.",
@@ -567,11 +594,12 @@
   "Jiangsu Hengrui Pharmaceuticals Co., Ltd": {
    "input_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd",
    "normalized": "jiangsuhengruipharmaceuticals",
-   "ticker": "JHPCY",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd./ADR",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "ticker": "600276.SS",
+   "exchange": "SSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+   "basis": "Listed on Shanghai Stock Exchange (SSE:600276)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Seikagaku Corporation": {
    "input_name": "Seikagaku Corporation",
@@ -621,11 +649,12 @@
   "Hikma Pharmaceuticals USA Inc.": {
    "input_name": "Hikma Pharmaceuticals USA Inc.",
    "normalized": "hikmapharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "HIK.L",
+   "exchange": "LSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Hikma Pharmaceuticals PLC",
+   "basis": "US operating entity of Hikma Pharmaceuticals PLC (LSE:HIK)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Lexicon Pharmaceuticals, Inc.": {
    "input_name": "Lexicon Pharmaceuticals, Inc.",
@@ -639,20 +668,22 @@
   "Zealand Pharma US, Inc.": {
    "input_name": "Zealand Pharma US, Inc.",
    "normalized": "zealandpharma",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "ZLDPF",
+   "exchange": "OTC / CPH",
+   "method": "sponsor_registry exact",
+   "matched_name": "Zealand Pharma A/S",
+   "basis": "US operating entity of Zealand Pharma A/S (CPH:ZEAL / OTC:ZLDPF)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Janssen Biotech, Inc.": {
    "input_name": "Janssen Biotech, Inc.",
    "normalized": "janssenbiotech",
    "ticker": "JNJ",
    "exchange": "NYSE",
-   "method": "repo-verified exact",
-   "matched_name": "Janssen Biotech (Johnson & Johnson)",
-   "basis": "name verified row-by-row earlier in this repository"
+   "method": "sponsor_registry exact",
+   "matched_name": "Johnson & Johnson",
+   "basis": "Janssen Biotech subsidiary of Johnson & Johnson (NYSE:JNJ)",
+   "us_investable_class": "US-LISTED"
   },
   "Meitheal Pharmaceuticals Inc.": {
    "input_name": "Meitheal Pharmaceuticals Inc.",
@@ -666,20 +697,22 @@
   "Applied Therapeutics, Inc.": {
    "input_name": "Applied Therapeutics, Inc.",
    "normalized": "appliedtherapeutics",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "APLT",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Applied Therapeutics, Inc.",
+   "basis": "Exact SEC registrant Applied Therapeutics, Inc. (NASDAQ:APLT)",
+   "us_investable_class": "US-LISTED"
   },
   "Astellas Pharma US, Inc": {
    "input_name": "Astellas Pharma US, Inc",
    "normalized": "astellaspharma",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "TSE",
+   "method": "NON-US LISTING ONLY",
+   "matched_name": "Astellas Pharma Inc.",
+   "basis": "Astellas lists on the Tokyo Stock Exchange; no SEC registrant entry",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Lupin Limited (Biotech Division)": {
    "input_name": "Lupin Limited (Biotech Division)",
@@ -695,9 +728,10 @@
    "normalized": "azuritypharmaceuticals",
    "ticker": "",
    "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Azurity Pharmaceuticals Inc.",
+   "basis": "Privately held; no SEC registrant entry",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Conjupro Biotherapeutics, Inc.": {
    "input_name": "Conjupro Biotherapeutics, Inc.",
@@ -720,11 +754,12 @@
   "Celltrion Inc.": {
    "input_name": "Celltrion Inc.",
    "normalized": "celltrion",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "068270.KS",
+   "exchange": "KRX",
+   "method": "sponsor_registry exact",
+   "matched_name": "Celltrion, Inc.",
+   "basis": "Listed on Korea Exchange (KRX:068270)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Scienture Inc.": {
    "input_name": "Scienture Inc.",
@@ -748,10 +783,11 @@
    "input_name": "Lykos Therapeutics",
    "normalized": "lykostherapeutics",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Lykos Therapeutics",
+   "basis": "Private public benefit corporation (San Jose, CA)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "RB Health (US) LLC": {
    "input_name": "RB Health (US) LLC",
@@ -783,20 +819,22 @@
   "Samsung Bioepis Co., Ltd.": {
    "input_name": "Samsung Bioepis Co., Ltd.",
    "normalized": "samsungbioepis",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "207940.KS",
+   "exchange": "KRX",
+   "method": "sponsor_registry exact",
+   "matched_name": "Samsung Biologics Co., Ltd.",
+   "basis": "Subsidiary of Samsung Biologics (KRX:207940)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Daiichi Sankyo, Inc.": {
    "input_name": "Daiichi Sankyo, Inc.",
    "normalized": "daiichisankyo",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "DSNKY",
+   "exchange": "OTCQX",
+   "method": "sponsor_registry exact",
+   "matched_name": "Daiichi Sankyo Company, Limited",
+   "basis": "US operating unit of Daiichi Sankyo (OTCQX:DSNKY / TSE:4568)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Nanocopoeia, LLC": {
    "input_name": "Nanocopoeia, LLC",
@@ -819,11 +857,12 @@
   "Bayer HealthCare LLC": {
    "input_name": "Bayer HealthCare LLC",
    "normalized": "bayerhealthcare",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "BAYRY",
+   "exchange": "OTCQX",
+   "method": "sponsor_registry exact",
+   "matched_name": "Bayer AG",
+   "basis": "US operating unit of Bayer AG (OTCQX:BAYRY / XETRA:BAYN)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "XTM Consulting LLC": {
    "input_name": "XTM Consulting LLC",
@@ -873,11 +912,12 @@
   "Baxter Healthcare Corporation": {
    "input_name": "Baxter Healthcare Corporation",
    "normalized": "baxterhealthcare",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "BAX",
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Baxter International Inc.",
+   "basis": "Healthcare operating division of Baxter International Inc. (NYSE:BAX)",
+   "us_investable_class": "US-LISTED"
   },
   "Mapi Pharma Ltd.": {
    "input_name": "Mapi Pharma Ltd.",
@@ -936,11 +976,12 @@
   "Hikma Pharmaceuticals USA, Inc.": {
    "input_name": "Hikma Pharmaceuticals USA, Inc.",
    "normalized": "hikmapharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "HIK.L",
+   "exchange": "LSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Hikma Pharmaceuticals PLC",
+   "basis": "US operating entity of Hikma Pharmaceuticals PLC (LSE:HIK)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Akeso Biopharma Co., Ltd.": {
    "input_name": "Akeso Biopharma Co., Ltd.",
@@ -973,10 +1014,11 @@
    "input_name": "Astellas Pharma US, Inc.",
    "normalized": "astellaspharma",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "TSE",
+   "method": "NON-US LISTING ONLY",
+   "matched_name": "Astellas Pharma Inc.",
+   "basis": "Astellas lists on the Tokyo Stock Exchange; no SEC registrant entry",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "CooperSurgical, Inc.": {
    "input_name": "CooperSurgical, Inc.",
@@ -1026,11 +1068,12 @@
   "Shilpa Medicare Limited": {
    "input_name": "Shilpa Medicare Limited",
    "normalized": "shilpamedicare",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "SHILPAMED.NS",
+   "exchange": "NSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Shilpa Medicare Limited",
+   "basis": "Listed on National Stock Exchange of India (NSE:SHILPAMED)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Mesoblast, Inc.": {
    "input_name": "Mesoblast, Inc.",
@@ -1197,11 +1240,12 @@
   "Laboratorios Farmaceuticos Rovi, S.A.": {
    "input_name": "Laboratorios Farmaceuticos Rovi, S.A.",
    "normalized": "laboratoriosfarmaceuticosrovisa",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "ROVI.MC",
+   "exchange": "BME",
+   "method": "sponsor_registry exact",
+   "matched_name": "Laboratorios Farmaceuticos Rovi, S.A.",
+   "basis": "Listed on Bolsa de Madrid (BME:ROVI)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "AFT Pharmaceuticals Ltd.": {
    "input_name": "AFT Pharmaceuticals Ltd.",
@@ -1226,9 +1270,10 @@
    "normalized": "braintreelaboratories",
    "ticker": "",
    "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Braintree Laboratories Inc.",
+   "basis": "Privately held US company; no publicly traded equity",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Verrica Pharmaceuticals Inc.": {
    "input_name": "Verrica Pharmaceuticals Inc.",
@@ -1251,11 +1296,12 @@
   "Coherus BioSciences, Inc.": {
    "input_name": "Coherus BioSciences, Inc.",
    "normalized": "coherusbiosciences",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "CHRS",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Coherus BioSciences, Inc.",
+   "basis": "Operating company Coherus BioSciences / Coherus Oncology, Inc. (NASDAQ:CHRS)",
+   "us_investable_class": "US-LISTED"
   },
   "CMP Development LLC": {
    "input_name": "CMP Development LLC",
@@ -1270,10 +1316,11 @@
    "input_name": "Dr. Reddy\u2019s Laboratories Limited",
    "normalized": "drreddyslaboratories",
    "ticker": "RDY",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "DR REDDYS LABORATORIES LTD",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Dr. Reddy's Laboratories Ltd",
+   "basis": "SEC company_tickers.json exact title match (ADR)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Teva Neuroscience, Inc.": {
    "input_name": "Teva Neuroscience, Inc.",
@@ -1369,19 +1416,21 @@
    "input_name": "Santen, Inc.",
    "normalized": "santen",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "TSE",
+   "method": "NON-US LISTING ONLY",
+   "matched_name": "Santen Pharmaceutical Co. Ltd.",
+   "basis": "Santen lists on the Tokyo Stock Exchange; no SEC registrant entry",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Eyenovia, Inc.": {
    "input_name": "Eyenovia, Inc.",
    "normalized": "eyenovia",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "EYEN",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Eyenovia, Inc.",
+   "basis": "Exact SEC registrant Eyenovia, Inc. (NASDAQ:EYEN)",
+   "us_investable_class": "US-LISTED"
   },
   "Marius Pharmaceuticals, LLC": {
    "input_name": "Marius Pharmaceuticals, LLC",
@@ -1549,28 +1598,31 @@
    "input_name": "Accord Healthcare, Inc.",
    "normalized": "accordhealthcare",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Accord Healthcare (Intas Pharmaceuticals)",
+   "basis": "Wholly owned subsidiary of Intas Pharmaceuticals (Private, India)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Chiesi USA": {
    "input_name": "Chiesi USA",
    "normalized": "chiesi",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Chiesi Farmaceutici S.p.A.",
+   "basis": "US operating entity of Chiesi Farmaceutici S.p.A. (Private, Italy)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "LEO Pharma A/S": {
    "input_name": "LEO Pharma A/S",
    "normalized": "leopharmaas",
    "ticker": "",
    "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "LEO Pharma A/S",
+   "basis": "Owned by the LEO Foundation; no publicly traded equity",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "PharmaEssentia Corporation": {
    "input_name": "PharmaEssentia Corporation",
@@ -1620,11 +1672,12 @@
   "Genentech, Incorporated": {
    "input_name": "Genentech, Incorporated",
    "normalized": "genentech",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "RHHBY",
+   "exchange": "OTCQX",
+   "method": "sponsor_registry exact",
+   "matched_name": "Roche Holding AG",
+   "basis": "Wholly owned subsidiary of Roche Holding AG (OTCQX:RHHBY / SIX:ROG)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Alkermes, Inc.": {
    "input_name": "Alkermes, Inc.",
@@ -1638,11 +1691,12 @@
   "Adamis Pharmaceuticals Corporation": {
    "input_name": "Adamis Pharmaceuticals Corporation",
    "normalized": "adamispharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "ADMP",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Adamis Pharmaceuticals Corporation",
+   "basis": "Exact SEC registrant Adamis Pharmaceuticals Corporation (NASDAQ:ADMP)",
+   "us_investable_class": "US-LISTED"
   },
   "Bioverativ USA, Inc.": {
    "input_name": "Bioverativ USA, Inc.",
@@ -1710,11 +1764,12 @@
   "Heron Therapeutics, Inc.": {
    "input_name": "Heron Therapeutics, Inc.",
    "normalized": "herontherapeutics",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "HRTX",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Heron Therapeutics, Inc.",
+   "basis": "Exact SEC registrant Heron Therapeutics, Inc. (NASDAQ:HRTX)",
+   "us_investable_class": "US-LISTED"
   },
   "Esteve Pharmaceuticals, S.A.": {
    "input_name": "Esteve Pharmaceuticals, S.A.",
@@ -1747,10 +1802,11 @@
    "input_name": "B. Braun Medical, Inc.",
    "normalized": "bbraunmedical",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "B. Braun Melsungen AG",
+   "basis": "Privately held medical and pharmaceutical company (Melsungen, Germany)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "IntelGenx Corp.": {
    "input_name": "IntelGenx Corp.",
@@ -1827,11 +1883,12 @@
   "Clearside Biomedical, Inc.": {
    "input_name": "Clearside Biomedical, Inc.",
    "normalized": "clearsidebiomedical",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "CLSD",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Clearside Biomedical, Inc.",
+   "basis": "Exact SEC registrant Clearside Biomedical, Inc. (NASDAQ:CLSD)",
+   "us_investable_class": "US-LISTED"
   },
   "AuroMedics Pharma LLC": {
    "input_name": "AuroMedics Pharma LLC",
@@ -1863,11 +1920,12 @@
   "Kala Pharmaceuticals, Inc.": {
    "input_name": "Kala Pharmaceuticals, Inc.",
    "normalized": "kalapharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "KALA",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Kala Bio, Inc.",
+   "basis": "Formerly Kala Pharmaceuticals, now Kala Bio, Inc. (NASDAQ:KALA)",
+   "us_investable_class": "US-LISTED"
   },
   "Ricon Pharma, LLC": {
    "input_name": "Ricon Pharma, LLC",
@@ -1891,10 +1949,11 @@
    "input_name": "Chiesi USA, Inc.",
    "normalized": "chiesi",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Chiesi Farmaceutici S.p.A.",
+   "basis": "US operating entity of Chiesi Farmaceutici S.p.A. (Private, Italy)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Mylan Laboratories Limited": {
    "input_name": "Mylan Laboratories Limited",
@@ -1909,10 +1968,11 @@
    "input_name": "Dr. Reddy\u2019s Laboratories, Inc",
    "normalized": "drreddyslaboratories",
    "ticker": "RDY",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "DR REDDYS LABORATORIES LTD",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Dr. Reddy's Laboratories Ltd",
+   "basis": "SEC company_tickers.json exact title match (ADR)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Acacia Pharma Ltd": {
    "input_name": "Acacia Pharma Ltd",
@@ -1926,11 +1986,12 @@
   "Evoke Pharma, Inc.": {
    "input_name": "Evoke Pharma, Inc.",
    "normalized": "evokepharma",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "EVOK",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Evoke Pharma, Inc.",
+   "basis": "Exact SEC registrant Evoke Pharma, Inc. (NASDAQ:EVOK)",
+   "us_investable_class": "US-LISTED"
   },
   "Proximagen, LLC": {
    "input_name": "Proximagen, LLC",
@@ -1962,11 +2023,12 @@
   "Sunovion Pharmaceuticals Inc.": {
    "input_name": "Sunovion Pharmaceuticals Inc.",
    "normalized": "sunovionpharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "unresolved: repository master rows disagree (NO_TICKER vs TSE:4568); TSE 4568 is Daiichi Sankyo while Sunovion's parent was Dainippon Sumitomo Pharma (TSE 4506) - flagged for manual adjudication"
+   "ticker": "4506.T",
+   "exchange": "TSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Sumitomo Pharma Co., Ltd. (parent of Sunovion)",
+   "basis": "Wholly owned US subsidiary of Sumitomo Pharma Co., Ltd. (TSE:4506)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Vero Biotech, LLC": {
    "input_name": "Vero Biotech, LLC",
@@ -2043,11 +2105,12 @@
   "Daiichi Sankyo Inc.": {
    "input_name": "Daiichi Sankyo Inc.",
    "normalized": "daiichisankyo",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "DSNKY",
+   "exchange": "OTCQX",
+   "method": "sponsor_registry exact",
+   "matched_name": "Daiichi Sankyo Company, Limited",
+   "basis": "US operating unit of Daiichi Sankyo (OTCQX:DSNKY / TSE:4568)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Lannett Holdings, Inc.": {
    "input_name": "Lannett Holdings, Inc.",
@@ -2133,20 +2196,22 @@
   "Agile Therapeutics, Inc.": {
    "input_name": "Agile Therapeutics, Inc.",
    "normalized": "agiletherapeutics",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "AGRX",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Agile Therapeutics, Inc.",
+   "basis": "Exact SEC registrant Agile Therapeutics, Inc. (NASDAQ:AGRX)",
+   "us_investable_class": "US-LISTED"
   },
   "Teva Pharmaceuticals USA, Inc.": {
    "input_name": "Teva Pharmaceuticals USA, Inc.",
    "normalized": "tevapharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "TEVA",
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Teva Pharmaceutical Industries Ltd.",
+   "basis": "US operating subsidiary of Teva Pharmaceutical Industries Ltd. (NYSE:TEVA)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "AcelRx Pharmaceuticals, Inc.": {
    "input_name": "AcelRx Pharmaceuticals, Inc.",
@@ -2196,11 +2261,12 @@
   "Teva Pharmaceuticals USA Inc.": {
    "input_name": "Teva Pharmaceuticals USA Inc.",
    "normalized": "tevapharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "TEVA",
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Teva Pharmaceutical Industries Ltd.",
+   "basis": "US operating subsidiary of Teva Pharmaceutical Industries Ltd. (NYSE:TEVA)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "TherapeuticsMD, Inc.": {
    "input_name": "TherapeuticsMD, Inc.",
@@ -2223,11 +2289,12 @@
   "Sun Pharma Advanced Research Company Limited": {
    "input_name": "Sun Pharma Advanced Research Company Limited",
    "normalized": "sunpharmaadvancedresearch",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "SPARC.NS",
+   "exchange": "NSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Sun Pharma Advanced Research Company Limited",
+   "basis": "Listed on National Stock Exchange of India (NSE:SPARC)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Armstrong Pharmaceuticals, Inc.": {
    "input_name": "Armstrong Pharmaceuticals, Inc.",
@@ -2242,19 +2309,21 @@
    "input_name": "Ferring Pharmaceuticals, Inc.",
    "normalized": "ferringpharmaceuticals",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "N/A",
+   "method": "PRIVATE / NO EQUITY",
+   "matched_name": "Ferring Pharmaceuticals",
+   "basis": "Private biopharmaceutical group (Saint-Prex, Switzerland)",
+   "us_investable_class": "PRIVATE / NO EQUITY"
   },
   "Teva Pharmaceuticals USA": {
    "input_name": "Teva Pharmaceuticals USA",
    "normalized": "tevapharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "TEVA",
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Teva Pharmaceutical Industries Ltd.",
+   "basis": "US operating subsidiary of Teva Pharmaceutical Industries Ltd. (NYSE:TEVA)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "The Feinstein Institute for Medical Research": {
    "input_name": "The Feinstein Institute for Medical Research",
@@ -2269,10 +2338,11 @@
    "input_name": "Dr. Reddy\u2019s Laboratories, SA",
    "normalized": "drreddyslaboratories",
    "ticker": "RDY",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "DR REDDYS LABORATORIES LTD",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Dr. Reddy's Laboratories Ltd",
+   "basis": "SEC company_tickers.json exact title match (ADR)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Salamandra, LLC": {
    "input_name": "Salamandra, LLC",
@@ -2286,20 +2356,22 @@
   "Scilex Pharmaceuticals, Inc.": {
    "input_name": "Scilex Pharmaceuticals, Inc.",
    "normalized": "scilexpharmaceuticals",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "SCLX",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "Scilex Holding Company",
+   "basis": "Operating subsidiary of Scilex Holding Company (NASDAQ:SCLX)",
+   "us_investable_class": "US-LISTED"
   },
   "Dr. Reddy\u2019s Laboratories, Limited-": {
    "input_name": "Dr. Reddy\u2019s Laboratories, Limited-",
    "normalized": "drreddyslaboratories",
    "ticker": "RDY",
-   "exchange": "",
-   "method": "SEC exact",
-   "matched_name": "DR REDDYS LABORATORIES LTD",
-   "basis": "exact match (legal suffixes only removed) against SEC company_tickers.json (https://www.sec.gov/files/company_tickers.json)"
+   "exchange": "NYSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Dr. Reddy's Laboratories Ltd",
+   "basis": "SEC company_tickers.json exact title match (ADR)",
+   "us_investable_class": "US-LISTED (ADR)"
   },
   "Evofem, Inc.": {
    "input_name": "Evofem, Inc.",
@@ -2367,11 +2439,12 @@
   "DURECT Corporation": {
    "input_name": "DURECT Corporation",
    "normalized": "durect",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "DRRX",
+   "exchange": "NASDAQ",
+   "method": "sponsor_registry exact",
+   "matched_name": "DURECT Corporation",
+   "basis": "Exact SEC registrant DURECT Corporation (NASDAQ:DRRX)",
+   "us_investable_class": "US-LISTED"
   },
   "RedHill Biopharma Ltd.": {
    "input_name": "RedHill Biopharma Ltd.",
@@ -2457,11 +2530,12 @@
   "Otsuka Pharmaceutical Company, Ltd.": {
    "input_name": "Otsuka Pharmaceutical Company, Ltd.",
    "normalized": "otsukapharmaceutical",
-   "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "ticker": "4578.T",
+   "exchange": "TSE",
+   "method": "sponsor_registry exact",
+   "matched_name": "Otsuka Holdings Co., Ltd.",
+   "basis": "Subsidiary of Otsuka Holdings Co., Ltd. (Tokyo: 4578)",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Chelsea Therapeutics, Inc.": {
    "input_name": "Chelsea Therapeutics, Inc.",
@@ -2485,10 +2559,11 @@
    "input_name": "EMD Serono, Inc.",
    "normalized": "emdserono",
    "ticker": "",
-   "exchange": "",
-   "method": "unresolved",
-   "matched_name": "",
-   "basis": "no standalone repository-verified row and no exact SEC registrant title match (legal suffixes removed) \u2014 left unresolved, blank beats guessed"
+   "exchange": "XETRA",
+   "method": "NON-US LISTING ONLY",
+   "matched_name": "Merck KGaA",
+   "basis": "EMD Serono is the US business of Merck KGaA, which lists on XETRA",
+   "us_investable_class": "NON-US LISTING ONLY"
   },
   "Cadence Pharmaceuticals": {
    "input_name": "Cadence Pharmaceuticals",
@@ -2531,6 +2606,6 @@
  "master_before": 58,
  "covered_by_master": 44,
  "new_rows": 400,
- "resolved_ticker": 86,
- "unresolved": 314
+ "resolved_ticker": 156,
+ "unresolved": 244
 }

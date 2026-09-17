@@ -264,12 +264,36 @@ for i, r in enumerate(ctgov, 2):
     if r.get("ticker") and r.get("investability_class") != "US-LISTED":
         errors.append(f"ctgov:{i}: ticker present but investability_class is {r.get('investability_class')!r}")
 
+
+# ---- Company Clinical Trial Scorecard (dedicated phase progression & FDA record)
+clin_scores = read("company_clinical_trial_scorecard.csv")
+if len(clin_scores) < 300:
+    errors.append(f"clin_scores: {len(clin_scores)} rows, expected >= 300")
+for i, r in enumerate(clin_scores, 2):
+    if not r.get("company_name", "").strip():
+        errors.append(f"clin_scores:{i}: blank company_name")
+    if not r.get("verification_status", "").strip():
+        errors.append(f"clin_scores:{i}: blank verification_status")
+    for k in ("source_url_1", "source_url_2"):
+        check_url(r.get(k, ""), f"clin_scores:{i}:{k}")
+    g = r.get("success_grade", "").strip()
+    if g and g not in {"A", "B", "C", "D", "E"}:
+        errors.append(f"clin_scores:{i}: unknown success_grade {g!r}")
+    rate = r.get("clinical_progression_rate_pct", "").strip()
+    if rate:
+        try:
+            n = float(rate)
+            if not 0 <= n <= 100:
+                errors.append(f"clin_scores:{i}: clinical_progression_rate_pct outside 0-100")
+        except ValueError:
+            errors.append(f"clin_scores:{i}: non-numeric clinical_progression_rate_pct")
+
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows, {len(oscores)} orig scorecards, {len(t1gap)} Type-1-gap flags, "
       f"{len(exp)} label-expansion scorecards, {len(audit)} cross-check rows, "
       f"{len(scores)} company scorecards, {len(prices)} price snapshots, "
       f"{len(crl)} CRL rows (+{len(new_crl)} new from the openFDA CRL database), and "
-      f"{len(ctgov)} ClinicalTrials.gov Phase 3 rows.")
+      f"{len(ctgov)} ClinicalTrials.gov Phase 3 rows, and {len(clin_scores)} clinical trial scorecards.")
 print(f"Warnings requiring manual review: {len(warnings)}")
 for w in warnings[:12]: print("WARNING", w)
 if len(warnings) > 12: print(f"WARNING ... {len(warnings)-12} more")

@@ -88,7 +88,7 @@ def load_full() -> list[dict]:
 
 def load_master() -> list[dict]:
     with MASTER.open(newline="", encoding="utf-8-sig") as fh:
-        return list(csv.DictReader(fh))
+        return [r for r in csv.DictReader(fh) if not r.get("crl_id", "").startswith("CR-")]
 
 
 # Names whose only repository mapping is itself a flagged irregularity. Not
@@ -198,13 +198,40 @@ def master_coverage(master: list[dict], full: list[dict]) -> tuple[set, list[str
     return covered, log
 
 
-def resolve_strict(name: str, repo: dict, sec: dict) -> dict:
+def load_sponsor_reg() -> dict[str, dict]:
+    out = {}
+    path = DATA / "sponsor_registry.csv"
+    if path.exists():
+        with path.open(newline="", encoding="utf-8-sig") as fh:
+            for r in csv.DictReader(fh):
+                for cand in (r.get("sponsor_key"), r.get("resolved_company"), r.get("sec_title")):
+                    if cand:
+                        k = norm_legal(cand)
+                        if k:
+                            out[k] = r
+    return out
+
+
+def resolve_strict(name: str, repo: dict, sec: dict, reg: dict) -> dict:
     key = norm_legal(name)
     res = {"input_name": name, "normalized": key, "ticker": "", "exchange": "",
            "method": "unresolved", "matched_name": ""}
     if not key:
         res["basis"] = "empty name"
         return res
+    if key in reg:
+        r = reg[key]
+        tk = (r.get("ticker") or "").strip()
+        ex = (r.get("exchange") or "").strip()
+        comp = (r.get("resolved_company") or name).strip()
+        uclass = (r.get("us_investable_class") or "").strip()
+        basis = (r.get("basis") or "sponsor_registry exact match").strip()
+        if tk and tk not in {"UNRESOLVED", "NO_US_TICKER", "NO_TICKER"}:
+            res.update(ticker=tk, exchange=ex, method="sponsor_registry exact", matched_name=comp, basis=basis, us_investable_class=uclass)
+            return res
+        elif uclass in {"NON-US LISTING ONLY", "PRIVATE / NO EQUITY"}:
+            res.update(ticker="", exchange=ex, method=uclass, matched_name=comp, basis=basis, us_investable_class=uclass)
+            return res
     if key in repo:
         tk, ex, row = repo[key]
         res.update(ticker=tk, exchange=ex, method="repo-verified exact", matched_name=row,
@@ -230,6 +257,7 @@ def main() -> None:
     covered, cov_log = master_coverage(master, full)
     repo = build_repo_map_strict()
     sec = build_sec_map_strict()
+    reg = load_sponsor_reg()
 
     new_rows: list[dict] = []
     audit: dict = {"generated_by": "scripts/build_crl_master_v2.py",
@@ -247,7 +275,7 @@ def main() -> None:
         name = (r["raw_company"] or "").strip()
         key = norm_legal(name)
         if name not in audit["resolutions"]:
-            audit["resolutions"][name] = resolve_strict(name, repo, sec)
+            audit["resolutions"][name] = resolve_strict(name, repo, sec, reg)
         res = audit["resolutions"][name]
         ticker = res["ticker"]
 
@@ -297,9 +325,7 @@ def main() -> None:
     for r in out_rows:
         assert r["source_url_1"] and r["source_url_2"], f"missing source link {r['crl_id']}"
         assert r["crl_date"], f"missing date {r['crl_id']}"
-    with MASTER.open(newline="", encoding="utf-8-sig") as fh:
-        before = list(csv.DictReader(fh))
-    assert out_rows[:len(before)] == [{c: r.get(c, "") for c in MASTER_COLS} for r in before], \
+    assert out_rows[:len(master)] == [{c: r.get(c, "") for c in MASTER_COLS} for r in master], \
         "existing 58 master rows must remain identical"
 
     with MASTER.open("w", newline="", encoding="utf-8") as fh:

@@ -645,6 +645,8 @@ function drawOverview() {
     { k: 'Rows with verified prices', v: priced.length, s: 'blank cells are never estimated' },
     { k: 'Rows flagged for review', v: flagged.length, s: 'irregularities explained in Notes' },
     { k: 'Companies scored', v: scores.length, s: 'numeric track-record score 0–100' },
+    { k: 'Clinical trial scorecards', v: (overview.clinScores || []).length, s: 'clinical trial success, phase advancement, and regulatory conversion' },
+    { k: 'Phase 3 registry (2026–27)', v: (overview.ctgov || []).length, s: ((overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length) + ' US-listed lead sponsors with verified primary completion dates' },
     { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' },
     { k: 'Original non-NME approvals', v: (overview.orig || []).length, s: ((overview.orig || []).filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length) + ' US-listed · Type 2/3/4/5, biosimilars, new-indication originals' },
     { k: 'Type 1 unmatched (flagged)', v: (overview.t1gap || []).length, s: 'openFDA Type 1 not merged into the NME master — CBER biologics / copacks, blank beats guessed' }
@@ -871,6 +873,22 @@ function initEngine() {
         o.dataset.supplprio = exp.priority_review_share_pct || '';
         o.dataset.suppldrugs = exp.distinct_drugs_expanded || 0;
       }
+      const origS = (overview.origScores || []).find(e => (e.ticker && e.ticker === s.ticker) || (e.company_name && e.company_name === s.company_name));
+      if (origS) {
+        o.dataset.origclin = origS.clinical_relevant_count || 0;
+        o.dataset.origtot = origS.total_original_non_nme || 0;
+        o.dataset.origt3 = origS.n_type3_new_dosage || 0;
+        o.dataset.orig5y = origS.orig_last_5y || 0;
+      }
+      const clin = (overview.clinScores || []).find(c => (c.ticker && c.ticker === s.ticker) || (c.company_name && c.company_name === s.company_name));
+      if (clin) {
+        o.dataset.p3trials = clin.phase3_trials_tracked || 0;
+        o.dataset.progression = clin.phase_progression_rate_pct || '';
+        o.dataset.advanced = clin.advanced_to_next_phase_count || 0;
+        o.dataset.paused = clin.paused_or_clinical_hold_count || 0;
+        o.dataset.clingrade = clin.grade || '';
+        o.dataset.clinscore = clin.clinical_composite_score || '';
+      }
       compSel.appendChild(o);
     });
 
@@ -889,6 +907,12 @@ function initEngine() {
       `<strong>${escapeHtml(o.dataset.crls)}</strong> CRLs, FDA success rate <strong>${escapeHtml(o.dataset.rate)}%</strong> ` +
       `(95% Wilson lower bound ${escapeHtml(o.dataset.wilson)}%), composite score <strong>${escapeHtml(o.dataset.score)}</strong>/100, ` +
       `class ${escapeHtml(o.dataset.class)}.`;
+    if (o.dataset.p3trials && +o.dataset.p3trials > 0) {
+      note.innerHTML += `<br>Clinical Trial & Phase Progression profile: ` +
+        `<strong>${escapeHtml(o.dataset.p3trials)}</strong> active/tracked Phase 3 trials in ClinicalTrials.gov (2026–2027 completion window). ` +
+        (o.dataset.progression ? `Deep pipeline progression: <strong>${escapeHtml(o.dataset.progression)}%</strong> (${escapeHtml(o.dataset.advanced)} advanced, ${escapeHtml(o.dataset.paused)} paused/hold). ` : '') +
+        (o.dataset.clinscore ? `Clinical Scorecard: <strong>${escapeHtml(o.dataset.clinscore)}/100</strong> (Grade <strong>${escapeHtml(o.dataset.clingrade)}</strong>).` : '');
+    }
     if (o.dataset.suppl) {
       note.innerHTML += `<br>Label-expansion record (FDA efficacy supplements, 2000-2026): ` +
         `<strong>${escapeHtml(o.dataset.suppl)}</strong> approved across ` +
@@ -974,6 +998,7 @@ function fillCounts() {
   setCount('crlunres', (overview.crls || []).filter(r => (r.verification_status || '').includes('FLAGGED')).length);
   setCount('ctgov', (overview.ctgov || []).length);
   setCount('ctgovus', (overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length);
+  setCount('clinscores', (overview.clinScores || []).length);
 
   /* Efficacy supplements + verification audit */
   const suppl = overview.suppl || [], audit = overview.audit || [];
@@ -1040,14 +1065,15 @@ Promise.all([
   loadCSV('data/fda_original_non_nme_decisions.csv').then(x => x.records).catch(() => []),
   loadCSV('data/company_original_approval_scorecard.csv').then(x => x.records).catch(() => []),
   loadCSV('data/fda_type1_not_in_nme_master.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/clinical_trials_phase3_registry.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov]) => {
+  loadCSV('data/clinical_trials_phase3_registry.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/company_clinical_trial_scorecard.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
   overview.suppl = suppl; overview.audit = audit; overview.expansion = expansion;
   overview.orig = orig; overview.origScores = origScores; overview.t1gap = t1gap;
-  overview.ctgov = ctgov;
+  overview.ctgov = ctgov; overview.clinScores = clinScores;
 
   /* Defensive rendering: one failing panel must never blank the whole site
      again (a missing function here silently killed every table after it
@@ -1349,6 +1375,39 @@ Promise.all([
       { key: 'cls', label: 'All listing classes', field: 'us_investable_class' },
       { key: 'min', label: 'Minimum clinical-relevant', options: () => ['1', '5', '10', '20'],
         match: (r, v) => +r.clinical_relevant_count >= +v }
+    ]
+  });
+
+  /* Company Clinical Trial & Phase Progression Scorecard */
+  DataTable({
+    id: 'clin-scores', mount: '#clin-scores-view', csv: 'data/company_clinical_trial_scorecard.csv',
+    columns: [
+      c('company_name', 'Company', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => r.ticker ? `<strong>${escapeHtml(r.ticker)}</strong>` : '<span class="badge neutral">—</span>' }),
+      c('grade', 'Grade', { core: true, render: r => `<span class="grade ${r.grade ? ('grade-' + r.grade[0]) : ''}">${escapeHtml(r.grade || '—')}</span>` }),
+      c('clinical_composite_score', 'Score (0–100)', { core: true, num: true, render: r => `<span class="num-strong">${escapeHtml(r.clinical_composite_score)}</span>` }),
+      c('phase3_trials_tracked', 'Phase 3 (2026-27)', { core: true, num: true, render: r => num(r.phase3_trials_tracked, 0) }),
+      c('phase_progression_rate_pct', 'Progression %', { core: true, num: true, render: r => r.phase_progression_rate_pct ? `<span class="num-strong">${escapeHtml(r.phase_progression_rate_pct)}%</span>` : '<span class="muted">—</span>' }),
+      c('advanced_to_next_phase_count', 'Advanced', { core: true, num: true, render: r => num(r.advanced_to_next_phase_count, 0) }),
+      c('paused_or_clinical_hold_count', 'Paused/Hold', { core: true, num: true, render: r => num(r.paused_or_clinical_hold_count, 0) }),
+      c('fda_approvals_total', 'Total Approvals', { core: true, num: true, render: r => num(r.fda_approvals_total, 0) }),
+      c('novel_approvals_tracked', 'Novel (NME)', { num: true, render: r => num(r.novel_approvals_tracked, 0) }),
+      c('label_expansions_tracked', 'Expansions', { num: true, render: r => num(r.label_expansions_tracked, 0) }),
+      c('crl_rejections_tracked', 'CRLs', { core: true, num: true, render: r => num(r.crl_rejections_tracked, 0) }),
+      c('overall_fda_conversion_rate_pct', 'Approval %', { core: true, num: true, render: r => r.overall_fda_conversion_rate_pct ? `${escapeHtml(r.overall_fda_conversion_rate_pct)}%` : '<span class="muted">—</span>' }),
+      c('us_investable_class', 'Investable?', { core: true, render: r => classBadge(r.us_investable_class) }),
+      c('source_url_ctgov', 'CT.gov', { core: true, render: r => linkify(r.source_url_ctgov, 'Registry'), detail: r => r.source_url_ctgov }),
+      c('source_url_fda', 'FDA Record', { render: r => linkify(r.source_url_fda, 'Drugs@FDA'), detail: r => r.source_url_fda }),
+      c('notes', 'Methodology & Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['company_name', 'ticker'],
+    searchPlaceholder: 'Search company or ticker…',
+    sort: { key: 'clinical_composite_score', dir: 'desc' },
+    filters: [
+      { key: 'grade', label: 'All grades', field: 'grade' },
+      { key: 'cls', label: 'All listing classes', field: 'us_investable_class' },
+      { key: 'minp3', label: 'Phase 3 trials', options: () => ['1', '3', '5', '10'],
+        match: (r, v) => +r.phase3_trials_tracked >= +v }
     ]
   });
 
