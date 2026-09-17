@@ -594,6 +594,31 @@ function drawCoverage(master) {
     </div>`;
 }
 
+/* Original non-NME approvals year coverage — mirrors drawCoverage for the
+   orig universe (data/fda_original_non_nme_decisions.csv). This function was
+   referenced by the boot sequence but never defined in the merged v4 code,
+   which threw at startup and blanked every table below it; added 2026-09-17. */
+function drawOrigCoverage(orig) {
+  const el = document.getElementById('orig-coverage-view');
+  if (!el) return;
+  const years = Array.from({ length: 27 }, (_, i) => String(2000 + i));
+  const counts = Object.fromEntries(years.map(y => [y, 0]));
+  (orig || []).forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
+  const covered = years.filter(y => counts[y]);
+  const missing = years.filter(y => !counts[y]);
+  const sourceNote = y => (orig || []).filter(r => String(r.decision_date || '').startsWith(y))
+    .filter(r => [r.source_url_1, r.source_url_2, r.source_query_url].some(u => /(^|\.)fda\.gov\//i.test(u || ''))).length;
+  el.innerHTML = `
+    <div class="coverage-summary"><strong>${covered.length} of ${years.length} years represented</strong>
+      <span>${(orig || []).length} rows currently published · ${missing.length ? 'research backlog: ' + missing.join(', ') : 'no year gaps detected'}</span></div>
+    <div class="coverage-grid" role="list" aria-label="Original non-NME approval rows by year">
+      ${years.map(y => `<div class="coverage-year ${counts[y] ? 'has-data' : 'no-data'}" role="listitem">
+        <strong>${y}</strong><span>${counts[y] ? counts[y] + ' rows' : 'not populated'}</span>
+        ${counts[y] ? `<small>${sourceNote(y)} FDA-domain source${sourceNote(y) === 1 ? '' : 's'}</small>` : ''}
+      </div>`).join('')}
+    </div>`;
+}
+
 function drawOverview() {
   const core = overview.core, master = overview.master, scores = overview.scores;
   if (!core.length) return;
@@ -1024,11 +1049,20 @@ Promise.all([
   overview.orig = orig; overview.origScores = origScores; overview.t1gap = t1gap;
   overview.ctgov = ctgov;
 
-  fillCounts();
-  drawCoverage(master);
-  drawOrigCoverage(orig || []);
-  drawOverview();
-  initEngine();
+  /* Defensive rendering: one failing panel must never blank the whole site
+     again (a missing function here silently killed every table after it
+     between PR #16 and #18). Errors surface as a visible notice instead. */
+  const bootErrors = [];
+  const safe = (label, fn) => { try { fn(); } catch (e) { bootErrors.push(label + ': ' + e.message); } };
+  safe('fillCounts', () => fillCounts());
+  safe('drawCoverage', () => drawCoverage(master));
+  safe('drawOrigCoverage', () => drawOrigCoverage(orig || []));
+  safe('drawOverview', () => drawOverview());
+  safe('initEngine', () => initEngine());
+  if (bootErrors.length) {
+    document.querySelector('main').insertAdjacentHTML('afterbegin',
+      `<div class="notice">Rendering warnings: ${escapeHtml(bootErrors.join(' · '))}</div>`);
+  }
 
   /* Pipeline tracker in overview */
   const pipeEl = document.getElementById('pipeline-view');
