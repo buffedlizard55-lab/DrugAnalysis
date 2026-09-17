@@ -10,12 +10,12 @@ Tracking publicly traded biotech & pharma companies against **FDA drug decisions
 
 | Change this session | Count | Source | File |
 |---|---|---|---|
-| **1998 novel approvals imported** | **36** (D991–D1026) | CDER "NMEs Approved in CY 1998" table (Wayback, 30 NDAs) + CDER Novel Drug Approvals Compilation (6 CBER-era biologics, flagged) + openFDA Drugs@FDA application-number re-check (29/30; Refludan flagged as no longer indexed) | `data/fda_decisions_master.csv`, `data/staging/fda_nme_1998_verbatim.json` |
+| **1998 novel approvals imported** | **36** (D991–D1026) | CDER "NMEs Approved in CY 1998" table (Wayback, 30 NDAs) + CDER Novel Drug Approvals Compilation (6 CBER-era biologics, flagged) + openFDA Drugs@FDA re-check (35/36 in the bulk 1998 payload; Refludan flagged as no longer indexed) | `data/fda_decisions_master.csv`, `data/staging/fda_nme_1998_verbatim.json` |
 | **2014 reconciliation** | +1 row (Ofev, D1027), 1 row relabelled (Contrave, D634) | FDA 2014 NME table row #33 (ucm429247, Wayback 2015-01-23); openFDA: Contrave NDA 200063 is Type 4 New Combination and is not on the table | master; `fda_year_source_register.csv` |
 | **2026 update** | +1 row (Pixclara, D1028) + Cypsedo date fix | live FDA Novel Drug Approvals 2026 table (40 rows) + openFDA NDA 218592 / NDA 220482 | master; TLX price snapshot (`data/raw/stock_yahoo_events_1998_2026/`) |
 | **Corrections from the openFDA cross-check** | 9 rows | Sofdra/Zemdri dates; Stribild/Xarelto/Edarbi application numbers; D394 (gallium Ga 68 DOTATOC = NDA 210828 edotreotide, UIHC) and D968 Neotect (Diatide NASDAQ:DITI, not GE) issuers; 6 notes-only date discrepancies where the official table is kept | master; `data/verification_crosscheck.csv` |
 | **Drugs@FDA links added** | **262** rows (NO_APPL_NUMBER 264 → 1) | openFDA brand + exact ORIG approval-date match; same-day sibling applications recorded, never guessed | `scripts/add_drugsatfda_links.py` |
-| Cross-check result | 1,018 audited: 728 MATCH · 227 MATCH_DATE_ONLY · 6 MATCH_VIA_GENERIC · 5 date ±1–3 d · 4 MISMATCH_DATE (flagged, official table kept) · 47 NOT_IN_OPENFDA (36 are 1998 — no payload captured yet) · 1 NO_APPL_NUMBER (Blenrep 2020, withdrawn BLA) | `scripts/crosscheck_master_vs_openfda.py` | `data/verification_crosscheck.csv` |
+| Cross-check result | 1,018 audited: 744 MATCH · 250 MATCH_DATE_ONLY · 6 MATCH_VIA_GENERIC · 5 date ±1–3 d · 4 MISMATCH_DATE (flagged, official table kept) · 8 NOT_IN_OPENFDA (withdrawn/discontinued products, incl. Refludan 1998) · 1 NO_APPL_NUMBER (Blenrep 2020, withdrawn BLA) | `scripts/crosscheck_master_vs_openfda.py` | `data/verification_crosscheck.csv` |
 | Derived tables regenerated | non-NME originals 1,997 → 1,995 (O-BLA761136 Reblozyl and O-NDA211150 Wakix dropped because master rows D294/D408 now cite those application numbers), Type-1-gap flags 41 → 21, 675 company scores, 1,476 core rows (145 priced), 99 orig scorecards, 153 price snapshots | deterministic builders | see file list below |
 
 **Irregularities found and flagged (not silently fixed):** the committed `fda_original_non_nme_decisions.csv` was not reproducible from `sponsor_registry.csv` even before this branch (92 sponsor-resolution changes on regeneration — e.g. Celltrion/Samsung Bioepis/Telix now resolve, Sun Pharma/Nycomed regress to UNRESOLVED); `scripts/classify_listing.py` is not a fixed point of the committed master (it would flip 154 legacy rows), so this session writes classes from the verified tuples and does **not** re-run it; the 41 rows of 2014 cite a dead Wayback URL; FDA's 2014 table date for Ofev vs. the Contrave count; openFDA and FDA year tables disagree on 10 dates (table kept). Full list in `VERIFICATION_REPORT.md` §"Irregularities" and `NEXT_SESSION.md`.
@@ -156,7 +156,7 @@ Organized and clean, easy to read format with official verified links as sources
 
 | Year | Official NME Count | In Master | Gap | Source |
 |---|---|---|---|---|
-| 1998 | 30 CDER NDAs (+6 CBER-era biologics per Compilation) | 36 | 0 | CDER "NMEs Approved in CY 1998" (Wayback) + Compilation; 29/30 re-verified in openFDA, Refludan flagged |
+| 1998 | 30 CDER NDAs (+6 CBER-era biologics per Compilation) | 36 | 0 | CDER "NMEs Approved in CY 1998" (Wayback) + Compilation; 35/36 re-verified in the bulk openFDA 1998 payload, Refludan flagged |
 | 1999 | 37 | 37 | 0 | FDA NME 1999 table (Wayback) |
 | 2000 | 27 | 27 | 0 | FDA NME 2000 table (Wayback) |
 | 2001 | 24 | 24 | 0 | FDA NME 2001 table |
