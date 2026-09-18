@@ -6,6 +6,7 @@ records that require human review, so new entries cannot silently enter the
 published tables with guessed values.
 """
 import csv, re, sys
+from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -315,6 +316,87 @@ for i, r in enumerate(clin_scores, 2):
                 errors.append(f"clin_scores:{i}: clinical_progression_rate_pct outside 0-100")
         except ValueError:
             errors.append(f"clin_scores:{i}: non-numeric clinical_progression_rate_pct")
+
+# ---- 2026-09-18 session: pre-2000 audit, pathway consistency, dead-URL ban,
+# ---- snapshot integrity, sponsor index -------------------------------------------------
+# 1. Pre-2000 year-by-year audit file: 204 rows, 1:1 with the master window,
+#    every verdict backed by >=2 official layers, every row carrying links.
+p2k = read("pre2000_year_audit.csv")
+_expected_ids = {r["decision_id"] for r in master if r["decision_date"][:4] in
+                 {"1996", "1997", "1998", "1999", "2000"}}
+_got_ids = {r["decision_id"] for r in p2k}
+if _expected_ids != _got_ids:
+    errors.append(f"pre2000_year_audit: decision_id set != master 1996-2000 window "
+                  f"(missing {len(_expected_ids - _got_ids)}, extra {len(_got_ids - _expected_ids)})")
+if len(p2k) != 204:
+    errors.append(f"pre2000_year_audit: expected 204 rows, got {len(p2k)}")
+_bad_verdicts = [r["decision_id"] for r in p2k if not r["verdict"].startswith("VERIFIED")]
+if _bad_verdicts:
+    errors.append(f"pre2000_year_audit: {len(_bad_verdicts)} rows not VERIFIED*: {_bad_verdicts[:5]}")
+_no_links = [r["decision_id"] for r in p2k
+             if not r["source_drugsatfda"].strip() or not r["source_year_table_or_compilation"].strip()]
+if _no_links:
+    errors.append(f"pre2000_year_audit: rows missing official links: {_no_links[:5]}")
+_year_pins = Counter(r["audit_year"] for r in p2k)
+for y, n in (("2000", 29), ("1999", 37), ("1998", 36), ("1997", 43), ("1996", 59)):
+    if _year_pins.get(y) != n:
+        errors.append(f"pre2000_year_audit: year {y} pin {n} broken (got {_year_pins.get(y)})")
+
+# 2. The dead 2019 Wayback wrapper must never come back.
+_back = [r["decision_id"] for r in master if "20190207172014" in r["source_url_1"]]
+if _back:
+    errors.append(f"master: {len(_back)} rows cite the dead 20190207172014 Wayback capture again: {_back[:5]}")
+
+# 3. Pathway column consistency (post labelling pass): no legacy spellings,
+#    every row older than 2026 carries a pathway (Compilation coverage).
+_legacy_pw = [r["decision_id"] for r in master
+              if r["review_pathway"] and ("Priority Review" in r["review_pathway"]
+                                          or "/" in r["review_pathway"])]
+if _legacy_pw:
+    errors.append(f"master: legacy pathway spellings returned: {_legacy_pw[:5]}")
+_blanks_pre2026 = [r["decision_id"] for r in master
+                   if not r["review_pathway"].strip() and r["decision_date"][:4] != "2026"]
+if _blanks_pre2026:
+    errors.append(f"master: blank pathway on non-2026 rows (no Compilation row): {_blanks_pre2026[:5]}")
+
+# 4. Snapshot table integrity: unique (ticker, decision_date); the 1998-2000
+#    event ingestion landed (1998>=13, 1999>=14, 2000>=9 rows incl. recorded
+#    failures); every row has a source_url.
+_seen = set()
+for i, r in enumerate(prices, 2):
+    k = (r["ticker"], r["decision_date"])
+    if k in _seen:
+        errors.append(f"snapshots:{i}: duplicate (ticker, decision_date) {k}")
+    _seen.add(k)
+    if not r.get("source_url", "").strip():
+        errors.append(f"snapshots:{i}: blank source_url")
+_sn_by_year = Counter(r["decision_date"][:4] for r in prices)
+for y, lo in (("1998", 13), ("1999", 14), ("2000", 9)):
+    if _sn_by_year.get(y, 0) < lo:
+        errors.append(f"snapshots: year {y} has {_sn_by_year.get(y)} rows, minimum {lo} "
+                      "(the 1998-2000 event ingestion must stay in the table)")
+
+# 5. Pre-2000 sponsor-resolution index: 67 rows, defined statuses, links present.
+_sp = read("pre2000_sponsor_resolution_index.csv")
+if len(_sp) != 67:
+    errors.append(f"pre2000_sponsor_resolution_index: expected 67 rows, got {len(_sp)}")
+_statuses = {"REVIEW (recoverable)", "REVIEW (unresolved)", "REVIEW (foreign listing)",
+             "NO-EQUITY (documented)", "REVIEW"}
+for i, r in enumerate(_sp, 2):
+    if r["status"] not in _statuses:
+        errors.append(f"pre2000_sponsor_resolution_index:{i}: unknown status {r['status']!r}")
+    if not r["sec_edgar_company_search"].strip() or not r["drugsatfda_link"].strip():
+        errors.append(f"pre2000_sponsor_resolution_index:{i}: blank research link")
+
+# 6. Era analysis: 16 rows (1985-2000); approvals match the master counts.
+_era = read("pre2000_era_analysis.csv")
+if len(_era) != 16:
+    errors.append(f"pre2000_era_analysis: expected 16 year rows, got {len(_era)}")
+_m_by_year = Counter(r["decision_date"][:4] for r in master)
+for r in _era:
+    if int(r["master_approvals"]) != _m_by_year.get(r["year"], 0):
+        errors.append(f"pre2000_era_analysis:{r['year']}: approvals {r['master_approvals']} "
+                      f"!= master {_m_by_year.get(r['year'], 0)}")
 
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows, {len(oscores)} orig scorecards, {len(t1gap)} Type-1-gap flags, "
