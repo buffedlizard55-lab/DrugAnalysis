@@ -1,3 +1,33 @@
+# Verification Report — v14 Backward Pre-1985 Expansion (2026-09-18)
+
+**Branch:** `arena/01a0b62c-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors, 1,612 warnings** (the existing review-flag baseline).
+
+## v14 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| Dedicated decision table | **91 verified rows for 1980–1984**: 9 (1980), 23 (1981), 25 (1982), 14 (1983), 20 (1984) | `data/pre1985_fda_decisions.csv` |
+| 1980–1982 enumeration | **Complete committed Drugs@FDA TYPE-1/1-4 application sets**: 9/9, 23/23, 25/25; the validator compares application sets directly to the raw payloads | `data/raw/openfda_orig_decisions_1980_1984/decisions_{1980,1981,1982}.json` |
+| 1983/1984 continuity | v13 corrections retained: Augmentin NDA050564 TYPE 1/4, Tonocard NDA018257 PRIORITY, Trandate NDA018716 TYPE 5, Normodyne NDA018686; removed premise-disproved IDs remain banned | v13 rows + v14 validator pins |
+| Hylorel boundary | Re-homed from `PRE1985-1983-08` to the 1982 group; application NDA018104 remains one row, pinned to 1982-12-29 TYPE 1 STANDARD | `data/staging/pre1985_expansion_report_v14.json` |
+| Era table | **6 rows, 1980–1985**; 1980–1982 totals are explicitly described as application-level openFDA enumerations because no independent official annual NME table was located | `data/pre1985_era_analysis.csv` |
+| Idempotence | Two consecutive v14 runs produce byte-identical decision and era CSVs; the compatibility entry point now forwards to v14 rather than carrying a stale hand-curated dataset | `scripts/expand_pre1985_decisions_v14.py`, `scripts/build_pre1985_era_analysis.py` |
+| Site | Pre-1985 tab updated to 1980–1985 and the 91-row coverage; old 1983–1985-only copy removed | `index.html`, `assets/app.js` |
+
+## Source and uncertainty policy
+
+The raw openFDA payload is authoritative for application number, approval date, product, chemical type, and review priority. Row notes link to FDA labels, FDA Federal Register notices, NIH/NCATS records, or contemporaneous scientific literature for indications and history. 1980s ORIG submissions generally do not expose machine-readable application documents, so approval-era label wording is qualified when later labeling is used. Current Drugs@FDA holders are not silently substituted for historical applicants. Period-specific tickers are left blank when EDGAR evidence is not available; a modern successor ticker is described only as time-qualified context.
+
+No new raw data was fabricated or added in v14. The builder's hard assertions, completeness set comparisons, validator mutation surface, and explicit limitations are intended to keep the historical table auditable rather than overstate what the public record can prove.
+
+## v14 files
+
+- `scripts/expand_pre1985_decisions_v14.py` — idempotent builder and payload assertions.
+- `data/staging/pre1985_expansion_report_v14.json` — migration/addition/assertion report.
+- `data/pre1985_fda_decisions.csv` — 91 rows for 1980–1984.
+- `data/pre1985_era_analysis.csv` — 1980–1985 era summary.
+
 # Verification Report — Clinical Trial & Regulatory Scorecard — v13 Sep 2026
 
 **Date:** 2026-09-18 v13 (this session)
