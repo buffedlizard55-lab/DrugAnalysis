@@ -512,12 +512,19 @@ for r in _era:
 #      (b) coverage: every master row is present in the core table;
 #      (c) ratchet: the number of rows whose core class disagrees with the
 #          master row's OWN committed class must stay at the audited baseline.
-#    The 145 baseline disagreements are pre-existing legacy (mostly one ticker
-#    carrying rows with different committed classes, e.g. NVS/SNY/AZN/TAK ADR vs
-#    direct, and the flagged D442/D452 NO_US_TICKER rows); they are listed as a
-#    decision point in NEXT_SESSION.md next-step 2. This ratchet does NOT bless
-#    them - it stops a 146th appearing unnoticed when someone fills a ticker.
-CORE_CLASS_BASELINE = 145
+#    Baseline history: 145 when this gate was added. The same pass then found and
+#    fixed a real join bug - build_core_analysis_table.py treated the
+#    NO_US_TICKER sentinel as a symbol, so 11 unrelated companies shared Fresenius
+#    Kabi's class and pipeline card - which removed 4 contradictions and re-pinned
+#    the baseline at 141. All 141 remaining rows are TICKER-INTERNALLY-INCONSISTENT:
+#    the master itself assigns different committed classes to rows sharing one
+#    ticker, across 22 tickers in two families (ADR-vs-direct: GSK, NVS, RHHBY,
+#    AZN, SNY, BAYRY, TAK, NVO, TEVA; delisted-vs-current: SHPG, MDCO, CELG, ALXN,
+#    ORPH, SGEN, CBST, SLXP, BPMC, SPPI, BLCO, SWTX, AAAP). Adjudicating them needs
+#    per-company primary evidence, so it is NEXT_SESSION.md next-step 2, itemised in
+#    data/staging/core_class_disagreements.csv. This ratchet does NOT bless them -
+#    it stops a 142nd appearing unnoticed when someone fills a ticker.
+CORE_CLASS_BASELINE = 141
 _core = read("core_analysis_table.csv")
 _crl_master = read("fda_crl_master.csv")
 if len(_core) != len(master) + len(_crl_master):
