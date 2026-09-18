@@ -29,9 +29,226 @@ This file is the hand-off for future development. The sandbox that edits the rep
 
 **Worklist position (67 rows, unchanged):** 9 RESOLVED · 12 VENUE-VERIFIED (ticker pending) · 1 CITATION-LOCATED (Block Drug) · 3 ATTRIBUTION-CASE · 22 NO-EQUITY (documented) · 18 REVIEW (foreign listing) · 2 REVIEW (unresolved).
 
+## Unblock route: queue the remaining EDGAR fetches on GitHub Actions (spec ready to paste)
+
+The sandbox page-fetch tool is what blocked the second half of v11. The repo already has a sanctioned route around it: `.github/workflows/arena-data-fetch.yml` runs `scripts/run_fetch_jobs.py` **on GitHub's runner**, which has real network, and commits the payloads **verbatim** to `data/raw/<job-id>/` with a `manifest.json` recording the exact request URL, HTTP status, byte count and SHA-256. Failed fetches are recorded as failures — nothing is retried into existence.
+
+**Do this on the NEXT branch, after PR #25 is merged** (deliberately not on the PR branch: the workflow triggers on any change to `fetch_jobs/**`, and #25 is meant to stay a verified-data-only diff).
+
+1. Create `fetch_jobs/edgar_pre2000_symbols_2026_09.json` with exactly the JSON below (validated: 18 specs, unique ids, all URLs on `www.sec.gov`).
+2. Commit and push it to the new arena branch. The path filter (`fetch_jobs/**`) fires the workflow; the v10 run of the same workflow took ~17 minutes. It has `permissions: contents: write` and commits `data/raw/` back to the branch, so pull before doing anything else. It has also rolled the local object store back to the base commit twice while the pushed branch stayed intact, so re-`git fetch origin <branch>` and reset to the remote tip before committing anything — never assume local history survived between turns.
+3. Read the payloads **locally** — no fetch tool needed — and extract each Item 5 / Annual Report sentence verbatim, then write `scripts/resolve_pre2000_sponsors_v12.py` in the same shape as the v11 one and re-pin whatever validator constants move.
+
+Size check before pushing: `data/raw/` is already 130 MB and tracked (not gitignored), so six 1990s full submissions (~2-4 MB each) are consistent with the existing convention. `"sleep": 1.0` is set on every spec to stay well inside SEC's 10-requests-per-second limit; the runner's `USER_AGENT` already carries the contact address SEC asks for.
+
+```json
+[
+  {
+    "type": "url",
+    "id": "pnu_fy1997_10k405",
+    "url": "https://www.sec.gov/Archives/edgar/data/949573/0000950124-98-001758.txt",
+    "out": "pnu_fy1997_10k405.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "5 rows (D1330 D1332 D1373 D1382 D1390). 38 chunks; main 10-K document = chunks 0-14 and Item 5 is inside that range (EX-13 starts mid-chunk-15). NYSE venue already proven from the 12(b) cover."
+  },
+  {
+    "type": "url",
+    "id": "warner_lambert_fy1997_10k",
+    "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950117-98-000602.txt",
+    "out": "warner_lambert_fy1997_10k.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "4 rows (D1342 D1366 D1376 D1409). 43 chunks; cover already read. Part II is incorporated by reference to the 1997 Annual Report to Shareholders, so open the Annual Report EXHIBIT inside this submission (9 public documents) - not the 10-K body."
+  },
+  {
+    "type": "url",
+    "id": "carter_wallace_fy1997_10k405",
+    "url": "https://www.sec.gov/Archives/edgar/data/18000/0000890163-97-000093.txt",
+    "out": "carter_wallace_fy1997_10k405.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "1 row (D1359). 33 chunks; NYSE venue proven from 12(b). Item 5 -> 'pages 1 and 7 of the 1997 Annual Report to Stockholders'. Chunks ~15-30 unexplored. Two classes: only Common Stock was exchange-listed."
+  },
+  {
+    "type": "url",
+    "id": "block_drug_fy1997_10k",
+    "url": "https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt",
+    "out": "block_drug_fy1997_10k.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "1 row (D1365) - the last CITATION-LOCATED row on the worklist. FY1997 10-K (FYE 1997-03-31) filed 1997-06-30; the 1996-12-17 Aphthasol decision falls inside that fiscal year."
+  },
+  {
+    "type": "url",
+    "id": "roberts_defm14a_1999",
+    "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-99-006712.txt",
+    "out": "roberts_defm14a_1999.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "2 rows (D1347 D1379). Merger proxy filed 1999-11-23 (665 KB); its market-price section should name the symbol the 424-series supplements never stated."
+  },
+  {
+    "type": "url",
+    "id": "roberts_fy1996_10k",
+    "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-97-001485.txt",
+    "out": "roberts_fy1996_10k.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "2 rows. The FY1996 10-K v10 cited for the NASDAQ NMS venue - re-fetch so the Item 5 wording and any symbol can be quoted verbatim from the payload instead of from the v10 note."
+  },
+  {
+    "type": "url",
+    "id": "amag_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000792977&type=25&dateb=&owner=include&count=40",
+    "out": "amag_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "AVM (D1345 D1363). Need the Form 25 for the AMEX line, NOT the 2020 Nasdaq/AMAG one. EDGAR records the rename to AMAG Pharmaceuticals 2007-07-05, so expect the AMEX-line filing around then."
+  },
+  {
+    "type": "url",
+    "id": "amag_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000792977&type=15&dateb=&owner=include&count=40",
+    "out": "amag_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "AVM (D1345 D1363) - companion 15-series list on the same CIK lineage."
+  },
+  {
+    "type": "url",
+    "id": "cytogen_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000725058&type=15&dateb=&owner=include&count=40",
+    "out": "cytogen_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "CYTO (D1357 D1381). 10-K series ends FY1998 (filed 1999-02-22) but filings continue to 2008, so the end-of-listing year needs its own citation."
+  },
+  {
+    "type": "url",
+    "id": "cytogen_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000725058&type=25&dateb=&owner=include&count=40",
+    "out": "cytogen_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "CYTO (D1357 D1381) - exchange-side removal-from-listing."
+  },
+  {
+    "type": "url",
+    "id": "immunomedics_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000722830&type=25&dateb=&owner=include&count=40",
+    "out": "immunomedics_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "IMMU (D1338). Recorded lineage: acquired by Gilead 2020."
+  },
+  {
+    "type": "url",
+    "id": "immunomedics_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000722830&type=15&dateb=&owner=include&count=40",
+    "out": "immunomedics_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "IMMU (D1338) - companion 15-series list."
+  },
+  {
+    "type": "url",
+    "id": "gensia_sicor_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807873&type=15&dateb=&owner=include&count=40",
+    "out": "gensia_sicor_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "GNSA (D1394). Recorded lineage: renamed Sicor Inc. 1999, TEVA acquired 2003/2004 - the renaming and any symbol change need citing before a year is written."
+  },
+  {
+    "type": "url",
+    "id": "gensia_sicor_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807873&type=25&dateb=&owner=include&count=40",
+    "out": "gensia_sicor_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "GNSA (D1394) - exchange-side removal-from-listing."
+  },
+  {
+    "type": "url",
+    "id": "ivax_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000772197&type=15&dateb=&owner=include&count=40",
+    "out": "ivax_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "IVX (D1353). 10-K series ends with FY2004 filed 2005-03-16 (acc 0001193125-04-040619); recorded lineage Teva 2006, so a 2006 Form 15/25 should exist."
+  },
+  {
+    "type": "url",
+    "id": "ivax_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000772197&type=25&dateb=&owner=include&count=40",
+    "out": "ivax_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "IVX (D1353) - exchange-side removal-from-listing (AMEX line)."
+  },
+  {
+    "type": "url",
+    "id": "roberts_10k_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000853022&type=10-K&dateb=&owner=include&count=40",
+    "out": "roberts_10k_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "Locate the FY1997/FY1998 10-K accessions so their Item 5 can be fetched in a follow-up job."
+  },
+  {
+    "type": "url",
+    "id": "carter_wallace_10k_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000018000&type=10-K&dateb=&owner=include&count=40",
+    "out": "carter_wallace_10k_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "Locate the FY1998/FY1999/FY2000 10-K accessions as a fallback route to the symbol."
+  }
+]
+```
+
+The `_why` keys are documentation for the next reader — `job_url` ignores unknown keys, so they are harmless, but delete them if you prefer a minimal spec.
+
 ## Highest-value next steps
 
-1. **Finish the pre-2000 sponsor worklist — cheapest first.**
+1. **Finish the pre-2000 sponsor worklist — cheapest first.** Every route below needs primary text, so **start by queuing the fetch job in the section above** — it retrieves all of these submissions and filing lists in one runner pass, after which the extraction is local work.
    - *Delisting years for the 5 symbols that still lack one* (AVM, CYTO, IMMU, GNSA, IVX): each turns its row into the full `formerly <VENUE>:<TICKER>, delisted <YYYY>` form. Look for the terminal Form 15 / 15-12B / 15-15D **or the exchange's Form 25** on the company's EDGAR filing list — IVAX's 10-K series ends with FY2004 filed 2005-03-16 (acc 0001193125-04-040619), so a 2006 Form 15/25 should exist for the Teva acquisition; Cytogen's ends with the FY1998 10-K filed 1999-02-22 (acc 0000725058-99-000007) but filings continue to 2008.
      - **AVM trap, already recorded as an UNVERIFIED POINTER in the evidence file:** a web search surfaced an 8-K dated 2020-11-16 on the same CIK 792977 lineage (`.../792977/000110465920125941/tm2036059d2_8k.htm`) in which NASDAQ files a Form 25 after the Covis merger. That ends the **AMAG-on-Nasdaq** line — NOT the **AVM-on-AMEX** line rows D1345/D1363 are about. EDGAR records this registrant's name change to AMAG Pharmaceuticals on 2007-07-05, so the citation actually needed is a Form 25 for the AMEX line or the 2007 name/symbol-change 8-K. Do not write "delisted 2020" onto those rows.
      - **Search cannot substitute for EDGAR's filing lists.** A search for Cytogen's delisting returned Cyteir Therapeutics (Nasdaq: CYT), an unrelated company — a live instance of the token/substring failure mode this repo bans. Terminal-filing lookups must be by CIK on `browse-edgar`.
@@ -62,6 +279,7 @@ This file is the hand-off for future development. The sandbox that edits the rep
 
 - Invent novel approvals to pad counts — the master equals FDA's official NME Compilation 1985–2025 + the pinned 2026 year table; 1,000 extra novel approvals do not exist.
 - Retry failed Yahoo chart requests with successor tickers (recorded repo law: the failure IS the data — ORPH/AKAO in v10 are the latest examples).
+- Put files under `fetch_jobs/**` on a branch whose PR is meant to be a verified-data-only diff. That path filter fires `.github/workflows/arena-data-fetch.yml`, which commits multi-megabyte `data/raw/` payloads back onto the branch and buries the reviewable data changes. Queue fetch jobs on their own branch (see "Unblock route" above) — this is why PR #25 carries no job spec.
 - Re-introduce token/substring ticker matching (7 documented false positives in v5). Blank beats guessed. **Ticker symbols for the pre-2000 rows must come from a period filing, never from memory or a modern ticker map** — the tally of memory-guesses falsified by primary text is now four: "AGRN" for Agouron (actually AGPH), "ANM/Nasdaq" for Advanced Magnetics (actually **AVM/AMEX**), "NXRX" for Neurex (actually **NXCO**), and this repo's own "Nasdaq:IVX era" (actually **AMEX:IVX**).
 - Infer a listing venue from an SEC file-number prefix. IVAX's FY1996 10-K carried file number 001-09623 while its cover 12(b) table said AMERICAN STOCK EXCHANGE. Read the venue from the filing text.
 - Fill the master `ticker` column for D1338 (IMMU) or D1357/D1381 (CYTO) without first fixing the two ticker-keyed side effects described in next step 2 — a trial run in v11 split Cytogen's company score into two rows and would have re-classified a 1996 Immunomedics row as US-LISTED. The validator pins those blanks deliberately.
