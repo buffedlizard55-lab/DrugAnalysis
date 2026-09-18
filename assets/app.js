@@ -576,12 +576,18 @@ function median(arr) {
 }
 
 function drawCoverage(master) {
-  // 1998-2026 since the 2026-09-17 v7 import (1998 CDER NME table + Compilation).
+  // 1985-2026 since the 2026-09-17 v8 import: pre-1998 years come from FDA's
+  // official CDER NME Compilation (flagged COMPILATION_ONLY — no CDER NME year
+  // table exists for them); 1998-2026 are the contemporaneous year tables plus
+  // 35 Compilation-only CBER-era biologics (1998-2003, flagged).
   // Rows flagged NOT_ON_FDA_NME_TABLE (D634 Contrave, kept for transparency) are
-  // excluded so the per-year counts match FDA's official tables.
-  const years = Array.from({ length: 29 }, (_, i) => String(1998 + i));
+  // excluded so the per-year counts match FDA's official tables. decision_type is
+  // the authoritative marker; attribution text inside other rows' notes is stripped.
+  const years = Array.from({ length: 42 }, (_, i) => String(1985 + i));
   const counts = Object.fromEntries(years.map(y => [y, 0]));
-  master.filter(r => !/NOT_ON_FDA_NME_TABLE/.test((r.verification_status || '') + (r.notes || '')))
+  const notOnTable = r => { const t = ((r.decision_type || '') + ' ' + (r.verification_status || '') + ' ' + (r.notes || ''))
+    .replace(/D\d+\s+re-?labelled\s+NOT_ON_FDA_NME_TABLE/i, ''); return t.includes('NOT_ON_FDA_NME_TABLE'); };
+  master.filter(r => !notOnTable(r))
     .forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
   const covered = years.filter(y => counts[y]);
   const missing = years.filter(y => !counts[y]);
@@ -605,7 +611,7 @@ function drawCoverage(master) {
 function drawOrigCoverage(orig) {
   const el = document.getElementById('orig-coverage-view');
   if (!el) return;
-  const years = Array.from({ length: 27 }, (_, i) => String(2000 + i));
+  const years = Array.from({ length: 42 }, (_, i) => String(1985 + i));
   const counts = Object.fromEntries(years.map(y => [y, 0]));
   (orig || []).forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
   const covered = years.filter(y => counts[y]);
@@ -1437,6 +1443,35 @@ Promise.all([
     filters: [
       { key: 'status', label: 'All audit results', field: 'crosscheck_status' },
       yearFilter('decision_date')
+    ]
+  });
+
+  /* Compilation reconciliation audit (FDA NME Compilation 1985-2025 vs master) */
+  DataTable({
+    id: 'compilation', mount: '#compilation-view', csv: 'data/compilation_reconciliation.csv',
+    columns: [
+      c('direction', 'Direction', { core: true, render: r => escapeHtml(r.direction) }),
+      c('approval_year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.approval_year)}</span>` }),
+      c('reconciliation_status', 'Status', { core: true, render: r => statusBadge(r.reconciliation_status) }),
+      c('master_flag', 'Flag', { core: true, render: r => escapeHtml(r.master_flag || '') }),
+      c('brand', 'Brand (compilation)', { core: true, trunc: true }),
+      c('generic', 'Generic', { trunc: true }),
+      c('applicant', 'Applicant (compilation)', { trunc: true }),
+      c('application', 'Application', { core: true, render: r => `<code>${escapeHtml(r.application)}</code>` }),
+      c('approval_date', 'Approval date', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.approval_date)}</span>` }),
+      c('master_decision_id', 'Master ID', { core: true, render: r => `<code>${escapeHtml(r.master_decision_id)}</code>` }),
+      c('matched_via', 'Matched via', { render: r => escapeHtml(r.matched_via) }),
+      c('openfda_crosscheck', 'openFDA check', { core: true, render: r => escapeHtml(r.openfda_crosscheck) }),
+      c('compilation_source', 'Compilation', { render: r => linkify(r.compilation_source, 'FDA XLSX'), detail: r => r.compilation_source })
+    ],
+    searchFields: ['brand', 'generic', 'applicant', 'application', 'master_decision_id'],
+    searchPlaceholder: 'Search 1,387 official compilation rows (1985-2025)…',
+    sort: { key: 'approval_year', dir: 'desc' }, pageSize: 25,
+    filters: [
+      { key: 'status', label: 'All statuses', field: 'reconciliation_status' },
+      { key: 'direction', label: 'Both directions', field: 'direction' },
+      { key: 'flag', label: 'All flags', field: 'master_flag' },
+      yearFilter('approval_year')
     ]
   });
 

@@ -37,21 +37,32 @@ for i, r in enumerate(master, 2):
     if "FLAG" in r.get("verification_status", "").upper() or "FLAG" in r.get("notes", "").upper():
         warnings.append(f"master:{i} flagged for manual review ({r.get('decision_id','')})")
 ids = [r.get("decision_id") for r in master]
-# ---- NME master year coverage (1998-2026, added 2026-09-17 v7) ------------
-# Rows flagged NOT_ON_FDA_NME_TABLE (e.g. D634 Contrave, a Type 4 combination
+# ---- NME master year coverage (1985-2026; pre-1998 = Compilation, added 2026-09-17 v8) ------------
+# Rows flagged NOT_ON_FDA_NME_TABLE (i.e. D634 Contrave, a Type 4 combination
 # kept only for transparency) do not count toward the official year totals.
+# Detector: decision_type is the authoritative carrier; strip attribution text
+# ('D634 re-labelled NOT_ON_FDA_NME_TABLE' in Ofev's note) so the WRONG row is
+# never the one excluded (prior version excluded Ofev instead of Contrave and
+# the 2014 count passed by coincidence).
+def _not_on_nme_table(r):
+    t = (r.get("decision_type", "") + " " + r.get("verification_status", "") + " " + r.get("notes", ""))
+    t = re.sub(r"D\d+\s+re-?labelled\s+NOT_ON_FDA_NME_TABLE", "", t, flags=re.I)
+    return "NOT_ON_FDA_NME_TABLE" in t
 master_years = {}
+_flagged_not_on = [r.get("decision_id") for r in master if _not_on_nme_table(r)]
+if _flagged_not_on != ["D634"]:
+    errs.append(f"NOT_ON_FDA_NME_TABLE detector must isolate exactly [D634], got {_flagged_not_on}")
 for r in master:
-    if "NOT_ON_FDA_NME_TABLE" in (r.get("verification_status", "") + r.get("notes", "")):
+    if _not_on_nme_table(r):
         continue
     y = r.get("decision_date", "")[:4]
     master_years[y] = master_years.get(y, 0) + 1
-missing_master_years = [str(y) for y in range(1998, 2027) if str(y) not in master_years]
+missing_master_years = [str(y) for y in range(1985, 2027) if str(y) not in master_years]
 if missing_master_years:
-    errors.append(f"master: no rows for year(s) {', '.join(missing_master_years)} — 1998-2026 coverage claim broken")
+    errors.append(f"master: no rows for year(s) {', '.join(missing_master_years)} — 1985-2026 coverage claim broken")
 year_reg = read("fda_year_source_register.csv")
-if len(year_reg) != 29 or {r.get("year") for r in year_reg} != {str(y) for y in range(1998, 2027)}:
-    errors.append(f"fda_year_source_register: {len(year_reg)} rows, expected exactly one row per year 1998-2026")
+if len(year_reg) != 42 or {r.get("year") for r in year_reg} != {str(y) for y in range(1985, 2027)}:
+    errors.append(f"fda_year_source_register: {len(year_reg)} rows, expected exactly one row per year 1985-2026")
 for r in year_reg:
     check_url(r.get("official_source_url", ""), f"year_register:{r.get('year')}")
 for x in {x for x in ids if x}:
@@ -175,9 +186,9 @@ for i, r in enumerate(orig, 2):
 orig_unresolved = sum(1 for r in orig if r.get("ticker", "").strip() == "UNRESOLVED")
 if orig_unresolved:
     warnings.append(f"orig: {orig_unresolved} row(s) have an unresolved sponsor — left unresolved, not guessed")
-# Every year 2000-2026 must be represented (coverage claim).
+# Every year 1985-2026 must be represented (coverage claim).
 orig_years = {r.get("decision_date", "")[:4] for r in orig}
-missing_years = [str(y) for y in range(2000, 2027) if str(y) not in orig_years]
+missing_years = [str(y) for y in range(1985, 2027) if str(y) not in orig_years]
 if missing_years:
     errors.append(f"orig: missing years {', '.join(missing_years)} — coverage claim broken")
 
@@ -223,8 +234,8 @@ warnings.append(f"t1gap: {len(t1gap)} Type 1 openFDA rows not matched to the NME
 
 # ---- orig year register ----------------------------------------------------
 yreg = read("fda_orig_year_register.csv")
-if len(yreg) != 27:
-    errors.append(f"orig_year_register: {len(yreg)} rows, expected 27 (2000-2026)")
+if len(yreg) != 42:
+    errors.append(f"orig_year_register: {len(yreg)} rows, expected 42 (1985-2026)")
 published_sum = sum(int(r.get("non_nme_published") or 0) for r in yreg)
 if published_sum != len(orig):
     errors.append(f"orig_year_register: sum(non_nme_published)={published_sum} != {len(orig)} orig rows")

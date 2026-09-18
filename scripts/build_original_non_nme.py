@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Build data/fda_original_non_nme_decisions.csv
 
-FDA original NDA/BLA approvals 2000-2026 that are *not* Type 1 NMEs
+FDA original NDA/BLA approvals 1985-2026 that are *not* Type 1 NMEs
 (those already live in data/fda_decisions_master.csv).
 
 Why this file exists
 --------------------
-FDA approves only ~50 novel drugs a year. The 980-row NME master already
+FDA approves only ~50 novel drugs a year. The 1,427-row NME master (1985–2026) already
 matches FDA's official year counts, so 1,000 *new novel* approvals do not
 exist and must not be invented. Original approvals of other chemical types
 are the honest next body of FDA decisions:
@@ -226,12 +226,58 @@ def openfda_app_url(appl: str) -> str:
     return f'https://api.fda.gov/drug/drugsfda.json?search=application_number:"{appl}"'
 
 
+FIRST_YEAR = 1985  # FDA NME Compilation starts in 1985; bulk openFDA payloads captured 1985-2026
+LAST_YEAR = 2026
+
+# Annotations for Type-1-gap rows (NEXT_SESSION.md item 9): durable, so a
+# regenerated gap file keeps the adjudication notes.
+T1_ANNOTATIONS = {
+    "NDA022023": ("Emend IV (fosaprepitant, Merck, 2008-01-25): FDA's official 2008 NME table excluded it "
+                  "(the aprepitant moiety was already approved as Emend capsules in 2003, master D806). "
+                  "Kept OUT of the NME master per the year-table pinning decision; the approval itself is real "
+                  "(openFDA ORIG-1 AP 2008-01-25, STANDARD). Do not re-investigate."),
+    "NDA020564": ("Epivir NDA 020564 (HBV strength, 2004-11-22): lamivudine moiety approved as Epivir 1995 "
+                  "(master D975); this filing is the HBV indication/strength and FDA's 2004 table excluded it. "
+                  "Do not re-investigate."),
+    "NDA211617": ("Nexlizet (bempedoic acid + ezetimibe, 2020-02-26): Type 1/4 combination; bempedoic acid "
+                  "itself is Nexletol (master D362, 2020-02-21). FDA's 2020 novel table counts Nexletol only. "
+                  "Do not re-investigate."),
+    "NDA212643": ("Gallium Ga 68 gozetotide NDA 212643 (UCSF, 2020-12-01): the two site-specific Ga-68 "
+                  "PSMA-11 applications approved the same day; FDA's 2020 table lists UCLA's NDA 212642 "
+                  "(master D350). UCSF = academic applicant, no equity. Do not re-investigate."),
+    "BLA761391": ("Nemluvio BLA 761391 (Galderma, 2024-12-13): a SECOND BLA for nemolizumab; the master's "
+                  "Nemluvio row (2024-08-12) follows FDA's 2024 novel-approvals table (one row per novel "
+                  "active ingredient). Kept out of the master per year-table pinning. Do not re-investigate."),
+    "BLA761464": ("Datroway BLA 761464 (AstraZeneca/Daiichi Sankyo, 2025-06-23): a SECOND BLA for "
+                  "datopotamab deruxtecan; the master's Datroway row (2025-01-17) follows FDA's 2025 novel "
+                  "table. Kept out of the master per year-table pinning. Do not re-investigate."),
+    # Pre-1998 surface since the 1985-2026 payload extension: five unrelated
+    # cases documented so nobody re-investigates them.
+    "NDA020803": ("Alrex (loteprednol etabonate 0.2%, Bausch & Lomb): openFDA Type 1 ORIG/AP 1998-03-09 — "
+                  "loteprednol is on FDA's CY1998 NME table as Lotemax (D995) with the SAME approval date; "
+                  "Alrex is the concurrent second same-day product of the same moiety and is excluded from "
+                  "FDA's NME count. Do not merge."),
+    "BLA103786": ("Retavase: the master carries Retavase per the Compilation as BLA103632 (1996-10-30, "
+                  "D1358). This openFDA record cites licence BLA103786 (1998-05-06, sponsor of record EKR "
+                  "Therap). Second licence/status record for the same product — do not merge."),
+    "BLA103836": ("Actimmune: the master carries Actimmune per the Compilation as BLA103348 (1990-12-20, "
+                  "D1167). openFDA carries a separate ORIG/AP record on BLA103836 (1999-02-25, sponsor of "
+                  "record Horizon). Competing licence numbers — do not merge; manual adjudication required."),
+    "NDA016768": ("Estrovis (quinestrol): legacy 1960s application number (016768) carrying a 1996-04-26 "
+                  "ORIG/AP status date in openFDA; FDA's Compilation has no 1996 Estrovis row — pre-1985-era "
+                  "product with a later status record. Flagged as an openFDA legacy-status artifact; do not merge."),
+    "NDA008319": ("Butazolidin (phenylbutazone): legacy 1950s application (008319) carrying a 1997-06-25 "
+                  "ORIG/AP status date in openFDA; FDA's Compilation has no 1997 Butazolidin row (product "
+                  "predates the NME era) — openFDA legacy-status artifact; do not merge."),
+}
+
+
 def load_year_files():
     files = []
     for path in sorted(RAW.glob("decisions_*.json")):
         payload = json.load(open(path))
         year = payload.get("year")
-        if year is None or int(year) < 2000 or int(year) > 2026:
+        if year is None or int(year) < FIRST_YEAR or int(year) > LAST_YEAR:
             continue
         files.append(payload)
     return files
@@ -248,7 +294,7 @@ def main() -> int:
     print(f"master application numbers extracted: {len(master_appls)}")
 
     rows, t1_gap, tally = [], [], Counter()
-    year_counts = {y: Counter() for y in range(2000, 2027)}
+    year_counts = {y: Counter() for y in range(FIRST_YEAR, LAST_YEAR + 1)}
     seen = set()
 
     for payload in load_year_files():
@@ -409,7 +455,11 @@ def main() -> int:
             "notes": (
                 "Do not treat as a confirmed missing novel approval until a human "
                 "compares this row to FDA's official NME year table and the master list. "
-                "Blank beats guessed — left out of the 980-row NME count on purpose."
+                "Blank beats guessed — left out of the 1,427-row NME count on purpose."
+                + (" ADJUDICATED 2026-09-17: "
+                   + T1_ANNOTATIONS.get(rec.get("application_number") or "", "")
+                   if T1_ANNOTATIONS.get(rec.get("application_number") or "")
+                   else "")
             ),
         })
     t1_rows.sort(key=lambda r: (r["decision_date"], r["application_number"]))
@@ -421,7 +471,7 @@ def main() -> int:
     print(f"wrote {OUT_T1.relative_to(ROOT)}: {len(t1_rows)} Type 1 unmatched (FLAGGED, not merged)")
 
     year_rows = []
-    for y in range(2000, 2027):
+    for y in range(FIRST_YEAR, LAST_YEAR + 1):
         c = year_counts[y]
         query = (
             f"https://api.fda.gov/drug/drugsfda.json?search="

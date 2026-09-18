@@ -125,7 +125,7 @@ def main() -> int:
             "rows_flagged_for_review": flagged,
             "evidence_basis": (
                 f"{n} original non-NME FDA approvals across {len(drugs)} application(s), "
-                f"2000-2026; clinical-relevant (Type 2/3/4 + new-indication originals) = {clinical}. "
+                f"1985-2026; clinical-relevant (Type 2/3/4 + new-indication originals) = {clinical}. "
                 f"Each row in data/fda_original_non_nme_decisions.csv (filter ticker={ticker}) "
                 f"links Drugs@FDA."
             ),
