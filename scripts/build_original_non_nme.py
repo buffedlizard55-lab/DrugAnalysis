@@ -5,11 +5,12 @@ FDA original NDA/BLA approvals that are *not* Type 1 NMEs (those live in
 data/fda_decisions_master.csv for 1985-2026 and in
 data/pre1985_fda_decisions.csv for the pre-1985 historical era).
 
-Coverage: 1983-2026 (v15, 2026-09-18 backward extension into 1983-1984).
-The focus years 1983/1984/1985 therefore carry the complete Drugs@FDA
-original-approval enumeration: every ORIG/AP record in the committed
-payloads is tracked in exactly one project table (verified by
-data/focus_years_1983_1985_audit.csv).
+Coverage: 1980-2026 (v16, 2026-09-18 backward extension into 1980-1982;
+v15 covered 1983-1984). The focus years 1980-1985 therefore carry the
+complete Drugs@FDA original-approval enumeration: every ORIG/AP record in
+the committed payloads is tracked in exactly one project table (verified by
+data/focus_years_1980_1985_audit.csv, which replaced the v15
+focus_years_1983_1985_audit.csv when its coverage grew to six years).
 
 Why this file exists
 --------------------
@@ -243,7 +244,7 @@ def openfda_app_url(appl: str) -> str:
     return f'https://api.fda.gov/drug/drugsfda.json?search=application_number:"{appl}"'
 
 
-FIRST_YEAR = 1983  # v15: backward extension into the 1983/1984 focus years
+FIRST_YEAR = 1980  # v16: backward extension into the 1980-1982 era (v15 did 1983/1984)
 LAST_YEAR = 2026
 
 # PRE-1985 annotations: rows whose committed payload fields are copied verbatim
@@ -256,7 +257,16 @@ PRE_1985_ANNOTATIONS = {
         "the late 1990s; FDA's 2012 approval letter for this application cross-references the "
         "legacy bupivacaine applications NDA016964 and NDA018692 "
         "(https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/016964s070,018692s015,022046s004ltr.pdf). "
-        "The 1983 status date is therefore a Drugs@FDA application-lineage artifact candidate. "
+        "ADJUDICATION PROGRESS (checked 2026-09-18, both official FDA systems): the Drugs@FDA "
+        "application-history page for NDA022046 itself records exactly 'Original Approvals: "
+        "07/13/1983, ORIG-1, Approval, Submission Classification (blank), STANDARD', products "
+        "Bupivacaine Hydrochloride 0.5% (RLD, prescription) and Bupivacaine HCl/Epinephrine "
+        "(discontinued, RLD), holder Hospira, with NO lineage note "
+        "(https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=022046). "
+        "The 2012 combined letter confirms Hospira holds 016964/018692/022046 together but does "
+        "not date 022046's original approval. No 1983 primary document located in FDA's public "
+        "repositories; per repo law the FDA-recorded 1983-07-13 ORIG/AP stands, the artifact "
+        "question stays open for a human with a 1983 source (approval letter/Federal Register). "
         "The row is published exactly as the committed FDA payload states; treat the 1983 date "
         "as FDA-recorded, not independently corroborated by a 1983 document."
     ),
@@ -437,11 +447,23 @@ def main() -> int:
             tally["resolved" if ticker not in {"UNRESOLVED"} else "unresolved_sponsor"] += 1
             year_counts[year]["published"] += 1
 
-            pre_note = (
-                "PRE-1985 ROW (v15 backward extension into the 1983-1984 focus years): "
-                "sponsor_name is the CURRENT Drugs@FDA application holder; it is NOT asserted "
-                "as the historical 1983/1984 applicant and no period listing class is claimed. "
-            ) if is_pre else ""
+            if is_pre:
+                # v15 text kept byte-identical for the 1983/1984 rows so the
+                # v15 published rows never change; v16 wording for 1980-1982.
+                if year in (1983, 1984):
+                    pre_note = (
+                        "PRE-1985 ROW (v15 backward extension into the 1983-1984 focus years): "
+                        "sponsor_name is the CURRENT Drugs@FDA application holder; it is NOT asserted "
+                        "as the historical 1983/1984 applicant and no period listing class is claimed. "
+                    )
+                else:
+                    pre_note = (
+                        f"PRE-1985 ROW (v16 backward extension into the {year} era): "
+                        "sponsor_name is the CURRENT Drugs@FDA application holder; it is NOT asserted "
+                        f"as the historical {year} applicant and no period listing class is claimed. "
+                    )
+            else:
+                pre_note = ""
             pre_annotation = PRE_1985_ANNOTATIONS.get(appl, "") if is_pre else ""
             if pre_annotation and pre_annotation not in flags:
                 flags = flags + [pre_annotation]
@@ -566,13 +588,16 @@ def main() -> int:
             else f"data/raw/openfda_orig_decisions_2011_2026/decisions_{y}.json"
         )
         if y < 1985:
-            notes = (
-                f"1983-1984 focus year (v15): Type 1/1-4 NMEs are tracked in "
-                f"pre1985_fda_decisions.csv ({c['type1_in_pre1985_table']} applications); "
+            era_note = (
                 f"{c['non_nme_in_pre1985_table']} separately verified non-Type-1 original(s) also "
                 f"tracked there (furosemide NDA018413 1983, Trandate NDA018716 1984); "
+            ) if y in (1983, 1984) else ""
+            notes = (
+                f"Pre-1985 era (v15/v16 backward extension): Type 1/1-4 NMEs are tracked in "
+                f"pre1985_fda_decisions.csv ({c['type1_in_pre1985_table']} applications); "
+                f"{era_note}"
                 f"{c['published']} non-NME originals published in fda_original_non_nme_decisions.csv. "
-                f"See data/focus_years_1983_1985_audit.csv for the complete enumeration audit."
+                f"See data/focus_years_1980_1985_audit.csv for the complete enumeration audit."
             )
         else:
             notes = (
@@ -606,17 +631,25 @@ def main() -> int:
     pre_t1_gap = [r for r in t1_gap if int((r.get("decision_date") or "9999")[:4]) < 1985]
     if pre_t1_gap:
         raise SystemExit(
-            "v15 gate violated: pre-1985 Type 1 rows reached the gap file: "
+            "v16 gate violated: pre-1985 Type 1 rows reached the gap file: "
             + ", ".join(r.get("application_number", "?") for r in pre_t1_gap)
         )
-    # (2) The two backward years must reproduce the committed-payload
+    # (2) The five backward years must reproduce the committed-payload
     # enumeration exactly. If a re-fetch changes these numbers, re-verify the
     # payloads and update these gates and the focus-year audit TOGETHER.
-    for _y, _expected_raw, _expected_pub in ((1983, 70, 56), (1984, 109, 89)):
+    # raw = ORIG/AP decisions in the committed payload;
+    # pub = non-Type-1 originals published in the extension table.
+    for _y, _expected_raw, _expected_pub in (
+        (1980, 82, 73),   # v16
+        (1981, 71, 48),   # v16
+        (1982, 103, 78),  # v16
+        (1983, 70, 56),   # v15
+        (1984, 109, 89),  # v15
+    ):
         c = year_counts[_y]
         if c["raw_orig"] != _expected_raw or c["published"] != _expected_pub:
             raise SystemExit(
-                f"v15 gate: {_y} enumeration changed (raw={c['raw_orig']} expected {_expected_raw}; "
+                f"v16 gate: {_y} enumeration changed (raw={c['raw_orig']} expected {_expected_raw}; "
                 f"published={c['published']} expected {_expected_pub}). Re-verify the committed "
                 "payload and data/pre1985_fda_decisions.csv before touching these gates."
             )

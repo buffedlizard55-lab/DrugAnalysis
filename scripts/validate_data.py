@@ -187,14 +187,14 @@ for i, r in enumerate(orig, 2):
 orig_unresolved = sum(1 for r in orig if r.get("ticker", "").strip() == "UNRESOLVED")
 if orig_unresolved:
     warnings.append(f"orig: {orig_unresolved} row(s) have an unresolved sponsor — left unresolved, not guessed")
-# Every year 1983-2026 must be represented (coverage claim; v15 extended 1983-1984).
+# Every year 1980-2026 must be represented (coverage claim; v16 extended 1980-1982).
 orig_years = {r.get("decision_date", "")[:4] for r in orig}
-missing_years = [str(y) for y in range(1983, 2027) if str(y) not in orig_years]
+missing_years = [str(y) for y in range(1980, 2027) if str(y) not in orig_years]
 if missing_years:
     errors.append(f"orig: missing years {', '.join(missing_years)} — coverage claim broken")
 
-# ---- v15 pre-1985 backward extension (1983-1984 focus years) ----------------
-_pre_orig_years = {"1983": 56, "1984": 89}
+# ---- v15/v16 pre-1985 backward extension (1980-1984 focus years) ------------
+_pre_orig_years = {"1980": 73, "1981": 48, "1982": 78, "1983": 56, "1984": 89}
 _pre_payload_dir = ROOT / "data" / "raw" / "openfda_orig_decisions_1980_1984"
 _pre_by_year = {y: [r for r in orig if r.get("decision_date", "").startswith(y)]
                 for y in _pre_orig_years}
@@ -257,12 +257,12 @@ if _r22046 is None:
 elif "FLAGGED IRREGULARITY" not in (_r22046.get("verification_status", "") + _r22046.get("notes", "")):
     errors.append("orig: NDA022046 row lost its FLAGGED IRREGULARITY annotation")
 
-# ---- v15 focus-year audit (1983/1984/1985 complete enumeration) --------------
-focus = read("focus_years_1983_1985_audit.csv")
-if len(focus) != 261:
-    errors.append(f"focus_audit: expected 261 audited ORIG/AP decisions (1983-1985), got {len(focus)}")
+# ---- v15/v16 focus-year audit (1980-1985 complete enumeration) ---------------
+focus = read("focus_years_1980_1985_audit.csv")
+if len(focus) != 517:
+    errors.append(f"focus_audit: expected 517 audited ORIG/AP decisions (1980-1985), got {len(focus)}")
 _focus_year_counts = Counter(r.get("year", "") for r in focus)
-for _y, _n in (("1983", 70), ("1984", 109), ("1985", 82)):
+for _y, _n in (("1980", 82), ("1981", 71), ("1982", 103), ("1983", 70), ("1984", 109), ("1985", 82)):
     if _focus_year_counts.get(_y, 0) != _n:
         errors.append(f"focus_audit: year {_y} has {_focus_year_counts.get(_y, 0)} rows, expected {_n}")
 _seen_focus_appl = set()
@@ -280,7 +280,7 @@ for i, r in enumerate(focus, 2):
         errors.append(f"focus_audit:{i}: missing replayable openFDA query URL")
     if (r.get("date_agreement") or "") != "YES":
         warnings.append(f"focus_audit:{i}: date_agreement={r.get('date_agreement')!r} — manual review")
-for _y in ("1983", "1984", "1985"):
+for _y in ("1980", "1981", "1982", "1983", "1984", "1985"):
     _pdir = _pre_payload_dir if _y != "1985" else ROOT / "data" / "raw" / "openfda_orig_decisions_2011_2026"
     try:
         _pl = json.load(open(_pdir / f"decisions_{_y}.json"))
@@ -293,7 +293,7 @@ for _y in ("1983", "1984", "1985"):
         errors.append(f"focus_audit:{_y}: audited application set != payload set "
                       f"(missing {sorted(_pl_appls - _csv_appls)[:5]}, extra {sorted(_csv_appls - _pl_appls)[:5]})")
 # Every payload decision must reference a known project table.
-for _y in ("1983", "1984", "1985"):
+for _y in ("1980", "1981", "1982", "1983", "1984", "1985"):
     _tracked = [r for r in focus if r.get("year") == _y]
     _bad = [r["application_number"] for r in _tracked
             if (r.get("tracked_in") or "") not in {
@@ -365,17 +365,18 @@ warnings.append(f"t1gap: {len(t1gap)} Type 1 openFDA rows not matched to the NME
 
 # ---- orig year register ----------------------------------------------------
 yreg = read("fda_orig_year_register.csv")
-if len(yreg) != 44:
-    errors.append(f"orig_year_register: {len(yreg)} rows, expected 44 (1983-2026, v15 backward extension)")
+if len(yreg) != 47:
+    errors.append(f"orig_year_register: {len(yreg)} rows, expected 47 (1980-2026, v15/v16 backward extension)")
 published_sum = sum(int(r.get("non_nme_published") or 0) for r in yreg)
 if published_sum != len(orig):
     errors.append(f"orig_year_register: sum(non_nme_published)={published_sum} != {len(orig)} orig rows")
-# v15 pins: the backward years must register the committed-payload enumeration.
+# v15/v16 pins: the backward years must register the committed-payload enumeration.
 _v15_yreg = {r.get("year"): r for r in yreg}
-for _y, _raw, _pub in (("1983", 70, 56), ("1984", 109, 89)):
+for _y, _raw, _pub in (("1980", 82, 73), ("1981", 71, 48), ("1982", 103, 78),
+                       ("1983", 70, 56), ("1984", 109, 89)):
     _r = _v15_yreg.get(_y)
     if _r is None:
-        errors.append(f"orig_year_register: missing v15 year {_y}")
+        errors.append(f"orig_year_register: missing backward year {_y}")
     else:
         if int(_r.get("openfda_orig_nda_bla_count") or 0) != _raw or int(_r.get("non_nme_published") or 0) != _pub:
             errors.append(f"orig_year_register:{_y}: raw/published counters changed "
@@ -565,6 +566,8 @@ if len(_sp) != 67:
 _statuses = {"REVIEW (recoverable)", "REVIEW (unresolved)", "REVIEW (foreign listing)",
              "NO-EQUITY (documented)", "REVIEW",
              "VENUE-VERIFIED (ticker pending)", "RESOLVED (venue+ticker per period 10-K)",
+             "RESOLVED (venue+ticker per period SEC filings)",
+             "RESOLVED (documented negative: no exchange listing, no SEC-stated ticker; OTC inter-dealer only)",
              "CITATION-LOCATED (fetch the period 10-K and extract venue+ticker)",
              "ATTRIBUTION-CASE (parent/subsidiary)"}
 for i, r in enumerate(_sp, 2):
@@ -576,6 +579,36 @@ _recoverable = [r["decision_id"] for r in _sp if r["status"] == "REVIEW (recover
 if _recoverable:
     errors.append(f"pre2000_sponsor_resolution_index: {len(_recoverable)} rows still "
                   f"'REVIEW (recoverable)' after the v10 pass: {_recoverable[:5]}")
+# v16 pins: the last 7 VENUE-VERIFIED rows must stay resolved as recorded
+# (primary SEC text fetched 2026-09-18; scripts/resolve_pre2000_sponsors_v16.py).
+_sp16 = {r["decision_id"]: r for r in _sp}
+_v16_expect = {
+    "D1342": ("WLA", "RESOLVED (venue+ticker per period SEC filings)"),
+    "D1366": ("WLA", "RESOLVED (venue+ticker per period SEC filings)"),
+    "D1376": ("WLA", "RESOLVED (venue+ticker per period SEC filings)"),
+    "D1409": ("WLA", "RESOLVED (venue+ticker per period SEC filings)"),
+    "D1347": ("RPCX", "RESOLVED (venue+ticker per period SEC filings)"),
+    "D1379": ("RPCX", "RESOLVED (venue+ticker per period SEC filings)"),
+    "D1365": ("(blank - documented negative)",
+              "RESOLVED (documented negative: no exchange listing, no SEC-stated ticker; OTC inter-dealer only)"),
+}
+for _d, (_t, _s) in _v16_expect.items():
+    _r = _sp16.get(_d)
+    if _r is None:
+        errors.append(f"pre2000_sponsor_resolution_index: v16 row {_d} missing")
+    else:
+        if _r["master_ticker"] != _t or _r["status"] != _s:
+            errors.append(f"pre2000_sponsor_resolution_index:{_d}: v16 resolution moved to "
+                          f"ticker={_r['master_ticker']!r} status={_r['status']!r} (pinned {_t!r})")
+for _d, _t in (("D1342", "WLA"), ("D1366", "WLA"), ("D1376", "WLA"), ("D1409", "WLA"),
+               ("D1347", "RPCX"), ("D1379", "RPCX")):
+    _r = next((x for x in master if x.get("decision_id") == _d), None)
+    if _r is None:
+        errors.append(f"master: v16 row {_d} missing")
+    elif (_r.get("ticker") or "").strip() != _t:
+        errors.append(f"master:{_d}: ticker {_r.get('ticker')!r} != v16 pin {_t!r}")
+    elif "v16 2026-09-18 TICKER RESOLUTION" not in (_r.get("notes") or ""):
+        errors.append(f"master:{_d}: v16 ticker-resolution note missing")
 # v10 EDGAR evidence file must exist and cover 19 master rows
 if not (ROOT / "data" / "staging" / "pre2000_sponsor_edgar_evidence.json").exists():
     errors.append("pre2000_sponsor_edgar_evidence.json missing")
@@ -585,6 +618,9 @@ else:
     _tagged = {r["decision_id"] for r in master if "SPONSOR-RESOLVED 2026-09-18" in r["notes"]}
     if _ev_rows != _tagged:
         errors.append(f"EDGAR evidence rows {_ev_rows} != master SPONSOR-RESOLVED rows {_tagged}")
+    if "v16_update" not in _ev:
+        errors.append("pre2000_sponsor_edgar_evidence.json: missing v16_update section "
+                      "(the 2026-09-18 seven-row ticker resolution evidence)")
     _agouron = [r for r in master if r["decision_id"] == "D1380"]
     if _agouron and "AGPH" not in _agouron[0]["exchange"]:
         errors.append("D1380 Agouron exchange must carry the 10-K-verified AGPH ticker")
@@ -900,8 +936,8 @@ else:
                     f"(audited baseline, pending adjudication - NEXT_SESSION.md next-step 2)")
 
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
-      f"{len(orig)} original non-NME rows (incl. {sum(_pre_orig_years.values())} v15 pre-1985 rows), "
-      f"{len(focus)} focus-year audit rows (1983-1985), {len(oscores)} orig scorecards, "
+      f"{len(orig)} original non-NME rows (incl. {sum(_pre_orig_years.values())} v15/v16 pre-1985 rows), "
+      f"{len(focus)} focus-year audit rows (1980-1985), {len(oscores)} orig scorecards, "
       f"{len(t1gap)} Type-1-gap flags, "
       f"{len(exp)} label-expansion scorecards, {len(audit)} cross-check rows, "
       f"{len(scores)} company scorecards, {len(prices)} price snapshots, "

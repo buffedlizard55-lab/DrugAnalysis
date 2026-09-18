@@ -611,9 +611,10 @@ function drawCoverage(master) {
 function drawOrigCoverage(orig) {
   const el = document.getElementById('orig-coverage-view');
   if (!el) return;
-  // v15: 1983-2026 — the non-NME enumeration now reaches back through the
-  // 1983/1984 focus years (56 + 89 rows verified against the committed payloads).
-  const years = Array.from({ length: 44 }, (_, i) => String(1983 + i));
+  // v16: 1980-2026 — the non-NME enumeration now reaches back through the
+  // 1980-1984 backward extension (73 + 48 + 78 + 56 + 89 rows verified against
+  // the committed payloads).
+  const years = Array.from({ length: 47 }, (_, i) => String(1980 + i));
   const counts = Object.fromEntries(years.map(y => [y, 0]));
   (orig || []).forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
   const covered = years.filter(y => counts[y]);
@@ -1626,9 +1627,9 @@ Promise.all([
     ]
   });
 
-  /* v15 focus-year audit: complete 1983/1984/1985 ORIG/AP enumeration (261 rows) */
+  /* v16 focus-year audit: complete 1980-1985 ORIG/AP enumeration (517 rows; v15 covered 1983-1985) */
   DataTable({
-    id: 'focus-year-audit', mount: '#focus-year-audit-view', csv: 'data/focus_years_1983_1985_audit.csv',
+    id: 'focus-year-audit', mount: '#focus-year-audit-view', csv: 'data/focus_years_1980_1985_audit.csv',
     columns: [
       c('audit_id', 'Audit ID', { core: true, render: r => `<code>${escapeHtml(r.audit_id)}</code>` }),
       c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
@@ -1650,7 +1651,7 @@ Promise.all([
       c('source_query_url', 'openFDA query', { render: r => linkify(r.source_query_url, 'API'), detail: r => r.source_query_url })
     ],
     searchFields: ['application_number', 'drug_brand', 'drug_generic', 'openfda_holder', 'tracked_in', 'tracked_row_id', 'verdict', 'review_flag'],
-    searchPlaceholder: 'Search 1983-1985 audit by drug, application, table…',
+    searchPlaceholder: 'Search 1980-1985 audit by drug, application, table…',
     sort: { key: 'audit_id', dir: 'asc' }, pageSize: 25,
     filters: [
       { key: 'year', label: 'All years', field: 'year' },
