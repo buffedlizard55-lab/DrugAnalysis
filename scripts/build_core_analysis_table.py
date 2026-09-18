@@ -40,21 +40,53 @@ scorecards = {r["ticker"]: r for r in csv.DictReader(open("data/company_scorecar
 _scores = list(csv.DictReader(open("data/company_scores.csv")))
 scores_by_ticker = {r["ticker"].strip(): r for r in _scores if r["ticker"].strip()}
 scores_by_name = {r["company_name"].strip().lower(): r for r in _scores if not r["ticker"].strip()}
+
+# Ticker-column values that mean "no symbol", not a symbol. Mirrors
+# TICKER_SENTINELS in scripts/build_company_scores.py, which was already fixed for
+# this during the 2018-2020 backfill. The core table used to exclude only
+# "NO_TICKER", so the 14 rows carrying the NO_US_TICKER sentinel - ELEVEN
+# unrelated companies (Fresenius Kabi, Kyowa Kirin x2, Almirall x2, Clinuvel,
+# SK Life Science, Lundbeck, Recordati, Nippon Shinyaku, Actelion, Allergan x2,
+# Forest Laboratories) - were joined as if they were one security:
+#   * all 14 published Fresenius Kabi's pipeline card as their
+#     company_success_rate_summary ("14/14 tracked programs approved");
+#   * all 14 inherited the first such row's class (D345 Fresenius Kabi, NON-US
+#     LISTING ONLY) through class_by_ticker, contradicting the master's own
+#     committed class on 4 of them - Allergan D442/D452 are US-LISTED, Actelion
+#     D425 and Forest D627 are PRIVATE / NO EQUITY. That is the exact
+#     "ticker/class irregularity" v10 flagged notes-only; the cause is this join.
+#   * 6 of them (Kyowa Kirin x2, Almirall x2, Clinuvel, Nippon Shinyaku) have
+#     their own name-keyed row in company_scores.csv but were denied it, because
+#     the sentinel is truthy so the name fallback never ran.
+# Fixed 2026-09-18 (v11). Repo law: corrections belong in builders.
+TICKER_SENTINELS = {"", "NO_TICKER", "NO_US_TICKER", "N/A", "NONE", "PRIVATE"}
+
+
+def real_ticker(t):
+    """The ticker if it identifies a security, otherwise '' (blank/sentinel)."""
+    t = (t or "").strip()
+    return "" if t in TICKER_SENTINELS else t
+
+
+# a sentinel-keyed scorecard belongs to the company named on it, not to every row
+# that happens to share the sentinel (there is exactly one such card today:
+# NO_US_TICKER -> Fresenius Kabi)
+scorecards_by_name = {(r["company_name"] or "").strip().lower(): r
+                      for r in scorecards.values() if not real_ticker(r["ticker"])}
+
 # verified US-investability class per ticker (scripts/classify_listing.py)
 class_by_ticker = {}
 for r in decisions:
-    t = (r["ticker"] or "").strip()
-    if t and t != "NO_TICKER":
+    t = real_ticker(r["ticker"])
+    if t:
         class_by_ticker.setdefault(t, r.get("us_investable_class", ""))
 
 
 def score_cells(ticker, company):
     """(score, grade, confidence, class) for a decision row."""
-    t = (ticker or "").strip()
-    s = scores_by_ticker.get(t) if t and t != "NO_TICKER" else scores_by_name.get((company or "").strip().lower())
-    cls = ""
-    if t and t != "NO_TICKER":
-        cls = class_by_ticker.get(t, "")
+    t = real_ticker(ticker)
+    s = scores_by_ticker.get(t) if t else scores_by_name.get((company or "").strip().lower())
+    cls = class_by_ticker.get(t, "") if t else ""
     if not s:
         return "", "", "Not scored - no verified FDA decisions tracked", cls
     return (s["total_score_0_100"], s["grade"], s["confidence"], cls or s.get("us_investable_class", ""))
@@ -84,8 +116,11 @@ def flag_of(verification_status, notes):
     return "; ".join(dict.fromkeys(flags))
 
 
-def summary_for(ticker):
-    sc = scorecards.get(ticker)
+def summary_for(ticker, company=""):
+    """Pipeline summary for the row's own company. A sentinel ticker is not a
+    lookup key: fall back to the name-keyed sentinel cards (see TICKER_SENTINELS)."""
+    t = real_ticker(ticker)
+    sc = scorecards.get(t) if t else scorecards_by_name.get((company or "").strip().lower())
     if not sc:
         return "Not yet built - scorecard pending"
     return ("{}/{} tracked programs approved; {} advancing; {} paused/on hold; {} CRL(s)".format(
@@ -121,7 +156,7 @@ for d in decisions:
     rows.append([
         d["company_name"], t, f"{d['drug_brand']} ({d['drug_generic']})",
         d["decision_type"], d["decision_date"], d["indication"], d.get("review_pathway", ""),
-        before, after, pct, t1, t1_pct, status, summary_for(t),
+        before, after, pct, t1, t1_pct, status, summary_for(t, d["company_name"]),
         score, grade, conf, cls or d.get("us_investable_class", ""),
         d["source_url_1"], d.get("source_url_2", ""),
         flag_of(d["verification_status"], d.get("notes", "")), d["verification_status"],
@@ -135,7 +170,7 @@ for c in crls:
     rows.append([
         c["company_name"], t, c["drug_name"],
         "Complete Response Letter (Rejection)", c["crl_date"], c["indication"], "",
-        before, after, pct, t1, t1_pct, status, summary_for(t),
+        before, after, pct, t1, t1_pct, status, summary_for(t, c["company_name"]),
         score, grade, conf, cls or c.get("us_investable_class", ""),
         c["source_url_1"], c.get("source_url_2", ""),
         flag_of(c["verification_status"], c.get("notes", "")), c["verification_status"],

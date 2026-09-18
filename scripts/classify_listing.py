@@ -57,7 +57,11 @@ NON_US = "NON-US LISTING ONLY"
 PRIVATE = "PRIVATE / NO EQUITY"
 UNVERIFIED = "NOT US-INVESTABLE (UNVERIFIED)"
 
-US_VENUES = ("NASDAQ", "NYSE")          # NYSE American is covered by the NYSE prefix
+# AMEX (the American Stock Exchange) is a US venue and must be recognised as
+# such: without it, classify("formerly AMEX:AVM, ...") returned NON-US LISTING
+# ONLY for a US listing. v11 2026-09-18. Behaviour-preserving on the committed
+# master (the script keeps committed classes; verified by re-run + diff).
+US_VENUES = ("NASDAQ", "NYSE", "AMEX")  # NYSE American is covered by the NYSE prefix
 
 # Venues that make a listing non-US. Checked BEFORE the US-venue prefix rule so
 # that strings such as "Nasdaq Copenhagen (parent)" are never read as NASDAQ.
