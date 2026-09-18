@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DrugAnalysis — FDA Decision Engine for Biotech Investors</title>
-<meta name="description" content="Track FDA drug approvals, original non-NME decisions, label expansions, CRL rejections, upcoming Phase 3 trial endpoints, stock reactions, and company success rates. 1,018 novel approvals (1998-2026) plus 1,995 original non-NME decisions and 4,482 label expansions (2000-2026) with official source links. Decision engine predicts approval likelihood using published base rates.">
+<meta name="description" content="Track FDA drug approvals, original non-NME decisions, label expansions, CRL rejections, upcoming Phase 3 trial endpoints, stock reactions, and company success rates. 1,427 novel approvals (1985-2026) plus 2,798 original non-NME decisions (1985-2026) and 4,482 label expansions (2000-2026) with official source links. Decision engine predicts approval likelihood using published base rates.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
@@ -14,11 +14,11 @@
     <div class="header-content">
       <div class="header-title">
         <h1>💊 DrugAnalysis</h1>
-        <p class="tagline">FDA Decision Engine for Biotech Investors — <strong><span data-count="alldecisions">…</span> verified FDA decisions</strong> (1998–2026): <span data-count="master">1,018</span> novel approvals, <span data-count="orig">…</span> original non-NME approvals, <span data-count="suppl">…</span> label expansions, and <span data-count="crl">…</span> CRL rejections, plus <span data-count="ctgov">…</span> registered Phase 3 trials (2026–2027 readouts) — each with <strong>official source links</strong>, alongside <strong>verified stock reactions</strong> and <strong>company success scores</strong>. Conflicts flagged, never guessed.</p>
+        <p class="tagline">FDA Decision Engine for Biotech Investors — <strong><span data-count="alldecisions">…</span> verified FDA decisions</strong> (1985–2026): <span data-count="master">1,427</span> novel approvals, <span data-count="orig">…</span> original non-NME approvals, <span data-count="suppl">…</span> label expansions, and <span data-count="crl">…</span> CRL rejections, plus <span data-count="ctgov">…</span> registered Phase 3 trials (2026–2027 readouts) — each with <strong>official source links</strong>, alongside <strong>verified stock reactions</strong> and <strong>company success scores</strong>. Conflicts flagged, never guessed.</p>
       </div>
       <div class="header-stats">
         <div class="stat"><span class="stat-num" data-count="alldecisions">—</span><span class="stat-label">FDA Decisions</span></div>
-        <div class="stat"><span class="stat-num" data-count="master">1,018</span><span class="stat-label">Novel Approvals</span></div>
+        <div class="stat"><span class="stat-num" data-count="master">1,427</span><span class="stat-label">Novel Approvals</span></div>
         <div class="stat"><span class="stat-num" data-count="orig">—</span><span class="stat-label">Originals (non-NME)</span></div>
         <div class="stat"><span class="stat-num" data-count="suppl">—</span><span class="stat-label">Label Expansions</span></div>
         <div class="stat"><span class="stat-num" data-count="crl">—</span><span class="stat-label">CRL Rejections</span></div>
@@ -56,6 +56,7 @@
   <button class="tab-btn" data-tab="orig-scores"><span class="tab-icon">🧱</span> Orig Scorecard</button>
   <button class="tab-btn" data-tab="crls"><span class="tab-icon">⚠️</span> CRLs / Rejections</button>
   <button class="tab-btn" data-tab="crosscheck"><span class="tab-icon">🔍</span> Verification Audit</button>
+  <button class="tab-btn" data-tab="compilation"><span class="tab-icon">📑</span> Compilation Audit</button>
   <button class="tab-btn" data-tab="private"><span class="tab-icon">🔒</span> Private</button>
   <button class="tab-btn" data-tab="nonus"><span class="tab-icon">🌍</span> Non-US</button>
   <button class="tab-btn" data-tab="about"><span class="tab-icon">📚</span> Methodology</button>
@@ -98,14 +99,14 @@
     </div>
 
     <div class="panel">
-      <h3>📅 Historical Coverage Audit (1998-2026)</h3>
-      <p class="section-desc">Coverage by decision year — blank years are explicit research backlog, never filled with unverified entries. Each year links to FDA's official NME compilation.</p>
+      <h3>📅 Historical Coverage Audit (1985–2026)</h3>
+      <p class="section-desc">Coverage by decision year. <strong>1985–1997</strong> comes from FDA's official CDER Novel Drug Approvals Compilation (no CDER NME year table exists for those years — rows are flagged COMPILATION_ONLY); <strong>1998–2026</strong> pins to FDA's contemporaneous NME year tables (plus 26 flagged Compilation-only CBER-era biologic/vaccine-era rows: 7 in 1998–1999, 19 in 2000–2003). The year-by-year reconciliation against the official Compilation is on the <strong>📑 Compilation Audit</strong> tab.</p>
       <div id="coverage-view"></div>
     </div>
 
     <div class="panel" style="margin-top:22px">
-      <h3>📦 Original Non-NME Approvals — Year Coverage (2000–2026)</h3>
-      <p class="section-desc">Same audit for the 1,995 original NDA/BLA approvals (Type 2/3/4/5/6, biosimilars, new-indication originals) from the official openFDA Drugs@FDA extract.</p>
+      <h3>📦 Original Non-NME Approvals — Year Coverage (1985–2026)</h3>
+      <p class="section-desc">Same audit for the <span data-count="orig">2,798</span> original NDA/BLA approvals (Type 2/3/4/5/6, biosimilars, new-indication originals) from the official openFDA Drugs@FDA extract — extended back to 1985 this pass.</p>
       <div id="orig-coverage-view"></div>
     </div>
 
@@ -194,7 +195,7 @@
 
   <!-- FDA APPROVALS -->
   <section id="approvals" class="tab-panel">
-    <h2>✅ FDA Approvals Master List — 1,018 Verified Decisions (1998–2026)</h2>
+    <h2>✅ FDA Approvals Master List — 1,427 Verified Decisions (1985–2026)</h2>
     <p class="section-desc">Every verified FDA novel-drug decision, one row per action, each with <strong>two official source links</strong> for manual review. Where applicant changed after approval (asset sale, acquisition, licence-out) <strong>both</strong> current holder and original applicant shown and row flagged. <strong>Exchange is second-to-last, ID is last</strong> per spec.</p>
     
     <div class="panel" style="background:#f0f7ff; border-color:#c8dcff">
@@ -217,9 +218,9 @@
 
   <!-- ORIGINAL NON-NME APPROVALS -->
   <section id="orig" class="tab-panel">
-    <h2>📦 Original FDA Approvals (non-NME) — 2000–2026</h2>
+    <h2>📦 Original FDA Approvals (non-NME) — 1985–2026</h2>
     <p class="section-desc"><strong><span data-count="orig">…</span> verified original NDA/BLA approvals</strong> that are <em>not</em> Type 1 new molecular entities. FDA’s chemical-type codes, copied verbatim from openFDA Drugs@FDA: Type 2 new active ingredient, Type 3 new dosage form, Type 4 new combination, Type 5 new formulation or manufacturer, Type 6/9/10 new indication filed as a distinct original, plus 351(k) biosimilars whose class code was unpublished. Every row links Drugs@FDA and the openFDA application query.</p>
-    <div class="notice"><strong>Why this is the honest way to add 1,000+ entries.</strong> FDA approves only ~50 novel drugs a year; the 1,018-row NME master (1998–2026) already matches FDA’s official year counts, so 1,000 <em>new novel</em> approvals do not exist and must not be invented. These originals are real, dated FDA decisions. Indication text is deliberately blank — openFDA publishes no structured indication on this extract — so rather than paraphrase, each row points at Drugs@FDA. Type 5 manufacturer changes and medical gases are labelled so they are never scored as clinical-trial conversions. Sponsors that could not be tied to a listed security are <code>UNRESOLVED (REVIEW)</code>, never guessed.</div>
+    <div class="notice"><strong>Why this is the honest way to add 1,000+ entries.</strong> FDA approves only ~50 novel drugs a year; the NME master already matches FDA’s official year counts and the full 1985–2025 NME Compilation, so 1,000 <em>new novel</em> approvals do not exist and must not be invented. These originals are real, dated FDA decisions. Indication text is deliberately blank — openFDA publishes no structured indication on this extract — so rather than paraphrase, each row points at Drugs@FDA. Type 5 manufacturer changes and medical gases are labelled so they are never scored as clinical-trial conversions. Sponsors that could not be tied to a listed security are <code>UNRESOLVED (REVIEW)</code>, never guessed.</div>
     <div class="notice info"><strong>Type 1 NMEs are excluded on purpose.</strong> <span data-count="t1gap">…</span> Type 1 rows in openFDA did not match the NME master (mostly early-2000s CBER biologics such as Humira/Neulasta, or autoinjector/copack presentations of an already-listed NME). They live in <code>data/fda_type1_not_in_nme_master.csv</code>, flagged for review, and were <em>not</em> silently merged — that would break the official CDER year-count audit. Blank beats guessed.</div>
     <div id="orig-view"></div>
   </section>
@@ -354,7 +355,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
   <!-- VERIFICATION AUDIT -->
   <section id="crosscheck" class="tab-panel">
     <h2>🔍 Verification Audit — Every Master Row Re-checked Against Its Primary Source</h2>
-    <p class="section-desc">A source link is only a <em>claim</em> that a row matches its source. This audit actually opens the primary openFDA Drugs@FDA record for each of the <strong>1,018</strong> novel-approval rows and compares the sponsor, brand name and decision date field by field, so a wrong date or a swapped company is caught mechanically rather than by eye.</p>
+    <p class="section-desc">A source link is only a <em>claim</em> that a row matches its source. This audit actually opens the primary openFDA Drugs@FDA record for each of the <strong>1,427</strong> novel-approval rows and compares the sponsor, brand name and decision date field by field, so a wrong date or a swapped company is caught mechanically rather than by eye.</p>
     <div class="notice"><strong>What the statuses mean.</strong>
       <code>MATCH</code> — date, brand and sponsor all agree with openFDA.
       <code>MATCH_DATE_ONLY</code> — date and brand agree, sponsor wording differs (ownership change or legal-entity naming).
@@ -364,8 +365,20 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       <code>NOT_IN_OPENFDA</code> — the application is cited but openFDA returns no ORIG/AP record (common for legacy BLAs and transferred applications).
       <code>MISMATCH_DATE</code> / <code>MISMATCH_BRAND</code> — <strong>genuine source-vs-source conflicts, surfaced for human review rather than silently overwritten.</strong>
     </div>
-    <div class="notice"><strong>Honest reading of the result.</strong> Rather than assert that all 1,018 rows are correct, this table shows exactly how many are machine-confirmed against a primary FDA record and how many are not. Rows that two official FDA sources disagree about are flagged, not resolved by guessing — for example FDA's 2002 NME report prints Extraneal as 12-Dec-2002 while Drugs@FDA records 20-Dec-2002. Regenerate with <code>python3 scripts/crosscheck_master_vs_openfda.py</code>.</div>
+    <div class="notice"><strong>Honest reading of the result.</strong> Rather than assert that all 1,427 rows are correct, this table shows exactly how many are machine-confirmed against a primary FDA record and how many are not. Rows that two official FDA sources disagree about are flagged, not resolved by guessing — for example FDA's 2002 NME report prints Extraneal as 12-Dec-2002 while Drugs@FDA records 20-Dec-2002. Regenerate with <code>python3 scripts/crosscheck_master_vs_openfda.py</code>.</div>
     <div id="crosscheck-view"></div>
+  </section>
+
+  <section id="compilation" class="tab-panel">
+    <h2>📑 Compilation Audit — FDA's Official 1985–2025 Spine, Reconciled Row by Row</h2>
+    <p class="section-desc">Every one of the <strong>1,387</strong> rows of FDA's official CDER Novel Drug Approvals Compilation (<a href="https://www.fda.gov/media/177921/download?attachment" target="_blank" rel="noopener">media/177921 XLSX</a>) is matched to the master list by application number or brand+date, and every master row not on the Compilation is shown in the reverse direction. This is the audit that closes the 41 years 1985–2025: <strong>1,386 of 1,387 Compilation rows are represented in the master</strong>; the single excluded row is <em>Emend IV (fosaprepitant, NDA 022023, 2008)</em>, which FDA's own contemporaneous 2008 NME table excluded (the aprepitant moiety was approved as Emend in 2003) — that exclusion is documented, not an oversight. The 41 master-only rows are the 40 decisions of 2026 (the captured Compilation edition stops at 2025) plus Contrave 2014, kept for transparency and flagged NOT_ON_FDA_NME_TABLE.</p>
+    <div class="notice"><strong>Flag taxonomy in the master.</strong>
+      <code>YEAR_TABLE_ROW</code> — the row is on FDA's contemporaneous NME year table (spotless audit trail 1998–2026).
+      <code>COMPILATION_ONLY</code> — pre-1998 row (1985–1997): no CDER NME year table was ever published for these years, so the Compilation is the official spine. All 390 such rows link the Compilation and their Drugs@FDA application; 359 reconcile against openFDA (136 exact / 209 date + sponsor-name variant / 14 via successor or generic name), 29 are flagged NOT_IN_OPENFDA (mostly long-withdrawn products no longer indexed: Seldane, Hismanal, Duract, Posicor…), and 2 date-conflict rows are surfaced for human review, not edited into agreement.
+      <code>COMPILATION_ONLY_CBER</code> — the 19 therapeutic biologics 2000–2003 (Aranesp, Neulasta, Humira, Zevalin, Xolair…) that CBER licensed while CDER's year tables did not carry them; added per the documented year-count decision so the master is consistent across the 1999/2000 boundary.
+    </div>
+    <p class="section-desc">Per-year summary is in <code>data/year_audit_summary.csv</code>; the row-level evidence is below. Regenerate with <code>python3 scripts/build_compilation_reconciliation.py</code>.</p>
+    <div id="compilation-view"></div>
   </section>
 
   <!-- PRIVATE & NON-US (combined for simplicity, but still filtered) -->
@@ -391,7 +404,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 
       <h3>🔁 Label Expansions — the 4,482-row extension (added 2026-09-16)</h3>
       <p>The single largest body of officially documented FDA efficacy decisions is not novel approvals — it is <strong>efficacy supplements</strong>: FDA decisions granting a <em>new indication</em>, <em>new population</em>, or <em>new efficacy claim</em> on an already-approved NDA/BLA. FDA approves roughly 130–600 of these per year versus ~50 novel drugs.</p>
-      <p><strong>Why this was the right way to add 1,000+ new entries.</strong> The earlier limitation note in this repository was correct: FDA only approves ~50 novel drugs a year, so 1,000 <em>new</em> novel approvals beyond the existing 1,018 (1998–2026) do not exist and could only have been manufactured. Efficacy supplements are the honest alternative — every one is a real, dated FDA decision on a publicly traded company's drug, and every field can be copied verbatim from an official FDA record. This pass added <strong>4,482 verified decisions covering all 27 years 2000–2026</strong>, of which <strong>3,052 belong to US-investable issuers</strong> and <strong>4,204 link FDA's own signed approval-letter PDF</strong>.</p>
+      <p><strong>Why this was the right way to add 1,000+ new entries.</strong> The earlier limitation note in this repository was correct: FDA only approves ~50 novel drugs a year, so 1,000 <em>new</em> novel approvals beyond the existing 1,427 (1985–2026) do not exist and could only have been manufactured. Efficacy supplements are the honest alternative — every one is a real, dated FDA decision on a publicly traded company's drug, and every field can be copied verbatim from an official FDA record. This pass added <strong>4,482 verified decisions covering all 27 years 2000–2026</strong>, of which <strong>3,052 belong to US-investable issuers</strong> and <strong>4,204 link FDA's own signed approval-letter PDF</strong>.</p>
       <ul>
         <li><strong>Source:</strong> openFDA Drugs@FDA API, filtered to <code>submission_type=SUPPL</code>, <code>submission_class_code=EFFICACY</code>, <code>submission_status=AP</code>. The filter is applied <em>per submission object</em>, not across the record — openFDA flattens nested fields, so naive querying would match applications where different submissions satisfy different clauses.</li>
         <li><strong>Collected on GitHub Actions</strong> (<code>fetch_jobs/openfda_efficacy_supplements.json</code>), with every request URL and payload SHA-256 written to <code>data/raw/openfda_efficacy_supplements/manifest.json</code> so any row can be re-derived and audited.</li>
@@ -400,7 +413,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       </ul>
 
       <h3>🔍 Verification Audit — proving the "no hallucinations" claim</h3>
-      <p>A source link only <em>claims</em> a row matches its source. <code>scripts/crosscheck_master_vs_openfda.py</code> re-opens the primary openFDA Drugs@FDA record for all 1,018 novel-approval rows and compares sponsor, brand and decision date field by field, writing <code>data/verification_crosscheck.csv</code>. Results are shown on the <strong>Verification Audit</strong> tab.</p>
+      <p>A source link only <em>claims</em> a row matches its source. <code>scripts/crosscheck_master_vs_openfda.py</code> re-opens the primary openFDA Drugs@FDA record for all 1,427 novel-approval rows and compares sponsor, brand and decision date field by field, writing <code>data/verification_crosscheck.csv</code>. Results are shown on the <strong>Verification Audit</strong> tab.</p>
       <p>Two deliberate design choices make the audit trustworthy rather than flattering:</p>
       <ul>
         <li><strong>It reports what it cannot check.</strong> Rows citing no application number, or whose application openFDA has no ORIG/AP record for, are labelled as such instead of being counted as verified.</li>
@@ -409,17 +422,22 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       </ul>
 
       <h3>📊 The 1000 Verified Entries — No Hallucinations</h3>
-      <p>This repository contains <strong>1,018 verified FDA novel-drug approvals</strong> covering every year 1998-2026, plus 4,482 efficacy supplements, 1,995 original non-NME approvals, 458 CRLs (58 deep-verified + 400 from FDA's CRL transparency database), 2,000 ClinicalTrials.gov Phase 3 records, 153 verified stock snapshots and 675 company scores. Each row verified line-by-line from official sources:</p>
+      <p>This repository contains <strong>1,427 verified FDA novel-drug approvals</strong> covering every year 1985-2026, plus 4,482 efficacy supplements, 2,798 original non-NME approvals (1985-2026), 458 CRLs (58 deep-verified + 400 from FDA's CRL transparency database), 2,000 ClinicalTrials.gov Phase 3 records, 153 verified stock snapshots and 751 company scores. Each row verified line-by-line from official sources:</p>
       <ul>
+        <li><strong>1985-1992:</strong> 31+23+22+20+27+24+32+29 = 208 rows — FDA CDER Novel Drug Approvals Compilation (official Excel; no CDER NME year table exists for these years), each row flagged COMPILATION_ONLY, each carrying the Compilation link + a Drugs@FDA application link; 1985 starts with FDA's own Compilation (Lupron, 1985-04-09)</li>
+        <li><strong>1993-1997:</strong> 27+23+30+59+43 = 182 rows — same official Compilation spine, counted exactly as FDA enumerates them (1996 is FDA's all-time peak at 59)</li>
         <li><strong>1998:</strong> 36 rows — CDER "NMEs Approved in CY 1998" table (30 NDAs, Wayback capture of fda.gov/cder/rdmt/nmecy98.htm) + 6 CBER-era biologics from FDA's CDER Novel Drug Approvals Compilation (Simulect, Synagis, Infasurf, Remicade, Herceptin, Enbrel — flagged in row notes); 35/36 rows re-verified against the bulk openFDA 1998 ORIG/AP payload, Refludan flagged as no longer indexed</li>
         <li><strong>1999:</strong> 37 NMEs — FDA NME Drug and New Biologic Approvals 1999 (Wayback) + Compilation (Ontak/Wellferon flagged)</li>
-        <li><strong>2000:</strong> 27 NMEs — FDA NME Drug and New Biologic Approvals in 2000 (Wayback capture of FDA.gov)</li>
-        <li><strong>2001-2010:</strong> 24+17+21+36+20+22+18+24+26+21 = 229 NMEs — FDA year tables via Wayback</li>
+        <li><strong>2000:</strong> 29 rows (27 CDER year-table NMEs + TNKase, Myobloc) — FDA NME Drug and New Biologic Approvals in 2000 (Wayback capture of FDA.gov), plus the two 2000 biologics CBER licensed, flagged COMPILATION_ONLY_CBER per the documented year-count decision</li>
+        <li><strong>2001:</strong> 29 rows (24 year-table + Peg-Intron, Campath, Aranesp, Kineret, Xigris — COMPILATION_ONLY_CBER)</li>
+        <li><strong>2002:</strong> 23 rows (17 year-table + Neulasta, Zevalin, Rebif, Elitek, Pegasys, Humira — COMPILATION_ONLY_CBER)</li>
+        <li><strong>2003:</strong> 27 rows (21 year-table + Amevive, Fabrazyme, Aldurazyme, Xolair, Bexxar, Raptiva — COMPILATION_ONLY_CBER)</li>
+        <li><strong>2004-2010:</strong> 36+20+22+18+24+26+21 = 167 NMEs — FDA year tables via Wayback</li>
         <li><strong>2011-2014:</strong> 30+39+27+41 = 137 NMEs — FDA Drug Innovation pages via Wayback</li>
         <li><strong>2015-2017:</strong> 45+22+46 = 113 NMEs — FDA Novel Drug Approvals tables via Wayback + 2017 report</li>
         <li><strong>2018-2020:</strong> 59+48+53 = 160 NMEs — FDA Novel Drug Approvals (archived) + annual reports</li>
         <li><strong>2021-2026:</strong> 50+37+55+50+46+40 = 278 NMEs — FDA live tables + openFDA API verification (2026 YTD through Pixclara, 9/11/2026)</li>
-        <li><strong>Total: 1,018 rows</strong> — complete coverage of FDA's official NME counts for 1998-2026 (1,017 counted + D634 Contrave, retained but flagged NOT_ON_FDA_NME_TABLE after the 2014 reconciliation found it is a Type 4 combination and that Ofev was the missing 41st row), each with 2 source links, verification status, and notes flagging irregularities</li>
+        <li><strong>Total: 1,427 rows</strong> — complete coverage of FDA's official NME counts for 1998-2026 (1,017 year-table rows + D634 Contrave, retained but flagged NOT_ON_FDA_NME_TABLE after the 2014 reconciliation found it is a Type 4 combination and that Ofev was the missing 41st row), <strong>plus 390 pre-1998 rows (1985-1997) from FDA's official NME Compilation flagged COMPILATION_ONLY and 19 CBER-licensed biologics 2000-2003 flagged COMPILATION_ONLY_CBER</strong>; the full 1,387-row official NME Compilation 1985-2025 reconciles row-by-row at 1,386/1,387 (sole documented exclusion: Emend IV 2008, which FDA's own 2008 table also excluded). Each row carries 2 source links, verification status, and notes flagging irregularities</li>
       </ul>
       <p><strong>Verification approach:</strong> Every row carries <code>verification_status</code>. Rows marked <em>Verified</em> only when company/ticker/date corroborated by at least one official/primary source. Anything ambiguous flagged in notes rather than silently resolved. No prices, dates, or outcomes fabricated or estimated. Where data could not be verified, cell left blank and reason noted — never filled with plausible guess. <strong>Blank beats guessed.</strong></p>
 
@@ -503,7 +521,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 <footer class="site-footer">
   <div class="wrap">
     <div>
-      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 1,018 novel approvals (1998–2026) + 1,995 original non-NME decisions + 4,482 label expansions + 458 CRLs (2000–2026) + 2,000 ClinicalTrials.gov Phase 3 records + stock reactions + company scores. Every row with official source links.</p>
+      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 1,427 novel approvals (1985–2026) + 2,798 original non-NME decisions (1985–2026) + 4,482 label expansions (2000–2026) + 458 CRLs (2000–2026) + 2,000 ClinicalTrials.gov Phase 3 records + stock reactions + company scores. Every row with official source links.</p>
       <p>Data compiled by autonomous research agent from official public sources. Always verify against linked primary sources before making decisions. Not investment advice.</p>
     </div>
     <div>
@@ -528,7 +546,7 @@ ly from CSVs in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree
 <footer class="site-footer">
   <div class="wrap">
     <div>
-      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 1,018 verified FDA approvals (1998-2026) + CRLs + stock reactions + company scores. Every row with official source links.</p>
+      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 1,427 verified FDA approvals (1985-2026) + CRLs + stock reactions + company scores. Every row with official source links.</p>
       <p>Data compiled by autonomous research agent from official public sources. Always verify against linked primary sources before making decisions. Not investment advice.</p>
     </div>
     <div>
