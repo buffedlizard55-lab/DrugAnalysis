@@ -1475,6 +1475,98 @@ Promise.all([
     ]
   });
 
+  /* Pre-2000 era analysis grid (1985-2000) */
+  DataTable({
+    id: 'pre2000-era', mount: '#pre2000-era-view', csv: 'data/pre2000_era_analysis.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('master_approvals', 'Approvals', { core: true }),
+      c('priority', 'Priority', { core: true }),
+      c('standard', 'Standard', { core: true }),
+      c('with_accelerated_token', 'Accel.', { core: true }),
+      c('priced_events', 'Priced', { core: true }),
+      c('median_pct_on_decision', 'Median 1-day %', { core: true, render: r => r.median_pct_on_decision === '' ? '<span class="muted">—</span>' : `<span class="num-strong">${escapeHtml(r.median_pct_on_decision)}%</span>` }),
+      c('biggest_gainer', 'Biggest gainer', { render: r => r.biggest_gainer ? `${escapeHtml(r.biggest_gainer)} <span class="pos">+${escapeHtml(r.biggest_gainer_pct)}%</span>` : '' }),
+      c('biggest_loser', 'Biggest loser', { render: r => r.biggest_loser ? `${escapeHtml(r.biggest_loser)} <span class="neg">${escapeHtml(r.biggest_loser_pct)}%</span>` : '' }),
+      c('audit_rows', 'Audit rows', { core: true, render: r => r.audit_rows === '' ? '<span class="muted">—</span>' : escapeHtml(r.audit_rows) }),
+      c('audit_all_layers', 'All-layers', { render: r => r.audit_all_layers === '' ? '' : escapeHtml(r.audit_all_layers) }),
+      c('audit_flagged', 'Flagged', { render: r => r.audit_flagged === '' ? '' : escapeHtml(r.audit_flagged) }),
+      c('distinct_companies', 'Companies'),
+      c('us_listed_class', 'US-listed'),
+      c('formerly_us_class', 'Formerly US'),
+      c('non_us_class', 'Non-US'),
+      c('private_class', 'Private'),
+      c('winners_gt_10pct', 'Win >10%'),
+      c('losers_lt_10pct', 'Lose <-10%')
+    ],
+    searchFields: ['year'],
+    searchPlaceholder: 'Filter by year…',
+    sort: { key: 'year', dir: 'desc' }, pageSize: 20,
+    filters: []
+  });
+
+  /* Row-level pre-2000 audit evidence */
+  DataTable({
+    id: 'pre2000', mount: '#pre2000-view', csv: 'data/pre2000_year_audit.csv',
+    columns: [
+      c('audit_year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.audit_year)}</span>` }),
+      c('decision_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.decision_id)}</code>` }),
+      c('drug_brand', 'Drug', { core: true }),
+      c('company_name', 'Company', { trunc: true }),
+      c('master_decision_date', 'Decision date', { core: true }),
+      c('application_number', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('verdict', 'Verdict', { core: true, render: r => statusBadge(r.verdict) }),
+      c('l1_year_table', 'L1 year table', { render: r => escapeHtml(r.l1_year_table) }),
+      c('l1_table_date', 'L1 date'),
+      c('l2_compilation_match', 'L2 compilation', { render: r => escapeHtml(r.l2_compilation_match) }),
+      c('l2_compilation_date', 'L2 date'),
+      c('l2_review_designation', 'L2 review'),
+      c('l2_accelerated_approval', 'L2 accel.'),
+      c('l3_openfda_match', 'L3 openFDA', { core: true, render: r => statusBadge(r.l3_openfda_match) }),
+      c('l3_orig_date', 'L3 date'),
+      c('l3_sponsor', 'L3 sponsor', { trunc: true }),
+      c('date_agreement', 'Dates', { render: r => escapeHtml(r.date_agreement) }),
+      c('review_flag', 'Flag', { core: true, render: r => r.review_flag ? `<span class="neg">${escapeHtml(r.review_flag)}</span>` : '' }),
+      c('live_check', 'Live check (2026-09-18)', { render: r => r.live_check ? `<span class="muted">${escapeHtml(r.live_check)}</span>` : '' }),
+      c('source_year_table_or_compilation', 'Year table / Compilation', { render: r => linkify(r.source_year_table_or_compilation, 'FDA source'), detail: r => r.source_year_table_or_compilation }),
+      c('source_drugsatfda', 'Drugs@FDA', { render: r => linkify(r.source_drugsatfda, 'application'), detail: r => r.source_drugsatfda }),
+      c('source_openfda', 'openFDA', { render: r => linkify(r.source_openfda, 'API record'), detail: r => r.source_openfda })
+    ],
+    searchFields: ['decision_id', 'drug_brand', 'company_name', 'application_number', 'verdict', 'review_flag'],
+    searchPlaceholder: 'Search 204 audited rows by drug, company, ID…',
+    sort: { key: 'audit_year', dir: 'desc' }, pageSize: 25,
+    filters: [
+      { key: 'verdict', label: 'All verdicts', field: 'verdict' },
+      yearFilter('master_decision_date')
+    ]
+  });
+
+  /* Pre-2000 sponsor-resolution worklist */
+  DataTable({
+    id: 'pre2000-sponsors', mount: '#pre2000-sponsors-view', csv: 'data/pre2000_sponsor_resolution_index.csv',
+    columns: [
+      c('decision_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.decision_id)}</code>` }),
+      c('decision_date', 'Date', { core: true }),
+      c('drug_brand', 'Drug', { core: true }),
+      c('legacy_sponsor_verbatim', 'Legacy sponsor (verbatim)', { core: true, trunc: true }),
+      c('lineage_recorded_in_master', 'Lineage on record', { trunc: true }),
+      c('status', 'Status', { core: true, render: r => statusBadge(r.status) }),
+      c('priority', 'Priority', { core: true }),
+      c('us_investable_class', 'Class'),
+      c('application_number', 'Appl #', { render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('action_for_reviewer', 'Action', { render: r => escapeHtml(r.action_for_reviewer) }),
+      c('sec_edgar_company_search', 'EDGAR search', { render: r => linkify(r.sec_edgar_company_search, 'SEC EDGAR'), detail: r => r.sec_edgar_company_search }),
+      c('drugsatfda_link', 'Drugs@FDA', { render: r => linkify(r.drugsatfda_link, 'application'), detail: r => r.drugsatfda_link })
+    ],
+    searchFields: ['decision_id', 'drug_brand', 'legacy_sponsor_verbatim', 'status'],
+    searchPlaceholder: 'Search 67 sponsor worklist rows…',
+    sort: { key: 'priority', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'status', label: 'All statuses', field: 'status' },
+      { key: 'priority', label: 'All priorities', field: 'priority' }
+    ]
+  });
+
   /* Pipeline Tracker Full */
   DataTable({
     id: 'pipeline-full', mount: '#pipeline-full-view', csv: 'data/pipeline_tracker.csv',

@@ -56,6 +56,7 @@
   <button class="tab-btn" data-tab="orig-scores"><span class="tab-icon">🧱</span> Orig Scorecard</button>
   <button class="tab-btn" data-tab="crls"><span class="tab-icon">⚠️</span> CRLs / Rejections</button>
   <button class="tab-btn" data-tab="crosscheck"><span class="tab-icon">🔍</span> Verification Audit</button>
+  <button class="tab-btn" data-tab="pre2000"><span class="tab-icon">🕰️</span> Pre-2000 Audit</button>
   <button class="tab-btn" data-tab="compilation"><span class="tab-icon">📑</span> Compilation Audit</button>
   <button class="tab-btn" data-tab="private"><span class="tab-icon">🔒</span> Private</button>
   <button class="tab-btn" data-tab="nonus"><span class="tab-icon">🌍</span> Non-US</button>
@@ -369,6 +370,26 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
     <div id="crosscheck-view"></div>
   </section>
 
+  <section id="pre2000" class="tab-panel">
+    <h2>🕰️ Pre-2000 Audit — Every 1996–2000 Decision, Year by Year, Three Official Layers</h2>
+    <p class="section-desc">Audited 2026-09-18 in the requested order <strong>2000 → 1999 → 1998 → 1997 → 1996</strong>. Every one of the <strong>204</strong> master rows for 1996–2000 was re-verified line by line against three independent official FDA layers: <strong>L1</strong> the contemporaneous CDER NME year table (1998/1999/2000 — verbatim Wayback captures; none exists for 1996/1997, which is documented), <strong>L2</strong> FDA's official CDER Novel Drug Approvals Compilation (media/177921 XLSX, runner-captured with SHA-256), and <strong>L3</strong> openFDA Drugs@FDA (verbatim runner payloads). Result: <strong>188 rows VERIFIED_ALL_LAYERS</strong> (all three layers agree on the date), 12 verified on year-table + Compilation, 3 on Compilation + openFDA (CBER-era biologics their year tables omitted), 1 on Compilation only. <strong>14 rows are flagged</strong> where openFDA/Drugs@FDA no longer indexes the application (withdrawn drugs such as Posicor and Duract, and CBER-era licences such as Wellferon and Zenapax) — each flag carries a live api.fda.gov re-check performed 2026-09-18 with the replayable query link. <strong>Zero date conflicts were found anywhere in 1996–2000.</strong></p>
+    <div class="notice"><strong>Per-year verdicts (also in <code>data/pre2000_year_summary.csv</code>):</strong>
+      2000: 29 rows — 26 all-layers, 1 table+compilation (Mylotarg, absent from openFDA), 2 compilation+openFDA (TNKase, Myobloc) ·
+      1999: 37 rows — 34 all-layers, 1+1+1 (Ontak and Wellferon are documented Compilation-only imports; Tequin absent from openFDA) ·
+      1998: 36 rows — 35 all-layers, 1 table+compilation (Refludan, absent from openFDA) ·
+      1997: 43 rows — 37 all-layers, 6 table+compilation (Normiflo's application exists in openFDA but carries no submissions array; Posicor, Duract, Infergen, Neumega, Zenapax absent) ·
+      1996: 59 rows — 56 all-layers, 3 table+compilation (CEA-Scan, Verluma, Retavase absent).
+    </div>
+    <p class="section-desc">Era price-reaction analytics below are medians of manifest-audited Yahoo Finance daily closes (decision-day close vs last close before). The 1998–2000 event captures that earlier sessions fetched but never ingested were ingested this session: price snapshots grew <strong>334 → 978</strong>, with full pre-2000 brackets for every captured event. Regenerate with <code>python3 scripts/audit_pre2000_year_by_year.py</code> and <code>python3 scripts/build_pre2000_era_analysis.py</code>.</p>
+    <h3 style="margin-top:1rem">Era analysis 1985–2000 (data/pre2000_era_analysis.csv)</h3>
+    <div id="pre2000-era-view"></div>
+    <h3 style="margin-top:1.5rem">Row-level audit evidence — every row with its three official links (data/pre2000_year_audit.csv)</h3>
+    <div id="pre2000-view"></div>
+    <h3 style="margin-top:1.5rem">Sponsor-resolution worklist — 67 pre-2000 issuers without a verified ticker (data/pre2000_sponsor_resolution_index.csv)</h3>
+    <p class="section-desc">Indexed for manual verification, never guessed: 25 high-priority rows are recoverable once-listed companies (e.g. The Upjohn Co. → Pharmacia &amp; Upjohn 1995), each with a deterministic SEC EDGAR company-search link and Drugs@FDA application link; 22 rows are documented private/government/non-profit issuers needing no action. Blank beats guessed.</p>
+    <div id="pre2000-sponsors-view"></div>
+  </section>
+
   <section id="compilation" class="tab-panel">
     <h2>📑 Compilation Audit — FDA's Official 1985–2025 Spine, Reconciled Row by Row</h2>
     <p class="section-desc">Every one of the <strong>1,387</strong> rows of FDA's official CDER Novel Drug Approvals Compilation (<a href="https://www.fda.gov/media/177921/download?attachment" target="_blank" rel="noopener">media/177921 XLSX</a>) is matched to the master list by application number or brand+date, and every master row not on the Compilation is shown in the reverse direction. This is the audit that closes the 41 years 1985–2025: <strong>1,386 of 1,387 Compilation rows are represented in the master</strong>; the single excluded row is <em>Emend IV (fosaprepitant, NDA 022023, 2008)</em>, which FDA's own contemporaneous 2008 NME table excluded (the aprepitant moiety was approved as Emend in 2003) — that exclusion is documented, not an oversight. The 41 master-only rows are the 40 decisions of 2026 (the captured Compilation edition stops at 2025) plus Contrave 2014, kept for transparency and flagged NOT_ON_FDA_NME_TABLE.</p>
@@ -422,7 +443,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       </ul>
 
       <h3>📊 The 1000 Verified Entries — No Hallucinations</h3>
-      <p>This repository contains <strong>1,427 verified FDA novel-drug approvals</strong> covering every year 1985-2026, plus 4,482 efficacy supplements, 2,798 original non-NME approvals (1985-2026), 458 CRLs (58 deep-verified + 400 from FDA's CRL transparency database), 2,000 ClinicalTrials.gov Phase 3 records, 153 verified stock snapshots and 751 company scores. Each row verified line-by-line from official sources:</p>
+      <p>This repository contains <strong>1,427 verified FDA novel-drug approvals</strong> covering every year 1985-2026, plus 4,482 efficacy supplements, 2,798 original non-NME approvals (1985-2026), 458 CRLs (58 deep-verified + 400 from FDA's CRL transparency database), 2,000 ClinicalTrials.gov Phase 3 records, 978 verified stock snapshots and 750 company scores. Each row verified line-by-line from official sources:</p>
       <ul>
         <li><strong>1985-1992:</strong> 31+23+22+20+27+24+32+29 = 208 rows — FDA CDER Novel Drug Approvals Compilation (official Excel; no CDER NME year table exists for these years), each row flagged COMPILATION_ONLY, each carrying the Compilation link + a Drugs@FDA application link; 1985 starts with FDA's own Compilation (Lupron, 1985-04-09)</li>
         <li><strong>1993-1997:</strong> 27+23+30+59+43 = 182 rows — same official Compilation spine, counted exactly as FDA enumerates them (1996 is FDA's all-time peak at 59)</li>
@@ -533,29 +554,4 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 
 <script src="assets/app.js"></script>
 </body>
-</html>
-ly from CSVs in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank">/data</a>; each has matching builder in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/scripts" target="_blank">/scripts</a> that writes it from explicit, source-cited data, so any number can be diffed and re-verified. Use Export CSV button on any table to download rows you are currently looking at.</p>
-
-      <h3>⚖️ Disclaimer</h3>
-      <p>This is a research/analysis project, not investment advice. Always verify against linked primary sources before making decisions. Data compiled by autonomous research agent from official public sources. No hallucinations — every row verified line-by-line.</p>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div>
-      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 1,427 verified FDA approvals (1985-2026) + CRLs + stock reactions + company scores. Every row with official source links.</p>
-      <p>Data compiled by autonomous research agent from official public sources. Always verify against linked primary sources before making decisions. Not investment advice.</p>
-    </div>
-    <div>
-      <p><a href="https://github.com/buffedlizard55-lab/DrugAnalysis" target="_blank">Source repository</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank">Raw CSVs</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/README.md" target="_blank">README</a></p>
-      <p style="font-size:.75rem; color:var(--faint)">Built with no frameworks, no build step — plain HTML/CSS/JS reading CSVs directly. Every commit to main publishes current data automatically via GitHub Pages.</p>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/app.js"></script>
-</body>
-</html>
+</html>\n
