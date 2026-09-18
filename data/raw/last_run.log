@@ -1,5 +1,24 @@
 == job clinicaltrials_phase3_2026_2027 (1 spec(s)) ==
 == job clinicaltrials_phase3_2026_2027_windows (4 spec(s)) ==
+== job edgar_pre2000_symbols_2026_09 (18 spec(s)) ==
+FAIL pnu_fy1997_10k405: HTTPError: HTTP Error 403: Forbidden
+FAIL warner_lambert_fy1997_10k: HTTPError: HTTP Error 403: Forbidden
+FAIL carter_wallace_fy1997_10k405: HTTPError: HTTP Error 403: Forbidden
+FAIL block_drug_fy1997_10k: HTTPError: HTTP Error 403: Forbidden
+FAIL roberts_defm14a_1999: HTTPError: HTTP Error 403: Forbidden
+FAIL roberts_fy1996_10k: HTTPError: HTTP Error 403: Forbidden
+FAIL amag_form25_list: HTTPError: HTTP Error 403: Forbidden
+FAIL amag_form15_list: HTTPError: HTTP Error 403: Forbidden
+FAIL cytogen_form15_list: HTTPError: HTTP Error 403: Forbidden
+FAIL cytogen_form25_list: HTTPError: HTTP Error 403: Forbidden
+FAIL immunomedics_form25_list: HTTPError: HTTP Error 403: Forbidden
+FAIL immunomedics_form15_list: HTTPError: HTTP Error 403: Forbidden
+FAIL gensia_sicor_form15_list: HTTPError: HTTP Error 403: Forbidden
+FAIL gensia_sicor_form25_list: HTTPError: HTTP Error 403: Forbidden
+FAIL ivax_form15_list: HTTPError: HTTP Error 403: Forbidden
+FAIL ivax_form25_list: HTTPError: HTTP Error 403: Forbidden
+FAIL roberts_10k_list: HTTPError: HTTP Error 403: Forbidden
+FAIL carter_wallace_10k_list: HTTPError: HTTP Error 403: Forbidden
 == job openfda_approvals_2000_2010 (1 spec(s)) ==
 ok orig_ap_2000: 2746 records -> data/raw/openfda_approvals_2000_2010/2000.json
 ok orig_ap_2001: 2861 records -> data/raw/openfda_approvals_2000_2010/2001.json
@@ -13,234 +32,87 @@ ok orig_ap_2008: 2015 records -> data/raw/openfda_approvals_2000_2010/2008.json
 ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
 ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
 == job openfda_efficacy_supplements (1 spec(s)) ==
+== job openfda_orig_decisions_1980_1984 (1 spec(s)) ==
+ok orig_decisions_1980: 82 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1980.json
+ok orig_decisions_1981: 71 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1981.json
+ok orig_decisions_1982: 103 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1982.json
+ok orig_decisions_1983: 70 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1983.json
+ok orig_decisions_1984: 109 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1984.json
 == job openfda_orig_decisions_2011_2026 (1 spec(s)) ==
 == job probe (5 spec(s)) ==
 FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
-ok sec_company_tickers_plain_ua 200 797759 bytes -> data/raw/probe/sec_company_tickers_alt.json
+ok sec_company_tickers_plain_ua 200 799073 bytes -> data/raw/probe/sec_company_tickers_alt.json
 ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
-ok yahoo_symbol_search_probe 200 2783 bytes -> data/raw/probe/yahoo_search_probe.json
+ok yahoo_symbol_search_probe 200 2758 bytes -> data/raw/probe/yahoo_search_probe.json
 == job source_captures_2026_09_17 (10 spec(s)) ==
-ok cder_nme_cy1998_table 200 22083 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
-ok cder_nme_cy1999_table 200 38953 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
-ok cder_nme_cy2000_table 200 31733 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
+ok cder_nme_cy1998_table 200 22084 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
+ok cder_nme_cy1999_table 200 38954 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
+ok cder_nme_cy2000_table 200 31734 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
 ok cder_rdmt_index_2003 200 15826 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
-ok fda_novel_2014_table_wayback 200 64201 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
+ok fda_novel_2014_table_wayback 200 64206 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
 ok fda_novel_2026_live 200 41780 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
 ok openfda_contrave_200063 200 12628 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA200063_contrave.json
 ok openfda_ofev_205832 200 15334 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA205832_ofev.json
 ok openfda_pixclara_218592 200 2096 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA218592_pixclara.json
 ok ctgov_total_2026_2027 200 159 bytes -> data/raw/source_captures_2026_09_17/ctgov_totalcount_2026_2027.json
 == job stock_yahoo_batch_2026_09 (1 spec(s)) ==
-ok SRRK_2026-09-11 200 2550 bytes
-ok AZN_2026-09-04 200 3076 bytes
-ok IONS_2026-09-03 200 2914 bytes
-ok REGN_2026-08-19 200 2978 bytes
-ok BMY_2026-08-13 200 3011 bytes
-ok LNTH_2026-08-13 200 3049 bytes
-ok OTLK_2026-07-24 200 3210 bytes
+ok SRRK_2026-09-11 200 2680 bytes
+ok AZN_2026-09-04 200 3080 bytes
+ok IONS_2026-09-03 200 2919 bytes
+ok REGN_2026-08-19 200 2980 bytes
+ok BMY_2026-08-13 200 3008 bytes
+ok LNTH_2026-08-13 200 3054 bytes
+ok OTLK_2026-07-24 200 3207 bytes
 ok NUVL_2026-07-22 200 1085 bytes
 ok MRK_2026-07-15 200 2945 bytes
-ok CELC_2026-07-14 200 2883 bytes
-ok VERA_2026-07-07 200 2810 bytes
-ok VRDN_2026-06-26 200 2977 bytes
-ok BAYRY_2026-06-12 200 3028 bytes
-ok SGIOF_2026-05-29 200 2660 bytes
-ok ABBV_2026-05-27 200 2863 bytes
-ok GILD_2026-05-22 200 3032 bytes
-ok AZN_2026-05-15 200 3030 bytes
-ok RIGL_2026-05-01 200 3145 bytes
-ok MRK_2026-04-20 200 3175 bytes
-ok LLY_2026-04-01 200 2835 bytes
+ok CELC_2026-07-14 200 2888 bytes
+ok VERA_2026-07-07 200 2813 bytes
+ok VRDN_2026-06-26 200 2971 bytes
+ok BAYRY_2026-06-12 200 3030 bytes
+ok SGIOF_2026-05-29 200 2663 bytes
+ok ABBV_2026-05-27 200 2866 bytes
+ok GILD_2026-05-22 200 3035 bytes
+ok AZN_2026-05-15 200 3034 bytes
+ok RIGL_2026-05-01 200 3147 bytes
+ok MRK_2026-04-20 200 3176 bytes
+ok LLY_2026-04-01 200 2833 bytes
 ok NVO_2026-03-26 200 2895 bytes
-ok CORT_2026-03-25 200 2919 bytes
-ok JNJ_2026-03-17 200 3001 bytes
-ok GSK_2026-03-17 200 3026 bytes
-ok ASND_2026-02-27 200 2892 bytes
-ok VNDA_2025-12-30 200 2718 bytes
-ok VRTX_2025-01-30 200 2923 bytes
-ok NBIX_2024-12-13 200 3056 bytes
-ok BBIO_2024-11-22 200 3063 bytes
-ok ZYME_2024-11-20 200 2882 bytes
+ok CORT_2026-03-25 200 2926 bytes
+ok JNJ_2026-03-17 200 3010 bytes
+ok GSK_2026-03-17 200 3027 bytes
+ok ASND_2026-02-27 200 2893 bytes
+ok VNDA_2025-12-30 200 2724 bytes
+ok VRTX_2025-01-30 200 2928 bytes
+ok NBIX_2024-12-13 200 3057 bytes
+ok BBIO_2024-11-22 200 3062 bytes
+ok ZYME_2024-11-20 200 2883 bytes
 == job stock_yahoo_events_1985_1998 (1 spec(s)) ==
-ok GSK_1985-05-24 200 2296 bytes
-ok GSK_1985-07-19 200 2351 bytes
 FAIL ALC_1985-08-30: HTTPError: HTTP Error 400: Bad Request
-ok MMM_1985-10-31 200 3006 bytes
-ok MRK_1985-11-08 200 3205 bytes
-ok MRK_1985-11-26 200 2976 bytes
 FAIL RHHBY_1985-12-20: HTTPError: HTTP Error 400: Bad Request
-ok JNJ_1985-12-24 200 2504 bytes
-ok MRK_1985-12-24 200 2859 bytes
-ok LLY_1985-12-26 200 2403 bytes
-ok GSK_1985-12-27 200 2199 bytes
-ok GSK_1985-12-30 200 2201 bytes
-ok BMY_1985-12-31 200 2837 bytes
-ok GSK_1986-03-31 200 2214 bytes
 FAIL RHHBY_1986-06-04: HTTPError: HTTP Error 400: Bad Request
-ok JNJ_1986-06-19 200 2610 bytes
-ok BMY_1986-09-29 200 3151 bytes
 FAIL RHHBY_1986-09-30: HTTPError: HTTP Error 400: Bad Request
-ok MRK_1986-10-15 200 3044 bytes
-ok MRK_1986-10-31 200 3160 bytes
 FAIL RHHBY_1986-10-31: HTTPError: HTTP Error 400: Bad Request
-ok BMY_1986-12-24 200 2841 bytes
-ok JNJ_1986-12-29 200 2591 bytes
-ok PFE_1986-12-30 200 2874 bytes
-ok BMY_1986-12-31 200 2855 bytes
-ok PFE_1986-12-31 200 2874 bytes
-ok BMY_1987-01-21 200 3109 bytes
-ok GSK_1987-03-19 200 2256 bytes
-ok ABT_1987-08-07 200 3199 bytes
-ok MRK_1987-08-31 200 3107 bytes
-ok LLY_1987-12-29 200 2216 bytes
-ok MRK_1987-12-29 200 2810 bytes
-ok LLY_1987-12-30 200 2211 bytes
 FAIL ALC_1987-12-31: HTTPError: HTTP Error 400: Bad Request
-ok GSK_1987-12-31 200 2072 bytes
-ok JNJ_1987-12-31 200 2515 bytes
 FAIL RHHBY_1987-12-31: HTTPError: HTTP Error 400: Bad Request
-ok LLY_1988-04-12 200 2336 bytes
-ok GSK_1988-12-22 200 2086 bytes
-ok ABT_1988-12-28 200 2873 bytes
-ok JNJ_1988-12-29 200 2499 bytes
-ok BMY_1988-12-30 200 2993 bytes
-ok GSK_1988-12-30 200 2135 bytes
-ok LLY_1988-12-30 200 2331 bytes
-ok BMY_1989-03-03 200 3105 bytes
-ok AMGN_1989-06-01 200 2813 bytes
-ok MRK_1989-09-14 200 2986 bytes
-ok GSK_1989-11-27 200 2255 bytes
-ok LLY_1989-12-28 200 2231 bytes
-ok BMY_1989-12-29 200 2997 bytes
-ok JNJ_1989-12-29 200 2288 bytes
-ok LLY_1989-12-29 200 2305 bytes
-ok PFE_1990-01-29 200 3194 bytes
-ok JNJ_1990-06-18 200 2420 bytes
-ok GSK_1990-08-02 200 2256 bytes
-ok PFE_1990-11-02 200 3173 bytes
-ok GSK_1990-12-14 200 2273 bytes
-ok BMY_1990-12-17 200 3108 bytes
-ok BMY_1990-12-19 200 2992 bytes
-ok ABT_1990-12-26 200 2815 bytes
-ok JNJ_1990-12-28 200 2297 bytes
-ok GSK_1991-01-04 200 2193 bytes
-ok JNJ_1991-01-30 200 2343 bytes
-ok AMGN_1991-02-20 200 2722 bytes
-ok GSK_1991-03-07 200 2262 bytes
-ok BMY_1991-05-16 200 2977 bytes
-ok ABT_1991-07-01 200 3047 bytes
-ok MRK_1991-07-25 200 3088 bytes
 FAIL AZN_1991-09-27: HTTPError: HTTP Error 400: Bad Request
-ok BMY_1991-10-09 200 3089 bytes
-ok ABT_1991-10-31 200 3048 bytes
-ok BMY_1991-10-31 200 3088 bytes
-ok PFE_1991-11-01 200 3175 bytes
 FAIL RHHBY_1991-12-20: HTTPError: HTTP Error 400: Bad Request
-ok BMY_1991-12-23 200 2973 bytes
-ok MRK_1991-12-23 200 2970 bytes
-ok GSK_1991-12-24 200 2068 bytes
-ok JNJ_1991-12-24 200 2247 bytes
-ok PFE_1991-12-30 200 2909 bytes
-ok LLY_1991-12-31 200 2244 bytes
-ok GSK_1992-01-22 200 2202 bytes
-ok ABT_1992-01-30 200 3036 bytes
-ok MRK_1992-06-19 200 3141 bytes
 FAIL RHHBY_1992-06-19: HTTPError: HTTP Error 400: Bad Request
-ok BMY_1992-07-14 200 2995 bytes
-ok GSK_1992-07-24 200 2246 bytes
-ok PFE_1992-07-31 200 3110 bytes
-ok JNJ_1992-09-11 200 2363 bytes
-ok BMY_1992-10-30 200 3207 bytes
-ok BMY_1992-11-16 200 3096 bytes
-ok GSK_1992-11-25 200 2132 bytes
-ok GSK_1992-12-28 200 2140 bytes
-ok BMY_1992-12-29 200 2880 bytes
-ok GSK_1992-12-29 200 2081 bytes
-ok JNJ_1993-02-26 200 2338 bytes
-ok JNJ_1993-07-29 200 2267 bytes
 FAIL ALC_1993-09-23: HTTPError: HTTP Error 400: Bad Request
-ok JNJ_1993-11-10 200 2373 bytes
-ok BMY_1993-12-29 200 2986 bytes
-ok GSK_1993-12-29 200 2144 bytes
-ok JNJ_1993-12-29 200 2280 bytes
-ok JNJ_1993-12-30 200 2278 bytes
-ok GSK_1994-02-04 200 2264 bytes
-ok GSK_1994-03-25 200 2196 bytes
-ok BMY_1994-06-24 200 3106 bytes
-ok GSK_1994-06-29 200 2134 bytes
-ok VTRS_1994-08-15 200 3018 bytes
-ok MRK_1994-12-09 200 3192 bytes
-ok BMY_1994-12-22 200 2876 bytes
-ok GSK_1994-12-23 200 2142 bytes
-ok GSK_1994-12-27 200 2075 bytes
 FAIL ALC_1994-12-30: HTTPError: HTTP Error 400: Bad Request
-ok JNJ_1995-03-03 200 2348 bytes
-ok MRK_1995-04-14 200 3085 bytes
-ok ABT_1995-06-07 200 2920 bytes
-ok LLY_1995-06-19 200 2435 bytes
-ok GSK_1995-09-14 200 2152 bytes
-ok GSK_1995-09-20 200 2217 bytes
-ok JNJ_1995-09-29 200 2434 bytes
-ok MRK_1995-09-29 200 3199 bytes
-ok AZN_1995-10-04 200 2881 bytes
-ok GSK_1995-11-17 200 2189 bytes
 FAIL RHHBY_1995-12-06: HTTPError: HTTP Error 400: Bad Request
-ok PFE_1995-12-08 200 3165 bytes
 FAIL SNY_1995-12-12: HTTPError: HTTP Error 400: Bad Request
-ok AZN_1995-12-27 200 2518 bytes
-ok BMY_1996-01-18 200 3093 bytes
-ok ABT_1996-03-01 200 3010 bytes
-ok MRK_1996-03-13 200 3077 bytes
 FAIL SNY_1996-05-14: HTTPError: HTTP Error 400: Bad Request
-ok LLY_1996-05-15 200 2241 bytes
-ok BIIB_1996-05-17 200 2849 bytes
-ok GSK_1996-05-28 200 2130 bytes
-ok GSK_1996-06-11 200 2180 bytes
-ok LLY_1996-06-14 200 2353 bytes
-ok AZN_1996-06-21 200 2937 bytes
-ok GILD_1996-06-26 200 2693 bytes
-ok GSK_1996-07-12 200 2200 bytes
-ok AZN_1996-09-24 200 2736 bytes
-ok GSK_1996-09-24 200 2183 bytes
-ok AZN_1996-09-26 200 2716 bytes
-ok LLY_1996-09-30 200 2358 bytes
 FAIL ORPH_1996-10-25: HTTPError: HTTP Error 404: Not Found
-ok MRK_1996-11-22 200 3028 bytes
-ok ABT_1996-12-09 200 3085 bytes
 FAIL ALC_1996-12-18: HTTPError: HTTP Error 400: Bad Request
-ok TEVA_1996-12-20 200 2352 bytes
-ok JNJ_1996-12-24 200 2169 bytes
-ok MMM_1997-02-27 200 2918 bytes
 FAIL SNY_1997-03-07: HTTPError: HTTP Error 400: Bad Request
 FAIL RHHBY_1997-06-20: HTTPError: HTTP Error 400: Bad Request
-ok NVS_1997-07-25 200 3116 bytes
-ok GSK_1997-09-19 200 2323 bytes
-ok AZN_1997-09-26 200 2908 bytes
-ok ABT_1997-09-30 200 3085 bytes
 FAIL SNY_1997-09-30: HTTPError: HTTP Error 400: Bad Request
-ok AMGN_1997-10-06 200 2456 bytes
-ok GSK_1997-11-06 200 2251 bytes
 FAIL SNY_1997-11-17: HTTPError: HTTP Error 400: Bad Request
-ok AZN_1997-11-25 200 2770 bytes
 FAIL ORPH_1997-12-04: HTTPError: HTTP Error 404: Not Found
-ok LLY_1997-12-09 200 2232 bytes
 FAIL RHHBY_1997-12-10: HTTPError: HTTP Error 400: Bad Request
-ok JNJ_1997-12-16 200 2284 bytes
-ok PFE_1997-12-18 200 2950 bytes
-ok GSK_1997-12-22 200 2168 bytes
-ok NVO_1997-12-22 200 2960 bytes
 FAIL ALC_1997-12-29: HTTPError: HTTP Error 400: Bad Request
-ok AMGN_2001-09-17 200 2584 bytes
-ok AMGN_2001-11-14 200 2878 bytes
-ok LLY_2001-11-21 200 2859 bytes
-ok AMGN_2002-01-31 200 2797 bytes
-ok BIIB_2002-02-19 200 2889 bytes
-ok SNY_2002-07-12 200 2899 bytes
 FAIL RHHBY_2002-10-16: HTTPError: HTTP Error 400: Bad Request
-ok ABT_2002-12-31 200 2873 bytes
-ok BIIB_2003-01-30 200 2883 bytes
-ok BMRN_2003-04-30 200 2870 bytes
 == job stock_yahoo_events_1998_2026 (1 spec(s)) ==
 FAIL LOXO_2018-11-26: HTTPError: HTTP Error 404: Not Found
 FAIL CPRX_2018-11-28: HTTPError: HTTP Error 404: Not Found
@@ -259,7 +131,7 @@ FAIL YMAB_2020-11-25: HTTPError: HTTP Error 404: Not Found
 FAIL CPRX_2023-10-26: HTTPError: HTTP Error 404: Not Found
 FAIL ITRM_2024-10-25: HTTPError: HTTP Error 404: Not Found
 FAIL ARRY_2018-06-27: HTTPError: HTTP Error 400: Bad Request
-FAIL AKAO_2018-06-26: HTTPError: HTTP Error 404: Not Found
+FAIL AKAO_2018-06-25: HTTPError: HTTP Error 404: Not Found
 FAIL GWPH_2018-06-25: HTTPError: HTTP Error 404: Not Found
 FAIL DOVA_2018-05-21: HTTPError: HTTP Error 404: Not Found
 FAIL MYOV_2020-12-18: HTTPError: HTTP Error 404: Not Found
