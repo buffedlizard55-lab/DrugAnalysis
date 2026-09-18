@@ -499,6 +499,29 @@ for r in _era:
         errors.append(f"pre2000_era_analysis:{r['year']}: approvals {r['master_approvals']} "
                       f"!= master {_m_by_year.get(r['year'], 0)}")
 
+# 6b. Pre-1985 era analysis and verified decisions (1983-1985).
+_pre1985_decisions = read("pre1985_fda_decisions.csv")
+if len(_pre1985_decisions) < 15:
+    errors.append(f"pre1985_fda_decisions: expected >=15 verified rows, got {len(_pre1985_decisions)}")
+for i, r in enumerate(_pre1985_decisions, 2):
+    if not r["decision_id"].startswith("PRE1985-"):
+        errors.append(f"pre1985_fda_decisions:{i}: invalid ID format {r['decision_id']!r}")
+    if r["year"] not in ("1983", "1984", "1985"):
+        errors.append(f"pre1985_fda_decisions:{i}: unexpected year {r['year']!r}")
+    if not r["source_url_1"].startswith("http"):
+        errors.append(f"pre1985_fda_decisions:{i}: invalid source_url_1 {r['source_url_1']!r}")
+    if r["verification_status"] != "Verified":
+        errors.append(f"pre1985_fda_decisions:{i}: status must be 'Verified', got {r['verification_status']!r}")
+
+_pre1985_era = read("pre1985_era_analysis.csv")
+if len(_pre1985_era) != 3:
+    errors.append(f"pre1985_era_analysis: expected 3 year rows (1983, 1984, 1985), got {len(_pre1985_era)}")
+for r in _pre1985_era:
+    if r["year"] not in ("1983", "1984", "1985"):
+        errors.append(f"pre1985_era_analysis: unexpected year {r['year']!r}")
+    if not r["primary_source_basis"].strip():
+        errors.append(f"pre1985_era_analysis:{r['year']}: missing primary source basis")
+
 # 7. Core analysis table <-> master integrity (v11 2026-09-18).
 #    build_core_analysis_table.py writes one row per master row plus one per CRL
 #    (then sorts by date desc), and it derives a TICKER-KEYED class map with
@@ -562,8 +585,9 @@ print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-s
       f"{len(orig)} original non-NME rows, {len(oscores)} orig scorecards, {len(t1gap)} Type-1-gap flags, "
       f"{len(exp)} label-expansion scorecards, {len(audit)} cross-check rows, "
       f"{len(scores)} company scorecards, {len(prices)} price snapshots, "
-      f"{len(crl)} CRL rows (+{len(new_crl)} new from the openFDA CRL database), and "
-      f"{len(ctgov)} ClinicalTrials.gov Phase 3 rows, and {len(clin_scores)} clinical trial scorecards.")
+      f"{len(crl)} CRL rows (+{len(new_crl)} new from the openFDA CRL database), "
+      f"{len(ctgov)} ClinicalTrials.gov Phase 3 rows, {len(clin_scores)} clinical trial scorecards, "
+      f"{len(_pre1985_decisions)} pre-1985 decisions, and {len(_pre1985_era)} pre-1985 era rows.")
 print(f"Warnings requiring manual review: {len(warnings)}")
 for w in warnings[:12]: print("WARNING", w)
 if len(warnings) > 12: print(f"WARNING ... {len(warnings)-12} more")

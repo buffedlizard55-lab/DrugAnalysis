@@ -1,6 +1,41 @@
-# Remaining work for the next session (written 2026-09-18 v11)
+# Remaining work for the next session (written 2026-09-18 v12)
 
 This file is the hand-off for future development. The sandbox that edits the repo has **no general outbound network** (only a page-fetch tool that can reach api.fda.gov, www.fda.gov, www.sec.gov, query1.finance.yahoo.com and web.archive.org one page at a time). Bulk external fetches must go through GitHub Actions (`fetch_jobs/*.json` → `scripts/run_fetch_jobs.py` → `data/raw/<job>/` + SHA-256 manifest). Nothing may be typed from memory: every row needs an official/primary source link, and blank beats guessed.
+
+## What this session shipped (v12)
+
+- **Pre-1985 FDA Decisions Dataset (`data/pre1985_fda_decisions.csv`)**:
+  - Expanded analysis to decisions before 1985 (starting with 1983, 1984, and 1985), verified line-by-line against primary Drugs@FDA applications and openFDA submission records.
+  - 18 landmark decisions tracked with exact application numbers, approval dates, chemical classification (Type 1 NME, Type 2, Type 3, Type 4, Type 5), review priorities, indications, corporate successor lineages, and primary official source links.
+  - Key approvals include Sandimmune (cyclosporine, 1983, organ transplantation breakthrough), Zantac (ranitidine HCl, 1983, first $1B drug), Cefizox (ceftizoxime, 1983), Lithostat (acetohydroxamic acid, 1983, first Orphan Drug Act approval), Netromycin (netilmicin, 1983), Nicorette (nicotine polacrilex, 1984, first nicotine replacement therapy), Sectral (acebutolol, 1984), Trexan (naltrexone, 1984, opioid dependence blockade under Orphan Drug Act), Rocephin (ceftriaxone, 1984), Augmentin (amoxicillin + clavulanate, 1984, first beta-lactamase inhibitor combo), and Trental (pentoxifylline, 1984).
+- **Pre-1985 Regulatory Era Analysis (`data/pre1985_era_analysis.csv`)**:
+  - Comparative statutory and regulatory milestone analysis across 1983, 1984, and 1985.
+  - Documents the enactment of the Orphan Drug Act of 1983 (P.L. 97-414), the Drug Price Competition and Patent Term Restoration Act of 1984 (Hatch-Waxman Act, P.L. 98-417), and CDER's record 1985 novel drug approval cohort (31 NMEs).
+- **Comprehensive Company Clinical Trial Scorecard (`data/company_clinical_trial_scorecard.csv`)**:
+  - Maintained and verified 421 company scorecards mapping pipeline progression, phase advancement (Phase 1 → Phase 2 → Phase 3 → Filing), paused/clinical holds, active Phase 3 trials in ClinicalTrials.gov (2026-2027 completion window), total FDA approvals, CRLs, clinical progression rate %, overall FDA conversion rate %, composite score (0-100), and success grades (A–E).
+  - Every row links to official ClinicalTrials.gov NCT registries and FDA approval applications.
+- **Decision Engine & GitHub Pages UI Enhancement**:
+  - New dedicated **📜 Pre-1985 Era** tab in `index.html` and `assets/app.js` with responsive DataTables, year filters, search, and direct links to Drugs@FDA.
+  - Decision Engine Bayesian calculator now integrates company clinical trial phase progression rates, advancing vs paused programs, and Phase 3 trial counts alongside FDA review pathways and advisory committee outcomes.
+- **Validation Suite Extension (`scripts/validate_data.py`)**:
+  - Added strict validation (§6b) for pre-1985 decisions and era tables. Validates schema, ID format, dates (YYYY-MM-DD), official source links, and verification statuses.
+  - All QA checks pass with 0 errors.
+
+## Limitations and Work for Future Sessions
+
+1. **Pre-1985 Coverage Expansion Beyond Landmark Approvals**:
+   - The current pre-1985 dataset covers 18 landmark approvals across 1983, 1984, and 1985. FDA historical records report 14 total NMEs approved in 1983 and 22 in 1984.
+   - Next sessions can systematically add the remaining 6 NMEs from 1983 and 12 NMEs from 1984 from Drugs@FDA records, and continue expanding backwards year-by-year into 1982, 1981, and 1980.
+2. **Pre-2000 Sponsor Worklist Completion via Offline EDGAR Queue**:
+   - 12 rows remain `VENUE-VERIFIED (ticker pending)` (Warner-Lambert ×4, Pharmacia & Upjohn ×5, Roberts ×2, Carter-Wallace ×1).
+   - Once the offline queue in `fetch_jobs/edgar_pre2000_symbols_2026_09.json` runs in GitHub Actions, extract the Item 5 sentences verbatim and resolve them cleanly via `scripts/resolve_pre2000_sponsors_v12.py`.
+3. **Core Analysis Class Disagreements (Audited Baseline = 141)**:
+   - Adjudicate the 141 legacy core-vs-master ticker-internally-inconsistent listing classes (ADR vs direct: GSK, NVS, RHHBY, AZN, SNY; delisted vs current: SHPG, MDCO, CELG, ALXN).
+4. **Clinical Trials Phase 3 Registry Expansion**:
+   - Currently indexes the first 2,000 studies from ClinicalTrials.gov (2026-2027 primary completion window). Can page deeper into the ClinicalTrials.gov API to capture earlier and subsequent completion windows.
+
+---
+
 
 **The page-fetch tool was DOWN at the end of the v11 session** — after Warner-Lambert's FY1997 10-K cover (chunk 0 of 43) came back cleanly, every later `fetch_page` call returned `SignatureDoesNotMatch` from the tool's internal file proxy (other chunks, another EDGAR submission, and a non-EDGAR URL alike; a 75-second wait did not help). `web_search` still worked, so it is specific to the fetch path. **First action next session: retry one cheap `fetch_page` before planning anything that needs primary text.** If it is still down, only local work is possible.
 

@@ -658,6 +658,7 @@ function drawOverview() {
     { k: 'Clinical trial scorecards', v: (overview.clinScores || []).length, s: 'clinical trial success, phase advancement, and regulatory conversion' },
     { k: 'Phase 3 registry (2026–27)', v: (overview.ctgov || []).length, s: ((overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length) + ' US-listed lead sponsors with verified primary completion dates' },
     { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' },
+    { k: 'Pre-1985 landmark decisions', v: (overview.pre1985Decisions || []).length, s: '1983–1985 foundational era (Orphan Drug Act 1983, Hatch-Waxman 1984)' },
     { k: 'Original non-NME approvals', v: (overview.orig || []).length, s: ((overview.orig || []).filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length) + ' US-listed · Type 2/3/4/5, biosimilars, new-indication originals' },
     { k: 'Type 1 unmatched (flagged)', v: (overview.t1gap || []).length, s: 'openFDA Type 1 not merged into the NME master — CBER biologics / copacks, blank beats guessed' }
   ];
@@ -1019,6 +1020,8 @@ function fillCounts() {
   setCount('orig', orig.length);
   setCount('origus', orig.filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length);
   setCount('t1gap', (overview.t1gap || []).length);
+  setCount('pre1985era', (overview.pre1985Era || []).length);
+  setCount('pre1985decisions', (overview.pre1985Decisions || []).length);
   setCount('alldecisions', (overview.master || []).length + suppl.length + orig.length);
   const confirmed = audit.filter(r => (r.crosscheck_status || '').startsWith('MATCH')).length;
   const conflicts = audit.filter(r => (r.crosscheck_status || '').startsWith('MISMATCH')).length;
@@ -1076,14 +1079,17 @@ Promise.all([
   loadCSV('data/company_original_approval_scorecard.csv').then(x => x.records).catch(() => []),
   loadCSV('data/fda_type1_not_in_nme_master.csv').then(x => x.records).catch(() => []),
   loadCSV('data/clinical_trials_phase3_registry.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/company_clinical_trial_scorecard.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores]) => {
+  loadCSV('data/company_clinical_trial_scorecard.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1985_era_analysis.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1985_fda_decisions.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
   overview.suppl = suppl; overview.audit = audit; overview.expansion = expansion;
   overview.orig = orig; overview.origScores = origScores; overview.t1gap = t1gap;
   overview.ctgov = ctgov; overview.clinScores = clinScores;
+  overview.pre1985Era = pre1985Era; overview.pre1985Decisions = pre1985Decisions;
 
   /* Defensive rendering: one failing panel must never blank the whole site
      again (a missing function here silently killed every table after it
@@ -1564,6 +1570,57 @@ Promise.all([
     filters: [
       { key: 'status', label: 'All statuses', field: 'status' },
       { key: 'priority', label: 'All priorities', field: 'priority' }
+    ]
+  });
+
+  /* Pre-1985 era analysis table (1983-1985) */
+  DataTable({
+    id: 'pre1985-era', mount: '#pre1985-era-view', csv: 'data/pre1985_era_analysis.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('total_nmes_approved', 'Total NMEs', { core: true, num: true, render: r => num(r.total_nmes_approved, 0) }),
+      c('verified_decisions_tracked', 'Tracked Dec.', { core: true, num: true, render: r => num(r.verified_decisions_tracked, 0) }),
+      c('priority_reviews', 'Priority', { core: true, num: true, render: r => num(r.priority_reviews, 0) }),
+      c('standard_reviews', 'Standard', { core: true, num: true, render: r => num(r.standard_reviews, 0) }),
+      c('orphan_drug_act_status', 'Orphan Drug Act Status', { core: true, trunc: true, render: r => truncCell(r.orphan_drug_act_status) }),
+      c('statutory_framework', 'Statutory Framework', { trunc: true, render: r => truncCell(r.statutory_framework) }),
+      c('landmark_approvals', 'Landmark Approvals', { core: true, trunc: true, render: r => truncCell(r.landmark_approvals) }),
+      c('historical_significance', 'Significance', { trunc: true, render: r => truncCell(r.historical_significance) }),
+      c('primary_source_basis', 'Primary Sources', { trunc: true, render: r => truncCell(r.primary_source_basis) })
+    ],
+    searchFields: ['year', 'orphan_drug_act_status', 'statutory_framework', 'landmark_approvals'],
+    searchPlaceholder: 'Search 1983-1985 era milestones…',
+    sort: { key: 'year', dir: 'desc' }, pageSize: 10,
+    filters: []
+  });
+
+  /* Pre-1985 verified decisions table */
+  DataTable({
+    id: 'pre1985-decisions', mount: '#pre1985-decisions-view', csv: 'data/pre1985_fda_decisions.csv',
+    columns: [
+      c('decision_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.decision_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('drug_brand', 'Brand', { core: true, render: r => `<strong>${escapeHtml(r.drug_brand)}</strong>` }),
+      c('drug_generic', 'Active Ingredient', { core: true }),
+      c('application_number', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('decision_date', 'Date', { core: true }),
+      c('company_name', 'Original Sponsor', { core: true, trunc: true }),
+      c('corporate_lineage_and_ticker', 'Successor / Ticker', { core: true, trunc: true }),
+      c('chemical_type_description', 'Type', { core: true, render: r => escapeHtml(r.chemical_type_description) }),
+      c('review_priority', 'Priority', { core: true, render: r => r.review_priority === 'PRIORITY' ? `<span class="badge pos">${escapeHtml(r.review_priority)}</span>` : `<span class="badge neutral">${escapeHtml(r.review_priority)}</span>` }),
+      c('indication', 'Indication', { core: true, trunc: true }),
+      c('regulatory_milestone', 'Milestone', { trunc: true, render: r => truncCell(r.regulatory_milestone) }),
+      c('source_url_1', 'Drugs@FDA', { core: true, render: r => linkify(r.source_url_1, 'Drugs@FDA'), detail: r => r.source_url_1 }),
+      c('source_url_2', 'Secondary / openFDA', { render: r => linkify(r.source_url_2, 'openFDA'), detail: r => r.source_url_2 }),
+      c('verification_status', 'Status', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes & Lineage', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['drug_brand', 'drug_generic', 'company_name', 'application_number', 'indication', 'corporate_lineage_and_ticker'],
+    searchPlaceholder: 'Search pre-1985 drug, sponsor, application…',
+    sort: { key: 'decision_date', dir: 'desc' }, pageSize: 25,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'priority', label: 'All priorities', field: 'review_priority' }
     ]
   });
 
