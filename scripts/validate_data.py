@@ -412,6 +412,12 @@ for y, lo in (("1998", 13), ("1999", 14), ("2000", 9)):
 # 5. Pre-2000 sponsor-resolution index: 67 rows, defined statuses, links present.
 #    v10: the 25 REVIEW (recoverable) rows were processed - 18 VENUE-VERIFIED,
 #    1 RESOLVED (Agouron AGPH), 3 CITATION-LOCATED, 3 ATTRIBUTION-CASE.
+#    v11: the symbol pass moved 8 of those to RESOLVED (Advanced Magnetics
+#    AMEX:AVM, Neurex NASDAQ NMS:NXCO delisted 1998, Cytogen NASDAQ NMS:CYTO x2,
+#    Immunomedics NASDAQ NMS:IMMU, Gensia Sicor NASDAQ NMS:GNSA, IVAX/Baker
+#    Norton AMEX:IVX) and demoted Carter-Wallace to VENUE-VERIFIED (NYSE per the
+#    12(b) cover; its Item 5 is incorporated by reference) - so the standing
+#    split is 9 RESOLVED, 12 VENUE-VERIFIED, 1 CITATION-LOCATED.
 _sp = read("pre2000_sponsor_resolution_index.csv")
 if len(_sp) != 67:
     errors.append(f"pre2000_sponsor_resolution_index: expected 67 rows, got {len(_sp)}")
@@ -441,6 +447,47 @@ else:
     _agouron = [r for r in master if r["decision_id"] == "D1380"]
     if _agouron and "AGPH" not in _agouron[0]["exchange"]:
         errors.append("D1380 Agouron exchange must carry the 10-K-verified AGPH ticker")
+
+    # v11 (2026-09-18): the symbol pass. Each of these exchange strings carries a
+    # ticker read verbatim out of the registrant's own period filing on EDGAR
+    # (Item 5 / cover 12(b)); the master note on the row quotes the sentence and
+    # gives the replayable URL. Pin them so a later pass cannot silently revert
+    # to a remembered symbol (v9's 'ANM' for Advanced Magnetics and 'NXRX' for
+    # Neurex were exactly that kind of guess, and both were wrong).
+    _m_by_id = {r["decision_id"]: r for r in master}
+    _V11_SYMBOLS = {
+        "D1345": ("AMEX:AVM", "AVM"),   # Advanced Magnetics FY1996 10-K405 Item 5
+        "D1363": ("AMEX:AVM", "AVM"),
+        "D1396": ("NASDAQ NMS:NXCO", "NXCO"),   # + delisting year pinned below
+        "D1357": ("NASDAQ NMS:CYTO", ""),       # ticker column deliberately blank
+        "D1381": ("NASDAQ NMS:CYTO", ""),
+        "D1338": ("NASDAQ NMS:IMMU", ""),
+        "D1394": ("NASDAQ NMS:GNSA", "GNSA"),
+        "D1353": ("AMEX:IVX", "IVX"),           # venue was AMEX, not Nasdaq
+        "D1359": ("NYSE", ""),                  # venue only; Item 5 is incorporated by reference
+    }
+    for _did, (_needle, _tk) in _V11_SYMBOLS.items():
+        _r = _m_by_id.get(_did)
+        if not _r:
+            errors.append(f"v11 symbol pass: {_did} missing from the master")
+            continue
+        if _needle not in _r["exchange"]:
+            errors.append(f"v11 symbol pass: {_did} exchange must carry '{_needle}', got {_r['exchange']!r}")
+        if _r["ticker"] != _tk:
+            errors.append(f"v11 symbol pass: {_did} ticker must be {_tk!r} (blank means a documented "
+                          f"downstream hazard, not missing data), got {_r['ticker']!r}")
+        if "SPONSOR-RESOLVED 2026-09-18 (v11 symbol pass)" not in _r["notes"]:
+            errors.append(f"v11 symbol pass: {_did} must carry the dated v11 note with the verbatim Item 5 quote")
+    # Neurex is the first worklist row with a pinned delisting year (Elan merger).
+    if _m_by_id.get("D1396") and "delisted 1998" not in _m_by_id["D1396"]["exchange"]:
+        errors.append("D1396 Neurex exchange must carry the EDGAR-pinned 'delisted 1998'")
+    # index progress guard: these 9 rows are resolved and must stay resolved
+    _v11_resolved = {"D1338", "D1345", "D1353", "D1357", "D1363", "D1380", "D1381", "D1394", "D1396"}
+    _sp_by_id = {r["decision_id"]: r for r in _sp}
+    for _did in sorted(_v11_resolved):
+        if _sp_by_id.get(_did, {}).get("status") != "RESOLVED (venue+ticker per period 10-K)":
+            errors.append(f"pre2000_sponsor_resolution_index: {_did} must stay "
+                          f"'RESOLVED (venue+ticker per period 10-K)'")
 
 # 6. Era analysis: 16 rows (1985-2000); approvals match the master counts.
 _era = read("pre2000_era_analysis.csv")
