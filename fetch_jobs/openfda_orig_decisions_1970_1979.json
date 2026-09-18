@@ -1,0 +1,26 @@
+[
+  {
+    "type": "openfda_decisions",
+    "id": "orig_decisions",
+    "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+    "search_template": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[{start} TO {end}]",
+    "years": [
+      1970,
+      1971,
+      1972,
+      1973,
+      1974,
+      1975,
+      1976,
+      1977,
+      1978,
+      1979
+    ],
+    "limit": 1000,
+    "max_pages": 12,
+    "sleep": 0.4,
+    "out_template": "decisions_{year}.json",
+    "skip_existing": true,
+    "_why": "Pre-1980 backward extension of the Drugs@FDA ORIGINAL-approval enumeration. The committed payloads currently start at 1980 (data/raw/openfda_orig_decisions_1980_1984). This job adds 1970-1979 with the identical auditable filter (ORIG + AP + submission_status_date inside the year, NDA/BLA only, ANDA excluded at extraction) so the same year-by-year treatment can be applied: Type 1/1-4 NMEs to data/pre1985_fda_decisions.csv, every other chemical type to data/fda_original_non_nme_decisions.csv, and the complete enumeration audited in data/focus_years_pre1980_audit.csv. Caveat recorded up front: Drugs@FDA submission records for the 1970s are less complete than for later decades (many pre-1975 NDAs predate electronic application tracking and the DESI reclassification programme), so a year count from this extract is an application-level enumeration of what FDA publishes today, never a claimed contemporaneous FDA annual statistic."
+  }
+]
