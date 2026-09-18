@@ -87,6 +87,12 @@ def main() -> int:
         path = RAW / it["out"]
         status, err = status_by_id.get(it["id"], (None, ""))
         note_bits, vstat = [], "Verified"
+        # When two master events share ticker+decision_date they produce the
+        # identical capture URL and out-file: the runner fetches it once and
+        # records the sibling as 'skipped-existing'. The payload is valid for
+        # both rows, so a captured file wins over that marker.
+        if path.exists():
+            status = 200 if status == "skipped-existing" else status
         close_before = date_before = close_on = date_on = close_later = date_later = pct = ""
         if not path.exists() or (status not in (200, "200", None)):
             vstat = "Data unavailable - acquired/delisted or pre-Yahoo coverage"
