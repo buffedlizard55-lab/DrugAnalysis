@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 """Build data/fda_original_non_nme_decisions.csv
 
-FDA original NDA/BLA approvals 1985-2026 that are *not* Type 1 NMEs
-(those already live in data/fda_decisions_master.csv).
+FDA original NDA/BLA approvals that are *not* Type 1 NMEs (those live in
+data/fda_decisions_master.csv for 1985-2026 and in
+data/pre1985_fda_decisions.csv for the pre-1985 historical era).
+
+Coverage: 1983-2026 (v15, 2026-09-18 backward extension into 1983-1984).
+The focus years 1983/1984/1985 therefore carry the complete Drugs@FDA
+original-approval enumeration: every ORIG/AP record in the committed
+payloads is tracked in exactly one project table (verified by
+data/focus_years_1983_1985_audit.csv).
 
 Why this file exists
 --------------------
@@ -22,10 +29,12 @@ are the honest next body of FDA decisions:
 
 Source
 ------
-data/raw/openfda_orig_decisions_2011_2026/decisions_<year>.json
+data/raw/openfda_orig_decisions_2011_2026/decisions_<year>.json (1985-2026)
+data/raw/openfda_orig_decisions_1980_1984/decisions_<year>.json (1983-1984)
 produced on GitHub Actions by fetch_jobs/openfda_orig_decisions_2011_2026.json
-from api.fda.gov/drug/drugsfda.json. Every request URL and payload SHA-256
-is in that directory's manifest.json.
+and fetch_jobs/openfda_orig_decisions_1980_1984.json from
+api.fda.gov/drug/drugsfda.json. Every request URL and payload SHA-256
+is in the matching directory's manifest.json.
 
 Hallucination controls
 ----------------------
@@ -34,12 +43,19 @@ Hallucination controls
   are written instead to data/fda_type1_not_in_nme_master.csv IF they cannot
   be matched to an existing master row — flagged for review, never silently
   merged (that would break the official NME year-count audit).
+* PRE-1985 (1983-1984) Type 1/1-4 NMEs belong to data/pre1985_fda_decisions.csv
+  (v13/v14 verified rows). A pre-1985 Type 1/1-4 application that is NOT in
+  that table ABORTS the build instead of being invented or merged. The two
+  non-Type-1 applications already tracked there (furosemide oral-solution
+  NDA018413, Trandate NDA018716) are likewise excluded by application number.
 * Indication text is NOT synthesised: openFDA's original-approval extract has
   no structured indication field. Each row links Drugs@FDA and the openFDA
   application query instead.
 * Sponsor/ticker resolution reuses scripts/build_supplement_decisions.py
   (SEC company_tickers.json + verified master lineage). Unresolved sponsors
-  get ticker UNRESOLVED — never guessed.
+  get ticker UNRESOLVED — never guessed. PRE-1985 rows additionally state
+  that the openFDA sponsor is the *current* Drugs@FDA holder and is not
+  asserted as the historical applicant or a period listing.
 * Medical-gas originals are kept (they are real FDA decisions) but labelled
   so they are never scored as biotech clinical-trial conversions.
 """
@@ -56,6 +72,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 RAW = DATA / "raw" / "openfda_orig_decisions_2011_2026"
+RAW_PRE = DATA / "raw" / "openfda_orig_decisions_1980_1984"
 OUT = DATA / "fda_original_non_nme_decisions.csv"
 OUT_T1 = DATA / "fda_type1_not_in_nme_master.csv"
 OUT_YEAR = DATA / "fda_orig_year_register.csv"
@@ -226,8 +243,24 @@ def openfda_app_url(appl: str) -> str:
     return f'https://api.fda.gov/drug/drugsfda.json?search=application_number:"{appl}"'
 
 
-FIRST_YEAR = 1985  # FDA NME Compilation starts in 1985; bulk openFDA payloads captured 1985-2026
+FIRST_YEAR = 1983  # v15: backward extension into the 1983/1984 focus years
 LAST_YEAR = 2026
+
+# PRE-1985 annotations: rows whose committed payload fields are copied verbatim
+# but whose internal consistency needs an explicit review note so future passes
+# do not re-investigate them. Values are appended to the row notes verbatim.
+PRE_1985_ANNOTATIONS = {
+    "NDA022046": (
+        "FLAGGED IRREGULARITY (annotated 2026-09-18): openFDA records this ORIG/AP on "
+        "1983-07-13 (class UNKNOWN, STANDARD) although the NDA022046 number series dates from "
+        "the late 1990s; FDA's 2012 approval letter for this application cross-references the "
+        "legacy bupivacaine applications NDA016964 and NDA018692 "
+        "(https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/016964s070,018692s015,022046s004ltr.pdf). "
+        "The 1983 status date is therefore a Drugs@FDA application-lineage artifact candidate. "
+        "The row is published exactly as the committed FDA payload states; treat the 1983 date "
+        "as FDA-recorded, not independently corroborated by a 1983 document."
+    ),
+}
 
 # Annotations for Type-1-gap rows (NEXT_SESSION.md item 9): durable, so a
 # regenerated gap file keeps the adjudication notes.
@@ -274,13 +307,30 @@ T1_ANNOTATIONS = {
 
 def load_year_files():
     files = []
-    for path in sorted(RAW.glob("decisions_*.json")):
+    for path in sorted(RAW.glob("decisions_*.json")) + sorted(RAW_PRE.glob("decisions_*.json")):
         payload = json.load(open(path))
         year = payload.get("year")
         if year is None or int(year) < FIRST_YEAR or int(year) > LAST_YEAR:
             continue
         files.append(payload)
     return files
+
+
+def load_pre1985_appl_set() -> set[str]:
+    """Six-digit application numbers already tracked in data/pre1985_fda_decisions.csv.
+
+    For the 1983/1984 payload years this table is the authoritative home of the
+    Type 1/1-4 NME rows (v13/v14) plus the two separately verified non-Type-1
+    applications (furosemide NDA018413, Trandate NDA018716).
+    """
+    path = DATA / "pre1985_fda_decisions.csv"
+    out: set[str] = set()
+    with path.open(newline="", encoding="utf-8-sig") as fh:
+        for r in csv.DictReader(fh):
+            m = re.search(r"(\d{5,6})", r.get("application_number", ""))
+            if m:
+                out.add(m.group(1).zfill(6))
+    return out
 
 
 def main() -> int:
@@ -292,6 +342,8 @@ def main() -> int:
     master_appls = master_application_numbers(master_rows)
     master_bd = master_brand_date(master_rows)
     print(f"master application numbers extracted: {len(master_appls)}")
+    pre1985_appls = load_pre1985_appl_set()
+    print(f"pre1985 table application numbers extracted: {len(pre1985_appls)}")
 
     rows, t1_gap, tally = [], [], Counter()
     year_counts = {y: Counter() for y in range(FIRST_YEAR, LAST_YEAR + 1)}
@@ -299,6 +351,7 @@ def main() -> int:
 
     for payload in load_year_files():
         year = int(payload["year"])
+        is_pre = year < 1985
         search = payload.get("search", "")
         endpoint = payload.get("source_endpoint", "https://api.fda.gov/drug/drugsfda.json")
         for rec in payload.get("decisions") or []:
@@ -319,6 +372,17 @@ def main() -> int:
 
             if is_type1_nme(rec):
                 year_counts[year]["type1"] += 1
+                if is_pre:
+                    # v15: pre-1985 Type 1/1-4 NMEs are owned by
+                    # data/pre1985_fda_decisions.csv (v13/v14 verified rows).
+                    if num in pre1985_appls:
+                        year_counts[year]["type1_in_pre1985_table"] += 1
+                        continue
+                    raise SystemExit(
+                        f"pre-1985 Type 1/1-4 application {appl} approved {date} is NOT in "
+                        "data/pre1985_fda_decisions.csv. The pre-1985 NME table must be "
+                        "extended and verified first; refusing to invent or merge rows."
+                    )
                 if in_master_appl or in_master_bd:
                     year_counts[year]["type1_in_master"] += 1
                     continue
@@ -329,7 +393,14 @@ def main() -> int:
                 year_counts[year]["type1_unmatched"] += 1
                 continue
 
-            if in_master_appl:
+            if is_pre:
+                # v15: the pre-1985 table also owns the two separately verified
+                # non-Type-1 originals (furosemide NDA018413, Trandate NDA018716).
+                # The 1985-2026 master is not an exclusion source for these years.
+                if num in pre1985_appls:
+                    year_counts[year]["non_nme_in_pre1985_table"] += 1
+                    continue
+            elif in_master_appl:
                 year_counts[year]["non_nme_already_in_master"] += 1
                 continue
 
@@ -366,6 +437,17 @@ def main() -> int:
             tally["resolved" if ticker not in {"UNRESOLVED"} else "unresolved_sponsor"] += 1
             year_counts[year]["published"] += 1
 
+            pre_note = (
+                "PRE-1985 ROW (v15 backward extension into the 1983-1984 focus years): "
+                "sponsor_name is the CURRENT Drugs@FDA application holder; it is NOT asserted "
+                "as the historical 1983/1984 applicant and no period listing class is claimed. "
+            ) if is_pre else ""
+            pre_annotation = PRE_1985_ANNOTATIONS.get(appl, "") if is_pre else ""
+            if pre_annotation and pre_annotation not in flags:
+                flags = flags + [pre_annotation]
+                vstatus = "Verified - openFDA Drugs@FDA ORIG/AP record"
+                if flags:
+                    vstatus += " - " + "; ".join(flags)
             rows.append({
                 "orig_id": f"O-{appl}",
                 "company_name": company,
@@ -392,7 +474,8 @@ def main() -> int:
                 "verification_status": vstatus,
                 "sponsor_resolution_basis": basis,
                 "notes": (
-                    "Indication text is intentionally not recorded: openFDA's original-approval "
+                    pre_note
+                    + "Indication text is intentionally not recorded: openFDA's original-approval "
                     "extract has no structured indication field. Read the linked Drugs@FDA "
                     "application record. Chemical type is FDA's submission_class_code_description, "
                     "copied verbatim. "
@@ -478,6 +561,25 @@ def main() -> int:
             f'submissions.submission_type:"ORIG" AND submissions.submission_status:"AP" '
             f"AND submissions.submission_status_date:[{y}0101 TO {y}1231]"
         )
+        raw_payload = (
+            f"data/raw/openfda_orig_decisions_1980_1984/decisions_{y}.json" if y < 1985
+            else f"data/raw/openfda_orig_decisions_2011_2026/decisions_{y}.json"
+        )
+        if y < 1985:
+            notes = (
+                f"1983-1984 focus year (v15): Type 1/1-4 NMEs are tracked in "
+                f"pre1985_fda_decisions.csv ({c['type1_in_pre1985_table']} applications); "
+                f"{c['non_nme_in_pre1985_table']} separately verified non-Type-1 original(s) also "
+                f"tracked there (furosemide NDA018413 1983, Trandate NDA018716 1984); "
+                f"{c['published']} non-NME originals published in fda_original_non_nme_decisions.csv. "
+                f"See data/focus_years_1983_1985_audit.csv for the complete enumeration audit."
+            )
+        else:
+            notes = (
+                f"Type 1 NMEs belong on fda_decisions_master.csv "
+                f"({c['type1_in_master']} matched, {c['type1_unmatched']} flagged unmatched). "
+                f"{c['published']} non-NME originals published in fda_original_non_nme_decisions.csv."
+            )
         year_rows.append({
             "year": y,
             "openfda_orig_nda_bla_count": c["raw_orig"],
@@ -489,18 +591,35 @@ def main() -> int:
             "official_source_url": query,
             "source_type": "openFDA Drugs@FDA ORIG/AP (NDA+BLA only; ANDA excluded at extract)",
             "coverage_status": "Complete" if c["raw_orig"] else "No ORIG/AP NDA/BLA in openFDA for this year",
-            "raw_payload": f"data/raw/openfda_orig_decisions_2011_2026/decisions_{y}.json",
-            "notes": (
-                f"Type 1 NMEs belong on fda_decisions_master.csv "
-                f"({c['type1_in_master']} matched, {c['type1_unmatched']} flagged unmatched). "
-                f"{c['published']} non-NME originals published in fda_original_non_nme_decisions.csv."
-            ),
+            "raw_payload": raw_payload,
+            "notes": notes,
         })
     with OUT_YEAR.open("w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(year_rows[0].keys()))
         w.writeheader()
         w.writerows(year_rows)
     print(f"wrote {OUT_YEAR.relative_to(ROOT)}: {len(year_rows)} years")
+
+    # ---- v15 hallucination gates -------------------------------------------
+    # (1) No pre-1985 Type 1 may have leaked into the flagged gap file: the
+    # pre-1985 NME table owns those rows and the builder aborts on a miss.
+    pre_t1_gap = [r for r in t1_gap if int((r.get("decision_date") or "9999")[:4]) < 1985]
+    if pre_t1_gap:
+        raise SystemExit(
+            "v15 gate violated: pre-1985 Type 1 rows reached the gap file: "
+            + ", ".join(r.get("application_number", "?") for r in pre_t1_gap)
+        )
+    # (2) The two backward years must reproduce the committed-payload
+    # enumeration exactly. If a re-fetch changes these numbers, re-verify the
+    # payloads and update these gates and the focus-year audit TOGETHER.
+    for _y, _expected_raw, _expected_pub in ((1983, 70, 56), (1984, 109, 89)):
+        c = year_counts[_y]
+        if c["raw_orig"] != _expected_raw or c["published"] != _expected_pub:
+            raise SystemExit(
+                f"v15 gate: {_y} enumeration changed (raw={c['raw_orig']} expected {_expected_raw}; "
+                f"published={c['published']} expected {_expected_pub}). Re-verify the committed "
+                "payload and data/pre1985_fda_decisions.csv before touching these gates."
+            )
     return 0
 
 

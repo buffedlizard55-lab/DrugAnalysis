@@ -7,7 +7,7 @@ Integrates across verified sources:
   2. Deep-Dive Pipeline Tracker (data/pipeline_tracker.csv)
   3. Company Scorecards & History (data/company_scorecards.csv)
   4. FDA Novel Approvals (data/fda_decisions_master.csv, n=980)
-  5. FDA Original Non-NME Approvals (data/fda_original_non_nme_decisions.csv, n=1997)
+  5. FDA Original Non-NME Approvals (data/fda_original_non_nme_decisions.csv, n=2943, 1983-2026)
   6. FDA Label Expansions / Efficacy Supplements (data/fda_supplement_decisions.csv, n=4482)
   7. FDA Complete Response Letters / Rejections (data/fda_crl_master.csv, n=458)
   8. Company Scores (data/company_scores.csv, n=659)

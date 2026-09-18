@@ -611,7 +611,9 @@ function drawCoverage(master) {
 function drawOrigCoverage(orig) {
   const el = document.getElementById('orig-coverage-view');
   if (!el) return;
-  const years = Array.from({ length: 42 }, (_, i) => String(1985 + i));
+  // v15: 1983-2026 — the non-NME enumeration now reaches back through the
+  // 1983/1984 focus years (56 + 89 rows verified against the committed payloads).
+  const years = Array.from({ length: 44 }, (_, i) => String(1983 + i));
   const counts = Object.fromEntries(years.map(y => [y, 0]));
   (orig || []).forEach(r => { const y = String(r.decision_date || '').slice(0, 4); if (counts[y] !== undefined) counts[y]++; });
   const covered = years.filter(y => counts[y]);
@@ -1621,6 +1623,39 @@ Promise.all([
     filters: [
       { key: 'year', label: 'All years', field: 'year' },
       { key: 'priority', label: 'All priorities', field: 'review_priority' }
+    ]
+  });
+
+  /* v15 focus-year audit: complete 1983/1984/1985 ORIG/AP enumeration (261 rows) */
+  DataTable({
+    id: 'focus-year-audit', mount: '#focus-year-audit-view', csv: 'data/focus_years_1983_1985_audit.csv',
+    columns: [
+      c('audit_id', 'Audit ID', { core: true, render: r => `<code>${escapeHtml(r.audit_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('application_number', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('drug_brand', 'Brand', { core: true, render: r => `<strong>${escapeHtml(r.drug_brand || '—')}</strong>` }),
+      c('drug_generic', 'Generic', { trunc: true }),
+      c('openfda_holder', 'openFDA holder', { core: true, trunc: true }),
+      c('payload_decision_date', 'Approved', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.payload_decision_date)}</span>` }),
+      c('payload_class_code', 'Class', { core: true, render: r => r.payload_class_code ? `<span class="badge info">${escapeHtml(r.payload_class_code)}</span>` : '<span class="badge neutral">not published</span>' }),
+      c('payload_review_priority', 'Priority', { core: true, render: r => r.payload_review_priority ? `<span class="badge ${/PRIORITY/i.test(r.payload_review_priority) ? 'verified' : 'neutral'}">${escapeHtml(r.payload_review_priority)}</span>` : '<span class="badge neutral">not published</span>' }),
+      c('tracked_in', 'Tracked in', { core: true, trunc: true, render: r => `<code>${escapeHtml(r.tracked_in)}</code>` }),
+      c('tracked_row_id', 'Row ID', { render: r => `<code>${escapeHtml(r.tracked_row_id || '—')}</code>` }),
+      c('date_agreement', 'Date', { core: true, render: r => r.date_agreement === 'YES' ? '<span class="badge verified">YES</span>' : `<span class="badge flagged">${escapeHtml(r.date_agreement)}</span>` }),
+      c('class_agreement', 'Class check', { trunc: true, render: r => truncCell(r.class_agreement) }),
+      c('priority_agreement', 'Priority check', { trunc: true, render: r => truncCell(r.priority_agreement) }),
+      c('verdict', 'Verdict', { core: true, render: r => r.verdict === 'TRACKED_VERIFIED' ? '<span class="badge verified">TRACKED_VERIFIED</span>' : (r.verdict === 'DISAGREEMENT_REVIEW' ? `<span class="badge flagged">${escapeHtml(r.verdict)}</span>` : `<span class="badge caveat">${escapeHtml(r.verdict)}</span>`) }),
+      c('review_flag', 'Review flag', { trunc: true, render: r => truncCell(r.review_flag) }),
+      c('source_url_drugsatfda', 'Drugs@FDA', { core: true, render: r => linkify(r.source_url_drugsatfda, 'record'), detail: r => r.source_url_drugsatfda }),
+      c('source_query_url', 'openFDA query', { render: r => linkify(r.source_query_url, 'API'), detail: r => r.source_query_url })
+    ],
+    searchFields: ['application_number', 'drug_brand', 'drug_generic', 'openfda_holder', 'tracked_in', 'tracked_row_id', 'verdict', 'review_flag'],
+    searchPlaceholder: 'Search 1983-1985 audit by drug, application, table…',
+    sort: { key: 'audit_id', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'verdict', label: 'All verdicts', field: 'verdict' },
+      { key: 'table', label: 'All tracking tables', field: 'tracked_in' }
     ]
   });
 

@@ -187,11 +187,141 @@ for i, r in enumerate(orig, 2):
 orig_unresolved = sum(1 for r in orig if r.get("ticker", "").strip() == "UNRESOLVED")
 if orig_unresolved:
     warnings.append(f"orig: {orig_unresolved} row(s) have an unresolved sponsor — left unresolved, not guessed")
-# Every year 1985-2026 must be represented (coverage claim).
+# Every year 1983-2026 must be represented (coverage claim; v15 extended 1983-1984).
 orig_years = {r.get("decision_date", "")[:4] for r in orig}
-missing_years = [str(y) for y in range(1985, 2027) if str(y) not in orig_years]
+missing_years = [str(y) for y in range(1983, 2027) if str(y) not in orig_years]
 if missing_years:
     errors.append(f"orig: missing years {', '.join(missing_years)} — coverage claim broken")
+
+# ---- v15 pre-1985 backward extension (1983-1984 focus years) ----------------
+_pre_orig_years = {"1983": 56, "1984": 89}
+_pre_payload_dir = ROOT / "data" / "raw" / "openfda_orig_decisions_1980_1984"
+_pre_by_year = {y: [r for r in orig if r.get("decision_date", "").startswith(y)]
+                for y in _pre_orig_years}
+for _y, _n in _pre_orig_years.items():
+    if len(_pre_by_year[_y]) != _n:
+        errors.append(f"orig:{_y}: expected {_n} v15 backward-extension rows, got {len(_pre_by_year[_y])}")
+_pre_appls: dict[str, str] = {}
+for _y, _rows in _pre_by_year.items():
+    for r in _rows:
+        a = (r.get("application_number") or "").strip()
+        if a in _pre_appls:
+            errors.append(f"orig: duplicate pre-1985 application {a}")
+        _pre_appls[a] = r.get("orig_id", "")
+        code = (r.get("chemical_type_code") or "").strip().upper()
+        if code in {"TYPE 1", "TYPE 1/4"}:
+            errors.append(f"orig:{r['orig_id']}: Type 1/1-4 code {code} must not appear in the "
+                          f"pre-1985 backward extension (pre1985_fda_decisions.csv owns those)")
+        if "PRE-1985 ROW" not in (r.get("notes") or ""):
+            errors.append(f"orig:{r['orig_id']}: pre-1985 row missing the PRE-1985 holder disclaimer")
+        # Verbatim cross-check against the committed payload.
+        try:
+            pl = json.load(open(_pre_payload_dir / f"decisions_{_y}.json"))
+            rec = next((x for x in pl["decisions"]
+                        if (x.get("application_number") or "").strip() == a), None)
+        except Exception as _exc:  # payload missing/corrupt
+            rec = None
+            errors.append(f"orig: pre-1985 payload unreadable for {_y}: {_exc}")
+        if rec is None:
+            errors.append(f"orig:{r['orig_id']}: application {a} not in committed {_y} payload")
+        else:
+            if (rec.get("decision_date") or "").strip() != r.get("decision_date", "").strip():
+                errors.append(f"orig:{r['orig_id']}: date {r['decision_date']} != payload {rec.get('decision_date')}")
+            if (rec.get("submission_class_code") or "").strip() != (r.get("chemical_type_code") or "").strip():
+                errors.append(f"orig:{r['orig_id']}: class {r.get('chemical_type_code')!r} != payload {rec.get('submission_class_code')!r}")
+            if (rec.get("review_priority") or "").strip() != (r.get("review_priority") or "").strip():
+                errors.append(f"orig:{r['orig_id']}: priority {r.get('review_priority')!r} != payload {rec.get('review_priority')!r}")
+            if (rec.get("sponsor_name") or "").strip() != (r.get("openfda_sponsor_name") or "").strip():
+                errors.append(f"orig:{r['orig_id']}: holder {r.get('openfda_sponsor_name')!r} != payload {rec.get('sponsor_name')!r}")
+# The two non-Type-1 applications already tracked in pre1985_fda_decisions.csv
+# (furosemide NDA018413, Trandate NDA018716) must never appear here.
+_pre_table_appls = set()
+for r in read("pre1985_fda_decisions.csv"):
+    m = re.search(r"(\d{6})", re.sub(r"[^0-9]", "", r.get("application_number", "")))
+    if m:
+        _pre_table_appls.add("NDA" + m.group(1))
+for _a in ("NDA018413", "NDA018716"):
+    if _a in _pre_appls:
+        errors.append(f"orig: {_a} is tracked in pre1985_fda_decisions.csv and must not be duplicated")
+    if _a not in _pre_table_appls:
+        errors.append(f"pre1985 boundary pin broken: {_a} missing from pre1985_fda_decisions.csv")
+# No pre-1985 non-NME row may duplicate ANY application already in the pre-1985 table.
+_pre_overlap = sorted(set(_pre_appls) & _pre_table_appls)
+if _pre_overlap:
+    errors.append(f"orig: pre-1985 rows duplicate pre1985_fda_decisions.csv applications: {_pre_overlap}")
+# NDA022046 must carry its irregularity annotation (openFDA lineage artifact).
+_r22046 = next((r for r in orig if (r.get("application_number") or "").strip() == "NDA022046"
+                and (r.get("decision_date") or "").startswith("1983")), None)
+if _r22046 is None:
+    errors.append("orig: NDA022046 1983-07-13 row missing (v15 annotated irregularity)")
+elif "FLAGGED IRREGULARITY" not in (_r22046.get("verification_status", "") + _r22046.get("notes", "")):
+    errors.append("orig: NDA022046 row lost its FLAGGED IRREGULARITY annotation")
+
+# ---- v15 focus-year audit (1983/1984/1985 complete enumeration) --------------
+focus = read("focus_years_1983_1985_audit.csv")
+if len(focus) != 261:
+    errors.append(f"focus_audit: expected 261 audited ORIG/AP decisions (1983-1985), got {len(focus)}")
+_focus_year_counts = Counter(r.get("year", "") for r in focus)
+for _y, _n in (("1983", 70), ("1984", 109), ("1985", 82)):
+    if _focus_year_counts.get(_y, 0) != _n:
+        errors.append(f"focus_audit: year {_y} has {_focus_year_counts.get(_y, 0)} rows, expected {_n}")
+_seen_focus_appl = set()
+for i, r in enumerate(focus, 2):
+    key = (r.get("year", ""), r.get("application_number", ""))
+    if key in _seen_focus_appl:
+        errors.append(f"focus_audit:{i}: duplicate payload decision {key}")
+    _seen_focus_appl.add(key)
+    if r.get("verdict") not in {"TRACKED_VERIFIED", "TRACKED_REVIEW", "DISAGREEMENT_REVIEW"}:
+        errors.append(f"focus_audit:{i}: invalid verdict {r.get('verdict')!r}")
+    if r.get("verdict") == "UNTRACKED" or not (r.get("tracked_in") or "").strip():
+        errors.append(f"focus_audit:{i}: payload decision left untracked")
+    check_url(r.get("source_url_drugsatfda", ""), f"focus_audit:{i}:source_url_drugsatfda")
+    if not (r.get("source_query_url") or "").strip():
+        errors.append(f"focus_audit:{i}: missing replayable openFDA query URL")
+    if (r.get("date_agreement") or "") != "YES":
+        warnings.append(f"focus_audit:{i}: date_agreement={r.get('date_agreement')!r} — manual review")
+for _y in ("1983", "1984", "1985"):
+    _pdir = _pre_payload_dir if _y != "1985" else ROOT / "data" / "raw" / "openfda_orig_decisions_2011_2026"
+    try:
+        _pl = json.load(open(_pdir / f"decisions_{_y}.json"))
+        _pl_appls = {(x.get("application_number") or "").strip() for x in _pl["decisions"]}
+    except Exception as _exc:
+        _pl_appls = set()
+        errors.append(f"focus_audit: payload {_y} unreadable: {_exc}")
+    _csv_appls = {r.get("application_number", "") for r in focus if r.get("year") == _y}
+    if _pl_appls != _csv_appls:
+        errors.append(f"focus_audit:{_y}: audited application set != payload set "
+                      f"(missing {sorted(_pl_appls - _csv_appls)[:5]}, extra {sorted(_csv_appls - _pl_appls)[:5]})")
+# Every payload decision must reference a known project table.
+for _y in ("1983", "1984", "1985"):
+    _tracked = [r for r in focus if r.get("year") == _y]
+    _bad = [r["application_number"] for r in _tracked
+            if (r.get("tracked_in") or "") not in {
+                "pre1985_fda_decisions.csv", "fda_original_non_nme_decisions.csv",
+                "fda_decisions_master.csv", "fda_type1_not_in_nme_master.csv"}]
+    if _bad:
+        errors.append(f"focus_audit:{_y}: rows tracked in unknown tables: {_bad[:5]}")
+
+# v15 pin: 1985 master rows whose application has NO ORIG/AP record in the
+# committed payload (Seldane, Protropin, Suprol, Femstat — a documented
+# openFDA/Drugs@FDA completeness gap). If this set changes, re-verify.
+_pdir85 = ROOT / "data" / "raw" / "openfda_orig_decisions_2011_2026"
+_pl85 = json.load(open(_pdir85 / "decisions_1985.json"))
+_pl85_appls = {re.sub(r"^(NDA|BLA|ANDA)", "", (x.get("application_number") or "").strip()).zfill(6)
+               for x in _pl85["decisions"]}
+_m85_appls = set()
+for r in master:
+    if not (r.get("decision_date") or "").startswith("1985"):
+        continue
+    blob = " ".join([r.get("notes", ""), r.get("source_url_1", ""),
+                     r.get("source_url_2", ""), r.get("classification_basis", "")])
+    for m in re.finditer(r"NDA\s*-?\s*(\d{5,6})", blob):
+        _m85_appls.add(m.group(1).zfill(6))
+_m85_gap = {a for a in _m85_appls if a not in _pl85_appls}
+if _m85_gap != {"018217", "018949", "019107", "019215"}:
+    errors.append(f"master:1985: applications without a payload ORIG record changed to {sorted(_m85_gap)} "
+                  "(pinned: Seldane 018949, Protropin 019107, Suprol 018217, Femstat 019215) — "
+                  "the openFDA completeness gap moved; re-verify before updating the pin")
 
 # ---- original-approval scorecard -------------------------------------------
 oscores = read("company_original_approval_scorecard.csv")
@@ -235,11 +365,22 @@ warnings.append(f"t1gap: {len(t1gap)} Type 1 openFDA rows not matched to the NME
 
 # ---- orig year register ----------------------------------------------------
 yreg = read("fda_orig_year_register.csv")
-if len(yreg) != 42:
-    errors.append(f"orig_year_register: {len(yreg)} rows, expected 42 (1985-2026)")
+if len(yreg) != 44:
+    errors.append(f"orig_year_register: {len(yreg)} rows, expected 44 (1983-2026, v15 backward extension)")
 published_sum = sum(int(r.get("non_nme_published") or 0) for r in yreg)
 if published_sum != len(orig):
     errors.append(f"orig_year_register: sum(non_nme_published)={published_sum} != {len(orig)} orig rows")
+# v15 pins: the backward years must register the committed-payload enumeration.
+_v15_yreg = {r.get("year"): r for r in yreg}
+for _y, _raw, _pub in (("1983", 70, 56), ("1984", 109, 89)):
+    _r = _v15_yreg.get(_y)
+    if _r is None:
+        errors.append(f"orig_year_register: missing v15 year {_y}")
+    else:
+        if int(_r.get("openfda_orig_nda_bla_count") or 0) != _raw or int(_r.get("non_nme_published") or 0) != _pub:
+            errors.append(f"orig_year_register:{_y}: raw/published counters changed "
+                          f"({_r.get('openfda_orig_nda_bla_count')}/{_r.get('non_nme_published')}, "
+                          f"pinned {_raw}/{_pub}) — re-verify the payload first")
 
 # ---- CRL master (expanded 2026-09-17: 58 hand-verified + 400 from openFDA CRL API)
 crl = read("fda_crl_master.csv")
@@ -759,7 +900,9 @@ else:
                     f"(audited baseline, pending adjudication - NEXT_SESSION.md next-step 2)")
 
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
-      f"{len(orig)} original non-NME rows, {len(oscores)} orig scorecards, {len(t1gap)} Type-1-gap flags, "
+      f"{len(orig)} original non-NME rows (incl. {sum(_pre_orig_years.values())} v15 pre-1985 rows), "
+      f"{len(focus)} focus-year audit rows (1983-1985), {len(oscores)} orig scorecards, "
+      f"{len(t1gap)} Type-1-gap flags, "
       f"{len(exp)} label-expansion scorecards, {len(audit)} cross-check rows, "
       f"{len(scores)} company scorecards, {len(prices)} price snapshots, "
       f"{len(crl)} CRL rows (+{len(new_crl)} new from the openFDA CRL database), "
