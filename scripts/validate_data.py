@@ -464,7 +464,7 @@ else:
         "D1338": ("NASDAQ NMS:IMMU", ""),
         "D1394": ("NASDAQ NMS:GNSA", "GNSA"),
         "D1353": ("AMEX:IVX", "IVX"),           # venue was AMEX, not Nasdaq
-        "D1359": ("NYSE", ""),                  # venue only; Item 5 is incorporated by reference
+        "D1359": ("NYSE:CAR", ""),              # v12: symbol CAR verified from the EX-13 annual report p.7; ticker column deliberately blank
     }
     for _did, (_needle, _tk) in _V11_SYMBOLS.items():
         _r = _m_by_id.get(_did)
@@ -481,13 +481,54 @@ else:
     # Neurex is the first worklist row with a pinned delisting year (Elan merger).
     if _m_by_id.get("D1396") and "delisted 1998" not in _m_by_id["D1396"]["exchange"]:
         errors.append("D1396 Neurex exchange must carry the EDGAR-pinned 'delisted 1998'")
-    # index progress guard: these 9 rows are resolved and must stay resolved
-    _v11_resolved = {"D1338", "D1345", "D1353", "D1357", "D1363", "D1380", "D1381", "D1394", "D1396"}
+    # v12 (2026-09-18) symbol sweep pins (PNU x5 filled; CAR in exchange only; Roberts
+    # venue-transfer date pinned; Warner-Lambert negative result kept; Block Drug venue).
+    for _did in ("D1330", "D1332", "D1373", "D1382", "D1390"):
+        _r = _m_by_id.get(_did)
+        if not _r:
+            errors.append(f"v12 symbol pass: {_did} missing from the master")
+            continue
+        if "NYSE:PNU" not in _r["exchange"] or _r["ticker"] != "PNU":
+            errors.append(f"v12 symbol pass: {_did} must carry exchange 'NYSE:PNU' and ticker 'PNU' "
+                          f"(FY1997 10-K405 Item 5), got {_r['exchange']!r}/{_r['ticker']!r}")
+        if "(v12 symbol pass)" not in _r["notes"]:
+            errors.append(f"v12 symbol pass: {_did} must carry the dated v12 note with the verbatim quote")
+    if _m_by_id.get("D1359") and _m_by_id["D1359"]["ticker"] != "":
+        errors.append("v12 symbol pass: D1359 ticker column must stay blank (D1244 same-name split "
+                      "hazard); the verified CAR symbol lives in the exchange field")
+    if _m_by_id.get("D1359") and "(v12 symbol pass)" not in _m_by_id["D1359"]["notes"]:
+        errors.append("v12 symbol pass: D1359 must carry the dated v12 note with the EX-13 p.7 quote")
+    for _did in ("D1347", "D1379"):
+        _r = _m_by_id.get(_did)
+        if not _r or "1997-05-22" not in _r["exchange"]:
+            errors.append(f"v12 symbol pass: {_did} exchange must carry the pinned '1997-05-22' AMEX transfer date")
+    for _did in ("D1342", "D1366", "D1376", "D1409"):
+        _r = _m_by_id.get(_did)
+        if not _r or "(v12 negative pass)" not in _r["notes"]:
+            errors.append(f"v12 symbol pass: {_did} must keep the documented v12 negative-result note")
+    if _m_by_id.get("D1365"):
+        _r = _m_by_id["D1365"]
+        if "NASD" not in _r["exchange"]:
+            errors.append("v12 symbol pass: D1365 exchange must carry the OTC/NASD inter-dealer venue")
+        if "Aphthasol" not in _r["notes"]:
+            errors.append("v12 symbol pass: D1365 note must keep the verbatim Aphthasol approval quote")
+    # index progress guard: these rows are resolved and must stay resolved
+    _v11_resolved = {"D1338", "D1345", "D1353", "D1357", "D1363", "D1380", "D1381", "D1394", "D1396",
+                     "D1330", "D1332", "D1359", "D1373", "D1382", "D1390"}   # v12: + P&U x5 + Carter-Wallace
     _sp_by_id = {r["decision_id"]: r for r in _sp}
     for _did in sorted(_v11_resolved):
         if _sp_by_id.get(_did, {}).get("status") != "RESOLVED (venue+ticker per period 10-K)":
             errors.append(f"pre2000_sponsor_resolution_index: {_did} must stay "
                           f"'RESOLVED (venue+ticker per period 10-K)'")
+    # v12: no row may remain CITATION-LOCATED (Block Drug was promoted to VENUE-VERIFIED)
+    _cited = [r["decision_id"] for r in _sp if r["status"].startswith("CITATION-LOCATED")]
+    if _cited:
+        errors.append(f"pre2000_sponsor_resolution_index: CITATION-LOCATED rows must be cleared "
+                      f"after the v12 pass: {_cited}")
+    # v12: the manifest recording the runner-403 negative result must stay in the repo
+    if not (ROOT / "data" / "raw" / "edgar_pre2000_symbols_2026_09" / "manifest.json").exists():
+        errors.append("edgar_pre2000_symbols_2026_09/manifest.json missing - it records the "
+                      "Actions-runner HTTP-403 finding")
 
 # 6. Era analysis: 16 rows (1985-2000); approvals match the master counts.
 _era = read("pre2000_era_analysis.csv")
@@ -500,27 +541,107 @@ for r in _era:
                       f"!= master {_m_by_year.get(r['year'], 0)}")
 
 # 6b. Pre-1985 era analysis and verified decisions (1983-1985).
+#    v13 (2026-09-18): the table was expanded from the 18 v12 landmark rows to the
+#    complete Drugs@FDA-enumerated original-approval record for 1983/1984
+#    (35 rows: 15 in the 1983 group, 20 in the 1984 group), every row asserted
+#    against data/raw/openfda_orig_decisions_1980_1984/decisions_{year}.json.
+#    Three v12 rows were REMOVED because the primary record disproved their
+#    premise (Lithobid/wrong app + 1979 approval; Ambenyl and Valisone were
+#    supplement approvals on pre-1983 applications, not original approvals) -
+#    those IDs must never silently reappear.
 _pre1985_decisions = read("pre1985_fda_decisions.csv")
-if len(_pre1985_decisions) < 15:
-    errors.append(f"pre1985_fda_decisions: expected >=15 verified rows, got {len(_pre1985_decisions)}")
+if len(_pre1985_decisions) != 35:
+    errors.append(f"pre1985_fda_decisions: expected 35 verified rows (v13 baseline), got {len(_pre1985_decisions)}")
+_p1985_by_year = Counter(r["year"] for r in _pre1985_decisions)
+if _p1985_by_year.get("1983", 0) != 15:
+    errors.append(f"pre1985_fda_decisions: expected 15 rows in the 1983 group, got {_p1985_by_year.get('1983', 0)}")
+if _p1985_by_year.get("1984", 0) != 20:
+    errors.append(f"pre1985_fda_decisions: expected 20 rows in the 1984 group, got {_p1985_by_year.get('1984', 0)}")
+_REMOVED_PRE1985 = {"PRE1985-1983-06", "PRE1985-1984-09", "PRE1985-1984-10"}
+_p1985_ids = set()
 for i, r in enumerate(_pre1985_decisions, 2):
     if not r["decision_id"].startswith("PRE1985-"):
         errors.append(f"pre1985_fda_decisions:{i}: invalid ID format {r['decision_id']!r}")
-    if r["year"] not in ("1983", "1984", "1985"):
+    if r["year"] not in ("1983", "1984"):
         errors.append(f"pre1985_fda_decisions:{i}: unexpected year {r['year']!r}")
     if not r["source_url_1"].startswith("http"):
         errors.append(f"pre1985_fda_decisions:{i}: invalid source_url_1 {r['source_url_1']!r}")
     if r["verification_status"] != "Verified":
         errors.append(f"pre1985_fda_decisions:{i}: status must be 'Verified', got {r['verification_status']!r}")
+    if r["decision_id"] in _REMOVED_PRE1985:
+        errors.append(f"pre1985_fda_decisions:{i}: {r['decision_id']} was removed in v13 "
+                      "(premise disproved by the Drugs@FDA record) and must not reappear")
+    _p1985_ids.add(r["decision_id"])
+# v13 corrections are pinned so they cannot silently revert:
+#  - Augmentin points at the TYPE 1/4 tablet application NDA050564 (PRIORITY)
+#  - Tonocard points at NDA018257 with PRIORITY (NDA018249 is Sodium Lactate)
+#  - Trandate NDA018716 is TYPE 5 (the labetalol NME app is Normodyne NDA018686,
+#    tracked as its own row)
+_p1985_row = {r["decision_id"]: r for r in _pre1985_decisions}
+for _did, _appl, _cls, _pri in (
+    ("PRE1985-1984-07", "NDA 050564", "TYPE 1/4", "PRIORITY"),
+    ("PRE1985-1984-08", "NDA 018257", "TYPE 1", "PRIORITY"),
+    ("PRE1985-1984-06", "NDA 018716", "TYPE 5", "STANDARD"),
+    ("PRE1985-1984-18", "NDA 018686", "TYPE 1", "PRIORITY"),
+):
+    _r = _p1985_row.get(_did)
+    if not _r:
+        errors.append(f"pre1985_fda_decisions: {_did} missing (v13 corrected/added row)")
+    else:
+        if _r["application_number"] != _appl:
+            errors.append(f"pre1985_fda_decisions: {_did} application must be {_appl!r}, got {_r['application_number']!r}")
+        if _r["chemical_type_code"] != _cls:
+            errors.append(f"pre1985_fda_decisions: {_did} chemical type must be {_cls!r}, got {_r['chemical_type_code']!r}")
+        if _r["review_priority"] != _pri:
+            errors.append(f"pre1985_fda_decisions: {_did} priority must be {_pri!r}, got {_r['review_priority']!r}")
+# every retained row must carry a v13-verified payload date - cross-check the
+# committed openFDA extraction directly (the same primary source the builder asserted)
+try:
+    _pay = {}
+    for _y in (1982, 1983, 1984):
+        _p = json.load(open(ROOT / "data" / "raw" / "openfda_orig_decisions_1980_1984" / f"decisions_{_y}.json"))
+        _pay.update({d["application_number"]: d for d in _p["decisions"]})
+    for r in _pre1985_decisions:
+        _appl = r["application_number"].replace(" ", "")
+        _pl = _pay.get(_appl)
+        if _pl is None:
+            errors.append(f"pre1985_fda_decisions: {r['decision_id']} application {_appl} not in the committed openFDA payloads")
+        elif _pl["decision_date"] != r["decision_date"]:
+            errors.append(f"pre1985_fda_decisions: {r['decision_id']} date {r['decision_date']} != payload {_pl['decision_date']}")
+except FileNotFoundError as _exc:
+    errors.append(f"pre1985_fda_decisions: openFDA payload missing: {_exc}")
 
 _pre1985_era = read("pre1985_era_analysis.csv")
 if len(_pre1985_era) != 3:
     errors.append(f"pre1985_era_analysis: expected 3 year rows (1983, 1984, 1985), got {len(_pre1985_era)}")
+_era_p1985 = {r["year"]: r for r in _pre1985_era}
 for r in _pre1985_era:
     if r["year"] not in ("1983", "1984", "1985"):
         errors.append(f"pre1985_era_analysis: unexpected year {r['year']!r}")
     if not r["primary_source_basis"].strip():
         errors.append(f"pre1985_era_analysis:{r['year']}: missing primary source basis")
+# era counts must equal the decisions table (the 1985 row counts the master's 31)
+_era_expect = {"1983": 15, "1984": 20, "1985": 31}
+for _y, _n in _era_expect.items():
+    _er = _era_p1985.get(_y, {})
+    if int(_er.get("verified_decisions_tracked", -1)) != _n:
+        errors.append(f"pre1985_era_analysis:{_y}: verified_decisions_tracked must be {_n}, got {_er.get('verified_decisions_tracked')!r}")
+_era_nme_expect = {"1983": 14, "1984": 19, "1985": 31}
+for _y, _n in _era_nme_expect.items():
+    _er = _era_p1985.get(_y, {})
+    if int(_er.get("total_nmes_approved", -1)) != _n:
+        errors.append(f"pre1985_era_analysis:{_y}: total_nmes_approved must be {_n} "
+                      "(1983: Pink Sheet-pinned; 1984: Drugs@FDA enumeration; 1985: CDER compilation), "
+                      f"got {_er.get('total_nmes_approved')!r}")
+# priority/standard counts must match the decisions table
+for _y in ("1983", "1984"):
+    _pri = sum(1 for r in _pre1985_decisions if r["year"] == _y and r["review_priority"] == "PRIORITY")
+    _std = sum(1 for r in _pre1985_decisions if r["year"] == _y and r["review_priority"] == "STANDARD")
+    _er = _era_p1985.get(_y, {})
+    if int(_er.get("priority_reviews", -1)) != _pri:
+        errors.append(f"pre1985_era_analysis:{_y}: priority_reviews {_er.get('priority_reviews')} != table {_pri}")
+    if int(_er.get("standard_reviews", -1)) != _std:
+        errors.append(f"pre1985_era_analysis:{_y}: standard_reviews {_er.get('standard_reviews')} != table {_std}")
 
 # 7. Core analysis table <-> master integrity (v11 2026-09-18).
 #    build_core_analysis_table.py writes one row per master row plus one per CRL

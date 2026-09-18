@@ -54,7 +54,7 @@
     "D1390"
    ],
    "venue": "NYSE",
-   "symbol": null,
+   "symbol": "PNU",
    "citations": [
     {
      "doc": "FY1997 Form 10-K405 (period 1997-12-31, filed 1998-03-30)",
@@ -65,6 +65,12 @@
      "doc": "FY1999 Form 10-K (period 1999-12-31, filed 2000-03-20)",
      "url": "https://www.sec.gov/Archives/edgar/data/949573/0000950123-00-002431.txt",
      "evidence": "cover 12(b): 'Common Stock (par value $.01) - New York Stock Exchange' (venue still NYSE through March 2000)."
+    },
+    {
+     "doc": "FY1997 Form 10-K405 (period 1997-12-31, filed 1998-03-31), Item 5 (v12 symbol pass)",
+     "url": "https://www.sec.gov/Archives/edgar/data/949573/0000950124-98-001758.txt",
+     "evidence": "The Common Stock is listed and traded on the New York Stock Exchange (the \"NYSE\") under the symbol PNU. As of January 31, 1998, there were 36,914 holders of record of the Common Stock. Swedish Depositary Shares, each representing one share of Common Stock, are traded on the Stockholm Stock Exchange under the symbol PH&U.",
+     "note": "All five decision dates (1996-06 through 1997-07) post-date the 1995-11-02 merger (pinned in v11 from the same registrant's EX-13), so PNU was the symbol at every decision date. Stockholm SDS symbol PH&U also recorded."
     }
    ],
    "note": "v11 2026-09-18: SYMBOL STILL PENDING, but the hunt is now bounded - the FY1997 10-K405 submission is 38 chunks, its main document occupies chunks 0-14, and Item 5 must be inside that range (v10 already has the cover 12(b) table 'Common Stock (par value $.01) - New York Stock Exchange' from chunk 0). Next step: probe chunks ~4-8 of acc 0000950124-98-001758 for the Item 5 market paragraph. NEW PRIMARY FACT recorded this pass: the exact merger date 1995-11-02 from EX-13. The v10 'expected PNU' guess remains unverified and is NOT written to any field.",
@@ -206,13 +212,7 @@
    "v10_note_superseded": "Symbol (NXRX expected) + delisting year (1998, Elan acquisition) pending primary citation."
   },
   "citations_located_not_yet_fetched": {
-   "block_drug": {
-    "cik": "0000012654",
-    "rows": [
-     "D1365"
-    ],
-    "next_doc": "FY1997 10-K (FYE 1997-03-31) filed 1997-06-30, accession 0000012654-97-000004 (https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt) - covers the 1996-12-17 Aphthasol decision; expected NASDAQ:BLOCA - must verify."
-   },
+   "block_drug": "FETCHED in v12 (see companies.block_drug)",
    "athena_neurosciences": {
     "rows": [
      "D1362"
@@ -250,15 +250,38 @@
     "D1359"
    ],
    "venue": "New York Stock Exchange (Common Stock only; Class B Common Stock is 12(g))",
-   "symbol": null,
+   "symbol": "CAR",
    "citations": [
     {
      "doc": "FY1997 Form 10-K405 (FYE 1997-03-31, filed 1997-06-17, acc 0000890163-97-000093), cover Section 12(b)/12(g) tables + Item 5",
      "url": "https://www.sec.gov/Archives/edgar/data/18000/0000890163-97-000093.txt",
      "evidence": "Cover 12(b) table verbatim: 'Securities registered pursuant to Section 12(b) of the Act: TITLE OF EACH CLASS: Common Stock Par value $1.00 per share / NAME OF EACH EXCHANGE ON WHICH REGISTERED: New York Stock Exchange'. Cover 12(g) verbatim: 'Securities registered pursuant to Section 12(g) of the Act: Class B Common Stock, par value $1.00 per share (Title of Class)' - so the registrant had TWO classes and only the Common Stock was exchange-listed. Commission File Number 1-5910; SEC header 'SROS: NYSE'; fiscal year end 0331. 'The number of shares of the registrant's Common Stock and Class B Common Stock outstanding at June 2, 1997 was 33,951,256 and 12,389,361, respectively. The aggregate market value of voting stock held by non-affiliates of the registrant as of June 2, 1997 was approximately $370,068,000.' Item 5 verbatim: 'ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY AND RELATED STOCK-HOLDER MATTERS - Information required by this item is presented on pages 1 and 7 of the 1997 Annual Report to Stockholders and is herein expressly incorporated by reference.' Cover 'DOCUMENTS INCORPORATED BY REFERENCE: Annual Report to Stockholders for the fiscal year ended March 31, 1997 -> Parts I & II; Proxy Statement for the Annual Meeting of Stockholders to be held July 15, 1997 -> Parts III & IV'. The submission's document 1 also carries the financial statements and Schedule II through printed page 16; EX-10 (employment agreements dated April 1 and April 15, 1997) begins immediately after. Submission is 33 chunks."
+    },
+    {
+     "doc": "1997 Annual Report to Stockholders, page 7 (EX-13 of the FY1997 10-K405, acc 0000890163-97-000093)",
+     "url": "https://www.sec.gov/Archives/edgar/data/18000/0000890163-97-000093.txt",
+     "evidence": "The high and low selling prices of the Company's common stock, principally traded on the New York Stock Exchange (symbol CAR), for the two most recent fiscal years were as follows: ... December 31 [1996 quarter]: High $16 1/2, Low $11 3/8",
+     "note": "Symbol NOT in the 10-K405 body (Item 5 incorporated by reference to pages 1 and 7 of the Annual Report). Master ticker column deliberately blank (D1244 same-name split hazard); symbol carried in the exchange field."
     }
    ],
    "note": "v11 2026-09-18: VENUE VERIFIED = New York Stock Exchange for Carter-Wallace Common Stock, which is the class that owns the Astelin/Wallace Laboratories decision date 1996-11-01 (the FY1997 fiscal year runs 1996-04-01 to 1997-03-31). SYMBOL NOT LOCATED: Item 5 is incorporated by reference to pages 1 and 7 of the 1997 Annual Report to Stockholders, so the symbol is not in the 10-K document itself. The v10 'expected NYSE:CAR' remains an unverified guess and is NOT written to any field. Next step: read pages 1 and 7 of the 1997 Annual Report to Stockholders (an EX-21-type exhibit later in acc 0000890163-97-000093, chunks ~15-30), or the Item 5 of the FY1998/FY1999/FY2000 10-K, or the DEF 14A dated 1997-06-16 for the July 15, 1997 annual meeting. Delisting year also pending (recorded lineage: MedPointe 2001)."
+  },
+  "block_drug": {
+   "cik": "0000012654",
+   "rows": [
+    "D1365"
+   ],
+   "venue": "Over-the-counter: NASD inter-dealer market (bid quotes); no Section 12(b) exchange listing",
+   "symbol": null,
+   "citations": [
+    {
+     "doc": "FY1997 Form 10-K (period 1997-03-31, filed 1997-06-30)",
+     "url": "https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt",
+     "evidence": "Cover: 'Securities registered pursuant to Section 12(b) of the Act: Title of Each Class: None' / 12(g): 'Class A Common Stock - $.10 par value' / SROS: NASD. Item 5 'STOCK PRICE AND DIVIDEND INFORMATION' - 'Range of Class A Common Stock*' with the footnote '* These are high and low bid quotes and reflect inter-dealer prices without retail mark-up, mark-down or commission and may not necessarily represent actual transactions.' [FY1997 Q3 = Oct-Dec 1996, the Aphthasol quarter: $48 / $44 1/8]",
+     "note": "507 Class A (non-voting) holders of record vs 5 Class B (voting) holders (the Block family). Same 10-K Item 1: In December, 1996, the Company received Food and Drug Administration (FDA) approval for Aphthasol, a new chemical entity for the treatment of aphthous ulcers, commonly known as canker sores."
+    }
+   ],
+   "note": "Promoted from citations_located_not_yet_fetched in v12. Ticker symbol not stated in the 10-K; status VENUE-VERIFIED (ticker pending)."
   }
  },
  "v11_update": {
@@ -289,5 +312,45 @@
   "captured_utc": "2026-09-18T12:35:00Z",
   "fetch_tool_status": "FAILED mid-pass. Warner-Lambert FY1997 10-K chunk 0 of 43 was retrieved successfully; every subsequent fetch_page call returned SignatureDoesNotMatch from the tool's internal file proxy (other chunks of the same submission, a different EDGAR submission, a non-EDGAR URL), including after a 75-second wait. web_search still worked, so this is specific to the fetch path. Consequence: no second-wave symbol or delisting-year values were written.",
   "what_changed": "Warner-Lambert venue upgraded from plain 'NYSE' to the three exchanges its 12(b) cover names, with the incorporated-by-reference finding recorded (Item 5 lives in the 1997 Annual Report to Shareholders, so the symbol hunt must target that exhibit). One unverified pointer recorded for Advanced Magnetics with an explicit do-not-use warning. No status changed: the index is still 9 RESOLVED / 12 VENUE-VERIFIED / 1 CITATION-LOCATED / 3 ATTRIBUTION-CASE."
+ },
+ "v12_update": {
+  "captured_utc": "2026-09-18",
+  "runner_finding": "All 18 fetch_jobs/edgar_pre2000_symbols_2026_09.json specs returned HTTP 403 Forbidden from the GitHub Actions runner (run 35391279461; manifest in data/raw/edgar_pre2000_symbols_2026_09/manifest.json) - SEC blocks the runner's cloud IPs. EDGAR must be fetched through the sandbox page-fetch tool (still works, one URL at a time).",
+  "what_changed": [
+   "pharmacia_upjohn symbol PNU (5 rows RESOLVED, ticker column filled)",
+   "carter_wallace symbol CAR (D1359 RESOLVED, ticker column deliberately blank)",
+   "block_drug promoted: OTC/NASD venue verified, Aphthasol approval quoted verbatim, symbol pending",
+   "roberts_pharmaceutical: venue transfer pinned - NASDAQ NMS through 1997-05-21, AMEX from 1997-05-22 (post-both-decisions); symbol not stated in FY1996/FY1998 10-Ks",
+   "warner_lambert: negative result - FY1997 submission read in full (Item 5 + EX-13 p.48), no symbol stated"
+  ],
+  "roberts_evidence": [
+   {
+    "doc": "FY1996 Form 10-K (filed 1997-04-02), Item 5",
+    "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-97-001485.txt",
+    "evidence": "The Company's Common Stock is traded in the over-the-counter market on the NASDAQ National Market System and was held by approximately 900 shareholders of record as of March 19, 1997. [1996 Q3 range $20 3/4 / $15 5/16 - the ProAmatine decision quarter]"
+   },
+   {
+    "doc": "FY1998 Form 10-K (filed 1999-03-26), Item 5",
+    "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-99-001681.txt",
+    "evidence": "The Company's Common Stock is traded on the American Stock Exchange and was held by approximately 960 shareholders of record as of March 15, 1999. ... as reported on the NASDAQ National Market System from January 1, 1997 through May 21, 1997 and as reported by the American Stock Exchange from May 22, 1997 through December 31, 1998."
+   },
+   {
+    "doc": "FY1998 Form 10-K/A (filed 1999-11-22), cover 12(b)",
+    "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-99-006680.txt",
+    "evidence": "Common Stock $.01 par value per share / American Stock Exchange; Rights / American Stock Exchange; SEC file 001-10432; last sale price 'as reported by the American Stock Exchange as of October 15, 1999'."
+   }
+  ],
+  "warner_lambert_evidence": [
+   {
+    "doc": "FY1997 Form 10-K, Item 5",
+    "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950117-98-000602.txt",
+    "evidence": "The principal market on which the Company's stock is traded is the New York Stock Exchange, but the stock is also listed and traded on the following domestic and international stock exchanges: Chicago, Pacific, London and Zurich."
+   },
+   {
+    "doc": "1997 Annual Report (EX-13), page 48 'Market Prices of Common Stock and Dividends'",
+    "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950117-98-000602.txt",
+    "evidence": "Market Prices of Common Stock and Dividends [1997 Annual Report p.48]: 1996 Q4 High $80 / Low $61 7/8; 1997 Q1 High $93 1/4 / Low $69 1/2 - quarterly ranges only, no ticker symbol stated anywhere in the submission."
+   }
+  ]
  }
 }

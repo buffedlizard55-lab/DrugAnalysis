@@ -1,0 +1,287 @@
+{
+ "kept_and_corrected": [
+  "PRE1985-1983-07",
+  "PRE1985-1983-08",
+  "PRE1985-1984-06",
+  "PRE1985-1984-07",
+  "PRE1985-1984-08"
+ ],
+ "removed": [
+  {
+   "decision_id": "PRE1985-1983-06",
+   "drug": "Lithobid",
+   "reason": "Lithobid - the cited application NDA018006 is Meclomen (meclofenamate sodium, Parke-Davis; ORIG AP 1980-06-25, TYPE 1 - a 1980 NME, useful for the backward expansion). Lithobid itself is NDA018027 with ORIG AP 1979-04-27 (TYPE 5) - a 1979 approval outside the 1983 window, and no 1983-03-08 event exists on either application in Drugs@FDA."
+  },
+  {
+   "decision_id": "PRE1985-1984-09",
+   "drug": "Ambenyl",
+   "reason": "Ambenyl - NDA009319 ORIG AP is 1954-04-28 (TYPE 4); the 1984-01-10 events were supplement approvals (SUPPL-18 EFFICACY and SUPPL-17 MANUF (CMC)), not an original approval."
+  },
+  {
+   "decision_id": "PRE1985-1984-10",
+   "drug": "Valisone",
+   "reason": "Valisone - NDA016322 ORIG AP is 1967-09-02 (TYPE 2); the 1984-05-31 event was SUPPL-16 MANUF (CMC), not an original approval."
+  }
+ ],
+ "added": [
+  {
+   "decision_id": "PRE1985-1983-09",
+   "application": "NDA018682",
+   "drug": "TZ-3",
+   "date": "1983-02-18"
+  },
+  {
+   "decision_id": "PRE1985-1983-10",
+   "application": "NDA018225",
+   "drug": "Bumex",
+   "date": "1983-02-28"
+  },
+  {
+   "decision_id": "PRE1985-1983-11",
+   "application": "NDA018538",
+   "drug": "Lozol",
+   "date": "1983-07-06"
+  },
+  {
+   "decision_id": "PRE1985-1983-12",
+   "application": "NDA018513",
+   "drug": "Chenix",
+   "date": "1983-07-28"
+  },
+  {
+   "decision_id": "PRE1985-1983-13",
+   "application": "NDA050558",
+   "drug": "Zinacef",
+   "date": "1983-10-19"
+  },
+  {
+   "decision_id": "PRE1985-1983-14",
+   "application": "NDA018768",
+   "drug": "Vepesid",
+   "date": "1983-11-10"
+  },
+  {
+   "decision_id": "PRE1985-1983-15",
+   "application": "NDA018831",
+   "drug": "Tracrium",
+   "date": "1983-11-23"
+  },
+  {
+   "decision_id": "PRE1985-1983-16",
+   "application": "NDA018366",
+   "drug": "Chymex",
+   "date": "1983-12-29"
+  },
+  {
+   "decision_id": "PRE1985-1984-11",
+   "application": "NDA018776",
+   "drug": "Norcuron",
+   "date": "1984-04-30"
+  },
+  {
+   "decision_id": "PRE1985-1984-12",
+   "application": "NDA017498",
+   "drug": "Micronase",
+   "date": "1984-05-01"
+  },
+  {
+   "decision_id": "PRE1985-1984-13",
+   "application": "NDA019050",
+   "drug": "Sufenta",
+   "date": "1984-05-04"
+  },
+  {
+   "decision_id": "PRE1985-1984-14",
+   "application": "NDA017783",
+   "drug": "Glucotrol",
+   "date": "1984-05-08"
+  },
+  {
+   "decision_id": "PRE1985-1984-15",
+   "application": "NDA050554",
+   "drug": "Precef",
+   "date": "1984-05-24"
+  },
+  {
+   "decision_id": "PRE1985-1984-16",
+   "application": "NDA017473",
+   "drug": "Orap",
+   "date": "1984-07-31"
+  },
+  {
+   "decision_id": "PRE1985-1984-17",
+   "application": "NDA018700",
+   "drug": "Inocor",
+   "date": "1984-07-31"
+  },
+  {
+   "decision_id": "PRE1985-1984-18",
+   "application": "NDA018686",
+   "drug": "Normodyne",
+   "date": "1984-08-01"
+  },
+  {
+   "decision_id": "PRE1985-1984-19",
+   "application": "NDA019264",
+   "drug": "Pentam 300",
+   "date": "1984-10-16"
+  },
+  {
+   "decision_id": "PRE1985-1984-20",
+   "application": "NDA018289",
+   "drug": "Nephroflow",
+   "date": "1984-12-28"
+  },
+  {
+   "decision_id": "PRE1985-1984-21",
+   "application": "NDA018770",
+   "drug": "Tornalate",
+   "date": "1984-12-28"
+  },
+  {
+   "decision_id": "PRE1985-1984-22",
+   "application": "NDA018719",
+   "drug": "Modrastane",
+   "date": "1984-12-31"
+  }
+ ],
+ "assertions": [
+  {
+   "decision_id": "PRE1985-1983-01",
+   "application": "NDA050573",
+   "payload_date": "1983-11-14",
+   "payload_class": "TYPE 1",
+   "payload_priority": "PRIORITY",
+   "payload_holder": "NOVARTIS"
+  },
+  {
+   "decision_id": "PRE1985-1983-02",
+   "application": "NDA018703",
+   "payload_date": "1983-06-09",
+   "payload_class": "TYPE 1",
+   "payload_priority": "STANDARD",
+   "payload_holder": "GLAXO GRP LTD"
+  },
+  {
+   "decision_id": "PRE1985-1983-03",
+   "application": "NDA050560",
+   "payload_date": "1983-09-15",
+   "payload_class": "TYPE 1",
+   "payload_priority": "STANDARD",
+   "payload_holder": "ASTELLAS"
+  },
+  {
+   "decision_id": "PRE1985-1983-04",
+   "application": "NDA018749",
+   "payload_date": "1983-05-31",
+   "payload_class": "TYPE 1",
+   "payload_priority": "PRIORITY",
+   "payload_holder": "MISSION PHARMA"
+  },
+  {
+   "decision_id": "PRE1985-1983-05",
+   "application": "NDA050544",
+   "payload_date": "1983-02-28",
+   "payload_class": "TYPE 1",
+   "payload_priority": "STANDARD",
+   "payload_holder": "SCHERING"
+  },
+  {
+   "decision_id": "PRE1985-1983-07",
+   "application": "NDA018413",
+   "payload_date": "1983-11-30",
+   "payload_class": "",
+   "payload_priority": "",
+   "payload_holder": "CHARTWELL RX"
+  },
+  {
+   "decision_id": "PRE1985-1983-08",
+   "application": "NDA018104",
+   "payload_date": "1982-12-29",
+   "payload_class": "TYPE 1",
+   "payload_priority": "STANDARD",
+   "payload_holder": "PHARMACIA AND UPJOHN"
+  },
+  {
+   "decision_id": "PRE1985-1984-01",
+   "application": "NDA018612",
+   "payload_date": "1984-01-13",
+   "payload_class": "TYPE 1",
+   "payload_priority": "PRIORITY",
+   "payload_holder": "HALEON US HOLDINGS"
+  },
+  {
+   "decision_id": "PRE1985-1984-02",
+   "application": "NDA018917",
+   "payload_date": "1984-12-28",
+   "payload_class": "TYPE 1",
+   "payload_priority": "STANDARD",
+   "payload_holder": "PROMIUS PHARMA"
+  },
+  {
+   "decision_id": "PRE1985-1984-03",
+   "application": "NDA018932",
+   "payload_date": "1984-11-20",
+   "payload_class": "TYPE 1",
+   "payload_priority": "PRIORITY",
+   "payload_holder": "TEVA WOMENS"
+  },
+  {
+   "decision_id": "PRE1985-1984-04",
+   "application": "NDA050585",
+   "payload_date": "1984-12-21",
+   "payload_class": "TYPE 1",
+   "payload_priority": "PRIORITY",
+   "payload_holder": "HOFFMANN LA ROCHE"
+  },
+  {
+   "decision_id": "PRE1985-1984-05",
+   "application": "NDA018631",
+   "payload_date": "1984-08-30",
+   "payload_class": "TYPE 1",
+   "payload_priority": "PRIORITY",
+   "payload_holder": "VALIDUS PHARMS"
+  },
+  {
+   "decision_id": "PRE1985-1984-06",
+   "application": "NDA018716",
+   "payload_date": "1984-08-01",
+   "payload_class": "TYPE 5",
+   "payload_priority": "STANDARD",
+   "payload_holder": "ALVOGEN"
+  },
+  {
+   "decision_id": "PRE1985-1984-07",
+   "application": "NDA050564",
+   "payload_date": "1984-08-06",
+   "payload_class": "TYPE 1/4",
+   "payload_priority": "PRIORITY",
+   "payload_holder": "US ANTIBIOTICS"
+  },
+  {
+   "decision_id": "PRE1985-1984-08",
+   "application": "NDA018257",
+   "payload_date": "1984-11-09",
+   "payload_class": "TYPE 1",
+   "payload_priority": "PRIORITY",
+   "payload_holder": "ASTRAZENECA"
+  }
+ ],
+ "final_counts": {
+  "1983": {
+   "rows": 15,
+   "PRIORITY": 5,
+   "STANDARD": 9,
+   "NOT STATED": 1,
+   "TYPE1_rows": 14
+  },
+  "1984": {
+   "rows": 20,
+   "PRIORITY": 9,
+   "STANDARD": 11,
+   "NOT STATED": 0,
+   "TYPE1_rows": 19
+  }
+ },
+ "final_row_total": 35
+}
