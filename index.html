@@ -57,6 +57,7 @@
   <button class="tab-btn" data-tab="crls"><span class="tab-icon">⚠️</span> CRLs / Rejections</button>
   <button class="tab-btn" data-tab="crosscheck"><span class="tab-icon">🔍</span> Verification Audit</button>
   <button class="tab-btn" data-tab="pre2000"><span class="tab-icon">🕰️</span> Pre-2000 Audit</button>
+  <button class="tab-btn" data-tab="pre1985"><span class="tab-icon">📜</span> Pre-1985 Era</button>
   <button class="tab-btn" data-tab="compilation"><span class="tab-icon">📑</span> Compilation Audit</button>
   <button class="tab-btn" data-tab="private"><span class="tab-icon">🔒</span> Private</button>
   <button class="tab-btn" data-tab="nonus"><span class="tab-icon">🌍</span> Non-US</button>
@@ -399,6 +400,28 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
     <h3 style="margin-top:1.5rem">Sponsor-resolution worklist — 67 pre-2000 issuers without a verified ticker (data/pre2000_sponsor_resolution_index.csv)</h3>
     <p class="section-desc">Indexed for manual verification, never guessed: 25 high-priority rows are recoverable once-listed companies (e.g. The Upjohn Co. → Pharmacia &amp; Upjohn 1995), each with a deterministic SEC EDGAR company-search link and Drugs@FDA application link; 22 rows are documented private/government/non-profit issuers needing no action. <strong>2026-09-18 progress from primary EDGAR captures</strong> (period 10-Ks fetched live — evidence in <code>data/staging/pre2000_sponsor_edgar_evidence.json</code>): <strong>9 fully resolved</strong> with a ticker read verbatim out of the registrant's own filing — Agouron = NASDAQ:<strong>AGPH</strong> (FY1998 10-K Item 5), Advanced Magnetics = <strong>AMEX:AVM</strong> (FY1996 10-K405 Item 5 — the earlier hand-off's "ANM/Nasdaq" was wrong), Neurex = NASDAQ NMS:<strong>NXCO</strong> <em>delisted 1998</em> (FY1997 10-K Item 5 + the Elan merger DEF 14A of 1998-07-02 and Form 15-15D of 1998-08-14 — the index's "NXRX" guess was wrong), Cytogen = NASDAQ NMS:<strong>CYTO</strong>, Immunomedics = NASDAQ NMS:<strong>IMMU</strong>, Gensia Sicor = NASDAQ NMS:<strong>GNSA</strong>, and IVAX (parent of Elmiron's sponsor Baker Norton) = <strong>AMEX:IVX</strong> per both its 12(b) cover and Item 5 — the American Stock Exchange, not the "Nasdaq:IVX era" this dataset's own note had said. <strong>12 venue-verified</strong> with the ticker still pending (Warner-Lambert ×4 and Pharmacia &amp; Upjohn ×5 = NYSE per 12(b) covers, the P&amp;U merger date pinned to 1995-11-02 by EX-13; Roberts ×2 = NASDAQ NMS with deregistration pinned to 1999 by Form 15-12G; Carter-Wallace = NYSE per its 12(b) cover, but its Item 5 is incorporated by reference to pages 1 and 7 of the 1997 Annual Report to Stockholders, so the symbol is not in the 10-K), <strong>1</strong> with the exact period 10-K URL located (Block Drug), and <strong>3</strong> attribution cases (Athena Neurosciences was already an Elan subsidiary at its decision date — the Neurex proxy also proves Elan's ADSs traded on the NYSE in 1998; DuPont Pharmaceuticals attribution runs through parent E.I. du Pont). Several of the same 10-Ks also re-confirm the FDA decision dates verbatim (CEA-Scan 6/28/1996, ProstaScint 10/28/1996, Feridex Aug-1996, GastroMARK Dec-1996, Viracept Mar-1997, Corlopam 9/24 per Neurex vs FDA's 9/23). Blank beats guessed: no remembered or modern-map symbol was ever written to a field.</p>
     <div id="pre2000-sponsors-view"></div>
+  </section>
+
+  <!-- PRE-1985 ERA ANALYSIS & DECISIONS -->
+  <section id="pre1985" class="tab-panel">
+    <h2>📜 Pre-1985 FDA Decisions & Regulatory Era Analysis (1983–1985)</h2>
+    <p class="section-desc">Statutory analysis and line-by-line verified FDA approvals for the pivotal pre-1985 foundation era: the <strong>Orphan Drug Act of 1983</strong> (P.L. 97-414), the <strong>Hatch-Waxman Act of 1984</strong> (Drug Price Competition and Patent Term Restoration Act, P.L. 98-417), and the <strong>record 1985 novel drug cohort (31 NMEs)</strong>. Every decision is verified from primary FDA sources: <strong>Drugs@FDA</strong>, <strong>openFDA</strong>, and official FDA reports.</p>
+
+    <div class="notice info">
+      <strong>Historical Regulatory Context:</strong> Modern FDA regulation was shaped fundamentally during 1983–1985. In 1983, Congress enacted the Orphan Drug Act to incentivize rare disease therapies. In 1984, the landmark Hatch-Waxman Act established the modern Section 505(j) ANDA generic pathway and innovator patent term restoration. In 1985, CDER set a modern record with 31 novel NME approvals, establishing the start of FDA's official Modern NME Compilation baseline.
+    </div>
+
+    <div class="panel highlight" style="margin-bottom:1.5rem">
+      <h3>🏛️ Foundational Legislative &amp; Regulatory Milestones (1983–1985)</h3>
+      <p class="section-desc">Year-by-year statutory milestones shaping the modern pharmaceutical regulatory landscape. Derived from official FDA reports and Federal Register records (<code>data/pre1985_era_analysis.csv</code>).</p>
+      <div id="pre1985-era-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>📋 Verified Pre-1985 FDA Approvals &amp; Decisions (<code>data/pre1985_fda_decisions.csv</code>)</h3>
+      <p class="section-desc">Individual verified approvals with exact NDA application numbers, approval dates, chemical classification, review priority, indications, corporate successor lineages, and primary FDA source links for manual review. Landmark approvals include <strong>Sandimmune</strong> (cyclosporine, organ transplantation breakthrough), <strong>Zantac</strong> (ranitidine, first $1B drug), <strong>Lithostat</strong> (first Orphan Drug Act approval), <strong>Nicorette</strong> (first smoking cessation aid), <strong>Trexan</strong> (naltrexone, opioid addiction blockade), <strong>Rocephin</strong> (ceftriaxone), and <strong>Augmentin</strong> (first beta-lactamase inhibitor combo).</p>
+      <div id="pre1985-decisions-view"></div>
+    </div>
   </section>
 
   <section id="compilation" class="tab-panel">
