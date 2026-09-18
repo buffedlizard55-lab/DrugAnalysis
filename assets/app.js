@@ -658,7 +658,7 @@ function drawOverview() {
     { k: 'Clinical trial scorecards', v: (overview.clinScores || []).length, s: 'clinical trial success, phase advancement, and regulatory conversion' },
     { k: 'Phase 3 registry (2026–27)', v: (overview.ctgov || []).length, s: ((overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length) + ' US-listed lead sponsors with verified primary completion dates' },
     { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' },
-    { k: 'Pre-1985 landmark decisions', v: (overview.pre1985Decisions || []).length, s: '1983–1985 foundational era (Orphan Drug Act 1983, Hatch-Waxman 1984)' },
+    { k: 'Pre-1985 landmark decisions', v: (overview.pre1985Decisions || []).length, s: '1980–1985 historical era (Orphan Drug Act 1983, Hatch-Waxman 1984)' },
     { k: 'Original non-NME approvals', v: (overview.orig || []).length, s: ((overview.orig || []).filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length) + ' US-listed · Type 2/3/4/5, biosimilars, new-indication originals' },
     { k: 'Type 1 unmatched (flagged)', v: (overview.t1gap || []).length, s: 'openFDA Type 1 not merged into the NME master — CBER biologics / copacks, blank beats guessed' }
   ];
@@ -1573,7 +1573,7 @@ Promise.all([
     ]
   });
 
-  /* Pre-1985 era analysis table (1983-1985) */
+  /* Pre-1985 era analysis table (1980-1985) */
   DataTable({
     id: 'pre1985-era', mount: '#pre1985-era-view', csv: 'data/pre1985_era_analysis.csv',
     columns: [
@@ -1589,7 +1589,7 @@ Promise.all([
       c('primary_source_basis', 'Primary Sources', { trunc: true, render: r => truncCell(r.primary_source_basis) })
     ],
     searchFields: ['year', 'orphan_drug_act_status', 'statutory_framework', 'landmark_approvals'],
-    searchPlaceholder: 'Search 1983-1985 era milestones…',
+    searchPlaceholder: 'Search 1980-1985 era milestones…',
     sort: { key: 'year', dir: 'desc' }, pageSize: 10,
     filters: []
   });

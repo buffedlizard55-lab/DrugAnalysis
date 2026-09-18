@@ -540,43 +540,51 @@ for r in _era:
         errors.append(f"pre2000_era_analysis:{r['year']}: approvals {r['master_approvals']} "
                       f"!= master {_m_by_year.get(r['year'], 0)}")
 
-# 6b. Pre-1985 era analysis and verified decisions (1983-1985).
-#    v13 (2026-09-18): the table was expanded from the 18 v12 landmark rows to the
-#    complete Drugs@FDA-enumerated original-approval record for 1983/1984
-#    (35 rows: 15 in the 1983 group, 20 in the 1984 group), every row asserted
-#    against data/raw/openfda_orig_decisions_1980_1984/decisions_{year}.json.
-#    Three v12 rows were REMOVED because the primary record disproved their
-#    premise (Lithobid/wrong app + 1979 approval; Ambenyl and Valisone were
-#    supplement approvals on pre-1983 applications, not original approvals) -
-#    those IDs must never silently reappear.
+# 6b. Pre-1985 era analysis and verified decisions (1980-1985).
+#     v14 (2026-09-18) adds the complete committed Drugs@FDA TYPE-1/1-4
+#     enumeration for 1980, 1981, and 1982, and moves Hylorel to its actual
+#     1982 approval group.  The dedicated CSV contains 1980-1984 rows; the
+#     1985 era row is checked against the master table below.
 _pre1985_decisions = read("pre1985_fda_decisions.csv")
-if len(_pre1985_decisions) != 35:
-    errors.append(f"pre1985_fda_decisions: expected 35 verified rows (v13 baseline), got {len(_pre1985_decisions)}")
+_p1985_expected = {"1980": 9, "1981": 23, "1982": 25, "1983": 14, "1984": 20}
+if len(_pre1985_decisions) != sum(_p1985_expected.values()):
+    errors.append(
+        f"pre1985_fda_decisions: expected {sum(_p1985_expected.values())} verified rows (v14 baseline), "
+        f"got {len(_pre1985_decisions)}"
+    )
 _p1985_by_year = Counter(r["year"] for r in _pre1985_decisions)
-if _p1985_by_year.get("1983", 0) != 15:
-    errors.append(f"pre1985_fda_decisions: expected 15 rows in the 1983 group, got {_p1985_by_year.get('1983', 0)}")
-if _p1985_by_year.get("1984", 0) != 20:
-    errors.append(f"pre1985_fda_decisions: expected 20 rows in the 1984 group, got {_p1985_by_year.get('1984', 0)}")
-_REMOVED_PRE1985 = {"PRE1985-1983-06", "PRE1985-1984-09", "PRE1985-1984-10"}
+for _y, _n in _p1985_expected.items():
+    if _p1985_by_year.get(_y, 0) != _n:
+        errors.append(
+            f"pre1985_fda_decisions: expected {_n} rows in the {_y} group, "
+            f"got {_p1985_by_year.get(_y, 0)}"
+        )
+_REMOVED_PRE1985 = {
+    "PRE1985-1983-06", "PRE1985-1984-09", "PRE1985-1984-10",
+    # v13 kept Hylorel as a launch-era boundary row in the 1983 group; v14
+    # re-homes it to 1982 and the old ID must not silently return.
+    "PRE1985-1983-08",
+}
 _p1985_ids = set()
 for i, r in enumerate(_pre1985_decisions, 2):
     if not r["decision_id"].startswith("PRE1985-"):
         errors.append(f"pre1985_fda_decisions:{i}: invalid ID format {r['decision_id']!r}")
-    if r["year"] not in ("1983", "1984"):
+    if r["year"] not in tuple(_p1985_expected):
         errors.append(f"pre1985_fda_decisions:{i}: unexpected year {r['year']!r}")
-    if not r["source_url_1"].startswith("http"):
-        errors.append(f"pre1985_fda_decisions:{i}: invalid source_url_1 {r['source_url_1']!r}")
+    if not r["source_url_1"].startswith("http") or not r["source_url_2"].startswith("http"):
+        errors.append(f"pre1985_fda_decisions:{i}: missing official source URL")
     if r["verification_status"] != "Verified":
         errors.append(f"pre1985_fda_decisions:{i}: status must be 'Verified', got {r['verification_status']!r}")
     if r["decision_id"] in _REMOVED_PRE1985:
-        errors.append(f"pre1985_fda_decisions:{i}: {r['decision_id']} was removed in v13 "
-                      "(premise disproved by the Drugs@FDA record) and must not reappear")
+        errors.append(
+            f"pre1985_fda_decisions:{i}: {r['decision_id']} was removed or re-homed in v14 "
+            "and must not reappear"
+        )
     _p1985_ids.add(r["decision_id"])
-# v13 corrections are pinned so they cannot silently revert:
-#  - Augmentin points at the TYPE 1/4 tablet application NDA050564 (PRIORITY)
-#  - Tonocard points at NDA018257 with PRIORITY (NDA018249 is Sodium Lactate)
-#  - Trandate NDA018716 is TYPE 5 (the labetalol NME app is Normodyne NDA018686,
-#    tracked as its own row)
+if len(_p1985_ids) != len(_pre1985_decisions):
+    errors.append("pre1985_fda_decisions: duplicate decision_id values")
+
+# v13 corrections remain pinned so they cannot silently revert.
 _p1985_row = {r["decision_id"]: r for r in _pre1985_decisions}
 for _did, _appl, _cls, _pri in (
     ("PRE1985-1984-07", "NDA 050564", "TYPE 1/4", "PRIORITY"),
@@ -594,47 +602,87 @@ for _did, _appl, _cls, _pri in (
             errors.append(f"pre1985_fda_decisions: {_did} chemical type must be {_cls!r}, got {_r['chemical_type_code']!r}")
         if _r["review_priority"] != _pri:
             errors.append(f"pre1985_fda_decisions: {_did} priority must be {_pri!r}, got {_r['review_priority']!r}")
-# every retained row must carry a v13-verified payload date - cross-check the
-# committed openFDA extraction directly (the same primary source the builder asserted)
+# v14 boundary/application pin.
+_hylorel = [r for r in _pre1985_decisions if r["application_number"] == "NDA 018104"]
+if len(_hylorel) != 1:
+    errors.append(f"pre1985_fda_decisions: expected one re-homed Hylorel NDA 018104, got {len(_hylorel)}")
+else:
+    _h = _hylorel[0]
+    if _h["year"] != "1982" or _h["decision_date"] != "1982-12-29" or _h["chemical_type_code"] != "TYPE 1":
+        errors.append("pre1985_fda_decisions: Hylorel must be pinned to the 1982-12-29 TYPE 1 payload")
+
+# Every retained row must match the committed openFDA extraction in date,
+# chemical type and priority where the row states those values.
 try:
     _pay = {}
-    for _y in (1982, 1983, 1984):
+    for _y in (1980, 1981, 1982, 1983, 1984):
         _p = json.load(open(ROOT / "data" / "raw" / "openfda_orig_decisions_1980_1984" / f"decisions_{_y}.json"))
         _pay.update({d["application_number"]: d for d in _p["decisions"]})
+    _seen_apps = set()
     for r in _pre1985_decisions:
         _appl = r["application_number"].replace(" ", "")
+        if _appl in _seen_apps:
+            errors.append(f"pre1985_fda_decisions: duplicate application {_appl}")
+        _seen_apps.add(_appl)
         _pl = _pay.get(_appl)
         if _pl is None:
-            errors.append(f"pre1985_fda_decisions: {r['decision_id']} application {_appl} not in the committed openFDA payloads")
-        elif _pl["decision_date"] != r["decision_date"]:
+            errors.append(f"pre1985_fda_decisions: {r['decision_id']} application {_appl} not in committed payloads")
+            continue
+        if _pl["decision_date"] != r["decision_date"]:
             errors.append(f"pre1985_fda_decisions: {r['decision_id']} date {r['decision_date']} != payload {_pl['decision_date']}")
+        _payload_class = _pl.get("submission_class_code") or "NOT STATED"
+        if r["chemical_type_code"] != "NOT STATED" and r["chemical_type_code"] != _payload_class:
+            errors.append(f"pre1985_fda_decisions: {r['decision_id']} class {r['chemical_type_code']} != payload {_payload_class}")
+        _payload_priority = _pl.get("review_priority") or "NOT STATED"
+        if r["review_priority"] != "NOT STATED" and r["review_priority"] != _payload_priority:
+            errors.append(f"pre1985_fda_decisions: {r['decision_id']} priority {r['review_priority']} != payload {_payload_priority}")
 except FileNotFoundError as _exc:
     errors.append(f"pre1985_fda_decisions: openFDA payload missing: {_exc}")
 
+# For 1980-1982, the table must equal the complete TYPE-1/1-4 application
+# enumeration in each committed payload, rather than a hand-curated landmark
+# subset.  This is the v14 completeness ratchet.
+try:
+    for _y in (1980, 1981, 1982):
+        _payload_apps = {
+            _app for _app, _pl in _pay.items()
+            if _pl["decision_date"].startswith(str(_y))
+            and str(_pl.get("submission_class_code", "")).startswith("TYPE 1")
+        }
+        _table_apps = {
+            r["application_number"].replace(" ", "")
+            for r in _pre1985_decisions if r["year"] == str(_y)
+        }
+        if _table_apps != _payload_apps:
+            errors.append(
+                f"pre1985_fda_decisions:{_y}: table applications do not equal payload TYPE-1 enumeration "
+                f"(table={len(_table_apps)}, payload={len(_payload_apps)})"
+            )
+except NameError:
+    pass
+
 _pre1985_era = read("pre1985_era_analysis.csv")
-if len(_pre1985_era) != 3:
-    errors.append(f"pre1985_era_analysis: expected 3 year rows (1983, 1984, 1985), got {len(_pre1985_era)}")
+if len(_pre1985_era) != 6:
+    errors.append(f"pre1985_era_analysis: expected 6 year rows (1980-1985), got {len(_pre1985_era)}")
 _era_p1985 = {r["year"]: r for r in _pre1985_era}
 for r in _pre1985_era:
-    if r["year"] not in ("1983", "1984", "1985"):
+    if r["year"] not in ("1980", "1981", "1982", "1983", "1984", "1985"):
         errors.append(f"pre1985_era_analysis: unexpected year {r['year']!r}")
     if not r["primary_source_basis"].strip():
         errors.append(f"pre1985_era_analysis:{r['year']}: missing primary source basis")
-# era counts must equal the decisions table (the 1985 row counts the master's 31)
-_era_expect = {"1983": 15, "1984": 20, "1985": 31}
+_era_expect = {**_p1985_expected, "1985": 31}
 for _y, _n in _era_expect.items():
     _er = _era_p1985.get(_y, {})
     if int(_er.get("verified_decisions_tracked", -1)) != _n:
         errors.append(f"pre1985_era_analysis:{_y}: verified_decisions_tracked must be {_n}, got {_er.get('verified_decisions_tracked')!r}")
-_era_nme_expect = {"1983": 14, "1984": 19, "1985": 31}
+_era_nme_expect = {"1980": 9, "1981": 23, "1982": 25, "1983": 14, "1984": 19, "1985": 31}
 for _y, _n in _era_nme_expect.items():
     _er = _era_p1985.get(_y, {})
     if int(_er.get("total_nmes_approved", -1)) != _n:
-        errors.append(f"pre1985_era_analysis:{_y}: total_nmes_approved must be {_n} "
-                      "(1983: Pink Sheet-pinned; 1984: Drugs@FDA enumeration; 1985: CDER compilation), "
-                      f"got {_er.get('total_nmes_approved')!r}")
-# priority/standard counts must match the decisions table
-for _y in ("1983", "1984"):
+        errors.append(f"pre1985_era_analysis:{_y}: total_nmes_approved must be {_n}, got {_er.get('total_nmes_approved')!r}")
+# Priority/standard counts for the dedicated 1980-1984 table must equal the
+# table; 1985 remains represented by the master-era baseline.
+for _y in ("1980", "1981", "1982", "1983", "1984"):
     _pri = sum(1 for r in _pre1985_decisions if r["year"] == _y and r["review_priority"] == "PRIORITY")
     _std = sum(1 for r in _pre1985_decisions if r["year"] == _y and r["review_priority"] == "STANDARD")
     _er = _era_p1985.get(_y, {})
@@ -642,6 +690,14 @@ for _y in ("1983", "1984"):
         errors.append(f"pre1985_era_analysis:{_y}: priority_reviews {_er.get('priority_reviews')} != table {_pri}")
     if int(_er.get("standard_reviews", -1)) != _std:
         errors.append(f"pre1985_era_analysis:{_y}: standard_reviews {_er.get('standard_reviews')} != table {_std}")
+# The 1985 decisions live in the master and use its review_pathway field.
+_1985_master = [r for r in master if r.get("decision_date", "").startswith("1985-")]
+_1985_pri = sum(1 for r in _1985_master if r.get("review_pathway", "").upper() == "PRIORITY")
+_1985_std = sum(1 for r in _1985_master if r.get("review_pathway", "").upper() == "STANDARD")
+if int(_era_p1985.get("1985", {}).get("priority_reviews", -1)) != _1985_pri:
+    errors.append(f"pre1985_era_analysis:1985: priority_reviews does not match master ({_1985_pri})")
+if int(_era_p1985.get("1985", {}).get("standard_reviews", -1)) != _1985_std:
+    errors.append(f"pre1985_era_analysis:1985: standard_reviews does not match master ({_1985_std})")
 
 # 7. Core analysis table <-> master integrity (v11 2026-09-18).
 #    build_core_analysis_table.py writes one row per master row plus one per CRL
