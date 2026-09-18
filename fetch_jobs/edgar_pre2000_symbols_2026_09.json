@@ -1,0 +1,200 @@
+[
+  {
+    "type": "url",
+    "id": "pnu_fy1997_10k405",
+    "url": "https://www.sec.gov/Archives/edgar/data/949573/0000950124-98-001758.txt",
+    "out": "pnu_fy1997_10k405.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "5 rows (D1330 D1332 D1373 D1382 D1390). 38 chunks; main 10-K document = chunks 0-14 and Item 5 is inside that range (EX-13 starts mid-chunk-15). NYSE venue already proven from the 12(b) cover."
+  },
+  {
+    "type": "url",
+    "id": "warner_lambert_fy1997_10k",
+    "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950117-98-000602.txt",
+    "out": "warner_lambert_fy1997_10k.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "4 rows (D1342 D1366 D1376 D1409). 43 chunks; cover already read. Part II is incorporated by reference to the 1997 Annual Report to Shareholders, so open the Annual Report EXHIBIT inside this submission (9 public documents) - not the 10-K body."
+  },
+  {
+    "type": "url",
+    "id": "carter_wallace_fy1997_10k405",
+    "url": "https://www.sec.gov/Archives/edgar/data/18000/0000890163-97-000093.txt",
+    "out": "carter_wallace_fy1997_10k405.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "1 row (D1359). 33 chunks; NYSE venue proven from 12(b). Item 5 -> 'pages 1 and 7 of the 1997 Annual Report to Stockholders'. Chunks ~15-30 unexplored. Two classes: only Common Stock was exchange-listed."
+  },
+  {
+    "type": "url",
+    "id": "block_drug_fy1997_10k",
+    "url": "https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt",
+    "out": "block_drug_fy1997_10k.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "1 row (D1365) - the last CITATION-LOCATED row on the worklist. FY1997 10-K (FYE 1997-03-31) filed 1997-06-30; the 1996-12-17 Aphthasol decision falls inside that fiscal year."
+  },
+  {
+    "type": "url",
+    "id": "roberts_defm14a_1999",
+    "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-99-006712.txt",
+    "out": "roberts_defm14a_1999.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "2 rows (D1347 D1379). Merger proxy filed 1999-11-23 (665 KB); its market-price section should name the symbol the 424-series supplements never stated."
+  },
+  {
+    "type": "url",
+    "id": "roberts_fy1996_10k",
+    "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-97-001485.txt",
+    "out": "roberts_fy1996_10k.txt",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "2 rows. The FY1996 10-K v10 cited for the NASDAQ NMS venue - re-fetch so the Item 5 wording and any symbol can be quoted verbatim from the payload instead of from the v10 note."
+  },
+  {
+    "type": "url",
+    "id": "amag_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000792977&type=25&dateb=&owner=include&count=40",
+    "out": "amag_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "AVM (D1345 D1363). Need the Form 25 for the AMEX line, NOT the 2020 Nasdaq/AMAG one. EDGAR records the rename to AMAG Pharmaceuticals 2007-07-05, so expect the AMEX-line filing around then."
+  },
+  {
+    "type": "url",
+    "id": "amag_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000792977&type=15&dateb=&owner=include&count=40",
+    "out": "amag_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "AVM (D1345 D1363) - companion 15-series list on the same CIK lineage."
+  },
+  {
+    "type": "url",
+    "id": "cytogen_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000725058&type=15&dateb=&owner=include&count=40",
+    "out": "cytogen_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "CYTO (D1357 D1381). 10-K series ends FY1998 (filed 1999-02-22) but filings continue to 2008, so the end-of-listing year needs its own citation."
+  },
+  {
+    "type": "url",
+    "id": "cytogen_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000725058&type=25&dateb=&owner=include&count=40",
+    "out": "cytogen_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "CYTO (D1357 D1381) - exchange-side removal-from-listing."
+  },
+  {
+    "type": "url",
+    "id": "immunomedics_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000722830&type=25&dateb=&owner=include&count=40",
+    "out": "immunomedics_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "IMMU (D1338). Recorded lineage: acquired by Gilead 2020."
+  },
+  {
+    "type": "url",
+    "id": "immunomedics_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000722830&type=15&dateb=&owner=include&count=40",
+    "out": "immunomedics_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "IMMU (D1338) - companion 15-series list."
+  },
+  {
+    "type": "url",
+    "id": "gensia_sicor_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807873&type=15&dateb=&owner=include&count=40",
+    "out": "gensia_sicor_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "GNSA (D1394). Recorded lineage: renamed Sicor Inc. 1999, TEVA acquired 2003/2004 - the renaming and any symbol change need citing before a year is written."
+  },
+  {
+    "type": "url",
+    "id": "gensia_sicor_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807873&type=25&dateb=&owner=include&count=40",
+    "out": "gensia_sicor_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "GNSA (D1394) - exchange-side removal-from-listing."
+  },
+  {
+    "type": "url",
+    "id": "ivax_form15_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000772197&type=15&dateb=&owner=include&count=40",
+    "out": "ivax_form15_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "IVX (D1353). 10-K series ends with FY2004 filed 2005-03-16 (acc 0001193125-04-040619); recorded lineage Teva 2006, so a 2006 Form 15/25 should exist."
+  },
+  {
+    "type": "url",
+    "id": "ivax_form25_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000772197&type=25&dateb=&owner=include&count=40",
+    "out": "ivax_form25_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "IVX (D1353) - exchange-side removal-from-listing (AMEX line)."
+  },
+  {
+    "type": "url",
+    "id": "roberts_10k_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000853022&type=10-K&dateb=&owner=include&count=40",
+    "out": "roberts_10k_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "Locate the FY1997/FY1998 10-K accessions so their Item 5 can be fetched in a follow-up job."
+  },
+  {
+    "type": "url",
+    "id": "carter_wallace_10k_list",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000018000&type=10-K&dateb=&owner=include&count=40",
+    "out": "carter_wallace_10k_list.html",
+    "timeout": 180,
+    "retries": 4,
+    "skip_existing": true,
+    "sleep": 1.0,
+    "_why": "Locate the FY1998/FY1999/FY2000 10-K accessions as a fallback route to the symbol."
+  }
+]

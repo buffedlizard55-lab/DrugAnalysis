@@ -1,0 +1,15 @@
+[
+  {
+    "type": "openfda_decisions",
+    "id": "orig_decisions",
+    "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+    "search_template": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[{start} TO {end}]",
+    "years": [1980, 1981, 1982, 1983, 1984],
+    "limit": 1000,
+    "max_pages": 12,
+    "sleep": 0.4,
+    "out_template": "decisions_{year}.json",
+    "skip_existing": true,
+    "_why": "Pre-1985 coverage expansion: every NDA/BLA whose ORIGINAL submission was approved in 1980-1984, extracted per-record from the Drugs@FDA API with the same auditable ORIG+AP+date-in-year filter used for 1985-2026 (see scripts/openfda_decisions.py). Years 1983/1984 feed the pre1985_fda_decisions.csv expansion this session; 1980-1982 land the raw baseline for backward expansion in later sessions. Raw payloads are not committed (10-15 MB/year); the manifest records every request URL + SHA-256 so the extraction is reproducible."
+  }
+]
