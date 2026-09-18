@@ -1,3 +1,41 @@
+# Verification Report — v15 Focus Years 1983/1984/1985 (2026-09-18)
+
+**Branch:** `arena/01a0b6a2-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors, 1,681 warnings** (1,612 pre-existing review-flag baseline + flagged new rows; every warning is an intended manual-review pointer, never an invented value).
+
+## v15 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| 1983/1984 backward extension | **+145 rows** in `data/fda_original_non_nme_decisions.csv` (56 in 1983, 89 in 1984) → 2,943 rows spanning 1983–2026. Class mix: TYPE 3 ×48, TYPE 5 ×43, class-not-published ×41, TYPE 4 ×12, UNKNOWN ×1. All Type 1/1-4 NMEs remain in the curated pre-1985 table | `scripts/build_original_non_nme.py` run log; `data/fda_orig_year_register.csv` (44 years, 1983/1984 counters 70/56 and 109/89) |
+| Verbatim payload cross-check | All 145 new rows asserted field-by-field (application, date, class, priority, current holder) against `data/raw/openfda_orig_decisions_1980_1984/decisions_{1983,1984}.json`; the builder aborts on any mismatch and is byte-idempotent across reruns | validator gates; two consecutive builder runs produced identical SHA-256 |
+| Ownership discipline | A payload Type 1/1-4 application missing from `data/pre1985_fda_decisions.csv` aborts the build instead of being invented or merged; furosemide NDA018413 (1983) and Trandate NDA018716 (1984) are pinned to the pre-1985 table and banned from the non-NME file; every pre-1985 row carries the PRE-1985 current-holder disclaimer | `scripts/validate_data.py` v15 section |
+| Focus-year enumeration audit | **261 rows** — 1983: 70 (44 TRACKED_VERIFIED / 26 TRACKED_REVIEW), 1984: 109 (92/17), 1985: 82 (79/3); zero untracked; **all 261 date agreements YES**; class/priority flags only where FDA publishes nothing (44 class-blank, 42 priority-blank payloads) or where two official sources genuinely differ | `data/focus_years_1983_1985_audit.csv`, `scripts/build_focus_year_audit_1983_1985.py` |
+| 1985 boundary reconciliation | 82 payload decisions = 27 TYPE 1/1-4 master matches (by application number) + 1 companion TYPE 3 (Temovate cream NDA019323, cited on Compilation row NDA019322 / master D1055) + 54 published non-NME originals = 82/82. The four master rows with **no** payload ORIG record (Seldane NDA018949, Protropin NDA019107, Suprol NDA018217, Femstat NDA019215) are pinned; the validator fails if that set moves | validator 1985 master-gap pin; `data/compilation_reconciliation.csv` |
+| Annotated irregularity | **NDA022046** (bupivacaine inj., Hospira): 1983-07-13 ORIG/AP, class UNKNOWN, on a late-1990s application-number series. Live openFDA application query (2026-09-18) confirms FDA publishes exactly this; FDA's 2012 approval letter for 022046 cross-references legacy NDA016964/NDA018692 (Marcaine lineage). Row published verbatim with `FLAGGED IRREGULARITY` + letter link; validator asserts the annotation exists | https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA022046%22 ; https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/016964s070,018692s015,022046s004ltr.pdf |
+| Source-conflict surfaced (not harmonised) | **Tambocor NDA018830** (master D1040): Compilation review designation *Priority* vs Drugs@FDA submission field *STANDARD*. Both official; audit row F1985-054 carries `TRACKED_REVIEW` with both values for human adjudication | `data/focus_years_1983_1985_audit.csv` |
+| Scorecard consistency | `company_original_approval_scorecard.csv` rebuilt (100 issuers, 1,414 attributed originals, earliest orig date now 1983-04-06); `company_clinical_trial_scorecard.csv` rebuilt (421 rows); validator cross-checks scorecard totals against the expanded table | rebuilt outputs; validator PASS |
+| Untouched invariants | 1,427-row master, 91-row pre-1985 table, 6-row era analysis, CRL/supplement/CT.gov tables all unchanged; the v14-era validator gates all still pass | `git diff --stat` |
+
+## Method notes and limitations (v15)
+
+- The extension covers **only what the committed FDA payloads enumerate**: Type 3/4/5/unknown original NDA/BLA approvals for 1983–1984. It is an application-level enumeration, not a claim about contemporaneous annual approval statistics.
+- openFDA sponsor fields for pre-1985 applications name the **current** Drugs@FDA holder. Rows never present that holder as the 1983/1984 applicant; tickers resolve only where the existing conservative resolver has an exact verified match, and everything else stays `UNRESOLVED`.
+- The 1983 'UNKNOWN'-class row and 41 blank-class rows are published with explicit flags because FDA publishes no class code for them; nothing was inferred.
+- 1980–1982 non-NME originals (73 + 48 + 78 payload rows) are **not yet** published; the committed payloads and the same builder support that one-line extension in a later pass after year-by-year review.
+
+## v15 files
+
+- `scripts/build_original_non_nme.py` — extended to FIRST_YEAR=1983 with pre-1985 ownership rules, annotation map, and hallucination gates.
+- `scripts/build_focus_year_audit_1983_1985.py` — read-only 1983/1984/1985 enumeration auditor (aborts on any untracked or changed payload).
+- `data/fda_original_non_nme_decisions.csv` — 2,943 rows (1983–2026).
+- `data/fda_orig_year_register.csv` — 44 year rows.
+- `data/focus_years_1983_1985_audit.csv` — 261 audited decisions with per-field agreement columns.
+- `data/company_original_approval_scorecard.csv`, `data/company_clinical_trial_scorecard.csv` — rebuilt.
+- `scripts/validate_data.py` — v15 gates; `index.html`, `assets/app.js` — site text + focus-audit grid.
+
+---
+
 # Verification Report — v14 Backward Pre-1985 Expansion (2026-09-18)
 
 **Branch:** `arena/01a0b62c-druganalysis`
