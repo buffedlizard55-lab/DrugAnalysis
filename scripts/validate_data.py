@@ -499,6 +499,58 @@ for r in _era:
         errors.append(f"pre2000_era_analysis:{r['year']}: approvals {r['master_approvals']} "
                       f"!= master {_m_by_year.get(r['year'], 0)}")
 
+# 7. Core analysis table <-> master integrity (v11 2026-09-18).
+#    build_core_analysis_table.py writes one row per master row plus one per CRL
+#    (then sorts by date desc), and it derives a TICKER-KEYED class map with
+#    setdefault() in master order which it applies to EVERY row sharing that
+#    ticker. So filling a master `ticker` can silently re-class a DIFFERENT row:
+#    that is exactly why D1338's verified IMMU and D1357/D1381's verified CYTO
+#    are kept out of the ticker column (NO_TICKER_FILL in
+#    scripts/resolve_pre2000_sponsors_v11.py). This section makes that hazard
+#    measurable instead of invisible:
+#      (a) shape: one core row per master row + one per CRL row;
+#      (b) coverage: every master row is present in the core table;
+#      (c) ratchet: the number of rows whose core class disagrees with the
+#          master row's OWN committed class must stay at the audited baseline.
+#    The 145 baseline disagreements are pre-existing legacy (mostly one ticker
+#    carrying rows with different committed classes, e.g. NVS/SNY/AZN/TAK ADR vs
+#    direct, and the flagged D442/D452 NO_US_TICKER rows); they are listed as a
+#    decision point in NEXT_SESSION.md next-step 2. This ratchet does NOT bless
+#    them - it stops a 146th appearing unnoticed when someone fills a ticker.
+CORE_CLASS_BASELINE = 145
+_core = read("core_analysis_table.csv")
+_crl_master = read("fda_crl_master.csv")
+if len(_core) != len(master) + len(_crl_master):
+    errors.append(f"core_analysis_table: expected {len(master)} master + {len(_crl_master)} CRL = "
+                  f"{len(master) + len(_crl_master)} rows, got {len(_core)}")
+_core_key = lambda r: (r["company_name"], r["decision_date"], r["drug_name"])
+_master_key = lambda r: (r["company_name"], r["decision_date"],
+                         f"{r['drug_brand']} ({r['drug_generic']})")
+_core_by_key = {}
+for _r in _core:
+    _core_by_key.setdefault(_core_key(_r), _r)
+_missing_core = [r["decision_id"] for r in master if _master_key(r) not in _core_by_key]
+if _missing_core:
+    errors.append(f"core_analysis_table: {len(_missing_core)} master rows are missing from the "
+                  f"joined table: {_missing_core[:5]}")
+_class_dis = [(r["decision_id"], r["ticker"], r["us_investable_class"],
+               _core_by_key[_master_key(r)]["us_investable_class"])
+              for r in master
+              if _master_key(r) in _core_by_key
+              and r["us_investable_class"] != _core_by_key[_master_key(r)]["us_investable_class"]]
+if len(_class_dis) != CORE_CLASS_BASELINE:
+    errors.append(
+        f"core_analysis_table: {len(_class_dis)} rows carry a us_investable_class that disagrees "
+        f"with the master row's own committed class (audited baseline {CORE_CLASS_BASELINE}). "
+        f"Examples: {_class_dis[:5]}. A NEW disagreement usually means a master `ticker` was just "
+        f"filled for a symbol another row already carries - build_core_analysis_table.py propagates "
+        f"one class per ticker to every row sharing it. Fix the fill (see NO_TICKER_FILL in "
+        f"scripts/resolve_pre2000_sponsors_v11.py and NEXT_SESSION.md next-step 2), or adjudicate "
+        f"the legacy 145 and re-pin CORE_CLASS_BASELINE deliberately - never silently.")
+else:
+    warnings.append(f"core table: {len(_class_dis)} legacy class disagreements with the master "
+                    f"(audited baseline, pending adjudication - NEXT_SESSION.md next-step 2)")
+
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows, {len(oscores)} orig scorecards, {len(t1gap)} Type-1-gap flags, "
       f"{len(exp)} label-expansion scorecards, {len(audit)} cross-check rows, "

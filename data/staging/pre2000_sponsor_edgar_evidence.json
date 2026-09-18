@@ -32,7 +32,7 @@
     "D1376",
     "D1409"
    ],
-   "venue": "NYSE (also Chicago and Pacific, per 12(b) cover)",
+   "venue": "New York Stock Exchange (primary) + Chicago Stock Exchange + Pacific Stock Exchange, all three per the FY1997 10-K 12(b) cover",
    "symbol": null,
    "citations": [
     {
@@ -41,7 +41,8 @@
      "evidence": "cover 12(b) table: 'Common Stock (Par Value $1 Per Share) - The New York Stock Exchange, Inc. / The Chicago Stock Exchange, Inc. / The Pacific Stock Exchange, Inc.'; SROS: CSX, NYSE, PCX; business section lists Parke-Davis products incl. CEREBYX and OMNICEF among 'ethical pharmaceuticals ... under trademarks and trade names such as PARKE-DAVIS'."
     }
    ],
-   "note": "Venue verified for all four decision dates (Cerebyx 1996-08-05, Lipitor 1996-12-17, Rezulin 1997-01-29, Omnicef 1997-12-04; the FY1997 10-K period covers 1996-1997). Ticker symbol (WLA) and delisting year (2000, Pfizer merger) still need a primary citation - next step: FY1999 10-K accession 0000950117-00-000720 (filed 2000-03-28) cover/Item 5 + Pfizer merger disclosure."
+   "note": "v11 second wave 2026-09-18: cover page fetched (chunk 0 of 43) - venue upgraded from 'NYSE' to the three exchanges the 12(b) table actually names (NYSE + Chicago + Pacific; NYSE kept first because it is the primary listing and because scripts/classify_listing.py keys on the leading venue token). SYMBOL STILL PENDING, and the search plan changed: Part II (which contains Item 5) is incorporated by reference to the 1997 Annual Report to Shareholders, so the trading symbol is most likely in that Annual Report exhibit inside the same submission rather than in the 10-K body - the same trap as Carter-Wallace. Next step: list the submission's 9 documents and open the Annual Report exhibit (EX-13-class) market-for-common-equity page, or fall back to the DEF 14A for the 1998-04-28 annual meeting. The v10 'expected WLA' guess remains unverified and is written to nothing. NOTE: the page-fetch tool failed immediately after this chunk (every later call returned SignatureDoesNotMatch from its internal file proxy, including for other submissions and non-EDGAR URLs), so chunks 1-42 were never retrieved.",
+   "v10_note_superseded": "Venue verified for all four decision dates (Cerebyx 1996-08-05, Lipitor 1996-12-17, Rezulin 1997-01-29, Omnicef 1997-12-04; the FY1997 10-K period covers 1996-1997). Ticker symbol (WLA) and delisting year (2000, Pfizer merger) still need a primary citation - next step: FY1999 10-K accession 0000950117-00-000720 (filed 2000-03-28) cover/Item 5 + Pfizer merger disclosure."
   },
   "pharmacia_upjohn": {
    "cik": "0000949573",
@@ -129,9 +130,14 @@
      "doc": "FY1996 Form 10-K405 (period 1996-09-30, filed 1996-12-23)",
      "url": "https://www.sec.gov/Archives/edgar/data/792977/0000950135-96-005384.txt",
      "evidence": "cover: market value 'based upon the last reported sale price of the Common Stock on The American Stock Exchange' as of December 16, 1996 (after BOTH decision dates); business section: 'The Company received U.S. Food and Drug Administration (FDA) approval to market Feridex I.V. in August 1996' (matches D1345 1996-08-30) and 'the Company received approval to market GastroMARK in the United States in December 1996' (matches D1363 1996-12-06)."
+    },
+    {
+     "doc": "UNVERIFIED POINTER - Form 8-K dated 2020-11-16 on the same CIK 792977 lineage (Advanced Magnetics Inc. -> AMAG Pharmaceuticals Inc.)",
+     "url": "https://www.sec.gov/Archives/edgar/data/792977/000110465920125941/tm2036059d2_8k.htm",
+     "evidence": "DO NOT WRITE A VALUE FROM THIS ENTRY. It was located by web search on 2026-09-18 while the page-fetch tool was down, so the document has NOT been read verbatim in full and its context is unverified; a search snippet is not a primary-source read. What the snippet says: after the Covis merger closed on 2020-11-16, 'AMAG notified The Nasdaq Global Select Market (\"NASDAQ\") of the consummation of the Merger and requested that NASDAQ (i) halt trading in the Shares, (ii) suspend trading of and delist the Shares and (iii) file with the SEC a notification of removal from listing and/or registration on Form 25'; 'NASDAQ filed the Form 25 with the SEC on November 16, 2020'; and AMAG intended to file a Form 15 terminating Section 12(g) registration. WHY IT IS NOT ENOUGH EVEN ONCE FETCHED: this ends the AMAG-on-Nasdaq line. Master rows D1345/D1363 are about the AVM-on-AMEX line, which ended earlier - EDGAR records this registrant's name change to AMAG PHARMACEUTICALS INC on 2007-07-05. The citation still needed for those rows is a Form 25 for the AMEX line or the 2007 name/symbol-change 8-K. Recorded so the pointer is not lost, and so nobody mistakes it for a delisting year for AVM."
     }
    ],
-   "note": "v11 2026-09-18: SYMBOL VERIFIED = AVM on the American Stock Exchange. This corrects two earlier assumptions: the v9 hand-off's 'ANM/AinM' and the master note's 'NASDAQ:AMAG from its 1997 IPO'. AMAG is the ticker of the renamed registrant (EDGAR name change to AMAG Pharmaceuticals 2007-07-05) and is NOT the decision-date symbol; AVM/AMEX is. Delisting year still pending a primary citation. The GastroMARK decision (1996-12-06) falls in FY1997 Q1, which this filing's Item 5 table does not cover; the cover's 1996-12-16 AMEX sale price is the contemporaneous anchor for that row.",
+   "note": "v11 2026-09-18: SYMBOL VERIFIED = AVM on the American Stock Exchange. This corrects two earlier assumptions: the v9 hand-off's 'ANM/AinM' and the master note's 'NASDAQ:AMAG from its 1997 IPO'. AMAG is the ticker of the renamed registrant (EDGAR name change to AMAG Pharmaceuticals 2007-07-05) and is NOT the decision-date symbol; AVM/AMEX is. Delisting year still pending a primary citation. The GastroMARK decision (1996-12-06) falls in FY1997 Q1, which this filing's Item 5 table does not cover; the cover's 1996-12-16 AMEX sale price is the contemporaneous anchor for that row. v11 second wave 2026-09-18: an UNVERIFIED POINTER to the end of the AMAG-on-Nasdaq line (8-K dated 2020-11-16, Form 25 filed by NASDAQ that day) was recorded in citations[] while the page-fetch tool was down. It is NOT a delisting year for AVM: the AVM-on-AMEX line ended earlier (EDGAR name change to AMAG Pharmaceuticals 2007-07-05). No value written.",
    "symbol_verbatim": "The Company's common stock is listed on the American Stock Exchange under the symbol AVM. The table below sets forth the high and low sales price of the Company's common stock on the American Stock Exchange for the fiscal quarters of 1996 and 1995.",
    "v10_note_superseded": "AMEX venue (not NASDAQ as the v9 hand-off assumed). Symbol pending (hand-off guessed 'ANM/AinM' - unverified); registrant later renamed AMAG Pharmaceuticals (EDGAR name-change 2007-07-05)."
   },
@@ -278,5 +284,10 @@
    "dupont_pharmaceuticals/dupont": "DD"
   },
   "classifier_gap_found": "scripts/classify_listing.py US_VENUES = ('NASDAQ', 'NYSE') has no AMEX entry, so classify('formerly AMEX:AVM, ...') returns NON-US LISTING ONLY for a US venue. It cannot corrupt committed classes (the script preserves them and only appends a dated note), which is why the two AMEX rows in this pass use the descriptive 'AMEX:AVM (...)' form rather than the 'formerly AMEX:...' form. Adding 'AMEX' to US_VENUES is the one-line fix; it is behaviour-preserving on the current master (verified by re-running the classifier and diffing)."
+ },
+ "v11_second_wave": {
+  "captured_utc": "2026-09-18T12:35:00Z",
+  "fetch_tool_status": "FAILED mid-pass. Warner-Lambert FY1997 10-K chunk 0 of 43 was retrieved successfully; every subsequent fetch_page call returned SignatureDoesNotMatch from the tool's internal file proxy (other chunks of the same submission, a different EDGAR submission, a non-EDGAR URL), including after a 75-second wait. web_search still worked, so this is specific to the fetch path. Consequence: no second-wave symbol or delisting-year values were written.",
+  "what_changed": "Warner-Lambert venue upgraded from plain 'NYSE' to the three exchanges its 12(b) cover names, with the incorporated-by-reference finding recorded (Item 5 lives in the 1997 Annual Report to Shareholders, so the symbol hunt must target that exhibit). One unverified pointer recorded for Advanced Magnetics with an explicit do-not-use warning. No status changed: the index is still 9 RESOLVED / 12 VENUE-VERIFIED / 1 CITATION-LOCATED / 3 ATTRIBUTION-CASE."
  }
 }
