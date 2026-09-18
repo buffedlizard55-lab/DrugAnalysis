@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Year-by-year pre-2000 audit (2000 -> 1999 -> 1998 -> 1997 -> 1996).
+"""Year-by-year pre-2000 audit (2000 -> 1985, newest first).
 
-For EVERY master row whose decision_date falls in 1996-2000 this script
+For EVERY master row whose decision_date falls in 1985-2000 this script
 re-verifies the row against three independent official FDA layers and writes
 data/pre2000_year_audit.csv (one row per master decision, links for manual
 review on every row) plus data/pre2000_year_summary.csv (per-year roll-up).
+
+v9 (2026-09-18) audited 1996-2000; v10 (2026-09-18) extended the same
+three-layer method to 1985-1995, completing the whole pre-2000 era
+(492 rows = 204 v9 + 288 v10).
 
 The three layers are:
 
@@ -13,7 +17,8 @@ The three layers are:
      1998/1999/2000: the contemporaneous CDER "NMEs Approved in <year>"
      tables, captured verbatim from FDA/Wayback into
      data/staging/fda_nme_<year>_verbatim.json (row_count pins: 36/37/27).
-     1996/1997: no year table exists (documented); FDA's official CDER
+     1985-1997: no year table exists (documented; verified for 2011-2016
+     family pages too - none carries a review column); FDA's official CDER
      "Novel Drug Approvals Compilation" (media/177921 XLSX, runner-captured
      with SHA-256) is the official enumeration, so L1 == L2 for those years.
 
@@ -22,7 +27,7 @@ The three layers are:
      applicant, Review Designation, Accelerated Approval per application.
 
   L3 openFDA Drugs@FDA (verbatim runner captures, fetch run 13)
-     1996-1999: data/raw/openfda_orig_decisions_2011_2026/decisions_<y>.json
+     1985-1999: data/raw/openfda_orig_decisions_2011_2026/decisions_<y>.json
      2000:      data/raw/openfda_approvals_2000_2010/2000.json (ORIG/AP rows
                 extracted from the full-year application payload)
      compared on: ORIG approval date, sponsor, brand, submission class.
@@ -53,8 +58,17 @@ OUT_SUMMARY = DATA / "pre2000_year_summary.csv"
 LIVE_CHECKS = DATA / "staging" / "pre2000_live_checks.json"
 COMP_XLSX = DATA / "raw" / "probe" / "fda_nme_compilation_1985_2025.xlsx"
 
-YEARS = [2000, 1999, 1998, 1997, 1996]          # audit order, newest first
+# audit order, newest first: the whole pre-2000 era (v9: 2000-1996; v10: +1985-1995)
+YEARS = [2000, 1999, 1998, 1997, 1996, 1995, 1994, 1993, 1992, 1991,
+         1990, 1989, 1988, 1987, 1986, 1985]
 YEARS_WITH_TABLE = {1998, 1999, 2000}
+# Official master year pins (every year 1985-2000; from the Compilation import
+# pinned in build_backfill_1985_1997_and_cber.py and the v7 1998 import).
+YEAR_PINS = {
+    2000: 29, 1999: 37, 1998: 36, 1997: 43, 1996: 59,
+    1995: 30, 1994: 23, 1993: 27, 1992: 29, 1991: 32,
+    1990: 24, 1989: 27, 1988: 20, 1987: 22, 1986: 23, 1985: 31,
+}
 COMPILATION_URL = "https://www.fda.gov/media/177921/download?attachment"
 YEAR_TABLE_CAPTURE = {
     1998: "https://web.archive.org/web/20051016001622/http://www.fda.gov/cder/rdmt/nmecy98.htm",
@@ -342,15 +356,37 @@ def main():
                 # the application may exist in openFDA without a submissions
                 # array (Normiflo NDA020227) or be absent entirely under every
                 # plausible stored prefix (all other rows below).
-                lc = live.get("NDA" + a) or live.get("BLA" + a) or live.get("BL" + a)
+                lc = (live.get("NDA" + a) or live.get("BLA" + a) or live.get("BL" + a)
+                       or live.get("N" + a))  # N-prefixed CBER-era PLA numbers
                 if lc and lc["result"] == "APPLICATION_PRESENT_NO_SUBMISSIONS":
                     rec["l3_openfda_match"] = "APPLICATION_PRESENT_NO_SUBMISSIONS (live check)"
                     flags.append("NOT_IN_OPENFDA_PAYLOAD - application record exists but carries no "
                                  "submissions array, so the ORIG approval date is not machine-verifiable there")
-                else:
+                elif lc and lc["result"] == "ORIG_DATE_DIFFERS":
+                    rec["l3_openfda_match"] = (f"PRESENT_ORIG_DATE_DIFFERS (openFDA ORIG-1 "
+                                               f"{lc.get('orig_date', '')}".strip() + ")")
+                    flags.append("OPENFDA_ORIG_DATE_DIFFERS - application is indexed but its ORIG-1 "
+                                 "approval date differs from the Compilation/master date (documented at "
+                                 "import; carried as MISMATCH_DATE in verification_crosscheck.csv; the "
+                                 "Compilation date is kept as official)")
+                elif lc and lc["result"] == "BRAND_ONLY_UNDER_LATER_LICENCE":
+                    rec["l3_openfda_match"] = "NUMBER_NOT_FOUND_BRAND_UNDER_LATER_LICENCE (live check)"
+                    flags.append("NOT_IN_OPENFDA_PAYLOAD - application number returns no record and the "
+                                 "brand exists only under a later, different licence (CBER-era PLA not "
+                                 "transferred to Drugs@FDA); see live-check URL for the exact records")
+                elif lc and lc["result"] == "NOT_FOUND":
                     rec["l3_openfda_match"] = "NOT_IN_OPENFDA"
                     flags.append("NOT_IN_OPENFDA_PAYLOAD (live check by application number "
                                  "and brand both return no record; FDA year table + Compilation remain the sources)")
+                elif lc:
+                    rec["l3_openfda_match"] = f"NOT_IN_YEAR_PAYLOAD ({lc['result']})"
+                    flags.append("NOT_IN_YEAR_PAYLOAD - live check verdict "
+                                 f"{lc['result']} (see {lc['query_url']}); see note")
+                else:
+                    rec["l3_openfda_match"] = "NOT_IN_OPENFDA"
+                    flags.append("NOT_IN_OPENFDA_YEAR_PAYLOAD (absent from the committed ORIG/AP "
+                                 "runner capture for the year; not yet re-checked live - see "
+                                 "data/staging/pre2000_live_checks.json)")
 
             # ---- date agreement + verdict -----------------------------------
             vals = set(dates.values())
@@ -375,7 +411,8 @@ def main():
                 rec["verdict"] = "UNRESOLVED_NEEDS_REVIEW"
 
             # ---- live spot-checks (staged verbatim captures) ----------------
-            lc = live.get("NDA" + a) or live.get("BLA" + a) or live.get("BL" + a)
+            lc = (live.get("NDA" + a) or live.get("BLA" + a) or live.get("BL" + a)
+                       or live.get("N" + a))  # N-prefixed CBER-era PLA numbers
             if lc:
                 rec["live_check"] = f"{lc['result']} ({lc['checked_utc']}; {lc['query_url']})"
 
@@ -420,11 +457,11 @@ def main():
     if len(by_id) != len(out):
         errors.append("duplicate decision_id in audit output")
     s = {r["audit_year"]: r for r in summary}
-    if s["2000"]["master_rows"] != 29: errors.append("2000 pin 29 broken")
-    if s["1999"]["master_rows"] != 37: errors.append("1999 pin 37 broken")
-    if s["1998"]["master_rows"] != 36: errors.append("1998 pin 36 broken")
-    if s["1997"]["master_rows"] != 43: errors.append("1997 pin 43 broken")
-    if s["1996"]["master_rows"] != 59: errors.append("1996 pin 59 broken")
+    for y, pin in sorted(YEAR_PINS.items(), reverse=True):
+        if s[str(y)]["master_rows"] != pin:
+            errors.append(f"{y} pin {pin} broken")
+    if sum(YEAR_PINS.values()) != len(out):
+        errors.append(f"sum of year pins {sum(YEAR_PINS.values())} != audit rows {len(out)}")
 
     print(f"audit rows written: {len(out)} -> {OUT_AUDIT.name}")
     for r in summary:
@@ -438,7 +475,9 @@ def main():
         for e in errors:
             print("  ", e)
         return 1
-    print("ASSERTIONS PASS (year pins 2000:29 1999:37 1998:36 1997:43 1996:59; coverage 204/204)")
+    print(f"ASSERTIONS PASS (year pins 2000:29 1999:37 1998:36 1997:43 1996:59 "
+          f"1995:30 1994:23 1993:27 1992:29 1991:32 1990:24 1989:27 1988:20 "
+          f"1987:22 1986:23 1985:31; coverage {len(out)}/{len(out)})")
     return 0
 
 

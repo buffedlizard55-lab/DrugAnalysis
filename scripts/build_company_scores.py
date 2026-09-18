@@ -87,7 +87,7 @@ from datetime import date
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 D = lambda n: os.path.join(ROOT, "data", n)
 
-TODAY = date(2026, 9, 12)          # dataset "as of" date, used for recency only
+TODAY = date(2026, 9, 18)          # dataset "as of" date, used for recency only
 Z = 1.96                           # 95% two-sided
 WEIGHTS = {"outcome": 30.0, "market": 25.0, "experience": 20.0,
            "pathway": 15.0, "pipeline": 10.0}

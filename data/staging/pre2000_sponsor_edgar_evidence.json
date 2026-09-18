@@ -1,0 +1,106 @@
+{
+  "description": "EDGAR primary-source evidence for pre-2000 sponsor listing resolution (v10, 2026-09-18). Every entry below was fetched live through the page-fetch tool on 2026-09-18 (UTC) from sec.gov. Quotes are verbatim from the cited filing. Purpose: verify the decision-date listing VENUE (exchange) for each high-priority pre-2000 sponsor row; ticker SYMBOLS are recorded only where the filing states them (Agouron AGPH). EDGAR full-text search covers 2001+, so period 10-Ks were located via the company-browse endpoint and fetched directly.",
+  "captured_utc": "2026-09-18T07:00:00Z",
+  "companies": {
+    "agouron_pharmaceuticals": {
+      "cik": "0000811210",
+      "rows": ["D1380"],
+      "venue": "Nasdaq National Market",
+      "symbol": "AGPH",
+      "symbol_verbatim": "The Company's common stock trades on The Nasdaq Stock Market under the symbol AGPH.",
+      "citations": [
+        {"doc": "FY1997 Form 10-K (period 1997-06-30, filed 1997-08-21)", "url": "https://www.sec.gov/Archives/edgar/data/811210/0000811210-97-000086.txt", "evidence": "cover: 'based on the closing stock price as reported by The Nasdaq Stock Market'; business section confirms 'The Company is currently marketing its first drug, VIRACEPT(R) (nelfinavir mesylate) for treatment of HIV infection.'"},
+        {"doc": "FY1998 Form 10-K (period 1998-06-30, filed 1998-08-04)", "url": "https://www.sec.gov/Archives/edgar/data/811210/0000811210-98-000015.txt", "evidence": "Item 5 verbatim symbol statement (AGPH); Item 5 quarterly price table includes Q1 1997 (high $23.125 / low $14.500) covering the 1997-03-14 Viracept decision; 'In March 1997, the Company received clearance from the United States Food and Drug Administration (FDA) to market VIRACEPT in the United States.'"}
+      ],
+      "note": "The v9 hand-off's assumed ticker 'AGRN' is WRONG per the primary source (AGRN is the modern Moderna ticker; Agouron traded as AGPH). Delisting 1999 on the Pfizer acquisition is per the lineage index; EDGAR 10-K series ends 1998-10-28, consistent."
+    },
+    "warner_lambert": {
+      "cik": "0000104669",
+      "rows": ["D1342", "D1366", "D1376", "D1409"],
+      "venue": "NYSE (also Chicago and Pacific, per 12(b) cover)",
+      "symbol": null,
+      "citations": [
+        {"doc": "FY1997 Form 10-K (period 1997-12-31, filed 1998-03-24)", "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950117-98-000602.txt", "evidence": "cover 12(b) table: 'Common Stock (Par Value $1 Per Share) - The New York Stock Exchange, Inc. / The Chicago Stock Exchange, Inc. / The Pacific Stock Exchange, Inc.'; SROS: CSX, NYSE, PCX; business section lists Parke-Davis products incl. CEREBYX and OMNICEF among 'ethical pharmaceuticals ... under trademarks and trade names such as PARKE-DAVIS'."}
+      ],
+      "note": "Venue verified for all four decision dates (Cerebyx 1996-08-05, Lipitor 1996-12-17, Rezulin 1997-01-29, Omnicef 1997-12-04; the FY1997 10-K period covers 1996-1997). Ticker symbol (WLA) and delisting year (2000, Pfizer merger) still need a primary citation - next step: FY1999 10-K accession 0000950117-00-000720 (filed 2000-03-28) cover/Item 5 + Pfizer merger disclosure."
+    },
+    "pharmacia_upjohn": {
+      "cik": "0000949573",
+      "rows": ["D1330", "D1332", "D1373", "D1382", "D1390"],
+      "venue": "NYSE",
+      "symbol": null,
+      "citations": [
+        {"doc": "FY1997 Form 10-K405 (period 1997-12-31, filed 1998-03-30)", "url": "https://www.sec.gov/Archives/edgar/data/949573/0000950124-98-001758.txt", "evidence": "cover 12(b): 'Common Stock (par value $.01) - New York Stock Exchange'; 'The Company was formed in November 1995 through the combination ... of Pharmacia Aktiebolag (Pharmacia) and The Upjohn Company (Upjohn)' - the registrant for all five decision dates (1996-06 through 1997-07)."},
+        {"doc": "FY1999 Form 10-K (period 1999-12-31, filed 2000-03-20)", "url": "https://www.sec.gov/Archives/edgar/data/949573/0000950123-00-002431.txt", "evidence": "cover 12(b): 'Common Stock (par value $.01) - New York Stock Exchange' (venue still NYSE through March 2000)."}
+      ],
+      "note": "Ticker symbol (PNU) and delisting/demerger year (2000, merged with Monsanto into Pharmacia Corp) still need a primary citation - next step: Pharmacia Corp filings 2000+ (FTS covers 2001+; e.g. 10-K for FY2000)."
+    },
+    "roberts_pharmaceutical": {
+      "cik": "0000853022",
+      "rows": ["D1347", "D1379"],
+      "venue": "NASDAQ National Market System",
+      "symbol": null,
+      "citations": [
+        {"doc": "FY1996 Form 10-K (period 1996-12-31, filed 1997-04-02)", "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-97-001485.txt", "evidence": "cover: market value 'by reference to the last sale price of the Common Stock as reported on the Automated Quotation System of the National Association of Securities Dealers, Inc., National Market System (NASDAQ National Market System)' as of March 19, 1997 (after both decision dates); Item 5: 'The Company's Common Stock is traded in the over-the-counter market on the NASDAQ National Market System' with quarterly high/low table for 1996 (covers ProAmatine 1996-09-06); MD&A mentions 'fourth quarter sales of PROAMATINE'."}
+      ],
+      "note": "Item 5 text does not state the symbol; next step: FY1997/FY1998 10-K Item 5 or a 424B prospectus cover for the symbol (expected RPI) + delisting year (1999, Shire acquisition per lineage index)."
+    },
+    "cytogen": {
+      "cik": "0000725058",
+      "rows": ["D1357", "D1381"],
+      "venue": "NASDAQ National Market",
+      "symbol": null,
+      "citations": [
+        {"doc": "FY1996 Form 10-K (period 1996-12-31, filed 1997-03-24)", "url": "https://www.sec.gov/Archives/edgar/data/725058/0000950109-97-002390.txt", "evidence": "cover: market value 'based on $ 5.125 per share, the last reported sale price on the NASDAQ National Market on that date' (Feb 28, 1997); business section: 'ProstaScint(TM) ... received U.S. Food and Drug Administration (FDA) licensure to market on October 28, 1996' (matches master D1357) and describes the Quadramet NDA and DuPont Merck partnership."}
+      ],
+      "note": "Cytogen's 10-K also confirms CEA-Scan competitor context (Immunomedics). Symbol (CYTO) + delisting year pending; Cytogen filings continue to 2008 per browse."
+    },
+    "advanced_magnetics": {
+      "cik": "0000792977",
+      "rows": ["D1345", "D1363"],
+      "venue": "American Stock Exchange (AMEX)",
+      "symbol": null,
+      "citations": [
+        {"doc": "FY1996 Form 10-K405 (period 1996-09-30, filed 1996-12-23)", "url": "https://www.sec.gov/Archives/edgar/data/792977/0000950135-96-005384.txt", "evidence": "cover: market value 'based upon the last reported sale price of the Common Stock on The American Stock Exchange' as of December 16, 1996 (after BOTH decision dates); business section: 'The Company received U.S. Food and Drug Administration (FDA) approval to market Feridex I.V. in August 1996' (matches D1345 1996-08-30) and 'the Company received approval to market GastroMARK in the United States in December 1996' (matches D1363 1996-12-06)."}
+      ],
+      "note": "AMEX venue (not NASDAQ as the v9 hand-off assumed). Symbol pending (hand-off guessed 'ANM/AinM' - unverified); registrant later renamed AMAG Pharmaceuticals (EDGAR name-change 2007-07-05)."
+    },
+    "immunomedics": {
+      "cik": "0000722830",
+      "rows": ["D1338"],
+      "venue": "Nasdaq National Market",
+      "symbol": null,
+      "citations": [
+        {"doc": "FY1996 Form 10-K (period 1996-06-30, filed 1996-09-30)", "url": "https://www.sec.gov/Archives/edgar/data/722830/0000950109-96-006351.txt", "evidence": "cover: market value 'computed by reference to the last reported sale price for the registrant's common stock on the Nasdaq National Market' (Sept 23, 1996); business section: 'On June 28, 1996, the FDA licensed CEA-Scan(R) for use with standard diagnostic modalities (SDM) for the detection of recurrent and/or metastatic colorectal cancer.' (exactly matches master D1338 1996-06-28)."}
+      ],
+      "note": "Symbol (IMMU) + delisting year (2020, Gilead acquisition) pending primary citation."
+    },
+    "gensia_sicor": {
+      "cik": "0000807873",
+      "rows": ["D1394"],
+      "venue": "Nasdaq National Market",
+      "symbol": null,
+      "citations": [
+        {"doc": "FY1997 Form 10-K (period 1997-12-31, filed 1998-03-31)", "url": "https://www.sec.gov/Archives/edgar/data/807873/0001012870-98-000824.txt", "evidence": "cover: market value 'based on the last sale price as reported on the Nasdaq National Market' (March 23, 1998); registrant 'GENSIA SICOR INC. (Formerly Gensia, Inc)' - the listed entity at the 1997-09-12 decision date (renamed from Gensia, Inc. in 1997 after the Rakepoll/Sicor acquisition)."}
+      ],
+      "note": "Symbol (GNSA expected) + delisting year (Sicor Inc renamed 1999; Teva acquired Sicor 2003) pending primary citation."
+    },
+    "neurex": {
+      "cik": "0000884065",
+      "rows": ["D1396"],
+      "venue": "NASDAQ National Market System",
+      "symbol": null,
+      "citations": [
+        {"doc": "FY1997 Form 10-K (period 1997-12-31, filed 1998-03-30)", "url": "https://www.sec.gov/Archives/edgar/data/884065/0000884065-98-000003.txt", "evidence": "cover 12(b) table: 'Common Stock, $ .01 par value - NASDAQ National Market System'; business section: 'On September 24, 1997, the Food and Drug Administration (FDA) approved for commercialization, Neurex' first product, CORLOPAM' (FDA's own records - year table and Drugs@FDA ORIG - date the approval 1997-09-23, which the master keeps; the 10-K's Sept-24 wording is noted as a sponsor-side imprecision, not a source conflict)."}
+      ],
+      "note": "Symbol (NXRX expected) + delisting year (1998, Elan acquisition) pending primary citation."
+    },
+    "citations_located_not_yet_fetched": {
+      "ivax_corp_baker_norton": {"cik": "0000772197", "rows": ["D1353"], "next_doc": "FY1996 10-K405 filed 1997-03-31, accession 0000950170-97-000359 (https://www.sec.gov/Archives/edgar/data/772197/0000950170-97-000359.txt) - Elmiron 1996-09-26 decision date falls in FY1996; extract Item 5 venue+symbol (IVAX venues varied by year: AMEX/NYSE - must verify per period)."},
+      "carter_wallace": {"cik": "0000018000", "rows": ["D1359"], "next_doc": "FY1997 10-K405 (FYE 1997-03-31) filed 1997-06-17, accession 0000890163-97-000093 (https://www.sec.gov/Archives/edgar/data/18000/0000890163-97-000093.txt) - covers the 1996-11-01 Astelin decision (Wallace Laboratories was the Carter-Wallace division); expected NYSE:CAR - must verify."},
+      "block_drug": {"cik": "0000012654", "rows": ["D1365"], "next_doc": "FY1997 10-K (FYE 1997-03-31) filed 1997-06-30, accession 0000012654-97-000004 (https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt) - covers the 1996-12-17 Aphthasol decision; expected NASDAQ:BLOCA - must verify."},
+      "athena_neurosciences": {"rows": ["D1362"], "note": "SPECIAL CASE: Elan Corporation completed its acquisition of Athena Neurosciences in May 1996, BEFORE the 1996-11-27 Zanaflex decision date, so there was no independent Athena listing at decision date. Resolution requires attributing to parent Elan plc (ADS, NYSE:ELN expected) via Elan's 20-F for FY1996 - a different registrant and form type than the rest of this worklist."},
+      "dupont_pharmaceuticals": {"rows": ["D1017", "D652"], "note": "SPECIAL CASE: DuPont Merck JV reorganized mid-1998 (Merck exited; DuPont Pharmaceuticals wholly owned by E.I. du Pont de Nemours from mid-1998). Decision-date listed equity for both Sustiva (1998-09-17) and Innohep (2000-07-14) is parent E.I. du Pont de Nemours (NYSE:DD expected) - resolution requires DuPont's FY1998/FY2000 10-K (pharmaceutical segment discussion)."}
+    }
+  }
+}

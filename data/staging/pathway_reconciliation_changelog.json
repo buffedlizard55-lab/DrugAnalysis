@@ -1,0 +1,664 @@
+{
+ "generated": "2026-09-18",
+ "sources": [
+  "FDA CDER Novel Drug Approvals Compilation 1985-2025 (media/177921)",
+  "FDA New Drug Therapy Approvals 2024 report (media/184967) - captured 2026-09-18",
+  "FDA New Drug Therapy Approvals 2025 report (media/190705) - captured 2026-09-18",
+  "openFDA Drugs@FDA committed runner payloads (ORIG-1 review_priority)",
+  "Archived FDA year tables 2011/2015/2016 (no review column - verified 2026-09-18)"
+ ],
+ "n_changes": 64,
+ "groups": {
+  "G1a_2024_standard_to_priority": 11,
+  "G1b_2024_priority_to_standard": 3,
+  "G1c_2025_standard_to_priority": 10,
+  "G1d_2025_vanrafia_to_standard_accel": 1,
+  "G1e_2011_2016_priority_to_standard": 10,
+  "G2_accelerated_only_to_priority_accel": 9,
+  "G3_accelerated_token_appended": 8,
+  "G4_voucher_note_only": 10,
+  "G5_qualified_priority_note_only": 2
+ },
+ "changes": [
+  {
+   "decision_id": "D002",
+   "group": "G1a",
+   "brand": "Exblifep",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D011",
+   "group": "G1a",
+   "brand": "Zevtera",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D012",
+   "group": "G1a",
+   "brand": "Lumisight",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D022",
+   "group": "G1a",
+   "brand": "Kisunla",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D025",
+   "group": "G1a",
+   "brand": "Aqneursa",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D028",
+   "group": "G1a",
+   "brand": "Lazcluze",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D031",
+   "group": "G1a",
+   "brand": "Nemluvio",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D032",
+   "group": "G1a",
+   "brand": "Yorvipath",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D036",
+   "group": "G1a",
+   "brand": "Orlynvah",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D038",
+   "group": "G1a",
+   "brand": "Itovebi",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D042",
+   "group": "G1a",
+   "brand": "Alhemo",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D004",
+   "group": "G1b",
+   "brand": "Tevimbra",
+   "year": "2024",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D013",
+   "group": "G1b",
+   "brand": "Anktiva",
+   "year": "2024",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D017",
+   "group": "G1b",
+   "brand": "Rytelo",
+   "year": "2024",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D047",
+   "group": "G1c",
+   "brand": "Romvimza",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D049",
+   "group": "G1c",
+   "brand": "Blujepa",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D056",
+   "group": "G1c",
+   "brand": "Ibtrozi",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D058",
+   "group": "G1c",
+   "brand": "Nuzolvence",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D062",
+   "group": "G1c",
+   "brand": "Jascayd",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D066",
+   "group": "G1c",
+   "brand": "Forzinity",
+   "year": "2025",
+   "pathway_before": "Standard; Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D070",
+   "group": "G1c",
+   "brand": "Brinsupri",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D071",
+   "group": "G1c",
+   "brand": "Hernexeos",
+   "year": "2025",
+   "pathway_before": "Standard; Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D078",
+   "group": "G1c",
+   "brand": "Komzifti",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D086",
+   "group": "G1c",
+   "brand": "Yartemlea",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Priority",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D050",
+   "group": "G1d",
+   "brand": "Vanrafia",
+   "year": "2025",
+   "pathway_before": "Priority; Accelerated",
+   "pathway_after": "Standard; Accelerated",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D451",
+   "group": "G1e",
+   "brand": "Kengreal",
+   "year": "2015",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D573",
+   "group": "G1e",
+   "brand": "Tafinlar",
+   "year": "2013",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D574",
+   "group": "G1e",
+   "brand": "Mekinist",
+   "year": "2013",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D583",
+   "group": "G1e",
+   "brand": "Anthim",
+   "year": "2016",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D588",
+   "group": "G1e",
+   "brand": "Bosulif",
+   "year": "2012",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D598",
+   "group": "G1e",
+   "brand": "Xarelto",
+   "year": "2011",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D607",
+   "group": "G1e",
+   "brand": "Brilinta",
+   "year": "2011",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D611",
+   "group": "G1e",
+   "brand": "Kyprolis",
+   "year": "2012",
+   "pathway_before": "Priority; Accelerated",
+   "pathway_after": "Standard; Accelerated",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D621",
+   "group": "G1e",
+   "brand": "Xeljanz",
+   "year": "2012",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D633",
+   "group": "G1e",
+   "brand": "Gattex",
+   "year": "2012",
+   "pathway_before": "Priority",
+   "pathway_after": "Standard",
+   "compilation_review": "Standard",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D279",
+   "group": "G2",
+   "brand": "Balversa",
+   "year": "2019",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D280",
+   "group": "G2",
+   "brand": "Brukinsa",
+   "year": "2019",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D284",
+   "group": "G2",
+   "brand": "Enhertu",
+   "year": "2019",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D290",
+   "group": "G2",
+   "brand": "Oxbryta",
+   "year": "2019",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D291",
+   "group": "G2",
+   "brand": "Padcev",
+   "year": "2019",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D293",
+   "group": "G2",
+   "brand": "Polivy",
+   "year": "2019",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D300",
+   "group": "G2",
+   "brand": "Xpovio",
+   "year": "2019",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D376",
+   "group": "G2",
+   "brand": "Trodelvy",
+   "year": "2020",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D506",
+   "group": "G2",
+   "brand": "Alunbrig",
+   "year": "2017",
+   "pathway_before": "Accelerated",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes"
+  },
+  {
+   "decision_id": "D332",
+   "group": "G3",
+   "brand": "Copiktra",
+   "year": "2018",
+   "pathway_before": "Priority",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes (indication [B] only)"
+  },
+  {
+   "decision_id": "D402",
+   "group": "G3",
+   "brand": "Rozlytrek",
+   "year": "2019",
+   "pathway_before": "Priority",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes (indication [B] only)"
+  },
+  {
+   "decision_id": "D209",
+   "group": "G3",
+   "brand": "Scemblix",
+   "year": "2021",
+   "pathway_before": "Priority; Breakthrough",
+   "pathway_after": "Priority; Breakthrough; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes (indication [A] only)"
+  },
+  {
+   "decision_id": "D551",
+   "group": "G3",
+   "brand": "Zydelig",
+   "year": "2014",
+   "pathway_before": "Priority",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority (indication [A] only)",
+   "compilation_accelerated": "Yes (indications [B] and [C] only)"
+  },
+  {
+   "decision_id": "D780",
+   "group": "G3",
+   "brand": "Sutent",
+   "year": "2006",
+   "pathway_before": "Priority",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes (indication [B] only)"
+  },
+  {
+   "decision_id": "D789",
+   "group": "G3",
+   "brand": "Sprycel",
+   "year": "2006",
+   "pathway_before": "Priority",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority",
+   "compilation_accelerated": "Yes (indication [A] only)"
+  },
+  {
+   "decision_id": "D975",
+   "group": "G3",
+   "brand": "Synercid IV",
+   "year": "1999",
+   "pathway_before": "Priority",
+   "pathway_after": "Priority; Accelerated",
+   "compilation_review": "Priority (indication [A] only)",
+   "compilation_accelerated": "Yes (indication [A] only)"
+  },
+  {
+   "decision_id": "D067",
+   "group": "G3",
+   "brand": "Keytruda Qlex",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard; Accelerated",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "Yes (indication [GG] only)"
+  },
+  {
+   "decision_id": "D288",
+   "group": "G4",
+   "brand": "Mayzent",
+   "year": "2019",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D112",
+   "group": "G4",
+   "brand": "Vabysmo",
+   "year": "2022",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D122",
+   "group": "G4",
+   "brand": "Mounjaro",
+   "year": "2022",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D135",
+   "group": "G4",
+   "brand": "Imjudo",
+   "year": "2022",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D161",
+   "group": "G4",
+   "brand": "Veozah",
+   "year": "2023",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D198",
+   "group": "G4",
+   "brand": "Fabhalta",
+   "year": "2023",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D041",
+   "group": "G4",
+   "brand": "Alyftrek",
+   "year": "2024",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D057",
+   "group": "G4",
+   "brand": "Enflonsia",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D063",
+   "group": "G4",
+   "brand": "Rhapsido",
+   "year": "2025",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D067",
+   "group": "G4",
+   "brand": "Keytruda Qlex",
+   "year": "2025",
+   "pathway_before": "Standard; Accelerated",
+   "pathway_after": "Standard; Accelerated",
+   "compilation_review": "Priority (used priority review voucher)",
+   "compilation_accelerated": "Yes (indication [GG] only)"
+  },
+  {
+   "decision_id": "D783",
+   "group": "G5",
+   "brand": "Eraxis",
+   "year": "2006",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (indication [B] only)",
+   "compilation_accelerated": "No"
+  },
+  {
+   "decision_id": "D860",
+   "group": "G5",
+   "brand": "Sabril",
+   "year": "2009",
+   "pathway_before": "Standard",
+   "pathway_after": "Standard",
+   "compilation_review": "Priority (indication [B] only)",
+   "compilation_accelerated": "No"
+  }
+ ]
+}

@@ -1614,15 +1614,16 @@
     "event_source": "D531"
    },
    {
-    "id": "AKAO_2018-06-26",
+    "id": "AKAO_2018-06-25",
     "url": "https://query1.finance.yahoo.com/v8/finance/chart/AKAO?period1=1528934400&period2=1531094399&interval=1d&includePrePost=false",
     "out": "AKAO_2018-06-26.json",
     "ticker": "AKAO",
-    "decision_date": "2018-06-26",
+    "decision_date": "2018-06-25",
     "decision_type": "Approval",
     "expected_company": "Achaogen, Inc.",
     "source": "Yahoo Finance chart API",
-    "event_source": "D529"
+    "event_source": "D529",
+    "note": "re-keyed v10 2026-09-18 from 2018-06-26 (pre-correction date; master D529 date corrected to 2018-06-25 on 2026-09-17); recorded 404 failure preserved verbatim"
    },
    {
     "id": "GWPH_2018-06-25",
@@ -7222,6 +7223,18 @@
     "expected_company": "Telix Pharmaceuticals",
     "source": "Yahoo Finance chart API",
     "event_source": "2026 Pixclara"
+   },
+   {
+    "id": "ORPH_1998-04-09",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORPH?period1=891216000&period2=893894400&interval=1d&includePrePost=false",
+    "out": "ORPH_1998-04-09.json",
+    "ticker": "ORPH",
+    "decision_date": "1998-04-09",
+    "decision_type": "Approval",
+    "expected_company": "Orphan Medical (acquired by Jazz 2005)",
+    "source": "Yahoo Finance chart API",
+    "event_source": "D1000",
+    "note": "added v10 2026-09-18: event missed by the original job build; fetched in-session (delisted-symbol error, recorded verbatim)"
    }
   ]
  }

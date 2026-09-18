@@ -1,0 +1,39 @@
+{
+  "description": "Verbatim official priority-review and accelerated-approval drug lists from FDA CDER's annual 'New Drug Therapy Approvals' reports, captured live through the page-fetch tool on 2026-09-18 (UTC) for the v10 pathway reconciliation. These lists are the FDA's own published determination of which novel drugs were designated priority review; both reports explicitly exclude priority-review-voucher redemptions. Each list below is transcribed exactly as printed in the report PDF (semicolon-separated names).",
+  "captured_utc": "2026-09-18T05:30:00Z",
+  "reports": {
+    "2024": {
+      "report_title": "Advancing Health Through Innovation: New Drug Therapy Approvals 2024",
+      "report_url": "https://www.fda.gov/media/184967/download?attachment",
+      "published": "January 2025",
+      "novel_drug_count": 50,
+      "priority_review_count": 28,
+      "priority_review_list_verbatim": "Alhemo, Aqneursa, Bizengri, Crenessity, Duvyzat, Exblifep, Imdelltra, Iqirvo, Itovebi, Kisunla, Lazcluze, Livdelzi, Lumisight, Miplyffa, Nemluvio, Niktimvo, Ojemda, Orlynvah, Revuforj, Rezdiffra, Tryngolza, Voranigo, Vyloy, Winrevair, Xolremdi, Yorvipath, Zevtera, Ziihera",
+      "priority_review_intro_verbatim": "In 2024, 28 of the 50 novel drugs approved (56%) were designated priority review.",
+      "voucher_exclusion_verbatim": "(In some instances, sponsors may redeem a priority review voucher under CDER's priority review voucher program. Such drugs are not included in the list below, and do not meet priority review criteria.)",
+      "accelerated_approval_count": 7,
+      "accelerated_approval_list_verbatim": "Bizengri, Imdelltra, Iqirvo, Livdelzi, Ojemda, Rezdiffra, Ziihera",
+      "appendix_a_note": "Appendix A (CDER's Novel Approvals of 2024) carries columns Approval Date / Proprietary Name / Active Ingredient(s) / FDA-approved use / Dosage Form - no review-classification column (verified in the same capture)."
+    },
+    "2025": {
+      "report_title": "Advancing Health Through Innovation: New Drug Therapy Approvals 2025",
+      "report_url": "https://www.fda.gov/media/190705/download",
+      "published": "January 2026",
+      "novel_drug_count": 46,
+      "priority_review_count": 21,
+      "priority_review_list_verbatim": "Avmapki Fakzynja; Blujepa; Brinsupri; Emrelis; Forzinity; Gomekli; Hernexeos; Hyrnuo; Ibtrozi; Imaavy; Jascayd; Journavx; Komzifti; Kygevvi; Lynozyfic; Modeyso; Nuzolvence; Romvimza; Voyxact; Yartemlea; Zegfrovy",
+      "priority_review_intro_verbatim": "In 2025, 21 of the 46 novel drugs approved (46%) were designated priority review.",
+      "voucher_exclusion_verbatim": "(Priority review for new drugs and biologics may be granted in other circumstances, such as when sponsors redeem a priority review voucher under CDER's priority review voucher program. Such drugs are not included in the list below, and do not meet priority review criteria.)",
+      "accelerated_approval_count": 11,
+      "accelerated_approval_list_verbatim": "Avmapki Fakzynja; Emrelis; Forzinity; Hernexeos; Hyrnuo; Keytruda Qlex; Lynozyfic; Modeyso; Vanrafia; Voyxact; Zegfrovy"
+    }
+  },
+  "year_table_review_column_checks": {
+    "description": "Verification performed 2026-09-18 that the archived FDA year tables cited by the 2011-2016 conflict rows carry NO review-classification column, so the hand-entered 'Priority' on those rows had no column support in their cited source.",
+    "checks": [
+      {"year": 2011, "url": "https://web.archive.org/web/20120119181217/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/DrugInnovation/ucm285554.htm", "columns_verbatim": "Drug Name | Active Ingredient | Date | What it's used for", "review_column": false},
+      {"year": 2015, "url": "https://web.archive.org/web/20160103131336/http://www.fda.gov/drugs/developmentapprovalprocess/druginnovation/ucm430302.htm", "columns_verbatim": "No. | Drug Name | Active Ingredient | Date | FDA-approved use on approval date", "review_column": false},
+      {"year": 2016, "url": "https://web.archive.org/web/20240518001917/https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2016", "columns_verbatim": "No. | Drug Name | Active Ingredient | Approval Date | FDA-approved use", "review_column": false}
+    ]
+  }
+}
