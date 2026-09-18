@@ -1,6 +1,6 @@
 # Remaining work for the next session (written 2026-09-18 v14)
 
-The v13 branch was pushed and merged to `main` as PR #27 (`dd2ce59`). v14 is committed locally as `322fffa` on `arena/01a0b62c-druganalysis`; it still needs to be pushed, reviewed in a PR, and merged. The repository root is `/home/user/DrugAnalysis`; do not switch branches.
+The v13 branch was pushed and merged to `main` as PR #27 (`dd2ce59`). v14 was committed as `34a636e`, merged by PR #28, and is now on `main` at merge commit `784e3e0`. The repository root is `/home/user/DrugAnalysis`; do not switch branches.
 
 ## What v14 shipped
 
@@ -40,7 +40,7 @@ The warnings are the existing manual-review baseline. The v14 builder was run tw
 
 ## Next work, in priority order
 
-1. **Push and ship v14.** Push commit `322fffa` to `arena/01a0b62c-druganalysis`, open a PR to `main`, wait for checks, and merge. The final local review already ran `python3 -m py_compile`, `python3 scripts/validate_data.py`, `node --check assets/app.js`, idempotence tests, mutation tests, and a static preview smoke test. Do not alter the already merged v13 PR.
+1. **Begin the next audit pass.** v14 is already shipped (PR #28). Before making further edits, confirm `python3 scripts/validate_data.py` still passes on the merged base. Keep every subsequent change on `arena/01a0b62c-druganalysis`, then open/merge a new PR.
 2. **Remaining pre-2000 ticker resolution (7 VENUE-VERIFIED rows).** Use the sandbox page-fetch tool only for SEC primary text; the Actions EDGAR route returns HTTP 403 and must not be retried:
    - Warner-Lambert ×4: FY1998 10-K, 1998 DEF 14A, FY1999 10-K (CIK 104669; find canonical accession through the company browse page). The remembered WLA symbol is not evidence.
    - Roberts ×2: FY1997 10-K accession `0000950130-98-001619`, proxies, and 1999 DEFM14A `0000950130-99-006712`.
@@ -54,7 +54,7 @@ The warnings are the existing manual-review baseline. The v14 builder was run tw
 ## Important repository facts
 
 - Branch: `arena/01a0b62c-druganalysis`; origin: `https://github.com/buffedlizard55-lab/DrugAnalysis.git`.
-- v13 is on `main` via PR #27. v14 commit `322fffa` is local on `arena/01a0b62c-druganalysis` and is not yet pushed.
+- v13 is on `main` via PR #27; v14 is on `main` via PR #28 (`784e3e0`). The branch remains fixed at `arena/01a0b62c-druganalysis` for the next pass.
 - `data/fda_decisions_master.csv`: 1,427 rows, 1985–2026; do not merge the separate pre-1985 table into the master without a deliberate schema/scorecard decision.
 - Derived tables were not changed by v14 because they consume the 1985–2026 master, not the separate historical pre-1985 table.
 - Existing data-fetch convention: bulk openFDA/ctgov/Yahoo jobs run through GitHub Actions; SEC EDGAR must use the sandbox page-fetch tool, one canonical URL at a time.
