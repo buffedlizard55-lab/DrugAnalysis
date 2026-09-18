@@ -1533,7 +1533,7 @@ Promise.all([
       c('source_openfda', 'openFDA', { render: r => linkify(r.source_openfda, 'API record'), detail: r => r.source_openfda })
     ],
     searchFields: ['decision_id', 'drug_brand', 'company_name', 'application_number', 'verdict', 'review_flag'],
-    searchPlaceholder: 'Search 204 audited rows by drug, company, ID…',
+    searchPlaceholder: 'Search 492 audited rows by drug, company, ID…',
     sort: { key: 'audit_year', dir: 'desc' }, pageSize: 25,
     filters: [
       { key: 'verdict', label: 'All verdicts', field: 'verdict' },

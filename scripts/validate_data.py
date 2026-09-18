@@ -5,7 +5,7 @@ This does not infer missing facts. It only rejects malformed rows and reports
 records that require human review, so new entries cannot silently enter the
 published tables with guessed values.
 """
-import csv, re, sys
+import csv, json, re, sys
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
@@ -319,17 +319,18 @@ for i, r in enumerate(clin_scores, 2):
 
 # ---- 2026-09-18 session: pre-2000 audit, pathway consistency, dead-URL ban,
 # ---- snapshot integrity, sponsor index -------------------------------------------------
-# 1. Pre-2000 year-by-year audit file: 204 rows, 1:1 with the master window,
-#    every verdict backed by >=2 official layers, every row carrying links.
+# 1. Pre-2000 year-by-year audit file: 492 rows (v9 204 + v10 288), 1:1 with
+#    the master window, every verdict backed by >=2 official layers, every row
+#    carrying links.
 p2k = read("pre2000_year_audit.csv")
-_expected_ids = {r["decision_id"] for r in master if r["decision_date"][:4] in
-                 {"1996", "1997", "1998", "1999", "2000"}}
+_PRE2000_YEARS = {str(y) for y in range(1985, 2001)}
+_expected_ids = {r["decision_id"] for r in master if r["decision_date"][:4] in _PRE2000_YEARS}
 _got_ids = {r["decision_id"] for r in p2k}
 if _expected_ids != _got_ids:
-    errors.append(f"pre2000_year_audit: decision_id set != master 1996-2000 window "
+    errors.append(f"pre2000_year_audit: decision_id set != master 1985-2000 window "
                   f"(missing {len(_expected_ids - _got_ids)}, extra {len(_got_ids - _expected_ids)})")
-if len(p2k) != 204:
-    errors.append(f"pre2000_year_audit: expected 204 rows, got {len(p2k)}")
+if len(p2k) != 492:
+    errors.append(f"pre2000_year_audit: expected 492 rows, got {len(p2k)}")
 _bad_verdicts = [r["decision_id"] for r in p2k if not r["verdict"].startswith("VERIFIED")]
 if _bad_verdicts:
     errors.append(f"pre2000_year_audit: {len(_bad_verdicts)} rows not VERIFIED*: {_bad_verdicts[:5]}")
@@ -338,9 +339,19 @@ _no_links = [r["decision_id"] for r in p2k
 if _no_links:
     errors.append(f"pre2000_year_audit: rows missing official links: {_no_links[:5]}")
 _year_pins = Counter(r["audit_year"] for r in p2k)
-for y, n in (("2000", 29), ("1999", 37), ("1998", 36), ("1997", 43), ("1996", 59)):
+for y, n in (("2000", 29), ("1999", 37), ("1998", 36), ("1997", 43), ("1996", 59),
+             ("1995", 30), ("1994", 23), ("1993", 27), ("1992", 29), ("1991", 32),
+             ("1990", 24), ("1989", 27), ("1988", 20), ("1987", 22), ("1986", 23),
+             ("1985", 31)):
     if _year_pins.get(y) != n:
         errors.append(f"pre2000_year_audit: year {y} pin {n} broken (got {_year_pins.get(y)})")
+# v10 live-check refinement: every 1985-1995 absence flag must cite a live check
+# (no generic 'not yet re-checked live' flags may remain).
+_unchecked = [r["decision_id"] for r in p2k
+              if "not yet re-checked live" in r["review_flag"]]
+if _unchecked:
+    errors.append(f"pre2000_year_audit: {len(_unchecked)} rows still lack a live re-check: "
+                  f"{_unchecked[:5]}")
 
 # 2. The dead 2019 Wayback wrapper must never come back.
 _back = [r["decision_id"] for r in master if "20190207172014" in r["source_url_1"]]
@@ -358,6 +369,28 @@ _blanks_pre2026 = [r["decision_id"] for r in master
                    if not r["review_pathway"].strip() and r["decision_date"][:4] != "2026"]
 if _blanks_pre2026:
     errors.append(f"master: blank pathway on non-2026 rows (no Compilation row): {_blanks_pre2026[:5]}")
+
+# 3b. v10 pathway reconciliation: the 35 PATHWAY_CONFLICT flags are closed;
+#     every touched row carries a dated note; the changelog matches the master.
+_pwconf = [r["decision_id"] for r in master if "PATHWAY_CONFLICT" in r["notes"]]
+if _pwconf:
+    errors.append(f"master: {len(_pwconf)} PATHWAY_CONFLICT notes remain (reconciliation regressed): {_pwconf[:5]}")
+_pwnotes = Counter()
+for r in master:
+    for tag in ("PATHWAY_RECONCILED", "PATHWAY_CORRECTED", "PATHWAY_ENRICHED", "PATHWAY_NOTE"):
+        if f"{tag} 2026-09-18" in r["notes"]:
+            _pwnotes[tag] += 1
+if sum(_pwnotes.values()) != 64:
+    errors.append(f"master: expected 64 dated pathway notes (v10 reconciliation), "
+                  f"found {sum(_pwnotes.values())}: {dict(_pwnotes)}")
+_pwc_log = ROOT / "data" / "staging" / "pathway_reconciliation_changelog.json"
+if not _pwc_log.exists():
+    errors.append("pathway_reconciliation_changelog.json missing")
+else:
+    import json as _json
+    _log = _json.load(open(_pwc_log))
+    if _log.get("n_changes") != 64:
+        errors.append(f"changelog n_changes {_log.get('n_changes')} != 64")
 
 # 4. Snapshot table integrity: unique (ticker, decision_date); the 1998-2000
 #    event ingestion landed (1998>=13, 1999>=14, 2000>=9 rows incl. recorded
@@ -377,16 +410,37 @@ for y, lo in (("1998", 13), ("1999", 14), ("2000", 9)):
                       "(the 1998-2000 event ingestion must stay in the table)")
 
 # 5. Pre-2000 sponsor-resolution index: 67 rows, defined statuses, links present.
+#    v10: the 25 REVIEW (recoverable) rows were processed - 18 VENUE-VERIFIED,
+#    1 RESOLVED (Agouron AGPH), 3 CITATION-LOCATED, 3 ATTRIBUTION-CASE.
 _sp = read("pre2000_sponsor_resolution_index.csv")
 if len(_sp) != 67:
     errors.append(f"pre2000_sponsor_resolution_index: expected 67 rows, got {len(_sp)}")
 _statuses = {"REVIEW (recoverable)", "REVIEW (unresolved)", "REVIEW (foreign listing)",
-             "NO-EQUITY (documented)", "REVIEW"}
+             "NO-EQUITY (documented)", "REVIEW",
+             "VENUE-VERIFIED (ticker pending)", "RESOLVED (venue+ticker per period 10-K)",
+             "CITATION-LOCATED (fetch the period 10-K and extract venue+ticker)",
+             "ATTRIBUTION-CASE (parent/subsidiary)"}
 for i, r in enumerate(_sp, 2):
     if r["status"] not in _statuses:
         errors.append(f"pre2000_sponsor_resolution_index:{i}: unknown status {r['status']!r}")
     if not r["sec_edgar_company_search"].strip() or not r["drugsatfda_link"].strip():
         errors.append(f"pre2000_sponsor_resolution_index:{i}: blank research link")
+_recoverable = [r["decision_id"] for r in _sp if r["status"] == "REVIEW (recoverable)"]
+if _recoverable:
+    errors.append(f"pre2000_sponsor_resolution_index: {len(_recoverable)} rows still "
+                  f"'REVIEW (recoverable)' after the v10 pass: {_recoverable[:5]}")
+# v10 EDGAR evidence file must exist and cover 19 master rows
+if not (ROOT / "data" / "staging" / "pre2000_sponsor_edgar_evidence.json").exists():
+    errors.append("pre2000_sponsor_edgar_evidence.json missing")
+else:
+    _ev = json.load(open(ROOT / "data" / "staging" / "pre2000_sponsor_edgar_evidence.json"))
+    _ev_rows = {d for c in _ev["companies"].values() for d in c.get("rows", [])}
+    _tagged = {r["decision_id"] for r in master if "SPONSOR-RESOLVED 2026-09-18" in r["notes"]}
+    if _ev_rows != _tagged:
+        errors.append(f"EDGAR evidence rows {_ev_rows} != master SPONSOR-RESOLVED rows {_tagged}")
+    _agouron = [r for r in master if r["decision_id"] == "D1380"]
+    if _agouron and "AGPH" not in _agouron[0]["exchange"]:
+        errors.append("D1380 Agouron exchange must carry the 10-K-verified AGPH ticker")
 
 # 6. Era analysis: 16 rows (1985-2000); approvals match the master counts.
 _era = read("pre2000_era_analysis.csv")
