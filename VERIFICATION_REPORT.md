@@ -1,3 +1,41 @@
+# Verification Report — v16 Pre-1985 Backward Extension 1980–1982 (2026-09-18)
+
+**Branch:** `arena/01a0b6b2-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors, 1,745 warnings** (1,681 v15 baseline + the 199 new rows' documented flags; every warning is an intended manual-review pointer, never an invented value).
+
+## v16 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| 1980–1982 backward extension | **+199 rows** in `data/fda_original_non_nme_decisions.csv` (73 in 1980, 48 in 1981, 78 in 1982) → 3,142 rows spanning 1980–2026 across 47 years; earliest published original now 1980-01-15. Class mix of the 199 published rows (FDA's own submission_class_code, copied verbatim): TYPE 5 ×94, TYPE 3 ×61, class-blank ×31, TYPE 4 ×8, TYPE 2 ×3, UNKNOWN ×1, TYPE 2/3 ×1; kind split NDA 198 / BLA 1 (BLA018781 Humulin N). All 57 Type 1/1-4 NMEs of 1980–1982 remain owned by the curated pre-1985 table | `scripts/build_original_non_nme.py` run log; `data/fda_orig_year_register.csv` (47 years; counters 82/73, 71/48, 103/78) |
+| Verbatim payload cross-check | All 199 new rows asserted field-by-field (application, date, class, priority, current holder) against `data/raw/openfda_orig_decisions_1980_1984/decisions_{1980,1981,1982}.json`; builder aborts on any mismatch; byte-idempotent across reruns (verified) | validator gates; two consecutive builder runs byte-identical |
+| Ownership discipline | A payload Type 1/1-4 application missing from `data/pre1985_fda_decisions.csv` aborts the build; no 1980–1982 non-Type-1 application was already tracked there (verified: 0 collisions); furosemide/Trandate pins unchanged; every pre-1985 row carries the PRE-1985 current-holder disclaimer (v15 wording preserved byte-identical for 1983/1984 rows) | `scripts/validate_data.py` v15/v16 section |
+| Zero-regression diff | All 2,943 pre-v16 rows diffed against the pre-change snapshot: **zero content changes, zero removed rows**; year register changed only in the two 1983/1984 notes rows (audit-file rename) | snapshot diff; `data/staging/pre1985_extension_report_v16.json` |
+| Focus-year enumeration audit (six years) | **517 rows** — 1980: 82 (78 TRACKED_VERIFIED / 4 TRACKED_REVIEW), 1981: 71 (60/11), 1982: 103 (86/17), 1983: 70 (44/26), 1984: 109 (92/17), 1985: 82 (79/3); zero untracked (builder aborts); **all 517 date agreements YES**; per-year verdict splits pinned in builder + validator; all 32 new review rows are the documented openFDA no-class/no-priority condition (76 class-blank / 73 priority-blank payloads across 517) | `data/focus_years_1980_1985_audit.csv`, `scripts/build_focus_year_audit_1980_1985.py` (renamed from the v15 builder; v15 261-row file superseded and removed) |
+| Boundary cases verified | 1980 payload = 82 decisions (9 Type 1 in pre-1985 table: Viroptic, Meclomen, Vansil, Cytadren, Ludiomil, Spectrobid, Procinonide, Metimydil, Mitycan…); 1982 Humulin R BLA018780 & Chymodiacetin BLA018663 are Type 1 pre-1985-table rows; Humulin N BLA018781 (Type 3) is the extension row; Transderm-Nitro NDA020144 carries payload class UNKNOWN → published verbatim with FLAGGED: no submission_class_code | committed payloads; `data/staging/pre1985_extension_report_v16.json` |
+| Scorecard consistency | `company_original_approval_scorecard.csv` rebuilt — 100 listed issuers, 24 tickers gained 1980–1982 attributions, 0 removed; `company_clinical_trial_scorecard.csv` rebuilt (421 rows); validator cross-checks scorecard totals against the expanded table | rebuilt outputs; validator PASS |
+| Untouched invariants | 1,427-row master unchanged; 91-row pre-1985 table byte-identical across the v14-builder rerun; CRL/supplement/CT.gov tables unchanged; the v15-era validator gates all still pass | `git diff --stat` |
+
+## Method notes and limitations (v16)
+
+- The extension covers **only what the committed FDA payloads enumerate**: original NDA/BLA ORIG/AP decisions for 1980–1982, excluding Type 1/1-4 NMEs (owned by the pre-1985 table). It is an application-level enumeration, not a claim about contemporaneous annual approval statistics.
+- openFDA sponsor fields for pre-1985 applications name the **current** Drugs@FDA holder (e.g. Hospira on 1980 IV-solution originals). Rows never present that holder as the historical applicant; tickers resolve only via the conservative exact-match registry, everything else stays `UNRESOLVED`.
+- FDA publishes no submission class on 76 and no review priority on 73 of the 517 audited payload rows (1980: 4, 1981: 11, 1982: 17 new review flags). Flagged, not guessed.
+- Backward extension **beyond 1980** requires a new committed payload fetch (the `openfda_orig_decisions_1980_1984` job starts at 1980); the sandbox has no outbound network, so a pre-1980 block needs the GitHub Actions fetch-job route first.
+
+## v16 files
+
+- `scripts/build_original_non_nme.py` — FIRST_YEAR=1980, year-parameterized pre-1985 disclaimer (v15 wording preserved for 1983/1984), five-year enumeration gates.
+- `scripts/build_focus_year_audit_1980_1985.py` — six-year read-only enumeration auditor with pinned verdict splits (aborts on any untracked or changed payload).
+- `data/fda_original_non_nme_decisions.csv` — 3,142 rows (1980–2026).
+- `data/fda_orig_year_register.csv` — 47 year rows.
+- `data/focus_years_1980_1985_audit.csv` — 517 audited decisions (replaces `focus_years_1983_1985_audit.csv`).
+- `data/pre1985_era_analysis.csv` — 1983/1984/1985 rows re-pointed to the six-year audit (text only).
+- `data/company_original_approval_scorecard.csv`, `data/company_clinical_trial_scorecard.csv` — rebuilt.
+- `scripts/validate_data.py` — v16 gates; `index.html`, `assets/app.js` — site text, audit grid source, 47-year coverage chart.
+
+---
+
 # Verification Report — v15 Focus Years 1983/1984/1985 (2026-09-18)
 
 **Branch:** `arena/01a0b6a2-druganalysis`

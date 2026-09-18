@@ -352,5 +352,104 @@
     "evidence": "Market Prices of Common Stock and Dividends [1997 Annual Report p.48]: 1996 Q4 High $80 / Low $61 7/8; 1997 Q1 High $93 1/4 / Low $69 1/2 - quarterly ranges only, no ticker symbol stated anywhere in the submission."
    }
   ]
+ },
+ "v16_update": {
+  "captured_utc": "2026-09-18",
+  "route": "sandbox page-fetch tool, one canonical sec.gov URL at a time (Actions runner still blocked per v12 finding - not retried)",
+  "warner_lambert": {
+   "rows": [
+    "D1342",
+    "D1366",
+    "D1376",
+    "D1409"
+   ],
+   "resolution": "NYSE: WLA at decision dates 1996-08-05 / 1996-12-17 / 1997-01-29 / 1997-12-04",
+   "quotes": [
+    {
+     "doc": "FY1997 Form 10-K (filed 1998-03-24), Item 5",
+     "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950117-98-000602.txt",
+     "evidence": "The principal market on which the Company's stock is traded is the New York Stock Exchange, but the stock is also listed and traded on the following domestic and international stock exchanges: Chicago, Pacific, London and Zurich.",
+     "note": "decision-period venue; no symbol stated anywhere in this filing (v11 read all 43 chunks; Item 5 re-read 2026-09-18)"
+    },
+    {
+     "doc": "DEFA14A soliciting material (filed 1999-12-22, acc 0000950172-99-001807)",
+     "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950172-99-001807.txt",
+     "evidence": "Warner-Lambert Company (NYSE: WLA) announced today that it has filed consent solicitation revocation materials with the Securities and Exchange Commission (SEC)",
+     "note": "the only SEC-stated symbol found for the issuer; line-wrapped in the raw text as 'NYSE: / WLA'"
+    },
+    {
+     "doc": "DEF 14A 1999-03-08 (acc 0000950117-99-000459) incl. PERFORMANCE GRAPH p.22",
+     "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950117-99-000459.txt",
+     "evidence": "negative: no ticker symbol stated (performance graph labels the line 'Warner-Lambert' only)"
+    }
+   ]
+  },
+  "roberts_pharmaceutical": {
+   "rows": [
+    "D1347",
+    "D1379"
+   ],
+   "resolution": "NASDAQ National Market: RPCX at both decision dates (1996-09-06, 1997-01-29); AMEX: RPC after 1997-05-22",
+   "quotes": [
+    {
+     "doc": "Form S-3 prospectus cover (filed 1996-10-09, acc 0000950130-96-003846)",
+     "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-96-003846.txt",
+     "evidence": "The Common Stock of the Company is traded on the Nasdaq National Market under the symbol \"RPCX.\" On October 4, 1996, the last reported sale price of the Company's Common Stock, as reported on the Nasdaq National Market, was $18-1/8 per share."
+    },
+    {
+     "doc": "Form S-3/A Amendment No. 1 (filed 1996-11-06, effective 1996-11-07, acc 0000950130-96-004222)",
+     "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-96-004222.txt",
+     "evidence": "The Common Stock of the Company is traded on the Nasdaq National Market under the symbol \"RPCX.\" On November 1, 1996, the last reported sale price of the Company's Common Stock, as reported on the Nasdaq National Market, was $14-1/16 per share."
+    },
+    {
+     "doc": "FY1996 Form 10-K (filed 1997-04-02), Item 5",
+     "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-97-001485.txt",
+     "evidence": "...traded over-the-counter market on the NASDAQ National Market System and was held by approximately 900 shareholders of record as of March 19, 1997. ... high and low last sale prices for the Company's Common Stock, as reported on the NASDAQ National Market System.",
+     "note": "venue only; no symbol in Item 5 (chunks 9-13 read)"
+    },
+    {
+     "doc": "FY1997 Form 10-K (filed 1998-03-31), Item 5",
+     "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-98-001619.txt",
+     "evidence": "The Company's Common Stock is traded on the American Stock Exchange and was held by approximately 900 shareholders of record as of March 20, 1998. ... as reported on the NASDAQ National Market System in 1996 and from January 1, 1997 through May 21, 1997 and as reported by the American Stock Exchange from May 22, 1997 through December 31, 1997",
+     "note": "pins the NASDAQ->AMEX transfer: both decision dates are NASDAQ-era"
+    },
+    {
+     "doc": "DEFM14A merger proxy (filed 1999-11-23, acc 0000950130-99-006712), p.1",
+     "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-99-006712.txt",
+     "evidence": "Roberts common stock is listed and traded on the American Stock Exchange under the symbol \"RPC.\" The Shire ordinary shares are listed and traded on the London Stock Exchange Limited under the symbol \"SHP.L.\" The Shire American depositary shares are listed and traded on the Nasdaq National Market under the symbol \"SHPGY.\"",
+     "note": "documents the AMEX-era symbol and the Shire acquisition lineage"
+    }
+   ],
+   "handoff_correction": "the v13 NEXT_SESSION assumption 'expected NASDAQ:BLOCA / ROBE' is wrong for Roberts: the SEC-stated NASDAQ-era symbol is RPCX (S-3 1996-10-09 and S-3/A 1996-11-06), not ROBE"
+  },
+  "block_drug": {
+   "rows": [
+    "D1365"
+   ],
+   "resolution": "DOCUMENTED NEGATIVE - no exchange listing, no SEC-stated ticker symbol; OTC inter-dealer quotes only; ticker stays blank",
+   "quotes": [
+    {
+     "doc": "FY1997 Form 10-K (filed 1997-06-30, acc 0000012654-97-000004), cover",
+     "url": "https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt",
+     "evidence": "Securities registered pursuant to Section 12(b) of the Act: Title of Each Class None / Name of each exchange on which registered None ; Section 12(g): 'Class A Common Stock - $.10 par value'"
+    },
+    {
+     "doc": "same 10-K, Item 5",
+     "url": "https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt",
+     "evidence": "These are high and low bid quotes and reflect inter-dealer prices without retail mark-up, mark-down or commission and may not necessarily represent actual transactions. Holders: 'Common Stock, Class A (non-voting) 507 / Common Stock, Class B (voting) 5'"
+    },
+    {
+     "doc": "same 10-K, Item 1 Business",
+     "url": "https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt",
+     "evidence": "In December, 1996, the Company received Food and Drug Administration (FDA) approval for Aphthasol, a new chemical entity for the treatment of aphthous ulcers, commonly known as canker sores.",
+     "note": "the FDA approval is confirmed verbatim in the period annual report"
+    },
+    {
+     "doc": "EDGAR company-browse negative checks 2026-09-18",
+     "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000012654&type=DEF&dateb=20020101&owner=include&count=20",
+     "evidence": "no DEF 14A/14C proxy and no 424 prospectus filings exist for CIK 0000012654 (lists empty); 10-K/10-Q are the only period filings - no SEC document states a ticker symbol"
+    }
+   ]
+  }
  }
 }

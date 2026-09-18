@@ -1,0 +1,40 @@
+{
+  "version": "v16",
+  "generated_utc": "2026-09-18",
+  "method": "1980-1982 backward extension of data/fda_original_non_nme_decisions.csv, built verbatim from the committed openFDA Drugs@FDA ORIG/AP payloads (data/raw/openfda_orig_decisions_1980_1984/decisions_{1980,1981,1982}.json, manifest SHA-256 pinned). Identical year-by-year treatment to v15's 1983/1984 pass: FIRST_YEAR=1980, pre-1985 Type 1/1-4 ownership stays with pre1985_fda_decisions.csv (builder aborts on a miss), per-row verbatim payload cross-check in validate_data.py, focus-year audit extended to all six years 1980-1985.",
+  "payload_enumeration": {
+    "1980": {"raw_orig_ap": 82, "type1_type14": 9, "already_in_pre1985_table": 9, "non_nme_published": 73, "multi_orig_records": 0, "duplicate_keys": 0},
+    "1981": {"raw_orig_ap": 71, "type1_type14": 23, "already_in_pre1985_table": 23, "non_nme_published": 48, "multi_orig_records": 0, "duplicate_keys": 0},
+    "1982": {"raw_orig_ap": 103, "type1_type14": 25, "already_in_pre1985_table": 25, "non_nme_published": 78, "multi_orig_records": 0, "duplicate_keys": 0}
+  },
+  "new_rows_total": 199,
+  "final_table": {"rows": 3142, "span": "1980-2026", "earliest_decision": "1980-01-15", "years": 47},
+  "boundary_cases_checked": {
+    "humulin_1982": "BLA018780 (Humulin R, Type 1) and BLA018663 (Chymodiacetin, Type 1) are pre-1985-table rows; only Humulin N BLA018781 (Type 3) is published in the non-NME extension.",
+    "transderm_nitro_1981": "NDA020144 (1981-10-19) carries submission_class_code UNKNOWN in the committed payload; published verbatim with FLAGGED: openFDA published no submission_class_code.",
+    "furosemide_trandate_pins": "NDA018413/NDA018716 exclusion pins unchanged (1983/1984 rows); no 1980-1982 non-Type-1 application is tracked in the pre-1985 table (verified: non_nme_in_pre1985_table = 0 for all three years)."
+  },
+  "focus_year_audit": {
+    "file": "data/focus_years_1980_1985_audit.csv",
+    "rows": 517,
+    "per_year": {"1980": [82, 78, 4], "1981": [71, 60, 11], "1982": [103, 86, 17], "1983": [70, 44, 26], "1984": [109, 92, 17], "1985": [82, 79, 3]},
+    "note": "per_year values are [total, TRACKED_VERIFIED, TRACKED_REVIEW]; splits pinned in the builder (PINNED_VERDICT_SPLITS) and validator.",
+    "date_agreement": "517/517 YES",
+    "data_condition_flags": "76 payload rows publish no submission_class_code; 73 publish no review_priority (73 missing both). All flags are documented data conditions, never guesses.",
+    "superseded_file": "data/focus_years_1983_1985_audit.csv (v15, 261 rows) removed; script renamed scripts/build_focus_year_audit_1980_1985.py"
+  },
+  "diff_vs_pre_change_snapshot": {
+    "existing_rows_changed": 0,
+    "existing_rows_removed": 0,
+    "note": "All 2,943 rows of the v15 table (1983-2026) are byte-identical after the v16 rebuild; the v15 pre-1985 note wording is preserved verbatim for the 1983/1984 rows.",
+    "orig_scorecard": "100 issuers (24 ticker rows gained 1980-1982 attributions; 0 removed)",
+    "clinical_trial_scorecard": "421 rows rebuilt"
+  },
+  "validator": "PASS: 0 errors, 1745 warnings (intended manual-review baseline; +64 from the new rows' documented flags)",
+  "limitations": [
+    "openFDA sponsor_name on pre-1985 rows is the CURRENT Drugs@FDA application holder; never asserted as the historical applicant or a period ticker.",
+    "FDA publishes no submission class and/or review priority on 76 of the 517 audited payload rows (32 new in 1980-1982); flagged, not guessed.",
+    "No independent official contemporaneous annual NME table was located for 1980-1982; the era CSV still labels the Type-1 counts as application-level enumerations.",
+    "The 1980 payload's 82 decisions include early IV-solution/medical-gas Type 5 originals (e.g. Abbott/Hospira IV containers, 1980-01-15); they are real FDA decisions but are flagged so they are never scored as biotech clinical-trial conversions."
+  ]
+}

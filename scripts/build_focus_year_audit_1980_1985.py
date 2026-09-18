@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Build data/focus_years_1983_1985_audit.csv — the 1983/1984/1985
-year-by-year FDA original-approval enumeration audit (v15, 2026-09-18).
+"""Build data/focus_years_1980_1985_audit.csv — the 1980-1985
+year-by-year FDA original-approval enumeration audit (v16, 2026-09-18;
+v15 covered 1983-1985 and this builder replaced it when coverage grew
+to the six focus years).
 
 Purpose
 -------
-The project's focus years are 1983, 1984, and 1985. This builder enumerates
-EVERY original (ORIG/AP) NDA/BLA approval recorded in the committed openFDA
-Drugs@FDA payloads for those three years — 70 + 109 + 82 = 261 decisions —
-and proves that each one is tracked in exactly one project table:
+The project's focus years are 1980, 1981, 1982, 1983, 1984, and 1985.
+This builder enumerates EVERY original (ORIG/AP) NDA/BLA approval recorded
+in the committed openFDA Drugs@FDA payloads for those six years —
+82 + 71 + 103 + 70 + 109 + 82 = 517 decisions — and proves that each one
+is tracked in exactly one project table:
 
   pre1985_fda_decisions.csv          pre-1985 NME table (v13/v14 verified rows)
   fda_original_non_nme_decisions.csv non-Type-1 originals (v15 includes 1983-1984)
@@ -51,10 +54,23 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 RAW_PRE = DATA / "raw" / "openfda_orig_decisions_1980_1984"
 RAW_MAIN = DATA / "raw" / "openfda_orig_decisions_2011_2026"
-OUT = DATA / "focus_years_1983_1985_audit.csv"
+OUT = DATA / "focus_years_1980_1985_audit.csv"
 
-FOCUS_YEARS = (1983, 1984, 1985)
-EXPECTED_TOTALS = {1983: 70, 1984: 109, 1985: 82}
+FOCUS_YEARS = (1980, 1981, 1982, 1983, 1984, 1985)
+EXPECTED_TOTALS = {1980: 82, 1981: 71, 1982: 103, 1983: 70, 1984: 109, 1985: 82}
+# Pinned (VERIFIED, REVIEW) verdict splits, asserted after the audit is built.
+# All flags behind these splits are documented data conditions of the committed
+# payloads (missing submission_class_code / review_priority), never guesses.
+# A change here means a project table or payload changed — re-verify, then
+# re-pin deliberately together with validate_data.py.
+PINNED_VERDICT_SPLITS = {
+    1980: (78, 4),
+    1981: (60, 11),
+    1982: (86, 17),
+    1983: (44, 26),
+    1984: (92, 17),
+    1985: (79, 3),
+}
 
 APPL_RE = re.compile(
     r"(?:NDA|BLA|ANDA)\s*-?\s*(\d{5,6})"
@@ -337,13 +353,20 @@ def main() -> int:
 
     if untracked:
         raise SystemExit(
-            "UNTRACKED payload decisions in the 1983/1984/1985 focus years — the "
+            "UNTRACKED payload decisions in the 1980-1985 focus years — the "
             "enumeration claim would be false: " + ", ".join(untracked)
         )
     for year in FOCUS_YEARS:
         c = per_year[year]
         if c["total"] != EXPECTED_TOTALS[year] or c["TRACKED_VERIFIED"] + c["TRACKED_REVIEW"] != c["total"]:
             raise SystemExit(f"{year}: audit totals wrong: {dict(c)}")
+        _v, _r = PINNED_VERDICT_SPLITS[year]
+        if c["TRACKED_VERIFIED"] != _v or c["TRACKED_REVIEW"] != _r:
+            raise SystemExit(
+                f"{year}: verdict split changed to {c['TRACKED_VERIFIED']}V/{c['TRACKED_REVIEW']}R "
+                f"(pinned {_v}V/{_r}R). A project table or payload changed — re-verify the "
+                "underlying rows, then update PINNED_VERDICT_SPLITS and validate_data.py together."
+            )
 
     with OUT.open("w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
