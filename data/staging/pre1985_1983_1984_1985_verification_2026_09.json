@@ -1,0 +1,100 @@
+{
+  "generated_utc": "2026-09-19T04:21:16.010246Z",
+  "task": "Deep verification for focus years 1983, 1984, 1985 \u2014 line-by-line official sources, no hallucinations",
+  "official_series_source": "https://www.fda.gov/about-fda/histories-fda-regulated-products/summary-nda-approvals-receipts-1938-present",
+  "official_series_sha256": "0186e137650da407976fb8a0c29169e8efcd5d6a71472b6652c71ab2be25480b",
+  "compilation_source": "https://www.fda.gov/media/177921/download?attachment (CDER NME Compilation 1985-2025)",
+  "compilation_local_sha256": "0dd3e4683901e3b8c41ee6bd0f54bac1c33eaae95f1fae8679e6b3b0b45502cd",
+  "payloads": {
+    "1983": {
+      "path": "/home/user/DrugAnalysis/data/raw/openfda_orig_decisions_1980_1984/decisions_1983.json",
+      "sha256": "582ba513f7718d812c0b7a659bb94e1dc32185c6f0e83d01f741f84f8b9cf925",
+      "count": 70
+    },
+    "1984": {
+      "path": "/home/user/DrugAnalysis/data/raw/openfda_orig_decisions_1980_1984/decisions_1984.json",
+      "sha256": "de19bf78406a859bb1259413c626ae1dbfec383f3953d6ae3efe77e18c264dc5",
+      "count": 109
+    },
+    "1985": {
+      "path": "/home/user/DrugAnalysis/data/raw/openfda_orig_decisions_2011_2026/decisions_1985.json",
+      "sha256": "367a1d90eff57e495c7520c61531d1fc756f0029de92050134cd0bd35aaec648",
+      "count": 82
+    }
+  },
+  "year_summary": {
+    "1983": {
+      "official_nmes": 14,
+      "project_pre1985_rows": 14,
+      "project_type1_rows": 13,
+      "payload_total": 70,
+      "payload_type1": 13,
+      "payload_blank": 25,
+      "delta_nme_comparable_vs_official": -1,
+      "verdict": "PROJECT_SHORT_FLAGGED -1 (furosemide boundary row accounts for 14th row, NME-comparable 13)",
+      "next_source": "CDER Offices of Drug Evaluation Statistical Report typescript 1989 pp.152-199 (FDA History Office) or contemporaneous FDA annual report"
+    },
+    "1984": {
+      "official_nmes": 22,
+      "project_pre1985_rows": 20,
+      "project_type1_rows": 19,
+      "payload_total": 109,
+      "payload_type1": 19,
+      "payload_blank": 17,
+      "delta_nme_comparable_vs_official": -3,
+      "verdict": "PROJECT_SHORT_FLAGGED -3 (blank-class rows are legacy duplicative, not NMEs; missing apps are payload-invisible)",
+      "next_source": "CDER Offices of Drug Evaluation Statistical Report typescript 1989 pp.152-199"
+    },
+    "1985": {
+      "official_nmes": 30,
+      "project_master_rows": 31,
+      "payload_total": 82,
+      "payload_type1": 27,
+      "payload_invisible_apps": [
+        "NDA018949 Seldane (terfenadine)",
+        "NDA019107 Protropin (somatrem)",
+        "NDA019215 Femstat (butoconazole)",
+        "NDA018217 Suprol (suprofen)"
+      ],
+      "compilation_rows": 31,
+      "delta_project_vs_official": 1,
+      "verdict": "RECONCILED_WITH_CANDIDATE +1 (Protropin biologic candidate; Compilation counts new biologics, official NME series excludes biologics pre-2004 transfer)",
+      "tambocor_conflict": "D1040 Tambocor NDA018830: Compilation Priority vs Drugs@FDA STANDARD \u2014 third STANDARD corroboration via live capture V17-C01, conflict flagged, human review PDF read required",
+      "next_source": "1989 CDER statistical typescript plus Compilation data dictionary (media/177920) and CDER error-report CDER.NMENewBiologicApprovals@fda.hhs.gov"
+    }
+  },
+  "irregularities": [
+    {
+      "id": "PRE85-001",
+      "year": 1983,
+      "issue": "FDA official series 14 NMEs vs project 13 Type1/1-4 + 1 furosemide non-NME boundary row (NDA018413, molecule first approved 1968-03-20 TYPE 3 per openFDA). Blank-class inventory (26 rows) are legacy duplicative (9 ingredients: BETAMETHASONE VALERATE, BUPIVACAINE HYDROCHLORIDE, etc.) verified via furosemide probe V17-C11/C12.",
+      "flag": "DO NOT infer missing NMEs from blank-class fields; missing apps are payload-invisible (class proven for 1985)."
+    },
+    {
+      "id": "PRE85-002",
+      "year": 1984,
+      "issue": "FDA official series 22 NMEs vs project 19 Type1/1-4 + 1 boundary row. 17 blank-class payload rows (9 ingredients: ALLOPURINOL, BETAMETHASONE DIPROPIONATE, etc.) are legacy duplicative. Shortfall -3 sits in applications absent from Drugs@FDA ORIG/AP payload.",
+      "flag": "OPEN_GAP_SIZED"
+    },
+    {
+      "id": "PRE85-003",
+      "year": 1985,
+      "issue": "Tambocor NDA018830 designation conflict: Drugs@FDA STANDARD (third corroboration V17-C01, live capture 2026-09-19 ORIG-1 10/31/1985 Type1 STANDARD) vs Compilation Priority (V17-C10 verbatim 'Priority'). Both values retained, conflict flagged.",
+      "flag": "OPEN_HUMAN_ADJUDICATION \u2014 human browser read of https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf required; automated fetch HTTP 500 (V17-C09)."
+    },
+    {
+      "id": "PRE85-004",
+      "year": 1985,
+      "issue": "Compilation 31 vs official 30 (+1). Protropin (somatrem, recombinant hGH) candidate biologic; workbook NDA/BLA column types all 31 as NDA, no comment field, so cannot separate via workbook alone. Baros Effervescent NDA018509 verified Type1 STANDARD 1985-08-07 (V17-C08) rules it out as +1.",
+      "flag": "RECONCILED_WITH_CANDIDATE \u2014 candidate, not determination"
+    },
+    {
+      "id": "PRE85-005",
+      "year": 1983,
+      "issue": "NDA022046 lineage artifact \u2014 tracked as irregularity, no payload evidence dates or resolves lineage.",
+      "flag": "OPEN_HUMAN_ADJUDICATION"
+    }
+  ],
+  "verification_method": "Every row copied verbatim from committed openFDA payloads or FDA Compilation; Drugs@FDA links constructed from application numbers; openFDA query URLs replayable; SHA-256 manifests for all payloads; no ticker/company/historical applicant asserted from current holder (disclaimer per pre1985_fda_decisions.csv).",
+  "no_hallucinations_statement": "No values guessed. Blank beats guessed. All counts pinned against official FDA History Office tabulation. Tambocor conflict preserved both ways. Furosemide boundary proven via 1968-03-20 ORIG-1 TYPE 3 record (V17-C11)."
+}

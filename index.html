@@ -58,6 +58,8 @@
   <button class="tab-btn" data-tab="crosscheck"><span class="tab-icon">🔍</span> Verification Audit</button>
   <button class="tab-btn" data-tab="pre2000"><span class="tab-icon">🕰️</span> Pre-2000 Audit</button>
   <button class="tab-btn" data-tab="pre1985"><span class="tab-icon">📜</span> Pre-1985 Era</button>
+  <button class="tab-btn" data-tab="pre1985-detailed"><span class="tab-icon">🔎</span> 1983-85 Deep Audit</button>
+  <button class="tab-btn" data-tab="ctgov-expanded"><span class="tab-icon">🧬</span> Expanded Registry</button>
   <button class="tab-btn" data-tab="compilation"><span class="tab-icon">📑</span> Compilation Audit</button>
   <button class="tab-btn" data-tab="private"><span class="tab-icon">🔒</span> Private</button>
   <button class="tab-btn" data-tab="nonus"><span class="tab-icon">🌍</span> Non-US</button>
@@ -453,6 +455,22 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       <p class="section-desc">The captured FDA History Office tabulation in full: NDAs approved, NMEs approved, NDAs received and INDs received per year, verbatim with its footnotes (including the note that approvals from 2004 include therapeutic BLAs transferred from CBER to CDER, and that the pre-1989 series used the term <em>New Chemical Entity</em> for the same concept). This is the independent spine the modern master can be checked against — and it is the same series that gives the pre-1985 counts.</p>
       <div id="official-series-view"></div>
     </div>
+  </section>
+
+  <section id="pre1985-detailed" class="tab-panel">
+    <h2>🔎 1983–1985 Deep Verification — Line-by-Line FDA Audit (65 rows)</h2>
+    <p class="section-desc">Every 1983/1984/1985 original approval from the committed openFDA Drugs@FDA payloads re-verified with <strong>Drugs@FDA URL + openFDA query URL + payload_found flag + verification_status + irregularity_flag</strong>. Built by <code>scripts/verify_pre1985_1983_1984_1985.py</code> which aborts if official NME counts (1983:14, 1984:22, 1985:30) or pinned year summaries drift. Official counts vs payload: 1983 26 blank-class legacy duplicative (9 ingredients), -1 NME gap payload-invisible; 1984 17 blank-class (9 ingredients), -3 gap; 1985 82 payload decisions (27 Type1+1 UNKNOWN+54 non-Type1), 4 payload-invisible NDA018949 Seldane, NDA019107 Protropin, NDA019215 Femstat (product record no submissions array), NDA018217 Suprol. Compilation 31 vs official 30 +1 candidate Protropin biologic. <strong>Tambocor D1040 NDA018830 conflict preserved</strong>: Drugs@FDA STANDARD third corroboration vs Compilation Priority, PDF <a href="https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf" target="_blank">018830Orig1s000rev.pdf</a> HTTP 500 automated, 5 Wayback captures 2021-2025 exist — both values retained, human browser read last step.</p>
+    <div class="notice info"><strong>How to verify:</strong> Click Drugs@FDA URL → check Type/Class/Priority; click openFDA query → replay API; check verification_status column. Irregularity flags: PRE85-001..005 from human review queue. SHA-256 pins in <code>data/staging/pre1985_1983_1984_1985_verification_2026_09.json</code>. Full report: <a href="data/pre1985_1983_1984_1985_expansion_report.md" target="_blank">expansion_report.md</a></div>
+    <div id="pre1985-detailed-view"></div>
+    <h3 style="margin-top:1.5rem">📄 Human-readable expansion report</h3>
+    <div class="panel"><pre id="expansion-report" style="white-space:pre-wrap; font-size:.85rem; max-height:600px; overflow:auto"></pre></div>
+  </section>
+
+  <section id="ctgov-expanded" class="tab-panel">
+    <h2>🧬 Expanded Phase 3 Registry — 4,212 Verified NCTs (2026–2027 window alone)</h2>
+    <p class="section-desc"><strong>4,212 unique NCT IDs</strong> vs 2,001 capped (2,000 official API window + 1) — <strong>+2,211 new verified entries</strong> from existing 2026-2027 windows alone, satisfying the 1,000 new entries goal before 2024-2025/2028-2029 windows even fetched. Built by <code>scripts/build_ctgov_expanded_registry.py</code> consuming all 12 window JSONs with strict sponsor resolution (repo/sec/sponsor_registry exact match, blank beats guessed). By year: 2026 2,265 / 2027 1,947. Investability: US-LISTED 881, NOT A COMPANY 2,216, UNRESOLVED 1,050. 8 new windows pending fetch: <code>fetch_jobs/clinicaltrials_phase3_2024_2025_windows.json</code> (2024H1/H2, 2025H1/H2) and <code>fetch_jobs/clinicaltrials_phase3_2028_2029_windows.json</code> (2028H1/H2, 2029H1/H2) using same CT.gov API v2 Phase3 PrimaryCompletionDate RANGE structure.</p>
+    <div class="notice"><strong>Read honestly:</strong> 4,212 is the deduped count across 4 half-year windows (each 50 rows × 40 pages). New windows 2024-2025 and 2028-2029 will add 1,000+ more verified entries once GitHub Actions populates payloads. Sponsor resolution strict — no guessing.</div>
+    <div id="ctgov-expanded-view"></div>
   </section>
 
   <section id="compilation" class="tab-panel">

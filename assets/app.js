@@ -1106,8 +1106,10 @@ Promise.all([
   loadCSV('data/pre1985_nme_gap_analysis.csv').then(x => x.records).catch(() => []),
   loadCSV('data/pre1985_primary_captures_index.csv').then(x => x.records).catch(() => []),
   loadCSV('data/fda_official_series_crosswalk.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/fda_official_year_series.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries]) => {
+  loadCSV('data/fda_official_year_series.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1985_1983_1984_1985_detailed_audit.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/clinical_trials_phase3_registry_expanded.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries, pre1985Detailed, ctgovExpanded]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
@@ -1117,6 +1119,7 @@ Promise.all([
   overview.pre1985Era = pre1985Era; overview.pre1985Decisions = pre1985Decisions;
   overview.nmeGap = nmeGap; overview.v17Captures = v17Captures;
   overview.officialCrosswalk = officialCrosswalk; overview.officialSeries = officialSeries;
+  overview.pre1985Detailed = pre1985Detailed; overview.ctgovExpanded = ctgovExpanded;
 
   /* Defensive rendering: one failing panel must never blank the whole site
      again (a missing function here silently killed every table after it
@@ -1771,6 +1774,69 @@ Promise.all([
     ]
   });
 
+  /* v18: 1983-1985 detailed audit (65 rows, line-by-line Drugs@FDA + openFDA query + verification_status + irregularity_flag) */
+  DataTable({
+    id: 'pre1985-detailed', mount: '#pre1985-detailed-view', csv: 'data/pre1985_1983_1984_1985_detailed_audit.csv',
+    columns: [
+      c('audit_id', 'Audit ID', { core: true, render: r => `<code>${escapeHtml(r.audit_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('application_number', 'Application', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('drug_brand', 'Brand', { core: true, render: r => `<strong>${escapeHtml(r.drug_brand || '—')}</strong>` }),
+      c('drug_generic', 'Generic', { trunc: true }),
+      c('decision_date', 'Decision date', { core: true, render: r => `<span class="num-strong\">${escapeHtml(r.decision_date)}</span>` }),
+      c('chemical_type_code', 'Class', { core: true, render: r => r.chemical_type_code ? `<span class="badge info">${escapeHtml(r.chemical_type_code)}</span>` : '<span class="badge neutral">not published</span>' }),
+      c('review_priority', 'Priority', { core: true, render: r => r.review_priority ? `<span class="badge ${/PRIORITY/i.test(r.review_priority) ? 'verified' : 'neutral'}">${escapeHtml(r.review_priority)}</span>` : '<span class="badge neutral">not published</span>' }),
+      c('drugsatfda_url', 'Drugs@FDA', { core: true, render: r => linkify(r.drugsatfda_url, 'record'), detail: r => r.drugsatfda_url }),
+      c('openfda_query_url', 'openFDA query', { core: true, render: r => linkify(r.openfda_query_url, 'API'), detail: r => r.openfda_query_url }),
+      c('payload_found', 'Payload?', { core: true, render: r => r.payload_found === 'YES' ? '<span class="badge verified">YES</span>' : `<span class="badge flagged">${escapeHtml(r.payload_found)}</span>` }),
+      c('verification_status', 'Verification', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('irregularity_flag', 'Irregularity', { core: true, render: r => r.irregularity_flag ? `<span class="badge flagged">${escapeHtml(r.irregularity_flag)}</span>` : '' }),
+      c('official_nme_count_for_year', 'Official NME count', { num: true }),
+      c('compilation_rows_for_year', 'Compilation rows', { num: true }),
+      c('payload_decisions_for_year', 'Payload decisions', { num: true }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['audit_id', 'application_number', 'drug_brand', 'drug_generic', 'verification_status', 'irregularity_flag'],
+    searchPlaceholder: 'Search 1983-1985 deep audit by drug, application, flag…',
+    sort: { key: 'audit_id', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'verdict', label: 'All verification', field: 'verification_status' },
+      { key: 'irreg', label: 'All irregularities', field: 'irregularity_flag' }
+    ]
+  });
+
+  /* v18: expanded CT.gov registry 4212 unique NCTs */
+  DataTable({
+    id: 'ctgov-expanded', mount: '#ctgov-expanded-view', csv: 'data/clinical_trials_phase3_registry_expanded.csv',
+    columns: [
+      c('nct_id', 'NCT', { core: true, render: r => `<code>${escapeHtml(r.nct_id)}</code>` }),
+      c('primary_completion_date', 'Primary completion', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.primary_completion_date)}</span>` }),
+      c('window_source', 'Window', { core: true }),
+      c('lead_sponsor', 'Lead sponsor', { core: true, trunc: true }),
+      c('ticker', 'Ticker', { core: true, render: r => r.ticker ? `<strong>${escapeHtml(r.ticker)}</strong>` : '<span class="badge neutral">—</span>' }),
+      c('conditions', 'Condition', { core: true, trunc: true }),
+      c('drug_interventions', 'Drug(s)', { core: true, trunc: true }),
+      c('primary_outcome_measure', 'Primary endpoint', { trunc: true }),
+      c('phases', 'Phase', { core: true }),
+      c('study_status', 'Status', { core: true }),
+      c('investability_class', 'Investable?', { core: true, render: r => classBadge(r.investability_class) }),
+      c('source_url', 'Official record', { core: true, render: r => linkify(r.source_url, 'CT.gov'), detail: r => r.source_url }),
+      c('brief_title', 'Title', { trunc: true }),
+      c('sponsor_class', 'Sponsor class'),
+      c('sponsor_resolution_basis', 'How resolved', { trunc: true, render: r => truncCell(r.sponsor_resolution_basis) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['nct_id', 'lead_sponsor', 'conditions', 'drug_interventions', 'ticker', 'brief_title', 'window_source'],
+    searchPlaceholder: 'Search expanded registry NCT, sponsor, drug, condition, window…',
+    sort: { key: 'primary_completion_date', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'inv', label: 'All sponsor classes', field: 'investability_class' },
+      { key: 'stat', label: 'All statuses', field: 'study_status' },
+      { key: 'win', label: 'All windows', field: 'window_source' }
+    ]
+  });
+
   /* Pipeline Tracker Full */
   DataTable({
     id: 'pipeline-full', mount: '#pipeline-full-view', csv: 'data/pipeline_tracker.csv',
@@ -1888,6 +1954,12 @@ Promise.all([
   loadCSV('data/company_scorecards.csv').then(({ records }) => drawPipelineCards(records)).catch(() => {
     document.getElementById('cards-deep').innerHTML = '<div class="notice">company_scorecards.csv could not be loaded.</div>';
   });
+
+  /* v18: load human-readable expansion report */
+  fetch('data/pre1985_1983_1984_1985_expansion_report.md', { cache: 'no-store' })
+    .then(r => r.ok ? r.text() : Promise.reject(new Error('HTTP ' + r.status)))
+    .then(t => { const el = document.getElementById('expansion-report'); if (el) el.textContent = t; })
+    .catch(() => { const el = document.getElementById('expansion-report'); if (el) el.textContent = 'Report not loaded — see data/pre1985_1983_1984_1985_expansion_report.md'; });
 }).catch(err => {
   document.querySelector('main').insertAdjacentHTML('afterbegin',
     `<div class="notice">Data load failed: ${escapeHtml(err.message)}</div>`);
