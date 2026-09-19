@@ -121,6 +121,24 @@ function scorePill(score, grade) {
          `<span class="score-bar"><i style="width:${pct}%;background:${colour}"></i></span>${gradeBadge(grade)}</span>`;
 }
 
+function normDash(v) { return (v === undefined || v === null || v === '') ? '—' : escapeHtml(String(v)); }
+
+function deltaBadge(v) {
+  if (v === undefined || v === null || v === '') return '<span class="badge neutral">n/a</span>';
+  const n = Number(v);
+  if (!isFinite(n)) return escapeHtml(String(v));
+  const cls = n === 0 ? 'verified' : (n < 0 ? 'flagged' : 'caveat');
+  return `<span class="badge ${cls}">${n > 0 ? '+' : ''}${n}</span>`;
+}
+
+function verdictBadge(v) {
+  const s = String(v || '');
+  const cls = s === 'MATCH' ? 'verified'
+    : s.startsWith('PROJECT_SHORT') ? 'flagged'
+    : s.startsWith('PROJECT_EXCEEDS') ? 'caveat' : 'neutral';
+  return `<span class="badge ${cls}">${escapeHtml(s)}</span>`;
+}
+
 function truncCell(text, chars) {
   if (!text) return "";
   const limit = chars || 110;
@@ -1084,8 +1102,12 @@ Promise.all([
   loadCSV('data/clinical_trials_phase3_registry.csv').then(x => x.records).catch(() => []),
   loadCSV('data/company_clinical_trial_scorecard.csv').then(x => x.records).catch(() => []),
   loadCSV('data/pre1985_era_analysis.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/pre1985_fda_decisions.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions]) => {
+  loadCSV('data/pre1985_fda_decisions.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1985_nme_gap_analysis.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1985_primary_captures_index.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/fda_official_series_crosswalk.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/fda_official_year_series.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
@@ -1093,6 +1115,8 @@ Promise.all([
   overview.orig = orig; overview.origScores = origScores; overview.t1gap = t1gap;
   overview.ctgov = ctgov; overview.clinScores = clinScores;
   overview.pre1985Era = pre1985Era; overview.pre1985Decisions = pre1985Decisions;
+  overview.nmeGap = nmeGap; overview.v17Captures = v17Captures;
+  overview.officialCrosswalk = officialCrosswalk; overview.officialSeries = officialSeries;
 
   /* Defensive rendering: one failing panel must never blank the whole site
      again (a missing function here silently killed every table after it
@@ -1581,7 +1605,10 @@ Promise.all([
     id: 'pre1985-era', mount: '#pre1985-era-view', csv: 'data/pre1985_era_analysis.csv',
     columns: [
       c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
-      c('total_nmes_approved', 'Total NMEs', { core: true, num: true, render: r => num(r.total_nmes_approved, 0) }),
+      c('total_nmes_approved', 'Rows in table', { core: true, num: true, render: r => num(r.total_nmes_approved, 0) }),
+      c('official_fda_nme_count', 'FDA official NMEs', { core: true, num: true, render: r => `<span class="num-strong">${escapeHtml(r.official_fda_nme_count || '—')}</span>` }),
+      c('nme_comparable_rows', 'NME-comparable rows', { core: true, num: true, render: r => num(r.nme_comparable_rows, 0) }),
+      c('official_series_delta', 'Δ vs official', { core: true, render: r => { const v = Number(r.official_series_delta); if (!isFinite(v)) return '—'; return `<span class="badge ${v === 0 ? 'verified' : (v < 0 ? 'flagged' : 'caveat')}">${v > 0 ? '+' : ''}${v}</span>`; } }),
       c('verified_decisions_tracked', 'Tracked Dec.', { core: true, num: true, render: r => num(r.verified_decisions_tracked, 0) }),
       c('priority_reviews', 'Priority', { core: true, num: true, render: r => num(r.priority_reviews, 0) }),
       c('standard_reviews', 'Standard', { core: true, num: true, render: r => num(r.standard_reviews, 0) }),
@@ -1593,6 +1620,88 @@ Promise.all([
     ],
     searchFields: ['year', 'orphan_drug_act_status', 'statutory_framework', 'landmark_approvals'],
     searchPlaceholder: 'Search 1980-1985 era milestones…',
+    sort: { key: 'year', dir: 'desc' }, pageSize: 10,
+    filters: []
+  });
+
+  /* ---- v17 (2026-09-19): official FDA series reconciliation ---- */
+
+  DataTable({
+    id: 'official-crosswalk', mount: '#official-crosswalk-view', csv: 'data/fda_official_series_crosswalk.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('official_nmes_approved', 'FDA official NMEs', { core: true, num: true, render: r => normDash(r.official_nmes_approved) }),
+      c('official_ndas_approved', 'FDA NDAs approved', { core: true, num: true, render: r => normDash(r.official_ndas_approved) }),
+      c('project_novel_rows', 'Project novel rows', { core: true, num: true, render: r => num(r.project_novel_rows, 0) }),
+      c('project_type1_rows', 'of which Type 1/1-4', { num: true, render: r => normDash(r.project_type1_rows) }),
+      c('compilation_rows', 'Compilation rows', { num: true, render: r => normDash(r.compilation_rows) }),
+      c('delta_project_vs_official', 'Δ project vs official', { core: true, render: r => deltaBadge(r.delta_project_vs_official) }),
+      c('delta_compilation_vs_official', 'Δ compilation vs official', { render: r => deltaBadge(r.delta_compilation_vs_official) }),
+      c('verdict', 'Verdict', { core: true, render: r => verdictBadge(r.verdict) }),
+      c('evidence_note', 'Evidence note', { trunc: true, render: r => truncCell(r.evidence_note) })
+    ],
+    searchFields: ['year', 'verdict', 'evidence_note'],
+    searchPlaceholder: 'Search 1980-2026 official-series reconciliation…',
+    sort: { key: 'year', dir: 'asc' }, pageSize: 15,
+    filters: [{ key: 'verdict', label: 'All verdicts', field: 'verdict' }]
+  });
+
+  DataTable({
+    id: 'nme-gap', mount: '#nme-gap-view', csv: 'data/pre1985_nme_gap_analysis.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('official_nmes_approved', 'FDA official NMEs', { core: true, num: true, render: r => escapeHtml(r.official_nmes_approved) }),
+      c('project_rows', 'Rows in pre-1985 table', { core: true, num: true, render: r => num(r.project_rows, 0) }),
+      c('project_type1_rows', 'Type 1/1-4 rows', { core: true, num: true, render: r => num(r.project_type1_rows, 0) }),
+      c('non_nme_boundary_rows', 'non-NME boundary rows', { num: true, render: r => normDash(r.non_nme_boundary_rows) }),
+      c('effective_type1_shortfall_negative_is_short', 'Δ NME-comparable vs official', { core: true, render: r => deltaBadge(r.effective_type1_shortfall_negative_is_short) }),
+      c('payload_original_rows', 'Payload ORIG/AP rows', { num: true, render: r => num(r.payload_original_rows, 0) }),
+      c('payload_blank_class_rows', 'no published class', { num: true, render: r => num(r.payload_blank_class_rows, 0) }),
+      c('payload_blank_class_ingredients', 'Blank-class ingredients', { trunc: true, render: r => truncCell(r.payload_blank_class_ingredients) }),
+      c('payload_invisible_apps_known', 'Payload-invisible apps', { trunc: true, render: r => truncCell(r.payload_invisible_apps_known) }),
+      c('status', 'Status', { core: true, render: r => `<span class="badge caveat">${escapeHtml(r.status)}</span>` }),
+      c('candidate_explanations', 'Candidate explanations', { trunc: true, render: r => truncCell(r.candidate_explanations) }),
+      c('next_source_required', 'Next source required', { trunc: true, render: r => truncCell(r.next_source_required) })
+    ],
+    searchFields: ['year', 'status', 'candidate_explanations'],
+    searchPlaceholder: 'Search the 1980-1985 official-count gap analysis…',
+    sort: { key: 'year', dir: 'asc' }, pageSize: 10,
+    filters: []
+  });
+
+  DataTable({
+    id: 'v17-captures', mount: '#v17-captures-view', csv: 'data/pre1985_primary_captures_index.csv',
+    columns: [
+      c('capture_id', 'Capture', { core: true, render: r => `<code>${escapeHtml(r.capture_id)}</code>` }),
+      c('capture_date', 'Date', { core: true }),
+      c('system', 'FDA system', { core: true, trunc: true, render: r => truncCell(r.system) }),
+      c('subject', 'Subject', { core: true, trunc: true, render: r => truncCell(r.subject) }),
+      c('finding_summary', 'Live finding', { core: true, trunc: true, render: r => truncCell(r.finding_summary) }),
+      c('project_table_affected', 'Table', { trunc: true, render: r => `<code>${escapeHtml(r.project_table_affected)}</code>` }),
+      c('project_row_ids', 'Rows', { core: true, render: r => `<code>${escapeHtml(r.project_row_ids)}</code>` }),
+      c('project_effect', 'Effect on the project', { trunc: true, render: r => truncCell(r.project_effect) }),
+      c('url', 'Source URL', { core: true, render: r => linkify(r.url, 'open'), detail: r => r.url })
+    ],
+    searchFields: ['capture_id', 'subject', 'finding_summary', 'project_row_ids'],
+    searchPlaceholder: 'Search the live primary captures…',
+    sort: { key: 'capture_id', dir: 'asc' }, pageSize: 15,
+    filters: []
+  });
+
+  DataTable({
+    id: 'official-series', mount: '#official-series-view', csv: 'data/fda_official_year_series.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('ndas_approved', 'NDAs approved', { core: true, num: true, render: r => normDash(r.ndas_approved) }),
+      c('nmes_approved', 'NMEs approved', { core: true, num: true, render: r => `<span class="num-strong">${escapeHtml(r.nmes_approved)}</span>` }),
+      c('ndas_received', 'NDAs received', { num: true, render: r => normDash(r.ndas_received) }),
+      c('commercial_inds_received', 'Commercial INDs', { num: true, render: r => normDash(r.commercial_inds_received) }),
+      c('noncommercial_research_inds_received', 'Non-commercial INDs', { num: true, render: r => normDash(r.noncommercial_research_inds_received) }),
+      c('total_inds_received', 'Total INDs', { num: true, render: r => normDash(r.total_inds_received) }),
+      c('source_url', 'Source', { core: true, render: r => linkify(r.source_url, 'FDA History Office'), detail: r => r.source_url })
+    ],
+    searchFields: ['year'],
+    searchPlaceholder: 'Search FDA official counts 1938-2022…',
     sort: { key: 'year', dir: 'desc' }, pageSize: 10,
     filters: []
   });

@@ -1,0 +1,104 @@
+{
+  "capture_id": "live_primary_captures_2026_09_19",
+  "captured_utc": "2026-09-19",
+  "capture_method": "sandbox page-fetch tool, one canonical URL per request (FDA Drugs@FDA application pages, openFDA API JSON, Wayback Machine)",
+  "purpose": "Live re-verification of the 1983-1985 flagged rows: the 1985 Tambocor designation conflict, the four 1985 master applications the committed payloads cannot enumerate (Seldane, Protropin, Suprol, Femstat), and the legacy-1983 blank-class condition that the NDA022046 lineage question also turns on.",
+  "captures": [
+    {
+      "capture_id": "V17-C01",
+      "system": "FDA Drugs@FDA application-history page",
+      "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018830",
+      "subject": "NDA 018830 Tambocor (flecainide acetate) - 1985 designation conflict",
+      "finding_verbatim": "Company: ALVOGEN. Products on NDA 018830: TAMBOCOR / FLECAINIDE ACETATE 100MG, 200MG, 150MG, 50MG, TABLET;ORAL, all Marketing Status 'Discontinued' each carrying '**Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**'. Original Approvals: '10/31/1985 | ORIG-1 | Approval | Type 1 - New Molecular Entity | STANDARD' with link 'Review (PDF)' -> https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf and note 'Label is not available on this site.' Supplements listed: SUPPL-24 (09/22/2016) label+letter; SUPPL-20 (04/28/2000); SUPPL-19 (09/03/1999).",
+      "project_effect": "Third FDA-family corroboration of STANDARD (openFDA payload record, payload-derived audit row, and now the live Drugs@FDA page). The master keeps the Compilation's 'Priority' per COMPILATION_ONLY policy and records this conflict; nothing was harmonised."
+    },
+    {
+      "capture_id": "V17-C02",
+      "system": "FDA Drugs@FDA application-history page",
+      "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018615",
+      "subject": "NDA 018615 Sulfatrim (sulfamethoxazole; trimethoprim) - legacy 1983 original with no published classification",
+      "finding_verbatim": "Company: PHARM ASSOC. Products: SULFATRIM 200MG/5ML;40MG/5ML SUSPENSION;ORAL (Discontinued) and SULFATRIM PEDIATRIC (Prescription, TE code AB). Original Approvals: '01/07/1983 | ORIG-1 | Approval | (Submission Classification cell blank) | (Review Priority; Orphan Status cell blank)' with 'Label is not available on this site.' 43 supplements listed, the earliest dated 02/13/1986.",
+      "project_effect": "Confirms the project's TRACKED_REVIEW condition is a genuine FDA source gap, not an extraction error: Drugs@FDA publishes this 1983 original with blank Submission Classification and blank Review Priority, exactly as the committed openFDA payload does."
+    },
+    {
+      "capture_id": "V17-C03",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA018949%22&limit=1",
+      "subject": "NDA 018949 Seldane (terfenadine) - 1985 master row not enumerable from the committed payloads",
+      "finding_verbatim": "{\"error\": {\"code\": \"NOT_FOUND\", \"message\": \"No matches found!\"}}",
+      "project_effect": "The application is wholly absent from openFDA's Drugs@FDA dataset (not merely missing an ORIG/AP submission)."
+    },
+    {
+      "capture_id": "V17-C04",
+      "system": "FDA Drugs@FDA application-history page",
+      "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018949",
+      "subject": "NDA 018949 Seldane - Drugs@FDA page render",
+      "finding_verbatim": "The page renders the Drugs@FDA shell for 'New Drug Application (NDA)' with NO company line, NO products table and NO approval-history table - the application number resolves but FDA publishes no record content for it.",
+      "project_effect": "Precise wording for the master's completeness-gap note: FDA indexes the number but publishes no record; the Compilation row remains the sole FDA source for the 1985 approval date."
+    },
+    {
+      "capture_id": "V17-C05",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA019107%22&limit=1",
+      "subject": "NDA 019107 Protropin (somatrem) - 1985 master row",
+      "finding_verbatim": "NOT_FOUND (query returned no records for NDA019107). Companion query https://api.fda.gov/drug/drugsfda.json?search=products.brand_name:%22PROTROPIN%22&limit=5 also returned NOT_FOUND - the brand name is absent from openFDA entirely.",
+      "project_effect": "Documents that Protropin is not in openFDA under either the Compilation's application number or its brand name; nothing in the live systems contradicts the Compilation row, and nothing corroborates it either."
+    },
+    {
+      "capture_id": "V17-C06",
+      "system": "FDA Drugs@FDA application-history page",
+      "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=019107",
+      "subject": "NDA 019107 Protropin - Drugs@FDA page render",
+      "finding_verbatim": "Page renders the Drugs@FDA shell with NO company line, NO products table and NO approval-history table (same empty-record condition as NDA018949).",
+      "project_effect": "Same precise finding as Seldane; recorded for the 1985 reconciliation."
+    },
+    {
+      "capture_id": "V17-C07",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:(NDA018217+OR+NDA019215)&limit=5",
+      "subject": "NDA 018217 Suprol (suprofen) and NDA 019215 Femstat (butoconazole nitrate) - 1985 master rows",
+      "finding_verbatim": "total: 1. NDA019215 IS present: sponsor_name 'ROCHE PALO', product FEMSTAT / BUTOCONAZOLE NITRATE 2% / CREAM;VAGINAL, marketing_status 'Discontinued', and the record carries NO 'submissions' array at all. NDA018217 (Suprol) is NOT returned by the query.",
+      "project_effect": "Refines the master's gap wording: Femstat IS in openFDA as a product record with no submission history (which is exactly why the ORIG/AP payload query could not enumerate it), while Suprol is absent from the dataset entirely. Two different conditions, previously described with one sentence."
+    },
+    {
+      "capture_id": "V17-C08",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:(NDA019107+OR+NDA018509)&limit=5",
+      "subject": "NDA 018509 Baros Effervescent - Compilation 1985 row that openFDA does enumerate",
+      "finding_verbatim": "total: 1. NDA018509: sponsor_name 'MALLINCKRODT INC', ORIG submission number 1, submission_type 'ORIG', submission_status 'AP', submission_status_date '19850807', review_priority 'STANDARD', submission_class_code 'TYPE 1' ('Type 1 - New Molecular Entity'); product BAROS, active ingredients SODIUM BICARBONATE 460MG/GM and TARTARIC ACID 420MG/GM, GRANULE, EFFERVESCENT;ORAL, Discontinued. Supplements SUPPL-1 (1987-05-04), SUPPL-3 (1992-09-21), SUPPL-4 (1994-01-06).",
+      "project_effect": "Independently confirms the Compilation's Baros Effervescent row against Drugs@FDA as a Type 1, STANDARD original on 1985-08-07 - so it is not the source of the 1985 31-vs-30 difference. Protropin is the remaining one-row difference candidate."
+    },
+    {
+      "capture_id": "V17-C09",
+      "system": "Wayback Machine (archive.org)",
+      "url": "https://web.archive.org/web/20240929073454/https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf",
+      "subject": "NDA 018830 1985 review document (contemporaneous designation evidence)",
+      "finding_verbatim": "The Wayback Machine reports '5 captures' of this PDF, spanning 30 Mar 2021 - 30 Mar 2025, and serves the archived page shell for the 2024-09-29 capture. The raw replay endpoints (web/20240929073454id_/ and web/20240929073454if_/) both returned HTTP 500 to the automated fetcher on 2026-09-19, as did a direct fetch of the live FDA URL (HTTP 500 on 2026-09-18 and again on 2026-09-19). The 1985 medical review could not be read by automation.",
+      "project_effect": "The one remaining source that can settle the Tambocor designation is confirmed to exist and to be archived; it needs a human browser read (live FDA URL or the Wayback URL above). Also confirms the failure is not a URL-registration error: FDA's own page links exactly this path."
+    },
+    {
+      "capture_id": "V17-C11",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:%22FUROSEMIDE%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19000101+TO+19791231%5D&limit=2",
+      "subject": "Furosemide - pre-1980 original approvals (duplicative-ingredient spot check + dataset-boundary probe)",
+      "finding_verbatim": "total: 4. One returned record carries an ORIG submission number 1 with submission_status 'AP', submission_status_date '19680320', submission_class_code 'TYPE 3' ('Type 3 - New Dosage Form'), review_priority 'PRIORITY' - i.e. a US original approval of furosemide in 1968, fifteen years before the 1983 furosemide 'original approvals' the project tracks.",
+      "project_effect": "Two findings. (1) The 1983 and 1984 furosemide strings in the blank-class inventory are re-approvals of a molecule first approved in 1968, which is the substantive evidence that those rows are not NMEs. (2) openFDA DOES serve pre-1980 ORIG/AP submission records, so the project's 1980 start is a payload-coverage choice, not an API boundary - a pre-1980 fetch job is feasible."
+    },
+    {
+      "capture_id": "V17-C12",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:%22FUROSEMIDE%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19800101+TO+19841231%5D&limit=2",
+      "subject": "Furosemide - 1980-1984 original approvals incl. NDA018413",
+      "finding_verbatim": "total: 15. One returned record carries an ORIG submission number 1 with submission_status 'AP', submission_status_date '19831130' and NO submission_class_code and NO review_priority - matching the project's NDA018413 row (the pre-1985 table's single non-NME boundary row) exactly, including the blank classification.",
+      "project_effect": "Independently reproduces the 1983-11-30 blank-class condition for NDA018413 from the live API (the same condition the committed payload records), corroborating the pre-1985 table's NOT STATED values and the audit's TRACKED_REVIEW verdict."
+    },
+    {
+      "capture_id": "V17-C10",
+      "system": "Committed FDA CDER NME Compilation workbook (local parse)",
+      "url": "data/raw/probe/fda_nme_compilation_1985_2025.xlsx (source: https://www.fda.gov/media/177921/download?attachment; SHA-256 in data/raw/probe/manifest.json)",
+      "subject": "1985 section of the Compilation - row-level re-derivation",
+      "finding_verbatim": "1,387 data rows, 26-column header (Proprietary Name ... Notes); 1985 section = 31 rows, 18 'Priority' and 13 'Standard'; the Tambocor row reads: Tambocor | flecainide acetate | Riker | NDA | 18830 | Tablet | Oral | receipt 1982-12-21 | approval 1985-10-31 | year 1985 | designation 'Priority' | Orphan No | Accelerated N/A. Dataset-wide the NDA/BLA column holds 1,108 'NDA' and 279 'BLA' rows; all 31 of the 1985 rows are 'NDA'.",
+      "project_effect": "Proves the master's 'Priority' value traces to the Compilation cell itself (not a transcription error) and that the Compilation carries no BLA-typed row for 1985 - so the 31-vs-30 difference is not visible in that column."
+    }
+  ]
+}
