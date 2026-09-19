@@ -102,7 +102,7 @@
 
     <div class="panel">
       <h3>📅 Historical Coverage Audit (1985–2026)</h3>
-      <p class="section-desc">Coverage by decision year. <strong>1985–1997</strong> comes from FDA's official CDER Novel Drug Approvals Compilation (no CDER NME year table exists for those years — rows are flagged COMPILATION_ONLY); <strong>1998–2026</strong> pins to FDA's contemporaneous NME year tables (plus 26 flagged Compilation-only CBER-era biologic/vaccine-era rows: 7 in 1998–1999, 19 in 2000–2003). The year-by-year reconciliation against the official Compilation is on the <strong>📑 Compilation Audit</strong> tab.</p>
+      <p class="section-desc">Coverage by decision year. <strong>1985–1997</strong> comes from FDA's official CDER Novel Drug Approvals Compilation (the historical NME series is independently crosswalked for 1980–2022; rows remain flagged COMPILATION_ONLY where the Compilation is the application-level source); <strong>1998–2026</strong> pins to FDA's contemporaneous NME year tables (plus 26 flagged Compilation-only CBER-era biologic/vaccine-era rows: 7 in 1998–1999, 19 in 2000–2003). The year-by-year reconciliation against the official Compilation is on the <strong>📑 Compilation Audit</strong> tab.</p>
       <div id="coverage-view"></div>
     </div>
 
@@ -439,6 +439,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       <h3>🧭 Pre-1985 NME Gap Analysis — sized, sourced, flagged (<code>data/pre1985_nme_gap_analysis.csv</code>)</h3>
       <p class="section-desc">The 1980–1985 gap between FDA's official NME counts and the project's Drugs@FDA enumeration, year by year: how many payload rows carry no published subclass code, which ingredients they are, which applications the payload cannot see at all, the leading candidate explanations, and the exact source still required (the 1989 CDER <em>Offices of Drug Evaluation: Statistical Report</em>, pp. 152–199, which FDA's own history page cites). Nothing is asserted that a source does not support: the 1985 +1 row is attributed to a biological product counted by the Compilation <em>as a candidate only</em>, and the 1983 table's 14th row is explicitly a non-NME boundary row that must not be counted as an NME.</p>
       <div id="nme-gap-view"></div>
+      <p class="section-desc"><strong>Human adjudication queue:</strong> <a href="data/pre1985_human_review_queue.csv">download the line-by-line review queue</a>. Open gaps and source conflicts remain explicitly unresolved; no product name, sponsor, class, or lineage is inferred from a missing payload.</p>
     </div>
 
     <div class="panel">
