@@ -1,0 +1,667 @@
+{
+  "job": "clinicaltrials_phase3_2024_2025_windows",
+  "generated_utc": "2026-09-19T06:12:41Z",
+  "requests": [
+    {
+      "id": "phase3_2024H1",
+      "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+      "pages": [
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true",
+          "status": 200,
+          "n": 50,
+          "sha256": "72b2674e21163f2ae477f076fad58af0ed7301ebd29f3954f16af93106e1c48e",
+          "at_utc": "2026-09-19T06:11:18Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZ_Oh2vQW",
+          "status": 200,
+          "n": 50,
+          "sha256": "bd45de490f66cd31714c205ce5ae227fd2b746a3fbfea522666bc70f062d5644",
+          "at_utc": "2026-09-19T06:11:19Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxrZ_Sh1PYW",
+          "status": 200,
+          "n": 50,
+          "sha256": "1b7fb7cafa7729fc8feb3839e3da6ad8f5d26f036dfd8ed85733a5991d96e77d",
+          "at_utc": "2026-09-19T06:11:20Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxqY_ak1PQW",
+          "status": 200,
+          "n": 50,
+          "sha256": "32c522f6528f61322ff959dacac7170d1c4aa79edb0247c7fe318f6af3058d89",
+          "at_utc": "2026-09-19T06:11:21Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxnZ_Sk2PwW",
+          "status": 200,
+          "n": 50,
+          "sha256": "d9b1768112e83cf770bc8df5ca92423c59d172045199af4e0cd0920d70c62caa",
+          "at_utc": "2026-09-19T06:11:22Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZfGm1fwbkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "0fd9fe46e09553c65c64f9b8f00fb09f98e9023a44df40ad40d3b7d188b0ab6f",
+          "at_utc": "2026-09-19T06:11:23Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZPil1PEckA",
+          "status": 200,
+          "n": 50,
+          "sha256": "e8f7d7cda1bfd2c23637cf8107c16488bb340d9fc1f97ef3fa262bd5401f2c6c",
+          "at_utc": "2026-09-19T06:11:24Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuYfCm1PQckA",
+          "status": 200,
+          "n": 50,
+          "sha256": "96e6f3d5f034ec7e7b7ff42f7b2b074ecfecc1296264b1c55f059ad1c591f190",
+          "at_utc": "2026-09-19T06:11:25Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuYPag2fUZkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "a2b0eca893cc95e2daf3277caa8adce664b28ef7a2af121cc61fceab90467101",
+          "at_utc": "2026-09-19T06:11:27Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuYvmh1fMSkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "53626138bcf9713ed88bec69aa4ca4f72d84b99882abe928d1ceaca1498d1e6e",
+          "at_utc": "2026-09-19T06:11:28Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZfKh2vAbkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "62fd6707ddb6fe716d1e609e78e5257dd70e7dcbce5e1e7cf94312e0ff59bcc8",
+          "at_utc": "2026-09-19T06:11:29Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZ_el1PYYkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "99cad5143eb19703fae7e611bc16988f6467a8f37930cfcb445d4890f7d24268",
+          "at_utc": "2026-09-19T06:11:30Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtYfes3PUdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "c0cb9dd029513466f079d83377952a5da830a092741fa8fe041ac65f61a2d3b6",
+          "at_utc": "2026-09-19T06:11:31Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtY_Si3_MbkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "802e17823a4e2f46743aca75c01f42efc5acbfcbd42648e7b0bd425e8365406d",
+          "at_utc": "2026-09-19T06:11:32Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtbfmh3vcTkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "596896ef0d734e9de1cc32bc7427dcb4937418d692e7760c0e5d5d535fb331c2",
+          "at_utc": "2026-09-19T06:11:33Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZPCt1fQfkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "f1ec2ba749b15957d3b57c289dfe3bbaa64b9a862a1e36cd56185abd535f8cd7",
+          "at_utc": "2026-09-19T06:11:34Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZvek2_wTkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "488b69a006f0c44e416bf42cee78612748b0234e139772031b37019cf4adaeed",
+          "at_utc": "2026-09-19T06:11:35Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYPak2_wTkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "fdb07b57fcc33c423af890be093bedd2026ebf59fe1c0a2fc6bd23fad68fb420",
+          "at_utc": "2026-09-19T06:11:36Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYvmn3vcdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "c6e0c88eb9b50754de04e1e05320c3a9722fc0507fa0b5fedd89a0f35172a35b",
+          "at_utc": "2026-09-19T06:11:37Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-01-01,2024-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxrZfGk2PcYkA",
+          "status": 200,
+          "n": 31,
+          "sha256": "769d6433eb5d4e01d1cf9b2e95aaa12ad1173bb800a0de496ab23e8a8c3a8a71",
+          "at_utc": "2026-09-19T06:11:38Z"
+        }
+      ],
+      "studies": 981,
+      "status": 200,
+      "bytes": 1309870,
+      "sha256": "eb8e3fe5bd56739a74d94ffa39de4b86ea8a901a09b40ab1eabe7fc428958ac3",
+      "written_at_utc": "2026-09-19T06:11:38Z"
+    },
+    {
+      "id": "phase3_2024H2",
+      "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+      "pages": [
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true",
+          "status": 200,
+          "n": 50,
+          "sha256": "809f811666b8bd2285d48198525442f71e95a41f4089818d6ac0264077fbee6d",
+          "at_utc": "2026-09-19T06:11:38Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZ_Cm1PMW",
+          "status": 200,
+          "n": 50,
+          "sha256": "0179652b6beaf763d6b41035b1374c098e215637b56c51a09acf7102fcc09f6d",
+          "at_utc": "2026-09-19T06:11:39Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYvem1fEW",
+          "status": 200,
+          "n": 50,
+          "sha256": "34dba207e09ecab071b745ee3607ddd9f7c571280d4e8f4a1f2da26d8596c4ec",
+          "at_utc": "2026-09-19T06:11:40Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxqY_eg1PMW",
+          "status": 200,
+          "n": 50,
+          "sha256": "724c5085b58ab5538f63a4c75b864daea5782889b9c75c907bfa5594e092f718",
+          "at_utc": "2026-09-19T06:11:42Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxoYvah2PEW",
+          "status": 200,
+          "n": 50,
+          "sha256": "b4748dc754d5d92cf10b668cf31487200fc04e8580acf178d27e49b59ebed9f1",
+          "at_utc": "2026-09-19T06:11:43Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxmY_ei3fYW",
+          "status": 200,
+          "n": 50,
+          "sha256": "add0f49c0e0a72ffb55fe9a1fcfaf1f055688e706f09e6927060985981e0a359",
+          "at_utc": "2026-09-19T06:11:43Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZPSt2PQSkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "f37e87b51c771b39e485c0f440a6283da7ed809f9c2d2bca74ea551d575a6d6e",
+          "at_utc": "2026-09-19T06:11:44Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZvOg2vcdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "8635b31e96fd1a934054c87a825fdfe321b341ab71d73a739a879bc48e508012",
+          "at_utc": "2026-09-19T06:11:46Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuYfin3vEfkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "ccf06fde298bddb4c37bcfeeb4e701bfc8a736330fffd2376c215a6820181547",
+          "at_utc": "2026-09-19T06:11:47Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuY_Sj2PAYkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "a6367dd9a0eb636991f9c63cf51bbea82b6fcb87adda87587888197b5191189a",
+          "at_utc": "2026-09-19T06:11:47Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxubfKt3fwakA",
+          "status": 200,
+          "n": 50,
+          "sha256": "0275e66fa2b4f9ad2bff13f0e098797e18a6fc7061195488dba713df3a5ab6a4",
+          "at_utc": "2026-09-19T06:11:48Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZfCg2_AckA",
+          "status": 200,
+          "n": 50,
+          "sha256": "c673d493d369daaf2769c039d02096c778455b9548fdaa65b384c01436ea5f91",
+          "at_utc": "2026-09-19T06:11:49Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZPij3fAdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "4df9e6401af8693fac27b3ddc2dce910fc6ba16b8ae9be37768ac623ae3dd1a5",
+          "at_utc": "2026-09-19T06:11:50Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZvat2PMZkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "0bc5d55250c44fdb5ef87a4a60aa40a748f3a911b1762306624d680785a7aa21",
+          "at_utc": "2026-09-19T06:11:51Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtYPin1PMckA",
+          "status": 200,
+          "n": 50,
+          "sha256": "dcbc358efcba4d31926d61b66a10450f2dc218ffb1edfe3fe5b043dd2139c684",
+          "at_utc": "2026-09-19T06:11:52Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtYvat2_UTkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "a4b75196c6a4a067f3748fc0de5c95a09aeb5132a7c2d62183bfe0de34189f4b",
+          "at_utc": "2026-09-19T06:11:53Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtbPek1fMckA",
+          "status": 200,
+          "n": 50,
+          "sha256": "9508f901ed7659bd93b39a90bd5ce5cf5f751e246d86c746c4eca7bab03a0950",
+          "at_utc": "2026-09-19T06:11:54Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZPGn3PYckA",
+          "status": 200,
+          "n": 50,
+          "sha256": "28f06b50fefa3ba2e264f1e47e5f0644b846d0125c9956cc9dfea09b4d5bb1fb",
+          "at_utc": "2026-09-19T06:11:55Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZ_St2_cSkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "0b7ecf4092b740b8ad0ad7f99964005e84b076d07cc68037524d3a6c554f8c92",
+          "at_utc": "2026-09-19T06:11:56Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYfal3PAYkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "ebb2cf1a701d9ce5180bcd1ea450821e344b188c38b011de90c19ba4e5c73d4b",
+          "at_utc": "2026-09-19T06:11:57Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsY_Gl3_MZkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "620b4973155246c48ff99046a4393037c89e37a6c3709aecdbadafa16ce989fe",
+          "at_utc": "2026-09-19T06:11:58Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYvSt3_wdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "9c01cb4e11fa329ac3060c1357ce4e78c8e711590eaebec42b38d9cb6f52dad7",
+          "at_utc": "2026-09-19T06:11:59Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsbPKg3fQckA",
+          "status": 200,
+          "n": 50,
+          "sha256": "b7d714b9fc6919f002744515dcc71c02ff8009629eabca301c1f43c35b846c6c",
+          "at_utc": "2026-09-19T06:12:00Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2024-07-01,2024-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxrZfil2vMbkA",
+          "status": 200,
+          "n": 13,
+          "sha256": "0891e23a0bdd4ad194368725d91f25b42e53eb309a3a0d50fb90ed523d44dac3",
+          "at_utc": "2026-09-19T06:12:01Z"
+        }
+      ],
+      "studies": 1163,
+      "status": 200,
+      "bytes": 1460414,
+      "sha256": "fc74bd60595ca7551c4ad6aa6faa79f410ec1c6bb9022b5b5e611a6c1f496126",
+      "written_at_utc": "2026-09-19T06:12:01Z"
+    },
+    {
+      "id": "phase3_2025H1",
+      "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+      "pages": [
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true",
+          "status": 200,
+          "n": 50,
+          "sha256": "4a253b7b556d9ce6c5784fa5357e6a439a4b92cbb8ab639228cad7b0a7c03762",
+          "at_utc": "2026-09-19T06:12:02Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuY_ig2_AW",
+          "status": 200,
+          "n": 50,
+          "sha256": "7c43f29791f7fc912de5130bd3978b5dfa217d1f59924c6a0aa59e9f88936af9",
+          "at_utc": "2026-09-19T06:12:02Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYPai3PcW",
+          "status": 200,
+          "n": 50,
+          "sha256": "045da341cdb16bc7c711297af77a70b8063287a180618a271088f82abcec910f",
+          "at_utc": "2026-09-19T06:12:03Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxqbfat2P0W",
+          "status": 200,
+          "n": 50,
+          "sha256": "ffba63a2a60eac96dc807c463e10b1394d02d3595044ea4c6fc22b92b5afe94b",
+          "at_utc": "2026-09-19T06:12:04Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxnZPis2_wW",
+          "status": 200,
+          "n": 50,
+          "sha256": "782d81f631cd35f84b374cf4267cb181e136a444f18c0b79e1e3de0d2be50bc4",
+          "at_utc": "2026-09-19T06:12:05Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZfWg3vEakA",
+          "status": 200,
+          "n": 50,
+          "sha256": "2bfbf0e70bbad4ede7e1d152fb8c9f12ac2771ab1a77d98588ee36b3aa2c4c1d",
+          "at_utc": "2026-09-19T06:12:06Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZ_Wt1P0ekA",
+          "status": 200,
+          "n": 50,
+          "sha256": "a33aeacb30a8b6b5cbc6957a8b4c347ca75f422cbaa31a3c4b3e0f89c709afb6",
+          "at_utc": "2026-09-19T06:12:07Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuYfag3fwakA",
+          "status": 200,
+          "n": 50,
+          "sha256": "b80a60ec3c32af1bc4604a0c42d51caa5b9a7cf2632630cac451b64c0b7a51ff",
+          "at_utc": "2026-09-19T06:12:08Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuY_en2fwYkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "5913fb850fd9abe2b025be8bdc228f34fd941f56710476c658dbe866b4f96b2f",
+          "at_utc": "2026-09-19T06:12:09Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxubfOs2vYdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "9ed0efd3557a42e4ca049c122647079df1cf14cc6d0cc782a505af8616db9c63",
+          "at_utc": "2026-09-19T06:12:10Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZfKt3vQdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "5ecb953186587e8202b1bd1dd820b5451147141bc8f374216f19778dfb962bf1",
+          "at_utc": "2026-09-19T06:12:11Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZ_es2_AckA",
+          "status": 200,
+          "n": 50,
+          "sha256": "88feca1c72ccae3089040627f873134259217ee90b8cc7916d7f4a109bec804c",
+          "at_utc": "2026-09-19T06:12:12Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtYfmj2vUZkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "a348a3f41894c7cd879ae4ac2d4d3075e14b58b43c66be3cfef075c7753eedd0",
+          "at_utc": "2026-09-19T06:12:13Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtY_Ss3PMZkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "285ce2a46af557072bf1d0742d7924d951d0949775c675056e89685e2ec0ab98",
+          "at_utc": "2026-09-19T06:12:14Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtbPWs1PUekA",
+          "status": 200,
+          "n": 50,
+          "sha256": "91796040a5f60973b4f90e44181604628de9502910d547ef0498f09b54ae340c",
+          "at_utc": "2026-09-19T06:12:15Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZPWk3vUYkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "cef1d1ac06925b658b7c55aa0d4d6a637a3255938cd6e871947774649acd7a11",
+          "at_utc": "2026-09-19T06:12:16Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZvil2PYfkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "8c5d7a3269046d1f7e69ecf4abb32df2e35a298229d7b4773ae3b156af02241a",
+          "at_utc": "2026-09-19T06:12:17Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsY_Gn1fEbkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "ab755f7b2fd82d26d00623d44e7a79d94ba646a47757ca33fcb54725aa585e5e",
+          "at_utc": "2026-09-19T06:12:18Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsbfGt1fUSkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "9162ee883eea02b00e93a93126f63d8a72dfe4e1a2c15a1fa047ffc13e29ef0c",
+          "at_utc": "2026-09-19T06:12:19Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-01-01,2025-06-30]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxrZfWt2fwSkA",
+          "status": 200,
+          "n": 14,
+          "sha256": "0d191a4bbab7c3540793e025a97aa96ef94b326a9c655d6c0dc520b72e22eece",
+          "at_utc": "2026-09-19T06:12:20Z"
+        }
+      ],
+      "studies": 964,
+      "status": 200,
+      "bytes": 1238126,
+      "sha256": "bfc086a2119784cdfeb2569cebf2d4b988d8da2760552a69eb1fbd5d38a406a4",
+      "written_at_utc": "2026-09-19T06:12:20Z"
+    },
+    {
+      "id": "phase3_2025H2",
+      "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+      "pages": [
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true",
+          "status": 200,
+          "n": 50,
+          "sha256": "47c342a44d688a3c98b8054d1848137092a695b5960ea293dd3f52134c20e4ee",
+          "at_utc": "2026-09-19T06:12:20Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZPmj1fQW",
+          "status": 200,
+          "n": 50,
+          "sha256": "92bba1c440a5e410549be9b58ee59c5ed5938ec17fbbaba6eaf3ab1a9ab6a15f",
+          "at_utc": "2026-09-19T06:12:21Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYvOl2fEW",
+          "status": 200,
+          "n": 50,
+          "sha256": "b695b2e1d07815c3f401fb8362c102b1e2e4e4366cf2e6ea715b03510bd530bb",
+          "at_utc": "2026-09-19T06:12:22Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxqY_St2_IW",
+          "status": 200,
+          "n": 50,
+          "sha256": "566cfdc87946b7819595612ae63830ccd97ccff051c933741b2c369d0c024dc4",
+          "at_utc": "2026-09-19T06:12:23Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxoZ_Sk2_0W",
+          "status": 200,
+          "n": 50,
+          "sha256": "6747b3ee6cd87bf88ba637e6d473ea1696af4d62b48fce8167d4d43d8c5828d6",
+          "at_utc": "2026-09-19T06:12:24Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxnYvak2PQW",
+          "status": 200,
+          "n": 50,
+          "sha256": "a36cfd9350943bcf287ebe572712e2c579e5f95a8cddabfb91b451ad074ceede",
+          "at_utc": "2026-09-19T06:12:25Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZfKs3PwfkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "2b800939ceb5bb89ab1f787bc25916834db472b13ed6d550c93015769bfb41da",
+          "at_utc": "2026-09-19T06:12:26Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZ_Cn2PESkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "a5a62846c5b8df9fe03441ac49f71924f9d4fb29d9bf33f656b885b28200106c",
+          "at_utc": "2026-09-19T06:12:27Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuZvig2PMYkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "8a83153c14077ec7d52bf6f307e63487a5d8caac01830f4dbda470f3e5674406",
+          "at_utc": "2026-09-19T06:12:27Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuYPSl2PUSkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "24c3e325e84a6f4b2d7a54d48fbd84fe9b5339a5703a97538a26e2b67465972d",
+          "at_utc": "2026-09-19T06:12:28Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxuYvCj3fMYkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "ee1e0869b9db15a8abafa24e64db32e341e9b53b5e50dd06037c05354e1f774d",
+          "at_utc": "2026-09-19T06:12:29Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxubPmi1fMZkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "272b38ad7c1587eecb81cb3b3496f02335b1a458f031aed48f962f6f27ecee77",
+          "at_utc": "2026-09-19T06:12:30Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZPml1fMSkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "9feeb9dd20eb4ec6baa570a6ed9f36399bb5fcf35758b5463a13e5d3196d8d28",
+          "at_utc": "2026-09-19T06:12:31Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtZvSg2PEdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "510248130faf4dad5b714b68d7b904aa8b86a8c5dfea2bc83fb5127b6ea0a7c1",
+          "at_utc": "2026-09-19T06:12:32Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtYPWn2_QbkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "50621713aee098c42315da0281ef6940681d9c4af268d76c06851b5c8e33edea",
+          "at_utc": "2026-09-19T06:12:33Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtYvGs2fEfkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "65be0ba2c6a9ab7c010adcfa3da721abd622334c0aa746fe3564a1ee55f50467",
+          "at_utc": "2026-09-19T06:12:34Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxtbfmk2fQfkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "375840300c80719ffb9e387bb2b9e2ef0ca83ffc5d18d5fbf7edb692bf7c28a3",
+          "at_utc": "2026-09-19T06:12:35Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZfmh1fMakA",
+          "status": 200,
+          "n": 50,
+          "sha256": "5805e5ffeebce4514c9f692fb4fea3ae7aa5cc8f7ee8bde4a1252a377ea90141",
+          "at_utc": "2026-09-19T06:12:35Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZ_Wl3P0dkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "7ec56dafe7daa2dd85c87d6fe3d3f54d5508ae6068b710f105548bed62ebceca",
+          "at_utc": "2026-09-19T06:12:36Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsZvis3vAbkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "8b044ef679a9381436a18b7828e55965d1756cfff7de4ea3ae1fc43bef6ed8b4",
+          "at_utc": "2026-09-19T06:12:37Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYPak3vUZkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "9967018a34f754909d2f20594be84b70cc6ad67ad8d2429b82203c9bd8182feb",
+          "at_utc": "2026-09-19T06:12:38Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsYvKn1fQSkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "a20c6523d5e3b5bb4501bcd008d5a01e5114e3202373333032c3e316c4407e39",
+          "at_utc": "2026-09-19T06:12:39Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxsbfis2_UdkA",
+          "status": 200,
+          "n": 50,
+          "sha256": "f227e678e34e149815c14844fe0554a0931c36bb645b2afb458a30fc6d667253",
+          "at_utc": "2026-09-19T06:12:40Z"
+        },
+        {
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2025-07-01,2025-12-31]&pageSize=50&format=json&countTotal=true&pageToken=ZVNj7o2Elu8o3lpwCsjyoLmtmpOQJJxrZfat1PMdkA",
+          "status": 200,
+          "n": 17,
+          "sha256": "ba95a41b125eb12b09ccfc3114c9c868cae7f184e80daa66fad53354bdb6d47c",
+          "at_utc": "2026-09-19T06:12:41Z"
+        }
+      ],
+      "studies": 1167,
+      "status": 200,
+      "bytes": 1468921,
+      "sha256": "bf88ed3e0f1ffae075474376dfd3ca1e8edd548242a23c89597eadf82ce248c4",
+      "written_at_utc": "2026-09-19T06:12:41Z"
+    }
+  ],
+  "job_file": "fetch_jobs/clinicaltrials_phase3_2024_2025_windows.json"
+}

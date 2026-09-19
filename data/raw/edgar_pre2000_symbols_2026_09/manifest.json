@@ -1,6 +1,6 @@
 {
   "job": "edgar_pre2000_symbols_2026_09",
-  "generated_utc": "2026-09-18T20:30:09Z",
+  "generated_utc": "2026-09-19T06:18:51Z",
   "requests": [
     {
       "id": "pnu_fy1997_10k405",
@@ -127,6 +127,132 @@
       "status": "FAILED",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "at_utc": "2026-09-18T20:30:09Z"
+    },
+    {
+      "id": "pnu_fy1997_10k405",
+      "url": "https://www.sec.gov/Archives/edgar/data/949573/0000950124-98-001758.txt",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:13:40Z"
+    },
+    {
+      "id": "warner_lambert_fy1997_10k",
+      "url": "https://www.sec.gov/Archives/edgar/data/104669/0000950117-98-000602.txt",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:13:58Z"
+    },
+    {
+      "id": "carter_wallace_fy1997_10k405",
+      "url": "https://www.sec.gov/Archives/edgar/data/18000/0000890163-97-000093.txt",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:14:17Z"
+    },
+    {
+      "id": "block_drug_fy1997_10k",
+      "url": "https://www.sec.gov/Archives/edgar/data/12654/0000012654-97-000004.txt",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:14:35Z"
+    },
+    {
+      "id": "roberts_defm14a_1999",
+      "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-99-006712.txt",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:14:53Z"
+    },
+    {
+      "id": "roberts_fy1996_10k",
+      "url": "https://www.sec.gov/Archives/edgar/data/853022/0000950130-97-001485.txt",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:15:12Z"
+    },
+    {
+      "id": "amag_form25_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000792977&type=25&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:15:30Z"
+    },
+    {
+      "id": "amag_form15_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000792977&type=15&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:15:48Z"
+    },
+    {
+      "id": "cytogen_form15_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000725058&type=15&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:16:07Z"
+    },
+    {
+      "id": "cytogen_form25_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000725058&type=25&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:16:25Z"
+    },
+    {
+      "id": "immunomedics_form25_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000722830&type=25&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:16:43Z"
+    },
+    {
+      "id": "immunomedics_form15_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000722830&type=15&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:17:02Z"
+    },
+    {
+      "id": "gensia_sicor_form15_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807873&type=15&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:17:20Z"
+    },
+    {
+      "id": "gensia_sicor_form25_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807873&type=25&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:17:38Z"
+    },
+    {
+      "id": "ivax_form15_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000772197&type=15&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:17:57Z"
+    },
+    {
+      "id": "ivax_form25_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000772197&type=25&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:18:15Z"
+    },
+    {
+      "id": "roberts_10k_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000853022&type=10-K&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:18:33Z"
+    },
+    {
+      "id": "carter_wallace_10k_list",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000018000&type=10-K&dateb=&owner=include&count=40",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "at_utc": "2026-09-19T06:18:51Z"
     }
   ],
   "job_file": "fetch_jobs/edgar_pre2000_symbols_2026_09.json"
