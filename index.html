@@ -493,6 +493,24 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       <p class="section-desc">Twelve live probes: three year-population re-queries (662 / 756 / 746 — each equal to its manifest count), four verbatim openFDA ORIG blocks (Elspar, Motofen Type 1/4, both Cyclapen NDAs, Forane), the Tagamet Drugs@FDA original-approval row (08/16/1977, Type 1, PRIORITY), two coexistence probes (Tagamet, Nolvadex), and the Kinlytic UNKNOWN/UNKNOWN block. Verbatim excerpts with re-issuable URLs live in <code>data/raw/source_captures_2026_09_19/live_primary_captures_v19_2026_09_19.json</code>.</p>
       <div id="v19-captures-view"></div>
     </div>
+
+    <div class="panel highlight" style="margin-bottom:1.5rem">
+      <h3>🧾 Complete Original-Application Audit 1977–1979 — all 170 ORIG/AP rows (<code>data/pre1980_originals_audit_1977_1979.csv</code>)</h3>
+      <p class="section-desc">v20: <strong>every original approval in the committed payloads for 1977 (42), 1978 (66) and 1979 (62)</strong> — not only the 48 Type 1/1-4 decisions. Each row carries the verbatim class code/description, priority, holder, product strings, an ingredient first-appearance screen across all 1965–1979 payloads, the link to its v19 decision row where applicable, and a <strong>per-row live probe status</strong> (each application re-queried individually on openFDA, SHA-pinned). Blank/UNKNOWN-class legacy rows are inventoried, never guessed.</p>
+      <div id="pre1980-originals-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>🛰️ Per-Row Live Probe Index — 170 applications (<code>data/pre1980_row_probe_index.csv</code>)</h3>
+      <p class="section-desc">One live single-application openFDA capture per audit row (complete current record: all products and submissions), each committed verbatim with its request URL and SHA-256 in <code>data/raw/pre1980_row_probes_1977_1979/</code>. Every capture is checked field-by-field against the payload (date, class, priority, holder); any mismatch aborts the build.</p>
+      <div id="pre1980-probes-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>🗄️ Full Drugs@FDA Database Cross-Check + Payload-Invisible Approvals (<code>data/pre1980_full_db_crosscheck_1977_1979.csv</code>)</h3>
+      <p class="section-desc">v20 closes the enumeration loop against the <strong>full Drugs@FDA database files</strong> (the website DB, narrowed to the 1965–1979 window and SHA-manifested). Per-year summaries compare full-DB ORIG/AP approvals with the payload extraction; any approval present in the full database but <strong>invisible to the openFDA ORIG/AP payloads is named here verbatim</strong> — the exact gap class that holds the 1977 ×8 / 1979 ×1 missing NMEs. Named rows are flagged for review, never merged into the verified decision tables.</p>
+      <div id="pre1980-fulldb-view"></div>
+    </div>
   </section>
 
   <section id="pre1985-detailed" class="tab-panel">

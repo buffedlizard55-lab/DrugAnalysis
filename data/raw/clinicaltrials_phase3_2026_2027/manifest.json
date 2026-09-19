@@ -1,6 +1,6 @@
 {
   "job": "clinicaltrials_phase3_2026_2027",
-  "generated_utc": "2026-09-18T20:24:39Z",
+  "generated_utc": "2026-09-19T18:57:45Z",
   "requests": [
     {
       "id": "phase3_upcoming",
@@ -292,6 +292,11 @@
       "bytes": 2514905,
       "sha256": "9fbd8f64edc41487dfd1a37d2a9ff8c023504ca183814170788c67d52fc44550",
       "written_at_utc": "2026-09-17T00:29:04Z"
+    },
+    {
+      "id": "phase3_upcoming",
+      "status": "skipped-existing",
+      "out": "studies.json"
     },
     {
       "id": "phase3_upcoming",
