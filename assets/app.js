@@ -680,7 +680,7 @@ function drawOverview() {
     { k: 'Phase 3 registry (2026–27)', v: (overview.ctgov || []).length, s: ((overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length) + ' US-listed lead sponsors with verified primary completion dates' },
     { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' },
     { k: 'Pre-1985 landmark decisions', v: (overview.pre1985Decisions || []).length, s: '1980–1985 historical era (Orphan Drug Act 1983, Hatch-Waxman 1984)' },
-    { k: 'Pre-1980 verified decisions', v: (overview.pre1980Decisions || []).length, s: '1977–1979 Type 1/1-4, dual-run payloads + live probes' },
+    { k: 'Pre-1980 verified decisions', v: (overview.pre1980Decisions || []).length, s: '1965–1979 Type 1/1-4, dual-run payloads + live probes' },
     { k: 'Original non-NME approvals', v: (overview.orig || []).length, s: ((overview.orig || []).filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length) + ' US-listed · Type 2/3/4/5, biosimilars, new-indication originals' },
     { k: 'Type 1 unmatched (flagged)', v: (overview.t1gap || []).length, s: 'openFDA Type 1 not merged into the NME master — CBER biologics / copacks, blank beats guessed' }
   ];
@@ -1868,6 +1868,112 @@ Promise.all([
     searchPlaceholder: 'Search the full-DB cross-check…',
     sort: { key: 'record_id', dir: 'asc' }, pageSize: 25,
     filters: [{ key: 'year', label: 'All years', field: 'year' }]
+  });
+
+  /* ---- v21 (2026-09-19): the same three-layer audit extended 1976 -> 1965,
+         plus the per-year missing-NME candidate ledger ---- */
+
+  DataTable({
+    id: 'pre1980-originals-6576', mount: '#pre1980-originals-6576-view', csv: 'data/pre1980_originals_audit_1965_1976.csv',
+    columns: [
+      c('row_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.row_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('first_product_brand', 'Brand (first product)', { core: true, render: r => `<strong>${escapeHtml(r.first_product_brand || '—')}</strong>` }),
+      c('first_product_ingredients', 'Ingredients (first product, verbatim)', { core: true, trunc: true }),
+      c('application_number', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('decision_date', 'Date', { core: true }),
+      c('submission_class_code', 'Class', { core: true, render: r => `<code>${escapeHtml(r.submission_class_code || '—')}</code>` }),
+      c('submission_class_code_description', 'Class description (verbatim)', { core: true, trunc: true }),
+      c('review_priority', 'Priority', { core: true, render: r => r.review_priority === 'PRIORITY' ? `<span class="badge pos">PRIORITY</span>` : (r.review_priority ? `<span class="badge neutral">${escapeHtml(r.review_priority)}</span>` : '<span class="badge flagged">—</span>') }),
+      c('nme_comparable', 'NME-comparable', { core: true, render: r => r.nme_comparable === 'TRUE' ? '<span class="badge pos">TRUE</span>' : '<span class="badge neutral">FALSE</span>' }),
+      c('classification_group', 'Classification group', { core: true, trunc: true, render: r => truncCell(r.classification_group) }),
+      c('sponsor_name_drugsatfda_holder', 'Holder of record', { core: true, trunc: true }),
+      c('ingredient_first_appearance', 'Ingredient first appearance', { trunc: true, render: r => truncCell(r.ingredient_first_appearance) }),
+      c('ingredient_screen', 'Ingredient screen', { trunc: true, render: r => truncCell(r.ingredient_screen) }),
+      c('tracked_in', 'v21 decision row', { core: true, render: r => r.tracked_in && r.tracked_in !== 'none (not a Type 1/1-4 original approval)' ? `<code>${escapeHtml(r.tracked_in)}</code>` : '<span class="badge neutral">audit-only</span>' }),
+      c('live_probe_status', 'Live probe', { core: true, render: r => r.live_probe_status === 'MATCH' ? '<span class="badge pos">MATCH</span>' : `<span class="badge neutral" title="Non-NME rows are cross-checked against the full Drugs@FDA database instead of a per-row probe">${escapeHtml(r.live_probe_status)}</span>` }),
+      c('drugsatfda_url', 'Drugs@FDA', { core: true, render: r => linkify(r.drugsatfda_url, 'Drugs@FDA'), detail: r => r.drugsatfda_url }),
+      c('openfda_url', 'openFDA', { core: true, render: r => linkify(r.openfda_url, 'openFDA'), detail: r => r.openfda_url }),
+      c('verification_status', 'Status', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['row_id', 'first_product_brand', 'first_product_ingredients', 'application_number', 'sponsor_name_drugsatfda_holder', 'submission_class_code'],
+    searchPlaceholder: 'Search all 477 original approvals (1965–1976)…',
+    sort: { key: 'decision_date', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'nme_comparable', label: 'All classifications', field: 'nme_comparable' },
+      { key: 'submission_class_code', label: 'All class codes', field: 'submission_class_code' }
+    ]
+  });
+
+  DataTable({
+    id: 'pre1980-probes-6576', mount: '#pre1980-probes-6576-view', csv: 'data/pre1980_row_probe_index_1965_1976.csv',
+    columns: [
+      c('row_id', 'Audit row', { core: true, render: r => `<code>${escapeHtml(r.row_id)}</code>` }),
+      c('application_number', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('probe_file', 'Probe capture', { core: true, render: r => `<code>${escapeHtml(r.probe_file)}</code>` }),
+      c('probe_url', 'Re-issuable URL', { core: true, render: r => linkify(r.probe_url, 'openFDA'), detail: r => r.probe_url }),
+      c('probe_sha256', 'SHA-256', { core: true, trunc: true, render: r => `<code>${escapeHtml((r.probe_sha256 || '').slice(0, 16))}…</code>`, detail: r => r.probe_sha256 }),
+      c('live_orig_date', 'Live ORIG date', { core: true }),
+      c('live_class_code', 'Live class', { core: true, render: r => `<code>${escapeHtml(r.live_class_code || '—')}</code>` }),
+      c('live_review_priority', 'Live priority', { core: true }),
+      c('live_sponsor', 'Live holder', { core: true, trunc: true }),
+      c('status', 'Status', { core: true, render: r => r.status === 'MATCH' ? '<span class="badge pos">MATCH</span>' : `<span class="badge flagged">${escapeHtml(r.status)}</span>` }),
+      c('checked_against_payload', 'Check', { trunc: true, render: r => truncCell(r.checked_against_payload) })
+    ],
+    searchFields: ['row_id', 'application_number', 'status', 'live_sponsor'],
+    searchPlaceholder: 'Search the 125 live probes (1965–1976)…',
+    sort: { key: 'row_id', dir: 'asc' }, pageSize: 25,
+    filters: [{ key: 'status', label: 'All statuses', field: 'status' }]
+  });
+
+  DataTable({
+    id: 'pre1980-fulldb-6576', mount: '#pre1980-fulldb-6576-view', csv: 'data/pre1980_full_db_crosscheck_1965_1976.csv',
+    columns: [
+      c('record_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.record_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('application_number', 'Appl #', { core: true, render: r => r.application_number ? `<code>${escapeHtml(r.application_number)}</code>` : '—' }),
+      c('decision_date', 'Date', { core: true }),
+      c('submission_class_code', 'Class', { core: true, render: r => `<code>${escapeHtml(r.submission_class_code || '—')}</code>` }),
+      c('submission_class_code_description', 'Class description', { core: true, trunc: true }),
+      c('review_priority', 'Priority', { core: true }),
+      c('products_verbatim', 'Products (verbatim from the DB files)', { trunc: true, render: r => truncCell(r.products_verbatim) }),
+      c('in_openfda_payload', 'In openFDA payload', { core: true, render: r => r.in_openfda_payload === 'FALSE' ? '<span class="badge flagged">NO</span>' : (r.in_openfda_payload || '—') }),
+      c('classification', 'Classification', { core: true, trunc: true, render: r => truncCell(r.classification) }),
+      c('drugsatfda_url', 'Drugs@FDA', { core: true, render: r => r.drugsatfda_url ? linkify(r.drugsatfda_url, 'Drugs@FDA') : '—', detail: r => r.drugsatfda_url }),
+      c('verification_status', 'Status', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['record_id', 'application_number', 'classification', 'products_verbatim'],
+    searchPlaceholder: 'Search the 1965–1976 full-DB cross-check…',
+    sort: { key: 'record_id', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'classification', label: 'All classifications', field: 'classification' }
+    ]
+  });
+
+  DataTable({
+    id: 'pre1980-gapcands', mount: '#pre1980-gapcands-view', csv: 'data/missing_nme_candidates.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('official_nmes_approved', 'FDA official NMEs', { core: true, num: true, render: r => `<span class="num-strong">${escapeHtml(r.official_nmes_approved)}</span>` }),
+      c('nme_comparable_rows', 'Project NME-comparable', { core: true, num: true, render: r => num(r.nme_comparable_rows, 0) }),
+      c('gap_size', 'Gap size', { core: true, render: r => deltaBadge(r.gap_size) }),
+      c('candidate_application', 'Candidate application', { core: true, render: r => r.candidate_application ? `<code>${escapeHtml(r.candidate_application)}</code>` : '<span class="badge neutral">none identified</span>' }),
+      c('candidate_brand', 'Candidate brand', { core: true, render: r => r.candidate_brand || '—' }),
+      c('candidate_generic', 'Candidate ingredient(s)', { core: true, trunc: true, render: r => truncCell(r.candidate_generic) }),
+      c('evidence_mechanism', 'Proven mechanism', { core: true, trunc: true, render: r => truncCell(r.evidence_mechanism) }),
+      c('drugsatfda_url', 'Drugs@FDA', { core: true, render: r => r.drugsatfda_url ? linkify(r.drugsatfda_url, 'Drugs@FDA') : '—', detail: r => r.drugsatfda_url }),
+      c('openfda_url', 'openFDA', { core: true, render: r => r.openfda_url ? linkify(r.openfda_url, 'openFDA') : '—', detail: r => r.openfda_url }),
+      c('status', 'Status', { core: true, render: r => statusBadge(r.status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['year', 'candidate_application', 'candidate_brand', 'candidate_generic', 'status'],
+    searchPlaceholder: 'Search the missing-NME candidate ledger…',
+    sort: { key: 'year', dir: 'asc' }, pageSize: 15,
+    filters: [{ key: 'status', label: 'All statuses', field: 'status' }]
   });
 
   DataTable({

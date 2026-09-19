@@ -63,7 +63,8 @@ EXPECTED_T1 = {1977: 17, 1978: 18, 1979: 13}
 WINDOW_YEARS = {str(y) for y in range(1965, 1980)}
 
 sys.path.insert(0, str(ROOT / "scripts"))
-from build_pre1980_decisions_v19 import DISPLAY  # noqa: E402  (explicit display names)
+from build_pre1980_decisions_v21 import DISPLAY  # noqa: E402  (v21 superset; the 48
+# 1977-1979 entries are byte-identical to the v19 map this builder was written against)
 
 NME_CLASSES = {"TYPE 1", "TYPE 1/4"}
 # The single permitted earlier-appearance flag (Cyclapen tablet/suspension).
@@ -393,9 +394,11 @@ def main() -> int:
     v19_path = DATA / "pre1980_fda_decisions.csv"
     if not v19_path.exists():
         fail("data/pre1980_fda_decisions.csv missing; run build_pre1980_decisions_v19.py first")
-    v19_rows = read_csv(v19_path)
+    # v21 extended the decision table to 1965-1979 (173 rows); this builder owns
+    # the 1977-1979 slice, so it pins the 48 rows of that slice.
+    v19_rows = [r for r in read_csv(v19_path) if r["year"] in ("1977", "1978", "1979")]
     if len(v19_rows) != 48:
-        fail(f"v19 table has {len(v19_rows)} rows, expected 48")
+        fail(f"decision table 1977-1979 slice has {len(v19_rows)} rows, expected 48")
     tracked_by_appl = {}
     for r in v19_rows:
         tracked_by_appl[r["application_number"].replace(" ", "")] = r["decision_id"]

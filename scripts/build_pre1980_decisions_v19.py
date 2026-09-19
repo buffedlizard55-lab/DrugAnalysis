@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+SUPERSEDED 2026-09-19 (v21): ``scripts/build_pre1980_decisions_v21.py`` is now
+the single writer of the four pre-1980 tables and covers 1965-1979 (173 rows).
+This v19 builder is kept for provenance of the 1977-1979 work — its display
+map, live-evidence links and note wording are reproduced verbatim by v21 — but
+running it would overwrite the extended tables with the 48-row version, so it
+now refuses to write. Run v21 instead.
+
 v19 (2026-09-19): verified pre-1980 FDA decision tables for 1977, 1978, 1979.
 
 Year-by-year treatment of the three years immediately before the project's
@@ -206,6 +213,8 @@ def ingredients_of(dec: dict) -> set[str]:
 
 
 def main() -> int:
+    fail("superseded by scripts/build_pre1980_decisions_v21.py (single writer of the "
+         "pre-1980 tables, 1965-1979); this v19 builder no longer writes")
     payloads, reqs, official = verify_inputs()
     alldec = load_all_decisions()
 
