@@ -945,6 +945,15 @@ _cross = read("fda_official_series_crosswalk.csv")
 _gap = read("pre1985_nme_gap_analysis.csv")
 _caps = read("pre1985_primary_captures_index.csv")
 _probe = read("pre1980_openfda_probe_2026_09_19.csv")
+_review_queue = read("pre1985_human_review_queue.csv")
+if len(_review_queue) != 5:
+    errors.append(f"pre1985_human_review_queue: expected 5 explicit adjudications, got {len(_review_queue)}")
+else:
+    _queue_ids = {r.get("review_id") for r in _review_queue}
+    if len(_queue_ids) != 5 or any(not r.get("primary_source") for r in _review_queue):
+        errors.append("pre1985_human_review_queue: IDs must be unique and every item must have a primary source")
+    if any(r.get("status") not in {"OPEN_GAP_SIZED", "OPEN_HUMAN_ADJUDICATION"} for r in _review_queue):
+        errors.append("pre1985_human_review_queue: unresolved item has an invalid status")
 
 _hist = json.loads((DATA / "raw" / "source_captures_2026_09_19" /
                     "fda_history_nda_nme_approvals_1938_2022.json").read_text(encoding="utf-8"))
