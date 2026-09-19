@@ -106,7 +106,10 @@ def verify_payloads() -> dict[int, list]:
     manifest = json.loads((RAW7579 / "manifest.json").read_text(encoding="utf-8"))
     by_year = {}
     for req in manifest["requests"]:
-        by_year[int(req["id"].split("_")[-1])] = req
+        # later runs append "skipped-existing" stubs without verification
+        # fields; only full entries (with sha256) may satisfy the pin
+        if req.get("sha256"):
+            by_year[int(req["id"].split("_")[-1])] = req
     payloads: dict[int, list] = {}
     for year in YEARS:
         path = RAW7579 / f"decisions_{year}.json"
@@ -160,8 +163,13 @@ def verify_probes(payloads: dict[int, list]) -> dict[str, dict]:
     if not manifest_path.exists():
         fail("probes dir exists but manifest.json missing")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    by_out = {e.get("out"): e for e in manifest["requests"]
-              if e.get("status") == 200 and e.get("out")}
+    # generic-job manifest entries key by id ("probe_{year}_{APPL}") and do
+    # not echo the output file name; reconstruct it deterministically
+    by_appl_entry = {}
+    for e in manifest["requests"]:
+        if e.get("status") == 200 and str(e.get("id", "")).startswith("probe_"):
+            appl = str(e["id"]).split("_", 2)[2]
+            by_appl_entry[appl] = e
     expected = set()
     for year in YEARS:
         for d in payloads[year]:
@@ -169,12 +177,11 @@ def verify_probes(payloads: dict[int, list]) -> dict[str, dict]:
     out: dict[str, dict] = {}
     missing, mismatch = [], []
     for appl in sorted(expected):
-        fname = f"probe_{appl}.json"
-        entry = by_out.get(fname)
+        entry = by_appl_entry.get(appl)
         if entry is None:
             missing.append(appl)
             continue
-        path = PROBES_DIR / fname
+        path = PROBES_DIR / f"probe_{appl}.json"
         if sha256_file(path) != entry["sha256"]:
             fail(f"{appl}: probe SHA drift vs manifest")
         body = json.loads(path.read_text(encoding="utf-8"))
@@ -273,7 +280,9 @@ def verify_full_db() -> dict | None:
         got = sha256_file(path)
         if not want_sha or got != want_sha:
             fail(f"{out_name}: SHA drift vs runner manifest")
-        if entry.get("filter", {}).get("type") not in ("date_year_in", "applno_in_collected", "FULL"):
+        filt = entry.get("filter", {})
+        fkind = filt if isinstance(filt, str) else filt.get("type", "FULL")
+        if fkind not in ("date_year_in", "applno_in_collected", "FULL"):
             fail(f"{out_name}: unexpected recorded filter")
         files[out_name] = {"entry": entry, "path": path}
     return files
@@ -289,17 +298,23 @@ def full_db_orig_ap(files: dict) -> dict[int, list[dict]]:
     products: dict[str, list[dict]] = {}
     for r in read_tab(files["Products_appl_window.txt"]["path"]):
         products.setdefault(r["ApplNo"], []).append(r)
-    date_re = re.compile(r"^(\d{1,2})/(\d{1,2})/(\d{4})")
+    date_mdY = re.compile(r"^(\d{1,2})/(\d{1,2})/(\d{4})")
+    date_iso = re.compile(r"^(\d{4})-(\d{2})-(\d{2})")
     out: dict[int, list[dict]] = {y: [] for y in YEARS}
     for s in subs:
         if (s.get("SubmissionType") or "").strip().upper() != "ORIG":
             continue
         if (s.get("SubmissionStatus") or "").strip().upper() != "AP":
             continue
-        m = date_re.match((s.get("SubmissionStatusDate") or "").strip())
+        raw = (s.get("SubmissionStatusDate") or "").strip()
+        m = date_mdY.match(raw) or date_iso.match(raw)
         if not m:
             continue
-        year = int(m.group(3))
+        g = m.groups()
+        if len(g[0]) == 4:          # ISO: YYYY-MM-DD
+            year, mo, dy = int(g[0]), int(g[1]), int(g[2])
+        else:                        # M/D/YYYY
+            mo, dy, year = int(g[0]), int(g[1]), int(g[2])
         if year not in YEARS:
             continue
         appl_no = s["ApplNo"].strip()
@@ -311,7 +326,7 @@ def full_db_orig_ap(files: dict) -> dict[int, list[dict]]:
         out[year].append({
             "appl_no": appl_no, "kind": kind,
             "application_number": f"{kind}{appl_no}",
-            "decision_date": f"{year}-{m.group(1).zfill(2)}-{m.group(2).zfill(2)}",
+            "decision_date": f"{year}-{mo:02d}-{dy:02d}",
             "submission_no": (s.get("SubmissionNo") or "").strip(),
             "submission_class_code": (lk.get("SubmissionClassCode") or "").strip().upper(),
             "submission_class_code_description": (lk.get("SubmissionClassCodeDescription") or "").strip(),

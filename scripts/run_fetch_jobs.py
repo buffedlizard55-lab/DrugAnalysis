@@ -402,7 +402,8 @@ def job_generic_csv(spec: dict, outdir: str, entries: list) -> None:
             entries.append({"id": sid, "url": item["url"], "status": "FAILED", "error": str(exc), "at_utc": _now()})
             print(f"FAIL {sid}: {exc}", flush=True)
             continue
-        meta = {"id": sid, "url": item["url"], "status": status, "ticker": item.get("ticker", ""),
+        meta = {"id": sid, "url": item["url"], "status": status, "out": item.get("out", f"{sid}.json"),
+                "ticker": item.get("ticker", ""),
                 "decision_date": item.get("decision_date", ""), "source": item.get("source", "")}
         write_payload(dest, body, meta)
         entries.append(meta)

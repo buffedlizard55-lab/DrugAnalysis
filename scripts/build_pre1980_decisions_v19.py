@@ -140,8 +140,10 @@ def verify_inputs() -> tuple[dict, dict, dict]:
     manifest = json.loads((RAW / "manifest.json").read_text(encoding="utf-8"))
     by_year_req = {}
     for req in manifest["requests"]:
-        year = int(req["id"].split("_")[-1])
-        by_year_req[year] = req
+        # later runs append "skipped-existing" stubs without verification
+        # fields; only full entries (with sha256) may satisfy the pin
+        if req.get("sha256"):
+            by_year_req[int(req["id"].split("_")[-1])] = req
     payloads = {}
     for year in YEARS:
         path = RAW / f"decisions_{year}.json"
@@ -307,7 +309,12 @@ def main() -> int:
                     "applications absent from the Drugs@FDA ORIG/AP payload altogether (the gap "
                     "class proven for 1985: Seldane/Protropin/Suprol/Femstat). Naming the 8 "
                     "requires the 1989 CDER statistical typescript (pp. 152-199) or the "
-                    "contemporaneous FDA annual report.")
+                    "contemporaneous FDA annual report. v20 full-DB cross-check (2026-09-19): "
+                    "the complete Drugs@FDA database files (fda.gov media 89850 zip, "
+                    "SHA-manifested) enumerate exactly 42 ORIG/AP approvals for 1977 - "
+                    "identical to the payload, 0 payload-invisible - so the 8 sit in "
+                    "applications no longer present anywhere in modern FDA databases, the "
+                    "Seldane purge class.")
         elif year == 1978:
             irreg = ("MOTOFEN NDA017744 is TYPE 1/4 (NME + new combination; verified live "
                      "V19-C07) and is the +1 on the NME-comparable basis used for every "

@@ -49,7 +49,7 @@ node --check assets/app.js                            # JS syntax OK
 
 ---
 
-## v20 session addendum (2026-09-19, later the same day) — RESUME HERE
+## v20 session addendum (2026-09-19, later the same day) — RESUMED & COMPLETED same session: GitHub reconnected, run 21 landed all 170 probes + the full-DB extract, builder+validator PASS, all tables committed (see README v20 section). Checklist below kept for provenance.
 
 **Where this session stopped:** the sandbox's GitHub token expired mid-run
 (`gh auth status` → "token in GH_TOKEN is no longer valid"; `git push`/`git fetch`

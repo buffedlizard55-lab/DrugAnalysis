@@ -5,7 +5,7 @@ This does not infer missing facts. It only rejects malformed rows and reports
 records that require human review, so new entries cannot silently enter the
 published tables with guessed values.
 """
-import csv, json, re, sys
+import csv, hashlib, json, re, sys
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
@@ -1257,9 +1257,11 @@ else:
         errors.append(f"pre1980_row_probes_1977_1979: manifest carries {len(_v20_ok)} "
                       "successful captures, expected 170")
     for _e in _v20_ok:
-        _pf = _v20_probe_dir / _e["out"]
-        if not _pf.exists() or _hl.sha256(_pf.read_bytes()).hexdigest() != _e["sha256"]:
-            errors.append(f"pre1980_row_probes_1977_1979: {_e['out']} missing or SHA drift")
+        # generic-job entries key by id ("probe_{year}_{APPL}"); the manifest
+        # does not echo the output file name - derive it deterministically
+        _pf = _v20_probe_dir / f"probe_{str(_e['id']).split('_', 2)[2]}.json"
+        if not _pf.exists() or hashlib.sha256(_pf.read_bytes()).hexdigest() != _e["sha256"]:
+            errors.append(f"pre1980_row_probes_1977_1979: {_e['id']} missing or SHA drift")
 _v20_zip_dir = DATA / "raw" / "drugsatfda_data_files_2026_09"
 _v20_invisible = []
 if not (_v20_zip_dir / "manifest.json").exists():
@@ -1272,7 +1274,7 @@ else:
         _e = next((x for x in _v20_zm["requests"] if x.get("out") == _out), None)
         _pf = _v20_zip_dir / _out
         if _e is None or not _pf.exists() or \
-                _hl.sha256(_pf.read_bytes()).hexdigest() != _e.get("out_sha256"):
+                hashlib.sha256(_pf.read_bytes()).hexdigest() != _e.get("out_sha256"):
             errors.append(f"drugsatfda_data_files_2026_09: {_out} missing or SHA drift")
     _v20_cross = read("pre1980_full_db_crosscheck_1977_1979.csv")
     _v20_sum = [r for r in _v20_cross if r["classification"] == "SUMMARY"]

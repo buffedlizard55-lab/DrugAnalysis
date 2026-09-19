@@ -13,15 +13,15 @@
     "1979": 13
   },
   "probe_layer": {
-    "present": false,
-    "rows": 0,
-    "match": 0,
+    "present": true,
+    "rows": 170,
+    "match": 170,
     "absent_live": 0,
     "other": 0
   },
   "full_db_layer": {
-    "present": false,
-    "crosscheck_rows": 0,
+    "present": true,
+    "crosscheck_rows": 3,
     "payload_invisible_by_year": {
       "1977": 0,
       "1978": 0,
