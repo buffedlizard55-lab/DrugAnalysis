@@ -1635,7 +1635,9 @@ Promise.all([
       c('project_novel_rows', 'Project novel rows', { core: true, num: true, render: r => num(r.project_novel_rows, 0) }),
       c('project_type1_rows', 'of which Type 1/1-4', { num: true, render: r => normDash(r.project_type1_rows) }),
       c('compilation_rows', 'Compilation rows', { num: true, render: r => normDash(r.compilation_rows) }),
-      c('delta_project_vs_official', 'Δ project vs official', { core: true, render: r => deltaBadge(r.delta_project_vs_official) }),
+      c('nme_comparable_rows', 'NME-comparable rows', { core: true, num: true, render: r => normDash(r.nme_comparable_rows) }),
+      c('delta_nme_comparable_vs_official', 'Δ NME-comparable vs official', { core: true, render: r => deltaBadge(r.delta_nme_comparable_vs_official) }),
+      c('delta_project_vs_official', 'Δ all rows vs official', { render: r => deltaBadge(r.delta_project_vs_official) }),
       c('delta_compilation_vs_official', 'Δ compilation vs official', { render: r => deltaBadge(r.delta_compilation_vs_official) }),
       c('verdict', 'Verdict', { core: true, render: r => verdictBadge(r.verdict) }),
       c('evidence_note', 'Evidence note', { trunc: true, render: r => truncCell(r.evidence_note) })

@@ -300,25 +300,38 @@ for year in range(1980, 2027):
     comp_rows = COMPILATION_BY_YEAR.get(ys, "") if ys in COMPILATION_BY_YEAR else ""
     delta_project = (project_rows - official) if official is not None else ""
     delta_comp = (int(comp_rows) - official) if (official is not None and comp_rows != "") else ""
+    # NME-comparable rows: for 1980-1984 that is the TYPE 1/1-4 subset (the
+    # pre-1985 table also carries documented non-NME boundary rows, e.g. the
+    # 1983 furosemide original); from 1985 on every master row is an NME or a
+    # new biologic, so the whole row count is comparable.
+    if year <= 1984:
+        comparable = PRE1985_TYPE1_BY_YEAR.get(ys, 0)
+    else:
+        comparable = project_rows
+    delta_comparable = (comparable - official) if official is not None else ""
 
     if official is None:
         verdict = "AWAITING_OFFICIAL_SERIES"
         note = ("FDA's history tabulation is captured through 2022; no official NME count is published for "
                 f"{year} on that page, so this year is not reconciled here.")
-    elif delta_project == 0:
+    elif delta_comparable == 0:
         verdict = "MATCH"
-        note = "Project novel-approval rows equal FDA's official NME count for this year."
-    elif delta_project > 0:
+        note = "NME-comparable project rows equal FDA's official NME count for this year."
+    elif delta_comparable > 0:
         verdict = "PROJECT_EXCEEDS_OFFICIAL"
-        note = (f"Project rows exceed the official NME count by {delta_project}. " + CROSSWALK_NOTE_BIOLOGIC
+        note = (f"NME-comparable project rows exceed the official NME count by {delta_comparable}. "
+                + CROSSWALK_NOTE_BIOLOGIC
                 if year >= 1985 else
-                f"Project rows exceed the official NME count by {delta_project}; the pre-1985 table also carries "
-                "non-NME boundary rows (see pre1985_nme_gap_analysis.csv).")
+                f"NME-comparable project rows exceed the official NME count by {delta_comparable}.")
     else:
         verdict = "PROJECT_SHORT_FLAGGED"
-        note = (f"FDA's official NME count exceeds the project's rows by {abs(delta_project)} - a sized, flagged "
-                "coverage gap. See pre1985_nme_gap_analysis.csv for 1980-1984 and the per-year note below.")
+        note = (f"FDA's official NME count exceeds the project's NME-comparable rows by "
+                f"{abs(delta_comparable)} - a sized, flagged coverage gap. See pre1985_nme_gap_analysis.csv "
+                "for the pre-1985 years and the 1988/2013 notes below.")
 
+    if year == 1983:
+        note += (" The 1983 group reaches 14 rows only because it includes the furosemide non-NME boundary row "
+                 "(NDA018413, a molecule first approved in 1968); on a like-for-like NME basis the year is short by 1.")
     if year in (1988, 2013):
         note += (f" SPECIFIC FINDING: the CDER Compilation itself carries {comp_rows} rows for {year} against "
                  f"FDA's official NME count of {official} - the only two years in 1985-2022 where the Compilation "
@@ -339,9 +352,11 @@ for year in range(1980, 2027):
         "project_master_rows": master_rows,
         "project_novel_rows": project_rows,
         "project_type1_rows": type1,
+        "nme_comparable_rows": comparable,
         "pre1985_non_nme_boundary_rows": boundary,
         "compilation_rows": comp_rows,
         "delta_project_vs_official": delta_project,
+        "delta_nme_comparable_vs_official": delta_comparable,
         "delta_compilation_vs_official": delta_comp,
         "verdict": verdict,
         "evidence_note": note,
@@ -369,11 +384,14 @@ for ys in ("1980", "1981", "1982", "1983", "1984", "1985"):
         effective = project_rows - official  # +1
         invisible = "; ".join(f"{app} {INVISIBLE_LABEL[did]}" for did, app in INVISIBLE_1985)
         invisible_verified = "; ".join(f"{app}: {LIVE_APPS[app]}" for _did, app in INVISIBLE_1985)
-        candidates = ("New biologic counted by the Compilation and not by the NME statistical series "
-                      "(Protropin / recombinant somatrem is the only 1985 Compilation row that is a biological "
-                      "product; the Compilation's own NDA/BLA column types all 31 rows 'NDA', so the workbook "
-                      "does not separate them). Baros Effervescent was re-verified live as a Type 1 NDA "
-                      "(NDA018509, 1985-08-07) and is not the difference.")
+        candidates = ("New biologic counted by the Compilation and not by the NME statistical series: "
+                      "Protropin (somatrem, a recombinant human growth hormone) is the leading candidate "
+                      "because its product is a biological rather than a small molecule; this identification "
+                      "rests on the product's nature, NOT on a workbook field - the Compilation's own NDA/BLA "
+                      "column types all 31 of the 1985 rows 'NDA' and has no comment field populated for them, "
+                      "so the workbook cannot separate the biologic. Baros Effervescent was re-verified live as "
+                      "a Type 1 NDA (NDA018509, 1985-08-07) and is not the difference. Status: candidate, not a "
+                      "determination; the 1989 CDER statistical typescript would settle it.")
         status = "RECONCILED_WITH_CANDIDATE — 31 (Compilation) vs 30 (official NME series); +1 row is a biological product in the Compilation"
         next_source = ("FDA CDER NME Compilation data dictionary (media/177920) plus the 1989 CDER statistical "
                        "typescript; CDER error-report address CDER.NMENewBiologicApprovals@fda.hhs.gov for the "

@@ -8,7 +8,7 @@
 | Check | Result | Evidence |
 |---|---|---|
 | Official FDA series captured | FDA History Office tabulation transcribed verbatim: 85 year rows (1938–2022) with footnotes and the full source list, including the 1985 *New Drug Evaluation Statistical Report (Briefing Book)* and the 1989 CDER statistical report pp. 152–199 | `data/raw/source_captures_2026_09_19/fda_history_nda_nme_approvals_1938_2022.json`; `data/fda_official_year_series.csv`; live fetch 2026-09-19 |
-| Official-vs-project crosswalk | 47 rows (1980–2026), one per year, each with official NME/NDA counts, project rows, Type 1/1-4 rows, Compilation rows, two deltas, a verdict and an evidence note. Verdicts: **18 MATCH**, 19 `PROJECT_EXCEEDS_OFFICIAL` (biologics by design), **6 `PROJECT_SHORT_FLAGGED`** (1980, 1981, 1982, 1984, 1988, 2013), 4 `AWAITING_OFFICIAL_SERIES` (2023–2026) | `data/fda_official_series_crosswalk.csv`; builder pins; validator pins |
+| Official-vs-project crosswalk | 47 rows (1980–2026), one per year, each with official NME/NDA counts, project rows, Type 1/1-4 rows, NME-comparable rows, Compilation rows, three deltas, a verdict and an evidence note. Verdicts (driven by the NME-comparable count, so a year cannot read MATCH on the strength of a documented non-NME boundary row): **17 MATCH**, 19 `PROJECT_EXCEEDS_OFFICIAL` (biologics by design), **7 `PROJECT_SHORT_FLAGGED`** (1980 −3, 1981 −4, 1982 −3, 1983 −1, 1984 −3, 1988 −1, 2013 −2), 4 `AWAITING_OFFICIAL_SERIES` (2023–2026) | `data/fda_official_series_crosswalk.csv`; builder pins; validator pins |
 | Pre-1985 gap sized | 1980: 12 official vs 9 (−3) · 1981: 27 vs 23 (−4) · 1982: 28 vs 25 (−3) · 1983: 14 vs 13 (−1) · 1984: 22 vs 19 (−3) · 1985: 30 official vs 31 Compilation rows (+1). The 43 blank-class payload rows are enumerated with their active ingredients and shown to be marketed-ingredient formulations; a live openFDA spot check returns a furosemide ORIG-1 of **1968-03-20**, proving the 1983/1984 furosemide originals are re-approvals | `data/pre1985_nme_gap_analysis.csv`; payloads; live API captures |
 | 1983 accuracy correction | The 1983 group's 14 rows = 13 Type 1/1-4 + the furosemide boundary row; the official count of 14 is therefore **not** matched, the effective shortfall is 1, and the boundary row is explicitly excluded from NME counting in the era table | era table v17 fields; validator cross-check between era and gap tables |
 | 1985 +1 row | Compilation 31 rows vs official 30 NMEs. Compilation inclusion rule captured verbatim (Type 1/1-4 NDAs + new biologics; CBER products excluded). Protropin/recombinant somatrem named as the **candidate** biological product; Baros Effervescent (NDA018509) re-verified live as a Type 1 NDA and ruled out. The workbook's own NDA/BLA column types all 31 rows "NDA", so the workbook cannot separate them — stated, not glossed | Compilation landing capture; workbook parse; live NDA018509 capture |
@@ -16,6 +16,24 @@
 | Live capture index | 12 captures indexed to rows: NDA018830, NDA018615, NDA018949 (openFDA NOT_FOUND + empty Drugs@FDA record), NDA019107 (same, plus brand NOT_FOUND), NDA018217 (absent) vs NDA019215 (product record with **no submissions array**), NDA018509 (Type 1, 1985-08-07), the 1985 workbook parse, and the pre-1980 feasibility probe | `data/pre1985_primary_captures_index.csv`; verbatim JSON |
 | Dated annotations | Six rows carry additive v17 notes with no value changes: master D1030, D1038, D1040, D1042, D1047; non-NME NDA022046. Diff proves only the `notes` column changed | `scripts/annotate_v17_2026_09.py`; note-length diff; `data/staging/v17_annotation_report.json` |
 | Untouched invariants | master row count 1,427 (values unchanged), pre-1985 decision table **byte-identical** after the era builder rerun, non-NME table 3,142 rows, focus audit 517 rows, CRL/supplement/CT.gov/scorecard tables unchanged by this session | `git diff --stat`, builder rerun diff |
+
+## v17.1 amendment (same-day review pass)
+
+Two corrections came out of re-reading the v17 block against its own artifacts, both with the same principle:
+a claim must not survive its own disproof.
+
+| Amendment | What was wrong | What was done |
+|---|---|---|
+| Crosswalk verdict basis | The first cut compared the official NME count with **all** project rows, so **1983 read `MATCH`** on the strength of the furosemide non-NME boundary row while the gap analysis in the same commit reported 1983 short by one. | The verdict is now computed on the **NME-comparable** count (Type 1/1-4 for 1980-1984; all novel rows from 1985 on); the comparable count and its delta are published as their own columns; the case is explained in the row note. Corrected tallies: **17 MATCH**, 19 `PROJECT_EXCEEDS_OFFICIAL`, **7 `PROJECT_SHORT_FLAGGED`** (1980 -3, 1981 -4, 1982 -3, 1983 -1, 1984 -3, 1988 -1, 2013 -2), 4 `AWAITING_OFFICIAL_SERIES`. |
+| Superseded claim on 390 rows | Every pre-1998 master row carried the clause "no CDER NME year table was published for pre-1998 years". v17 located exactly such a table, so the clause was false in the very commit that added the series. | The clause is rewritten to "at the time of entry no CDER NME year table had been located" (historically accurate) and each of the 390 rows gains a dated pointer to `data/fda_official_year_series.csv` and to its year's verdict in `data/fda_official_series_crosswalk.csv`. A field-level diff against the previous revision shows `notes` as the only changed column (390 rows); the step is idempotent and raises if any stale clause survives. |
+
+Also tightened: the 1985 +1 candidate is now stated to rest on the product's own nature (a recombinant biological),
+with the workbook's inability to separate it made explicit (its NDA/BLA column types all 31 rows "NDA"), so the
+candidate is presented as a candidate rather than as a workbook-sourced fact.
+
+Validator gates added in this pass and re-run to **PASS, 0 errors**: 17 MATCH years; per-year verdict-vs-delta
+arithmetic; the false clause absent everywhere; exactly 390 rows carrying the resolution pointer; resolution notes
+retaining the crosswalk filename.
 
 ## Method notes and limitations (v17)
 

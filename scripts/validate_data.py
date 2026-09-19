@@ -958,7 +958,7 @@ for _y, _v in {"1980": "12", "1981": "27", "1982": "28", "1983": "14", "1984": "
 if len(_cross) != 47 or [r["year"] for r in _cross] != [str(y) for y in range(1980, 2027)]:
     errors.append("fda_official_series_crosswalk: expected 47 rows, one per year 1980-2026")
 _short = [r["year"] for r in _cross if r["verdict"] == "PROJECT_SHORT_FLAGGED"]
-if _short != ["1980", "1981", "1982", "1984", "1988", "2013"]:
+if _short != ["1980", "1981", "1982", "1983", "1984", "1988", "2013"]:
     errors.append(f"crosswalk: PROJECT_SHORT years changed to {_short}")
 if len(_gap) != 6 or [r["year"] for r in _gap] != ["1980", "1981", "1982", "1983", "1984", "1985"]:
     errors.append("pre1985_nme_gap_analysis: expected six rows, 1980-1985")
@@ -974,6 +974,18 @@ if not _1980["payload_blank_class_ingredients"].startswith("DEXTROSE; HYDROCORTI
 _1985 = next(r for r in _gap if r["year"] == "1985")
 if "NDA018949 Seldane" not in _1985["payload_invisible_apps_known"]:
     errors.append("pre1985_nme_gap_analysis 1985: payload-invisible application list lost Seldane")
+_match_years = [r["year"] for r in _cross if r["verdict"] == "MATCH"]
+if len(_match_years) != 17:
+    errors.append(f"crosswalk: MATCH years changed to {len(_match_years)} ({_match_years})")
+for _r in _cross:
+    if _r["official_nmes_approved"] == "":
+        continue
+    if _r["nme_comparable_rows"] == "":
+        errors.append(f"crosswalk {_r['year']}: NME-comparable count missing")
+    elif _r["verdict"] in ("MATCH", "PROJECT_SHORT_FLAGGED", "PROJECT_EXCEEDS_OFFICIAL") and \
+            int(_r["delta_nme_comparable_vs_official"]) != \
+            int(_r["nme_comparable_rows"]) - int(_r["official_nmes_approved"]):
+        errors.append(f"crosswalk {_r['year']}: NME-comparable verdict/delta arithmetic broken")
 if len(_caps) != 12:
     errors.append(f"pre1985_primary_captures_index: expected 12 live captures, got {len(_caps)}")
 if len(_probe) != 1 or "pre-1980" not in _probe[0]["project_implication"]:
@@ -999,6 +1011,24 @@ if "CDER.NMENewBiologicApprovals@fda.hhs.gov" not in _by_id["D1040"]["notes"]:
 _r22046 = next((r for r in orig if (r.get("application_number") or "").strip().replace(" ", "") == "NDA022046"), None)
 if _r22046 is None or _v17_marker not in (_r22046.get("notes") or ""):
     errors.append("orig: NDA022046 lost its v17 adjudication note")
+
+# v17.1: the note clause that v17 proved false must be gone, and every row that
+# carried it must point at the official year series instead.
+_stale_clause = "no CDER NME year table was published"
+_resolved = "v17 (2026-09-19): FDA's official NME year series"
+_stale_rows = [r["decision_id"] for r in master if _stale_clause in (r.get("notes") or "")]
+if _stale_rows:
+    errors.append(f"master: {len(_stale_rows)} rows still carry the superseded "
+                  f"'no CDER NME year table was published' clause (e.g. {_stale_rows[:3]})")
+_resolved_rows = [r["decision_id"] for r in master if _resolved in (r.get("notes") or "")]
+if len(_resolved_rows) != 390:
+    errors.append(f"master: {len(_resolved_rows)} rows carry the official-year-series resolution "
+                  "sentence, expected 390")
+_bad_pointer = [r["decision_id"] for r in master if _resolved in (r.get("notes") or "")
+                and "data/fda_official_series_crosswalk.csv" not in r["notes"]]
+if _bad_pointer:
+    errors.append(f"master: {len(_bad_pointer)} resolution notes lost the crosswalk pointer "
+                  f"(e.g. {_bad_pointer[:3]})")
 
 # The era table's official-count columns must agree with the gap analysis.
 _era = read("pre1985_era_analysis.csv")

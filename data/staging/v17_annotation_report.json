@@ -9,5 +9,11 @@
     "D1042",
     "D1047",
     "NDA022046"
-  ]
+  ],
+  "stale_year_table_clause": {
+    "corrected_rows": 0,
+    "already_resolved_rows": 390,
+    "leftover_rows": 0,
+    "resolution_sentence": "v17 (2026-09-19): FDA's official NME year series (1938-2022) was located and captured (data/fda_official_year_series.csv); this year's official-vs-project verdict is in data/fda_official_series_crosswalk.csv."
+  }
 }
