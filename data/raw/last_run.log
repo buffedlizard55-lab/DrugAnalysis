@@ -32,12 +32,38 @@ ok orig_ap_2008: 2015 records -> data/raw/openfda_approvals_2000_2010/2008.json
 ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
 ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
 == job openfda_efficacy_supplements (1 spec(s)) ==
+ok eff_suppl_1980: 33 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1980.json
+ok eff_suppl_1981: 29 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1981.json
+ok eff_suppl_1982: 29 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1982.json
+ok eff_suppl_1983: 24 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1983.json
+ok eff_suppl_1984: 30 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1984.json
+ok eff_suppl_1985: 26 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1985.json
+ok eff_suppl_1986: 42 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1986.json
+ok eff_suppl_1987: 25 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1987.json
+ok eff_suppl_1988: 30 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1988.json
+ok eff_suppl_1989: 33 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1989.json
+ok eff_suppl_1990: 30 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1990.json
+ok eff_suppl_1991: 41 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1991.json
+ok eff_suppl_1992: 42 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1992.json
+ok eff_suppl_1993: 49 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1993.json
+ok eff_suppl_1994: 46 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1994.json
+ok eff_suppl_1995: 57 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1995.json
+ok eff_suppl_1996: 111 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1996.json
+ok eff_suppl_1997: 95 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1997.json
+ok eff_suppl_1998: 119 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1998.json
+ok eff_suppl_1999: 95 efficacy supplements -> data/raw/openfda_efficacy_supplements/suppl_1999.json
+== job openfda_orig_decisions_1970_1979 (1 spec(s)) ==
+ok orig_decisions_1970: 38 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1970.json
+ok orig_decisions_1971: 48 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1971.json
+ok orig_decisions_1972: 29 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1972.json
+ok orig_decisions_1973: 43 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1973.json
+ok orig_decisions_1974: 73 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1974.json
+ok orig_decisions_1975: 39 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1975.json
+ok orig_decisions_1976: 80 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1976.json
+ok orig_decisions_1977: 42 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1977.json
+ok orig_decisions_1978: 66 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1978.json
+ok orig_decisions_1979: 62 decisions -> data/raw/openfda_orig_decisions_1970_1979/decisions_1979.json
 == job openfda_orig_decisions_1980_1984 (1 spec(s)) ==
-ok orig_decisions_1980: 82 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1980.json
-ok orig_decisions_1981: 71 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1981.json
-ok orig_decisions_1982: 103 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1982.json
-ok orig_decisions_1983: 70 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1983.json
-ok orig_decisions_1984: 109 decisions -> data/raw/openfda_orig_decisions_1980_1984/decisions_1984.json
 == job openfda_orig_decisions_2011_2026 (1 spec(s)) ==
 == job probe (5 spec(s)) ==
 FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
@@ -46,44 +72,44 @@ ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
 ok yahoo_symbol_search_probe 200 2758 bytes -> data/raw/probe/yahoo_search_probe.json
 == job source_captures_2026_09_17 (10 spec(s)) ==
-ok cder_nme_cy1998_table 200 22084 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
-ok cder_nme_cy1999_table 200 38954 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
-ok cder_nme_cy2000_table 200 31734 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
-ok cder_rdmt_index_2003 200 15826 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
-ok fda_novel_2014_table_wayback 200 64206 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
-ok fda_novel_2026_live 200 41780 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
+ok cder_nme_cy1998_table 200 22081 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
+ok cder_nme_cy1999_table 200 38951 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
+ok cder_nme_cy2000_table 200 31725 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
+ok cder_rdmt_index_2003 200 15828 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
+ok fda_novel_2014_table_wayback 200 64205 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
+ok fda_novel_2026_live 200 41834 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
 ok openfda_contrave_200063 200 12628 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA200063_contrave.json
 ok openfda_ofev_205832 200 15334 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA205832_ofev.json
 ok openfda_pixclara_218592 200 2096 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA218592_pixclara.json
 ok ctgov_total_2026_2027 200 159 bytes -> data/raw/source_captures_2026_09_17/ctgov_totalcount_2026_2027.json
 == job stock_yahoo_batch_2026_09 (1 spec(s)) ==
 ok SRRK_2026-09-11 200 2680 bytes
-ok AZN_2026-09-04 200 3080 bytes
-ok IONS_2026-09-03 200 2919 bytes
+ok AZN_2026-09-04 200 3079 bytes
+ok IONS_2026-09-03 200 2920 bytes
 ok REGN_2026-08-19 200 2980 bytes
 ok BMY_2026-08-13 200 3008 bytes
-ok LNTH_2026-08-13 200 3054 bytes
-ok OTLK_2026-07-24 200 3207 bytes
+ok LNTH_2026-08-13 200 3055 bytes
+ok OTLK_2026-07-24 200 3206 bytes
 ok NUVL_2026-07-22 200 1085 bytes
 ok MRK_2026-07-15 200 2945 bytes
 ok CELC_2026-07-14 200 2888 bytes
-ok VERA_2026-07-07 200 2813 bytes
+ok VERA_2026-07-07 200 2815 bytes
 ok VRDN_2026-06-26 200 2971 bytes
 ok BAYRY_2026-06-12 200 3030 bytes
 ok SGIOF_2026-05-29 200 2663 bytes
 ok ABBV_2026-05-27 200 2866 bytes
 ok GILD_2026-05-22 200 3035 bytes
-ok AZN_2026-05-15 200 3034 bytes
-ok RIGL_2026-05-01 200 3147 bytes
-ok MRK_2026-04-20 200 3176 bytes
+ok AZN_2026-05-15 200 3033 bytes
+ok RIGL_2026-05-01 200 3146 bytes
+ok MRK_2026-04-20 200 3175 bytes
 ok LLY_2026-04-01 200 2833 bytes
-ok NVO_2026-03-26 200 2895 bytes
-ok CORT_2026-03-25 200 2926 bytes
+ok NVO_2026-03-26 200 2894 bytes
+ok CORT_2026-03-25 200 2927 bytes
 ok JNJ_2026-03-17 200 3010 bytes
-ok GSK_2026-03-17 200 3027 bytes
+ok GSK_2026-03-17 200 3026 bytes
 ok ASND_2026-02-27 200 2893 bytes
 ok VNDA_2025-12-30 200 2724 bytes
-ok VRTX_2025-01-30 200 2928 bytes
+ok VRTX_2025-01-30 200 2927 bytes
 ok NBIX_2024-12-13 200 3057 bytes
 ok BBIO_2024-11-22 200 3062 bytes
 ok ZYME_2024-11-20 200 2883 bytes
@@ -190,3 +216,202 @@ FAIL AGRX_2013-02-13: HTTPError: HTTP Error 404: Not Found
 FAIL RHHBY_1998-01-29: HTTPError: HTTP Error 400: Bad Request
 FAIL RHHBY_1998-04-30: HTTPError: HTTP Error 400: Bad Request
 FAIL RHHBY_2002-10-16: HTTPError: HTTP Error 400: Bad Request
+== job stock_yahoo_events_formerly_listed (1 spec(s)) ==
+FAIL AGN_1985-12-19: HTTPError: HTTP Error 404: Not Found
+ok WYE_1985-12-24 200 764 bytes
+FAIL SGP_1985-12-27: HTTPError: HTTP Error 400: Bad Request
+ok WYE_1986-01-09 200 764 bytes
+FAIL SGP_1986-06-04: HTTPError: HTTP Error 400: Bad Request
+ok WYE_1986-10-27 200 764 bytes
+FAIL AGN_1986-12-31: HTTPError: HTTP Error 404: Not Found
+FAIL SGP_1987-04-30: HTTPError: HTTP Error 400: Bad Request
+ok WYE_1987-12-23 200 764 bytes
+FAIL AGN_1988-02-29: HTTPError: HTTP Error 404: Not Found
+FAIL AGN_1988-09-30: HTTPError: HTTP Error 404: Not Found
+FAIL MTC_1988-12-27: HTTPError: HTTP Error 400: Bad Request
+FAIL SGP_1989-01-27: HTTPError: HTTP Error 400: Bad Request
+ok WYE_1989-01-31 200 764 bytes
+ok WYE_1989-04-28 200 764 bytes
+FAIL AGN_1989-12-09: HTTPError: HTTP Error 404: Not Found
+FAIL BOL_1989-12-29: HTTPError: HTTP Error 400: Bad Request
+ok WYE_1989-12-29 200 764 bytes
+ok WYE_1991-01-31 200 764 bytes
+ok IMNX_1991-03-05 200 743 bytes
+FAIL GENZ_1991-04-05: HTTPError: HTTP Error 400: Bad Request
+ok WYE_1991-12-30 200 764 bytes
+FAIL MTC_1992-02-21: HTTPError: HTTP Error 400: Bad Request
+FAIL CHIR_1992-05-05: HTTPError: HTTP Error 400: Bad Request
+ok WYE_1992-07-31 200 764 bytes
+FAIL MTC_1992-10-29: HTTPError: HTTP Error 400: Bad Request
+FAIL SGP_1993-04-12: HTTPError: HTTP Error 400: Bad Request
+FAIL CHIR_1993-07-23: HTTPError: HTTP Error 400: Bad Request
+FAIL FRX_1993-09-17: HTTPError: HTTP Error 404: Not Found
+ok WYE_1993-10-22 200 764 bytes
+ok WYE_1993-12-28 200 764 bytes
+FAIL GENZ_1994-05-23: HTTPError: HTTP Error 400: Bad Request
+FAIL CNTO_1994-12-22: HTTPError: HTTP Error 400: Bad Request
+FAIL AGN_1995-09-13: HTTPError: HTTP Error 404: Not Found
+FAIL SGP_1995-12-20: HTTPError: HTTP Error 400: Bad Request
+FAIL QLTI_1995-12-27: HTTPError: HTTP Error 400: Bad Request
+ok PNU_1996-06-05 200 762 bytes
+ok PNU_1996-06-14 200 762 bytes
+FAIL CNTO_1996-07-03: HTTPError: HTTP Error 400: Bad Request
+ok WLA_1996-08-05 200 742 bytes
+ok AVM_1996-08-30 200 815 bytes
+FAIL AGN_1996-09-06: HTTPError: HTTP Error 404: Not Found
+ok RPCX_1996-09-06 200 743 bytes
+ok IVX_1996-09-26 200 818 bytes
+ok AVM_1996-12-06 200 815 bytes
+ok WLA_1996-12-17 200 742 bytes
+ok PNU_1996-12-23 200 762 bytes
+ok WLA_1997-01-29 200 742 bytes
+ok RPCX_1997-03-14 200 743 bytes
+ok PNU_1997-04-04 200 762 bytes
+ok WYE_1997-05-23 200 764 bytes
+FAIL AGN_1997-06-13: HTTPError: HTTP Error 404: Not Found
+ok PNU_1997-07-01 200 762 bytes
+ok WYE_1997-07-15 200 764 bytes
+FAIL GNSA_1997-09-12: HTTPError: HTTP Error 404: Not Found
+FAIL NXCO_1997-09-23: HTTPError: HTTP Error 404: Not Found
+ok WYE_1997-11-25 200 764 bytes
+FAIL GNE_1997-11-26: HTTPError: HTTP Error 400: Bad Request
+ok WLA_1997-12-04 200 742 bytes
+FAIL BOL_1998-03-09: HTTPError: HTTP Error 400: Bad Request
+ok PNU_1998-03-25 200 762 bytes
+FAIL ALC_1998-04-01: HTTPError: HTTP Error 400: Bad Request
+FAIL CORR_1998-05-18: HTTPError: HTTP Error 404: Not Found
+FAIL MEDI_1998-06-19: HTTPError: HTTP Error 400: Bad Request
+FAIL CELG_1998-07-16: HTTPError: HTTP Error 404: Not Found
+FAIL FRX_1998-07-17: HTTPError: HTTP Error 404: Not Found
+FAIL CNTO_1998-08-24: HTTPError: HTTP Error 400: Bad Request
+ok QTRN_1998-09-10 200 743 bytes
+FAIL DITI_1998-09-14: HTTPError: HTTP Error 404: Not Found
+FAIL GNE_1998-09-25: HTTPError: HTTP Error 400: Bad Request
+ok GELX_1998-10-30 200 743 bytes
+ok IMNX_1998-11-02 200 743 bytes
+FAIL GENZ_1998-11-30: HTTPError: HTTP Error 400: Bad Request
+ok CEPH_1998-12-24 200 765 bytes
+FAIL MTC_1998-12-31: HTTPError: HTTP Error 400: Bad Request
+FAIL BCII_1999-06-09: HTTPError: HTTP Error 400: Bad Request
+FAIL DITI_1999-08-03: HTTPError: HTTP Error 404: Not Found
+FAIL SGP_1999-08-11: HTTPError: HTTP Error 400: Bad Request
+ok WYE_1999-08-13 200 764 bytes
+ok WYE_1999-09-15 200 764 bytes
+ok DSUS_1999-12-03 200 2524 bytes
+FAIL MNK_1999-12-08: HTTPError: HTTP Error 404: Not Found
+ok WYE_2000-02-02 200 764 bytes
+FAIL QLTI_2000-04-12: HTTPError: HTTP Error 400: Bad Request
+ok WYE_2000-05-17 200 764 bytes
+FAIL DNA_2000-06-02: HTTPError: HTTP Error 400: Bad Request
+FAIL THRX_2000-06-30: HTTPError: HTTP Error 404: Not Found
+ok SLXP_2000-07-18 200 764 bytes
+FAIL CTIC_2000-09-25: HTTPError: HTTP Error 404: Not Found
+ok ELN_2000-12-08 200 765 bytes
+FAIL MDCO_2000-12-15: HTTPError: HTTP Error 404: Not Found
+FAIL SGP_2001-01-19: HTTPError: HTTP Error 400: Bad Request
+FAIL AGN_2001-03-16: HTTPError: HTTP Error 404: Not Found
+FAIL MLNM_2001-05-07: HTTPError: HTTP Error 400: Bad Request
+ok ELN_2001-11-08 200 765 bytes
+FAIL SGP_2001-12-21: HTTPError: HTTP Error 400: Bad Request
+FAIL ORPH_2002-07-17: HTTPError: HTTP Error 404: Not Found
+FAIL GENZ_2003-04-24: HTTPError: HTTP Error 400: Bad Request
+FAIL MLNM_2003-05-13: HTTPError: HTTP Error 400: Bad Request
+FAIL DNA_2003-06-20: HTTPError: HTTP Error 400: Bad Request
+ok CBST_2003-09-12 200 764 bytes
+FAIL AGN_2003-10-16: HTTPError: HTTP Error 404: Not Found
+FAIL FRX_2003-10-16: HTTPError: HTTP Error 404: Not Found
+FAIL DNA_2003-10-27: HTTPError: HTTP Error 400: Bad Request
+FAIL PRCS_2003-11-25: HTTPError: HTTP Error 400: Bad Request
+FAIL IMCL_2004-02-12: HTTPError: HTTP Error 400: Bad Request
+FAIL DNA_2004-02-26: HTTPError: HTTP Error 400: Bad Request
+ok ISTA_2004-05-05 200 815 bytes
+FAIL PHRM_2004-05-19: HTTPError: HTTP Error 400: Bad Request
+ok SLXP_2004-05-25 200 764 bytes
+FAIL IDEV_2004-05-28: HTTPError: HTTP Error 400: Bad Request
+ok SHPG_2004-10-26 200 771 bytes
+ok OSIP_2004-11-18 200 765 bytes
+ok SEPR_2004-12-15 200 765 bytes
+ok EYET_2004-12-17 200 765 bytes
+ok ELN_2004-12-28 200 765 bytes
+FAIL GENZ_2004-12-28: HTTPError: HTTP Error 400: Bad Request
+ok CTRX_2004-12-29 200 763 bytes
+ok AMLN_2005-03-16 200 770 bytes
+ok AMLN_2005-04-28 200 770 bytes
+ok WYE_2005-06-15 200 764 bytes
+FAIL TRCA_2005-08-30: HTTPError: HTTP Error 404: Not Found
+FAIL CELG_2005-12-27: HTTPError: HTTP Error 404: Not Found
+ok CVTX_2006-01-27 200 765 bytes
+FAIL SCMP_2006-01-31: HTTPError: HTTP Error 400: Bad Request
+ok MICU_2006-02-17 200 764 bytes
+FAIL GENZ_2006-04-28: HTTPError: HTTP Error 400: Bad Request
+ok MOGN_2006-05-02 200 765 bytes
+FAIL DNA_2006-06-30: HTTPError: HTTP Error 400: Bad Request
+ok SHPG_2006-07-24 200 771 bytes
+FAIL SGP_2006-09-15: HTTPError: HTTP Error 400: Bad Request
+ok IDIX_2006-10-25 200 764 bytes
+FAIL ALXN_2007-03-16: HTTPError: HTTP Error 404: Not Found
+ok WYE_2007-05-30 200 764 bytes
+ok WYE_2008-02-29 200 764 bytes
+ok CEPH_2008-03-20 200 765 bytes
+ok CVTX_2008-04-10 200 765 bytes
+FAIL PGNX_2008-04-24: HTTPError: HTTP Error 404: Not Found
+ok ADLR_2008-05-20 200 764 bytes
+FAIL MDCO_2008-08-01: HTTPError: HTTP Error 404: Not Found
+ok WPI_2008-10-08 200 814 bytes
+ok GENZ_2008-12-15 200 2927 bytes
+FAIL EPIX_2008-12-22: HTTPError: HTTP Error 404: Not Found
+ok CYPB_2009-01-14 200 764 bytes
+ok SCRL_2009-04-09 200 743 bytes
+FAIL BLCO_2009-05-28: HTTPError: HTTP Error 400: Bad Request
+ok ISTA_2009-09-08 200 815 bytes
+ok ALTH_2009-09-24 200 769 bytes
+ok NGSX_2009-11-16 200 743 bytes
+ok DYAX_2009-12-01 200 764 bytes
+FAIL DNA_2010-01-08: HTTPError: HTTP Error 400: Bad Request
+FAIL ACOR_2010-01-22: HTTPError: HTTP Error 404: Not Found
+ok AUXL_2010-02-02 200 763 bytes
+ok SHPG_2010-02-26 200 771 bytes
+ok GENZ_2010-05-24 200 3051 bytes
+ok SVNT_2010-09-14 200 764 bytes
+FAIL FRX_2010-10-29: HTTPError: HTTP Error 404: Not Found
+ok XNPT_2011-04-06 200 743 bytes
+ok SHPG_2011-08-25 200 771 bytes
+FAIL DNA_2012-01-30: HTTPError: HTTP Error 400: Bad Request
+FAIL DSCO_2012-03-06: HTTPError: HTTP Error 400: Bad Request
+ok AFFY_2012-03-27 200 2934 bytes
+FAIL DNA_2012-06-08: HTTPError: HTTP Error 400: Bad Request
+FAIL ARNA_2012-06-27: HTTPError: HTTP Error 404: Not Found
+FAIL ARIA_2012-12-14: HTTPError: HTTP Error 400: Bad Request
+ok HGSI_2012-12-14 200 765 bytes
+FAIL CELG_2013-02-08: HTTPError: HTTP Error 404: Not Found
+FAIL NAVB_2013-03-13: HTTPError: HTTP Error 404: Not Found
+FAIL FRX_2015-02-25: HTTPError: HTTP Error 404: Not Found
+FAIL ALXN_2015-12-08: HTTPError: HTTP Error 404: Not Found
+FAIL AAAP_2018-01-26: HTTPError: HTTP Error 400: Bad Request
+FAIL FOLD_2018-08-10: HTTPError: HTTP Error 404: Not Found
+ok SHPG_2018-08-23 200 771 bytes
+FAIL TTPH_2018-08-27: HTTPError: HTTP Error 404: Not Found
+FAIL PRTK_2018-10-02: HTTPError: HTTP Error 404: Not Found
+FAIL MYL_2018-11-09: HTTPError: HTTP Error 404: Not Found
+FAIL ALXN_2018-12-21: HTTPError: HTTP Error 404: Not Found
+FAIL MYL_2019-08-14: HTTPError: HTTP Error 404: Not Found
+FAIL NBRW_2019-08-19: HTTPError: HTTP Error 404: Not Found
+FAIL ESPR_2020-02-21: HTTPError: HTTP Error 404: Not Found
+FAIL SGEN_2020-04-17: HTTPError: HTTP Error 404: Not Found
+FAIL DCPH_2020-05-15: HTTPError: HTTP Error 404: Not Found
+FAIL MOR_2020-07-31: HTTPError: HTTP Error 404: Not Found
+ok TRVN_2020-08-07 200 2178 bytes
+FAIL GTHX_2021-02-12: HTTPError: HTTP Error 404: Not Found
+FAIL CTIC_2022-02-28: HTTPError: HTTP Error 404: Not Found
+FAIL MRNS_2022-03-18: HTTPError: HTTP Error 404: Not Found
+FAIL RVNC_2022-09-07: HTTPError: HTTP Error 404: Not Found
+FAIL SPPI_2022-09-09: HTTPError: HTTP Error 404: Not Found
+FAIL MNK_2022-09-14: HTTPError: HTTP Error 404: Not Found
+FAIL IMGN_2022-11-14: HTTPError: HTTP Error 404: Not Found
+FAIL PRVB_2022-11-18: HTTPError: HTTP Error 404: Not Found
+FAIL MRTX_2022-12-12: HTTPError: HTTP Error 404: Not Found
+FAIL RETA_2023-02-28: HTTPError: HTTP Error 404: Not Found
+FAIL CDTX_2023-03-22: HTTPError: HTTP Error 404: Not Found
+FAIL ISEE_2023-08-04: HTTPError: HTTP Error 404: Not Found
+FAIL FOLD_2023-09-28: HTTPError: HTTP Error 404: Not Found
+FAIL SWTX_2023-11-27: HTTPError: HTTP Error 404: Not Found
