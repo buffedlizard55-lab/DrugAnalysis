@@ -1,0 +1,1662 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "108",
+          "submission_status": "AP",
+          "submission_status_date": "20081219",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "11002",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/017512s108lbl.pdf",
+              "date": "20090102",
+              "type": "Label"
+            },
+            {
+              "id": "13160",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/017512s108ltr.pdf",
+              "date": "20081224",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "122",
+          "submission_status": "AP",
+          "submission_status_date": "20150901",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "610",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/017512Orig1s122,020163Orig1s027,020183Orig1s026ltr.pdf",
+              "date": "20150904",
+              "type": "Letter"
+            },
+            {
+              "id": "11005",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/017512s122,020163s027,020183s026lbl.pdf",
+              "date": "20150904",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19820216",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "50",
+          "submission_status": "AP",
+          "submission_status_date": "19840228",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "89",
+          "submission_status": "AP",
+          "submission_status_date": "19950721",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19810826",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "95",
+          "submission_status": "AP",
+          "submission_status_date": "19970117",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "106",
+          "submission_status": "AP",
+          "submission_status_date": "20050809",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "607",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/017512s104,106,020163s012,013,020183s011,012ltr.pdf",
+              "date": "20050811",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "120",
+          "submission_status": "AP",
+          "submission_status_date": "20150729",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "609",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/017512Orig1s120,s121ltr.pdf",
+              "date": "20150731",
+              "type": "Letter"
+            },
+            {
+              "id": "11004",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/017512s120s121lbl.pdf",
+              "date": "20150730",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19811120",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "19811113",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "19821208",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "79",
+          "submission_status": "AP",
+          "submission_status_date": "19890726",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19800602",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "93",
+          "submission_status": "AP",
+          "submission_status_date": "19940218",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "104",
+          "submission_status": "AP",
+          "submission_status_date": "20050809",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "606",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/017512s104,106,020163s012,013,020183s011,012ltr.pdf",
+              "date": "20050811",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19850716",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "19820409",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "85",
+          "submission_status": "AP",
+          "submission_status_date": "19930614",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19811005",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19800807",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "77",
+          "submission_status": "AP",
+          "submission_status_date": "19890110",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "91",
+          "submission_status": "AP",
+          "submission_status_date": "19940701",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19800806",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19820603",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "69",
+          "submission_status": "AP",
+          "submission_status_date": "19860904",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "83",
+          "submission_status": "AP",
+          "submission_status_date": "19901128",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19810629",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "19800628",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "75",
+          "submission_status": "AP",
+          "submission_status_date": "19870725",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19800618",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "67",
+          "submission_status": "AP",
+          "submission_status_date": "19851118",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "81",
+          "submission_status": "AP",
+          "submission_status_date": "19900711",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "2",
+          "submission_status": "AP",
+          "submission_status_date": "19790802",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "73",
+          "submission_status": "AP",
+          "submission_status_date": "19891016",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19800602",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "45133",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/017512Orig1s123,020163Orig1s028,020183Orig1s027ltr.pdf",
+              "date": "20160816",
+              "type": "Letter"
+            },
+            {
+              "id": "45134",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/017512Orig1s123,020163Orig1s028,020183Orig1s027ltr.pdf",
+              "date": "20160816",
+              "type": "Letter"
+            },
+            {
+              "id": "45135",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/017512Orig1s123,020163Orig1s028,020183Orig1s027ltr.pdf",
+              "date": "20160816",
+              "type": "Letter"
+            },
+            {
+              "id": "45136",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/017512Orig1s123,020163Orig1s028,020183Orig1s027ltr.pdf",
+              "date": "20160816",
+              "type": "Letter"
+            },
+            {
+              "id": "45137",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/017512Orig1s123,020163Orig1s028,020183Orig1s027ltr.pdf",
+              "date": "20160816",
+              "type": "Letter"
+            },
+            {
+              "id": "45138",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/017512Orig1s123,020163Orig1s028,020183Orig1s027ltr.pdf",
+              "date": "20160816",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "65",
+          "submission_status": "AP",
+          "submission_status_date": "19850415",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "143",
+          "submission_status": "AP",
+          "submission_status_date": "20260416",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "87013",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/017512Orig1s143ltr.pdf",
+              "date": "20260824",
+              "type": "Letter"
+            },
+            {
+              "id": "87015",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/017512Orig1s143lbl.pdf",
+              "date": "20260824",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "71",
+          "submission_status": "AP",
+          "submission_status_date": "19870528",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19800530",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "49",
+          "submission_status": "AP",
+          "submission_status_date": "19831107",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "63",
+          "submission_status": "AP",
+          "submission_status_date": "19850716",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "55",
+          "submission_status": "AP",
+          "submission_status_date": "19850613",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "119",
+          "submission_status": "AP",
+          "submission_status_date": "20150522",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "61",
+          "submission_status": "AP",
+          "submission_status_date": "19850829",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "125",
+          "submission_status": "AP",
+          "submission_status_date": "20161209",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19821208",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "53",
+          "submission_status": "AP",
+          "submission_status_date": "19840709",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "117",
+          "submission_status": "AP",
+          "submission_status_date": "20140930",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "45",
+          "submission_status": "AP",
+          "submission_status_date": "19850828",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "98",
+          "submission_status": "AP",
+          "submission_status_date": "20010822",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "123",
+          "submission_status": "AP",
+          "submission_status_date": "20160816",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19821203",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19820416",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "19850124",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "96",
+          "submission_status": "AP",
+          "submission_status_date": "19970429",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "121",
+          "submission_status": "AP",
+          "submission_status_date": "20150729",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "13162",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/017512Orig1s120,s121ltr.pdf",
+              "date": "20150731",
+              "type": "Letter"
+            },
+            {
+              "id": "33289",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/017512s120s121lbl.pdf",
+              "date": "20150730",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19811215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "88",
+          "submission_status": "AP",
+          "submission_status_date": "19921123",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "113",
+          "submission_status": "AP",
+          "submission_status_date": "20130419",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "608",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2013/017512Orig1s113,020163Orig1s020,020183Orig1s019ltr.pdf",
+              "date": "20130424",
+              "type": "Letter"
+            },
+            {
+              "id": "11003",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2013/017512s113,020163s020,020183s019lbl.pdf",
+              "date": "20130423",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19811221",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "19821208",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19800602",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "94",
+          "submission_status": "AP",
+          "submission_status_date": "19960702",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19780927",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 5",
+          "submission_class_code_description": "Type 5 - New Formulation or New Manufacturer"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19800731",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "86",
+          "submission_status": "AP",
+          "submission_status_date": "19910429",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19811005",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19800602",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "78",
+          "submission_status": "AP",
+          "submission_status_date": "19890112",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "92",
+          "submission_status": "AP",
+          "submission_status_date": "19940930",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19850716",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "19820409",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "84",
+          "submission_status": "AP",
+          "submission_status_date": "19920612",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "76",
+          "submission_status": "AP",
+          "submission_status_date": "19890110",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19810416",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "68",
+          "submission_status": "AP",
+          "submission_status_date": "19851118",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "82",
+          "submission_status": "AP",
+          "submission_status_date": "19910215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19810121",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "19790227",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "74",
+          "submission_status": "AP",
+          "submission_status_date": "19870114",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19800602",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "66",
+          "submission_status": "AP",
+          "submission_status_date": "19860227",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "80",
+          "submission_status": "AP",
+          "submission_status_date": "19900711",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19781121",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "58",
+          "submission_status": "AP",
+          "submission_status_date": "19850410",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "72",
+          "submission_status": "AP",
+          "submission_status_date": "19891016",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19800602",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "64",
+          "submission_status": "AP",
+          "submission_status_date": "19850716",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "70",
+          "submission_status": "AP",
+          "submission_status_date": "19860527",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "48",
+          "submission_status": "AP",
+          "submission_status_date": "19831107",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "62",
+          "submission_status": "AP",
+          "submission_status_date": "19850829",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "54",
+          "submission_status": "AP",
+          "submission_status_date": "19840922",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "118",
+          "submission_status": "AP",
+          "submission_status_date": "20150209",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "13161",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/017512Orig1s118,020163Orig1s025,020183Orig1s024ltr.pdf",
+              "date": "20150210",
+              "type": "Letter"
+            },
+            {
+              "id": "33288",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/020183s024lbl.pdf",
+              "date": "20150210",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "19850828",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "99",
+          "submission_status": "AP",
+          "submission_status_date": "20020920",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "124",
+          "submission_status": "AP",
+          "submission_status_date": "20160801",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19821208",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "19840709",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "116",
+          "submission_status": "AP",
+          "submission_status_date": "20130426",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "19840316",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "97",
+          "submission_status": "AP",
+          "submission_status_date": "20000920",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA017512",
+      "sponsor_name": "VANTIVE US HLTHCARE",
+      "openfda": {
+        "application_number": [
+          "NDA017512"
+        ],
+        "brand_name": [
+          "DIANEAL LOW CALCIUM WITH DEXTROSE",
+          "DIANEAL PD-2 WITH DEXTROSE"
+        ],
+        "generic_name": [
+          "SODIUM CHLORIDE, SODIUM LACTATE, CALCIUM CHLORIDE, MAGNESIUM CHLORIDE AND DEXTROSE"
+        ],
+        "manufacturer_name": [
+          "Vantive US Healthcare LLC"
+        ],
+        "product_ndc": [
+          "0941-0409",
+          "0941-0411",
+          "0941-0413",
+          "0941-0415",
+          "0941-0457",
+          "0941-0459",
+          "0941-0426",
+          "0941-0427",
+          "0941-0429",
+          "0941-0424",
+          "0941-0430",
+          "0941-0433",
+          "0941-0484",
+          "0941-0487",
+          "0941-0490"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAPERITONEAL"
+        ],
+        "substance_name": [
+          "DEXTROSE MONOHYDRATE",
+          "SODIUM CHLORIDE",
+          "SODIUM LACTATE",
+          "CALCIUM CHLORIDE",
+          "MAGNESIUM CHLORIDE"
+        ],
+        "rxcui": [
+          "799999",
+          "800003",
+          "800057",
+          "800061",
+          "800062",
+          "800064",
+          "800066",
+          "800074",
+          "800111",
+          "800115",
+          "800472",
+          "800474"
+        ],
+        "spl_id": [
+          "194f41a6-655b-456a-955f-7566eb429b7b"
+        ],
+        "spl_set_id": [
+          "aa268d3f-7389-4f25-801f-5d4825495f08"
+        ],
+        "package_ndc": [
+          "0941-0411-05",
+          "0941-0411-06",
+          "0941-0411-07",
+          "0941-0411-04",
+          "0941-0411-11",
+          "0941-0413-05",
+          "0941-0413-06",
+          "0941-0413-07",
+          "0941-0413-01",
+          "0941-0413-04",
+          "0941-0415-05",
+          "0941-0415-06",
+          "0941-0415-04",
+          "0941-0415-07",
+          "0941-0415-01",
+          "0941-0409-06",
+          "0941-0409-05",
+          "0941-0409-07",
+          "0941-0409-01",
+          "0941-0457-08",
+          "0941-0457-02",
+          "0941-0457-05",
+          "0941-0457-01",
+          "0941-0459-08",
+          "0941-0459-02",
+          "0941-0459-05",
+          "0941-0459-01",
+          "0941-0426-52",
+          "0941-0426-53",
+          "0941-0427-52",
+          "0941-0427-53",
+          "0941-0429-52",
+          "0941-0429-53",
+          "0941-0424-51",
+          "0941-0424-52",
+          "0941-0424-53",
+          "0941-0430-51",
+          "0941-0430-52",
+          "0941-0430-53",
+          "0941-0433-51",
+          "0941-0433-52",
+          "0941-0433-53",
+          "0941-0484-01",
+          "0941-0487-01",
+          "0941-0490-01"
+        ],
+        "unii": [
+          "02F3473H9O",
+          "451W47IQ8X",
+          "M4I0D6VV5M",
+          "TU7HW0W0QT",
+          "LX22YL083G"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "015",
+          "reference_drug": "Yes",
+          "brand_name": "DIANEAL LOW CALCIUM W/DEXTROSE 4.25% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "18.3MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "4.25GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "5.08MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "538MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "448MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Prescription",
+          "te_code": "AT"
+        },
+        {
+          "product_number": "007",
+          "reference_drug": "No",
+          "brand_name": "DIANEAL PD-1 W/ DEXTROSE 1.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "1.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "15.2MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "567MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "392MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "013",
+          "reference_drug": "Yes",
+          "brand_name": "DIANEAL LOW CALCIUM W/DEXTROSE 2.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "18.3MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "2.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "5.08MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "538MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "448MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Prescription",
+          "te_code": "AT"
+        },
+        {
+          "product_number": "005",
+          "reference_drug": "Yes",
+          "brand_name": "DIANEAL PD-2 W/ DEXTROSE 2.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "2.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "5.08MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "538MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "448MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Prescription",
+          "te_code": "AT"
+        },
+        {
+          "product_number": "011",
+          "reference_drug": "Yes",
+          "brand_name": "DIANEAL PD-2 W/ DEXTROSE 3.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "3.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "5.08MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "538MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "448MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "003",
+          "reference_drug": "No",
+          "brand_name": "DIANEAL 137 W/ DEXTROSE 2.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "2.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "15.2MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "567MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "392MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "DIANEAL 137 W/ DEXTROSE 1.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "1.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "15.2MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "567MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "392MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "008",
+          "reference_drug": "No",
+          "brand_name": "DIANEAL PD-1 W/ DEXTROSE 2.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "2.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "15.2MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "567MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "392MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "014",
+          "reference_drug": "Yes",
+          "brand_name": "DIANEAL LOW CALCIUM W/DEXTROSE 3.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "18.3MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "3.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "5.08MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "538MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "448MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Prescription",
+          "te_code": "AT"
+        },
+        {
+          "product_number": "006",
+          "reference_drug": "Yes",
+          "brand_name": "DIANEAL PD-2 W/ DEXTROSE 4.25% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "4.25GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "5.08MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "538MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "448MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Prescription",
+          "te_code": "AT"
+        },
+        {
+          "product_number": "012",
+          "reference_drug": "Yes",
+          "brand_name": "DIANEAL LOW CALCIUM W/DEXTROSE 1.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "18.3MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "1.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "5.08MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "538MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "448MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Prescription",
+          "te_code": "AT"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "DIANEAL PD-2 W/ DEXTROSE 1.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "1.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "5.08MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "538MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "448MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Prescription",
+          "te_code": "AT"
+        },
+        {
+          "product_number": "010",
+          "reference_drug": "No",
+          "brand_name": "DIANEAL PD-1 W/ DEXTROSE 3.5% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "3.5GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "15.2MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "567MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "392MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "No",
+          "brand_name": "DIANEAL 137 W/ DEXTROSE 4.25% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "4.25GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "15.2MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "567MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "392MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "009",
+          "reference_drug": "No",
+          "brand_name": "DIANEAL PD-1 W/ DEXTROSE 4.25% IN PLASTIC CONTAINER",
+          "active_ingredients": [
+            {
+              "name": "CALCIUM CHLORIDE",
+              "strength": "25.7MG/100ML"
+            },
+            {
+              "name": "DEXTROSE",
+              "strength": "4.25GM/100ML"
+            },
+            {
+              "name": "MAGNESIUM CHLORIDE",
+              "strength": "15.2MG/100ML"
+            },
+            {
+              "name": "SODIUM CHLORIDE",
+              "strength": "567MG/100ML"
+            },
+            {
+              "name": "SODIUM LACTATE",
+              "strength": "392MG/100ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAPERITONEAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5169",
+          "submission_status": "AP",
+          "submission_status_date": "20130716",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "39621",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2013/101063s5169lbl.pdf",
+              "date": "20130717",
+              "type": "Label"
+            },
+            {
+              "id": "31547",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2013/101063Orig1s5169ltr.pdf",
+              "date": "20130718",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5036",
+          "submission_status": "AP",
+          "submission_status_date": "20040629",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "9353",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/biologics/2004/101063_5036ltr.pdf",
+              "date": "20040707",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5121",
+          "submission_status": "AP",
+          "submission_status_date": "20100520",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19780110",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5081",
+          "submission_status": "AP",
+          "submission_status_date": "20070330",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "39620",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2007/101063s5081LBL.pdf",
+              "date": "20070420",
+              "type": "Label"
+            },
+            {
+              "id": "31546",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2007/101063s5081LTR.pdf",
+              "date": "20070420",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5012",
+          "submission_status": "AP",
+          "submission_status_date": "20020801",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "9352",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/aspamer080102L.pdf",
+              "date": "20040312",
+              "type": "Letter"
+            },
+            {
+              "id": "18545",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2002/aspamer080102LB.pdf",
+              "date": "20040312",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5071",
+          "submission_status": "AP",
+          "submission_status_date": "20060721",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "9354",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2006/101063 5071 Ltr.pdf",
+              "date": "20060725",
+              "type": "Letter"
+            },
+            {
+              "id": "18546",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2006/101063s5071lbl.pdf",
+              "date": "20060721",
+              "type": "Label"
+            }
+          ]
+        }
+      ],
+      "application_number": "BLA101063",
+      "sponsor_name": "MERCK",
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "ELSPAR",
+          "active_ingredients": [
+            {
+              "name": "ASPARAGINASE",
+              "strength": "10,000IU/VIAL"
+            }
+          ],
+          "dosage_form": "VIAL",
+          "route": null,
+          "marketing_status": "Prescription"
+        }
+      ]
+    }
+  ]
+}

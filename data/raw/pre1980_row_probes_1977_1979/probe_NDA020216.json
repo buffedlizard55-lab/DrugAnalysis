@@ -1,0 +1,674 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19851217",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "19930614",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "20539",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/020216_s033_premarin_vaginal_cream.pdf",
+              "date": "20110215",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19880212",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "78",
+          "submission_status": "AP",
+          "submission_status_date": "20140925",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19851107",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "19900607",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "84",
+          "submission_status": "AP",
+          "submission_status_date": "20250422",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "81983",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/020216s084lbl.pdf",
+              "date": "20250424",
+              "type": "Label"
+            },
+            {
+              "id": "82081",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/020216Orig1s084ltr.pdf",
+              "date": "20250501",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19840503",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "74",
+          "submission_status": "AP",
+          "submission_status_date": "20120214",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "2178",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/020216s073,s074,s075ltr.pdf",
+              "date": "20120215",
+              "type": "Letter"
+            },
+            {
+              "id": "34383",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2012/020216s073s074s075lbl.pdf",
+              "date": "20120217",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19820830",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "56",
+          "submission_status": "AP",
+          "submission_status_date": "20071220",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19820830",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "54",
+          "submission_status": "AP",
+          "submission_status_date": "20050830",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12322",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2005/010402s048,020216s054lbl.pdf",
+              "date": "20050907",
+              "type": "Label"
+            },
+            {
+              "id": "2174",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/010402s048,020216s054ltr.pdf",
+              "date": "20050907",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "60",
+          "submission_status": "AP",
+          "submission_status_date": "20081107",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "application_docs": [
+            {
+              "id": "65838",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2008/020216Orig1s060.pdf",
+              "date": "20210107",
+              "type": "Review"
+            },
+            {
+              "id": "12323",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/020216s060lbl.pdf",
+              "date": "20081112",
+              "type": "Label"
+            },
+            {
+              "id": "2177",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/020216s060ltr.pdf",
+              "date": "20081113",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19950830",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "20040420",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "24586",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/20216slr052ltr.pdf",
+              "date": "20040429",
+              "type": "Letter"
+            },
+            {
+              "id": "34378",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/020216s052lbl.pdf",
+              "date": "20040423",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19950206",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "50",
+          "submission_status": "AP",
+          "submission_status_date": "20020508",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19781016",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "UNKNOWN",
+          "application_docs": [
+            {
+              "id": "41217",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/020216_original_approval.pdf",
+              "date": "20110215",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19941014",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "19880212",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "19951214",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19851217",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "20537",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/020216_s018_premarin vaginal cream.pdf",
+              "date": "20110107",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "91",
+          "submission_status": "AP",
+          "submission_status_date": "20240215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "77547",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2024/020216Orig1s091ltr.pdf",
+              "date": "20240216",
+              "type": "Letter"
+            },
+            {
+              "id": "77570",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2024/020216s091lbl.pdf",
+              "date": "20240220",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19900510",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "20538",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/020216_s030_premarin vaginal cream.pdf",
+              "date": "20110107",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "69",
+          "submission_status": "AP",
+          "submission_status_date": "20100113",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "83",
+          "submission_status": "AP",
+          "submission_status_date": "20171101",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "50282",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/020216s083lbl.pdf",
+              "date": "20171103",
+              "type": "Label"
+            },
+            {
+              "id": "50303",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/020216Orig1s083ltr.pdf",
+              "date": "20171106",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "75",
+          "submission_status": "AP",
+          "submission_status_date": "20120214",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12325",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2012/020216s073s074s075lbl.pdf",
+              "date": "20120217",
+              "type": "Label"
+            },
+            {
+              "id": "24590",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/020216s073,s074,s075ltr.pdf",
+              "date": "20120215",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "67",
+          "submission_status": "AP",
+          "submission_status_date": "20110422",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "24588",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2011/020216s067ltr.pdf",
+              "date": "20110425",
+              "type": "Letter"
+            },
+            {
+              "id": "34382",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2011/020216s067lbl.pdf",
+              "date": "20110426",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "81",
+          "submission_status": "AP",
+          "submission_status_date": "20151228",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "2179",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/020216Orig1s081ltr.pdf",
+              "date": "20151230",
+              "type": "Letter"
+            },
+            {
+              "id": "34384",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/020216s081lbl.pdf",
+              "date": "20151231",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19851217",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "59",
+          "submission_status": "AP",
+          "submission_status_date": "20080303",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "2176",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/020216s059ltr.pdf",
+              "date": "20080305",
+              "type": "Letter"
+            },
+            {
+              "id": "34381",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/020216s059lbl.pdf",
+              "date": "20080305",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "73",
+          "submission_status": "AP",
+          "submission_status_date": "20120214",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12324",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2012/020216s073s074s075lbl.pdf",
+              "date": "20120217",
+              "type": "Label"
+            },
+            {
+              "id": "24589",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/020216s073,s074,s075ltr.pdf",
+              "date": "20120215",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19820830",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "55",
+          "submission_status": "AP",
+          "submission_status_date": "20060726",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "2175",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2006/010402s050, 020216s055LTR.pdf",
+              "date": "20060804",
+              "type": "Letter"
+            },
+            {
+              "id": "34380",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2006/010402s050,020216s055lbl.pdf",
+              "date": "20060727",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19821005",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19950711",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "53",
+          "submission_status": "AP",
+          "submission_status_date": "20050114",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "24587",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/10402s047,20216s053ltr.pdf",
+              "date": "20050121",
+              "type": "Letter"
+            },
+            {
+              "id": "34379",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2005/020216s053lbl.pdf",
+              "date": "20050121",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19950711",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "19981204",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "80157",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2024/20216Orig1s043.pdf",
+              "date": "20241105",
+              "type": "Review"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA020216",
+      "sponsor_name": "WYETH PHARMS",
+      "openfda": {
+        "application_number": [
+          "NDA020216"
+        ],
+        "brand_name": [
+          "PREMARIN VAGINAL"
+        ],
+        "generic_name": [
+          "CONJUGATED ESTROGENS"
+        ],
+        "manufacturer_name": [
+          "Wyeth Pharmaceuticals LLC, a subsidiary of Pfizer Inc."
+        ],
+        "product_ndc": [
+          "0046-0872"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "VAGINAL"
+        ],
+        "substance_name": [
+          "ESTROGENS, CONJUGATED"
+        ],
+        "rxcui": [
+          "688240",
+          "688242"
+        ],
+        "spl_id": [
+          "94b7195e-3ce2-4e04-a814-9b63add4896e"
+        ],
+        "spl_set_id": [
+          "96609623-528e-4aba-cabe-7254aed816d5"
+        ],
+        "package_ndc": [
+          "0046-0872-04",
+          "0046-0872-21"
+        ],
+        "nui": [
+          "N0000175825",
+          "N0000000100",
+          "M0007792"
+        ],
+        "pharm_class_epc": [
+          "Estrogen [EPC]"
+        ],
+        "pharm_class_moa": [
+          "Estrogen Receptor Agonists [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Estrogens, Conjugated (USP) [CS]"
+        ],
+        "unii": [
+          "IU5QR144QX"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "PREMARIN",
+          "active_ingredients": [
+            {
+              "name": "ESTROGENS, CONJUGATED",
+              "strength": "0.625MG/GM"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "CREAM",
+          "route": "TOPICAL, VAGINAL",
+          "marketing_status": "Prescription"
+        }
+      ]
+    }
+  ]
+}

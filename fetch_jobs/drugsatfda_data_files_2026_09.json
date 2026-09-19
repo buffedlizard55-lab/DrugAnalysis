@@ -1,0 +1,42 @@
+[
+  {
+    "type": "zip_extract",
+    "id": "drugsatfda_data_files",
+    "url": "https://www.fda.gov/media/89850/download?attachment",
+    "timeout": 900,
+    "retries": 4,
+    "max_member_out_bytes": 45000000,
+    "members": [
+      {
+        "name": "Submissions.txt",
+        "out": "Submissions_1965_1979.txt",
+        "filter": {
+          "type": "date_year_in",
+          "column": "SubmissionStatusDate",
+          "years": [1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979],
+          "collect_applnos": true
+        }
+      },
+      {
+        "name": "Applications.txt",
+        "out": "Applications_appl_window.txt",
+        "filter": { "type": "applno_in_collected", "column": "ApplNo" }
+      },
+      {
+        "name": "Products.txt",
+        "out": "Products_appl_window.txt",
+        "filter": { "type": "applno_in_collected", "column": "ApplNo" }
+      },
+      {
+        "name": "ApplicationDocs.txt",
+        "out": "ApplicationDocs_appl_window.txt",
+        "filter": { "type": "applno_in_collected", "column": "ApplNo" }
+      },
+      {
+        "name": "SubmissionClass_Lookup.txt",
+        "out": "SubmissionClass_Lookup.txt"
+      }
+    ],
+    "_why": "Complete Drugs@FDA database (the website DB, updated each morning) narrowed to the 1965-1979 window: every submission with a 1965-1979 status date, plus the applications/products/docs/lookup rows joined to those application numbers. This is the official FDA surface that covers applications the openFDA ORIG/AP extracts miss (Seldane-class whole-application gaps are absent from openFDA drugsfda AND label endpoints AND render empty on the Drugs@FDA website for withdrawn apps - but the site DB itself is the most complete public FDA application inventory). Purpose: (1) cross-validate all 170 committed 1977-1979 ORIG/AP payload rows at submission level; (2) enumerate any 1977-1979 original approvals present in the full DB but absent from the payloads - the payload-invisible gap class that holds the missing 1977 x8 / 1979 x1 NMEs; (3) publish submission-class lookups and approval-letter URLs for every pre-1980 application. Values verbatim; filters are recorded row whitelists only."
+  }
+]
