@@ -935,6 +935,86 @@ else:
     warnings.append(f"core table: {len(_class_dis)} legacy class disagreements with the master "
                     f"(audited baseline, pending adjudication - NEXT_SESSION.md next-step 2)")
 
+
+# ---- v17 (2026-09-19): official FDA series reconciliation -------------------
+# FDA's History Office tabulation and the CDER NME Compilation are now both
+# committed captures; these gates keep the reconciliation, the pre-1985 gap
+# analysis and the live-capture index pinned to them.
+_series = read("fda_official_year_series.csv")
+_cross = read("fda_official_series_crosswalk.csv")
+_gap = read("pre1985_nme_gap_analysis.csv")
+_caps = read("pre1985_primary_captures_index.csv")
+_probe = read("pre1980_openfda_probe_2026_09_19.csv")
+
+_hist = json.loads((DATA / "raw" / "source_captures_2026_09_19" /
+                    "fda_history_nda_nme_approvals_1938_2022.json").read_text(encoding="utf-8"))
+if len(_series) != len(_hist["rows"]):
+    errors.append(f"fda_official_year_series: {len(_series)} rows != {len(_hist['rows'])} captured rows")
+_official = {r["year"]: r["nmes_approved"] for r in _series}
+for _y, _v in {"1980": "12", "1981": "27", "1982": "28", "1983": "14", "1984": "22",
+               "1985": "30", "1988": "21", "2013": "29", "2022": "37"}.items():
+    if _official.get(_y) != _v:
+        errors.append(f"fda_official_year_series: {_y} NMEs = {_official.get(_y)!r}, expected {_v}")
+if len(_cross) != 47 or [r["year"] for r in _cross] != [str(y) for y in range(1980, 2027)]:
+    errors.append("fda_official_series_crosswalk: expected 47 rows, one per year 1980-2026")
+_short = [r["year"] for r in _cross if r["verdict"] == "PROJECT_SHORT_FLAGGED"]
+if _short != ["1980", "1981", "1982", "1984", "1988", "2013"]:
+    errors.append(f"crosswalk: PROJECT_SHORT years changed to {_short}")
+if len(_gap) != 6 or [r["year"] for r in _gap] != ["1980", "1981", "1982", "1983", "1984", "1985"]:
+    errors.append("pre1985_nme_gap_analysis: expected six rows, 1980-1985")
+for _r in _gap:
+    _want = {"1980": ("12", "-3"), "1981": ("27", "-4"), "1982": ("28", "-3"),
+             "1983": ("14", "-1"), "1984": ("22", "-3"), "1985": ("30", "1")}[_r["year"]]
+    if (_r["official_nmes_approved"], _r["effective_type1_shortfall_negative_is_short"]) != _want:
+        errors.append(f"pre1985_nme_gap_analysis {_r['year']}: official/shortfall drift "
+                      f"({_r['official_nmes_approved']}/{_r['effective_type1_shortfall_negative_is_short']})")
+_1980 = next(r for r in _gap if r["year"] == "1980")
+if not _1980["payload_blank_class_ingredients"].startswith("DEXTROSE; HYDROCORTISONE; LEUCOVORIN CALCIUM"):
+    errors.append("pre1985_nme_gap_analysis 1980: blank-class ingredient inventory drift")
+_1985 = next(r for r in _gap if r["year"] == "1985")
+if "NDA018949 Seldane" not in _1985["payload_invisible_apps_known"]:
+    errors.append("pre1985_nme_gap_analysis 1985: payload-invisible application list lost Seldane")
+if len(_caps) != 12:
+    errors.append(f"pre1985_primary_captures_index: expected 12 live captures, got {len(_caps)}")
+if len(_probe) != 1 or "pre-1980" not in _probe[0]["project_implication"]:
+    errors.append("pre1980_openfda_probe: the feasibility probe row is missing or malformed")
+
+# The three FDA sources must stay in the committed captures (no unsourced numbers).
+for _name in ("fda_history_nda_nme_approvals_1938_2022.json",
+              "fda_nme_compilation_landing_2026_09_19.json",
+              "live_primary_captures_2026_09_19.json",
+              "manifest.json"):
+    _p = DATA / "raw" / "source_captures_2026_09_19" / _name
+    if not _p.exists():
+        errors.append(f"source_captures_2026_09_19: missing {_name}")
+
+# v17 annotations: the dated note must be present on the rows the captures touch.
+_v17_marker = "v17 (2026-09-19)"
+_by_id = {r["decision_id"]: r for r in master}
+for _did in ("D1030", "D1038", "D1040", "D1042", "D1047"):
+    if _v17_marker not in (_by_id.get(_did, {}).get("notes") or ""):
+        errors.append(f"master {_did}: v17 dated adjudication note missing")
+if "CDER.NMENewBiologicApprovals@fda.hhs.gov" not in _by_id["D1040"]["notes"]:
+    errors.append("master D1040: v17 note lost the CDER error-reporting route")
+_r22046 = next((r for r in orig if (r.get("application_number") or "").strip().replace(" ", "") == "NDA022046"), None)
+if _r22046 is None or _v17_marker not in (_r22046.get("notes") or ""):
+    errors.append("orig: NDA022046 lost its v17 adjudication note")
+
+# The era table's official-count columns must agree with the gap analysis.
+_era = read("pre1985_era_analysis.csv")
+_era_by_year = {r["year"]: r for r in _era}
+for _r in _gap:
+    _e = _era_by_year.get(_r["year"], {})
+    if _e.get("official_fda_nme_count") != _r["official_nmes_approved"]:
+        errors.append(f"pre1985_era_analysis {_r['year']}: official_fda_nme_count "
+                      f"{_e.get('official_fda_nme_count')!r} != gap analysis {_r['official_nmes_approved']!r}")
+    if _e.get("official_series_delta") != _r["effective_type1_shortfall_negative_is_short"]:
+        errors.append(f"pre1985_era_analysis {_r['year']}: official_series_delta "
+                      f"{_e.get('official_series_delta')!r} != gap analysis "
+                      f"{_r['effective_type1_shortfall_negative_is_short']!r}")
+warnings.append(f"v17: {len(_short)} years remain short of FDA's official NME count "
+                f"({', '.join(_short)}) - sized and flagged, not hidden")
+
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows (incl. {sum(_pre_orig_years.values())} v15/v16 pre-1985 rows), "
       f"{len(focus)} focus-year audit rows (1980-1985), {len(oscores)} orig scorecards, "
@@ -943,7 +1023,9 @@ print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-s
       f"{len(scores)} company scorecards, {len(prices)} price snapshots, "
       f"{len(crl)} CRL rows (+{len(new_crl)} new from the openFDA CRL database), "
       f"{len(ctgov)} ClinicalTrials.gov Phase 3 rows, {len(clin_scores)} clinical trial scorecards, "
-      f"{len(_pre1985_decisions)} pre-1985 decisions, and {len(_pre1985_era)} pre-1985 era rows.")
+      f"{len(_pre1985_decisions)} pre-1985 decisions, {len(_pre1985_era)} pre-1985 era rows, "
+      f"{len(_series)} official-series rows, {len(_cross)} crosswalk rows, {len(_gap)} NME-gap rows, "
+      f"and {len(_caps)} live primary captures.")
 print(f"Warnings requiring manual review: {len(warnings)}")
 for w in warnings[:12]: print("WARNING", w)
 if len(warnings) > 12: print(f"WARNING ... {len(warnings)-12} more")

@@ -1,0 +1,25 @@
+{
+  "capture_id": "fda_nme_compilation_landing_2026_09_19",
+  "source_title": "Compilation of CDER New Molecular Entity (NME) Drug and New Biologic Approvals",
+  "source_url": "https://www.fda.gov/drugs/drug-approvals-and-databases/compilation-cder-new-molecular-entity-nme-drug-and-new-biologic-approvals",
+  "publisher": "U.S. Food and Drug Administration, Center for Drug Evaluation and Research (CDER)",
+  "captured_utc": "2026-09-19",
+  "capture_method": "sandbox page-fetch tool (one canonical URL)",
+  "why_captured": "The landing page states the Compilation's own inclusion rule. It is the authoritative statement of what the 1985-2025 dataset - the master's spine for 1985-1997 - does and does not contain, which is what the v17 official-count reconciliation turns on.",
+  "inclusion_criteria_verbatim": [
+    "This dataset provides a listing of all New Molecular Entities (NMEs) approved from 1985 - 2025 and regulated by the Center for Drug Evaluation and Research (CDER). The listed NMEs include both small molecule drugs approved under a New Drug Application (NDA) and new biological products approved under a Biologics License Application (BLA). The product information, indications, and regulatory characteristics described in the compilation reflect the state of each application at the time of original marketing approval.",
+    "During the drug review process, FDA will assign a classification code to new applications based on the characteristics of the product. For the purposes of this dataset, only products with a Type 1 or Type 1/4 are considered NMEs. For a full list of FDA's classification codes and their descriptions, please refer to the CDER Classification MAPP (https://www.fda.gov/media/94381/download).",
+    "The Compilation dataset contains Approved NMEs reviewed under CDER only. This dataset does not include blood products, vaccines, gene therapies, etc. that are normally reviewed under Center for Biologics Evaluation and Research (CBER). Those approvals can be found at Biological Approvals by Year (https://www.fda.gov/vaccines-blood-biologics/development-approval-process-cber/biological-approvals-year).",
+    "Updates to the dataset will be made annually after the new approvals are confirmed with the system of record.",
+    "The Compilation is not intended to replace existing public reports or resources, but to enhance and expand the ability to find trends throughout the \"modern\" review process."
+  ],
+  "dataset_links_verbatim": {
+    "dataset": "https://www.fda.gov/media/177921/download?attachment (Compilation of CDER NME and New Biologic Approvals 1985-2025)",
+    "data_dictionary": "https://www.fda.gov/media/177920/download?attachment (Compilation of CDER New Molecular Entity (NME) Drug and New Biologic Approvals - Data Dictionary, May 2026 PDF)"
+  },
+  "error_reporting_contact_verbatim": "If you believe there is a factual error in the information presented, you can report this to CDER.NMENewBiologicApprovals@fda.hhs.gov.",
+  "project_interpretation": {
+    "effect_on_the_1985_reconciliation": "The Compilation counts Type 1/1-4 NMEs plus new biologics approved under a BLA, and excludes CBER products. FDA's historical tabulation (data/raw/source_captures_2026_09_19/fda_history_nda_nme_approvals_1938_2022.json) counts 30 NMEs for 1985 while the Compilation carries 31 rows for 1985 - a one-row difference whose leading candidate explanation is a new biological product counted by the Compilation and not by the NME statistical series. That remains a candidate explanation, not a determination.",
+    "conflict_reporting_route": "The Tambocor designation conflict (Compilation 'Priority' vs Drugs@FDA 'STANDARD') is the kind of factual discrepancy this page invites users to report to CDER.NMENewBiologicApprovals@fda.hhs.gov; the project records the address rather than asserting which value is correct."
+  }
+}

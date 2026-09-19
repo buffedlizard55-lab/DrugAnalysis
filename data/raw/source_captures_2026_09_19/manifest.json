@@ -1,0 +1,36 @@
+{
+  "job": "source_captures_2026_09_19",
+  "generated_utc": "2026-09-19",
+  "method": "sandbox page-fetch tool (one canonical URL per request); the FDA workbook parse is local over an already-committed capture",
+  "captures": [
+    {
+      "id": "fda_history_nda_nme_approvals_1938_2022",
+      "file": "fda_history_nda_nme_approvals_1938_2022.json",
+      "url": "https://www.fda.gov/about-fda/histories-fda-regulated-products/summary-nda-approvals-receipts-1938-present",
+      "content": "verbatim FDA History Office tabulation: NDAs approved, NMEs approved, NDAs received and INDs received, 1938-2022, with its footnotes and source list",
+      "status": "200 (page fetched; table transcribed verbatim)"
+    },
+    {
+      "id": "fda_nme_compilation_landing",
+      "file": "fda_nme_compilation_landing_2026_09_19.json",
+      "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/compilation-cder-new-molecular-entity-nme-drug-and-new-biologic-approvals",
+      "content": "verbatim inclusion rules for the CDER NME Compilation dataset (Type 1/1-4 NDAs plus new biologics; CBER products excluded) and the dataset/data-dictionary links",
+      "status": "200"
+    },
+    {
+      "id": "live_primary_captures",
+      "file": "live_primary_captures_2026_09_19.json",
+      "url": "multiple (Drugs@FDA application pages, api.fda.gov JSON, archive.org)",
+      "content": "12 live captures for the 1983-1985 flagged rows, the four payload-invisible 1985 applications and the pre-1980 API feasibility probe",
+      "status": "mixed - recorded per capture; the pre-96 1985 review PDF returned HTTP 500 on every route"
+    }
+  ],
+  "project_files_derived": [
+    "data/fda_official_year_series.csv",
+    "data/fda_official_series_crosswalk.csv",
+    "data/pre1985_nme_gap_analysis.csv",
+    "data/pre1985_primary_captures_index.csv",
+    "data/pre1980_openfda_probe_2026_09_19.csv"
+  ],
+  "builder": "scripts/build_official_series_audit_2026_09.py"
+}

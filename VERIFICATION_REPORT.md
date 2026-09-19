@@ -1,4 +1,40 @@
-# Verification Report — v16 Pre-1985 Backward Extension 1980–1982 (2026-09-18)
+# Verification Report — v17 Official-Series Reconciliation (2026-09-19)
+
+**Branch:** `arena/01a0b729-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors** (warnings are the intended manual-review baseline plus the new documented flags).
+
+## v17 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| Official FDA series captured | FDA History Office tabulation transcribed verbatim: 85 year rows (1938–2022) with footnotes and the full source list, including the 1985 *New Drug Evaluation Statistical Report (Briefing Book)* and the 1989 CDER statistical report pp. 152–199 | `data/raw/source_captures_2026_09_19/fda_history_nda_nme_approvals_1938_2022.json`; `data/fda_official_year_series.csv`; live fetch 2026-09-19 |
+| Official-vs-project crosswalk | 47 rows (1980–2026), one per year, each with official NME/NDA counts, project rows, Type 1/1-4 rows, Compilation rows, two deltas, a verdict and an evidence note. Verdicts: **18 MATCH**, 19 `PROJECT_EXCEEDS_OFFICIAL` (biologics by design), **6 `PROJECT_SHORT_FLAGGED`** (1980, 1981, 1982, 1984, 1988, 2013), 4 `AWAITING_OFFICIAL_SERIES` (2023–2026) | `data/fda_official_series_crosswalk.csv`; builder pins; validator pins |
+| Pre-1985 gap sized | 1980: 12 official vs 9 (−3) · 1981: 27 vs 23 (−4) · 1982: 28 vs 25 (−3) · 1983: 14 vs 13 (−1) · 1984: 22 vs 19 (−3) · 1985: 30 official vs 31 Compilation rows (+1). The 43 blank-class payload rows are enumerated with their active ingredients and shown to be marketed-ingredient formulations; a live openFDA spot check returns a furosemide ORIG-1 of **1968-03-20**, proving the 1983/1984 furosemide originals are re-approvals | `data/pre1985_nme_gap_analysis.csv`; payloads; live API captures |
+| 1983 accuracy correction | The 1983 group's 14 rows = 13 Type 1/1-4 + the furosemide boundary row; the official count of 14 is therefore **not** matched, the effective shortfall is 1, and the boundary row is explicitly excluded from NME counting in the era table | era table v17 fields; validator cross-check between era and gap tables |
+| 1985 +1 row | Compilation 31 rows vs official 30 NMEs. Compilation inclusion rule captured verbatim (Type 1/1-4 NDAs + new biologics; CBER products excluded). Protropin/recombinant somatrem named as the **candidate** biological product; Baros Effervescent (NDA018509) re-verified live as a Type 1 NDA and ruled out. The workbook's own NDA/BLA column types all 31 rows "NDA", so the workbook cannot separate them — stated, not glossed | Compilation landing capture; workbook parse; live NDA018509 capture |
+| Tambocor designation (1985) | Three live probes this session: Drugs@FDA page → **STANDARD**; Compilation workbook → **Priority** (cell read directly); the 1985 review PDF → **HTTP 500** on the live URL and on both Wayback raw replay endpoints, although the Wayback Machine reports **five captures (2021–2025)**. Both FDA values remain published in the master, conflict documented, no harmonisation | `live_primary_captures_2026_09_19.json` V17-C01/C09/C10; master D1040 note; `data/pre1985_primary_captures_index.csv` |
+| Live capture index | 12 captures indexed to rows: NDA018830, NDA018615, NDA018949 (openFDA NOT_FOUND + empty Drugs@FDA record), NDA019107 (same, plus brand NOT_FOUND), NDA018217 (absent) vs NDA019215 (product record with **no submissions array**), NDA018509 (Type 1, 1985-08-07), the 1985 workbook parse, and the pre-1980 feasibility probe | `data/pre1985_primary_captures_index.csv`; verbatim JSON |
+| Dated annotations | Six rows carry additive v17 notes with no value changes: master D1030, D1038, D1040, D1042, D1047; non-NME NDA022046. Diff proves only the `notes` column changed | `scripts/annotate_v17_2026_09.py`; note-length diff; `data/staging/v17_annotation_report.json` |
+| Untouched invariants | master row count 1,427 (values unchanged), pre-1985 decision table **byte-identical** after the era builder rerun, non-NME table 3,142 rows, focus audit 517 rows, CRL/supplement/CT.gov/scorecard tables unchanged by this session | `git diff --stat`, builder rerun diff |
+
+## Method notes and limitations (v17)
+
+- The official series is a **statistical count**, not an application list: it sizes the gap but cannot name the missing applications. Its own footnotes matter (2004+ includes transferred therapeutic BLAs; "New Chemical Entity" was the earlier term for the same concept).
+- **`PROJECT_EXCEEDS_OFFICIAL` is expected, not an error**, for 1985–2003: the master's spine is the Compilation, which counts new biologics by design while the pre-2004 NME column did not.
+- Two years are genuine internal-FDA discrepancies: **1988** (Compilation 20 vs official 21) and **2013** (Compilation 27 vs official 29). They are recorded as findings; neither is patched by inference.
+- 1980–1982 remain an **application-level enumeration** (9/23/25) even though the official counts are now known (12/27/28); the era table carries both numbers in separate columns so the two can never be confused again.
+- A pre-1980 payload is now proven fetchable (live openFDA returns a 1968 ORIG-1), but the sandbox still has no bulk network: the block needs a committed `fetch_jobs` payload through GitHub Actions before any pre-1980 table work.
+
+## v17 files
+
+- `scripts/build_official_series_audit_2026_09.py` — single writer for the five v17 audit tables (aborts on any capture/table drift).
+- `scripts/annotate_v17_2026_09.py` — additive, idempotent dated notes on six rows.
+- `scripts/expand_pre1985_decisions_v14.py` — era rows gained the official-count columns plus v17 narrative (decision table byte-identical on rerun).
+- `data/raw/source_captures_2026_09_19/` — manifest + three capture JSONs.
+- `data/fda_official_year_series.csv`, `data/fda_official_series_crosswalk.csv`, `data/pre1985_nme_gap_analysis.csv`, `data/pre1985_primary_captures_index.csv`, `data/pre1980_openfda_probe_2026_09_19.csv`.
+- `scripts/validate_data.py` — v17 gates.
+
+# Verification Report — v16 (historical) Pre-1985 Backward Extension 1980–1982 (2026-09-18)
 
 **Branch:** `arena/01a0b6b2-druganalysis`
 **Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors, 1,745 warnings** (1,681 v15 baseline + the 199 new rows' documented flags; every warning is an intended manual-review pointer, never an invented value).
