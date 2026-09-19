@@ -477,18 +477,6 @@ def job_ctgov(spec: dict, outdir: str, entries: list) -> None:
     print(f"ok {sid}: {len(collected)} studies -> {dest}", flush=True)
 
 
-KINDS = {
-    "url": job_url,
-    "openfda_years": job_openfda_years,
-    "openfda_decisions": job_openfda_decisions,
-    "openfda_supplements": job_openfda_supplements,
-    "stooq": job_stooq,
-    "generic": job_generic_csv,
-    "ctgov": job_ctgov,
-    "zip_extract": job_zip_extract,
-}
-
-
 def _col_index(header: list[str], column: str) -> int:
     """Case-insensitive column lookup for tab-delimited official tables."""
     low = {h.strip().lower(): i for i, h in enumerate(header)}
@@ -627,6 +615,20 @@ def job_zip_extract(spec: dict, outdir: str, entries: list) -> None:
                     "members_seen": [i.filename for i in zf.infolist()],
                     "at_utc": _now()})
     print(f"ok {sid}: zip {len(zbody)} bytes, {len(zf.infolist())} members", flush=True)
+
+
+KINDS = {
+    "url": job_url,
+    "openfda_years": job_openfda_years,
+    "openfda_decisions": job_openfda_decisions,
+    "openfda_supplements": job_openfda_supplements,
+    "stooq": job_stooq,
+    "generic": job_generic_csv,
+    "ctgov": job_ctgov,
+    "zip_extract": job_zip_extract,
+}
+
+
 
 
 def run_job(job_path: str) -> None:
