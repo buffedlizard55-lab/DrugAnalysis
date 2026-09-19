@@ -20,6 +20,14 @@ def read(name):
     if not rows: errors.append(f"{name}: no data rows")
     return rows
 
+def read_opt(name):
+    """Like read() but a missing table is reported as an error instead of
+    raising, so one absent file cannot hide every other gate."""
+    if not (DATA / name).exists():
+        errors.append(f"{name}: MISSING - run its builder before validating")
+        return []
+    return read(name)
+
 def check_url(value, label):
     if not value: return
     p = urlparse(value)
@@ -1240,7 +1248,7 @@ for _ev, _pref, _n in (("live_primary_captures_v19_2026_09_19.json", "V19", 12),
 
 # v21 gap-candidate table: one row per year, the 1976 candidate named with its
 # proven mechanism, nothing else asserted.
-_gapc = read("missing_nme_candidates.csv")
+_gapc = read_opt("missing_nme_candidates.csv")
 if sorted(r["year"] for r in _gapc) != [str(y) for y in range(1965, 1980)]:
     errors.append("missing_nme_candidates: expected exactly one row per year 1965-1979")
 _amik = next((r for r in _gapc if r["candidate_application"] == "NDA050495"), None)
@@ -1377,7 +1385,7 @@ else:
                                      for r in _v20_inv_nme) +
             " - manual review queue, not merged into any verified decision table")
 # v21 (2026-09-19): the same three-layer audit extended backward to 1965-1976.
-_v21a = read("pre1980_originals_audit_1965_1976.csv")
+_v21a = read_opt("pre1980_originals_audit_1965_1976.csv")
 _v21_expected = {"1965": 32, "1966": 16, "1967": 32, "1968": 22, "1969": 25,
                  "1970": 38, "1971": 48, "1972": 29, "1973": 43, "1974": 73,
                  "1975": 39, "1976": 80}
@@ -1423,7 +1431,7 @@ try:
                           f"{_r['application_number']} drifts from the committed payload")
 except (OSError, ValueError, KeyError) as _exc:
     errors.append(f"pre1980_originals_audit_1965_1976: payload cross-check failed: {_exc}")
-_v21_probeidx = read("pre1980_row_probe_index_1965_1976.csv")
+_v21_probeidx = read_opt("pre1980_row_probe_index_1965_1976.csv")
 if len(_v21_probeidx) != 125:
     errors.append(f"pre1980_row_probe_index_1965_1976: expected 125 rows, got {len(_v21_probeidx)}")
 if any(r["status"] != "MATCH" for r in _v21_probeidx):
@@ -1446,7 +1454,7 @@ else:
         _pf = _v21_probe_dir / f"probe_{str(_e['id']).split('_', 2)[2]}.json"
         if not _pf.exists() or hashlib.sha256(_pf.read_bytes()).hexdigest() != _e["sha256"]:
             errors.append(f"pre1980_row_probes_1965_1976: {_e['id']} missing or SHA drift")
-_v21_cross = read("pre1980_full_db_crosscheck_1965_1976.csv")
+_v21_cross = read_opt("pre1980_full_db_crosscheck_1965_1976.csv")
 _v21_sum = [r for r in _v21_cross if r["classification"] == "SUMMARY"]
 if sorted(r["year"] for r in _v21_sum) != [str(y) for y in range(1965, 1977)]:
     errors.append("pre1980_full_db_crosscheck_1965_1976: expected 12 SUMMARY rows (1965-1976)")

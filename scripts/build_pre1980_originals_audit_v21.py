@@ -332,7 +332,7 @@ def main() -> int:
     for y in sorted(universe):
         for d in sorted(universe[y], key=lambda r: (r["decision_date"], r["application_number"])):
             for ing in ingredients_of(d):
-                first.setdefault(ing, (y, d["application_number"], r_dec_date(d)))
+                first.setdefault(ing, (y, d["application_number"], d["decision_date"]))
 
     decisions_path = DATA / "pre1980_fda_decisions.csv"
     if not decisions_path.exists():
@@ -389,11 +389,19 @@ def main() -> int:
             else:
                 first_app = "first-in-payloads (1939-1979 universe)"
             pr = probes.get(appl, {})
-            live_status = pr.get("status", "NOT_PROBED_NON_NME_ROW")
+            if pr:
+                live_status = pr.get("status", "PROBE_PENDING")
+            else:
+                # A non-NME row legitimately has no probe; an NME row without one
+                # means the probe layer did not load, and that must stay visible
+                # (the validator errors on PROBE_PENDING).
+                live_status = "NOT_PROBED_NON_NME_ROW" if not nme else "PROBE_PENDING"
             if live_status == "MATCH":
                 verif = "Verified (live probe match)"
             elif live_status == "ABSENT_LIVE":
                 verif = "Flagged (ABSENT_LIVE)"
+            elif live_status == "PROBE_PENDING":
+                verif = "Payload-verified (live probe layer pending)"
             elif live_status == "NOT_PROBED_NON_NME_ROW":
                 verif = ("Payload-verified; no per-row live probe issued for non-NME rows "
                          "(cross-checked against the full Drugs@FDA database instead)")
@@ -529,9 +537,6 @@ def main() -> int:
           f"{'done (' + str(invisible_total) + ' payload-invisible)' if files else 'PENDING'}")
     return 0
 
-
-def r_dec_date(d: dict) -> str:
-    return d.get("decision_date", "")
 
 
 if __name__ == "__main__":
