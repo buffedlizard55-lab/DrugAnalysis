@@ -2,6 +2,12 @@
 
 The v17 branch is `arena/01a0b729-druganalysis` (branched from `main` at `ace3b94`, the v16 merge; v17 merged as PR #32, follow-up review pass merged as PR #33). This session opened the **official FDA series** the project had been missing, reconciled every year 1980–2026 against it, re-probed the Tambocor designation end to end, and committed 12 live primary captures. Open a fresh PR from `arena/01a0b729-druganalysis` and merge it before starting new edits. Repository root: `/home/user/DrugAnalysis`.
 
+## Actions ingestion queued (2026-09-19)
+
+- The Actions fetch manifest includes the pre-1980 blocks (1965–1979), ClinicalTrials.gov Phase 3 windows (2024–2025 and 2028–2029), and pending Yahoo event batches. The runner writes responses under `data/raw/*` with per-request manifests and SHA-256 values.
+- After fetches, the workflow runs `scripts/expand_pre1980_decisions.py` only when all three pre-1980 manifests and every year payload are present. It copies only Type 1/Type 1-4 payload facts into `pre1985_fda_decisions.csv`; a missing Type 1 year aborts the write. Applicant identity, indications, tickers, and lineage remain unresolved rather than guessed.
+- `scripts/build_stock_snapshots_from_all_events.py` consumes the three pending Yahoo batches idempotently and preserves failed/delisted requests as unavailable rows. It is designed to ingest the queued 1,200 events after Actions commits captures.
+
 ## What v17 shipped
 
 - **`data/fda_official_year_series.csv` (85 rows)** — FDA History Office *Summary of NDA Approvals & Receipts, 1938 to the present*, transcribed verbatim (NDAs approved, **NMEs approved**, NDAs received, INDs received) with its footnotes and source list. Capture: `data/raw/source_captures_2026_09_19/fda_history_nda_nme_approvals_1938_2022.json`. **This closes the standing "no official pre-1985 annual NME table was located" limitation** — official counts are now 1980 = 12, 1981 = 27, 1982 = 28, 1983 = 14, 1984 = 22, 1985 = 30.
