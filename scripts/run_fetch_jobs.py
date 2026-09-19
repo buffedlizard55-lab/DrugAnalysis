@@ -26,6 +26,7 @@ import datetime as _dt
 import hashlib
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -484,7 +485,148 @@ KINDS = {
     "stooq": job_stooq,
     "generic": job_generic_csv,
     "ctgov": job_ctgov,
+    "zip_extract": job_zip_extract,
 }
+
+
+def _col_index(header: list[str], column: str) -> int:
+    """Case-insensitive column lookup for tab-delimited official tables."""
+    low = {h.strip().lower(): i for i, h in enumerate(header)}
+    return low[column.strip().lower()]
+
+
+def _date_year(value: str):
+    """Year of a Drugs@FDA tab-file date.
+
+    Formats observed in the official files: '9/27/1985 12:00:00 AM',
+    '12/31/1977', ISO '1977-12-31'.  Returns None when unparseable/empty.
+    Never rewrites the value; used only to decide which rows to keep.
+    """
+    v = (value or "").strip()
+    if not v:
+        return None
+    m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})", v)
+    if m:
+        return m.group(3)
+    m = re.match(r"^(\d{4})-", v)
+    if m:
+        return m.group(1)
+    return None
+
+
+def job_zip_extract(spec: dict, outdir: str, entries: list) -> None:
+    """Download an official ZIP of tab-delimited tables and commit only the
+    explicitly requested members, optionally narrowed by a *recorded*
+    whitelist filter.
+
+    Design rules honoured here:
+    * every cell value is copied verbatim — filters decide which *rows* and
+      which *members* are kept, never what a value says;
+    * the manifest records the full member SHA-256, the total and kept row
+      counts and the exact filter expression, so any committed extract can be
+      reproduced from the same request and audited row by row;
+    * a per-member output budget (``max_member_out_bytes``) fails the member
+      rather than silently committing an oversized extract.
+    """
+    sid = spec["id"]
+    url = spec["url"]
+    try:
+        status, zbody = http_get(url, timeout=spec.get("timeout", 600),
+                                 retries=spec.get("retries", 3))
+    except RuntimeError as exc:
+        entries.append({"id": sid, "url": url, "status": "FAILED",
+                        "error": str(exc), "at_utc": _now()})
+        print(f"FAIL {sid}: {exc}", flush=True)
+        return
+    if not zbody[:2] == b"PK":
+        entries.append({"id": sid, "url": url, "status": "NOT_A_ZIP",
+                        "first_bytes": zbody[:64].decode("latin-1", "replace"),
+                        "at_utc": _now()})
+        print(f"FAIL {sid}: response is not a zip", flush=True)
+        return
+    import io
+    import zipfile
+
+    zf = zipfile.ZipFile(io.BytesIO(zbody))
+    by_upper = {info.filename.upper(): info for info in zf.infolist()}
+    collected_applnos: set[str] = set()
+    for want in spec["members"]:
+        name = want["name"]
+        member = by_upper.get(name.upper())
+        if member is None:
+            entries.append({"id": f"{sid}:{name}", "status": "MEMBER_NOT_FOUND",
+                            "members_seen": sorted(by_upper)[:60], "at_utc": _now()})
+            print(f"FAIL {sid}:{name}: member not in archive", flush=True)
+            continue
+        raw = zf.read(member)
+        text = raw.decode("latin-1")
+        lines = text.splitlines()
+        header = lines[0].split("\t") if lines else []
+        kept, dropped = [], 0
+        filt = want.get("filter") or {}
+        fkind = filt.get("type", "FULL")
+        rows_total = max(0, len(lines) - 1)
+        if fkind == "FULL":
+            kept = [ln for ln in lines[1:] if ln.strip()]
+        elif fkind == "date_year_in":
+            ci = _col_index(header, filt["column"])
+            years = {str(y) for y in filt["years"]}
+            for ln in lines[1:]:
+                if not ln.strip():
+                    continue
+                cols = ln.split("\t")
+                y = _date_year(cols[ci]) if ci < len(cols) else None
+                if y in years:
+                    kept.append(ln)
+                    if filt.get("collect_applnos") and "applno" in [h.lower() for h in header]:
+                        ai = _col_index(header, "ApplNo")
+                        if ai < len(cols):
+                            collected_applnos.add(cols[ai].strip())
+                else:
+                    dropped += 1
+        elif fkind == "applno_in_collected":
+            ci = _col_index(header, filt.get("column", "ApplNo"))
+            for ln in lines[1:]:
+                if not ln.strip():
+                    continue
+                cols = ln.split("\t")
+                if ci < len(cols) and cols[ci].strip() in collected_applnos:
+                    kept.append(ln)
+                else:
+                    dropped += 1
+        else:
+            raise SystemExit(f"run_fetch_jobs: unknown filter type {fkind!r}")
+        out_name = want.get("out", name)
+        out_text = "\t".join(header) + "\n" + "\n".join(kept) + ("\n" if kept else "")
+        out_bytes = out_text.encode("utf-8")
+        budget = int(spec.get("max_member_out_bytes", 45_000_000))
+        if len(out_bytes) > budget:
+            entries.append({"id": f"{sid}:{name}", "member": name,
+                            "member_sha256": hashlib.sha256(raw).hexdigest(),
+                            "member_bytes": len(raw), "rows_total": rows_total,
+                            "rows_kept": len(kept), "out_bytes": len(out_bytes),
+                            "budget": budget, "status": "TOO_LARGE", "at_utc": _now()})
+            print(f"FAIL {sid}:{name}: extract {len(out_bytes)} > budget {budget}", flush=True)
+            continue
+        dest = os.path.join(outdir, out_name)
+        meta = {"id": f"{sid}:{name}", "member": name,
+                "member_bytes": len(raw), "member_sha256": hashlib.sha256(raw).hexdigest(),
+                "rows_total": rows_total, "rows_kept": len(kept), "rows_dropped": dropped,
+                "filter": filt if filt else "FULL", "collect_applnos_count": None,
+                "out": out_name, "out_bytes": len(out_bytes),
+                "out_sha256": hashlib.sha256(out_bytes).hexdigest(), "status": status}
+        meta["collect_applnos_count"] = len(collected_applnos) if filt.get("collect_applnos") else None
+        with open(dest, "wb") as fh:
+            fh.write(out_bytes)
+        meta["written_at_utc"] = _now()
+        entries.append(meta)
+        print(f"ok {sid}:{name}: kept {len(kept)}/{rows_total} rows "
+              f"({len(out_bytes)} bytes) -> {out_name}", flush=True)
+    entries.append({"id": f"{sid}:zip", "url": url, "status": status,
+                    "zip_bytes": len(zbody), "zip_sha256": hashlib.sha256(zbody).hexdigest(),
+                    "members_seen": [i.filename for i in zf.infolist()],
+                    "at_utc": _now()})
+    print(f"ok {sid}: zip {len(zbody)} bytes, {len(zf.infolist())} members", flush=True)
 
 
 def run_job(job_path: str) -> None:
