@@ -1,0 +1,127 @@
+{
+  "version": "v19-pre1980-1977-1979",
+  "capture_date": "2026-09-19",
+  "provenance": "Live probes issued 2026-09-19 from the editing sandbox via the page-fetch tool against api.fda.gov and accessdata.fda.gov (the sandbox has no bulk network; one-off primary checks only). Excerpts are transcribed verbatim from the JSON/HTML responses. Full request URLs are preserved so every probe can be re-issued by hand. openFDA search clauses match across nested submission objects (flattened semantics): a total=1 match confirms the queried facts coexist on the live application record, while the precise same-submission linkage is established by the committed full-record extraction (dual-run byte-identical raw responses, run 18 vs run 19 manifests). Where the ORIG block itself fell inside the returned chunk it is quoted verbatim.",
+  "captures": [
+    {
+      "capture_id": "V19-C01",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "1977 ORIG/AP year population re-query",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19770101+TO+19771231%5D&limit=1",
+      "finding": "meta.results.total = 662 application records; first record ANDA085911 (OXYCODONE 5/APAP 500, BRISTOL MYERS SQUIBB) with ORIG-1/AP/19771025. Live total equals the manifest n_raw_records (662) for 1977.",
+      "verbatim_excerpt": "\"last_updated\": \"2026-09-16\", \"results\": { \"skip\": 0, \"limit\": 1, \"total\": 662 } ... \"application_number\": \"ANDA085911\", \"sponsor_name\": \"BRISTOL MYERS SQUIBB\" ... { \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19771025\" } ... products: OXYCODONE 5/APAP 500 (ACETAMINOPHEN 500MG; OXYCODONE HYDROCHLORIDE 5MG, TABLET, Discontinued). Single chunk (hasMore=false).",
+      "project_row_ids": "PRE1980-1977-* (population-level)",
+      "project_effect": "confirms the committed 1977 payload population live"
+    },
+    {
+      "capture_id": "V19-C02",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "1978 ORIG/AP year population re-query",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19780101+TO+19781231%5D&limit=1",
+      "finding": "meta.results.total = 756 application records; first record ANDA085034 (ALPHAZINE, PHENDIMETRAZINE TARTRATE 35MG, SANDOZ) with ORIG-1/AP/19780419. Live total equals the manifest n_raw_records (756) for 1978.",
+      "verbatim_excerpt": "\"last_updated\": \"2026-09-16\", \"results\": { \"skip\": 0, \"limit\": 1, \"total\": 756 } ... \"application_number\": \"ANDA085034\", \"sponsor_name\": \"SANDOZ\" ... { \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19780419\" } ... brand ALPHAZINE (PHENDIMETRAZINE TARTRATE 35MG, TABLET, Discontinued). Single chunk (hasMore=false).",
+      "project_row_ids": "PRE1980-1978-* (population-level)",
+      "project_effect": "confirms the committed 1978 payload population live"
+    },
+    {
+      "capture_id": "V19-C03",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "1979 ORIG/AP year population re-query",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19790101+TO+19791231%5D&limit=1",
+      "finding": "meta.results.total = 746 application records; first record NDA017385 (BAXTER PLASMA-LYTE line) with 20+ SUPPL submissions (chunk 0 of 3). Live total equals the manifest n_raw_records (746) for 1979.",
+      "verbatim_excerpt": "\"last_updated\": \"2026-09-16\", \"results\": { \"skip\": 0, \"limit\": 1, \"total\": 746 } ... first result submissions include SUPPL-46/AP/19940930 (MANUF CMC), SUPPL-60/AP/20141222 (LABELING, label http://www.accessdata.fda.gov/drugsatfda_docs/label/2014/017385s060lbl.pdf). Chunk 0 of 3; only the meta.total and first-record head were read.",
+      "project_row_ids": "PRE1980-1979-* (population-level)",
+      "project_effect": "confirms the committed 1979 payload population live"
+    },
+    {
+      "capture_id": "V19-C04",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "NDA017920 TAGAMET - ORIG/AP/exact-date coexistence probe",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017920%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19770816+TO+19770816%5D&limit=1",
+      "finding": "total=1: application NDA017920 coexists live with an ORIG submission, an AP status, and a 19770816 status date. The record carries ~90 supplements (4 chunks); the ORIG block itself falls below chunk 0, so the exact ORIG-1 row is verified against Drugs@FDA instead (V19-C10). Flattened-semantics caveat recorded.",
+      "verbatim_excerpt": "\"last_updated\": \"2026-09-16\", \"results\": { \"skip\": 0, \"limit\": 1, \"total\": 1 } ... submissions head: SUPPL-19/AP/19790629 (LABELING, PRIORITY), SUPPL-86/AP/19931110 (MANUF CMC, PRIORITY), SUPPL-78/AP/19911113 (LABELING, PRIORITY). Chunk 0 of 4; ORIG block not in chunk 0.",
+      "project_row_ids": "PRE1980-1977-07",
+      "project_effect": "live coexistence corroboration; exact row verified via V19-C10"
+    },
+    {
+      "capture_id": "V19-C05",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "BLA101063 ELSPAR - verbatim ORIG block",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22BLA101063%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19780110+TO+19780110%5D&limit=1",
+      "finding": "total=1 with the complete ORIG block inside the single returned chunk: ORIG-1/AP/19780110, review_priority UNKNOWN, TYPE 1 - New Molecular Entity; sponsor MERCK; product ELSPAR (ASPARAGINASE 10,000IU/VIAL). Fully verifies the committed extraction for this row.",
+      "verbatim_excerpt": "{ \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19780110\", \"review_priority\": \"UNKNOWN\", \"submission_class_code\": \"TYPE 1\", \"submission_class_code_description\": \"Type 1 - New Molecular Entity\" } ... \"application_number\": \"BLA101063\", \"sponsor_name\": \"MERCK\" ... product ELSPAR (ASPARAGINASE 10,000IU/VIAL, VIAL, Prescription). Single chunk (hasMore=false).",
+      "project_row_ids": "PRE1980-1978-01",
+      "project_effect": "row fully verified live"
+    },
+    {
+      "capture_id": "V19-C06",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "NDA017970 NOLVADEX - ORIG/AP/exact-date coexistence probe",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017970%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19771230+TO+19771230%5D&limit=1",
+      "finding": "total=1: application NDA017970 coexists live with an ORIG submission, an AP status, and a 19771230 status date. ~50 supplements (4 chunks); ORIG block below chunk 0. Flattened-semantics caveat recorded; precise linkage from the committed full-record extraction.",
+      "verbatim_excerpt": "\"last_updated\": \"2026-09-16\", \"results\": { \"skip\": 0, \"limit\": 1, \"total\": 1 } ... submissions head: SUPPL-36/AP/19961104 (MANUF CMC, STANDARD), SUPPL-50/AP/20020830 (LABELING, STANDARD, label http://www.accessdata.fda.gov/drugsatfda_docs/label/2002/21109lbl,17970s50lbl.pdf). Chunk 0 of 4; ORIG block not in chunk 0.",
+      "project_row_ids": "PRE1980-1977-17",
+      "project_effect": "live coexistence corroboration"
+    },
+    {
+      "capture_id": "V19-C07",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "NDA017744 MOTOFEN - verbatim TYPE 1/4 ORIG block",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017744%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19780714+TO+19780714%5D&limit=1",
+      "finding": "total=1 with the ORIG block at the end of chunk 0: ORIG-1/AP/19780714, STANDARD, TYPE 1/4 - 'Type 1 - New Molecular Entity and Type 4 - New Combination'. Confirms the committed classification boundary row live; this row is the +1 in the 1978 PROJECT_EXCEEDS_OFFICIAL verdict.",
+      "verbatim_excerpt": "{ \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19780714\", \"review_priority\": \"STANDARD\", \"submission_class_code\": \"TYPE 1/4\", \"submission_class_code_description\": \"Type 1 - New Molecular Entity and Type 4 - New Combination\" }. Chunk 0 of 2.",
+      "project_row_ids": "PRE1980-1978-08",
+      "project_effect": "row fully verified live; anchors the 1978 +1 classification note"
+    },
+    {
+      "capture_id": "V19-C08",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "NDA050508 CYCLAPEN-W suspension - verbatim TYPE 1 ORIG block",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050508%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19790914+TO+19790914%5D&limit=1",
+      "finding": "total=1, single chunk: ORIG-1/AP/19790914, STANDARD, TYPE 1; sponsor WYETH AYERST; three CYCLAPEN-W (CYCLACILLIN) FOR SUSPENSION products (125/250/500MG per 5ML). Fully verifies the committed extraction; the NME side of the Cyclapen pair.",
+      "verbatim_excerpt": "{ \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19790914\", \"review_priority\": \"STANDARD\", \"submission_class_code\": \"TYPE 1\", \"submission_class_code_description\": \"Type 1 - New Molecular Entity\" } ... \"application_number\": \"NDA050508\", \"sponsor_name\": \"WYETH AYERST\" ... CYCLAPEN-W CYCLACILLIN 125MG/5ML, 250MG/5ML, 500MG/5ML (FOR SUSPENSION, ORAL, Discontinued). Single chunk (hasMore=false).",
+      "project_row_ids": "PRE1980-1979-07",
+      "project_effect": "row fully verified live; NME side of the flagged Cyclapen inversion"
+    },
+    {
+      "capture_id": "V19-C09",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "NDA017624 FORANE - verbatim TYPE 1 ORIG block",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017624%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19791218+TO+19791218%5D&limit=1",
+      "finding": "total=1 with the ORIG block inside chunk 0: ORIG-1/AP/19791218, PRIORITY, TYPE 1 - New Molecular Entity. Fully verifies the committed extraction for this row.",
+      "verbatim_excerpt": "{ \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19791218\", \"review_priority\": \"PRIORITY\", \"submission_class_code\": \"TYPE 1\", \"submission_class_code_description\": \"Type 1 - New Molecular Entity\" } ... supplements include SUPPL-36/AP/20100222 (LABELING, label http://www.accessdata.fda.gov/drugsatfda_docs/label/2010/017624s036lbl.pdf). Chunk 0 of 3.",
+      "project_row_ids": "PRE1980-1979-12",
+      "project_effect": "row fully verified live"
+    },
+    {
+      "capture_id": "V19-C10",
+      "system": "FDA Drugs@FDA application-history page (accessdata.fda.gov)",
+      "subject": "NDA017920 TAGAMET - live Drugs@FDA original-approval row",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=017920",
+      "finding": "Page header: 'New Drug Application (NDA): 017920', 'Company: GLAXOSMITHKLINE'. Original Approvals table carries exactly one row: 08/16/1977 | ORIG-1 | Approval | Type 1 - New Molecular Entity | PRIORITY. Products: TAGAMET (CIMETIDINE) 200/300/400/800MG TABLET/ORAL, Discontinued, RLD Yes. Cross-system confirmation of the openFDA payload on the second FDA system.",
+      "verbatim_excerpt": "'New Drug Application (NDA): 017920' / 'Company: GLAXOSMITHKLINE' / Original Approvals or Tentative Approvals: '| 08/16/1977 | ORIG-1 | Approval | Type 1 - New Molecular Entity | PRIORITY | | Label is not available on this site. |' / Products: TAGAMET CIMETIDINE 200MG/300MG/400MG/800MG '**Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**' TABLET;ORAL Discontinued. Chunk 0 of 2.",
+      "project_row_ids": "PRE1980-1977-07",
+      "project_effect": "row fully verified live on the second FDA system"
+    },
+    {
+      "capture_id": "V19-C11",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "NDA050509 CYCLAPEN-W tablets - verbatim TYPE 3 ORIG block (irregularity side)",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050509%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19790913+TO+19790913%5D&limit=1",
+      "finding": "total=1, single chunk: ORIG-1/AP/19790913, STANDARD, TYPE 3 - New Dosage Form; sponsor WYETH AYERST; CYCLAPEN-W (CYCLACILLIN) TABLET 250MG/500MG. Proves the class/date inversion is in the published FDA data (tablet NDA typed 'new dosage form' one day BEFORE the suspension NDA typed NME for the same first-marketed ingredient), not an extraction error. Cyclacillin counts as ONE NME ingredient via NDA050508.",
+      "verbatim_excerpt": "{ \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19790913\", \"review_priority\": \"STANDARD\", \"submission_class_code\": \"TYPE 3\", \"submission_class_code_description\": \"Type 3 - New Dosage Form\" } ... \"application_number\": \"NDA050509\", \"sponsor_name\": \"WYETH AYERST\" ... CYCLAPEN-W CYCLACILLIN 250MG, 500MG (TABLET, ORAL, Discontinued). Single chunk (hasMore=false).",
+      "project_row_ids": "PRE1980-1979-07 (sibling NDA050509, Type 3, not a decision row)",
+      "project_effect": "irregularity verified live as genuine FDA-data condition; counted once"
+    },
+    {
+      "capture_id": "V19-C12",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "BLA021846 KINLYTIC - verbatim UNKNOWN/UNKNOWN ORIG block (uncounted candidate)",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22BLA021846%22+AND+submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19780116+TO+19780116%5D&limit=1",
+      "finding": "total=1, single chunk: ORIG-1/AP/19780116 with review_priority UNKNOWN and submission_class_code UNKNOWN (no class description field published). Application BLA021846 (docs note: 'This Former NDA Was Deemed To Be a BLA on March 23, 2020'); sponsor MICROBIX BIOSYSTEMS; KINLYTIC (UROKINASE) INJECTABLE 5,000/250,000/9,000 IU/VIAL, Discontinued. Urokinase is first-in-payloads (1965-1979 screen), so this is a genuine NME-candidate that the project does NOT count without an application-level NME source. Queued for the 1989 CDER statistical typescript.",
+      "verbatim_excerpt": "{ \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19780116\", \"review_priority\": \"UNKNOWN\", \"submission_class_code\": \"UNKNOWN\" } ... \"application_number\": \"BLA021846\", \"sponsor_name\": \"MICROBIX BIOSYSTEMS\" ... KINLYTIC UROKINASE 5,000 IU/VIAL, 250,000 IU/VIAL, 9,000 IU/VIAL (INJECTABLE, Discontinued) ... application_docs title: \"This Former NDA Was Deemed To Be a BLA on March 23, 2020.\" Single chunk (hasMore=false).",
+      "project_row_ids": "(no decision row; audit-level candidate for 1978)",
+      "project_effect": "candidate verified live; explicitly NOT counted pending application-level source"
+    }
+  ]
+}

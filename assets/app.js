@@ -680,6 +680,7 @@ function drawOverview() {
     { k: 'Phase 3 registry (2026–27)', v: (overview.ctgov || []).length, s: ((overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length) + ' US-listed lead sponsors with verified primary completion dates' },
     { k: '2026 decisions audited', v: y2026.length, s: official2026.length + ' include an FDA-domain source; others are flagged for source review' },
     { k: 'Pre-1985 landmark decisions', v: (overview.pre1985Decisions || []).length, s: '1980–1985 historical era (Orphan Drug Act 1983, Hatch-Waxman 1984)' },
+    { k: 'Pre-1980 verified decisions', v: (overview.pre1980Decisions || []).length, s: '1977–1979 Type 1/1-4, dual-run payloads + live probes' },
     { k: 'Original non-NME approvals', v: (overview.orig || []).length, s: ((overview.orig || []).filter(r => (r.us_investable_class || '').startsWith('US-LISTED')).length) + ' US-listed · Type 2/3/4/5, biosimilars, new-indication originals' },
     { k: 'Type 1 unmatched (flagged)', v: (overview.t1gap || []).length, s: 'openFDA Type 1 not merged into the NME master — CBER biologics / copacks, blank beats guessed' }
   ];
@@ -1108,8 +1109,12 @@ Promise.all([
   loadCSV('data/fda_official_series_crosswalk.csv').then(x => x.records).catch(() => []),
   loadCSV('data/fda_official_year_series.csv').then(x => x.records).catch(() => []),
   loadCSV('data/pre1985_1983_1984_1985_detailed_audit.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/clinical_trials_phase3_registry_expanded.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries, pre1985Detailed, ctgovExpanded]) => {
+  loadCSV('data/clinical_trials_phase3_registry_expanded.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1980_fda_decisions.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1980_year_audit.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1980_era_analysis.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1980_primary_captures_index.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries, pre1985Detailed, ctgovExpanded, pre1980Decisions, pre1980Audit, pre1980Era, v19Captures]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
@@ -1120,6 +1125,8 @@ Promise.all([
   overview.nmeGap = nmeGap; overview.v17Captures = v17Captures;
   overview.officialCrosswalk = officialCrosswalk; overview.officialSeries = officialSeries;
   overview.pre1985Detailed = pre1985Detailed; overview.ctgovExpanded = ctgovExpanded;
+  overview.pre1980Decisions = pre1980Decisions; overview.pre1980Audit = pre1980Audit;
+  overview.pre1980Era = pre1980Era; overview.v19Captures = v19Captures;
 
   /* Defensive rendering: one failing panel must never blank the whole site
      again (a missing function here silently killed every table after it
@@ -1689,6 +1696,96 @@ Promise.all([
     ],
     searchFields: ['capture_id', 'subject', 'finding_summary', 'project_row_ids'],
     searchPlaceholder: 'Search the live primary captures…',
+    sort: { key: 'capture_id', dir: 'asc' }, pageSize: 15,
+    filters: []
+  });
+
+  /* ---- v19 (2026-09-19): pre-1980 year-by-year verification (1977-1979) ---- */
+
+  DataTable({
+    id: 'pre1980-audit', mount: '#pre1980-audit-view', csv: 'data/pre1980_year_audit.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('official_nmes_approved', 'FDA official NMEs', { core: true, num: true, render: r => `<span class="num-strong">${escapeHtml(r.official_nmes_approved)}</span>` }),
+      c('official_ndas_approved', 'FDA NDAs approved', { core: true, num: true, render: r => num(r.official_ndas_approved, 0) }),
+      c('payload_orig_ap_total', 'Payload ORIG/AP rows', { core: true, num: true, render: r => num(r.payload_orig_ap_total, 0) }),
+      c('payload_type1_14_rows', 'Type 1/1-4 rows', { core: true, num: true, render: r => num(r.payload_type1_14_rows, 0) }),
+      c('payload_blank_unknown_rows', 'Blank/UNKNOWN class', { num: true, render: r => num(r.payload_blank_unknown_rows, 0) }),
+      c('nme_comparable_rows', 'NME-comparable rows', { core: true, num: true, render: r => num(r.nme_comparable_rows, 0) }),
+      c('delta_nme_comparable_vs_official', 'Δ vs official', { core: true, render: r => deltaBadge(r.delta_nme_comparable_vs_official) }),
+      c('verdict', 'Verdict', { core: true, render: r => verdictBadge(r.verdict) }),
+      c('live_captures', 'Live captures', { core: true, render: r => `<code>${escapeHtml(r.live_captures)}</code>` }),
+      c('key_irregularities', 'Key irregularities', { trunc: true, render: r => truncCell(r.key_irregularities) }),
+      c('evidence_note', 'Evidence note', { trunc: true, render: r => truncCell(r.evidence_note) })
+    ],
+    searchFields: ['year', 'verdict', 'key_irregularities'],
+    searchPlaceholder: 'Search the 1977-1979 year audit…',
+    sort: { key: 'year', dir: 'asc' }, pageSize: 10,
+    filters: [{ key: 'verdict', label: 'All verdicts', field: 'verdict' }]
+  });
+
+  DataTable({
+    id: 'pre1980-decisions', mount: '#pre1980-decisions-view', csv: 'data/pre1980_fda_decisions.csv',
+    columns: [
+      c('decision_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.decision_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('drug_brand', 'Brand', { core: true, render: r => `<strong>${escapeHtml(r.drug_brand)}</strong>` }),
+      c('drug_generic', 'Active Ingredient', { core: true }),
+      c('application_number', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('decision_date', 'Date', { core: true }),
+      c('company_name', 'Drugs@FDA holder (qualified)', { core: true, trunc: true }),
+      c('chemical_type_description', 'Type', { core: true, render: r => escapeHtml(r.chemical_type_description) }),
+      c('review_priority', 'Priority', { core: true, render: r => r.review_priority === 'PRIORITY' ? `<span class="badge pos">${escapeHtml(r.review_priority)}</span>` : (r.review_priority === 'UNKNOWN' ? `<span class="badge flagged">${escapeHtml(r.review_priority)}</span>` : `<span class="badge neutral">${escapeHtml(r.review_priority)}</span>`) }),
+      c('regulatory_milestone', 'Milestone', { trunc: true, render: r => truncCell(r.regulatory_milestone) }),
+      c('source_url_1', 'Drugs@FDA', { core: true, render: r => linkify(r.source_url_1, 'Drugs@FDA'), detail: r => r.source_url_1 }),
+      c('source_url_2', 'openFDA', { core: true, render: r => linkify(r.source_url_2, 'openFDA'), detail: r => r.source_url_2 }),
+      c('verification_status', 'Status', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Verification notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['drug_brand', 'drug_generic', 'company_name', 'application_number', 'decision_id'],
+    searchPlaceholder: 'Search 1977-1979 drug, holder, application…',
+    sort: { key: 'decision_date', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'priority', label: 'All priorities', field: 'review_priority' }
+    ]
+  });
+
+  DataTable({
+    id: 'pre1980-era', mount: '#pre1980-era-view', csv: 'data/pre1980_era_analysis.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('total_nmes_approved', 'Rows in table', { core: true, num: true, render: r => num(r.total_nmes_approved, 0) }),
+      c('official_fda_nme_count', 'FDA official NMEs', { core: true, num: true, render: r => `<span class="num-strong">${escapeHtml(r.official_fda_nme_count || '—')}</span>` }),
+      c('nme_comparable_rows', 'NME-comparable rows', { core: true, num: true, render: r => num(r.nme_comparable_rows, 0) }),
+      c('official_series_delta', 'Δ vs official', { core: true, render: r => deltaBadge(r.official_series_delta) }),
+      c('priority_reviews', 'Priority', { core: true, num: true, render: r => num(r.priority_reviews, 0) }),
+      c('standard_reviews', 'Standard', { core: true, num: true, render: r => num(r.standard_reviews, 0) }),
+      c('unpublished_priority_reviews', 'Priority unpublished', { num: true, render: r => num(r.unpublished_priority_reviews, 0) }),
+      c('landmark_approvals', 'Landmark approvals', { core: true, trunc: true, render: r => truncCell(r.landmark_approvals) }),
+      c('historical_significance', 'Significance', { trunc: true, render: r => truncCell(r.historical_significance) }),
+      c('primary_source_basis', 'Primary sources', { trunc: true, render: r => truncCell(r.primary_source_basis) })
+    ],
+    searchFields: ['year', 'landmark_approvals'],
+    searchPlaceholder: 'Search 1977-1979 era rows…',
+    sort: { key: 'year', dir: 'asc' }, pageSize: 10,
+    filters: []
+  });
+
+  DataTable({
+    id: 'v19-captures', mount: '#v19-captures-view', csv: 'data/pre1980_primary_captures_index.csv',
+    columns: [
+      c('capture_id', 'Capture', { core: true, render: r => `<code>${escapeHtml(r.capture_id)}</code>` }),
+      c('capture_date', 'Date', { core: true }),
+      c('system', 'FDA system', { core: true, trunc: true, render: r => truncCell(r.system) }),
+      c('subject', 'Subject', { core: true, trunc: true, render: r => truncCell(r.subject) }),
+      c('finding_summary', 'Live finding', { core: true, trunc: true, render: r => truncCell(r.finding_summary) }),
+      c('project_row_ids', 'Rows', { core: true, render: r => `<code>${escapeHtml(r.project_row_ids)}</code>` }),
+      c('project_effect', 'Effect on the project', { trunc: true, render: r => truncCell(r.project_effect) }),
+      c('url', 'Source URL', { core: true, render: r => linkify(r.url, 'open'), detail: r => r.url })
+    ],
+    searchFields: ['capture_id', 'subject', 'finding_summary', 'project_row_ids'],
+    searchPlaceholder: 'Search the v19 live primary captures…',
     sort: { key: 'capture_id', dir: 'asc' }, pageSize: 15,
     filters: []
   });

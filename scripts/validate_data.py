@@ -1054,6 +1054,146 @@ for _r in _gap:
 warnings.append(f"v17: {len(_short)} years remain short of FDA's official NME count "
                 f"({', '.join(_short)}) - sized and flagged, not hidden")
 
+# v19 (2026-09-19): verified pre-1980 decisions for 1977-1979.
+# Pins the year-by-year enumeration, the official-series verdicts, the
+# payload agreement and the live-capture index owned by
+# scripts/build_pre1980_decisions_v19.py.
+_p1980 = read("pre1980_fda_decisions.csv")
+_p1980_expected = {"1977": 17, "1978": 18, "1979": 13}
+if len(_p1980) != sum(_p1980_expected.values()):
+    errors.append(f"pre1980_fda_decisions: expected {sum(_p1980_expected.values())} verified rows "
+                  f"(v19 baseline), got {len(_p1980)}")
+_p1980_by_year = Counter(r["year"] for r in _p1980)
+for _y, _n in _p1980_expected.items():
+    if _p1980_by_year.get(_y, 0) != _n:
+        errors.append(f"pre1980_fda_decisions: expected {_n} rows in the {_y} group, "
+                      f"got {_p1980_by_year.get(_y, 0)}")
+_p1980_ids = set()
+for _i, _r in enumerate(_p1980, 2):
+    if not re.fullmatch(r"PRE1980-197[789]-\d{2}", _r["decision_id"] or ""):
+        errors.append(f"pre1980_fda_decisions:{_i}: invalid ID format {_r['decision_id']!r}")
+    if _r["year"] not in tuple(_p1980_expected):
+        errors.append(f"pre1980_fda_decisions:{_i}: unexpected year {_r['year']!r}")
+    if not (_r["source_url_1"] or "").startswith("http") or \
+            not (_r["source_url_2"] or "").startswith("http"):
+        errors.append(f"pre1980_fda_decisions:{_i}: missing official source URL")
+    if _r["verification_status"] != "Verified":
+        errors.append(f"pre1980_fda_decisions:{_i}: status must be 'Verified', "
+                      f"got {_r['verification_status']!r}")
+    if "No ticker assigned" not in (_r["corporate_lineage_and_ticker"] or ""):
+        errors.append(f"pre1980_fda_decisions:{_i}: ticker discipline broken "
+                      f"({_r['decision_id']})")
+    if (_r["indication"] or "").strip():
+        errors.append(f"pre1980_fda_decisions:{_i}: indication asserted without an "
+                      f"approval-era label ({_r['decision_id']})")
+    _p1980_ids.add(_r["decision_id"])
+if len(_p1980_ids) != len(_p1980):
+    errors.append("pre1980_fda_decisions: duplicate decision_id values")
+try:
+    _p1980_payload: dict[str, dict] = {}
+    for _y in ("1977", "1978", "1979"):
+        _obj = json.loads((DATA / "raw" / "openfda_orig_decisions_1975_1979" /
+                           f"decisions_{_y}.json").read_text(encoding="utf-8"))
+        for _d in _obj["decisions"]:
+            _p1980_payload[_d["application_number"]] = _d
+    for _r in _p1980:
+        _appl = "BLA101063" if "BLA" in (_r["application_number"] or "") else \
+            "NDA" + re.sub(r"\D", "", _r["application_number"] or "")
+        _pl = _p1980_payload.get(_appl)
+        if _pl is None:
+            errors.append(f"pre1980_fda_decisions: {_r['decision_id']} application {_appl} "
+                          f"not in committed payloads")
+            continue
+        if _r["decision_date"] != _pl["decision_date"]:
+            errors.append(f"pre1980_fda_decisions: {_r['decision_id']} date {_r['decision_date']} "
+                          f"!= payload {_pl['decision_date']}")
+        if _r["chemical_type_code"] != _pl["submission_class_code"]:
+            errors.append(f"pre1980_fda_decisions: {_r['decision_id']} class "
+                          f"{_r['chemical_type_code']} != payload {_pl['submission_class_code']}")
+        if (_r["review_priority"] or "") != (_pl["review_priority"] or ""):
+            errors.append(f"pre1980_fda_decisions: {_r['decision_id']} priority "
+                          f"{_r['review_priority']} != payload {_pl['review_priority']}")
+    for _y in ("1977", "1978", "1979"):
+        _obj = json.loads((DATA / "raw" / "openfda_orig_decisions_1975_1979" /
+                           f"decisions_{_y}.json").read_text(encoding="utf-8"))
+        _payload_t1 = {_d["application_number"] for _d in _obj["decisions"]
+                       if (_d.get("submission_class_code") or "").upper() in ("TYPE 1", "TYPE 1/4")}
+        _table_apps = {"BLA101063" if "BLA" in r["application_number"] else
+                       "NDA" + re.sub(r"\D", "", r["application_number"]) for r in _p1980
+                       if r["year"] == _y}
+        if _payload_t1 != _table_apps:
+            errors.append(f"pre1980_fda_decisions:{_y}: table applications do not equal "
+                          f"payload TYPE-1 enumeration (missing={sorted(_payload_t1 - _table_apps)}, "
+                          f"extra={sorted(_table_apps - _payload_t1)})")
+except (OSError, ValueError, KeyError) as _exc:
+    errors.append(f"pre1980_fda_decisions: openFDA payload missing: {_exc}")
+_p1980_by_id = {r["decision_id"]: r for r in _p1980}
+if "NDA050509" not in _p1980_by_id.get("PRE1980-1979-07", {}).get("notes", ""):
+    errors.append("pre1980_fda_decisions: Cyclapen row lost its NDA050509 inversion note")
+if _p1980_by_id.get("PRE1980-1978-08", {}).get("chemical_type_code") != "TYPE 1/4":
+    errors.append("pre1980_fda_decisions: Motofen row must stay TYPE 1/4")
+_p1980_audit = read("pre1980_year_audit.csv")
+_p1980_want = {"1977": ("25", "17", "-8", "PROJECT_SHORT_FLAGGED"),
+              "1978": ("17", "18", "1", "PROJECT_EXCEEDS_OFFICIAL"),
+              "1979": ("14", "13", "-1", "PROJECT_SHORT_FLAGGED")}
+if [r["year"] for r in _p1980_audit] != ["1977", "1978", "1979"]:
+    errors.append("pre1980_year_audit: expected exactly the 1977/1978/1979 year rows")
+for _r in _p1980_audit:
+    _w = _p1980_want.get(_r["year"])
+    _got = (_r["official_nmes_approved"], _r["nme_comparable_rows"],
+            _r["delta_nme_comparable_vs_official"], _r["verdict"])
+    if _got != _w:
+        errors.append(f"pre1980_year_audit {_r['year']}: verdict/count drift {_got} != {_w}")
+    if int(_r["delta_nme_comparable_vs_official"]) != \
+            int(_r["nme_comparable_rows"]) - int(_r["official_nmes_approved"]):
+        errors.append(f"pre1980_year_audit {_r['year']}: delta arithmetic broken")
+_p1980_era = read("pre1980_era_analysis.csv")
+if len(_p1980_era) != 3:
+    errors.append(f"pre1980_era_analysis: expected 3 year rows, got {len(_p1980_era)}")
+for _r in _p1980_era:
+    _n = _p1980_expected.get(_r["year"], 0)
+    if _r["verified_decisions_tracked"] != str(_n) or _r["total_nmes_approved"] != str(_n):
+        errors.append(f"pre1980_era_analysis:{_r['year']}: tracked/NME counts must be {_n}")
+    _pri = sum(1 for r in _p1980 if r["year"] == _r["year"] and r["review_priority"] == "PRIORITY")
+    _std = sum(1 for r in _p1980 if r["year"] == _r["year"] and r["review_priority"] == "STANDARD")
+    if _r["priority_reviews"] != str(_pri) or _r["standard_reviews"] != str(_std):
+        errors.append(f"pre1980_era_analysis:{_r['year']}: priority/standard counts disagree "
+                      f"with the decision table")
+_p1980_caps = read("pre1980_primary_captures_index.csv")
+if [r["capture_id"] for r in _p1980_caps] != [f"V19-C{i:02d}" for i in range(1, 13)]:
+    errors.append("pre1980_primary_captures_index: expected exactly V19-C01..V19-C12")
+for _name in ("live_primary_captures_v19_2026_09_19.json",
+              "run18_manifest_openfda_orig_decisions_1975_1979.json"):
+    if not (DATA / "raw" / "source_captures_2026_09_19" / _name).exists():
+        errors.append(f"source_captures_2026_09_19: missing {_name}")
+try:
+    _v19ev = json.loads((DATA / "raw" / "source_captures_2026_09_19" /
+                         "live_primary_captures_v19_2026_09_19.json").read_text(encoding="utf-8"))
+    if [c["capture_id"] for c in _v19ev.get("captures", [])] != \
+            [f"V19-C{i:02d}" for i in range(1, 13)]:
+        errors.append("live_primary_captures_v19: evidence file must carry V19-C01..V19-C12")
+except (OSError, ValueError, KeyError) as _exc:
+    errors.append(f"live_primary_captures_v19: unreadable evidence file: {_exc}")
+_x2013 = next(r for r in _cross if r["year"] == "2013")
+if "v19 (2026-09-19)" not in (_x2013.get("evidence_note") or "") or \
+        "Simponi Aria" not in (_x2013.get("evidence_note") or ""):
+    errors.append("crosswalk 2013: v19 Simponi-Aria adjudication note missing")
+if not (DATA / "raw" / "source_captures_2026_09_19" /
+        "fda_2013_nme_table_2026_09_19.json").exists():
+    errors.append("source_captures_2026_09_19: missing fda_2013_nme_table_2026_09_19.json")
+_eng = read("decision_engine_year_inputs.csv")
+if [r["year"] for r in _eng] != [str(y) for y in range(1977, 2027)]:
+    errors.append("decision_engine_year_inputs: expected exactly the 1977-2026 year rows")
+for _r in _eng:
+    if _r["verdict"] == "MATCH" and _r["completeness_ratio"] != "1.0":
+        errors.append(f"decision_engine_year_inputs {_r['year']}: MATCH without 1.0 completeness")
+    if _r["verdict"] == "MATCH" and _r["engine_use"] != "FULL":
+        errors.append(f"decision_engine_year_inputs {_r['year']}: MATCH year not FULL-use")
+if sum(1 for _r in _eng if _r["engine_use"] == "FULL") != 17:
+    errors.append("decision_engine_year_inputs: FULL-use year count drifted from 17")
+warnings.append("v19: pre-1980 years 1977 (-8) and 1979 (-1) remain short of FDA's official NME "
+                "count; 1978 carries +1 (Type 1/4 Motofen) - all sized and flagged")
+
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows (incl. {sum(_pre_orig_years.values())} v15/v16 pre-1985 rows), "
       f"{len(focus)} focus-year audit rows (1980-1985), {len(oscores)} orig scorecards, "
@@ -1064,7 +1204,8 @@ print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-s
       f"{len(ctgov)} ClinicalTrials.gov Phase 3 rows, {len(clin_scores)} clinical trial scorecards, "
       f"{len(_pre1985_decisions)} pre-1985 decisions, {len(_pre1985_era)} pre-1985 era rows, "
       f"{len(_series)} official-series rows, {len(_cross)} crosswalk rows, {len(_gap)} NME-gap rows, "
-      f"and {len(_caps)} live primary captures.")
+      f"{len(_caps)} live primary captures, {len(_p1980)} pre-1980 decisions, "
+      f"{len(_p1980_audit)} pre-1980 audit rows, and {len(_p1980_caps)} v19 live captures.")
 print(f"Warnings requiring manual review: {len(warnings)}")
 for w in warnings[:12]: print("WARNING", w)
 if len(warnings) > 12: print(f"WARNING ... {len(warnings)-12} more")
