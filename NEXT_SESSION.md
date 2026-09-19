@@ -115,3 +115,12 @@ Arena, then execute the checklist below in order.
   from every 1965-1979 payload (verified against the first-appearance index)
   → the concrete, sourced first candidate for the **1976** gap (21 official
   NMEs vs 21 payload Type-1s — reconcile when 1976 is built).
+### Post-merge housekeeping (2026-09-19, after PR #38 merged at d677b67)
+- Merge-push re-triggered arena-data-fetch on the session branch (path trigger
+  on scripts/run_fetch_jobs.py); the run re-downloads the Drugs@FDA zip every
+  time because job_zip_extract has no skip-existing check. Cancelled the
+  redundant run (35468570078); data was already committed by run 21.
+- Improvement for next session: give job_zip_extract a spec["skip_existing"]
+  guard (or compare the remote zip SHA-256 to the last recorded zip_sha256
+  before rewriting members), so branch pushes touching the runner script stop
+  re-downloading a 6 MB zip for an hour when fda.gov throttles.
