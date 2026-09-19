@@ -1194,6 +1194,105 @@ if sum(1 for _r in _eng if _r["engine_use"] == "FULL") != 17:
 warnings.append("v19: pre-1980 years 1977 (-8) and 1979 (-1) remain short of FDA's official NME "
                 "count; 1978 carries +1 (Type 1/4 Motofen) - all sized and flagged")
 
+# v20 (2026-09-19): complete 1977-1979 original-application audit (170 rows =
+# 42+66+62), per-row live probes, and the full-Drugs@FDA-DB window
+# cross-check that names payload-invisible approvals instead of losing them.
+_v20a = read("pre1980_originals_audit_1977_1979.csv")
+if len(_v20a) != 170:
+    errors.append(f"pre1980_originals_audit_1977_1979: expected 170 rows, got {len(_v20a)}")
+_v20_by_year = Counter(r["year"] for r in _v20a)
+for _y, _n in (("1977", 42), ("1978", 66), ("1979", 62)):
+    if _v20_by_year.get(_y, 0) != _n:
+        errors.append(f"pre1980_originals_audit_1977_1979: expected {_n} rows in {_y}")
+_v20_nme = Counter(r["year"] for r in _v20a if r["nme_comparable"] == "TRUE")
+for _y, _n in (("1977", 17), ("1978", 18), ("1979", 13)):
+    if _v20_nme.get(_y, 0) != _n:
+        errors.append(f"pre1980_originals_audit_1977_1979: NME-comparable {_y} drifted to "
+                      f"{_v20_nme.get(_y, 0)} (expected {_n})")
+_v20_ids = [r["row_id"] for r in _v20a]
+if len(set(_v20_ids)) != len(_v20_ids) or any(
+        not re.fullmatch(r"PRE1980AUDIT-197[789]-\d{2}", x or "") for x in _v20_ids):
+    errors.append("pre1980_originals_audit_1977_1979: row_id format/duplicate failure")
+_v20_appls = [r["application_number"] for r in _v20a]
+if len(set(_v20_appls)) != len(_v20_appls):
+    errors.append("pre1980_originals_audit_1977_1979: duplicate application rows")
+# every audit row must equal its payload record (class/date/priority/holder)
+try:
+    _v20_payload = {}
+    for _y in (1977, 1978, 1979):
+        _obj = json.loads((DATA / "raw" / "openfda_orig_decisions_1975_1979" /
+                           f"decisions_{_y}.json").read_text(encoding="utf-8"))
+        for _d in _obj["decisions"]:
+            _v20_payload[_d["application_number"]] = (_y, _d)
+    for _i, _r in enumerate(_v20a, 2):
+        _y, _d = _v20_payload[_r["application_number"]]
+        if _r["year"] != str(_y) or _r["decision_date"] != _d["decision_date"] or \
+           (_r["submission_class_code"] or "").strip().upper() != \
+           (_d.get("submission_class_code") or "").strip().upper() or \
+           (_r["review_priority"] or "").strip().upper() != \
+           (_d.get("review_priority") or "").strip().upper() or \
+           _r["sponsor_name_drugsatfda_holder"] != _d.get("sponsor_name", ""):
+            errors.append(f"pre1980_originals_audit_1977_1979:{_i}: "
+                          f"{_r['application_number']} drifts from the committed payload")
+except (OSError, ValueError, KeyError) as _exc:
+    errors.append(f"pre1980_originals_audit_1977_1979: payload cross-check failed: {_exc}")
+# the 48 v19 decisions must be exactly the NME-comparable rows
+_v20_nme_appls = sorted(r["application_number"] for r in _v20a if r["nme_comparable"] == "TRUE")
+_v19_appls = sorted(r["application_number"].replace(" ", "") for r in _p1980)
+if _v20_nme_appls != _v19_appls:
+    errors.append("pre1980_originals_audit_1977_1979: NME-comparable set != v19 48-row table")
+if any(r["live_probe_status"] == "PROBE_PENDING" for r in _v20a):
+    errors.append("pre1980_originals_audit_1977_1979: probe layer still pending; "
+                  "run the fetch job and rebuild before publishing")
+_v20_probeidx = read("pre1980_row_probe_index.csv")
+if len(_v20_probeidx) != 170:
+    errors.append(f"pre1980_row_probe_index: expected 170 rows, got {len(_v20_probeidx)}")
+_v20_probe_dir = DATA / "raw" / "pre1980_row_probes_1977_1979"
+if not (_v20_probe_dir / "manifest.json").exists():
+    errors.append("pre1980_row_probes_1977_1979: manifest.json missing")
+else:
+    _v20_pm = json.loads((_v20_probe_dir / "manifest.json").read_text(encoding="utf-8"))
+    _v20_ok = [e for e in _v20_pm["requests"] if e.get("status") == 200]
+    if len(_v20_ok) != 170:
+        errors.append(f"pre1980_row_probes_1977_1979: manifest carries {len(_v20_ok)} "
+                      "successful captures, expected 170")
+    for _e in _v20_ok:
+        _pf = _v20_probe_dir / _e["out"]
+        if not _pf.exists() or _hl.sha256(_pf.read_bytes()).hexdigest() != _e["sha256"]:
+            errors.append(f"pre1980_row_probes_1977_1979: {_e['out']} missing or SHA drift")
+_v20_zip_dir = DATA / "raw" / "drugsatfda_data_files_2026_09"
+_v20_invisible = []
+if not (_v20_zip_dir / "manifest.json").exists():
+    errors.append("drugsatfda_data_files_2026_09: manifest.json missing "
+                  "(full-DB window cross-check is a required v20 layer)")
+else:
+    _v20_zm = json.loads((_v20_zip_dir / "manifest.json").read_text(encoding="utf-8"))
+    for _out in ("Submissions_1965_1979.txt", "Applications_appl_window.txt",
+                 "Products_appl_window.txt", "SubmissionClass_Lookup.txt"):
+        _e = next((x for x in _v20_zm["requests"] if x.get("out") == _out), None)
+        _pf = _v20_zip_dir / _out
+        if _e is None or not _pf.exists() or \
+                _hl.sha256(_pf.read_bytes()).hexdigest() != _e.get("out_sha256"):
+            errors.append(f"drugsatfda_data_files_2026_09: {_out} missing or SHA drift")
+    _v20_cross = read("pre1980_full_db_crosscheck_1977_1979.csv")
+    _v20_sum = [r for r in _v20_cross if r["classification"] == "SUMMARY"]
+    if sorted(r["year"] for r in _v20_sum) != ["1977", "1978", "1979"]:
+        errors.append("pre1980_full_db_crosscheck_1977_1979: expected 3 SUMMARY rows")
+    _v20_invisible = [r for r in _v20_cross if r["in_openfda_payload"] == "FALSE"]
+    _v20_inv_nme = [r for r in _v20_invisible if r["submission_class_code"].upper()
+                    in ("TYPE 1", "TYPE 1/4")]
+    if _v20_inv_nme:
+        warnings.append(
+            "v20 payload-invisible NME-comparable approvals named from the full Drugs@FDA "
+            "database: " + "; ".join(f"{r['application_number']} {r['decision_date']}"
+                                     for r in _v20_inv_nme) +
+            " - manual review queue, not merged into any verified decision table")
+print(f"v20: {len(_v20a)} original-application audit rows, "
+      f"{len(_v20_probeidx)} probe index rows, "
+      f"{len(_v20_invisible) if '_v20_invisible' in dir() else 0} payload-invisible "
+      f"full-DB approvals flagged.")
+
+
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows (incl. {sum(_pre_orig_years.values())} v15/v16 pre-1985 rows), "
       f"{len(focus)} focus-year audit rows (1980-1985), {len(oscores)} orig scorecards, "

@@ -1,0 +1,40 @@
+{
+  "tool": "build_pre1980_originals_audit_v20.py",
+  "built_utc": "",
+  "audit_rows": 170,
+  "audit_rows_by_year": {
+    "1977": 42,
+    "1978": 66,
+    "1979": 62
+  },
+  "nme_comparable_by_year": {
+    "1977": 17,
+    "1978": 18,
+    "1979": 13
+  },
+  "probe_layer": {
+    "present": false,
+    "rows": 0,
+    "match": 0,
+    "absent_live": 0,
+    "other": 0
+  },
+  "full_db_layer": {
+    "present": false,
+    "crosscheck_rows": 0,
+    "payload_invisible_by_year": {
+      "1977": 0,
+      "1978": 0,
+      "1979": 0
+    }
+  },
+  "fail_closed_checks": [
+    "payload SHA vs run-19 manifest (3 files)",
+    "payload row counts 42/66/62; NME-comparable 17/18/13",
+    "probe files complete (170) + SHA vs manifest + date/class/priority/holder equality",
+    "full-DB extracts SHA vs runner manifest; filter expressions recorded",
+    "payload approvals \u2286 full-DB approvals per year (abort on any absence)",
+    "v19 display-map agreement for the 48 Type 1/1-4 rows",
+    "Cyclapen inversion the only permitted NME earlier-appearance flag"
+  ]
+}
