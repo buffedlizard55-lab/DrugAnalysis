@@ -1,0 +1,1021 @@
+[
+ {
+  "type": "generic",
+  "id": "pre1980_row_probes_1965_1976",
+  "skip_existing": true,
+  "timeout": 90,
+  "retries": 6,
+  "sleep": 2.0,
+  "items": [
+   {
+    "id": "probe_1965_NDA014602",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA014602%22&limit=1000",
+    "out": "probe_NDA014602.json",
+    "decision_date": "1965-03-03",
+    "application_number": "NDA014602",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA013026",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA013026%22&limit=1000",
+    "out": "probe_NDA013026.json",
+    "decision_date": "1965-04-30",
+    "application_number": "NDA013026",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_BLA101995",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22BLA101995%22&limit=1000",
+    "out": "probe_BLA101995.json",
+    "decision_date": "1965-06-04",
+    "application_number": "BLA101995",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA015539",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA015539%22&limit=1000",
+    "out": "probe_NDA015539.json",
+    "decision_date": "1965-06-04",
+    "application_number": "NDA015539",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA016059",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016059%22&limit=1000",
+    "out": "probe_NDA016059.json",
+    "decision_date": "1965-06-10",
+    "application_number": "NDA016059",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA014879",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA014879%22&limit=1000",
+    "out": "probe_NDA014879.json",
+    "decision_date": "1965-06-23",
+    "application_number": "NDA014879",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA012715",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA012715%22&limit=1000",
+    "out": "probe_NDA012715.json",
+    "decision_date": "1965-08-25",
+    "application_number": "NDA012715",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA012806",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA012806%22&limit=1000",
+    "out": "probe_NDA012806.json",
+    "decision_date": "1965-10-18",
+    "application_number": "NDA012806",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA014763",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA014763%22&limit=1000",
+    "out": "probe_NDA014763.json",
+    "decision_date": "1965-11-18",
+    "application_number": "NDA014763",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA012665",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA012665%22&limit=1000",
+    "out": "probe_NDA012665.json",
+    "decision_date": "1965-11-25",
+    "application_number": "NDA012665",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1965_NDA013025",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA013025%22&limit=1000",
+    "out": "probe_NDA013025.json",
+    "decision_date": "1965-12-16",
+    "application_number": "NDA013025",
+    "payload_class": "TYPE 1/4"
+   },
+   {
+    "id": "probe_1966_NDA012429",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA012429%22&limit=1000",
+    "out": "probe_NDA012429.json",
+    "decision_date": "1966-01-18",
+    "application_number": "NDA012429",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1966_NDA016029",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016029%22&limit=1000",
+    "out": "probe_NDA016029.json",
+    "decision_date": "1966-03-23",
+    "application_number": "NDA016029",
+    "payload_class": "TYPE 1/4"
+   },
+   {
+    "id": "probe_1966_NDA016000",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016000%22&limit=1000",
+    "out": "probe_NDA016000.json",
+    "decision_date": "1966-07-01",
+    "application_number": "NDA016000",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1966_NDA016245",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016245%22&limit=1000",
+    "out": "probe_NDA016245.json",
+    "decision_date": "1966-07-01",
+    "application_number": "NDA016245",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1966_NDA016273",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016273%22&limit=1000",
+    "out": "probe_NDA016273.json",
+    "decision_date": "1966-07-01",
+    "application_number": "NDA016273",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1966_NDA015500",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA015500%22&limit=1000",
+    "out": "probe_NDA015500.json",
+    "decision_date": "1966-07-18",
+    "application_number": "NDA015500",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1966_NDA016084",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016084%22&limit=1000",
+    "out": "probe_NDA016084.json",
+    "decision_date": "1966-08-19",
+    "application_number": "NDA016084",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016092",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016092%22&limit=1000",
+    "out": "probe_NDA016092.json",
+    "decision_date": "1967-01-10",
+    "application_number": "NDA016092",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016131",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016131%22&limit=1000",
+    "out": "probe_NDA016131.json",
+    "decision_date": "1967-02-01",
+    "application_number": "NDA016131",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016099",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016099%22&limit=1000",
+    "out": "probe_NDA016099.json",
+    "decision_date": "1967-02-08",
+    "application_number": "NDA016099",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA015034",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA015034%22&limit=1000",
+    "out": "probe_NDA015034.json",
+    "decision_date": "1967-03-28",
+    "application_number": "NDA015034",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016033",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016033%22&limit=1000",
+    "out": "probe_NDA016033.json",
+    "decision_date": "1967-04-05",
+    "application_number": "NDA016033",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016096",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016096%22&limit=1000",
+    "out": "probe_NDA016096.json",
+    "decision_date": "1967-04-07",
+    "application_number": "NDA016096",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA015921",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA015921%22&limit=1000",
+    "out": "probe_NDA015921.json",
+    "decision_date": "1967-04-12",
+    "application_number": "NDA015921",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016194",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016194%22&limit=1000",
+    "out": "probe_NDA016194.json",
+    "decision_date": "1967-07-24",
+    "application_number": "NDA016194",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016584",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016584%22&limit=1000",
+    "out": "probe_NDA016584.json",
+    "decision_date": "1967-07-24",
+    "application_number": "NDA016584",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016012",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016012%22&limit=1000",
+    "out": "probe_NDA016012.json",
+    "decision_date": "1967-09-27",
+    "application_number": "NDA016012",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016320",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016320%22&limit=1000",
+    "out": "probe_NDA016320.json",
+    "decision_date": "1967-11-06",
+    "application_number": "NDA016320",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016418",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016418%22&limit=1000",
+    "out": "probe_NDA016418.json",
+    "decision_date": "1967-11-13",
+    "application_number": "NDA016418",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1967_NDA016295",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016295%22&limit=1000",
+    "out": "probe_NDA016295.json",
+    "decision_date": "1967-12-07",
+    "application_number": "NDA016295",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1968_NDA016608",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016608%22&limit=1000",
+    "out": "probe_NDA016608.json",
+    "decision_date": "1968-03-11",
+    "application_number": "NDA016608",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1968_NDA016324",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016324%22&limit=1000",
+    "out": "probe_NDA016324.json",
+    "decision_date": "1968-03-20",
+    "application_number": "NDA016324",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1968_NDA016267",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016267%22&limit=1000",
+    "out": "probe_NDA016267.json",
+    "decision_date": "1968-04-01",
+    "application_number": "NDA016267",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1968_NDA016672",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016672%22&limit=1000",
+    "out": "probe_NDA016672.json",
+    "decision_date": "1968-04-16",
+    "application_number": "NDA016672",
+    "payload_class": "TYPE 1/4"
+   },
+   {
+    "id": "probe_1969_NDA013615",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA013615%22&limit=1000",
+    "out": "probe_NDA013615.json",
+    "decision_date": "1969-02-03",
+    "application_number": "NDA013615",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1969_NDA016119",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016119%22&limit=1000",
+    "out": "probe_NDA016119.json",
+    "decision_date": "1969-06-03",
+    "application_number": "NDA016119",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1969_NDA012828",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA012828%22&limit=1000",
+    "out": "probe_NDA012828.json",
+    "decision_date": "1969-06-12",
+    "application_number": "NDA012828",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1969_NDA016793",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016793%22&limit=1000",
+    "out": "probe_NDA016793.json",
+    "decision_date": "1969-06-17",
+    "application_number": "NDA016793",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1969_NDA016785",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016785%22&limit=1000",
+    "out": "probe_NDA016785.json",
+    "decision_date": "1969-07-22",
+    "application_number": "NDA016785",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1969_NDA016798",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016798%22&limit=1000",
+    "out": "probe_NDA016798.json",
+    "decision_date": "1969-09-23",
+    "application_number": "NDA016798",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1969_NDA013731",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA013731%22&limit=1000",
+    "out": "probe_NDA013731.json",
+    "decision_date": "1969-10-24",
+    "application_number": "NDA013731",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1969_NDA016624",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016624%22&limit=1000",
+    "out": "probe_NDA016624.json",
+    "decision_date": "1969-11-28",
+    "application_number": "NDA016624",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016769",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016769%22&limit=1000",
+    "out": "probe_NDA016769.json",
+    "decision_date": "1970-01-15",
+    "application_number": "NDA016769",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016812",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016812%22&limit=1000",
+    "out": "probe_NDA016812.json",
+    "decision_date": "1970-02-19",
+    "application_number": "NDA016812",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016774",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016774%22&limit=1000",
+    "out": "probe_NDA016774.json",
+    "decision_date": "1970-02-27",
+    "application_number": "NDA016774",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016782",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016782%22&limit=1000",
+    "out": "probe_NDA016782.json",
+    "decision_date": "1970-04-06",
+    "application_number": "NDA016782",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016721",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016721%22&limit=1000",
+    "out": "probe_NDA016721.json",
+    "decision_date": "1970-04-07",
+    "application_number": "NDA016721",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016750",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016750%22&limit=1000",
+    "out": "probe_NDA016750.json",
+    "decision_date": "1970-04-22",
+    "application_number": "NDA016750",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA050109",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050109%22&limit=1000",
+    "out": "probe_NDA050109.json",
+    "decision_date": "1970-05-05",
+    "application_number": "NDA050109",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016912",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016912%22&limit=1000",
+    "out": "probe_NDA016912.json",
+    "decision_date": "1970-06-04",
+    "application_number": "NDA016912",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016885",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016885%22&limit=1000",
+    "out": "probe_NDA016885.json",
+    "decision_date": "1970-07-08",
+    "application_number": "NDA016885",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA019853",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA019853%22&limit=1000",
+    "out": "probe_NDA019853.json",
+    "decision_date": "1970-12-04",
+    "application_number": "NDA019853",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1970_NDA016929",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016929%22&limit=1000",
+    "out": "probe_NDA016929.json",
+    "decision_date": "1970-12-18",
+    "application_number": "NDA016929",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1971_NDA016636",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016636%22&limit=1000",
+    "out": "probe_NDA016636.json",
+    "decision_date": "1971-04-13",
+    "application_number": "NDA016636",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1971_NDA016908",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016908%22&limit=1000",
+    "out": "probe_NDA016908.json",
+    "decision_date": "1971-06-30",
+    "application_number": "NDA016908",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1971_NDA016942",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016942%22&limit=1000",
+    "out": "probe_NDA016942.json",
+    "decision_date": "1971-08-06",
+    "application_number": "NDA016942",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1971_NDA016979",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016979%22&limit=1000",
+    "out": "probe_NDA016979.json",
+    "decision_date": "1971-08-18",
+    "application_number": "NDA016979",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1971_NDA016921",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016921%22&limit=1000",
+    "out": "probe_NDA016921.json",
+    "decision_date": "1971-10-20",
+    "application_number": "NDA016921",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1971_NDA016224",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016224%22&limit=1000",
+    "out": "probe_NDA016224.json",
+    "decision_date": "1971-11-23",
+    "application_number": "NDA016224",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1971_NDA017001",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017001%22&limit=1000",
+    "out": "probe_NDA017001.json",
+    "decision_date": "1971-11-26",
+    "application_number": "NDA017001",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1972_NDA017010",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017010%22&limit=1000",
+    "out": "probe_NDA017010.json",
+    "decision_date": "1972-01-04",
+    "application_number": "NDA017010",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1972_NDA017042",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017042%22&limit=1000",
+    "out": "probe_NDA017042.json",
+    "decision_date": "1972-02-24",
+    "application_number": "NDA017042",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1972_NDA017105",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017105%22&limit=1000",
+    "out": "probe_NDA017105.json",
+    "decision_date": "1972-06-23",
+    "application_number": "NDA017105",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1972_NDA017087",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017087%22&limit=1000",
+    "out": "probe_NDA017087.json",
+    "decision_date": "1972-08-28",
+    "application_number": "NDA017087",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1972_NDA016968",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016968%22&limit=1000",
+    "out": "probe_NDA016968.json",
+    "decision_date": "1972-09-28",
+    "application_number": "NDA016968",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1972_NDA016964",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016964%22&limit=1000",
+    "out": "probe_NDA016964.json",
+    "decision_date": "1972-10-03",
+    "application_number": "NDA016964",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1972_NDA017015",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017015%22&limit=1000",
+    "out": "probe_NDA017015.json",
+    "decision_date": "1972-10-24",
+    "application_number": "NDA017015",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA016996",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016996%22&limit=1000",
+    "out": "probe_NDA016996.json",
+    "decision_date": "1973-01-22",
+    "application_number": "NDA016996",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA017047",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017047%22&limit=1000",
+    "out": "probe_NDA017047.json",
+    "decision_date": "1973-05-07",
+    "application_number": "NDA017047",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA017129",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017129%22&limit=1000",
+    "out": "probe_NDA017129.json",
+    "decision_date": "1973-05-16",
+    "application_number": "NDA017129",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA017247",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017247%22&limit=1000",
+    "out": "probe_NDA017247.json",
+    "decision_date": "1973-06-14",
+    "application_number": "NDA017247",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA017376",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017376%22&limit=1000",
+    "out": "probe_NDA017376.json",
+    "decision_date": "1973-07-30",
+    "application_number": "NDA017376",
+    "payload_class": "TYPE 1/4"
+   },
+   {
+    "id": "probe_1973_NDA016402",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016402%22&limit=1000",
+    "out": "probe_NDA016402.json",
+    "decision_date": "1973-07-31",
+    "application_number": "NDA016402",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA050443",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050443%22&limit=1000",
+    "out": "probe_NDA050443.json",
+    "decision_date": "1973-07-31",
+    "application_number": "NDA050443",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA017454",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017454%22&limit=1000",
+    "out": "probe_NDA017454.json",
+    "decision_date": "1973-09-28",
+    "application_number": "NDA017454",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA016211",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016211%22&limit=1000",
+    "out": "probe_NDA016211.json",
+    "decision_date": "1973-10-09",
+    "application_number": "NDA016211",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA017386",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017386%22&limit=1000",
+    "out": "probe_NDA017386.json",
+    "decision_date": "1973-11-27",
+    "application_number": "NDA017386",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1973_NDA016729",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016729%22&limit=1000",
+    "out": "probe_NDA016729.json",
+    "decision_date": "1973-12-17",
+    "application_number": "NDA016729",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017443",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017443%22&limit=1000",
+    "out": "probe_NDA017443.json",
+    "decision_date": "1974-01-15",
+    "application_number": "NDA017443",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017111",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017111%22&limit=1000",
+    "out": "probe_NDA017111.json",
+    "decision_date": "1974-01-18",
+    "application_number": "NDA017111",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA050459",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050459%22&limit=1000",
+    "out": "probe_NDA050459.json",
+    "decision_date": "1974-01-18",
+    "application_number": "NDA050459",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017450",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017450%22&limit=1000",
+    "out": "probe_NDA017450.json",
+    "decision_date": "1974-01-30",
+    "application_number": "NDA017450",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017395",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017395%22&limit=1000",
+    "out": "probe_NDA017395.json",
+    "decision_date": "1974-02-25",
+    "application_number": "NDA017395",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA016820",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016820%22&limit=1000",
+    "out": "probe_NDA016820.json",
+    "decision_date": "1974-03-12",
+    "application_number": "NDA016820",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017466",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017466%22&limit=1000",
+    "out": "probe_NDA017466.json",
+    "decision_date": "1974-03-25",
+    "application_number": "NDA017466",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017546",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017546%22&limit=1000",
+    "out": "probe_NDA017546.json",
+    "decision_date": "1974-05-10",
+    "application_number": "NDA017546",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017481",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017481%22&limit=1000",
+    "out": "probe_NDA017481.json",
+    "decision_date": "1974-06-28",
+    "application_number": "NDA017481",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_BLA050114",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22BLA050114%22&limit=1000",
+    "out": "probe_BLA050114.json",
+    "decision_date": "1974-07-25",
+    "application_number": "BLA050114",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017048",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017048%22&limit=1000",
+    "out": "probe_NDA017048.json",
+    "decision_date": "1974-07-26",
+    "application_number": "NDA017048",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA050467",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050467%22&limit=1000",
+    "out": "probe_NDA050467.json",
+    "decision_date": "1974-08-07",
+    "application_number": "NDA050467",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017503",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017503%22&limit=1000",
+    "out": "probe_NDA017503.json",
+    "decision_date": "1974-09-03",
+    "application_number": "NDA017503",
+    "payload_class": "TYPE 1/4"
+   },
+   {
+    "id": "probe_1974_NDA017463",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017463%22&limit=1000",
+    "out": "probe_NDA017463.json",
+    "decision_date": "1974-09-19",
+    "application_number": "NDA017463",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017551",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017551%22&limit=1000",
+    "out": "probe_NDA017551.json",
+    "decision_date": "1974-11-21",
+    "application_number": "NDA017551",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1974_NDA017556",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017556%22&limit=1000",
+    "out": "probe_NDA017556.json",
+    "decision_date": "1974-11-27",
+    "application_number": "NDA017556",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1975_NDA016832",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA016832%22&limit=1000",
+    "out": "probe_NDA016832.json",
+    "decision_date": "1975-01-27",
+    "application_number": "NDA016832",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1975_NDA017613",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017613%22&limit=1000",
+    "out": "probe_NDA017613.json",
+    "decision_date": "1975-02-03",
+    "application_number": "NDA017613",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1975_NDA017525",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017525%22&limit=1000",
+    "out": "probe_NDA017525.json",
+    "decision_date": "1975-02-25",
+    "application_number": "NDA017525",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1975_NDA017555",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017555%22&limit=1000",
+    "out": "probe_NDA017555.json",
+    "decision_date": "1975-05-02",
+    "application_number": "NDA017555",
+    "payload_class": "TYPE 1/4"
+   },
+   {
+    "id": "probe_1975_NDA017575",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017575%22&limit=1000",
+    "out": "probe_NDA017575.json",
+    "decision_date": "1975-05-27",
+    "application_number": "NDA017575",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1975_NDA017533",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017533%22&limit=1000",
+    "out": "probe_NDA017533.json",
+    "decision_date": "1975-06-04",
+    "application_number": "NDA017533",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1975_NDA050477",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050477%22&limit=1000",
+    "out": "probe_NDA050477.json",
+    "decision_date": "1975-06-11",
+    "application_number": "NDA050477",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1975_NDA017577",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017577%22&limit=1000",
+    "out": "probe_NDA017577.json",
+    "decision_date": "1975-07-16",
+    "application_number": "NDA017577",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1975_NDA017569",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017569%22&limit=1000",
+    "out": "probe_NDA017569.json",
+    "decision_date": "1975-09-12",
+    "application_number": "NDA017569",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_BLA017835",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22BLA017835%22&limit=1000",
+    "out": "probe_BLA017835.json",
+    "decision_date": "1976-02-23",
+    "application_number": "BLA017835",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_BLA017836",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22BLA017836%22&limit=1000",
+    "out": "probe_BLA017836.json",
+    "decision_date": "1976-02-23",
+    "application_number": "BLA017836",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017518",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017518%22&limit=1000",
+    "out": "probe_NDA017518.json",
+    "decision_date": "1976-03-11",
+    "application_number": "NDA017518",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017581",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017581%22&limit=1000",
+    "out": "probe_NDA017581.json",
+    "decision_date": "1976-03-11",
+    "application_number": "NDA017581",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017604",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017604%22&limit=1000",
+    "out": "probe_NDA017604.json",
+    "decision_date": "1976-03-16",
+    "application_number": "NDA017604",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017628",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017628%22&limit=1000",
+    "out": "probe_NDA017628.json",
+    "decision_date": "1976-03-24",
+    "application_number": "NDA017628",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017630",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017630%22&limit=1000",
+    "out": "probe_NDA017630.json",
+    "decision_date": "1976-03-24",
+    "application_number": "NDA017630",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017657",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017657%22&limit=1000",
+    "out": "probe_NDA017657.json",
+    "decision_date": "1976-03-25",
+    "application_number": "NDA017657",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017573",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017573%22&limit=1000",
+    "out": "probe_NDA017573.json",
+    "decision_date": "1976-05-12",
+    "application_number": "NDA017573",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017478",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017478%22&limit=1000",
+    "out": "probe_NDA017478.json",
+    "decision_date": "1976-05-17",
+    "application_number": "NDA017478",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017557",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017557%22&limit=1000",
+    "out": "probe_NDA017557.json",
+    "decision_date": "1976-06-21",
+    "application_number": "NDA017557",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017442",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017442%22&limit=1000",
+    "out": "probe_NDA017442.json",
+    "decision_date": "1976-06-23",
+    "application_number": "NDA017442",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017697",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017697%22&limit=1000",
+    "out": "probe_NDA017697.json",
+    "decision_date": "1976-07-21",
+    "application_number": "NDA017697",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017588",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017588%22&limit=1000",
+    "out": "probe_NDA017588.json",
+    "decision_date": "1976-08-04",
+    "application_number": "NDA017588",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017751",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017751%22&limit=1000",
+    "out": "probe_NDA017751.json",
+    "decision_date": "1976-08-30",
+    "application_number": "NDA017751",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017594",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017594%22&limit=1000",
+    "out": "probe_NDA017594.json",
+    "decision_date": "1976-10-19",
+    "application_number": "NDA017594",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017638",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017638%22&limit=1000",
+    "out": "probe_NDA017638.json",
+    "decision_date": "1976-11-05",
+    "application_number": "NDA017638",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA050497",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050497%22&limit=1000",
+    "out": "probe_NDA050497.json",
+    "decision_date": "1976-11-09",
+    "application_number": "NDA050497",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017869",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017869%22&limit=1000",
+    "out": "probe_NDA017869.json",
+    "decision_date": "1976-11-10",
+    "application_number": "NDA017869",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA050486",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050486%22&limit=1000",
+    "out": "probe_NDA050486.json",
+    "decision_date": "1976-11-26",
+    "application_number": "NDA050486",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976_NDA017694",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017694%22&limit=1000",
+    "out": "probe_NDA017694.json",
+    "decision_date": "1976-12-28",
+    "application_number": "NDA017694",
+    "payload_class": "TYPE 1"
+   },
+   {
+    "id": "probe_1976gap_NDA050495",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050495%22&limit=1000",
+    "out": "probe_NDA050495.json",
+    "decision_date": "",
+    "application_number": "NDA050495",
+    "payload_class": "GAP-CANDIDATE (amikacin (Amikin))"
+   }
+  ],
+  "_why": "v21 pre-1980 backfill: one live single-application openFDA capture per NEW 1965-1976 Type 1 / Type 1-4 decision row (complete current record: all products and submissions) so every new decision row carries a live primary check, not just the committed dual-run payload. Same contract as the v20 1977-1979 probe layer (170/170 MATCH). Payloads are written verbatim with request URL + SHA-256 in the manifest; the builder cross-checks date, class, priority and holder against the payload and aborts on any disagreement."
+ }
+]

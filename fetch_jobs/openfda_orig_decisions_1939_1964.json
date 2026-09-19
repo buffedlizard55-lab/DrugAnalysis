@@ -1,0 +1,42 @@
+[
+ {
+  "type": "openfda_decisions",
+  "id": "orig_decisions",
+  "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+  "search_template": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[{start} TO {end}]",
+  "years": [
+   1939,
+   1940,
+   1941,
+   1942,
+   1943,
+   1944,
+   1945,
+   1946,
+   1947,
+   1948,
+   1949,
+   1950,
+   1951,
+   1952,
+   1953,
+   1954,
+   1955,
+   1956,
+   1957,
+   1958,
+   1959,
+   1960,
+   1961,
+   1962,
+   1963,
+   1964
+  ],
+  "limit": 1000,
+  "max_pages": 12,
+  "sleep": 2.0,
+  "out_template": "decisions_{year}.json",
+  "skip_existing": true,
+  "_why": "v21 pre-1980 backfill: the 1965-1976 ingredient first-appearance screen can only prove 'first in the committed payloads' while the payloads start in 1965. This block extends the same auditable ORIG+AP+date-in-year filter back to 1939 (start of the Drugs@FDA database) so a molecule marketed before 1965 can be detected instead of being reported as new. Same extraction (scripts/openfda_decisions.py) and the same manifest discipline: raw payloads not committed, every request URL + raw SHA-256 recorded. Drugs@FDA coverage before 1965 is itself incomplete, so this widens the screen without making it proof of first marketing - the builder says so explicitly."
+ }
+]
