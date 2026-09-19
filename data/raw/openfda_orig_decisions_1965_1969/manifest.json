@@ -1,0 +1,102 @@
+{
+  "job": "openfda_orig_decisions_1965_1969",
+  "generated_utc": "2026-09-19T04:30:07Z",
+  "requests": [
+    {
+      "id": "orig_decisions_1965",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[19650101 TO 19651231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"ORIG\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[19650101%20TO%2019651231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 52,
+          "raw_sha256": "3cd1d1ee3a0332daf0d2f4109f2b35d47b97cd21ddb70d8432fa3fd144723b87",
+          "at_utc": "2026-09-19T04:30:00Z"
+        }
+      ],
+      "decisions": 32,
+      "status": 200,
+      "bytes": 41768,
+      "sha256": "24b1d1f07d0b2a75ae3a7cd9991007501016c98f8ebb2f71a257667b5293eeb4",
+      "written_at_utc": "2026-09-19T04:30:00Z"
+    },
+    {
+      "id": "orig_decisions_1966",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[19660101 TO 19661231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"ORIG\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[19660101%20TO%2019661231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 42,
+          "raw_sha256": "6e564c44ec61fae75d467a6543eb50a62564955762d6b52f6a259e3c50972f2f",
+          "at_utc": "2026-09-19T04:30:01Z"
+        }
+      ],
+      "decisions": 16,
+      "status": 200,
+      "bytes": 20973,
+      "sha256": "0a6a8856de84ea652e4c8ec71dc0521c6b511ba4bf49ea3bd915bda5c8d9afcf",
+      "written_at_utc": "2026-09-19T04:30:01Z"
+    },
+    {
+      "id": "orig_decisions_1967",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[19670101 TO 19671231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"ORIG\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[19670101%20TO%2019671231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 57,
+          "raw_sha256": "0ba93c56f18c2574732a95c450c0a4c1cf56702f3ee53f30a90edb4cb7c05ccc",
+          "at_utc": "2026-09-19T04:30:02Z"
+        }
+      ],
+      "decisions": 32,
+      "status": 200,
+      "bytes": 41780,
+      "sha256": "5ffa0a334c63a5d11fc9df7f2917258ae523f635ec64a51643b3525bfd4ee666",
+      "written_at_utc": "2026-09-19T04:30:02Z"
+    },
+    {
+      "id": "orig_decisions_1968",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[19680101 TO 19681231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"ORIG\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[19680101%20TO%2019681231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 43,
+          "raw_sha256": "2d5d15ce14278324f531e3e561fe8a41f4ffe04eb386b4371ccf6f660822521a",
+          "at_utc": "2026-09-19T04:30:03Z"
+        }
+      ],
+      "decisions": 22,
+      "status": 200,
+      "bytes": 25194,
+      "sha256": "6b24267d22d04878099086b05baf77037299ab14252c2e9f933a0866adfc7457",
+      "written_at_utc": "2026-09-19T04:30:03Z"
+    },
+    {
+      "id": "orig_decisions_1969",
+      "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+      "search": "submissions.submission_type:\"ORIG\" AND submissions.submission_status:\"AP\" AND submissions.submission_status_date:[19690101 TO 19691231]",
+      "pages": [
+        {
+          "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:\"ORIG\"%20AND%20submissions.submission_status:\"AP\"%20AND%20submissions.submission_status_date:[19690101%20TO%2019691231]&limit=1000&skip=0",
+          "status": 200,
+          "n_raw_records": 49,
+          "raw_sha256": "ed513adc892e8a1ae5cda8bae958cc2a62d7f29d90f218d9bd25fd3377b550c9",
+          "at_utc": "2026-09-19T04:30:07Z"
+        }
+      ],
+      "decisions": 25,
+      "status": 200,
+      "bytes": 33453,
+      "sha256": "f35c2da879d89fd3d6096c3481f3885a18389d5604b6adf3f0e22c3eae826aae",
+      "written_at_utc": "2026-09-19T04:30:07Z"
+    }
+  ],
+  "job_file": "fetch_jobs/openfda_orig_decisions_1965_1969.json"
+}
