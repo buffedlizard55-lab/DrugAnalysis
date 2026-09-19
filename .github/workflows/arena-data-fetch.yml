@@ -26,8 +26,13 @@ on:
 permissions:
   contents: write
 
+# v21 2026-09-19: the group used to be global ("arena-data-fetch"), so a bulk
+# fetch on one branch serialised every other branch's fetch behind it (run 22
+# held the queue for ~1.5h re-downloading already-committed payloads). The
+# group is now per-branch: each branch still runs one fetch at a time, but
+# branches no longer block each other.
 concurrency:
-  group: arena-data-fetch
+  group: arena-data-fetch-${{ github.ref_name }}
   cancel-in-progress: false
 
 jobs:
