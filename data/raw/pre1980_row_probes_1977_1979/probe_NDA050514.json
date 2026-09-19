@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "20080718",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "68757",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/050514Orig1s009Lbl.pdf",
+              "date": "20210924",
+              "type": "Review"
+            },
+            {
+              "id": "7775",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/050514s009ltr.pdf",
+              "date": "20080723",
+              "type": "Letter"
+            },
+            {
+              "id": "17849",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/050514s009lbl.pdf",
+              "date": "20080722",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19970502",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19920210",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "19910308",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "20251117",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "84188",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/050514s022lbl.pdf",
+              "date": "20251118",
+              "type": "Label"
+            },
+            {
+              "id": "84200",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/050514Orig1s022ltr.pdf",
+              "date": "20251118",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "20021204",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19781030",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 3",
+          "submission_class_code_description": "Type 3 - New Dosage Form"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "20001019",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19951101",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "19920630",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "NDA050514",
+      "sponsor_name": "HARROW EYE",
+      "openfda": {
+        "application_number": [
+          "NDA050514"
+        ],
+        "brand_name": [
+          "NATACYN"
+        ],
+        "generic_name": [
+          "NATAMYCIN"
+        ],
+        "manufacturer_name": [
+          "Harrow Eye, LLC",
+          "Eyevance Pharmaceuticals, LLC"
+        ],
+        "product_ndc": [
+          "82667-012",
+          "71776-005"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "OPHTHALMIC"
+        ],
+        "substance_name": [
+          "NATAMYCIN"
+        ],
+        "rxcui": [
+          "204451",
+          "207100"
+        ],
+        "spl_id": [
+          "42678f74-383b-962f-e063-6394a90a3315",
+          "42db6120-d37f-9001-e063-6294a90af191"
+        ],
+        "spl_set_id": [
+          "20ede08c-0d39-dc65-e063-6394a90aa3e0",
+          "2818fcb8-5bac-41fb-864e-3b598308a428"
+        ],
+        "package_ndc": [
+          "82667-012-05",
+          "71776-005-15"
+        ],
+        "nui": [
+          "N0000175936",
+          "M0017172"
+        ],
+        "pharm_class_epc": [
+          "Polyene Antimicrobial [EPC]"
+        ],
+        "pharm_class_cs": [
+          "Polyenes [CS]"
+        ],
+        "unii": [
+          "8O0C852CPO"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "NATACYN",
+          "active_ingredients": [
+            {
+              "name": "NATAMYCIN",
+              "strength": "5%"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "SUSPENSION",
+          "route": "OPHTHALMIC",
+          "marketing_status": "Prescription"
+        }
+      ]
+    }
+  ]
+}
