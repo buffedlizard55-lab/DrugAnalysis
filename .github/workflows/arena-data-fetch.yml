@@ -55,7 +55,29 @@ jobs:
           python3 scripts/run_fetch_jobs.py "${JOBS[@]}" 2>&1 | tee data/raw/last_run.log
           exit "${PIPESTATUS[0]}"
 
-      - name: Commit fetched raw payloads
+      - name: Build verified pre-1980 Type 1 expansion when all payload blocks exist
+        if: always()
+        run: |
+          set -euo pipefail
+          required=(
+            data/raw/openfda_orig_decisions_1965_1969/manifest.json
+            data/raw/openfda_orig_decisions_1970_1974/manifest.json
+            data/raw/openfda_orig_decisions_1975_1979/manifest.json
+          )
+          ready=true
+          for f in "${required[@]}"; do test -s "$f" || ready=false; done
+          if [ "$ready" = true ]; then
+            python3 scripts/expand_pre1980_decisions.py
+          else
+            echo "pre-1980 payload blocks incomplete; no table write (fail-closed)"
+          fi
+
+      - name: Ingest all captured stock events
+        if: always()
+        run: python3 scripts/build_stock_snapshots_from_all_events.py
+
+      - name: Commit fetched raw payloads and deterministic tables
+        if: always()
         run: |
           set -euo pipefail
           git config user.name  "arena-ai-coding-agent[bot]"
