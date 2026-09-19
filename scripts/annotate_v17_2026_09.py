@@ -22,15 +22,26 @@ non-NME originals (fda_original_non_nme_decisions.csv)
                     that legacy 1983 originals are genuinely under-populated in
                     FDA's systems (NDA018615), without resolving this row.
 
-Idempotent: a row already carrying the dated marker is left untouched.  The
-script hard-asserts the pre-existing text before every write and records what
-it did in data/staging/v17_annotation_report.json.
+Second, a systematic correction: 390 pre-1998 master rows carried the note
+clause "no CDER NME year table was published for pre-1998 years".  v17 located
+exactly such a table (FDA's Summary of NDA Approvals and Receipts, 1938-2022,
+captured verbatim on 2026-09-19), so that clause is now false.  It is rewritten
+to the historically accurate "at the time of entry no CDER NME year table had
+been located" and each of those rows gains a one-sentence pointer to the
+official series and to that year's crosswalk verdict.  Nothing else in the
+note changes, and no other field changes.
+
+Idempotent: a row already carrying the dated marker is left untouched, and
+rows already carrying the year-series resolution sentence are left untouched.
+The script hard-asserts the pre-existing text before every write and records
+what it did in data/staging/v17_annotation_report.json.
 """
 
 from __future__ import annotations
 
 import csv
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +51,28 @@ ORIG = DATA / "fda_original_non_nme_decisions.csv"
 REPORT = DATA / "staging" / "v17_annotation_report.json"
 
 MARKER = "v17 (2026-09-19)"
+
+# The now-false clause (v17 located FDA's official NME year series) and its
+# replacement.  The replacement keeps the row's provenance sentence intact and
+# adds the resolution pointer, so the note reads as a dated correction chain.
+STALE_CLAUSE_RE = re.compile(
+    r"COMPILATION_ONLY: no CDER NME year table was published for pre-1998 years, "
+    r"so FDA's official CDER Novel Drug Approvals Compilation "
+    r"\((media/177921, approval-year (\d{4}) section)\) is the official spine for this row\."
+)
+RESOLUTION_SENTENCE = (
+    "v17 (2026-09-19): FDA's official NME year series (1938-2022) was located and captured "
+    "(data/fda_official_year_series.csv); this year's official-vs-project verdict is in "
+    "data/fda_official_series_crosswalk.csv."
+)
+
+
+def stale_replacement(match: "re.Match[str]") -> str:
+    return (
+        "COMPILATION_ONLY: at the time of entry no CDER NME year table had been located, so "
+        "FDA's official CDER Novel Drug Approvals Compilation "
+        f"({match.group(1)}) is the official spine for this row. {RESOLUTION_SENTENCE}"
+    )
 
 REF = "data/raw/source_captures_2026_09_19/live_primary_captures_2026_09_19.json"
 
@@ -129,6 +162,32 @@ ORIG_NOTE = {
 }
 
 
+def correct_stale_year_table_claim(master: list[dict]) -> dict:
+    """Rewrite the pre-1998 note clause that v17 proved false, additively.
+
+    Returns a small report dict.  Raises if any row still carries the stale
+    clause afterwards, so a partial rewrite can never be written silently.
+    """
+    corrected: list[str] = []
+    already: list[str] = []
+    for row in master:
+        notes = row.get("notes") or ""
+        if RESOLUTION_SENTENCE in notes:
+            already.append(row["decision_id"])
+            continue
+        new_notes, hits = STALE_CLAUSE_RE.subn(stale_replacement, notes)
+        if hits:
+            row["notes"] = new_notes
+            corrected.append(row["decision_id"])
+    leftovers = [r["decision_id"] for r in master if "no CDER NME year table was published" in (r.get("notes") or "")]
+    if leftovers:
+        raise SystemExit(
+            "annotate_v17: stale year-table clause survived the rewrite on "
+            f"{len(leftovers)} rows: {leftovers[:5]}"
+        )
+    return {"corrected": corrected, "already_resolved": already, "leftovers": leftovers}
+
+
 def read_rows(path: Path) -> tuple[list[dict], list[str]]:
     with path.open(newline="", encoding="utf-8-sig") as fh:
         reader = csv.DictReader(fh)
@@ -147,6 +206,13 @@ def main() -> None:
     report = {"generated": "2026-09-19", "marker": MARKER, "applied": [], "skipped": []}
 
     master, master_fields = read_rows(MASTER)
+    year_table_fix = correct_stale_year_table_claim(master)
+    report["stale_year_table_clause"] = {
+        "corrected_rows": len(year_table_fix["corrected"]),
+        "already_resolved_rows": len(year_table_fix["already_resolved"]),
+        "leftover_rows": len(year_table_fix["leftovers"]),
+        "resolution_sentence": RESOLUTION_SENTENCE,
+    }
     by_id = {r["decision_id"]: r for r in master}
     for did, spec in NOTES.items():
         row = by_id.get(did)
@@ -179,6 +245,8 @@ def main() -> None:
     with REPORT.open("w", encoding="utf-8") as fh:
         json.dump(report, fh, indent=2)
         fh.write("\n")
+    print(f"stale year-table clause rewritten on {report['stale_year_table_clause']['corrected_rows']} rows "
+          f"(already resolved: {report['stale_year_table_clause']['already_resolved_rows']})")
     print(f"applied: {report['applied']}")
     print(f"already present (skipped): {report['skipped']}")
 
