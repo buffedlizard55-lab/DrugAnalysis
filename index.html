@@ -59,6 +59,7 @@
   <button class="tab-btn" data-tab="pre2000"><span class="tab-icon">🕰️</span> Pre-2000 Audit</button>
   <button class="tab-btn" data-tab="pre1985"><span class="tab-icon">📜</span> Pre-1985 Era</button>
   <button class="tab-btn" data-tab="pre1985-detailed"><span class="tab-icon">🔎</span> 1983-85 Deep Audit</button>
+  <button class="tab-btn" data-tab="pre1980"><span class="tab-icon">🏛️</span> Pre-1980 Era</button>
   <button class="tab-btn" data-tab="ctgov-expanded"><span class="tab-icon">🧬</span> Expanded Registry</button>
   <button class="tab-btn" data-tab="compilation"><span class="tab-icon">📑</span> Compilation Audit</button>
   <button class="tab-btn" data-tab="private"><span class="tab-icon">🔒</span> Private</button>
@@ -160,6 +161,10 @@
     
     <div class="notice info">
       <strong>Scientific Basis:</strong> Base rates from BIO / Biomedtracker / Informa Pharma Intelligence, <em>Clinical Development Success Rates 2011-2020</em> (NDA/BLA → approval 90.6%, n=1,453; Phase III → NDA/BLA 57.8%; Phase I → approval 7.9%). Per-disease-area and per-modality tables, plus HHS OIG report on accelerated approvals (13% withdrawn). Every multiplier is stated openly.
+    </div>
+
+    <div class="notice">
+      <strong>Data-quality gate (v19, 2026-09-19).</strong> The engine's project-data inputs are only as complete as the year they come from: <a href="data/decision_engine_year_inputs.csv"><code>data/decision_engine_year_inputs.csv</code></a> scores every year 1977–2026 against FDA's official NME counts (17 MATCH years at 1.0; short years must be down-weighted, never treated as the full approval population). The repository additionally refuses to print priority-conditioned approval "likelihoods" from its own tables until the CRL set is matched to PDUFA action dates — the master is approvals-only, so any such rate today would be a biased numerator-only statistic. That matched denominator is the engine's next build step.
     </div>
 
     <div class="engine-grid">
@@ -454,6 +459,39 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       <h3>🗄️ FDA Official Year Series, 1938–2022 (<code>data/fda_official_year_series.csv</code>)</h3>
       <p class="section-desc">The captured FDA History Office tabulation in full: NDAs approved, NMEs approved, NDAs received and INDs received per year, verbatim with its footnotes (including the note that approvals from 2004 include therapeutic BLAs transferred from CBER to CDER, and that the pre-1989 series used the term <em>New Chemical Entity</em> for the same concept). This is the independent spine the modern master can be checked against — and it is the same series that gives the pre-1985 counts.</p>
       <div id="official-series-view"></div>
+    </div>
+  </section>
+
+  <section id="pre1980" class="tab-panel">
+    <h2>🏛️ Pre-1980 FDA Decisions — Year-by-Year Verification (1977–1979)</h2>
+    <p class="section-desc">The project's coverage now reaches back before 1980, one year at a time, with nothing guessed: <strong>48 verified Type 1 / Type 1-4 original-approval rows</strong> — <strong>17 in 1977, 18 in 1978, 13 in 1979</strong> — each asserted field-by-field against the committed <strong>openFDA Drugs@FDA</strong> extracts, with Drugs@FDA and replayable openFDA links on every row for manual review. The payloads behind these rows were fetched <strong>twice, ~2 hours apart, by independent Actions runs</strong> whose raw API responses are byte-identical (SHA-256 pinned in both manifests), and every payload file's SHA is re-verified before the tables build. A <strong>1965–1979 first-appearance screen</strong> proves no row is a re-approval of an already-marketed ingredient (the furosemide lesson from 1983/84), and <strong>12 live probes taken 2026-09-19</strong> re-confirm the year populations plus verbatim ORIG blocks for the landmark and boundary rows.</p>
+
+    <div class="notice info">
+      <strong>Official-vs-project verdicts (v19, 2026-09-19).</strong> FDA's History Office series publishes <strong>1977 = 25 NMEs, 1978 = 17, 1979 = 14</strong>. Against the NME-comparable enumeration: <strong>1977: 17 rows (−8, PROJECT_SHORT_FLAGGED)</strong> — the eight missing NMEs sit in applications absent from the ORIG/AP payload, the gap class proven for 1985; <strong>1978: 18 rows (+1, PROJECT_EXCEEDS_OFFICIAL)</strong> — the +1 is the Type 1/4 Motofen row (NME + new combination, verified live), and the Type-1-only count is 17 = official; <strong>1979: 13 rows (−1, PROJECT_SHORT_FLAGGED)</strong>. Two live-verified data conditions are flagged, never smoothed over: the <strong>Cyclapen inversion</strong> (tablet NDA050509 typed Type 3 one day <em>before</em> suspension NDA050508 typed Type 1, same ingredient and sponsor — counted once) and the <strong>Kinlytic UNKNOWN-candidate</strong> (urokinase BLA021846 publishes UNKNOWN class/priority — flagged, not counted). No ticker or indication is asserted on any pre-1980 row: sponsors are the qualified Drugs@FDA holders of record, and approval-era labels were not verified in this pass.
+    </div>
+
+    <div class="panel highlight" style="margin-bottom:1.5rem">
+      <h3>🧮 Pre-1980 Year Audit — official counts vs enumeration (<code>data/pre1980_year_audit.csv</code>)</h3>
+      <p class="section-desc">One row per year: official NMEs/NDAs, payload ORIG/AP totals, Type 1/1-4 counts, blank/UNKNOWN-class counts, the NME-comparable delta with the same verdict vocabulary as the 1980–2026 crosswalk, live-capture refs, and the key irregularities with the evidence note.</p>
+      <div id="pre1980-audit-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>📋 Verified Pre-1980 FDA Approvals &amp; Decisions (<code>data/pre1980_fda_decisions.csv</code>)</h3>
+      <p class="section-desc">The 48 verified rows: Tagamet, Nolvadex, Ativan, Flexeril and Lioresal (1977); Elspar, Depakene, Parlodel, Lopressor, Timoptic, Clinoril, Mefoxin and Platinol-AQ (1978); Hemabate, Ceclor, Nubain, Loniten, Corgard, Forane and Cerubidine (1979) — each with exact application number, approval date, chemical type, review priority, qualified holder, and both FDA source links. Rows with live 2026-09-19 evidence say so in their notes (V19-C04 – V19-C12).</p>
+      <div id="pre1980-decisions-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>🏛️ Pre-1980 Era Analysis (<code>data/pre1980_era_analysis.csv</code>)</h3>
+      <p class="section-desc">Year-by-year era rows: enumeration vs official counts, priority/standard/unpublished-priority splits, pre–Orphan Drug Act statutory framework (1962 Kefauver-Harris), landmark approvals, and the dated significance narrative with the primary-source basis.</p>
+      <div id="pre1980-era-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>🔬 Live Primary Captures v19, 2026-09-19 (<code>data/pre1980_primary_captures_index.csv</code>)</h3>
+      <p class="section-desc">Twelve live probes: three year-population re-queries (662 / 756 / 746 — each equal to its manifest count), four verbatim openFDA ORIG blocks (Elspar, Motofen Type 1/4, both Cyclapen NDAs, Forane), the Tagamet Drugs@FDA original-approval row (08/16/1977, Type 1, PRIORITY), two coexistence probes (Tagamet, Nolvadex), and the Kinlytic UNKNOWN/UNKNOWN block. Verbatim excerpts with re-issuable URLs live in <code>data/raw/source_captures_2026_09_19/live_primary_captures_v19_2026_09_19.json</code>.</p>
+      <div id="v19-captures-view"></div>
     </div>
   </section>
 
