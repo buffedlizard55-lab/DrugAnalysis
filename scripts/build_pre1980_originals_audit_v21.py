@@ -269,20 +269,48 @@ def verify_full_db() -> dict | None:
         if fkind not in ("date_year_in", "applno_in_collected", "FULL"):
             fail(f"{out_name}: unexpected recorded filter {fkind!r}")
         files[out_name] = path
+    # Optional but decisive: the unfiltered application-type map.  Without it an
+    # ApplNo the payloads omit cannot be classified, and every such ORIG/AP row
+    # stays KIND_UNRESOLVED.  Verified by SHA when present.
+    all_types = ZIP_DIR / "Applications_all_types.txt"
+    if all_types.exists():
+        entry = next((e for e in manifest["requests"]
+                      if e.get("out") == "Applications_all_types.txt"), {})
+        if not entry.get("out_sha256") or sha256_file(all_types) != entry["out_sha256"]:
+            fail("Applications_all_types.txt: SHA drift vs runner manifest")
+        files["Applications_all_types.txt"] = all_types
+    else:
+        print("v21 audit: Applications_all_types.txt absent - application types come from "
+              "the payload-filtered window file, so omitted applications stay KIND_UNRESOLVED")
     return files
 
 
-def full_db_orig_ap(files: dict) -> dict[int, list[dict]]:
+def full_db_orig_ap(files: dict) -> tuple[dict[int, list[dict]], dict[int, list[dict]], dict[int, int]]:
+    """Enumerate every ORIG/AP approval in the full Drugs@FDA database window.
+
+    Returns (classified, unresolved, anda_count).  ``classified`` are rows whose
+    application is known to be an NDA/BLA from the window extract; ``unresolved``
+    are ORIG/AP rows whose ApplNo the window extract does not contain at all, so
+    no application type can be asserted - these are reported, never dropped
+    silently, because the window extract is filtered to the applications the
+    openFDA payloads already carry and therefore cannot see anything they omit.
+    """
     subs = read_tab(files["Submissions_1965_1979.txt"])
     lookup = {r["SubmissionClassCodeID"]: r for r in read_tab(files["SubmissionClass_Lookup.txt"])}
+    # Prefer the unfiltered map: the window file only knows the applications the
+    # payloads already carry, which is exactly the set that cannot reveal a gap.
+    type_source = ("Applications_all_types.txt" if "Applications_all_types.txt" in files
+                   else "Applications_appl_window.txt")
     appl_type = {r["ApplNo"]: r.get("ApplType", "").strip().upper()
-                 for r in read_tab(files["Applications_appl_window.txt"])}
+                 for r in read_tab(files[type_source])}
     products: dict[str, list[dict]] = {}
     for r in read_tab(files["Products_appl_window.txt"]):
         products.setdefault(r["ApplNo"], []).append(r)
     date_mdY = re.compile(r"^(\d{1,2})/(\d{1,2})/(\d{4})")
     date_iso = re.compile(r"^(\d{4})-(\d{2})-(\d{2})")
     out: dict[int, list[dict]] = {y: [] for y in YEARS}
+    unres: dict[int, list[dict]] = {y: [] for y in YEARS}
+    anda_count: dict[int, int] = {y: 0 for y in YEARS}
     for s in subs:
         if norm(s.get("SubmissionType")) != "ORIG" or norm(s.get("SubmissionStatus")) != "AP":
             continue
@@ -299,9 +327,21 @@ def full_db_orig_ap(files: dict) -> dict[int, list[dict]]:
             continue
         appl_no = s["ApplNo"].strip()
         kind = appl_type.get(appl_no, "")
-        if kind not in ("NDA", "BLA"):
-            continue
         lk = lookup.get((s.get("SubmissionClassCodeID") or "").strip(), {})
+        if kind == "ANDA":
+            anda_count[year] += 1
+            continue
+        if kind not in ("NDA", "BLA"):
+            # ApplNo absent from the window extract: type cannot be asserted.
+            unres[year].append({
+                "appl_no": appl_no, "kind": "", "application_number": "",
+                "decision_date": f"{year}-{mo:02d}-{dy:02d}",
+                "submission_class_code": norm(lk.get("SubmissionClassCode")),
+                "submission_class_code_description": (lk.get("SubmissionClassCodeDescription") or "").strip(),
+                "review_priority": norm(s.get("ReviewPriority")),
+                "products": [],
+            })
+            continue
         prods = products.get(appl_no, [])
         out[year].append({
             "appl_no": appl_no, "kind": kind, "application_number": f"{kind}{appl_no}",
@@ -315,7 +355,8 @@ def full_db_orig_ap(files: dict) -> dict[int, list[dict]]:
         })
     for year in YEARS:
         out[year].sort(key=lambda r: (r["decision_date"], r["application_number"]))
-    return out
+        unres[year].sort(key=lambda r: (r["decision_date"], r["appl_no"]))
+    return out, unres, dict(anda_count)
 
 
 # ---------------------------------------------------------------------------
@@ -464,8 +505,11 @@ def main() -> int:
     # ---- Layer 2: full-DB cross-check + payload-invisible enumeration ----
     cross_rows = []
     invisible_total = 0
+    unresolved_total = 0
+    unresolved_nme_total = 0
+    anda_total = 0
     if files:
-        db = full_db_orig_ap(files)
+        db, unres, anda = full_db_orig_ap(files)
         for year in YEARS:
             payload_keys = {(d["application_number"], d["decision_date"]) for d in payloads[year]}
             db_keys = {(r["application_number"], r["decision_date"]) for r in db[year]}
@@ -501,6 +545,32 @@ def main() -> int:
                               "Seldane-class invisibility. Recorded verbatim from the database "
                               "files; NOT merged into the decision tables."),
                 })
+            # Rows the window extract cannot classify: reported, never dropped.
+            for i, rec in enumerate(unres[year], 1):
+                nme = rec["submission_class_code"] in NME_CLASSES
+                unresolved_total += 1
+                unresolved_nme_total += 1 if nme else 0
+                cross_rows.append({
+                    "record_id": f"FULLDB-{year}-UNRES{i:02d}", "year": year,
+                    "application_number": "", "kind": "UNRESOLVED",
+                    "appl_no": rec["appl_no"], "decision_date": rec["decision_date"],
+                    "submission_class_code": rec["submission_class_code"],
+                    "submission_class_code_description": rec["submission_class_code_description"],
+                    "review_priority": rec["review_priority"], "products_verbatim": "",
+                    "in_openfda_payload": "FALSE",
+                    "classification": ("KIND_UNRESOLVED NME-comparable candidate" if nme else
+                                       "KIND_UNRESOLVED (application type not published)"),
+                    "drugsatfda_url": ("https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm"
+                                       f"?event=overview.process&varApplNo={rec['appl_no']}"),
+                    "openfda_url": "",
+                    "verification_status": "Named from the full Drugs@FDA database files",
+                    "notes": ("ORIG/AP row in the official Drugs@FDA Submissions file whose ApplNo "
+                              "the window extract does not contain, so no NDA/ANDA/BLA type can be "
+                              "asserted; the openFDA payloads do not carry it and the Drugs@FDA "
+                              "application page publishes nothing (spot-checked 2026-09-19; control "
+                              "NDA050495 renders in full). Recorded as a review candidate, never "
+                              "added as an approval."),
+                })
             cross_rows.append({
                 "record_id": f"FULLDB-{year}-SUMMARY", "year": year, "application_number": "",
                 "kind": "", "appl_no": "", "decision_date": "", "submission_class_code": "",
@@ -509,8 +579,10 @@ def main() -> int:
                 "drugsatfda_url": "", "openfda_url": "", "verification_status": "CROSS-CHECKED",
                 "notes": (f"full-DB ORIG/AP approvals {year}: {len(db[year])}; openFDA payload "
                           f"rows: {len(payloads[year])}; payload-invisible (named from the full "
-                          f"Drugs@FDA database): {len(invisible)}"),
+                          f"Drugs@FDA database): {len(invisible)}; ANDA originals excluded: "
+                          f"{anda[year]}; KIND_UNRESOLVED ORIG/AP rows reported: {len(unres[year])}"),
             })
+            anda_total += anda[year]
         write_csv(DATA / "pre1980_full_db_crosscheck_1965_1976.csv", CROSS_HEADER, cross_rows)
 
     REPORT.write_text(json.dumps({
@@ -523,6 +595,9 @@ def main() -> int:
                         "match": sum(1 for p in probe_rows if p["status"] == "MATCH")},
         "full_db_layer": {"present": bool(files),
                           "payload_invisible_total": invisible_total,
+                          "kind_unresolved_total": unresolved_total,
+                          "kind_unresolved_nme_comparable": unresolved_nme_total,
+                          "anda_originals_excluded": anda_total,
                           "cross_rows": len(cross_rows)},
         "gates": ["payload SHA-256 vs manifest", "per-year row counts pinned",
                   "display-map drift aborts", "NME earlier-appearance adjudication required",
@@ -534,7 +609,7 @@ def main() -> int:
     print(f"v21 audit: {len(audit_rows)} rows across {len(YEARS)} years "
           f"({sum(EXPECTED_T1.values())} NME-comparable), probes "
           f"{'complete' if probes else 'PENDING'}, full-DB cross-check "
-          f"{'done (' + str(invisible_total) + ' payload-invisible)' if files else 'PENDING'}")
+          f"{('done (' + str(invisible_total) + ' payload-invisible, ' + str(unresolved_total) + ' kind-unresolved of which ' + str(unresolved_nme_total) + ' NME-comparable, ' + str(anda_total) + ' ANDA excluded)') if files else 'PENDING'}")
     return 0
 
 

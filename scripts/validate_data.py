@@ -1459,11 +1459,45 @@ _v21_sum = [r for r in _v21_cross if r["classification"] == "SUMMARY"]
 if sorted(r["year"] for r in _v21_sum) != [str(y) for y in range(1965, 1977)]:
     errors.append("pre1980_full_db_crosscheck_1965_1976: expected 12 SUMMARY rows (1965-1976)")
 for _r in _v21_sum:
-    _m = re.search(r"openFDA payload rows: (\d+); payload-invisible[^:]*: (\d+)",
-                   _r["notes"] or "")
+    _m = re.search(r"openFDA payload rows: (\d+); payload-invisible[^:]*: (\d+); "
+                   r"ANDA originals excluded: (\d+); KIND_UNRESOLVED ORIG\/AP rows "
+                   r"reported: (\d+)", _r["notes"] or "")
     if not _m or int(_m.group(1)) != _v21_expected[_r["year"]]:
         errors.append(f"pre1980_full_db_crosscheck_1965_1976:{_r['year']}: summary counts "
                       f"disagree with the pinned payload row counts")
+    else:
+        _rows = [x for x in _v21_cross if x["year"] == _r["year"]]
+        if sum(1 for x in _rows if x["kind"] == "UNRESOLVED") != int(_m.group(4)):
+            errors.append(f"pre1980_full_db_crosscheck_1965_1976:{_r['year']}: summary says "
+                          f"{_m.group(4)} KIND_UNRESOLVED rows but the table carries "
+                          f"{sum(1 for x in _rows if x['kind'] == 'UNRESOLVED')}")
+_v21_unres = [r for r in _v21_cross if r["kind"] == "UNRESOLVED"]
+_v21_unres_nme = [r for r in _v21_unres
+                  if r["submission_class_code"].upper() in ("TYPE 1", "TYPE 1/4")]
+if _v21_unres:
+    warnings.append(
+        f"v21 full-DB cross-check: {len(_v21_unres)} 1965-1976 ORIG/AP rows are KIND_UNRESOLVED "
+        f"({len(_v21_unres_nme)} NME-comparable: " +
+        "; ".join(f"{r['year']} {r['appl_no']} {r['decision_date']} {r['submission_class_code']}"
+                  for r in _v21_unres_nme) +
+        ") - their ApplNo is absent from the payload-derived window extract, so no application "
+        "type can be asserted. Named as review candidates, never added. Deliver "
+        "Applications_all_types.txt (fetch_jobs/drugsatfda_data_files_2026_09.json) to classify "
+        "them.")
+_ev_unres = DATA / "raw" / "source_captures_2026_09_19" / \
+    "drugsatfda_unresolved_appl_probes_2026_09_19.json"
+try:
+    _evd = json.loads(_ev_unres.read_text(encoding="utf-8"))
+    if [c["capture_id"] for c in _evd.get("captures", [])] != \
+            [f"DAF-U{i:02d}" for i in range(1, 5)]:
+        errors.append("drugsatfda_unresolved_appl_probes: evidence file must carry "
+                      "DAF-U01..DAF-U04 (3 probes + 1 rendering control)")
+    if not any(c.get("capture_id") == "DAF-U04" and "AMIKIN" in (c.get("verbatim_excerpt") or "")
+               for c in _evd.get("captures", [])):
+        errors.append("drugsatfda_unresolved_appl_probes: the DAF-U04 rendering control "
+                      "(NDA050495 with products) is missing")
+except (OSError, ValueError, KeyError) as _exc:
+    errors.append(f"drugsatfda_unresolved_appl_probes: unreadable evidence file: {_exc}")
 _v21_invisible = [r for r in _v21_cross if r["in_openfda_payload"] == "FALSE"]
 if _v21_invisible:
     _v21_inv_nme = [r for r in _v21_invisible
@@ -1492,7 +1526,8 @@ else:
             errors.append(f"openfda_orig_decisions_1939_1964: {_e['id']} missing or SHA drift")
 print(f"v21: {len(_v21a)} original-application audit rows (1965-1976), "
       f"{len(_v21_probeidx)} live probe rows, "
-      f"{len(_v21_invisible)} payload-invisible full-DB approvals flagged.")
+      f"{len(_v21_invisible)} payload-invisible + {len(_v21_unres)} kind-unresolved "
+      f"full-DB rows flagged.")
 
 print(f"v20: {len(_v20a)} original-application audit rows, "
       f"{len(_v20_probeidx)} probe index rows, "

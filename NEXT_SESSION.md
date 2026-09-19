@@ -73,11 +73,32 @@ If the runner died instead, re-push anything touching `fetch_jobs/**` to trigger
 
 ## Verified facts worth keeping (re-derive if in doubt)
 
-- **Full-DB cross-check 1965–1976: 477 = 477.** Per year 32/32, 16/16, 32/32, 22/22, 25/25,
-  38/38, 48/48, 29/29, 43/43, 73/73, 39/39, 80/80 — **0 payload-invisible, 0 payload-not-in-DB**.
-  Consequence: the −52 NME gap for 1965–1976 is a *source-definition* gap, not a fetch gap
-  (1967: 189 official NDAs vs 32 ORIG/AP rows). This is different in kind from 1977–1979, where
-  the gap class is the Seldane purge.
+- **Full-DB cross-check 1965–1976: 477 = 477 *among classifiable rows*.** Per year 32/32,
+  16/16, 32/32, 22/22, 25/25, 38/38, 48/48, 29/29, 43/43, 73/73, 39/39, 80/80 — 0
+  payload-invisible and 0 payload-not-in-DB **for the applications whose type can be
+  established**. Do not restate this as "0 payload-invisible" without the qualifier:
+  - **1,106 further 1965–1976 ORIG/AP rows exist in `Submissions_1965_1979.txt`**: 798 are ANDA
+    (excluded by design) and **308 have an ApplNo that `Applications_appl_window.txt` does not
+    contain at all**, so no NDA/ANDA/BLA type can be asserted. The window file is filtered to
+    the ApplNos the payloads already carry (`collect_applnos: true`), which is circular — it can
+    never type an application the payloads omit. `full_db_orig_ap()` used to drop these rows
+    silently; it now returns them and they are published as `KIND_UNRESOLVED` (320-row
+    cross-check table).
+  - **6 of the 308 are NME-comparable** (1966 014262 TYPE 1/4 STANDARD, 1969 016486 TYPE 1/4
+    STANDARD, 1970 016771 TYPE 1/4 STANDARD, 1973 017383 TYPE 1 PRIORITY, 1973 017024 TYPE 1
+    STANDARD, 1973 017267 TYPE 1 PRIORITY) plus 1976 017834 TYPE 2 PRIORITY. These are the best
+    remaining candidates for part of the 1966/1969/1970/1973 shortfalls.
+  - Spot-checks (2026-09-19, `drugsatfda_unresolved_appl_probes_2026_09_19.json`): 014262,
+    017383 and 016486 render an **empty Drugs@FDA application shell** (no header, no company, no
+    products); the control NDA050495 renders header + company + 2 products in the same session,
+    so the emptiness is real and not a fetch artefact.
+  - **Fix queued:** `Applications_all_types.txt` (the unfiltered ApplNo→ApplType map) was added
+    to `fetch_jobs/drugsatfda_data_files_2026_09.json` as a 4-line insertion. Once it lands,
+    `full_db_orig_ap()` picks it up automatically (`type_source`) and the unresolved count should
+    fall to whatever genuinely has no Applications row. Re-run the audit builder and re-derive
+    the invisible count before publishing any statement about it.
+  - The v20 1977–1979 cross-check has the **same circularity** and its "0 payload-invisible"
+    result should be re-derived the same way.
 - **Dual-run evidence:** the archived run-18 manifest and the committed manifest agree on
   `pages[0].raw_sha256` for 1975–1979 and their `decisions` arrays compare equal; the derived
   files differ **only** in `extracted_utc` (04:30:16Z vs 06:19:43Z), which is why the
@@ -128,7 +149,11 @@ If the runner died instead, re-push anything touching `fetch_jobs/**` to trigger
 6. **NDA022046 lineage artifact** — needs a 1983 approval letter or Federal Register notice.
 7. **141 core-analysis listing-class disagreements** — adjudicate with period 10-K/20-F cover
    evidence; keep the `CORE_CLASS_BASELINE` ratchet.
-8. **Pre-1980 backfill beyond 1965** — 1964 → 1939 is the natural continuation. The payload job
+8. **Classify the 308 `KIND_UNRESOLVED` rows** (see "Verified facts"): deliver
+   `Applications_all_types.txt`, re-run `build_pre1980_originals_audit_v21.py`, then adjudicate
+   the 6 NME-comparable candidates year by year. Re-derive the 1977–1979 (v20) cross-check the
+   same way before repeating its "0 payload-invisible" claim.
+9. **Pre-1980 backfill beyond 1965** — 1964 → 1939 is the natural continuation. The payload job
    already covers 1939–1964 (fetched for the screen); Drugs@FDA coverage before 1965 is
    incomplete, so those rows would need a different primary source (FDA annual reports) and the
    screen must stay labelled a re-approval screen, not proof of first marketing.
