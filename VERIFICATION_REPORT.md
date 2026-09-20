@@ -1,3 +1,35 @@
+# Verification Report — v25 Core Analysis Table Joins the v24 OpenFDA Backfill (2026-09-20)
+
+**Branch:** `arena/01a0c036-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors** (warnings are the standing manual-review baseline; unchanged by this session).
+
+## v25 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| Core table rebuild | **1,885 → 1,933 rows** = 1,427 master + 458 CRL + 48 v24-backfill. Builder reports exactly that split: "290 v24-backfill rows → 48 joined (not in master), 242 already covered by the master". Verified price rows unchanged at 861 (the 48 new rows have no price data by design) | `python3 scripts/build_core_analysis_table.py`; `wc -l data/core_analysis_table.csv` |
+| Dedupe correctness | All 290 v24 rows (marker "v24 backfill" in `verification_status`) screened against the master on normalised (drug_brand, decision_date): 242 match master rows (e.g. ZYDELIG 2014-07-23, EMFLAZA 2017-02-09, DOPTELET 2018-05-21, PALYNZIQ 2018-05-24, OLUMIANT 2018-05-31) and are already in the core table through those master rows; 48 do not match and are joined exactly once. No (company, date) collision under a different brand (0 rows) | builder + validator both re-derive the split from the committed CSVs; independent spot-check of the 48-row list |
+| No double-count | No core row's (company, date, drug name) key collides with a master-derived row; the 4 pre-existing CRL "See FDA letter" same-day letter pairs are the only duplicate keys in the table and are unchanged legacy rows (two published letters, both kept, documented in v23) | `Counter` over core keys before/after the join |
+| Label discipline | 39 rows (34 TYPE 1 + 5 TYPE 1/4) read `Approval (<class>; v24 openFDA backfill)` and enter the engine's approval statistics (bucketed on `decision_type.startsWith("Approval")` in `assets/app.js`); 9 rows (5 Efficacy, 2 Type 3, 1 Type 5, 1 Type 9) read `Original Approval (non-NME; <class>; …)` and stay out of the NME statistics — same rule as `NOT_ON_FDA_NME_TABLE` | `Counter(decision_type)` over the 48; `assets/app.js` stats filter |
+| No invented facts | All 48: ticker blank + `TICKER-UNRESOLVED` flag, price status "No public ticker", `us_investable_class` blank (the row's "UNRESOLVED — requires ticker/exchange verification" string is a status, not a class), indication blank (openFDA extract has no structured indication field). **22 of 48 have no product name in the openFDA payload** → application number used as identifier + `NO-PRODUCT-NAME` flag. Every row keeps `source_url_1` (Drugs@FDA page) and `source_url_2` (the openFDA query that returned it) | row-by-row read of the 48 core rows; validator gates |
+| Validator core gate extended (§7) | Shape now expects master + CRL + v24-not-in-master (1,427 + 458 + 48 = 1,933); new per-row coverage gate (each of the 48 must be present, keyed company/date/drug-name the way the builder writes it, including the application-number fallback); new fail-closed gate for the ambiguous-dedupe case, mirroring the builder's abort | `scripts/validate_data.py` §7 (b2) + shape + ambiguity checks |
+| Mutation-tested | Deleting the 48 rows from the core table fails the build with the shape error (1,933 expected / 1,885 got), the v24 coverage error (48 missing, first five `orig_id`s named), and the ratchet error; restoring via the builder returns **PASS, 0 errors** | mutation run + rebuild |
+| Untouched invariants | Master 1,427 (values unchanged), CRL 458, original non-NME 3,432, pre-1980 173, year crosswalk 47, snapshots 2,848, scorecards and score rows unchanged; no `fetch_jobs/**`, runner, or workflow edits | `git diff --stat`: `data/core_analysis_table.csv` +48/−0, two scripts only |
+
+## Method notes and limitations (v25)
+
+- The master has no application-number column, so the dedupe key is (normalised brand, date) — the same key family the existing §7 coverage check already uses. The application number remains the verifiable identity on each joined row (shown as the drug name for the 22 nameless rows and re-issuable via `source_url_1`/`source_url_2`).
+- openFDA names the **current** application holder and the **current** product label (e.g. NDA021321 carries brand "EXTRANEAL" under "VANTIVE US HLTHCARE"); the joined rows publish that verbatim with their openFDA provenance and never assert a historical applicant or a period listing — the same caveat the pre-1985 rows carry.
+- The 48 rows are a **join**, not a re-verification: every cell copied into the core table comes from a v24 row that already carries openFDA source URLs and verification status. Ticker, exchange, class, and price enrichment is the next session's work (flagged, not guessed).
+
+## v25 files
+
+- `data/core_analysis_table.csv` (+48 rows)
+- `scripts/build_core_analysis_table.py` (v25 join section)
+- `scripts/validate_data.py` (§7 shape + (b2) coverage + ambiguity gates)
+- `NEXT_SESSION.md` (v25 state; next work renumbered)
+- `README.md` (v25 section)
+
 # Verification Report — v23 1977–1979 Action Register + CRL Denominator (2026-09-20)
 
 **Branch:** `arena/01a0bfa7-druganalysis`
