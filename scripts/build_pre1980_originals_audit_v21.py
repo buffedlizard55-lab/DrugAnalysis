@@ -565,11 +565,15 @@ def main() -> int:
                     "openfda_url": "",
                     "verification_status": "Named from the full Drugs@FDA database files",
                     "notes": ("ORIG/AP row in the official Drugs@FDA Submissions file whose ApplNo "
-                              "the window extract does not contain, so no NDA/ANDA/BLA type can be "
+                              "the application-type source (the unfiltered "
+                              "Applications_all_types.txt when present, else the payload-filtered "
+                              "window extract) does not contain, so no NDA/ANDA/BLA type can be "
                               "asserted; the openFDA payloads do not carry it and the Drugs@FDA "
                               "application page publishes nothing (spot-checked 2026-09-19; control "
-                              "NDA050495 renders in full). Recorded as a review candidate, never "
-                              "added as an approval."),
+                              "NDA050495 renders in full). Where the unfiltered map is present, "
+                              "its absence means no Applications record exists for the ApplNo "
+                              "anywhere in the Drugs@FDA database. Recorded as a review candidate, "
+                              "never added as an approval."),
                 })
             cross_rows.append({
                 "record_id": f"FULLDB-{year}-SUMMARY", "year": year, "application_number": "",

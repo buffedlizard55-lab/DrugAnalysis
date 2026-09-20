@@ -1,0 +1,68 @@
+{
+  "generated_utc": "2026-09-19",
+  "years": [
+    1965,
+    1966,
+    1967,
+    1968,
+    1969,
+    1970,
+    1971,
+    1972,
+    1973,
+    1974,
+    1975,
+    1976
+  ],
+  "audit_rows": 477,
+  "per_year_rows": {
+    "1965": 32,
+    "1966": 16,
+    "1967": 32,
+    "1968": 22,
+    "1969": 25,
+    "1970": 38,
+    "1971": 48,
+    "1972": 29,
+    "1973": 43,
+    "1974": 73,
+    "1975": 39,
+    "1976": 80
+  },
+  "nme_comparable_rows": {
+    "1965": 11,
+    "1966": 7,
+    "1967": 13,
+    "1968": 4,
+    "1969": 8,
+    "1970": 11,
+    "1971": 7,
+    "1972": 7,
+    "1973": 11,
+    "1974": 16,
+    "1975": 9,
+    "1976": 21
+  },
+  "probe_layer": {
+    "present": true,
+    "rows": 125,
+    "match": 125
+  },
+  "full_db_layer": {
+    "present": true,
+    "payload_invisible_total": 0,
+    "kind_unresolved_total": 308,
+    "kind_unresolved_nme_comparable": 6,
+    "anda_originals_excluded": 798,
+    "cross_rows": 320
+  },
+  "gates": [
+    "payload SHA-256 vs manifest",
+    "per-year row counts pinned",
+    "display-map drift aborts",
+    "NME earlier-appearance adjudication required",
+    "probe SHA + date/class/priority/holder equality",
+    "full-DB member SHAs + recorded filters",
+    "payload rows absent from the full DB abort the build"
+  ]
+}

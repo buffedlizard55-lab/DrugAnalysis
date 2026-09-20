@@ -21,11 +21,11 @@
   },
   "full_db_layer": {
     "present": true,
-    "crosscheck_rows": 3,
+    "crosscheck_rows": 82,
     "payload_invisible_by_year": {
-      "1977": 0,
-      "1978": 0,
-      "1979": 0
+      "1977": 32,
+      "1978": 28,
+      "1979": 19
     }
   },
   "fail_closed_checks": [
