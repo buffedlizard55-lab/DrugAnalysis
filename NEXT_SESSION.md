@@ -4,8 +4,23 @@ Branch: `arena/01a0bfa7-druganalysis`. This session built the complete 1977–19
 action register (**728 rows**, three named classes) with two independent verifiers,
 added the project's first **CRL-level denominator** from FDA-published data
 (458 letters, maturity-restricted cohorts), extended the validator and the
-Actions workflow, and wired every new table into the site. The pull request from
-this branch into `main` is part of the session deliverable.
+Actions workflow, and wired every new table into the site. **PR #42 is merged into
+`main` (merge commit `42daaa3`, 2026-09-20 17:00 UTC)** and the Pages deployment
+for that merge succeeded (run 35524487455).
+
+Three-pass review after the first push (v23.2 / v23.3) fixed two real defects and
+one engine gap before the merge:
+
+* the CRL layer labelled 58 letters `NO_MASTER_ROW`, which was false for the 55
+  whose letter date matches a hand-verified curated `C###` master row (those rows
+  publish no application number). Now joined on **both** keys: 399
+  application-keyed + **36 curated (letter date + corresponding company name)** +
+  **19 flagged** candidates (`curated_candidate_ids`) + **3** with no curated row;
+* `scripts/validate_data.py` carried a latent `errs.append` (undefined) in the
+  `NOT_ON_FDA_NME_TABLE` guard — dead branch, a NameError if the pin ever moves;
+* the engine's only CRL input was the unverified 0.81 assumption. The v23
+  observation now ships as its own labelled prior (301/342 = 88.0%, Wilson lower
+  84.1%) and a validator gate fails if the engine number drifts from the CSV.
 
 ## State right now (read this first)
 
@@ -19,7 +34,7 @@ this branch into `main` is part of the session deliverable.
 | CRL match | `data/crl_application_match.csv` | 458 rows; 327 later-ORIG observed; 40 conflict flags for human review; master link 399 application-keyed + 36 curated (date+company) + 19 flagged candidates + 3 no-key + 1 no-appl |
 | CRL rates | `data/crl_year_base_rates.csv` | 25 rows incl. `ALL_MATURE_2Y` 301/342 = 88.0% (Wilson LB 84.1%) and `ALL_MATURE_3Y` 282/290 = 97.2% (LB 94.7%) |
 | Verifiers | `scripts/verify_pre1980_year_register_v23.py`, `scripts/verify_crl_application_match_v23.py` | **7,164 checks / 0 errors** and **5,456 checks / 0 errors**; neither shares code with its builder |
-| Validator | `scripts/validate_data.py` | **PASS, 0 errors** (1751 standing warnings); v23 gates are fail-closed |
+| Validator | `scripts/validate_data.py` | **PASS, 0 errors** (1751 standing warnings); v23 gates are fail-closed, incl. the master-link status split (399/36/19/3/1) and the engine prior == published `ALL_MATURE_2Y` cross-file gate |
 
 Official vs enumerated: **1977 25 vs 17 (−8 unnamed)**; **1978 17 vs 18 (+1 Motofen TYPE 1/4, CLOSED)**;
 **1979 14 vs 13 (−1 named Selacryn, not added)**. `KIND_UNRESOLVED` 32/28/19; 1977 and 1979 have **0**
@@ -72,6 +87,12 @@ The Actions workflow runs the same chain (plus `validate_data.py`) on any push t
 10. **1,000 new 2000–2026 NME entries** — still blocked. The NME master already matches the official
     series; growth comes from supplements / originals / prices / pre-1980 backfill. Do not invent rows.
 11. **Stock backlog** — 462 of 3,868 Yahoo items are still pending on the runner.
+12. **Confirm the runner re-verified the merged tip.** The push that carried the v23.1
+    workflow change queued Actions run `35523666004`; it starts after the older
+    in-progress run finishes and re-runs both v23 builders, both verifiers and
+    `validate_data.py` on the runner against the branch tip that was merged. Check
+    its conclusion first; the runner also commits `data/raw` + `data/*.csv` back to
+    **this branch only**, so `main`'s raw payloads can lag the branch's by design.
 
 ## Standing rules (do not reverse)
 
