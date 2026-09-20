@@ -1853,6 +1853,25 @@ else:
         errors.append("crl_year_base_rates: denominator caveat text lost")
     if "lower bound" not in _rate_all.get("coverage_note", ""):
         errors.append("crl_year_base_rates: lower-bound caveat text lost")
+# v23: the engine's optional CRL-observation prior must equal the published cohort,
+# so the UI can never drift from the data it claims to quote.
+_appjs = ROOT / "assets" / "app.js"
+if _appjs.exists():
+    _txt = _appjs.read_text(encoding="utf-8")
+    _m = re.search(r"id: 'crl_v23_observed'.*?base: ([0-9.]+)", _txt, re.S)
+    if not _m:
+        errors.append("app.js: the v23 CRL observation prior row is missing")
+    else:
+        _want = next((r for r in _v23_rates if r.get("letter_year") == "ALL_MATURE_2Y"), None)
+        if _want is None:
+            errors.append("crl_year_base_rates: no ALL_MATURE_2Y row for the engine prior check")
+        elif abs(float(_m.group(1)) * 100.0 - float(_want["observed_later_original_action_pct"])) > 0.05:
+            errors.append(f"app.js: crl_v23_observed prior {_m.group(1)} does not equal the published "
+                          f"ALL_MATURE_2Y rate {_want['observed_later_original_action_pct']}%")
+        elif (f'{_want["letters_with_later_original_action_observed"]}/{_want["published_crl_letters"]}'
+              not in _txt):
+            errors.append("app.js: the v23 prior no longer quotes its k/n counts from the published table")
+
 print(f"v23: {len(_v23_orig)} original actions ({dict(_v23_split)}), "
       f"{len(_v23_subs)} approval actions, {len(_v23_docs)} document rows, "
       f"{len(_v23_match)} CRL->application matches, {len(_v23_rates)} CRL base-rate rows.")

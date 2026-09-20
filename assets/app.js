@@ -844,8 +844,11 @@ const ENGINE_PRIORS = [
   { id: 'accel_wd', label: 'Accelerated approval → withdrawn (all indications)', base: 0.13,
     src: 'HHS OIG OEI-01-21-00401: FDA and sponsors withdrew 13% of all accelerated approvals, half of them since January 2021.',
     url: 'https://oig.hhs.gov/oei/reports/OEI-01-21-00401.pdf' },
-  { id: 'crl', label: 'Resubmission after a Complete Response Letter → approval  ⚠ NOT re-verified in this pass', base: 0.81,
-    src: 'Retained as an explicit ASSUMPTION, not a verified figure: FDA publishes CRL letters (458 in the transparency API as of 2026-08-13) but not a resubmission-outcome rate, and no primary source was re-read for this value in the 2026-09-12 pass. Treat engine outputs that use it as indicative.',
+  { id: 'crl', label: 'Resubmission after a Complete Response Letter → approval  ⚠ ASSUMPTION, not a published rate', base: 0.81,
+    src: 'Retained as an explicit ASSUMPTION, not a verified figure: FDA publishes CRL letters (458 in the transparency API as of 2026-08-13) but not a resubmission-outcome rate, and no primary source states this value. Treat engine outputs that use it as indicative, and see the v23 observation row directly below.',
+    url: 'https://api.fda.gov/transparency/crl.json' },
+  { id: 'crl_v23_observed', label: 'CRL → later ORIGINAL approval action observed  — FDA published subset, letters ≥2y old (301/342 = 88.0%)  • lower bound', base: 0.880,
+    src: 'v23 (2026-09-20) observation, not a modelled rate: of the 342 CRL letters FDA publishes that are at least two years old at the dataset\'s own last_updated (2026-08-13), 301 (88.0%, 95% Wilson lower bound 84.1%) show a later ORIGINAL approval action on the same application inside the committed FDA payloads; all 458 letters together give 327/458 = 71.4% (95% Wilson lower bound 67.1%). Because the CRL dataset is FDA\'s published subset and payload coverage is partial, this is a LOWER BOUND on eventual conversion, not a resubmission-outcome rate, and it is not matched to PDUFA action dates. Published as data/crl_year_base_rates.csv with all three cohorts.',
     url: 'https://api.fda.gov/transparency/crl.json' }
 ];
 
