@@ -1,117 +1,159 @@
-# Remaining work for the next session (written 2026-09-19 v19)
+# Remaining work for the next session (written 2026-09-19 v21)
 
-The v19 branch is `arena/01a0bad8-druganalysis` (branched from `main` at `b105d17`). This session verified pre-1980 years 1977–1979 line by line (48 rows), imported the full 1965–1979 payload blocks, ingested 1,869 stock snapshots and 6,452 Phase 3 studies, adjudicated the 2013 −2 gap, and shipped a decision-engine completeness spine. Merge the v19 PR before starting new edits. Repository root: `/home/user/DrugAnalysis`.
+Branch: `arena/01a0bba6-druganalysis` (from `main` at `d677b67`). This session extended the
+pre-1980 spine from 1977–1979 back to **1965**, built the twelve-year original-application
+audit, re-verified the dual-run payload evidence field by field, and cross-checked all of
+1965–1976 against the official Drugs@FDA database files. Repository root:
+`/home/user/DrugAnalysis`.
 
-## What v19 shipped
+## State right now (read this first)
 
-- **Pre-1980 payloads imported (1965–1979, 15 files + 3 manifests)** — copied from `origin/arena/01a0b7f7-druganalysis` (Actions run 19); every file SHA-verified against its manifest; all 15 raw responses proven byte-identical to the independent run-18 fetch (~2h earlier) with identical decision arrays. Imported data is verbatim official bytes only — no derived tables were copied.
-- **`data/pre1980_fda_decisions.csv` (48 rows)** — 1977 ×17, 1978 ×18 (incl. Type 1/4 Motofen), 1979 ×13. Same schema as the pre-1985 table. No ticker, no indication, no lineage asserted anywhere. Fail-closed builder: `scripts/build_pre1980_decisions_v19.py` (SHA + dual-run + display-map + 1965–1979 first-appearance screen; idempotent).
-- **`data/pre1980_year_audit.csv` / `data/pre1980_era_analysis.csv`** — verdicts 1977 −8 `PROJECT_SHORT_FLAGGED`, 1978 +1 `PROJECT_EXCEEDS_OFFICIAL` (the +1 is Motofen; Type-1-only = 17 = official), 1979 −1 `PROJECT_SHORT_FLAGGED`. Official: 25/17/14 NMEs (63/86/94 NDAs).
-- **`data/pre1980_primary_captures_index.csv` (12 captures)** — 3 year populations re-queried live (662/756/746, all equal to manifests); verbatim ORIG blocks for Elspar, Motofen (TYPE 1/4), Cyclapen NDA050508 (TYPE 1), Cyclapen NDA050509 (TYPE 3), Forane, Kinlytic (UNKNOWN/UNKNOWN); Tagamet cross-checked on Drugs@FDA (08/16/1977, Type 1, PRIORITY); coexistence probes for Tagamet/Nolvadex. Evidence: `data/raw/source_captures_2026_09_19/live_primary_captures_v19_2026_09_19.json`; run-18 manifest archived alongside for self-contained dual-run proof.
-- **Irregularities closed, not smoothed**: Cyclapen tablet-Type-3-before-suspension-Type-1 inversion (genuine FDA-data condition, counted once); Kinlytic urokinase UNKNOWN-candidate (flagged, NOT counted); 1978 Motofen boundary; 1979 blanks inventoried (furosemide→1966, IV electrolytes, KI-Thyro-Block).
-- **2013 −2 adjudicated**: the archived CDER 2013 NME table re-read in full (27 rows transcribed verbatim + the Simponi Aria correction footnote) — the master's 27 match CDER's posted 27 exactly, so the gap is inter-FDA-source (History series 29 vs CDER list 27). Dated note appended to the crosswalk 2013 row by `scripts/annotate_v19_2026_09.py` (additive, idempotent). Simponi Aria must NOT be added.
-- **+1,869 stock snapshots (979 → 2,848)** from the three `stock_yahoo_*_remaining` batches (2,636 SHA-verified captures; 364 FAILED preserved as unavailable). **Phase 3 expanded registry 4,212 → 10,664** (2024–2029 windows). Total new verified entries this session: **8,369**.
-- **`data/decision_engine_year_inputs.csv` (50 rows, 1977–2026)** — per-year completeness ratios; 17 FULL-use years; engine tab carries the data-quality gate + the explicit refusal to print numerator-only likelihoods before CRL↔PDUFA matching.
-- **Core + scores refresh (Pass 3)** — `build_company_scores.py` → `build_core_analysis_table.py` rerun on the enlarged snapshot set (core unmatched 356 → 329; 89/751 score rows updated). Rule restated: any snapshot/master/CRL change requires re-running scorecard → core → company-scores builders, then the validator.
-- **Validator v19 gates**: PASS, 0 errors — pins the 48-row table, payload agreement, verdicts, 12 captures, 2013 note, engine inputs.
-- **Site**: new 🏛️ Pre-1980 Era tab (audit, decisions, era, captures) + Overview card + engine gate notice. All 34 mounts / 26 tabs integrity-checked; JS syntax-checked; served locally with all new CSVs 200.
+The v21 **builders, validator gates and site are complete and committed**; the **data they
+consume has not landed yet**, because it is produced by the GitHub Actions fetch runner and
+this sandbox cannot reach the network. Three raw layers are outstanding:
 
-## Verification already run
+| Layer | Path | Items | Why it is required |
+|---|---|---|---|
+| Pre-1965 payload block | `data/raw/openfda_orig_decisions_1939_1964/` | 26 year payloads + manifest | the first-appearance screen must be able to see before 1965; the builder aborts without it |
+| Per-row live probes | `data/raw/pre1980_row_probes_1965_1976/` | 126 (125 decision rows + amikacin NDA050495) | every new decision row must carry a live MATCH probe; aborts without it |
+| Live year populations | `data/raw/pre1980_year_populations_1965_1976/` | 12 | the year-audit `live_population_total` column; 1965/1970/1976 are pinned to 52/74/619 |
 
-```text
-python3 scripts/build_pre1980_decisions_v19.py        # 48/3/3/12; rerun = no-op
-python3 scripts/build_decision_engine_inputs_v19.py   # 50 year rows; rerun = no-op
-python3 scripts/annotate_v19_2026_09.py               # crosswalk 2013 note; rerun = no-op
-python3 scripts/build_stock_snapshots_from_all_events.py  # +1869; rerun appends 0
-python3 scripts/build_ctgov_expanded_registry.py      # 10664 rows
-python3 scripts/validate_data.py                      # PASS: 0 errors
-node --check assets/app.js                            # JS syntax OK
+`python3 scripts/validate_data.py` currently reports **exactly 75 errors, all of them "v21
+data not built yet"** (48-row table vs the 173 baseline, missing probe/cross-check tables,
+missing pre-1965 manifest). That is the expected pre-landing state, not a regression: the
+v20 gates still pass (170 audit rows, 170 probe rows, 0 payload-invisible).
+
+## Exact next steps
+
+```bash
+git pull --rebase origin arena/01a0bba6-druganalysis     # pick up the runner's commit
+ls data/raw/openfda_orig_decisions_1939_1964 | head      # expect 26 decisions_YYYY.json + manifest.json
+python3 -c "import json;m=json.load(open('data/raw/pre1980_row_probes_1965_1976/manifest.json'));print(len(m['requests']))"   # 126
+python3 scripts/build_pre1980_decisions_v21.py           # -> 173 decisions, 15 audit, 15 era, 23 captures, 15 gap rows
+python3 scripts/build_pre1980_originals_audit_v21.py     # -> 477 rows, 125 probes, 12 cross-check summaries
+python3 scripts/validate_data.py                         # expect 0 errors
+node --check assets/app.js
 ```
+
+**Expect the first build to abort on unadjudicated earlier appearances.** The screen now spans
+1939–1979 instead of 1965–1979, so ingredients that first appeared before 1965 (epinephrine and
+chlorthalidone are the likely movers) will newly trip the gate. That is the intended behaviour:
+read the payload rows the message names, decide whether the ingredient is a combination
+component or a same-ingredient sibling, and add a key to `ALLOWED_EARLIER` in
+`scripts/build_pre1980_decisions_v21.py` **with its evidence sentence**. Also re-check the
+`ALLOWED_EARLIER` note wording: several entries say "first appears on <application> <date>"
+using the 1965–1979 screen, and the true first appearance may now be earlier — the computed
+`ingredient_first_appearance` column is authoritative, so the notes must not contradict it.
+
+If the runner died instead, re-push anything touching `fetch_jobs/**` to trigger a fresh run
+(the bot token cannot dispatch workflows manually, and `gh run cancel` returns 403).
+
+## What v21 shipped (all committed, all verified by execution)
+
+- **`scripts/build_pre1980_decisions_v21.py`** — owns the four pre-1980 tables for 1965–1979
+  (173 Type 1/1-4 rows: 11/7/13/4/8/11/7/7/11/16/9/21 for 1965–1976 + 17/18/13 for
+  1977–1979). Gates: payload SHA vs manifest, run-18/run-19 `raw_sha256` agreement,
+  display-map drift, first-appearance adjudication, per-row live probe equality
+  (date + class + priority + holder), pinned live populations, pinned official series.
+- **`scripts/build_pre1980_decisions_v19.py`** — marked SUPERSEDED; `main()` fails before
+  writing anything. Its `DISPLAY` map is still importable and its 48 entries are
+  **byte-identical** to v21's (verified programmatically: 0 value differences).
+- **`scripts/build_pre1980_originals_audit_v21.py`** — the v20 three-layer audit for
+  1965–1976: 477 payload rows, 125-row probe index, 12-row full-DB cross-check.
+- **`scripts/build_pre1980_originals_audit_v20.py`** — display map now imported from v21 and
+  its 48-row pin scoped to the 1977–1979 slice of the (now 173-row) decision table.
+- **`scripts/validate_data.py`** — 15-year pre-1980 gates + v21 table gates + `read_opt()`
+  (a missing table reports an error instead of raising and hiding every other gate).
+- **`scripts/tests/dry_run_v21_builders.py`** — harness that runs both builders against a
+  `/tmp/v21dry` DATA root: the real committed payloads and full-DB extract are symlinked, only
+  the three pending layers are synthesised. This is how the plumbing was verified before the
+  data existed, and how the four fail-closed gates were proven to abort.
+- **Site** — Pre-1980 tab: four new tables (1965–1976 audit, probe index, full-DB cross-check,
+  gap-candidate ledger) and a rewritten narrative stating the verified findings.
+
+## Verified facts worth keeping (re-derive if in doubt)
+
+- **Full-DB cross-check 1965–1976: 477 = 477 *among classifiable rows*.** Per year 32/32,
+  16/16, 32/32, 22/22, 25/25, 38/38, 48/48, 29/29, 43/43, 73/73, 39/39, 80/80 — 0
+  payload-invisible and 0 payload-not-in-DB **for the applications whose type can be
+  established**. Do not restate this as "0 payload-invisible" without the qualifier:
+  - **1,106 further 1965–1976 ORIG/AP rows exist in `Submissions_1965_1979.txt`**: 798 are ANDA
+    (excluded by design) and **308 have an ApplNo that `Applications_appl_window.txt` does not
+    contain at all**, so no NDA/ANDA/BLA type can be asserted. The window file is filtered to
+    the ApplNos the payloads already carry (`collect_applnos: true`), which is circular — it can
+    never type an application the payloads omit. `full_db_orig_ap()` used to drop these rows
+    silently; it now returns them and they are published as `KIND_UNRESOLVED` (320-row
+    cross-check table).
+  - **6 of the 308 are NME-comparable** (1966 014262 TYPE 1/4 STANDARD, 1969 016486 TYPE 1/4
+    STANDARD, 1970 016771 TYPE 1/4 STANDARD, 1973 017383 TYPE 1 PRIORITY, 1973 017024 TYPE 1
+    STANDARD, 1973 017267 TYPE 1 PRIORITY) plus 1976 017834 TYPE 2 PRIORITY. These are the best
+    remaining candidates for part of the 1966/1969/1970/1973 shortfalls.
+  - Spot-checks (2026-09-19, `drugsatfda_unresolved_appl_probes_2026_09_19.json`): 014262,
+    017383 and 016486 render an **empty Drugs@FDA application shell** (no header, no company, no
+    products); the control NDA050495 renders header + company + 2 products in the same session,
+    so the emptiness is real and not a fetch artefact.
+  - **Fix queued:** `Applications_all_types.txt` (the unfiltered ApplNo→ApplType map) was added
+    to `fetch_jobs/drugsatfda_data_files_2026_09.json` as a 4-line insertion. Once it lands,
+    `full_db_orig_ap()` picks it up automatically (`type_source`) and the unresolved count should
+    fall to whatever genuinely has no Applications row. Re-run the audit builder and re-derive
+    the invisible count before publishing any statement about it.
+  - The v20 1977–1979 cross-check has the **same circularity** and its "0 payload-invisible"
+    result should be re-derived the same way.
+- **Dual-run evidence:** the archived run-18 manifest and the committed manifest agree on
+  `pages[0].raw_sha256` for 1975–1979 and their `decisions` arrays compare equal; the derived
+  files differ **only** in `extracted_utc` (04:30:16Z vs 06:19:43Z), which is why the
+  file-level SHA differs while the byte counts match exactly. `raw_sha256` is the invariant the
+  builder checks — do not "fix" it to compare file SHAs.
+- **Four `regulatory_milestone` cells change vs the published 48-row table** (all other 17
+  columns of all 48 rows are byte-identical): DDAVP NDA017922, Parlodel NDA017962, Thallous
+  Chloride Tl 201 NDA017806 now disclose the multi-product condition instead of asserting one
+  dosage form; Motofen NDA017744 describes the `MOTOFEN` record rather than the payload's first
+  product, so its marketing status reads `Prescription` (not `Discontinued`).
+- **Product selection rule:** payload product whose `brand_name` equals the display brand and
+  whose `active_ingredients` contain the mapped ingredient; `PRODUCT_STARTSWITH` pins the exact
+  leading ingredient string where that is ambiguous (Duranest → plain etidocaine). Display map:
+  173 entries, 0 drift.
+- **Live populations:** 1965 = 52, 1970 = 74, 1976 = 619 (V21-C01..C03); 1977/1978/1979 =
+  662/756/746 (V19-C01..C03).
+- **1976 gap candidate:** amikacin / AMIKIN **NDA050495** — openFDA record exists with **no
+  `submissions` array**; Drugs@FDA renders products with no approval-history section. Recorded
+  as `NAMED_CANDIDATE_NOT_ADDED`; never an approval row.
+
+## Infrastructure fixes made this session
+
+- `.github/workflows/arena-data-fetch.yml` — concurrency group is now
+  `arena-data-fetch-${{ github.ref_name }}`. The old global group let one branch's bulk fetch
+  serialise every other branch's (run 22 held the queue ~1.5 h and could not be cancelled:
+  `gh run cancel` → 403 for the bot token).
+- `fetch_jobs/stock_yahoo_{batch_2026_09,events_remaining,orig_remaining,suppl_remaining}.json`
+  — added `"skip_existing": true` (101 line insertions, 0 deletions, so formatting is
+  untouched). Without it every run re-downloaded ~3,030 already-committed captures.
+  **Edit these job files with targeted line edits, never `json.dump`** — it reformats ~29k lines.
 
 ## Next work, in priority order
 
-1. **Pre-1980 years 1976 → 1965.** Payloads are committed; Type-1 counts per year are known (1976: 21, 1975: 9, 1974: 16, 1973: 11, 1972: 7, 1971: 7, 1970: 11, 1969: 8, 1968: 4, 1967: 13, 1966: 7, 1965: 11). Extend `build_pre1980_decisions_v19.py` (or a v20 successor) with explicit display maps + first-appearance assertions per year, working backward one year at a time with live spot probes. The 1965–1974 manifests verify the same way.
-2. **Name the missing NMEs: 1977 ×8, 1979 ×1 (plus 1980–84, 1988 ×1).** Same route as before: the 1989 CDER *Offices of Drug Evaluation: Statistical Report* (pp. 152–199, FDA History Office Files) or the contemporaneous FDA annual report. Contacts: FDA Historian john.swann@fda.hhs.gov; CDER factual-error address CDER.NMENewBiologicApprovals@fda.hhs.gov.
-3. **2013 −2, second half.** The CDER posted list (27) is now fully captured; check the **2013 NDA/BLA calendar-year approvals page** to see which 2 the History Office series counts. Do not add Simponi Aria (FDA: "inadvertently posted").
-4. **CRL↔PDUFA denominator matching.** The engine's blocking limitation: match `fda_crl_master.csv` rows to PDUFA action dates so priority-conditioned approval likelihoods can be computed from a matched set instead of refused. Until then the engine-gate notice stays.
-5. **Tambocor 1985 review PDF (human, 2 minutes).** `https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf` or Wayback `https://web.archive.org/web/20240929073454/https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf` — read the review classification block. Do not harmonise without it.
-6. **NDA022046 lineage artifact** — still open; needs a 1983 approval letter or Federal Register notice.
-7. **141 core-analysis listing-class disagreements** — adjudicate with period 10-K/20-F cover evidence. Keep the `CORE_CLASS_BASELINE` ratchet.
-8. **Pre-1980 non-Type-1 enumeration audit** — mirror the 517-row focus-year audit for 1977–1979 (170 payload ORIG/AP rows: 42+66+62) so every pre-1980 original is tracked in exactly one table. The `expand_pre1980_decisions.py` + non-NME builder path exists but writes into the pre-1985 table — a schema decision is still needed (separate pre-1980 non-NME table recommended).
-
-## Important repository facts
-
-- Branch for all work: `arena/01a0bad8-druganalysis` (this session fixed to it); origin `https://github.com/buffedlizard55-lab/DrugAnalysis.git`.
-- Single-writer discipline: `build_pre1980_decisions_v19.py` owns the four pre-1980 tables; `annotate_v19_2026_09.py` owns the v19 crosswalk note; `build_decision_engine_inputs_v19.py` owns the engine year inputs; stock ingestion via `build_stock_snapshots_from_all_events.py`; ctgov via `build_ctgov_expanded_registry.py`. Do not hand-edit owned files.
-- `data/fda_decisions_master.csv` (1,427 comparable rows, 1985–2026), `data/pre1985_fda_decisions.csv` (91 rows, 1980–1984) and `data/pre1980_fda_decisions.csv` (48 rows, 1977–1979) keep their roles. Do not merge them without a deliberate schema/scorecard decision.
-- Data-fetch convention: bulk jobs run through GitHub Actions; the sandbox page-fetch tool works for `accessdata.fda.gov` HTML, `drugsatfda_docs` label PDFs, `api.fda.gov` JSON and Wayback captures (one-off checks; keep quotes verbatim). `api.fda.gov` `count=` on nested submission fields returns NOT_FOUND — use `limit=1` + `meta.total` instead. Bash has no outbound network (TLS blocked). `gh workflow run` dispatch is 403 for the bot token — push-to-`arena/**` touching `fetch_jobs/**` is the trigger path.
-- Pre-1980 raw payloads on disk came from `origin/arena/01a0b7f7-druganalysis` (Actions run 19) with `origin/arena/01a0b7e1-druganalysis` (Actions run 18) as the cross-check — both are the same bot workflow's verbatim output, SHA-pinned. If those branches are ever deleted, the manifests + archived run-18 manifest in this repo preserve the provenance chain.
-
----
-
-## v20 session addendum (2026-09-19, later the same day) — RESUMED & COMPLETED same session: GitHub reconnected, run 21 landed all 170 probes + the full-DB extract, builder+validator PASS, all tables committed (see README v20 section). Checklist below kept for provenance.
-
-**Where this session stopped:** the sandbox's GitHub token expired mid-run
-(`gh auth status` → "token in GH_TOKEN is no longer valid"; `git push`/`git fetch`
-fail). All work through that point is committed locally on
-`arena/01a0baff-druganalysis` at `67088ef` (part 1 of v20). Reconnect GitHub in
-Arena, then execute the checklist below in order.
-
-**What was already done (committed):**
-1. `fetch_jobs/drugsatfda_data_files_2026_09.json` + new `zip_extract` kind in
-   `scripts/run_fetch_jobs.py` (verbatim member/row whitelists, full member
-   SHA + kept-row counts + recorded filter, per-member output budget). Pushed
-   as `dc22bca`; Actions run 35462829803 was still executing at token loss
-   (fda.gov media/89850 was returning HTTP 500 to the sandbox fetcher, so the
-   zip may have FAILED after retries — check `data/raw/last_run.log` and the
-   manifest entries).
-2. `fetch_jobs/pre1980_row_probes_1977_1979.json` — 170 single-application
-   live probes (one per payload row), generated by
-   `scripts/gen_pre1980_probe_job_v20.py`.
-3. `scripts/build_pre1980_originals_audit_v20.py` + tables (part 1):
-   `data/pre1980_originals_audit_1977_1979.csv` (170 rows: 42/66/62;
-   NME-comparable 17/18/13), `data/pre1980_row_probe_index.csv` (170),
-   staging report. Fail-closed builder, fixture-tested end-to-end including
-   SHA-drift and probe-mismatch aborts.
-4. Validator v20 gates + Pre-1980 site tab (originals audit / probe index /
-   full-DB cross-check tables) + overview card. JS syntax-checked.
-
-**Resume checklist (in order):**
-1. Reconnect GitHub in Arena. `git fetch origin arena/01a0baff-druganalysis`
-   and inspect what run 35462829803 committed (expect
-   `data/raw/pre1980_row_probes_1977_1979/` (170 probes + manifest) and
-   possibly `data/raw/drugsatfda_data_files_2026_09/`).
-2. If the zip layer FAILED (likely — fda.gov media 500): re-point the job at
-   a Wayback `id_` capture of
-   `https://www.fda.gov/media/89850/download?attachment` (find a timestamp via
-   the CDX API; the runner's IP is not rate-limited), push to re-trigger, or
-   retry the same job if fda.gov recovered (skip_existing=True protects the
-   probes).
-3. `git pull --rebase`; run `python3 scripts/build_pre1980_originals_audit_v20.py`
-   (must report probes complete + full-DB cross-checked), then
-   `python3 scripts/validate_data.py` (0 errors required).
-4. Read `data/pre1980_full_db_crosscheck_1977_1979.csv`: every
-   `in_openfda_payload=FALSE` row is a NAMED payload-invisible approval.
-   NME-comparable ones (Type 1/1-4) are the missing-NME candidates for
-   1977×8 / 1979×1 — cross-check each against the Drugs@FDA website page and
-   the year's official count before touching any verdict.
-5. Update `data/pre1980_year_audit.csv` / `pre1980_era_analysis.csv` notes and
-   the README v20 section with the outcomes; do NOT modify v19 verdicts
-   without naming evidence.
-6. Three review passes, then PR `arena/01a0baff-druganalysis` → `main` and
-   merge (this session could not reach that step).
-
-**Primary-source findings banked this session (all verbatim-checkable):**
-- Seldane-class invisibility is now proven on THREE official surfaces:
-  openFDA `drug/drugsfda` NOT_FOUND for NDA019180; openFDA `drug/label`
-  NOT_FOUND; Drugs@FDA website overview page renders empty (live 2026-09-19).
-  NDA050452 likewise NOT_FOUND on openFDA + empty website page.
-- NCATS Inxight (NIH) records carry "First approved in YYYY" with FDA source
-  URLs and cite an official FDA **"OB NME Appendix 1950-1985/1993"** (the
-  printed Orange Book NME appendix) — a lead for naming ALL pre-1985 missing
-  NMEs if a scan surfaces (archive.org holds 1995/1997 OB editions;
-  DrugPatentWatch holds PDFs from 1980).
-- Amikacin (Amikin) = NDA050495 per NCATS, "First approved in 1976", absent
-  from every 1965-1979 payload (verified against the first-appearance index)
-  → the concrete, sourced first candidate for the **1976** gap (21 official
-  NMEs vs 21 payload Type-1s — reconcile when 1976 is built).
+1. **Land the v21 data and publish** (steps above). Then: scorecards →
+   `build_core_analysis_table.py` → `build_company_scores.py` → `validate_data.py`; PR → merge.
+2. **Name the missing NMEs: 1977 ×8, 1979 ×1, 1980–84, 1988 ×1.** Route: the 1989 CDER *Offices
+   of Drug Evaluation: Statistical Report* (pp. 152–199, FDA History Office Files) or the
+   contemporaneous FDA annual report. Contacts: FDA Historian john.swann@fda.hhs.gov;
+   CDER.NMENewBiologicApprovals@fda.hhs.gov. Unfixable from public data.
+3. **2013 −2, second half** — the CDER posted list (27) is captured; check the 2013 NDA/BLA
+   calendar-year approvals page. Do not add Simponi Aria ("inadvertently posted").
+4. **CRL↔PDUFA denominator matching** — the engine's blocking limitation; until it is solved
+   the engine-gate notice stays and priority-conditioned likelihoods remain refused.
+5. **Tambocor 1985 review PDF (human, 2 minutes)** —
+   `https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf` (Wayback:
+   `https://web.archive.org/web/20240929073454/https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf`).
+   Automated read returns HTTP 500; do not harmonise the STANDARD/Priority conflict without it.
+6. **NDA022046 lineage artifact** — needs a 1983 approval letter or Federal Register notice.
+7. **141 core-analysis listing-class disagreements** — adjudicate with period 10-K/20-F cover
+   evidence; keep the `CORE_CLASS_BASELINE` ratchet.
+8. **Classify the 308 `KIND_UNRESOLVED` rows** (see "Verified facts"): deliver
+   `Applications_all_types.txt`, re-run `build_pre1980_originals_audit_v21.py`, then adjudicate
+   the 6 NME-comparable candidates year by year. Re-derive the 1977–1979 (v20) cross-check the
+   same way before repeating its "0 payload-invisible" claim.
+9. **Pre-1980 backfill beyond 1965** — 1964 → 1939 is the natural continuation. The payload job
+   already covers 1939–1964 (fetched for the screen); Drugs@FDA coverage before 1965 is
+   incomplete, so those rows would need a different primary source (FDA annual reports) and the
+   screen must stay labelled a re-approval screen, not proof of first marketing.

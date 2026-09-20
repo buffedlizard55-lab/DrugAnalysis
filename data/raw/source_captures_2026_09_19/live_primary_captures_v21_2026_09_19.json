@@ -1,0 +1,117 @@
+{
+  "version": "v21",
+  "capture_date": "2026-09-19",
+  "provenance": "Sandbox one-off primary checks issued live on 2026-09-19 against api.fda.gov, accessdata.fda.gov (Drugs@FDA) and fda.gov (FDA History). Each entry records the exact request URL and the verbatim excerpt relied on; nothing is paraphrased into a fact. Bulk per-row probes for the same years were fetched by the repository's GitHub Actions collector (fetch_jobs/pre1980_row_probes_1965_1976.json, fetch_jobs/pre1980_year_populations_1965_1976.json) and are committed verbatim with SHA-256 under data/raw/.",
+  "captures": [
+    {
+      "capture_id": "V21-C01",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "1976 ORIG/AP year population re-query",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19760101+TO+19761231%5D&limit=1",
+      "finding": "meta.results.total = 619, equal to the committed 1976 payload's manifest n_raw_records (619); the extraction keeps 80 of those as true ORIG/AP-in-1976 decisions. The first returned record demonstrates why raw total >> decisions: NDA013934's ORIG-1/AP is dated 19640406 (TYPE 5) and the record matches the 1976 query through a different submission element (SUPPL-8, 19760429).",
+      "verbatim_excerpt": "\"last_updated\": \"2026-09-16\", \"results\": { \"skip\": 0, \"limit\": 1, \"total\": 619 } ... \"application_number\": \"NDA013934\", \"sponsor_name\": \"GLAXOSMITHKLINE\" ... { \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19640406\", \"review_priority\": \"STANDARD\", \"submission_class_code\": \"TYPE 5\" } ... { \"submission_type\": \"SUPPL\", \"submission_number\": \"8\", \"submission_status\": \"AP\", \"submission_status_date\": \"19760429\" } ... product STOXIL (IDOXURIDINE 0.1%, SOLUTION/DROPS, OPHTHALMIC, Discontinued).",
+      "project_row_ids": "PRE1980-1976-* (population-level)",
+      "project_effect": "confirms the committed 1976 payload population live and documents the nested-field cross-element match condition behind the 619 vs 80 difference"
+    },
+    {
+      "capture_id": "V21-C02",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "1965 ORIG/AP year population re-query",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19650101+TO+19651231%5D&limit=1",
+      "finding": "meta.results.total = 52, equal to the committed 1965 payload's manifest n_raw_records (52); 32 of those are true ORIG/AP-in-1965 decisions. First record NDA006530 (AVC, sulfanilamide, PHARMOBEDIENT) publishes ORIG-1/AP/19650605 with submission_class_code UNKNOWN and no review_priority - the same FDA source gap the audit counts as blank/UNKNOWN.",
+      "verbatim_excerpt": "\"results\": { \"skip\": 0, \"limit\": 1, \"total\": 52 } ... \"application_number\": \"NDA006530\", \"sponsor_name\": \"PHARMOBEDIENT\" ... { \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19650605\", \"review_priority\": \"UNKNOWN\", \"submission_class_code\": \"UNKNOWN\" } ... products AVC (SULFANILAMIDE 15% **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**, CREAM, VAGINAL) and AVC (SULFANILAMIDE 1.05GM, SUPPOSITORY, VAGINAL).",
+      "project_row_ids": "PRE1980-1965-* (population-level)",
+      "project_effect": "confirms the committed 1965 payload population live"
+    },
+    {
+      "capture_id": "V21-C03",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "1970 ORIG/AP year population re-query",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19700101+TO+19701231%5D&limit=1",
+      "finding": "meta.results.total = 74, equal to the committed 1970 payload's manifest n_raw_records (74); 38 are true ORIG/AP-in-1970 decisions. First record ANDA085863 (THEOPHYLLINE elixir, PRECISION DOSE) has ORIG-1/AP dated 19790316 and matches the 1970 query through SUPPL-1 (19701121) - second live instance of the cross-element match condition.",
+      "verbatim_excerpt": "\"results\": { \"skip\": 0, \"limit\": 1, \"total\": 74 } ... \"application_number\": \"ANDA085863\", \"sponsor_name\": \"PRECISION DOSE\" ... { \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19790316\" } ... { \"submission_type\": \"SUPPL\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19701121\" } ... product THEOPHYLLINE (THEOPHYLLINE 80MG/15ML, ELIXIR, ORAL, Discontinued).",
+      "project_row_ids": "PRE1980-1970-* (population-level)",
+      "project_effect": "confirms the committed 1970 payload population live"
+    },
+    {
+      "capture_id": "V21-C04",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "NDA019853 Cuprimine (penicillamine) - 1970 numbering anomaly, verbatim ORIG block",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA019853%22&limit=1000",
+      "finding": "meta.results.total = 1. The record carries exactly one ORIG submission: ORIG-1 / AP / 19701204 / STANDARD / TYPE 1 - New Molecular Entity, sponsor VALEANT PHARMS INTL, brand CUPRIMINE, generic PENICILLAMINE. Supplements run 1987-2004, so the application has existed under this number since well before those dates. The application number 019853 is out of sequence for a 1970 approval (1970-era numbers in the same payload block run 0167xx-0169xx): flagged as an FDA-data numbering anomaly, the date is NOT adjusted.",
+      "verbatim_excerpt": "{ \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19701204\", \"review_priority\": \"STANDARD\", \"submission_class_code\": \"TYPE 1\", \"submission_class_code_description\": \"Type 1 - New Molecular Entity\" } ... \"application_number\": \"NDA019853\", \"sponsor_name\": \"VALEANT PHARMS INTL\", \"openfda\": { \"brand_name\": [ \"CUPRIMINE\" ], \"generic_name\": [ \"PENICILLAMINE\" ], \"manufacturer_name\": [ \"Bausch Health US, LLC\" ], \"product_ndc\": [ \"25010-705\" ] }",
+      "project_row_ids": "PRE1980-1970-10 (NDA 019853)",
+      "project_effect": "confirms the payload date/class/priority live and records the out-of-sequence application-number anomaly on the row"
+    },
+    {
+      "capture_id": "V21-C05",
+      "system": "FDA Drugs@FDA application-history page (accessdata.fda.gov)",
+      "subject": "NDA019853 Cuprimine - second-surface confirmation of the 1970 original approval",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=019853",
+      "finding": "The Drugs@FDA website page for NDA 019853 (Company: VALEANT PHARMS INTL) publishes one Original Approval row dated 12/04/1970, ORIG-1, Approval, Type 1 - New Molecular Entity, STANDARD. Two independent FDA surfaces therefore agree on the 1970-12-04 Type 1 date; only the application number is anomalous.",
+      "verbatim_excerpt": "New Drug Application (NDA):019853 | Company:VALEANT PHARMS INTL | Products on NDA 019853: CUPRIMINE | PENICILLAMINE | 250MG | CAPSULE;ORAL | Prescription | AB | Yes | Yes ; CUPRIMINE | PENICILLAMINE | 125MG | CAPSULE;ORAL | Discontinued | None | No | No | Original Approvals or Tentative Approvals: | 12/04/1970 | ORIG-1 | Approval | Type 1 - New Molecular Entity | STANDARD | | Label is not available on this site. |",
+      "project_row_ids": "PRE1980-1970-10 (NDA 019853)",
+      "project_effect": "second-surface confirmation; the numbering anomaly is flagged, the date is published as FDA carries it"
+    },
+    {
+      "capture_id": "V21-C06",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "Amikacin (Amikin) NDA050495 - gap-candidate probe for the 1976 shortfall",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA050495%22&limit=1",
+      "finding": "meta.results.total = 1: the application IS in openFDA (sponsor APOTHECON, two AMIKIN amikacin sulfate injectable products, both Discontinued, both reference drugs) but the record has NO submissions array at all. An application with no submissions can never satisfy submissions.submission_type:ORIG AND submissions.submission_status:AP, which is exactly why amikacin is absent from every committed 1965-1979 ORIG/AP payload despite NCATS Inxight recording it as first approved in 1976.",
+      "verbatim_excerpt": "\"results\": [ { \"application_number\": \"NDA050495\", \"sponsor_name\": \"APOTHECON\", \"products\": [ { \"product_number\": \"001\", \"reference_drug\": \"Yes\", \"brand_name\": \"AMIKIN\", \"active_ingredients\": [ { \"name\": \"AMIKACIN SULFATE\", \"strength\": \"EQ 50MG BASE/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**\" } ], \"reference_standard\": \"No\", \"dosage_form\": \"INJECTABLE\", \"route\": \"INJECTION\", \"marketing_status\": \"Discontinued\" }, { \"product_number\": \"002\", ... \"EQ 250MG BASE/ML\" ... } ] } ] - no \"submissions\" key present.",
+      "project_row_ids": "GAP-1976-01 (data/missing_nme_candidates.csv)",
+      "project_effect": "names the 1976 gap candidate and proves the invisibility mechanism; the row is NOT added to the decision table because FDA publishes no approval date, class or priority for it"
+    },
+    {
+      "capture_id": "V21-C07",
+      "system": "FDA Drugs@FDA application-history page (accessdata.fda.gov)",
+      "subject": "Amikacin (Amikin) NDA050495 - website page has no approval-history section",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=050495",
+      "finding": "The Drugs@FDA website page for NDA 050495 (Company: APOTHECON) renders only the products table (two AMIKIN amikacin sulfate injectable rows) and then ends with 'Back to Top'. There is no 'Approval Date(s) and History, Letters, Labels, Reviews for NDA 050495' section at all - the same absence the API shows, on a second FDA surface.",
+      "verbatim_excerpt": "New Drug Application (NDA):050495 | Company:APOTHECON | Products on NDA 050495: AMIKIN | AMIKACIN SULFATE | EQ 50MG BASE/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons** | INJECTABLE;INJECTION | Discontinued | None | Yes | No ; AMIKIN | AMIKACIN SULFATE | EQ 250MG BASE/ML ... | INJECTABLE;INJECTION | Discontinued | None | Yes | No | Showing 1 to 2 of 2 entries | Back to Top   [page ends here - no approval-history table]",
+      "project_row_ids": "GAP-1976-01 (data/missing_nme_candidates.csv)",
+      "project_effect": "second-surface confirmation that no approval history is published for the candidate"
+    },
+    {
+      "capture_id": "V21-C08",
+      "system": "FDA History - Summary of NDA Approvals & Receipts, 1938 to the present (fda.gov)",
+      "subject": "Official 1965-1979 NME / NDA-approval counts re-read live, plus the NME definition",
+      "query_url": "https://www.fda.gov/about-fda/histories-fda-regulated-products/summary-nda-approvals-receipts-1938-present",
+      "finding": "The official table was re-read live and every 1965-1979 pair equals data/fda_official_year_series.csv: 1965 53/18, 1966 40/10, 1967 189/16, 1968 59/14, 1969 38/5, 1970 51/15, 1971 26/12, 1972 57/10, 1973 50/14, 1974 85/21, 1975 71/20, 1976 72/22, 1977 63/25, 1978 86/17, 1979 94/14 (NDAs approved / new molecular entities). The page also states the NME definition verbatim, which is why a contemporaneous NME statistic and an application-level TYPE 1 enumeration can legitimately differ.",
+      "verbatim_excerpt": "| Year | NDAs Approved | New Molecular Entities | NDAs Received | ... | 1965 | 53 | 18 | 203 | ... | 1969 | 38 | 5 | 71 | ... | 1975 | 71 | 20 | 132 | 272 | 604 | 876 | 1976 | 72 | 22 | 142 | 258 | 627 | 885 | 1977 | 63 | 25 | 124 | ... | 1979 | 94 | 14 | 182 | ... ; Introduction: \"Included are new molecular entities, which essentially are structurally unique active ingredients that have never before been marketed.\"",
+      "project_row_ids": "pre1980_year_audit.csv (all 15 year rows); pre1980_era_analysis.csv (official_fda_nme_count)",
+      "project_effect": "re-verifies the official denominators behind every verdict in the pre-1980 block and pins the NME definition used in the methodology"
+    },
+    {
+      "capture_id": "V21-C09",
+      "system": "FDA Drugs@FDA application-history page (accessdata.fda.gov)",
+      "subject": "NDA012715 Gantanol-DS (sulfamethoxazole) - 1965 Type 1 row",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=012715",
+      "finding": "One Original Approval row: 08/25/1965, ORIG-1, Approval, Type 1 - New Molecular Entity, STANDARD (Company: ROCHE). Products: GANTANOL 500MG tablet and GANTANOL-DS 1GM tablet, both oral, both Discontinued.",
+      "verbatim_excerpt": "New Drug Application (NDA):012715 | Company:ROCHE | Products on NDA 012715: GANTANOL | SULFAMETHOXAZOLE | 500MG | TABLET;ORAL | Discontinued | None | No | No ; GANTANOL-DS | SULFAMETHOXAZOLE | 1GM | TABLET;ORAL | Discontinued | None | No | No | Original Approvals or Tentative Approvals: | 08/25/1965 | ORIG-1 | Approval | Type 1 - New Molecular Entity | STANDARD | | Label is not available on this site. |",
+      "project_row_ids": "PRE1980-1965-07 (NDA 012715)",
+      "project_effect": "live confirmation of the 1965 Type 1 row and of the ingredient that triggers the adjudicated class/date inversion"
+    },
+    {
+      "capture_id": "V21-C10",
+      "system": "FDA Drugs@FDA application-history page (accessdata.fda.gov)",
+      "subject": "NDA013664 Gantanol suspension - the earlier same-ingredient Type 5 sibling",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=013664",
+      "finding": "One Original Approval row: 07/01/1965, ORIG-1, Approval, Type 5 - New Formulation or New Manufacturer, STANDARD (Company: ROCHE), single product GANTANOL sulfamethoxazole 500MG/5ML oral suspension. This is 55 days BEFORE the Type 1 tablet approval, so the sulfamethoxazole first-appearance hit on NDA012715 is a genuine FDA-data class/date inversion, not a transcription error; the molecule counts once via the Type 1 row.",
+      "verbatim_excerpt": "New Drug Application (NDA):013664 | Company:ROCHE | Products on NDA 013664: GANTANOL | SULFAMETHOXAZOLE | 500MG/5ML | SUSPENSION;ORAL | Discontinued | None | No | No | Original Approvals or Tentative Approvals: | 07/01/1965 | ORIG-1 | Approval | Type 5 - New Formulation or New Manufacturer | STANDARD | | Label is not available on this site. |",
+      "project_row_ids": "PRE1980-1965-07 (NDA 012715)",
+      "project_effect": "adjudicates the 1965 sulfamethoxazole first-appearance exception with a second FDA surface"
+    },
+    {
+      "capture_id": "V21-C11",
+      "system": "openFDA Drugs@FDA API (api.fda.gov)",
+      "subject": "NDA017690 Imodium - same-day Type 5 twin of the 1976 Type 1 row",
+      "query_url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA017690%22&limit=1",
+      "finding": "meta.results.total = 1. NDA017690 (holder J AND J CONSUMER INC) publishes ORIG-1/AP/19761228/STANDARD/TYPE 5 with the IDENTICAL product string as the Type 1 row NDA017694 (IMODIUM, LOPERAMIDE HYDROCHLORIDE 2MG, CAPSULE, ORAL, Discontinued) - two applications, one product, one date. FDA's 2016 labeling letter for SUPPL-5 is filed as '017690Orig1s005,017694Orig1s052ltr.pdf', covering both applications, which confirms they are a linked pair. Loperamide therefore counts once, via the Type 1 row.",
+      "verbatim_excerpt": "{ \"submission_type\": \"ORIG\", \"submission_number\": \"1\", \"submission_status\": \"AP\", \"submission_status_date\": \"19761228\", \"review_priority\": \"STANDARD\", \"submission_class_code\": \"TYPE 5\", \"submission_class_code_description\": \"Type 5 - New Formulation or New Manufacturer\" } ... \"application_number\": \"NDA017690\", \"sponsor_name\": \"J AND J CONSUMER INC\" ... product IMODIUM (LOPERAMIDE HYDROCHLORIDE 2MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**, CAPSULE, ORAL, Discontinued) ... application_docs url http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/017690Orig1s005,017694Orig1s052ltr.pdf",
+      "project_row_ids": "PRE1980-1976-21 (NDA 017694)",
+      "project_effect": "adjudicates the 1976 loperamide first-appearance exception as a documented duplicate-product condition"
+    }
+  ]
+}

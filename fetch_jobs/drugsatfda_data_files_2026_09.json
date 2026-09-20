@@ -33,10 +33,14 @@
         "filter": { "type": "applno_in_collected", "column": "ApplNo" }
       },
       {
+        "name": "Applications.txt",
+        "out": "Applications_all_types.txt"
+      },
+      {
         "name": "SubmissionClass_Lookup.txt",
         "out": "SubmissionClass_Lookup.txt"
       }
     ],
-    "_why": "Complete Drugs@FDA database (the website DB, updated each morning) narrowed to the 1965-1979 window: every submission with a 1965-1979 status date, plus the applications/products/docs/lookup rows joined to those application numbers. This is the official FDA surface that covers applications the openFDA ORIG/AP extracts miss (Seldane-class whole-application gaps are absent from openFDA drugsfda AND label endpoints AND render empty on the Drugs@FDA website for withdrawn apps - but the site DB itself is the most complete public FDA application inventory). Purpose: (1) cross-validate all 170 committed 1977-1979 ORIG/AP payload rows at submission level; (2) enumerate any 1977-1979 original approvals present in the full DB but absent from the payloads - the payload-invisible gap class that holds the missing 1977 x8 / 1979 x1 NMEs; (3) publish submission-class lookups and approval-letter URLs for every pre-1980 application. Values verbatim; filters are recorded row whitelists only."
+    "_why": "Complete Drugs@FDA database (the website DB, updated each morning) narrowed to the 1965-1979 window: every submission with a 1965-1979 status date, plus the applications/products/docs/lookup rows joined to those application numbers. This is the official FDA surface that covers applications the openFDA ORIG/AP extracts miss (Seldane-class whole-application gaps are absent from openFDA drugsfda AND label endpoints AND render empty on the Drugs@FDA website for withdrawn apps - but the site DB itself is the most complete public FDA application inventory). Purpose: (1) cross-validate all 170 committed 1977-1979 ORIG/AP payload rows at submission level; (2) enumerate any 1977-1979 original approvals present in the full DB but absent from the payloads - the payload-invisible gap class that holds the missing 1977 x8 / 1979 x1 NMEs; (3) publish submission-class lookups and approval-letter URLs for every pre-1980 application. Values verbatim; filters are recorded row whitelists only. Applications_all_types.txt is the UNFILTERED ApplNo/ApplType map (all applications): the windowed Applications file is filtered to the application numbers the payloads already carry, so it cannot classify an application the payloads omit - without the full map the cross-check cannot tell an omitted NDA from an omitted ANDA, and 308 1965-1976 ORIG/AP rows stay KIND_UNRESOLVED."
   }
 ]

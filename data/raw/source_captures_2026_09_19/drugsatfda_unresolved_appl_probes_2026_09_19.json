@@ -1,0 +1,58 @@
+{
+  "capture_set": "drugsatfda_unresolved_appl_probes_2026_09_19",
+  "taken_utc": "2026-09-19",
+  "taken_by": "sandbox fetch tool (agent), session arena/01a0bba6-druganalysis",
+  "purpose": "Spot-check the KIND_UNRESOLVED class found by the v21 full-database cross-check: ORIG/AP rows in the official Drugs@FDA Submissions file whose ApplNo is absent from the payload-derived window extract, so no NDA/ANDA/BLA type can be asserted. Three of the six NME-comparable-class candidates were probed on the Drugs@FDA website; one known-good application was fetched in the same session as a rendering control.",
+  "captures": [
+    {
+      "capture_id": "DAF-U01",
+      "system": "Drugs@FDA (accessdata.fda.gov)",
+      "subject": "ApplNo 014262 - Drugs@FDA overview page",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=014262",
+      "full_db_row": "ORIG / AP / 1966-05-20 / SubmissionClassCodeID 8 = TYPE 1/4 / STANDARD",
+      "finding": "The page renders the Drugs@FDA shell only: no 'New Drug Application' header, no company line, no products table, no approval history. The application number does not resolve to a published application.",
+      "verbatim_excerpt": "1. Home 2. Drug Databases 3. Drugs@FDA | Home | Previous Page | Back to Top",
+      "project_effect": "Confirms the invisibility class: the row exists in the official Submissions file but publishes nothing on the website and is absent from the openFDA payloads. Recorded as a review candidate in data/pre1980_full_db_crosscheck_1965_1976.csv, never added as an approval."
+    },
+    {
+      "capture_id": "DAF-U02",
+      "system": "Drugs@FDA (accessdata.fda.gov)",
+      "subject": "ApplNo 017383 - Drugs@FDA overview page",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=017383",
+      "full_db_row": "ORIG / AP / 1973-02-20 / SubmissionClassCodeID 7 = TYPE 1 / PRIORITY",
+      "finding": "Empty application shell, identical pattern to DAF-U01: no header, no company, no products, no approval history.",
+      "verbatim_excerpt": "1. Home 2. Drug Databases 3. Drugs@FDA | Home | Previous Page | Back to Top",
+      "project_effect": "A TYPE 1 / PRIORITY original approval dated 1973-02-20 exists in the official database and is invisible on both FDA query surfaces. This is the strongest single candidate for part of 1973's -3 gap; it is named, not added."
+    },
+    {
+      "capture_id": "DAF-U03",
+      "system": "Drugs@FDA (accessdata.fda.gov)",
+      "subject": "ApplNo 016486 - Drugs@FDA overview page",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=016486",
+      "full_db_row": "ORIG / AP / 1969-01-24 / SubmissionClassCodeID 8 = TYPE 1/4 / STANDARD",
+      "finding": "Empty application shell, identical pattern.",
+      "verbatim_excerpt": "1. Home 2. Drug Databases 3. Drugs@FDA | Home | Previous Page | Back to Top",
+      "project_effect": "Named as a 1969 candidate; note 1969 is the one year where the project EXCEEDS the official count (+3), so this row does not close a gap - it is recorded for completeness."
+    },
+    {
+      "capture_id": "DAF-U04",
+      "system": "Drugs@FDA (accessdata.fda.gov)",
+      "subject": "CONTROL: NDA050495 (AMIKIN) - Drugs@FDA overview page, same session",
+      "query_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=050495",
+      "full_db_row": "n/a - control application, present in the payloads and the window extract",
+      "finding": "Renders in full, proving the empty shells above are not a fetch artefact: header, company and a two-row products table are present, while no approval-history section is published.",
+      "verbatim_excerpt": "New Drug Application (NDA):050495 | Company:APOTHECON | Products on NDA 050495 | AMIKIN | AMIKACIN SULFATE | EQ 50MG BASE/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons** | INJECTABLE;INJECTION | Discontinued | None | Yes | No | AMIKIN | AMIKACIN SULFATE | EQ 250MG BASE/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons** | INJECTABLE;INJECTION | Discontinued | None | Yes | No | Showing 1 to 2 of 2 entries",
+      "project_effect": "Control for DAF-U01..U03: the fetch tool renders Drugs@FDA tables faithfully in this session, so an empty shell means the application publishes nothing."
+    }
+  ],
+  "candidate_rows_named": [
+    {"year": 1966, "appl_no": "014262", "date": "1966-05-20", "class": "TYPE 1/4", "priority": "STANDARD", "probe": "DAF-U01"},
+    {"year": 1969, "appl_no": "016486", "date": "1969-01-24", "class": "TYPE 1/4", "priority": "STANDARD", "probe": "DAF-U03"},
+    {"year": 1970, "appl_no": "016771", "date": "1970-11-13", "class": "TYPE 1/4", "priority": "STANDARD", "probe": "not probed this session"},
+    {"year": 1973, "appl_no": "017383", "date": "1973-02-20", "class": "TYPE 1", "priority": "PRIORITY", "probe": "DAF-U02"},
+    {"year": 1973, "appl_no": "017024", "date": "1973-07-09", "class": "TYPE 1", "priority": "STANDARD", "probe": "not probed this session"},
+    {"year": 1973, "appl_no": "017267", "date": "1973-10-02", "class": "TYPE 1", "priority": "PRIORITY", "probe": "not probed this session"},
+    {"year": 1976, "appl_no": "017834", "date": "1976-02-23", "class": "TYPE 2", "priority": "PRIORITY", "probe": "not probed this session"}
+  ],
+  "limits": "3 of 7 candidates probed; the remaining 4 and the other 301 KIND_UNRESOLVED rows are unprobed. Application types (NDA vs ANDA vs BLA) are not assertable until fetch_jobs/drugsatfda_data_files_2026_09.json delivers Applications_all_types.txt."
+}

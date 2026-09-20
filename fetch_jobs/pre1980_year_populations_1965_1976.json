@@ -1,0 +1,97 @@
+[
+ {
+  "type": "generic",
+  "id": "pre1980_year_populations_1965_1976",
+  "skip_existing": true,
+  "timeout": 90,
+  "retries": 6,
+  "sleep": 2.0,
+  "items": [
+   {
+    "id": "population_1965",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19650101+TO+19651231%5D&limit=1",
+    "out": "population_1965.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1966",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19660101+TO+19661231%5D&limit=1",
+    "out": "population_1966.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1967",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19670101+TO+19671231%5D&limit=1",
+    "out": "population_1967.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1968",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19680101+TO+19681231%5D&limit=1",
+    "out": "population_1968.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1969",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19690101+TO+19691231%5D&limit=1",
+    "out": "population_1969.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1970",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19700101+TO+19701231%5D&limit=1",
+    "out": "population_1970.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1971",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19710101+TO+19711231%5D&limit=1",
+    "out": "population_1971.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1972",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19720101+TO+19721231%5D&limit=1",
+    "out": "population_1972.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1973",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19730101+TO+19731231%5D&limit=1",
+    "out": "population_1973.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1974",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19740101+TO+19741231%5D&limit=1",
+    "out": "population_1974.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1975",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19750101+TO+19751231%5D&limit=1",
+    "out": "population_1975.json",
+    "decision_date": "",
+    "application_number": ""
+   },
+   {
+    "id": "population_1976",
+    "url": "https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22+AND+submissions.submission_status_date:%5B19760101+TO+19761231%5D&limit=1",
+    "out": "population_1976.json",
+    "decision_date": "",
+    "application_number": ""
+   }
+  ],
+  "_why": "v21 pre-1980 backfill: live re-query of each 1965-1976 ORIG/AP year population (meta.results.total via limit=1; count= over nested submission fields returns NOT_FOUND). Confirms the committed payload populations are still what openFDA reports, the same check the v19 session ran for 1977/1978/1979 (662/756/746)."
+ }
+]
