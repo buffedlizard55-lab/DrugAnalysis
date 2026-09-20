@@ -677,6 +677,64 @@ function drawCrlRateHeadline(rows) {
     `<p class="section-desc" style="margin-top:10px">${escapeHtml(all.coverage_note)}</p>`;
 }
 
+function drawYearVerification(rows) {
+  const el = document.getElementById('year-verification-table');
+  if (!el) return;
+  if (!rows || !rows.length) {
+    el.innerHTML = '<p class="empty-note">Year verification crosswalk not loaded — <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/year_verification_crosswalk_v24.csv" target="_blank">view raw CSV</a></p>';
+    return;
+  }
+
+  // Summary stats
+  const years2000_2026 = rows.filter(r => parseInt(r.year) >= 2000 && parseInt(r.year) <= 2026);
+  const totalOF = years2000_2026.reduce((s, r) => s + parseInt(r.openfda_orig_ap_count || 0), 0);
+  const totalOur = years2000_2026.reduce((s, r) => s + parseInt(r.our_coverage_count || 0), 0);
+  const perfectMatch = years2000_2026.filter(r => parseInt(r.our_coverage_count) === parseInt(r.openfda_orig_ap_count)).length;
+  const totalType1 = years2000_2026.reduce((s, r) => s + parseInt(r.type_1_nme || 0), 0);
+
+  let html = `<div class="stats">
+    <div class="stat"><span class="stat-num">${totalOF.toLocaleString()}</span><span class="stat-label">openFDA ORIG AP Decisions (2000-2026)</span></div>
+    <div class="stat"><span class="stat-num">${totalOur.toLocaleString()}</span><span class="stat-label">Our Verified Coverage</span></div>
+    <div class="stat"><span class="stat-num">${perfectMatch}/${years2000_2026.length}</span><span class="stat-label">Years with Exact Match</span></div>
+    <div class="stat"><span class="stat-num">${totalType1.toLocaleString()}</span><span class="stat-label">Type 1 NMEs (2000-2026)</span></div>
+  </div>
+  <p class="section-desc">Year-by-year crosswalk: our verified data (master + original non-NME decisions) compared against the openFDA Drugs@FDA API raw ORIG/AP query. Every entry cites its source. Negative gap = we have MORE entries (includes FDA year-table entries not in openFDA's query window). Data source: <a href="https://api.fda.gov/drug/drugsfda.json" target="_blank">openFDA Drugs@FDA API</a>.</p>
+  <table class="data-table" style="min-width:auto"><thead><tr>
+    <th>Year</th><th class="num">openFDA Count</th><th class="num">Our Coverage</th><th class="num">Gap</th>
+    <th class="num">Type 1 NME</th><th class="num">Type 3</th><th class="num">Type 5</th><th class="num">Type 6</th>
+    <th class="num">Other</th><th>Status</th>
+  </tr></thead><tbody>`;
+
+  for (const r of rows) {
+    const yr = parseInt(r.year);
+    if (yr < 2000 || yr > 2026) continue;
+    const of = parseInt(r.openfda_orig_ap_count || 0);
+    const our = parseInt(r.our_coverage_count || 0);
+    const gap = our - of;
+    const t1 = parseInt(r.type_1_nme || 0);
+    const t3 = parseInt(r.type_3 || 0);
+    const t5 = parseInt(r.type_5 || 0);
+    const t6 = parseInt(r.type_6 || 0);
+    const other = of - t1 - parseInt(r.type_1_4||0) - parseInt(r.type_2||0) - t3 - parseInt(r.type_4||0) - t5 - t6 - parseInt(r.type_7||0) - parseInt(r.type_8||0) - parseInt(r.type_9||0) - parseInt(r.type_10||0) - parseInt(r.efficacy||0) - parseInt(r.unknown||0);
+    const status = gap === 0 ? '<span class="badge verified">✓ Exact</span>' : gap < 0 ? '<span class="badge caveat">We exceed</span>' : '<span class="badge info">Gap</span>';
+    html += `<tr>
+      <td><strong>${yr}</strong></td>
+      <td class="num">${of}</td>
+      <td class="num">${our}</td>
+      <td class="num" style="color:${gap===0?'var(--green)':gap<0?'var(--muted)':'var(--red)'}">${gap > 0 ? '+' : ''}${gap}</td>
+      <td class="num">${t1}</td>
+      <td class="num">${t3}</td>
+      <td class="num">${t5}</td>
+      <td class="num">${t6}</td>
+      <td class="num">${Math.max(0, other)}</td>
+      <td>${status}</td>
+    </tr>`;
+  }
+  html += '</tbody></table>';
+  html += `<p style="font-size:.8rem; color:var(--muted); margin-top:8px">Source: openFDA Drugs@FDA API (api.fda.gov/drug/drugsfda.json). "Gap" is calculated as our_coverage − openFDA_count. Negative values mean our dataset includes additional entries from FDA year tables (NME Compilation) not captured by the openFDA query. All entries verified line-by-line with official source links.</p>`;
+  el.innerHTML = html;
+}
+
 function drawOverview() {
   const core = overview.core, master = overview.master, scores = overview.scores;
   if (!core.length) return;
@@ -1154,8 +1212,9 @@ Promise.all([
   loadCSV('data/pre1980_1977_1979_application_docs.csv').then(x => x.records).catch(() => []),
   loadCSV('data/pre1980_1977_1979_year_analysis.csv').then(x => x.records).catch(() => []),
   loadCSV('data/crl_year_base_rates.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/crl_application_match.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries, pre1985Detailed, ctgovExpanded, pre1980Decisions, pre1980Audit, pre1980Era, v19Captures, pre1980Originals, pre1980FullDb, v23Originals, v23Submissions, v23Docs, v23YearAnalysis, crlRates, crlMatch]) => {
+  loadCSV('data/crl_application_match.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/year_verification_crosswalk_v24.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries, pre1985Detailed, ctgovExpanded, pre1980Decisions, pre1980Audit, pre1980Era, v19Captures, pre1980Originals, pre1980FullDb, v23Originals, v23Submissions, v23Docs, v23YearAnalysis, crlRates, crlMatch, yearXwalk]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
@@ -1170,6 +1229,7 @@ Promise.all([
   overview.pre1980Era = pre1980Era; overview.v19Captures = v19Captures;
   overview.v23Originals = v23Originals; overview.v23YearAnalysis = v23YearAnalysis;
   overview.crlRates = crlRates; overview.crlMatch = crlMatch;
+  overview.yearXwalk = yearXwalk || [];
 
   /* Defensive rendering: one failing panel must never blank the whole site
      again (a missing function here silently killed every table after it
@@ -1181,6 +1241,7 @@ Promise.all([
   safe('drawOrigCoverage', () => drawOrigCoverage(orig || []));
   safe('drawOverview', () => drawOverview());
   safe('drawCrlRateHeadline', () => drawCrlRateHeadline(crlRates || []));
+  safe('drawYearVerification', () => drawYearVerification(yearXwalk || []));
   safe('initEngine', () => initEngine());
   if (bootErrors.length) {
     document.querySelector('main').insertAdjacentHTML('afterbegin',

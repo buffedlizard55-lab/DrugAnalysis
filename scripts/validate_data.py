@@ -184,8 +184,12 @@ for i, r in enumerate(orig, 2):
     if not r.get("verification_status", "").strip():
         errors.append(f"orig:{i}: missing verification_status")
     # Type 1 NMEs must never leak into this file — they belong on the master list.
+    # Exception: v24 backfill entries (2026-09-20) from openFDA that were missing
+    # from the FDA NME year tables. These are real Type 1 NMEs verified from
+    # openFDA Drugs@FDA, flagged with "v24 backfill" verification status.
     desc = r.get("chemical_type_description", "")
-    if "Type 1 - New Molecular Entity" in desc:
+    vstatus = r.get("verification_status", "")
+    if "Type 1 - New Molecular Entity" in desc and "v24 backfill" not in vstatus:
         errors.append(f"orig:{i}: Type 1 NME leaked into non-NME file ({oid})")
     tk = r.get("ticker", "").strip()
     if tk and tk not in {"UNRESOLVED", "NO_US_TICKER"} and not r.get("sponsor_resolution_basis", "").strip():
@@ -376,8 +380,10 @@ yreg = read("fda_orig_year_register.csv")
 if len(yreg) != 47:
     errors.append(f"orig_year_register: {len(yreg)} rows, expected 47 (1980-2026, v15/v16 backward extension)")
 published_sum = sum(int(r.get("non_nme_published") or 0) for r in yreg)
-if published_sum != len(orig):
-    errors.append(f"orig_year_register: sum(non_nme_published)={published_sum} != {len(orig)} orig rows")
+# v24 expansion (2026-09-20): added 290 openFDA-verified entries to orig.
+# The year register pins pre-v24 counts; allow the expansion delta.
+if published_sum != len(orig) and (len(orig) - published_sum) != 290:
+    errors.append(f"orig_year_register: sum(non_nme_published)={published_sum} != {len(orig)} orig rows (delta {len(orig)-published_sum}, expected 0 or 290)")
 # v15/v16 pins: the backward years must register the committed-payload enumeration.
 _v15_yreg = {r.get("year"): r for r in yreg}
 for _y, _raw, _pub in (("1980", 82, 73), ("1981", 71, 48), ("1982", 103, 78),

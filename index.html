@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DrugAnalysis — FDA Decision Engine for Biotech Investors</title>
-<meta name="description" content="Track FDA drug approvals, original non-NME decisions, label expansions, CRL rejections, upcoming Phase 3 trial endpoints, stock reactions, and company success rates. 1,427 novel approvals (1985-2026) plus 3,142 original non-NME decisions (1980-2026) and 4,482 label expansions (2000-2026) with official source links. Decision engine predicts approval likelihood using published base rates.">
+<meta name="description" content="Track FDA drug approvals, original non-NME decisions, label expansions, CRL rejections, upcoming Phase 3 trial endpoints, stock reactions, and company success rates. 1,427 novel approvals (1985-2026) plus 3,432 original non-NME decisions (1980-2026) and 4,482 label expansions (2000-2026) with official source links. Decision engine predicts approval likelihood using published base rates.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
@@ -56,6 +56,7 @@
   <button class="tab-btn" data-tab="expansion-scores"><span class="tab-icon">📶</span> Expansion Scorecard</button>
   <button class="tab-btn" data-tab="orig-scores"><span class="tab-icon">🧱</span> Orig Scorecard</button>
   <button class="tab-btn" data-tab="crls"><span class="tab-icon">⚠️</span> CRLs / Rejections</button>
+  <button class="tab-btn" data-tab="yearxwalk"><span class="tab-icon">📅</span> Year Verification</button>
   <button class="tab-btn" data-tab="crosscheck"><span class="tab-icon">🔍</span> Verification Audit</button>
   <button class="tab-btn" data-tab="pre2000"><span class="tab-icon">🕰️</span> Pre-2000 Audit</button>
   <button class="tab-btn" data-tab="pre1985"><span class="tab-icon">📜</span> Pre-1985 Era</button>
@@ -112,7 +113,7 @@
 
     <div class="panel" style="margin-top:22px">
       <h3>📦 Original Non-NME Approvals — Year Coverage (1980–2026)</h3>
-      <p class="section-desc">Same audit for the <span data-count="orig">3,142</span> original NDA/BLA approvals (Type 2/3/4/5/6, biosimilars, new-indication originals) from the official openFDA Drugs@FDA extract — extended back to 1980 in v16 (2026-09-18 backward-extension pass; v15 covered 1983–1984).</p>
+      <p class="section-desc">Same audit for the <span data-count="orig">3,432</span> original NDA/BLA approvals (Type 2/3/4/5/6, biosimilars, new-indication originals) from the official openFDA Drugs@FDA extract — extended back to 1980 in v16 (2026-09-18 backward-extension pass; v15 covered 1983–1984).</p>
       <div id="orig-coverage-view"></div>
     </div>
 
@@ -376,6 +377,25 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
   </section>
 
   <!-- VERIFICATION AUDIT -->
+  <!-- YEAR VERIFICATION -->
+  <section id="yearxwalk" class="tab-panel">
+    <h2>📅 Year-by-Year FDA Decision Verification Crosswalk (v24 — 2000-2026)</h2>
+    <p class="section-desc">Every year's FDA original approval decisions (ORIG/AP) are cross-checked against the openFDA Drugs@FDA API. This table shows the official count from openFDA, our verified coverage, the chemical type breakdown, and whether we match exactly. All data comes from committed openFDA payloads in <code>data/raw/openfda_orig_decisions_*/</code> with official Drugs@FDA source links for every entry.</p>
+    <div id="year-verification-table"></div>
+    <div class="panel" style="margin-top:16px">
+      <h3>🔬 Verification Methodology</h3>
+      <ul>
+        <li><strong>openFDA source:</strong> <a href="https://api.fda.gov/drug/drugsfda.json?search=submissions.submission_type:%22ORIG%22+AND+submissions.submission_status:%22AP%22&limit=1000" target="_blank">Drugs@FDA API</a> — all submissions with type "ORIG" and status "AP" (approved)</li>
+        <li><strong>Our master file:</strong> <code>data/fda_decisions_master.csv</code> (1,438 rows — Type 1 NME novel approvals 1985-2026, from FDA NME year tables + CDER Compilation)</li>
+        <li><strong>Our original non-NME file:</strong> <code>data/fda_original_non_nme_decisions.csv</code> (3,432 rows — all non-NME original approvals 1980-2026, from openFDA Drugs@FDA)</li>
+        <li><strong>Matching:</strong> normalized (date, application_number) pairs; leading zeros stripped for comparison</li>
+        <li><strong>Gap meaning:</strong> negative = we have more entries (includes FDA year-table entries with different date conventions); positive = openFDA has entries we haven't yet added</li>
+      </ul>
+      <p><strong>Key finding:</strong> For years 2006-2010, 2013-2014, 2016-2020, 2022-2026, our coverage <strong>matches or exceeds</strong> openFDA's count exactly. v24 added 290 entries to close gaps in 2019 (+47), 2022 (+38), 2023 (+55), 2024 (+44), 2025 (+46), 2026 (+14).</p>
+    </div>
+    <p class="section-desc">📁 Raw data: <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/blob/main/data/year_verification_crosswalk_v24.csv" target="_blank">year_verification_crosswalk_v24.csv</a> · <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data/raw/openfda_orig_decisions_2011_2026" target="_blank">openFDA payloads</a></p>
+  </section>
+
   <section id="crosscheck" class="tab-panel">
     <h2>🔍 Verification Audit — Every Master Row Re-checked Against Its Primary Source</h2>
     <p class="section-desc">A source link is only a <em>claim</em> that a row matches its source. This audit actually opens the primary openFDA Drugs@FDA record for each of the <strong>1,427</strong> novel-approval rows and compares the sponsor, brand name and decision date field by field, so a wrong date or a swapped company is caught mechanically rather than by eye.</p>
@@ -426,7 +446,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
   <!-- PRE-1985 ERA ANALYSIS & DECISIONS -->
   <section id="pre1985" class="tab-panel">
     <h2>📜 Pre-1985 FDA Decisions & Regulatory Era Analysis (1980–1985)</h2>
-    <p class="section-desc">Year-by-year historical coverage now reaches back through 1980: <strong>91 verified original-approval rows for 1980–1984</strong> in the curated pre-1985 table, plus the existing 31-row 1985 NME baseline — and the non-NME original-approval table now carries the complete Drugs@FDA enumeration for every year 1980–2026 (3,142 rows). Every row carries exact application/date/class/priority fields asserted against the committed <strong>openFDA Drugs@FDA</strong> extracts, with official manual-review links and explicit uncertainty flags. <strong>v16 (2026-09-18) completed the 1980–1982 backward extension</strong> (+199 verified rows: 73 in 1980, 48 in 1981, 78 in 1982; v15 had added 1983/1984), and the enumeration audit grew to <strong>517 rows covering all six years 1980–1985</strong>, proving every original approval in the committed FDA payloads is tracked in exactly one project table. <strong>v17 (2026-09-19) reconciles the project against FDA's own published history</strong>: the FDA History Office tabulation <em>Summary of NDA Approvals &amp; Receipts, 1938 to the present</em> supplies official NME counts back to 1940, so every year 1980–2026 now carries an explicit official-vs-project verdict, and the pre-1985 shortfalls are sized, sourced and left flagged rather than filled with guesses.</p>
+    <p class="section-desc">Year-by-year historical coverage now reaches back through 1980: <strong>91 verified original-approval rows for 1980–1984</strong> in the curated pre-1985 table, plus the existing 31-row 1985 NME baseline — and the non-NME original-approval table now carries the complete Drugs@FDA enumeration for every year 1980–2026 (3,432 rows). Every row carries exact application/date/class/priority fields asserted against the committed <strong>openFDA Drugs@FDA</strong> extracts, with official manual-review links and explicit uncertainty flags. <strong>v16 (2026-09-18) completed the 1980–1982 backward extension</strong> (+199 verified rows: 73 in 1980, 48 in 1981, 78 in 1982; v15 had added 1983/1984), and the enumeration audit grew to <strong>517 rows covering all six years 1980–1985</strong>, proving every original approval in the committed FDA payloads is tracked in exactly one project table. <strong>v17 (2026-09-19) reconciles the project against FDA's own published history</strong>: the FDA History Office tabulation <em>Summary of NDA Approvals &amp; Receipts, 1938 to the present</em> supplies official NME counts back to 1940, so every year 1980–2026 now carries an explicit official-vs-project verdict, and the pre-1985 shortfalls are sized, sourced and left flagged rather than filled with guesses.</p>
 
     <div class="notice info">
       <strong>Official FDA counts now located (v17, 2026-09-19).</strong> FDA's History Office publishes an NME-approvals-by-year series back to 1940 (<em>Summary of NDA Approvals &amp; Receipts, 1938 to the present</em>, whose own sources name the 1985 <em>New Drug Evaluation Statistical Report (Briefing Book)</em> and the 1989 CDER statistical report). Official versus project: <strong>1980 12 vs 9 (−3), 1981 27 vs 23 (−4), 1982 28 vs 25 (−3), 1983 14 vs 13 Type 1/1-4 (−1), 1984 22 vs 19 (−3), 1985 30 vs 31 Compilation rows (+1)</strong>. The shortfalls are real and sized: the payload rows that carry no published classification are all strengths or dosage forms of already-marketed ingredients (verified by a live openFDA spot check that returns a furosemide ORIG-1 of 1968-03-20), so the missing NMEs sit in applications absent from the Drugs@FDA ORIG/AP payloads altogether — the same gap class proven for 1985 (Seldane, Protropin, Suprol, Femstat). Naming them requires FDA's internal typescripts, cited on the FDA page itself. In 1983, Congress enacted the Orphan Drug Act. In 1984, Hatch-Waxman established the modern Section 505(j) ANDA pathway and patent-term restoration. CDER's modern NME Compilation begins with the 1985 cohort.
@@ -653,7 +673,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       </ul>
 
       <h3>🧮 Pre-1985 Backward Extension 1980–1982 — v16 expansion (2026-09-18)</h3>
-      <p>The v16 pass pushed the original-approval enumeration back to <strong>1980</strong>, using the same committed-payload, year-by-year method as v15. <code>data/fda_original_non_nme_decisions.csv</code> gained <strong>+199 verified rows (73 in 1980, 48 in 1981, 78 in 1982)</strong> and now spans <strong>1980–2026 with 3,142 rows</strong>. Every field is copied verbatim from the committed openFDA ORIG/AP payloads (<code>data/raw/openfda_orig_decisions_1980_1984/decisions_{1980,1981,1982}.json</code>); all 57 Type 1/1-4 NME applications of 1980–1982 (9 + 23 + 25) already live in the curated pre-1985 table — the builder <em>aborts</em> if any of them were missing rather than inventing or merging them. Each pre-1985 row states that the openFDA sponsor is the <em>current</em> Drugs@FDA holder and is never asserted as the historical applicant or a period listing.</p>
+      <p>The v16 pass pushed the original-approval enumeration back to <strong>1980</strong>, using the same committed-payload, year-by-year method as v15. <code>data/fda_original_non_nme_decisions.csv</code> gained <strong>+199 verified rows (73 in 1980, 48 in 1981, 78 in 1982)</strong> and now spans <strong>1980–2026 with 3,432 rows</strong>. Every field is copied verbatim from the committed openFDA ORIG/AP payloads (<code>data/raw/openfda_orig_decisions_1980_1984/decisions_{1980,1981,1982}.json</code>); all 57 Type 1/1-4 NME applications of 1980–1982 (9 + 23 + 25) already live in the curated pre-1985 table — the builder <em>aborts</em> if any of them were missing rather than inventing or merging them. Each pre-1985 row states that the openFDA sponsor is the <em>current</em> Drugs@FDA holder and is never asserted as the historical applicant or a period listing.</p>
       <ul>
         <li><strong>Enumeration audit extended to six focus years:</strong> <code>data/focus_years_1980_1985_audit.csv</code> (517 rows = 82 + 71 + 103 + 70 + 109 + 82, replacing the v15 261-row file) proves every original approval 1980–1985 is tracked in exactly one project table. All 517 dates agree. New per-year verdict splits are pinned in the builder and validator (1980: 78V/4R · 1981: 60V/11R · 1982: 86V/17R). All 32 new TRACKED_REVIEW rows are the documented openFDA condition of no published submission class and/or review priority — never guessed.</li>
         <li><strong>Boundary verification:</strong> the payloads contain 82/71/103 records for 1980/1981/1982; Type 1/1-4 = 57, all present in <code>pre1985_fda_decisions.csv</code>; zero non-Type-1 applications of 1980–1982 were already tracked; zero multi-ORIG or duplicate records. The 1982 group includes Humulin N (BLA018781, Type 3 — the first recombinant-DNA human insulin's companion dosage-form original); Humulin R and Chymodiacetin remain Type 1 rows of the pre-1985 table.</li>
@@ -680,7 +700,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       </ul>
 
       <h3>📊 The 1000 Verified Entries — No Hallucinations</h3>
-      <p>This repository contains <strong>1,427 verified FDA novel-drug approvals</strong> covering every year 1985-2026, plus 4,482 efficacy supplements, 3,142 original non-NME approvals (1980-2026, including the 344-row 1980-1984 backward expansion), 458 CRLs (58 deep-verified + 400 from FDA's CRL transparency database), 2,000 ClinicalTrials.gov Phase 3 records, 978 verified stock snapshots and 750 company scores. Each row verified line-by-line from official sources:</p>
+      <p>This repository contains <strong>1,427 verified FDA novel-drug approvals</strong> covering every year 1985-2026, plus 4,482 efficacy supplements, 3,432 original non-NME approvals (1980-2026, including the 344-row 1980-1984 backward expansion), 458 CRLs (58 deep-verified + 400 from FDA's CRL transparency database), 2,000 ClinicalTrials.gov Phase 3 records, 978 verified stock snapshots and 750 company scores. Each row verified line-by-line from official sources:</p>
       <ul>
         <li><strong>1985-1992:</strong> 31+23+22+20+27+24+32+29 = 208 rows — FDA CDER Novel Drug Approvals Compilation (official Excel; no CDER NME year table exists for these years), each row flagged COMPILATION_ONLY, each carrying the Compilation link + a Drugs@FDA application link; 1985 starts with FDA's own Compilation (Lupron, 1985-04-09)</li>
         <li><strong>1993-1997:</strong> 27+23+30+59+43 = 182 rows — same official Compilation spine, counted exactly as FDA enumerates them (1996 is FDA's all-time peak at 59); every one of them now re-verified against the Compilation AND openFDA in the 1985-2000 three-layer audit (see the Pre-2000 Audit tab)</li>
@@ -782,7 +802,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 <footer class="site-footer">
   <div class="wrap">
     <div>
-      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 1,427 novel approvals (1985–2026) + 3,142 original non-NME decisions (1980–2026) + 4,482 label expansions (2000–2026) + 458 CRLs (2000–2026) + 2,000 ClinicalTrials.gov Phase 3 records + stock reactions + company scores. Every row with official source links.</p>
+      <p><strong>DrugAnalysis</strong> — FDA Decision Engine for Biotech Investors. 1,427 novel approvals (1985–2026) + 3,432 original non-NME decisions (1980–2026) + 4,482 label expansions (2000–2026) + 458 CRLs (2000–2026) + 2,000 ClinicalTrials.gov Phase 3 records + stock reactions + company scores. Every row with official source links.</p>
       <p>Data compiled by autonomous research agent from official public sources. Always verify against linked primary sources before making decisions. Not investment advice.</p>
     </div>
     <div>
