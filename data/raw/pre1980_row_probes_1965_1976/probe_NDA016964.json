@@ -1,0 +1,882 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "70",
+          "submission_status": "AP",
+          "submission_status_date": "20120130",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "519",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/016964s070,018692s015,022046s004ltr.pdf",
+              "date": "20120201",
+              "type": "Letter"
+            },
+            {
+              "id": "10943",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2012/016964s070lbl.pdf",
+              "date": "20120130",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "48",
+          "submission_status": "AP",
+          "submission_status_date": "19990311",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "19990311",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19870127",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "19990311",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "19910206",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19850819",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "50",
+          "submission_status": "AP",
+          "submission_status_date": "19970409",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19830713",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "19880427",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19831201",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "19870915",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19791206",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19831121",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "77",
+          "submission_status": "AP",
+          "submission_status_date": "20181102",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "56259",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/016964s077lbl.pdf",
+              "date": "20181105",
+              "type": "Label"
+            },
+            {
+              "id": "56320",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/016964Orig1s077Ltr.pdf",
+              "date": "20181106",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19790404",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19830121",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "69",
+          "submission_status": "AP",
+          "submission_status_date": "20100219",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "518",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2010/016964s069ltr.pdf",
+              "date": "20100225",
+              "type": "Letter"
+            },
+            {
+              "id": "10942",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2010/016964s069lbl.pdf",
+              "date": "20100225",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19761130",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19810821",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19800821",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19760607",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19820127",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "73",
+          "submission_status": "AP",
+          "submission_status_date": "20141215",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19780615",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "19760113",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "71",
+          "submission_status": "AP",
+          "submission_status_date": "20130730",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "19930125",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "61",
+          "submission_status": "AP",
+          "submission_status_date": "20051030",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10941",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2005/016964s061lbl.pdf",
+              "date": "20051101",
+              "type": "Label"
+            },
+            {
+              "id": "13062",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/016964s061ltr.pdf",
+              "date": "20051101",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19870127",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "53",
+          "submission_status": "AP",
+          "submission_status_date": "20010131",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "45",
+          "submission_status": "AP",
+          "submission_status_date": "19910808",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19850824",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "51",
+          "submission_status": "AP",
+          "submission_status_date": "19990311",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19830713",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "19910206",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19850911",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "19870713",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19801103",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19840302",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19790618",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "19850520",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19760707",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19811228",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19721003",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19800821",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19760610",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "82",
+          "submission_status": "AP",
+          "submission_status_date": "20200821",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "64375",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2020/016964s082lbl.pdf",
+              "date": "20200824",
+              "type": "Label"
+            },
+            {
+              "id": "64445",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/016964Orig1s082ltr.pdf",
+              "date": "20200828",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19810821",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19790404",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "19760610",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "72",
+          "submission_status": "AP",
+          "submission_status_date": "20140919",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19780615",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA016964",
+      "sponsor_name": "HOSPIRA",
+      "openfda": {
+        "application_number": [
+          "NDA016964"
+        ],
+        "brand_name": [
+          "MARCAINE WITH EPINEPHRINE",
+          "MARCAINE"
+        ],
+        "generic_name": [
+          "BUPIVACAINE HYDROCHLORIDE AND EPINEPHRINE",
+          "BUPIVACAINE HYDROCHLORIDE",
+          "BUPIVACAINE HYDROCHLORIDE AND EPINEPHRINE BITARTRATE"
+        ],
+        "manufacturer_name": [
+          "Hospira, Inc."
+        ],
+        "product_ndc": [
+          "0409-1541",
+          "0409-5738",
+          "0409-3812",
+          "0409-8126",
+          "0409-4208",
+          "0409-6581",
+          "0409-0525",
+          "0409-1559",
+          "0409-1560",
+          "0409-1582",
+          "0409-1587",
+          "0409-1610",
+          "0409-1746",
+          "0409-1749",
+          "0409-1752",
+          "0409-1755",
+          "0409-2510",
+          "0409-7535",
+          "0409-1250",
+          "0409-5010",
+          "0409-1530",
+          "0409-7510",
+          "0409-2253"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "EPIDURAL",
+          "INFILTRATION",
+          "INTRACAUDAL",
+          "PERINEURAL",
+          "RETROBULBAR"
+        ],
+        "substance_name": [
+          "BUPIVACAINE HYDROCHLORIDE",
+          "EPINEPHRINE BITARTRATE"
+        ],
+        "rxcui": [
+          "1012377",
+          "1012381",
+          "1012384",
+          "1012388",
+          "1672917",
+          "1672919",
+          "1673242",
+          "1673243",
+          "1867594",
+          "1867596",
+          "1867612",
+          "1867614",
+          "1012396",
+          "1012400",
+          "1012404",
+          "1012406",
+          "1724786",
+          "1724787",
+          "1724794",
+          "1724796",
+          "1724880",
+          "1724884",
+          "1725044",
+          "1725046",
+          "1725078",
+          "1725079",
+          "1725082",
+          "1725083"
+        ],
+        "spl_id": [
+          "14ec85dc-0263-44d1-9267-66fa072cff8d",
+          "7040888c-2cde-4408-af99-d249985f8444"
+        ],
+        "spl_set_id": [
+          "93cf0914-de08-4ec6-8f8c-d663243b9958",
+          "67578b56-7540-487e-1fba-481255620e78"
+        ],
+        "package_ndc": [
+          "0409-5738-01",
+          "0409-5738-10",
+          "0409-3812-01",
+          "0409-1541-01",
+          "0409-1541-10",
+          "0409-8126-01",
+          "0409-8126-10",
+          "0409-4208-01",
+          "0409-4208-10",
+          "0409-6581-01",
+          "0409-1559-18",
+          "0409-1559-10",
+          "0409-1559-19",
+          "0409-1559-30",
+          "0409-1560-18",
+          "0409-1560-10",
+          "0409-1560-19",
+          "0409-1560-29",
+          "0409-1582-18",
+          "0409-1582-10",
+          "0409-1582-19",
+          "0409-1582-29",
+          "0409-1587-50",
+          "0409-1610-50",
+          "0409-1746-70",
+          "0409-1746-10",
+          "0409-1746-71",
+          "0409-1746-30",
+          "0409-1749-70",
+          "0409-1749-10",
+          "0409-1749-71",
+          "0409-1749-29",
+          "0409-1752-50",
+          "0409-1755-50",
+          "0409-2510-01",
+          "0409-2510-25",
+          "0409-7535-01",
+          "0409-7535-25",
+          "0409-1250-01",
+          "0409-1250-25",
+          "0409-5010-01",
+          "0409-5010-25",
+          "0409-1530-01",
+          "0409-1530-25",
+          "0409-0525-01",
+          "0409-0525-25",
+          "0409-7510-01",
+          "0409-7510-25",
+          "0409-2253-01",
+          "0409-2253-25"
+        ],
+        "unii": [
+          "7TQO7W3VT8",
+          "30Q7KI53AK"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "013",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE W/ EPINEPHRINE PRESERVATIVE FREE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.25%"
+            },
+            {
+              "name": "EPINEPHRINE BITARTRATE",
+              "strength": "0.0091MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "005",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE PRESERVATIVE FREE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.5%"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.25%"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "008",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE W/ EPINEPHRINE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.5%"
+            },
+            {
+              "name": "EPINEPHRINE BITARTRATE",
+              "strength": "0.0091MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "006",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.5%"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "012",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE PRESERVATIVE FREE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.25%"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE W/ EPINEPHRINE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.25%"
+            },
+            {
+              "name": "EPINEPHRINE BITARTRATE",
+              "strength": "0.0091MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "010",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE W/ EPINEPHRINE PRESERVATIVE FREE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.75%"
+            },
+            {
+              "name": "EPINEPHRINE BITARTRATE",
+              "strength": "0.0091MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "009",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE PRESERVATIVE FREE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.75%"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "007",
+          "reference_drug": "Yes",
+          "brand_name": "MARCAINE HYDROCHLORIDE W/ EPINEPHRINE PRESERVATIVE FREE",
+          "active_ingredients": [
+            {
+              "name": "BUPIVACAINE HYDROCHLORIDE",
+              "strength": "0.5%"
+            },
+            {
+              "name": "EPINEPHRINE BITARTRATE",
+              "strength": "0.0091MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        }
+      ]
+    }
+  ]
+}

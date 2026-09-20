@@ -317,38 +317,75 @@ ALLOWED_EARLIER = {
         "1965-07-01, ROCHE) precedes the TYPE 1 tablet NDA012715 (1965-08-25) by 55 days; "
         "both live-verified on the Drugs@FDA website (V21-C09/V21-C10). Genuine FDA-data "
         "class/date inversion; sulfamethoxazole counted once via the TYPE 1 row.",
+    (1965, "NDA012806", "FLURANDRENOLIDE"):
+        "Cordran lotion NDA013790 (TYPE 3 - New Indication or Labeling Change, 1963-03-19, "
+        "INA PHARMS) carries the same brand and ingredient and precedes the TYPE 1 Cordran "
+        "NDA012806 (1965-10-18) by 27 months - a class/date inversion of the same class as "
+        "the Gantanol and Cyclapen findings (an earlier supplemental-class record before the "
+        "TYPE 1 record; the payloads publish no parent application for NDA013790). "
+        "Flurandrenolide counted once via the TYPE 1 row; the inversion is flagged, not "
+        "corrected.",
+    (1965, "NDA014763", "EPINEPHRINE BITARTRATE"):
+        "Epinephrine bitartrate is a combination component of the Citanest Forte products "
+        "within this application, not the new entity (the NME is prilocaine; the display "
+        "product is Citanest Plain); it first appears in the payloads on Medihaler-Epi "
+        "NDA010374 (1956-03-09, class unpublished by FDA, 3M) and is a pre-1965 marketed "
+        "molecule.",
+    (1966, "NDA016029", "MESTRANOL"):
+        "Ovulen-21 is an FDA-classified TYPE 1/4 (NME + new combination; the NME is "
+        "ethynodiol diacetate); mestranol first appears in the payloads on Enovid "
+        "NDA010976 (TYPE 1/4, 1961-03-09, GD SEARLE LLC). Combination component, not a "
+        "second NME.",
+    (1968, "NDA016672", "ETHINYL ESTRADIOL"):
+        "Ovral is an FDA-classified TYPE 1/4 (NME + new combination; the NME is norgestrel); "
+        "ethinyl estradiol first appears in the payloads on Estinyl NDA005292 (1943-06-25, "
+        "class unpublished by FDA, SCHERING). Combination component, not a second NME.",
     (1972, "NDA016964", "EPINEPHRINE BITARTRATE"):
         "Epinephrine bitartrate is a combination component of the Marcaine w/ epinephrine "
-        "products, not the new entity; it first appears in the payloads on Citanest Forte "
-        "NDA014763 (1965-11-18) and is a pre-1965 marketed molecule.",
+        "products, not the new entity; it first appears in the payloads on Medihaler-Epi "
+        "NDA010374 (1956-03-09, class unpublished by FDA, 3M) and is a pre-1965 marketed "
+        "molecule.",
     (1973, "NDA017376", "SULFAMETHOXAZOLE"):
         "Septra is an FDA-classified TYPE 1/4 (NME + new combination); sulfamethoxazole "
-        "already appears on Gantanol NDA012715 (TYPE 1, 1965-08-25). Combination component, "
-        "not a second NME.",
+        "first appears in the payloads on Gantanol suspension NDA013664 (TYPE 5, "
+        "1965-07-01) and the Gantanol-DS tablets NDA012715 (TYPE 1, 1965-08-25). "
+        "Combination component, not a second NME.",
     (1974, "NDA017450", "MICONAZOLE NITRATE"):
         "Monistat-Derm cream NDA017494 (TYPE 5, 1974-01-08, INSIGHT PHARMS) precedes the "
         "TYPE 1 Monistat 7 vaginal cream NDA017450 (1974-01-30) by 22 days - same ingredient, "
         "different application. Miconazole counted once via the TYPE 1 row.",
+    (1974, "NDA017503", "CHLORTHALIDONE"):
+        "Combipres is an FDA-classified TYPE 1/4 (NME + new combination; the NME is "
+        "chlorthalidone); it first appears in the payloads on Hygroton NDA012283 (TYPE 1, "
+        "1960-04-07, PRIORITY, SANOFI AVENTIS US). Counted once via this TYPE 1/4 row.",
     (1974, "NDA017503", "CLONIDINE HYDROCHLORIDE"):
-        "Combipres is an FDA-classified TYPE 1/4 (NME + new combination); clonidine appears "
-        "12 days earlier on Catapres tablets NDA017407 (TYPE 3, 1974-09-03). Combination "
-        "component of the same-month pairing, not a second NME.",
+        "Combipres is an FDA-classified TYPE 1/4 (NME + new combination); Catapres tablets "
+        "NDA017407 (TYPE 3, PRIORITY, BOEHRINGER INGELHEIM) publish clonidine with the same "
+        "top-level payload date (1974-09-03) as Combipres. Combination component of the "
+        "same-day pairing, not a second NME.",
     (1975, "NDA017555", "LEVODOPA"):
         "Sinemet is an FDA-classified TYPE 1/4 (NME + new combination); levodopa first "
         "appears on Larodopa NDA016912 (TYPE 1, 1970-06-04). Combination component.",
     (1976, "NDA017751", "EPINEPHRINE"):
         "Epinephrine is a combination component of the Duranest w/ epinephrine products; "
-        "first appears on Primatene Mist NDA016126 (TYPE 5, 1967-11-08) and is a pre-1965 "
-        "marketed molecule. The row's display product is the plain etidocaine product.",
+        "first appears in the payloads on Xylocaine w/ epinephrine NDA006488 (1948-11-19, "
+        "class unpublished by FDA, FRESENIUS KABI USA) and is a pre-1965 marketed molecule. "
+        "The row's display product is the plain etidocaine product.",
     (1976, "NDA017751", "EPINEPHRINE BITARTRATE"):
-        "Same combination-component condition as EPINEPHRINE on this row (Citanest Forte "
-        "NDA014763, 1965-11-18).",
+        "Same combination-component condition as EPINEPHRINE on this row; first appears in "
+        "the payloads on Medihaler-Epi NDA010374 (1956-03-09, class unpublished by FDA, 3M).",
     (1976, "NDA017694", "LOPERAMIDE HYDROCHLORIDE"):
         "NDA017690 carries the identical product (IMODIUM LOPERAMIDE HYDROCHLORIDE 2MG "
         "CAPSULE ORAL, J AND J CONSUMER INC) with an ORIG-1 of the SAME day (1976-12-28) "
         "classified TYPE 5; live-verified (V21-C11), and FDA's 2016 approval letter covers "
         "both 017690s005 and 017694s052. Duplicate-product condition; loperamide counted "
         "once via the TYPE 1 row.",
+    (1978, "NDA017744", "ATROPINE SULFATE"):
+        "Motofen is an FDA-classified TYPE 1/4 (NME + new combination; the NME is difenoxin "
+        "hydrochloride, verified live V19-C07); atropine sulfate first appears in the "
+        "payloads on Lomotil NDA012462 (TYPE 4 - New Combination, 1960-09-15, PRIORITY, "
+        "PFIZER) and is a pre-1965 marketed molecule. Combination component, not a second "
+        "NME.",
     (1979, "NDA050508", "CYCLACILLIN"):
         "Cyclapen tablet NDA050509 (TYPE 3, 1979-09-13) precedes suspension NDA050508 "
         "(TYPE 1, 1979-09-14) by one day - verified live in both directions in v19 "
@@ -738,8 +775,7 @@ def main() -> int:
                          f"agree; payload SHA verified against the run-19 manifest). Payload: "
                          f"ORIG/AP {d['decision_date']}, {d['submission_class_code']}, "
                          f"{d['review_priority'] or 'priority unpublished'}, holder "
-                         f"{d['sponsor_name']}, product {prods}. Ingredient screen: "
-                         f"{'first-in-payloads (1965-1979 screen)' if not earlier else 'cyclacillin first appears one day earlier on the sibling tablet NDA050509 (Type 3) - flagged inversion, counted once (see V19-C11)'}. "
+                         f"{d['sponsor_name']}, product {prods}. Ingredient screen: {screen.rstrip('.')} "
                          f"{live} No ticker or indication asserted.")
             else:
                 pr = probes.get(appl, {})
@@ -754,7 +790,7 @@ def main() -> int:
                          f"the payload: {prod.get('brand_name', '')} "
                          f"({prod.get('active_ingredients', '')}; {prod.get('dosage_form', '')}; "
                          f"{prod.get('route', '')}; {prod.get('marketing_status', '')}). "
-                         f"Ingredient screen: {screen}. Live per-row probe 2026-09-19 "
+                         f"Ingredient screen: {screen.rstrip('.')} Live per-row probe 2026-09-19 "
                          f"(data/raw/pre1980_row_probes_1965_1976/probe_{appl}.json, SHA-256 "
                          f"{pr['sha'][:16]}...): live ORIG-1/AP/{pr['orig_date']}/"
                          f"{pr['class']}/{pr['priority'] or 'priority unpublished'}, holder "
@@ -904,11 +940,13 @@ def build_gap_rows(payloads: dict[int, list], probes: dict[str, dict],
                 "&varApplNo=050495",
                 "NAMED_CANDIDATE_NOT_ADDED",
                 "Named from NCATS Inxight Drugs (NIH) 'First approved in 1976' for amikacin, then "
-                "probed live on both FDA surfaces (V21-C06/V21-C07). NOT added to the decision "
-                "table: with no submission history FDA publishes no approval date, class or "
-                "priority, and the project never fills those in. The 1976 gap is sized 1 "
-                "(22 official NMEs vs 21 enumerated), so amikacin is a candidate for that single "
-                "slot, not a confirmed identity - confirming it needs the contemporaneous record.")],
+                "probed live on both FDA surfaces (V21-C06/V21-C07): the openFDA record exists "
+                "with NO submissions array and the Drugs@FDA page has no approval-history "
+                "section, so no ORIG/AP year query can ever return it. NOT added to the decision "
+                "table: FDA publishes no approval date, class or priority for it, and the project "
+                "never fills those in. The 1976 gap is sized 1 (22 official NMEs vs 21 enumerated), "
+                "so amikacin is a candidate for that single slot, not a confirmed identity - "
+                "confirming it needs the contemporaneous record.")],
     }
     rows = []
     for year in YEARS:
@@ -967,7 +1005,12 @@ AUDIT_IRREGULARITIES = {
     1965: ("Sulfamethoxazole class/date inversion: suspension NDA013664 TYPE 5 approved "
            "1965-07-01, 55 days BEFORE the TYPE 1 tablet NDA012715 (1965-08-25), same holder "
            "ROCHE - both verified live on the Drugs@FDA website (V21-C09/V21-C10); counted once "
-           "via the TYPE 1 row. 2 blank-class and 5 UNKNOWN-class payload rows (FDA publishes no "
+           "via the TYPE 1 row. Second class/date inversion surfaced by the extended 1939-1979 "
+           "screen: Cordran NDA012806 (TYPE 1, 1965-10-18) carries the same brand and ingredient "
+           "as Cordran lotion NDA013790 (TYPE 3, 1963-03-19, INA PHARMS) - a supplemental-class "
+           "record 27 months BEFORE the TYPE 1 record with no parent application published in "
+           "the payloads; flurandrenolide counted once via the TYPE 1 row, flagged not "
+           "corrected. 2 blank-class and 5 UNKNOWN-class payload rows (FDA publishes no "
            "submission class); Santyl BLA101995 publishes UNKNOWN priority. THAM NDA013025 is "
            "TYPE 1/4 and is the +1 on the NME-comparable basis."),
     1966: ("Ovulen-21 NDA016029 is TYPE 1/4 (NME + new combination) and is the +1 on the "
@@ -1003,9 +1046,12 @@ AUDIT_IRREGULARITIES = {
            "all 10 are listed verbatim in the row notes. Epinephrine bitartrate appears as a "
            "combination component (adjudicated). 1 blank-class and 6 UNKNOWN-class rows."),
     1973: ("Septra NDA017376 is TYPE 1/4 (sulfamethoxazole appears earlier on Gantanol). "
-           "Blenoxane NDA050443 publishes UNKNOWN priority. Clonidine appears 12 days before "
-           "Combipres on Catapres tablets NDA017407 (TYPE 3) - adjudicated combination component. "
-           "1 UNKNOWN-class payload row."),
+           "Blenoxane NDA050443 publishes UNKNOWN priority. Catapres tablets NDA017407 "
+           "(TYPE 3, PRIORITY, BOEHRINGER INGELHEIM) publish clonidine with the same top-level "
+           "payload date (1974-09-03) as Combipres NDA017503 (TYPE 1/4, 1974-09-03) - the "
+           "committed payloads support no earlier date, so the pairing is published as "
+           "same-day and clonidine is adjudicated a combination component. 1 UNKNOWN-class "
+           "payload row."),
     1974: ("Largest pre-1980 enumeration (16 rows). Miconazole sibling inversion: Monistat-Derm "
            "cream NDA017494 TYPE 5 approved 1974-01-08, 22 days before the TYPE 1 Monistat 7 "
            "(1974-01-30) - counted once. Combipres NDA017503 is TYPE 1/4. Pre-Pen BLA050114 is a "
@@ -1024,9 +1070,12 @@ AUDIT_IRREGULARITIES = {
            "payload rows in 1977"),
     1978: ("MOTOFEN NDA017744 is TYPE 1/4 (NME + new combination; verified live V19-C07) and is "
            "the +1 on the NME-comparable basis used for every crosswalk year; Type-1-only count "
-           "is 17 = official. KINLYTIC BLA021846 (urokinase, first-in-payloads) publishes "
-           "UNKNOWN class/priority (verified live V19-C12) and is NOT counted pending an "
-           "application-level NME source. PREMARIN NDA020216 UNKNOWN is conjugated estrogens "
+           "is 17 = official. Its atropine sulfate component first appears in the payloads on "
+           "Lomotil NDA012462 (TYPE 4, 1960-09-15, PFIZER) - adjudicated combination component "
+           "of the Motofen pairing, not a second NME (the extended 1939-1979 screen made the "
+           "1960 first appearance visible). KINLYTIC BLA021846 (urokinase, first-in-payloads) "
+           "publishes UNKNOWN class/priority (verified live V19-C12) and is NOT counted pending "
+           "an application-level NME source. PREMARIN NDA020216 UNKNOWN is conjugated estrogens "
            "(legacy, not an NME). Five blank-class rows are IV electrolytes/dextrose (B Braun) "
            "and bupivacaine - marketed ingredients."),
     1979: ("Cyclapen inversion: tablet NDA050509 TYPE 3 approved 1979-09-13, one day BEFORE "
@@ -1125,8 +1174,9 @@ ERA_NOTES = {
     1972: ("7 TYPE 1 originals among 29 ORIG/AP applications. Official series: 10 NMEs (57 NDAs "
            "approved). Marcaine NDA016964 alone publishes 10 products under four brand strings."),
     1973: ("10 TYPE 1 plus 1 TYPE 1/4 originals among 43 ORIG/AP applications. Official series: "
-           "14 NMEs (50 NDAs approved). Carries the Septra combination row and the Catapres "
-           "tablets (TYPE 3) that precede Combipres by 12 days."),
+           "14 NMEs (50 NDAs approved). Carries the Septra combination row; the same-day "
+           "Catapres (TYPE 3, NDA017407) / Combipres (TYPE 1/4, NDA017503) pairing of "
+           "1974-09-03 is adjudicated in the 1974 rows."),
     1974: ("15 TYPE 1 plus 1 TYPE 1/4 originals among 73 ORIG/AP applications - the largest "
            "pre-1980 enumeration. Official series: 21 NMEs (85 NDAs approved). Includes amoxicillin "
            "(Amoxil), doxorubicin, ibuprofen (Motrin) and the Pre-Pen biologics-licence-numbered "

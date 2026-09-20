@@ -1261,7 +1261,7 @@ else:
     if _amik["status"] != "NAMED_CANDIDATE_NOT_ADDED":
         errors.append("missing_nme_candidates: amikacin must stay a named candidate, "
                       "never an added decision row")
-    if "no submissions array" not in _amik["evidence_mechanism"] + _amik["notes"]:
+    if "no submissions array" not in (_amik["evidence_mechanism"] + _amik["notes"]).lower():
         errors.append("missing_nme_candidates: amikacin row lost its proven mechanism")
 if any(r["candidate_application"] for r in _gapc
        if r["candidate_application"] not in ("NDA050495", "")):
@@ -1480,10 +1480,11 @@ if _v21_unres:
         f"({len(_v21_unres_nme)} NME-comparable: " +
         "; ".join(f"{r['year']} {r['appl_no']} {r['decision_date']} {r['submission_class_code']}"
                   for r in _v21_unres_nme) +
-        ") - their ApplNo is absent from the payload-derived window extract, so no application "
-        "type can be asserted. Named as review candidates, never added. Deliver "
-        "Applications_all_types.txt (fetch_jobs/drugsatfda_data_files_2026_09.json) to classify "
-        "them.")
+        ") - their ApplNo is absent from the application-type source, so no application "
+        "type can be asserted. Where the unfiltered full-DB map (Applications_all_types.txt) is "
+        "present, its absence means no Applications record exists for the ApplNo anywhere in the "
+        "Drugs@FDA database - a deeper invisibility class than the Seldane purge. Named as review "
+        "candidates, never added.")
 _ev_unres = DATA / "raw" / "source_captures_2026_09_19" / \
     "drugsatfda_unresolved_appl_probes_2026_09_19.json"
 try:
@@ -1515,12 +1516,17 @@ if not (_pre65_dir / "manifest.json").exists():
                   "(the first-appearance screen needs the pre-1965 payloads)")
 else:
     _pre65_m = json.loads((_pre65_dir / "manifest.json").read_text(encoding="utf-8"))
-    _pre65_req = [e for e in _pre65_m["requests"] if e.get("id", "").startswith("decisions_")]
+    # request ids are "<job-id>_<year>" (e.g. orig_decisions_1939); the payload
+    # file is always decisions_<year>.json per the job's out_template.
+    _pre65_req = [e for e in _pre65_m["requests"]
+                  if str(e.get("id", "")).rsplit("_", 1)[-1].isdigit()
+                  and 1939 <= int(str(e["id"]).rsplit("_", 1)[-1]) <= 1964]
     if len(_pre65_req) != 26:
         errors.append(f"openfda_orig_decisions_1939_1964: expected 26 year requests, "
                       f"got {len(_pre65_req)}")
     for _e in _pre65_req:
-        _pf = _pre65_dir / f"{_e['id']}.json"
+        _year = int(str(_e["id"]).rsplit("_", 1)[-1])
+        _pf = _pre65_dir / f"decisions_{_year}.json"
         if _e.get("status") != 200 or not _pf.exists() or \
                 hashlib.sha256(_pf.read_bytes()).hexdigest() != _e.get("sha256"):
             errors.append(f"openfda_orig_decisions_1939_1964: {_e['id']} missing or SHA drift")
