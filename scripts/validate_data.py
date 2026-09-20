@@ -60,7 +60,7 @@ def _not_on_nme_table(r):
 master_years = {}
 _flagged_not_on = [r.get("decision_id") for r in master if _not_on_nme_table(r)]
 if _flagged_not_on != ["D634"]:
-    errs.append(f"NOT_ON_FDA_NME_TABLE detector must isolate exactly [D634], got {_flagged_not_on}")
+    errors.append(f"NOT_ON_FDA_NME_TABLE detector must isolate exactly [D634], got {_flagged_not_on}")
 for r in master:
     if _not_on_nme_table(r):
         continue
@@ -1651,6 +1651,230 @@ except (OSError, ValueError, KeyError, StopIteration) as _exc:
 print(f"v22: {len(_v22_adj)} KIND_UNRESOLVED NME adjudications, "
       f"{len(_v22_focus)} 1977-1979 year-focus rows, "
       f"{len(_v22_log)} gap-search log rows, {len(_v22_caps)} v22 captures.")
+
+
+# ---------------------------------------------------------------------------
+# v23 (2026-09-20): 1977-1979 complete action register + CRL application match
+# ---------------------------------------------------------------------------
+_v23_orig = read_opt("pre1980_1977_1979_original_actions.csv")
+_v23_subs = read_opt("pre1980_1977_1979_submission_actions.csv")
+_v23_docs = read_opt("pre1980_1977_1979_application_docs.csv")
+_v23_ana = read_opt("pre1980_1977_1979_year_analysis.csv")
+_v23_src = read_opt("pre1980_1977_1979_sources.csv")
+_v23_match = read_opt("crl_application_match.csv")
+_v23_rates = read_opt("crl_year_base_rates.csv")
+
+if len(_v23_orig) != 728:
+    errors.append(f"v23 original actions: {len(_v23_orig)} rows, expected 728 (266+272+190)")
+if len(_v23_subs) != 5483:
+    errors.append(f"v23 submission actions: {len(_v23_subs)} rows, expected 5483 (1489+2061+1933)")
+if len(_v23_docs) != 899:
+    errors.append(f"v23 application documents: {len(_v23_docs)} rows, expected 899")
+if len(_v23_ana) != 3:
+    errors.append(f"v23 year analysis: {len(_v23_ana)} rows, expected 3")
+if [r.get("year") for r in _v23_ana] != ["1977", "1978", "1979"]:
+    errors.append("v23 year analysis: expected 1977/1978/1979 in order")
+if len(_v23_src) < 9:
+    errors.append(f"v23 sources index: {len(_v23_src)} rows, expected >= 9")
+
+# every published row must reproduce from the exact source line it cites
+_v23_sub_lines = None
+_sub_path = DATA / "raw" / "drugsatfda_data_files_2026_09" / "Submissions_1965_1979.txt"
+_doc_path = DATA / "raw" / "drugsatfda_data_files_2026_09" / "ApplicationDocs_appl_window.txt"
+if _sub_path.exists():
+    _v23_sub_lines = _sub_path.read_text(encoding="utf-8", errors="replace").splitlines()
+    _bad = 0
+    for _r in _v23_orig:
+        try:
+            _ln = int(_r["evidence_source_line"])
+        except (KeyError, ValueError):
+            errors.append(f"v23 original actions {_r.get('action_id')}: unusable source line")
+            continue
+        _c = _v23_sub_lines[_ln - 1].split("\t")
+        if _c[0].strip() != _r["appl_no"] or _c[2].strip() != _r["submission_type"]:
+            _bad += 1
+    if _bad:
+        errors.append(f"v23 original actions: {_bad} row(s) do not reproduce from the cited line")
+    _bad = 0
+    for _r in _v23_subs:
+        _ln = int(_r["evidence_source_line"])
+        _c = _v23_sub_lines[_ln - 1].split("\t")
+        if _c[0].strip() != _r["appl_no"] or _c[2].strip() != _r["submission_type"]:
+            _bad += 1
+    if _bad:
+        errors.append(f"v23 submission actions: {_bad} row(s) do not reproduce from the cited line")
+    if len({r["evidence_source_line"] for r in _v23_orig}) != len(_v23_orig):
+        errors.append("v23 original actions: a source line is cited twice")
+    if len({r["evidence_source_line"] for r in _v23_subs}) != len(_v23_subs):
+        errors.append("v23 submission actions: a source line is cited twice")
+if _doc_path.exists():
+    _doc_lines = _doc_path.read_text(encoding="utf-8", errors="replace").splitlines()
+    _bad = 0
+    for _r in _v23_docs:
+        _ln = int(_r["evidence_source_line"])
+        _c = _doc_lines[_ln - 1].split("\t")
+        # ApplicationDocs columns: 0 ID, 1 TypeID, 2 ApplNo, 3 SubmissionType,
+        # 4 SubmissionNo, 5 Title, 6 URL, 7 Date
+        if _c[2].strip() != _r["appl_no"] or _c[6].strip() != _r["doc_url"]:
+            _bad += 1
+    if _bad:
+        errors.append(f"v23 application documents: {_bad} row(s) do not reproduce from the cited line")
+
+# class split and per-year shape pins
+_v23_split = Counter(r["action_class"] for r in _v23_orig)
+if dict(_v23_split) != {"TRACKED_NDA_ORIGINAL": 170, "ANDA_ORIGINAL_EXCLUDED": 479,
+                        "KIND_UNRESOLVED": 79}:
+    errors.append(f"v23 original actions: class split drifted {dict(_v23_split)}")
+_v23_year_pin = {"1977": (266, 42, 192, 32, 17, 0, "PROJECT_SHORT_FLAGGED"),
+                 "1978": (272, 66, 178, 28, 18, 1, "PROJECT_EXCEEDS_OFFICIAL"),
+                 "1979": (190, 62, 109, 19, 13, 0, "PROJECT_SHORT_FLAGGED")}
+for _r in _v23_ana:
+    _y = _r["year"]
+    _want = _v23_year_pin[_y]
+    _got = (int(_r["all_original_approval_actions"]), int(_r["tracked_nda_bla_originals"]),
+            int(_r["anda_originals_excluded_from_nme_basis"]), int(_r["kind_unresolved_originals"]),
+            int(_r["nme_comparable_tracked_rows"]), int(_r["nme_comparable_unresolved_rows"]),
+            _r["year_verdict"])
+    if _got != _want:
+        errors.append(f"v23 year analysis {_y}: pin drifted {_got} != {_want}")
+    if int(_r["nme_comparable_tracked_rows"]) - int(_r["nme_comparable_delta_vs_official"]) != int(_r["official_nmes_approved"]):
+        errors.append(f"v23 year analysis {_y}: NME delta arithmetic does not close")
+    if "NO" not in _r["review_time_computable"]:
+        errors.append(f"v23 year analysis {_y}: review-time limitation note lost")
+
+# the register must never carry a name that is not in an official file, so the
+# builder's own provenance columns must be complete, and no likelihood column may exist
+for _name, _rows in (("pre1980_1977_1979_original_actions.csv", _v23_orig),
+                     ("pre1980_1977_1979_submission_actions.csv", _v23_subs),
+                     ("pre1980_1977_1979_application_docs.csv", _v23_docs),
+                     ("pre1980_1977_1979_year_analysis.csv", _v23_ana)):
+    if _rows:
+        _cols = " ".join(_rows[0].keys()).lower()
+        for _bad_col in ("likelihood", "probability", "p_approval", "odds_ratio"):
+            if _bad_col in _cols:
+                errors.append(f"{_name}: contains a {_bad_col!r} column")
+for _r in _v23_orig:
+    if not _r.get("evidence_source_file") or not _r.get("evidence_source_line"):
+        errors.append(f"v23 original actions {_r.get('action_id')}: missing provenance")
+    if _r.get("verification_status", "").startswith("Verified") is False:
+        errors.append(f"v23 original actions {_r.get('action_id')}: verification_status not Verified")
+    if _r["action_class"] == "KIND_UNRESOLVED" and not _r.get("crosscheck_record_id"):
+        errors.append(f"v23 original actions {_r['appl_no']}: unresolved row without a cross-check id")
+
+# the decision table must still be exactly the 173 verified rows
+_v23_dec = read("pre1980_fda_decisions.csv")
+if len(_v23_dec) != 173:
+    errors.append(f"pre1980_fda_decisions.csv drifted to {len(_v23_dec)} rows (v23 expects 173)")
+_v23_dec_blob = " ".join(json.dumps(r) for r in _v23_dec).upper()
+for _needle in ("SELACRYN", "018103", "012043"):
+    if _needle in _v23_dec_blob:
+        errors.append(f"pre1980_fda_decisions.csv: {_needle} present - a candidate was promoted")
+
+# ---- CRL -> application match layer ----
+if len(_v23_match) != 458:
+    errors.append(f"crl_application_match: {len(_v23_match)} rows, expected 458")
+_v23_match_ids = [r.get("crl_row_id") for r in _v23_match]
+if len(set(_v23_match_ids)) != len(_v23_match_ids):
+    errors.append("crl_application_match: duplicate crl_row_id")
+_master_cr = set()
+_crl_master_rows = read("fda_crl_master.csv")
+for _r in _crl_master_rows:
+    if _r.get("crl_id", "").startswith("CR-"):
+        _master_cr.add(_r["crl_id"])
+_matched_master = {r["master_crl_id"] for r in _v23_match if r.get("master_crl_id")}
+# One published letter carries no application number at all, so the master id for
+# it is CR--20260227 (empty application segment) - a documented irregularity, not
+# a missing join. Every well-formed master id must join exactly once.
+_malformed_master = {"CR--20260227"}
+_unmatched_master = _master_cr - _matched_master
+if _unmatched_master != _malformed_master:
+    errors.append(f"crl_application_match: master join incomplete - unmatched "
+                  f"{sorted(_unmatched_master)[:4]} (expected only the malformed "
+                  f"CR--20260227 for the letter FDA publishes without an application number)")
+if _malformed_master & _matched_master:
+    errors.append("crl_application_match: malformed master id unexpectedly joined")
+# The 58 letters with no application-keyed master row are re-joined against the
+# hand-verified curated C-rows (which publish no application number) on (letter
+# date, company name); only unambiguous links are made and every other case
+# stays flagged. Pin the split so it cannot drift silently.
+_v23_mls = Counter(r.get("master_link_status", "") for r in _v23_match)
+_v23_mls_pin = {"JOINED": 399, "JOINED_CURATED_DATE_COMPANY": 36,
+                "CURATED_CANDIDATE_NOT_JOINED": 19, "NO_MASTER_ROW": 3,
+                "FDA_PUBLISHED_NO_APPLICATION_NUMBER": 1}
+if dict(_v23_mls) != _v23_mls_pin:
+    errors.append(f"crl_application_match: master_link_status split drifted "
+                  f"{dict(_v23_mls)} != {_v23_mls_pin}")
+_v23_curated_ids = {r["crl_id"] for r in _crl_master_rows if re.fullmatch(r"C\d+", r.get("crl_id", ""))}
+_v23_curated_claims = [r["master_crl_id"] for r in _v23_match
+                       if r.get("master_crl_id") in _v23_curated_ids]
+if len(_v23_curated_claims) != len(set(_v23_curated_claims)):
+    errors.append("crl_application_match: a curated master row is claimed by more than one letter")
+for _r in _v23_match:
+    _st = _r.get("master_link_status", "")
+    if _st.startswith("JOINED_CURATED") and _r.get("master_crl_id") not in _v23_curated_ids:
+        errors.append(f"crl_application_match {_r['crl_row_id']}: curated link to an unknown id")
+    if _st == "CURATED_CANDIDATE_NOT_JOINED":
+        _cand = (_r.get("curated_candidate_ids") or "").split("|")
+        if not any(_cand):
+            errors.append(f"crl_application_match {_r['crl_row_id']}: flagged without candidate ids")
+        elif any(_c not in _v23_curated_ids for _c in _cand if _c):
+            errors.append(f"crl_application_match {_r['crl_row_id']}: unknown curated candidate")
+for _r in _v23_match:
+    if _r.get("fda_approval_status_verbatim", "") not in ("Approved", "Unapproved", ""):
+        errors.append(f"crl_application_match {_r['crl_row_id']}: unexpected FDA approval_status "
+                      f"{_r['fda_approval_status_verbatim']!r}")
+    if _r.get("first_later_original_action_date"):
+        if _r["first_later_original_action_date"] <= _r["letter_date"]:
+            errors.append(f"crl_application_match {_r['crl_row_id']}: 'later' action is not later")
+    check_url(_r.get("replay_query_url", ""), f"crl_match:{_r['crl_row_id']}:replay")
+    if _r.get("fda_application_url"):
+        check_url(_r["fda_application_url"], f"crl_match:{_r['crl_row_id']}:drugsatfda")
+# anchor: the two Outlook Therapeutics Lytenava letters must show the 2026-07-24
+# original approval action that the independently built CRL master already records
+_anchor = [r for r in _v23_match if r.get("crl_row_id", "").startswith("CR-BLA761320-")]
+if len(_anchor) != 2:
+    errors.append(f"crl_application_match: expected 2 BLA761320 letters, got {len(_anchor)}")
+for _r in _anchor:
+    if _r.get("first_later_original_action_date") != "2026-07-24":
+        errors.append(f"crl_application_match {_r['crl_row_id']}: lost the 2026-07-24 Lytenava anchor")
+_rate_all = next((r for r in _v23_rates if r.get("letter_year") == "ALL"), None)
+if _rate_all is None:
+    errors.append("crl_year_base_rates: no ALL row")
+else:
+    _n = int(_rate_all["published_crl_letters"])
+    _k = int(_rate_all["letters_with_later_original_action_observed"])
+    if _n != 458:
+        errors.append(f"crl_year_base_rates: ALL denominator {_n} != 458 published letters")
+    if abs(float(_rate_all["observed_later_original_action_pct"]) - 100.0 * _k / _n) > 0.05:
+        errors.append("crl_year_base_rates: ALL observed percentage does not equal k/n")
+    if not _rate_all.get("observed_original_pct_wilson_lower_95"):
+        errors.append("crl_year_base_rates: ALL row lost the Wilson lower bound")
+    if "not a census" not in _rate_all.get("coverage_note", ""):
+        errors.append("crl_year_base_rates: denominator caveat text lost")
+    if "lower bound" not in _rate_all.get("coverage_note", ""):
+        errors.append("crl_year_base_rates: lower-bound caveat text lost")
+# v23: the engine's optional CRL-observation prior must equal the published cohort,
+# so the UI can never drift from the data it claims to quote.
+_appjs = ROOT / "assets" / "app.js"
+if _appjs.exists():
+    _txt = _appjs.read_text(encoding="utf-8")
+    _m = re.search(r"id: 'crl_v23_observed'.*?base: ([0-9.]+)", _txt, re.S)
+    if not _m:
+        errors.append("app.js: the v23 CRL observation prior row is missing")
+    else:
+        _want = next((r for r in _v23_rates if r.get("letter_year") == "ALL_MATURE_2Y"), None)
+        if _want is None:
+            errors.append("crl_year_base_rates: no ALL_MATURE_2Y row for the engine prior check")
+        elif abs(float(_m.group(1)) * 100.0 - float(_want["observed_later_original_action_pct"])) > 0.05:
+            errors.append(f"app.js: crl_v23_observed prior {_m.group(1)} does not equal the published "
+                          f"ALL_MATURE_2Y rate {_want['observed_later_original_action_pct']}%")
+        elif (f'{_want["letters_with_later_original_action_observed"]}/{_want["published_crl_letters"]}'
+              not in _txt):
+            errors.append("app.js: the v23 prior no longer quotes its k/n counts from the published table")
+
+print(f"v23: {len(_v23_orig)} original actions ({dict(_v23_split)}), "
+      f"{len(_v23_subs)} approval actions, {len(_v23_docs)} document rows, "
+      f"{len(_v23_match)} CRL->application matches, {len(_v23_rates)} CRL base-rate rows.")
 
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows (incl. {sum(_pre_orig_years.values())} v15/v16 pre-1985 rows), "

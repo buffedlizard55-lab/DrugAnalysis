@@ -1,0 +1,38 @@
+[
+  {
+    "type": "zip_extract",
+    "id": "drugsatfda_data_files_1938_1964",
+    "url": "https://www.fda.gov/media/89850/download?attachment",
+    "timeout": 900,
+    "retries": 4,
+    "max_member_out_bytes": 45000000,
+    "members": [
+      {
+        "name": "Submissions.txt",
+        "out": "Submissions_1938_1964.txt",
+        "filter": {
+          "type": "date_year_in",
+          "column": "SubmissionStatusDate",
+          "years": [1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964],
+          "collect_applnos": true
+        }
+      },
+      {
+        "name": "Applications.txt",
+        "out": "Applications_1938_1964_window.txt",
+        "filter": { "type": "applno_in_collected", "column": "ApplNo" }
+      },
+      {
+        "name": "Products.txt",
+        "out": "Products_1938_1964_window.txt",
+        "filter": { "type": "applno_in_collected", "column": "ApplNo" }
+      },
+      {
+        "name": "ApplicationDocs.txt",
+        "out": "ApplicationDocs_1938_1964_window.txt",
+        "filter": { "type": "applno_in_collected", "column": "ApplNo" }
+      }
+    ],
+    "_why": "v23 pre-1965 backward extension. The 1965-1979 window extract already proves the method on three focus years: every ORIG/AP action carries a source line, an application type where the unfiltered Applications map has one, an official document index and a class/priority census. The same official surface for 1938-1964 turns the 1939-1964 openFDA payload block (566 ORIG/AP records, already committed) into a submission-level, line-numbered register, so a pre-1965 decision row can be checked against the same primary source instead of only the payload. Values verbatim; the only transformation is the recorded row whitelist (status date year in 1938-1964) plus the ApplNo join, exactly as the 1965-1979 job does. Applications_all_types.txt is intentionally NOT re-fetched here: data/raw/drugsatfda_data_files_2026_09/Applications_all_types.txt (29,336 rows, SHA-manifested) is the unfiltered map and is reused as the type source."
+  }
+]

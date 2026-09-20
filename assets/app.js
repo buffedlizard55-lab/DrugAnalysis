@@ -650,6 +650,33 @@ function drawOrigCoverage(orig) {
     </div>`;
 }
 
+/* v23 (2026-09-20): the CRL panel's headline. Every number and every caveat is
+   read out of data/crl_year_base_rates.csv - nothing is typed into the HTML, so
+   the text cannot drift away from the verified table. */
+function drawCrlRateHeadline(rows) {
+  const el = document.getElementById('crl-rates-headline');
+  if (!el) return;
+  const by = key => rows.find(r => r.letter_year === key);
+  const all = by('ALL');
+  if (!all) { el.innerHTML = '<span class="badge caveat">rate table not loaded</span>'; return; }
+  const card = (r, title, note) => r ? `
+    <div class="panel" style="flex:1; min-width:220px">
+      <h4>${escapeHtml(title)}</h4>
+      <div style="font-size:1.6rem" class="num-strong">${escapeHtml(r.observed_later_original_action_pct)}%</div>
+      <div style="color:var(--muted); font-size:.8rem">
+        ${escapeHtml(r.letters_with_later_original_action_observed)} of ${escapeHtml(r.published_crl_letters)} letters show a later
+        <em>original</em> approval action (95% Wilson lower bound ${escapeHtml(r.observed_original_pct_wilson_lower_95)}%)
+      </div>
+      <div style="color:var(--muted); font-size:.75rem; margin-top:6px">${escapeHtml(note)}</div>
+    </div>` : '';
+  el.innerHTML = '<div style="display:flex; gap:14px; flex-wrap:wrap">' +
+    card(all, 'All published letters 2002-2026', all.cohort_maturity) +
+    card(by('ALL_MATURE_2Y'), 'Letters at least 2 years old', 'Resubmissions still in review are excluded by construction') +
+    card(by('ALL_MATURE_3Y'), 'Letters at least 3 years old', 'Mature cohort - the closest available analogue of settled outcomes') +
+    '</div>' +
+    `<p class="section-desc" style="margin-top:10px">${escapeHtml(all.coverage_note)}</p>`;
+}
+
 function drawOverview() {
   const core = overview.core, master = overview.master, scores = overview.scores;
   if (!core.length) return;
@@ -817,8 +844,11 @@ const ENGINE_PRIORS = [
   { id: 'accel_wd', label: 'Accelerated approval → withdrawn (all indications)', base: 0.13,
     src: 'HHS OIG OEI-01-21-00401: FDA and sponsors withdrew 13% of all accelerated approvals, half of them since January 2021.',
     url: 'https://oig.hhs.gov/oei/reports/OEI-01-21-00401.pdf' },
-  { id: 'crl', label: 'Resubmission after a Complete Response Letter → approval  ⚠ NOT re-verified in this pass', base: 0.81,
-    src: 'Retained as an explicit ASSUMPTION, not a verified figure: FDA publishes CRL letters (458 in the transparency API as of 2026-08-13) but not a resubmission-outcome rate, and no primary source was re-read for this value in the 2026-09-12 pass. Treat engine outputs that use it as indicative.',
+  { id: 'crl', label: 'Resubmission after a Complete Response Letter → approval  ⚠ ASSUMPTION, not a published rate', base: 0.81,
+    src: 'Retained as an explicit ASSUMPTION, not a verified figure: FDA publishes CRL letters (458 in the transparency API as of 2026-08-13) but not a resubmission-outcome rate, and no primary source states this value. Treat engine outputs that use it as indicative, and see the v23 observation row directly below.',
+    url: 'https://api.fda.gov/transparency/crl.json' },
+  { id: 'crl_v23_observed', label: 'CRL → later ORIGINAL approval action observed  — FDA published subset, letters ≥2y old (301/342 = 88.0%)  • lower bound', base: 0.880,
+    src: 'v23 (2026-09-20) observation, not a modelled rate: of the 342 CRL letters FDA publishes that are at least two years old at the dataset\'s own last_updated (2026-08-13), 301 (88.0%, 95% Wilson lower bound 84.1%) show a later ORIGINAL approval action on the same application inside the committed FDA payloads; all 458 letters together give 327/458 = 71.4% (95% Wilson lower bound 67.1%). Because the CRL dataset is FDA\'s published subset and payload coverage is partial, this is a LOWER BOUND on eventual conversion, not a resubmission-outcome rate, and it is not matched to PDUFA action dates. Published as data/crl_year_base_rates.csv with all three cohorts.',
     url: 'https://api.fda.gov/transparency/crl.json' }
 ];
 
@@ -1032,6 +1062,9 @@ function fillCounts() {
   setCount('ctgov', (overview.ctgov || []).length);
   setCount('ctgovus', (overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length);
   setCount('clinscores', (overview.clinScores || []).length);
+  /* v23: the 1977-1979 action register (kept out of the headline decision total
+     on purpose - 48 of its rows are the same decisions as the pre-1980 table) */
+  setCount('v23register', (overview.v23Originals || []).length);
 
   /* Efficacy supplements + verification audit */
   const suppl = overview.suppl || [], audit = overview.audit || [];
@@ -1115,8 +1148,14 @@ Promise.all([
   loadCSV('data/pre1980_era_analysis.csv').then(x => x.records).catch(() => []),
   loadCSV('data/pre1980_primary_captures_index.csv').then(x => x.records).catch(() => []),
   loadCSV('data/pre1980_originals_audit_1977_1979.csv').then(x => x.records).catch(() => []),
-  loadCSV('data/pre1980_full_db_crosscheck_1977_1979.csv').then(x => x.records).catch(() => [])
-]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries, pre1985Detailed, ctgovExpanded, pre1980Decisions, pre1980Audit, pre1980Era, v19Captures, pre1980Originals, pre1980FullDb]) => {
+  loadCSV('data/pre1980_full_db_crosscheck_1977_1979.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1980_1977_1979_original_actions.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1980_1977_1979_submission_actions.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1980_1977_1979_application_docs.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/pre1980_1977_1979_year_analysis.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/crl_year_base_rates.csv').then(x => x.records).catch(() => []),
+  loadCSV('data/crl_application_match.csv').then(x => x.records).catch(() => [])
+]).then(([core, master, scores, snapshots, crls, pipeline, pdufa, trials, suppl, audit, expansion, orig, origScores, t1gap, ctgov, clinScores, pre1985Era, pre1985Decisions, nmeGap, v17Captures, officialCrosswalk, officialSeries, pre1985Detailed, ctgovExpanded, pre1980Decisions, pre1980Audit, pre1980Era, v19Captures, pre1980Originals, pre1980FullDb, v23Originals, v23Submissions, v23Docs, v23YearAnalysis, crlRates, crlMatch]) => {
   overview.core = core; overview.master = master; overview.scores = scores;
   overview.snapshots = snapshots; overview.crls = crls;
   overview.pipeline = pipeline; overview.pdufa = pdufa; overview.trials = trials;
@@ -1129,6 +1168,8 @@ Promise.all([
   overview.pre1985Detailed = pre1985Detailed; overview.ctgovExpanded = ctgovExpanded;
   overview.pre1980Decisions = pre1980Decisions; overview.pre1980Audit = pre1980Audit;
   overview.pre1980Era = pre1980Era; overview.v19Captures = v19Captures;
+  overview.v23Originals = v23Originals; overview.v23YearAnalysis = v23YearAnalysis;
+  overview.crlRates = crlRates; overview.crlMatch = crlMatch;
 
   /* Defensive rendering: one failing panel must never blank the whole site
      again (a missing function here silently killed every table after it
@@ -1139,6 +1180,7 @@ Promise.all([
   safe('drawCoverage', () => drawCoverage(master));
   safe('drawOrigCoverage', () => drawOrigCoverage(orig || []));
   safe('drawOverview', () => drawOverview());
+  safe('drawCrlRateHeadline', () => drawCrlRateHeadline(crlRates || []));
   safe('initEngine', () => initEngine());
   if (bootErrors.length) {
     document.querySelector('main').insertAdjacentHTML('afterbegin',
@@ -2072,6 +2114,182 @@ Promise.all([
     searchPlaceholder: 'Search the v22 live primary captures…',
     sort: { key: 'capture_id', dir: 'asc' }, pageSize: 10,
     filters: []
+  });
+
+  /* ---- v23 (2026-09-20): complete 1977-1979 action register + CRL base rates ---- */
+
+  DataTable({
+    id: 'pre1980-yearanalysis', mount: '#pre1980-yearanalysis-view', csv: 'data/pre1980_1977_1979_year_analysis.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('year_verdict', 'Verdict', { core: true, render: r => verdictBadge(r.year_verdict) }),
+      c('official_nmes_approved', 'FDA official NMEs', { core: true, num: true, render: r => num(r.official_nmes_approved, 0) }),
+      c('nme_comparable_tracked_rows', 'Tracked NME-comparable', { core: true, num: true, render: r => num(r.nme_comparable_tracked_rows, 0) }),
+      c('nme_comparable_unresolved_rows', 'Unresolved NME-comparable', { core: true, num: true, render: r => num(r.nme_comparable_unresolved_rows, 0) }),
+      c('nme_comparable_delta_vs_official', 'Δ vs official', { core: true, render: r => deltaBadge(r.nme_comparable_delta_vs_official) }),
+      c('all_original_approval_actions', 'All ORIG actions', { core: true, num: true, render: r => num(r.all_original_approval_actions, 0) }),
+      c('tracked_nda_bla_originals', 'Tracked NDA/BLA', { core: true, num: true, render: r => num(r.tracked_nda_bla_originals, 0) }),
+      c('anda_originals_excluded_from_nme_basis', 'ANDA excluded', { core: true, num: true, render: r => num(r.anda_originals_excluded_from_nme_basis, 0) }),
+      c('kind_unresolved_originals', 'KIND_UNRESOLVED', { core: true, num: true, render: r => num(r.kind_unresolved_originals, 0) }),
+      c('total_ap_actions_in_year', 'All AP actions', { core: true, num: true, render: r => num(r.total_ap_actions_in_year, 0) }),
+      c('supplement_actions_in_year', 'Supplement AP', { num: true, render: r => num(r.supplement_actions_in_year, 0) }),
+      c('efficacy_supplement_actions', 'Efficacy suppl', { num: true, render: r => num(r.efficacy_supplement_actions, 0) }),
+      c('labeling_supplement_actions', 'Labeling suppl', { num: true, render: r => num(r.labeling_supplement_actions, 0) }),
+      c('cmc_supplement_actions', 'CMC suppl', { num: true, render: r => num(r.cmc_supplement_actions, 0) }),
+      c('tracked_priority_review_originals', 'Priority originals', { core: true, num: true, render: r => num(r.tracked_priority_review_originals, 0) }),
+      c('tracked_standard_review_originals', 'Standard originals', { core: true, num: true, render: r => num(r.tracked_standard_review_originals, 0) }),
+      c('priority_share_of_published_priority_pct', 'Priority share %', { num: true, render: r => num(r.priority_share_of_published_priority_pct, 1) }),
+      c('originals_with_blank_class_code_id', 'Blank class-code ID', { num: true, render: r => num(r.originals_with_blank_class_code_id, 0) }),
+      c('class_census_tracked_nda_bla_verbatim', 'Tracked class census', { trunc: true, render: r => truncCell(r.class_census_tracked_nda_bla_verbatim) }),
+      c('marketing_status_census_tracked', 'Current marketing status', { trunc: true, render: r => truncCell(r.marketing_status_census_tracked) }),
+      c('fr_safety_determination_marker_applications', 'FR safety-marker apps', { num: true, render: r => num(r.fr_safety_determination_marker_applications, 0) }),
+      c('top_holders_by_tracked_originals', 'Top holders', { trunc: true, render: r => truncCell(r.top_holders_by_tracked_originals) }),
+      c('official_doc_rows_for_this_years_applications', 'Official doc rows', { num: true, render: r => num(r.official_doc_rows_for_this_years_applications, 0) }),
+      c('review_time_computable', 'Review time computable?', { core: true, render: r => r.review_time_computable === 'NO' ? '<span class="badge caveat">NO — receipt dates not published</span>' : escapeHtml(r.review_time_computable) }),
+      c('review_priority_basis', 'Priority basis caveat', { trunc: true, render: r => truncCell(r.review_priority_basis) }),
+      c('data_quality_note', 'Data-quality note', { trunc: true, render: r => truncCell(r.data_quality_note) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['year', 'year_verdict', 'data_quality_note'],
+    searchPlaceholder: 'Search the 1977-1979 year analysis…',
+    sort: { key: 'year', dir: 'asc' }, pageSize: 5,
+    filters: [{ key: 'verdict', label: 'All verdicts', field: 'year_verdict' }]
+  });
+
+  DataTable({
+    id: 'pre1980-v23originals', mount: '#pre1980-v23originals-view', csv: 'data/pre1980_1977_1979_original_actions.csv',
+    columns: [
+      c('action_id', 'Action ID', { core: true, render: r => `<code>${escapeHtml(r.action_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('action_class', 'Class', { core: true, render: r => r.action_class === 'TRACKED_NDA_ORIGINAL' ? '<span class="badge verified">TRACKED_NDA_ORIGINAL</span>' : (r.action_class === 'ANDA_ORIGINAL_EXCLUDED' ? '<span class="badge neutral">ANDA_ORIGINAL_EXCLUDED</span>' : '<span class="badge caveat">KIND_UNRESOLVED</span>') }),
+      c('application_number', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.application_number)}</code>` }),
+      c('action_date', 'Action date', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.action_date)}</span>` }),
+      c('submission_type', 'Type', { core: true }),
+      c('submission_class_code', 'Class code', { core: true, render: r => escapeHtml(r.submission_class_code || '—') }),
+      c('review_priority', 'Priority', { core: true, render: r => r.review_priority === 'PRIORITY' ? '<span class="badge pos">PRIORITY</span>' : (r.review_priority ? escapeHtml(r.review_priority) : '<span class="badge neutral">—</span>') }),
+      c('nme_comparable', 'NME-comparable', { core: true, render: r => r.nme_comparable === 'YES' ? '<span class="badge verified">YES</span>' : '<span class="badge neutral">no</span>' }),
+      c('holder_drugsatfda_verbatim', 'Holder (verbatim)', { core: true, trunc: true }),
+      c('first_product_brand', 'First product', { core: true, trunc: true }),
+      c('first_product_ingredients', 'Ingredients', { trunc: true, render: r => truncCell(r.first_product_ingredients) }),
+      c('marketing_status_openfda', 'Marketing status today', { render: r => escapeHtml(r.marketing_status_openfda || '—') }),
+      c('tracked_decision_id', 'Verified decision row', { render: r => r.tracked_decision_id ? `<code>${escapeHtml(r.tracked_decision_id)}</code>` : '<span class="badge neutral">—</span>' }),
+      c('drugsatfda_url', 'Drugs@FDA', { core: true, render: r => linkify(r.drugsatfda_url, 'Drugs@FDA'), detail: r => r.drugsatfda_url }),
+      c('openfda_url', 'openFDA', { render: r => linkify(r.openfda_url, 'openFDA'), detail: r => r.openfda_url }),
+      c('evidence_source_line', 'Source line', { core: true, render: r => `<code>${escapeHtml(r.evidence_source_file)}:${escapeHtml(r.evidence_source_line)}</code>` }),
+      c('verification_status', 'Verification', { core: true, render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['application_number', 'holder_drugsatfda_verbatim', 'first_product_brand', 'first_product_ingredients', 'action_id'],
+    searchPlaceholder: 'Search 728 original actions (application, holder, product)…',
+    sort: { key: 'action_date', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'class', label: 'All classes', field: 'action_class' },
+      { key: 'priority', label: 'All priorities', field: 'review_priority' }
+    ]
+  });
+
+  DataTable({
+    id: 'pre1980-v23subactions', mount: '#pre1980-v23subactions-view', csv: 'data/pre1980_1977_1979_submission_actions.csv',
+    columns: [
+      c('submission_action_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.submission_action_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('appl_no', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.appl_no)}</code>` }),
+      c('application_kind', 'Kind', { core: true }),
+      c('submission_type', 'Type', { core: true }),
+      c('submission_class_code', 'Class code', { core: true, render: r => escapeHtml(r.submission_class_code || '—') }),
+      c('action_group', 'Action group', { core: true, render: r => escapeHtml(r.action_group || '—') }),
+      c('review_priority', 'Priority', { render: r => escapeHtml(r.review_priority || '—') }),
+      c('submission_status', 'Status', { render: r => escapeHtml(r.submission_status) }),
+      c('action_date', 'Action date', { core: true }),
+      c('is_original_approval', 'Original approval?', { core: true, render: r => r.is_original_approval === 'YES' ? '<span class="badge verified">ORIG</span>' : '<span class="badge neutral">supplement/other</span>' }),
+      c('first_product_brand', 'First product', { trunc: true }),
+      c('drugsatfda_url', 'Drugs@FDA', { core: true, render: r => linkify(r.drugsatfda_url, 'Drugs@FDA'), detail: r => r.drugsatfda_url }),
+      c('evidence_source_line', 'Source line', { core: true, render: r => `<code>${escapeHtml(r.evidence_source_file)}:${escapeHtml(r.evidence_source_line)}</code>` }),
+      c('verification_status', 'Verification', { render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['appl_no', 'submission_action_id', 'first_product_brand', 'action_group'],
+    searchPlaceholder: 'Search 5,483 approval actions in 1977-1979…',
+    sort: { key: 'action_date', dir: 'asc' }, pageSize: 25,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'type', label: 'All types', field: 'submission_type' },
+      { key: 'group', label: 'All groups', field: 'action_group' }
+    ]
+  });
+
+  DataTable({
+    id: 'pre1980-v23docs', mount: '#pre1980-v23docs-view', csv: 'data/pre1980_1977_1979_application_docs.csv',
+    columns: [
+      c('doc_row_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.doc_row_id)}</code>` }),
+      c('appl_no', 'Appl #', { core: true, render: r => `<code>${escapeHtml(r.appl_no)}</code>` }),
+      c('doc_type_label', 'Document type', { core: true }),
+      c('doc_type_label_basis', 'Label basis', { trunc: true, render: r => truncCell(r.doc_type_label_basis) }),
+      c('doc_date', 'Date', { core: true }),
+      c('doc_url', 'Official document', { core: true, render: r => linkify(r.doc_url, 'document'), detail: r => r.doc_url }),
+      c('drugsatfda_url', 'Drugs@FDA', { render: r => linkify(r.drugsatfda_url, 'Drugs@FDA'), detail: r => r.drugsatfda_url }),
+      c('evidence_source_line', 'Source line', { core: true, render: r => `<code>${escapeHtml(r.evidence_source_file)}:${escapeHtml(r.evidence_source_line)}</code>` }),
+      c('verification_status', 'Verification', { render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['appl_no', 'doc_row_id', 'doc_type_label'],
+    searchPlaceholder: 'Search 899 official document rows…',
+    sort: { key: 'doc_date', dir: 'desc' }, pageSize: 25,
+    filters: [{ key: 'type', label: 'All document types', field: 'doc_type_label' }]
+  });
+
+  DataTable({
+    id: 'crl-rates', mount: '#crl-rates-view', csv: 'data/crl_year_base_rates.csv',
+    columns: [
+      c('letter_year', 'Cohort', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.letter_year)}</span>` }),
+      c('cohort_maturity', 'Definition', { core: true, trunc: true }),
+      c('published_crl_letters', 'Published letters', { core: true, num: true, render: r => num(r.published_crl_letters, 0) }),
+      c('fda_field_approved_letters', 'FDA field = Approved', { core: true, num: true, render: r => num(r.fda_field_approved_letters, 0) }),
+      c('fda_field_approved_pct', 'FDA field %', { core: true, num: true, render: r => num(r.fda_field_approved_pct, 1) }),
+      c('letters_with_later_original_action_observed', 'Later ORIG observed', { core: true, num: true, render: r => num(r.letters_with_later_original_action_observed, 0) }),
+      c('observed_later_original_action_pct', 'Observed %', { core: true, num: true, render: r => num(r.observed_later_original_action_pct, 1) }),
+      c('observed_original_pct_wilson_lower_95', 'Wilson 95% lower', { core: true, num: true, render: r => num(r.observed_original_pct_wilson_lower_95, 1) }),
+      c('letters_with_any_later_action_observed', 'Any later action', { num: true, render: r => num(r.letters_with_any_later_action_observed, 0) }),
+      c('observed_any_action_pct', 'Any-action % (upper bound)', { num: true, render: r => num(r.observed_any_action_pct, 1) }),
+      c('median_days_to_first_later_original_action', 'Median days to ORIG', { num: true, render: r => normDash(r.median_days_to_first_later_original_action) }),
+      c('conflict_rows', 'Conflict rows', { core: true, num: true, render: r => num(r.conflict_rows, 0) }),
+      c('coverage_note', 'Coverage / caveat', { trunc: true, render: r => truncCell(r.coverage_note) })
+    ],
+    searchFields: ['letter_year', 'cohort_maturity'],
+    searchPlaceholder: 'Search CRL cohorts…',
+    sort: { key: 'letter_year', dir: 'asc' }, pageSize: 30,
+    filters: []
+  });
+
+  DataTable({
+    id: 'crl-evidence', mount: '#crl-evidence-view', csv: 'data/crl_application_match.csv',
+    columns: [
+      c('crl_row_id', 'CRL row', { core: true, render: r => `<code>${escapeHtml(r.crl_row_id)}</code>` }),
+      c('company_name_verbatim', 'Company (verbatim)', { core: true, trunc: true }),
+      c('application_number_normalised', 'Appl (normalised)', { core: true, render: r => `<code>${escapeHtml(r.application_number_normalised || '—')}</code>` }),
+      c('application_number_verbatim', 'Appl (as FDA published)', { trunc: true }),
+      c('letter_date', 'Letter date', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.letter_date)}</span>` }),
+      c('fda_approval_status_verbatim', 'FDA status field', { core: true, render: r => r.fda_approval_status_verbatim === 'Approved' ? '<span class="badge verified">Approved</span>' : (r.fda_approval_status_verbatim ? '<span class="badge flagged">Unapproved</span>' : '<span class="badge neutral">—</span>') }),
+      c('later_original_approval_actions_observed', 'Later ORIG count', { core: true, num: true, render: r => num(r.later_original_approval_actions_observed, 0) }),
+      c('first_later_original_action_date', 'First later ORIG', { core: true, render: r => escapeHtml(r.first_later_original_action_date || '—') }),
+      c('days_letter_to_first_later_original_action', 'Days', { num: true, render: r => normDash(r.days_letter_to_first_later_original_action) }),
+      c('later_any_action_types', 'Any later action seen', { trunc: true, render: r => truncCell(r.later_any_action_types || '—') }),
+      c('conflict_flag', 'Conflict flag', { core: true, render: r => r.conflict_flag ? `<span class="badge flagged">${escapeHtml(r.conflict_flag)}</span>` : '<span class="badge verified">none</span>' }),
+      c('master_link_status', 'Master link', { core: true, render: r => (r.master_link_status || '').startsWith('JOINED') ? `<span class="badge verified">${escapeHtml(r.master_link_status)}</span>` : `<span class="badge caveat">${escapeHtml(r.master_link_status)}</span>` }),
+      c('curated_candidate_ids', 'Curated candidates', { trunc: true, render: r => r.curated_candidate_ids ? `<code>${escapeHtml(r.curated_candidate_ids)}</code>` : '<span class="badge neutral">—</span>' }),
+      c('replay_query_url', 'Replay query', { core: true, render: r => linkify(r.replay_query_url, 'openFDA'), detail: r => r.replay_query_url }),
+      c('fda_application_url', 'Drugs@FDA', { render: r => linkify(r.fda_application_url, 'Drugs@FDA'), detail: r => r.fda_application_url }),
+      c('verification_status', 'Verification', { render: r => statusBadge(r.verification_status) }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['crl_row_id', 'company_name_verbatim', 'application_number_normalised'],
+    searchPlaceholder: 'Search 458 letters and their observed evidence…',
+    sort: { key: 'letter_date', dir: 'desc' }, pageSize: 25,
+    filters: [
+      { key: 'fda', label: 'All FDA statuses', field: 'fda_approval_status_verbatim' },
+      { key: 'conflict', label: 'All conflict states', field: 'conflict_flag' }
+    ]
   });
 
   DataTable({
