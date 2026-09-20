@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19861125",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "20071207",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19830623",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "2",
+          "submission_status": "AP",
+          "submission_status_date": "19740521",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19791002",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19791002",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19890419",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19771214",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "19740814",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19740806",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19810416",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19791002",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19740312",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19900116",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19771214",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "NDA016820",
+      "sponsor_name": "PFIZER",
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "EMETE-CON",
+          "active_ingredients": [
+            {
+              "name": "BENZQUINAMIDE HYDROCHLORIDE",
+              "strength": "EQ 50MG BASE/VIAL"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

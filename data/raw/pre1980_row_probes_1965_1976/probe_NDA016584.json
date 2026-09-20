@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "45",
+          "submission_status": "AP",
+          "submission_status_date": "19840626",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19670724",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19820924",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "51",
+          "submission_status": "AP",
+          "submission_status_date": "19940726",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19781208",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19801008",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19780707",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "19791003",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19770218",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19760729",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "58",
+          "submission_status": "AP",
+          "submission_status_date": "20080814",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10897",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/016584s058lbl.pdf",
+              "date": "20080826",
+              "type": "Label"
+            },
+            {
+              "id": "13002",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/016584s058ltr.pdf",
+              "date": "20080819",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "56",
+          "submission_status": "AP",
+          "submission_status_date": "20030519",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10896",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2001/16584s55s47lbl.pdf",
+              "date": "20040609",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "54",
+          "submission_status": "AP",
+          "submission_status_date": "20010228",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "60",
+          "submission_status": "AP",
+          "submission_status_date": "20101201",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "13003",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2010/016584s060ltr.pdf",
+              "date": "20101206",
+              "type": "Letter"
+            },
+            {
+              "id": "33176",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2010/016584s060lbl.pdf",
+              "date": "20101204",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19810310",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "20000327",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "19840621",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19801210",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19780707",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "19821210",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19800915",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19781211",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19750501",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19740624",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "59",
+          "submission_status": "AP",
+          "submission_status_date": "20090719",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "456",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2009/016584s059,016758s020,016904s034ltr.pdf",
+              "date": "20090723",
+              "type": "Letter"
+            },
+            {
+              "id": "33175",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2009/016584s059lbl.pdf",
+              "date": "20090723",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "57",
+          "submission_status": "AP",
+          "submission_status_date": "20080407",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "13001",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/016584s057, 016758s019, 016904s033ltr.pdf",
+              "date": "20080410",
+              "type": "Letter"
+            },
+            {
+              "id": "33174",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/016584057,016758s019,016904s033lbl.pdf",
+              "date": "20080416",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "55",
+          "submission_status": "AP",
+          "submission_status_date": "20010731",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "455",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2001/16584s55ltr.pdf",
+              "date": "20010731",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "20010731",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "454",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2001/16584s55ltr.pdf",
+              "date": "20010731",
+              "type": "Letter"
+            },
+            {
+              "id": "10895",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2001/16584s55s47lbl.pdf",
+              "date": "20030616",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19810521",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA016584",
+      "sponsor_name": "PFIZER",
+      "products": [
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "NAVANE",
+          "active_ingredients": [
+            {
+              "name": "THIOTHIXENE",
+              "strength": "10MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CAPSULE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "NAVANE",
+          "active_ingredients": [
+            {
+              "name": "THIOTHIXENE",
+              "strength": "2MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CAPSULE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "005",
+          "reference_drug": "Yes",
+          "brand_name": "NAVANE",
+          "active_ingredients": [
+            {
+              "name": "THIOTHIXENE",
+              "strength": "20MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CAPSULE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "NAVANE",
+          "active_ingredients": [
+            {
+              "name": "THIOTHIXENE",
+              "strength": "5MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CAPSULE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "NAVANE",
+          "active_ingredients": [
+            {
+              "name": "THIOTHIXENE",
+              "strength": "1MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CAPSULE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

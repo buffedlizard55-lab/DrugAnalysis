@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 42
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "20020403",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19800624",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "20000606",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19800229",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19851028",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19781011",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19661005",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 3",
+          "submission_class_code_description": "Type 3 - New Dosage Form"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19820428",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19770902",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19820222",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "20020403",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19800529",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "20021216",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11993",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/12154slr023ltr.pdf",
+              "date": "20040629",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19810908",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19771129",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19760301",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA012154",
+      "sponsor_name": "HOSPIRA",
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "UREAPHIL",
+          "active_ingredients": [
+            {
+              "name": "UREA",
+              "strength": "40GM/VIAL"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

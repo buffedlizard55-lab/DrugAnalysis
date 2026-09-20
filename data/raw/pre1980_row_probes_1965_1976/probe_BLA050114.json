@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "20090918",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "29981",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2009/050114s008ltr.pdf",
+              "date": "20091109",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "20230118",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "73249",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/050114Orig1s010ltr.pdf",
+              "date": "20230119",
+              "type": "Letter"
+            },
+            {
+              "id": "73250",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/050114s010lbl.pdf",
+              "date": "20230119",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "19811202",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "2",
+          "submission_status": "AP",
+          "submission_status_date": "19760209",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "20000406",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19890330",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "19781128",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19741030",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19740725",
+          "submission_public_notes": "This Former NDA Was Deemed To Be a BLA on March 23, 2020.",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        }
+      ],
+      "application_number": "BLA050114",
+      "sponsor_name": "ALLERQUEST",
+      "openfda": {
+        "application_number": [
+          "BLA050114"
+        ],
+        "brand_name": [
+          "PRE-PEN"
+        ],
+        "generic_name": [
+          "BENZYLPENICILLOYL POLYLYSINE"
+        ],
+        "manufacturer_name": [
+          "ALK-ABELLO, INC."
+        ],
+        "product_ndc": [
+          "49471-001"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRADERMAL",
+          "SUBCUTANEOUS"
+        ],
+        "substance_name": [
+          "BENZYLPENICILLOYL POLYLYSINE"
+        ],
+        "spl_id": [
+          "630c84ab-994f-4686-99bc-deaf6db7cff2"
+        ],
+        "spl_set_id": [
+          "2fbcc40c-f102-4abe-bce5-a93de95874fe"
+        ],
+        "package_ndc": [
+          "49471-001-05"
+        ],
+        "unii": [
+          "76479814OY"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "PRE-PEN",
+          "active_ingredients": [
+            {
+              "name": "BENZYLPENICILLOYL POLYLYSINE",
+              "strength": "60UMOLAR"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription"
+        }
+      ]
+    }
+  ]
+}

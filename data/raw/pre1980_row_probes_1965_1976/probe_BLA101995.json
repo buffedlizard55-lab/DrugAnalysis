@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19650604",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        }
+      ],
+      "application_number": "BLA101995",
+      "sponsor_name": "SMITH AND NEPHEW",
+      "openfda": {
+        "application_number": [
+          "BLA101995"
+        ],
+        "brand_name": [
+          "COLLAGENASE SANTYL"
+        ],
+        "generic_name": [
+          "COLLAGENASE SANTYL"
+        ],
+        "manufacturer_name": [
+          "SMITH & NEPHEW, INC"
+        ],
+        "product_ndc": [
+          "50484-010"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "TOPICAL"
+        ],
+        "substance_name": [
+          "COLLAGENASE CLOSTRIDIUM HISTOLYTICUM"
+        ],
+        "rxcui": [
+          "309509"
+        ],
+        "spl_id": [
+          "155959d1-0367-4fb6-8877-29099d08801c"
+        ],
+        "spl_set_id": [
+          "6b6fbfc6-98fa-46aa-88ef-ab00fbb08ffd"
+        ],
+        "package_ndc": [
+          "50484-010-30",
+          "50484-010-90"
+        ],
+        "unii": [
+          "9X7O8V25IT"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "SANTYL",
+          "active_ingredients": [
+            {
+              "name": "COLLAGENASE",
+              "strength": "250U/GRAM"
+            }
+          ],
+          "dosage_form": "OINTMENT",
+          "route": "TOPICAL",
+          "marketing_status": "Prescription"
+        }
+      ]
+    }
+  ]
+}

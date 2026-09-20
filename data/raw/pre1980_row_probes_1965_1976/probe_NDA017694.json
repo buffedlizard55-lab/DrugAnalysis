@@ -1,0 +1,476 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "19990301",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19990617",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "45",
+          "submission_status": "AP",
+          "submission_status_date": "19980630",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19880415",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19831122",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "19980901",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19870616",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19830215",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "19930601",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19840731",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "19850920",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19821103",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19810511",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "19840802",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19790405",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19800326",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19820519",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19781030",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19791003",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19780705",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19761228",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19790625",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "19780424",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "48",
+          "submission_status": "AP",
+          "submission_status_date": "19991013",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19780914",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19921002",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "20161103",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "45823",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/017694s052lbl.pdf",
+              "date": "20161107",
+              "type": "Label"
+            },
+            {
+              "id": "45835",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/017690Orig1s005,017694Orig1s052ltr.pdf",
+              "date": "20161108",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "19980602",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19880526",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "50",
+          "submission_status": "AP",
+          "submission_status_date": "20051021",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "13883",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/017694s050ltr.pdf",
+              "date": "20051025",
+              "type": "Letter"
+            },
+            {
+              "id": "33337",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2005/017694s050lbl.pdf",
+              "date": "20051025",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19830715",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "19951005",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19860916",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "19821215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "19930824",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19810514",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "19851029",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19821103",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19800613",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19840802",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19830427",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19790314",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19791105",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19820810",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19781030",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19790523",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19790405",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA017694",
+      "sponsor_name": "J AND J CONSUMER INC",
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "IMODIUM",
+          "active_ingredients": [
+            {
+              "name": "LOPERAMIDE HYDROCHLORIDE",
+              "strength": "2MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CAPSULE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

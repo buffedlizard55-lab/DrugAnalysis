@@ -1,0 +1,520 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19750221",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "19810818",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "19780503",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "19770705",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "66",
+          "submission_status": "AP",
+          "submission_status_date": "20130222",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "10884",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2013/016320s066lbl.pdf",
+              "date": "20130226",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "58",
+          "submission_status": "AP",
+          "submission_status_date": "20030206",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "438",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2003/16320slr057,058ltr.pdf",
+              "date": "20030206",
+              "type": "Letter"
+            },
+            {
+              "id": "33160",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/16320slr057_Myambutol_lbl.pdf",
+              "date": "20030206",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "56",
+          "submission_status": "AP",
+          "submission_status_date": "20011010",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "33159",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2001/16320s56lbl.pdf",
+              "date": "20030610",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "54",
+          "submission_status": "AP",
+          "submission_status_date": "19980508",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "19870625",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "60",
+          "submission_status": "AP",
+          "submission_status_date": "20040324",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12986",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/16320slr060ltr.pdf",
+              "date": "20040328",
+              "type": "Letter"
+            },
+            {
+              "id": "33161",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/16320slr060_myambutol_lbl.pdf",
+              "date": "20040405",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19790403",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "19871102",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "19820224",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19781221",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "50",
+          "submission_status": "AP",
+          "submission_status_date": "19870519",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19760428",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "19810818",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19780627",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "19810729",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "19780407",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19671106",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19770513",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "57",
+          "submission_status": "AP",
+          "submission_status_date": "20030206",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10882",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/16320slr057_Myambutol_lbl.pdf",
+              "date": "20030206",
+              "type": "Label"
+            },
+            {
+              "id": "12985",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2003/16320slr057,058ltr.pdf",
+              "date": "20030206",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "49",
+          "submission_status": "AP",
+          "submission_status_date": "19860103",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "63",
+          "submission_status": "AP",
+          "submission_status_date": "20081030",
+          "submission_public_notes": "Please see <a href=\"https://www.fda.gov/STIC/\">www.fda.gov/STIC</a> for labeling requirements on susceptibility test interpretive criteria for systemic antibacterial and antifungal drugs.",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "439",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/016320s063ltr.pdf",
+              "date": "20081103",
+              "type": "Letter"
+            },
+            {
+              "id": "10883",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/016320s063lbl.pdf",
+              "date": "20081107",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "55",
+          "submission_status": "AP",
+          "submission_status_date": "19980514",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "19850912",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19810109",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "53",
+          "submission_status": "AP",
+          "submission_status_date": "19950620",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19790403",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "51",
+          "submission_status": "AP",
+          "submission_status_date": "19871123",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19760610",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "19811103",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19780626",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA016320",
+      "sponsor_name": "KANCHAN HLTHCARE",
+      "openfda": {
+        "application_number": [
+          "NDA016320"
+        ],
+        "brand_name": [
+          "ETHAMBUTOL HYDROCHLORIDE"
+        ],
+        "generic_name": [
+          "ETHAMBUTOL HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Marlex Pharmaceuticals, Inc.",
+          "Kanchan Healthcare Inc",
+          "STI Pharma LLC"
+        ],
+        "product_ndc": [
+          "10135-796",
+          "10135-797",
+          "85742-005",
+          "85742-006",
+          "54879-001",
+          "54879-002"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ETHAMBUTOL HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "995599",
+          "995607"
+        ],
+        "spl_id": [
+          "2dcb6b41-b9a8-4dde-8248-334d13f87a29",
+          "2a57c753-d5e5-4479-845b-614c928d6dc5",
+          "5115f4a9-63ad-ebc3-e063-6294a90a7ba8"
+        ],
+        "spl_set_id": [
+          "1b9fbe16-edfc-44b6-b8d8-5c5a9d7558e1",
+          "e4ccab0e-84ff-447f-82ca-fa0a3989f6b7",
+          "3f6428d6-3745-4337-ad78-ebfff9f49135"
+        ],
+        "package_ndc": [
+          "10135-796-01",
+          "10135-797-01",
+          "85742-006-04",
+          "85742-005-04",
+          "54879-002-01",
+          "54879-001-01"
+        ],
+        "unii": [
+          "QE4VW5FO07"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "002",
+          "reference_drug": "No",
+          "brand_name": "MYAMBUTOL",
+          "active_ingredients": [
+            {
+              "name": "ETHAMBUTOL HYDROCHLORIDE",
+              "strength": "200MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "MYAMBUTOL",
+          "active_ingredients": [
+            {
+              "name": "ETHAMBUTOL HYDROCHLORIDE",
+              "strength": "400MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "MYAMBUTOL",
+          "active_ingredients": [
+            {
+              "name": "ETHAMBUTOL HYDROCHLORIDE",
+              "strength": "100MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "No",
+          "brand_name": "MYAMBUTOL",
+          "active_ingredients": [
+            {
+              "name": "ETHAMBUTOL HYDROCHLORIDE",
+              "strength": "500MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

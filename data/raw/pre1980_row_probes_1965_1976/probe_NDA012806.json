@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "20130612",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "343",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2013/012806Orig1s036ltr.pdf",
+              "date": "20130614",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "20020717",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "12037",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/12806scm028ltr.pdf",
+              "date": "20020717",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "19910830",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "20080325",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19871218",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19780724",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19861114",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19770223",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19800812",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "20130723",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "10824",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2013/012806s037lbl.pdf",
+              "date": "20130730",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "20121214",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19981106",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19791126",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19901002",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19780630",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19870603",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19651018",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19771214",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19821008",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19771111",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA012806",
+      "sponsor_name": "INA PHARMS",
+      "openfda": {
+        "application_number": [
+          "NDA012806"
+        ],
+        "brand_name": [
+          "CORDRAN"
+        ],
+        "generic_name": [
+          "FLURANDRENOLIDE"
+        ],
+        "manufacturer_name": [
+          "INA Pharmaceutics, Inc"
+        ],
+        "product_ndc": [
+          "74157-130",
+          "74157-180"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "TOPICAL"
+        ],
+        "substance_name": [
+          "FLURANDRENOLIDE"
+        ],
+        "rxcui": [
+          "197718",
+          "898420"
+        ],
+        "spl_id": [
+          "39d4fc80-5bee-3f1d-e063-6294a90a3d69"
+        ],
+        "spl_set_id": [
+          "39c0d1e6-6816-7ae5-e063-6394a90a592e"
+        ],
+        "package_ndc": [
+          "74157-130-07",
+          "74157-180-60"
+        ],
+        "nui": [
+          "N0000175576",
+          "N0000175450"
+        ],
+        "pharm_class_epc": [
+          "Corticosteroid [EPC]"
+        ],
+        "pharm_class_moa": [
+          "Corticosteroid Hormone Receptor Agonists [MoA]"
+        ],
+        "unii": [
+          "8EUL29XUQT"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "CORDRAN",
+          "active_ingredients": [
+            {
+              "name": "FLURANDRENOLIDE",
+              "strength": "0.05%"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "OINTMENT",
+          "route": "TOPICAL",
+          "marketing_status": "Discontinued",
+          "te_code": "AT"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "CORDRAN",
+          "active_ingredients": [
+            {
+              "name": "FLURANDRENOLIDE",
+              "strength": "0.025% **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "OINTMENT",
+          "route": "TOPICAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "CORDRAN SP",
+          "active_ingredients": [
+            {
+              "name": "FLURANDRENOLIDE",
+              "strength": "0.05%"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CREAM",
+          "route": "TOPICAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "CORDRAN SP",
+          "active_ingredients": [
+            {
+              "name": "FLURANDRENOLIDE",
+              "strength": "0.025% **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CREAM",
+          "route": "TOPICAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

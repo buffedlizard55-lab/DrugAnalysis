@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "2",
+          "submission_status": "AP",
+          "submission_status_date": "19780228",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19810729",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19790308",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19760716",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19760223",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19860717",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19790308",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "19780228",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "BLA017835",
+      "sponsor_name": "ISO TEX",
+      "products": [
+        {
+          "product_number": "002",
+          "reference_drug": "No",
+          "brand_name": "CHROMALBIN",
+          "active_ingredients": [
+            {
+              "name": "ALBUMIN CHROMATED CR-51 SERUM",
+              "strength": "250uCi/VIAL"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "003",
+          "reference_drug": "No",
+          "brand_name": "CHROMALBIN",
+          "active_ingredients": [
+            {
+              "name": "ALBUMIN CHROMATED CR-51 SERUM",
+              "strength": "500uCi/VIAL"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "CHROMALBIN",
+          "active_ingredients": [
+            {
+              "name": "ALBUMIN CHROMATED CR-51 SERUM",
+              "strength": "100uCi/VIAL"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

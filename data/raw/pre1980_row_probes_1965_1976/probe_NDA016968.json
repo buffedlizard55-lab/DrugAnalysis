@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "19780612",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "2",
+          "submission_status": "AP",
+          "submission_status_date": "19780808",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "20150223",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19991018",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19720928",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19970502",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "20041110",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "521",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/16968s022ltr.pdf",
+              "date": "20041116",
+              "type": "Letter"
+            },
+            {
+              "id": "33211",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/16968s022lbl.pdf",
+              "date": "20041116",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19960626",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "20021125",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "520",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/16968slr020ltr.pdf",
+              "date": "20021125",
+              "type": "Letter"
+            },
+            {
+              "id": "10944",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2002/16968slr020_Miostat_lbl.pdf",
+              "date": "20021125",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19891214",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19840813",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19830516",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19800424",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "20160121",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10945",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/016968s029lbl.pdf",
+              "date": "20160126",
+              "type": "Label"
+            },
+            {
+              "id": "13063",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/016968Orig1s029ltr.pdf",
+              "date": "20160122",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "19780612",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "20011218",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19990415",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19970114",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19950818",
+          "review_priority": "STANDARD",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19831206",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19800424",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "NDA016968",
+      "sponsor_name": "ALCON",
+      "openfda": {
+        "application_number": [
+          "NDA016968"
+        ],
+        "brand_name": [
+          "MIOSTAT"
+        ],
+        "generic_name": [
+          "CARBACHOL"
+        ],
+        "manufacturer_name": [
+          "Alcon Laboratories, Inc."
+        ],
+        "product_ndc": [
+          "0065-0023"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "OPHTHALMIC"
+        ],
+        "substance_name": [
+          "CARBACHOL"
+        ],
+        "rxcui": [
+          "308966",
+          "991606"
+        ],
+        "spl_id": [
+          "a76a34d0-2e07-408d-a8c8-d00f2715cad7"
+        ],
+        "spl_set_id": [
+          "f28d7a56-e079-4a8b-ad81-9a97c780de67"
+        ],
+        "package_ndc": [
+          "0065-0023-15"
+        ],
+        "unii": [
+          "8Y164V895Y"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "MIOSTAT",
+          "active_ingredients": [
+            {
+              "name": "CARBACHOL",
+              "strength": "0.01%"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "SOLUTION",
+          "route": "INTRAOCULAR",
+          "marketing_status": "Prescription"
+        }
+      ]
+    }
+  ]
+}

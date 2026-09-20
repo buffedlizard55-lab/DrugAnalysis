@@ -1,0 +1,431 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "49",
+          "submission_status": "AP",
+          "submission_status_date": "20220804",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "71799",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2022/016084Orig1s049lbl.pdf",
+              "date": "20220815",
+              "type": "Label"
+            },
+            {
+              "id": "72101",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2022/016084Orig1s049ltr.pdf",
+              "date": "20220919",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19910711",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19850227",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "51",
+          "submission_status": "AP",
+          "submission_status_date": "20230921",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "75537",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/016084Orig1s048,051,s052ltr.pdf",
+              "date": "20230922",
+              "type": "Letter"
+            },
+            {
+              "id": "75540",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/016084s048s051s052lbl.pdf",
+              "date": "20230922",
+              "type": "Label"
+            },
+            {
+              "id": "83885",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/016084s51s52.pdf",
+              "date": "20251023",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19890516",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19821208",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19800201",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "20020717",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "415",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/16084slr041ltr.pdf",
+              "date": "20020717",
+              "type": "Letter"
+            },
+            {
+              "id": "20049",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2002/016084_S041_Zyloprim Tablets.pdf",
+              "date": "20070709",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19760116",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "19820610",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "19821210",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19800130",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19761206",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "48",
+          "submission_status": "AP",
+          "submission_status_date": "20230921",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "75539",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/016084s048s051s052lbl.pdf",
+              "date": "20230922",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19660819",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19850607",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "20230921",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "75538",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/016084Orig1s048,051,s052ltr.pdf",
+              "date": "20230922",
+              "type": "Letter"
+            },
+            {
+              "id": "75541",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/016084s048s051s052lbl.pdf",
+              "date": "20230922",
+              "type": "Label"
+            },
+            {
+              "id": "83884",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/016084s51s52.pdf",
+              "date": "20251023",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "20181203",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "56622",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/016084s044lbl.pdf",
+              "date": "20181204",
+              "type": "Label"
+            },
+            {
+              "id": "56650",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/016084s044ltr.pdf",
+              "date": "20181207",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19830601",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19860127",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "19820610",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19850225",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19770406",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA016084",
+      "sponsor_name": "CASPER PHARMA LLC",
+      "openfda": {
+        "application_number": [
+          "NDA016084"
+        ],
+        "brand_name": [
+          "ALLOPURINOL"
+        ],
+        "generic_name": [
+          "ALLOPURINOL"
+        ],
+        "manufacturer_name": [
+          "Rising Pharma Holdings, Inc."
+        ],
+        "product_ndc": [
+          "16571-883",
+          "16571-884",
+          "16571-885"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ALLOPURINOL"
+        ],
+        "rxcui": [
+          "197319",
+          "197320",
+          "245422"
+        ],
+        "spl_id": [
+          "14a0ad9d-4145-4869-9d8d-747e5d7bfb44"
+        ],
+        "spl_set_id": [
+          "30ad5ba2-1cef-4933-b104-0597f6a2aaa2"
+        ],
+        "package_ndc": [
+          "16571-883-09",
+          "16571-883-01",
+          "16571-883-50",
+          "16571-883-10",
+          "16571-884-09",
+          "16571-884-01",
+          "16571-884-50",
+          "16571-884-10",
+          "16571-885-09",
+          "16571-885-01",
+          "16571-885-50",
+          "16571-885-10"
+        ],
+        "nui": [
+          "N0000175698",
+          "N0000000206"
+        ],
+        "pharm_class_epc": [
+          "Xanthine Oxidase Inhibitor [EPC]"
+        ],
+        "pharm_class_moa": [
+          "Xanthine Oxidase Inhibitors [MoA]"
+        ],
+        "unii": [
+          "63CZ7GJN5I"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "ZYLOPRIM",
+          "active_ingredients": [
+            {
+              "name": "ALLOPURINOL",
+              "strength": "200MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "ZYLOPRIM",
+          "active_ingredients": [
+            {
+              "name": "ALLOPURINOL",
+              "strength": "100MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "ZYLOPRIM",
+          "active_ingredients": [
+            {
+              "name": "ALLOPURINOL",
+              "strength": "300MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}
