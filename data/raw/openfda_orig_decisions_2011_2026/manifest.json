@@ -1,6 +1,6 @@
 {
   "job": "openfda_orig_decisions_2011_2026",
-  "generated_utc": "2026-09-19T23:54:41Z",
+  "generated_utc": "2026-09-20T18:02:49Z",
   "requests": [
     {
       "id": "orig_decisions_1999",
@@ -1534,6 +1534,216 @@
       "bytes": 131439,
       "sha256": "1cee0ef86280acfcf055d93d8a0ad3bd69552e7dcf81e739a6ab0060eba9b896",
       "written_at_utc": "2026-09-17T21:57:10Z"
+    },
+    {
+      "id": "orig_decisions_1999",
+      "status": "skipped-existing",
+      "out": "decisions_1999.json"
+    },
+    {
+      "id": "orig_decisions_2000",
+      "status": "skipped-existing",
+      "out": "decisions_2000.json"
+    },
+    {
+      "id": "orig_decisions_2001",
+      "status": "skipped-existing",
+      "out": "decisions_2001.json"
+    },
+    {
+      "id": "orig_decisions_2002",
+      "status": "skipped-existing",
+      "out": "decisions_2002.json"
+    },
+    {
+      "id": "orig_decisions_2003",
+      "status": "skipped-existing",
+      "out": "decisions_2003.json"
+    },
+    {
+      "id": "orig_decisions_2004",
+      "status": "skipped-existing",
+      "out": "decisions_2004.json"
+    },
+    {
+      "id": "orig_decisions_2005",
+      "status": "skipped-existing",
+      "out": "decisions_2005.json"
+    },
+    {
+      "id": "orig_decisions_2006",
+      "status": "skipped-existing",
+      "out": "decisions_2006.json"
+    },
+    {
+      "id": "orig_decisions_2007",
+      "status": "skipped-existing",
+      "out": "decisions_2007.json"
+    },
+    {
+      "id": "orig_decisions_2008",
+      "status": "skipped-existing",
+      "out": "decisions_2008.json"
+    },
+    {
+      "id": "orig_decisions_2009",
+      "status": "skipped-existing",
+      "out": "decisions_2009.json"
+    },
+    {
+      "id": "orig_decisions_2010",
+      "status": "skipped-existing",
+      "out": "decisions_2010.json"
+    },
+    {
+      "id": "orig_decisions_2011",
+      "status": "skipped-existing",
+      "out": "decisions_2011.json"
+    },
+    {
+      "id": "orig_decisions_2012",
+      "status": "skipped-existing",
+      "out": "decisions_2012.json"
+    },
+    {
+      "id": "orig_decisions_2013",
+      "status": "skipped-existing",
+      "out": "decisions_2013.json"
+    },
+    {
+      "id": "orig_decisions_2014",
+      "status": "skipped-existing",
+      "out": "decisions_2014.json"
+    },
+    {
+      "id": "orig_decisions_2015",
+      "status": "skipped-existing",
+      "out": "decisions_2015.json"
+    },
+    {
+      "id": "orig_decisions_2016",
+      "status": "skipped-existing",
+      "out": "decisions_2016.json"
+    },
+    {
+      "id": "orig_decisions_2017",
+      "status": "skipped-existing",
+      "out": "decisions_2017.json"
+    },
+    {
+      "id": "orig_decisions_2018",
+      "status": "skipped-existing",
+      "out": "decisions_2018.json"
+    },
+    {
+      "id": "orig_decisions_2019",
+      "status": "skipped-existing",
+      "out": "decisions_2019.json"
+    },
+    {
+      "id": "orig_decisions_2020",
+      "status": "skipped-existing",
+      "out": "decisions_2020.json"
+    },
+    {
+      "id": "orig_decisions_2021",
+      "status": "skipped-existing",
+      "out": "decisions_2021.json"
+    },
+    {
+      "id": "orig_decisions_2022",
+      "status": "skipped-existing",
+      "out": "decisions_2022.json"
+    },
+    {
+      "id": "orig_decisions_2023",
+      "status": "skipped-existing",
+      "out": "decisions_2023.json"
+    },
+    {
+      "id": "orig_decisions_2024",
+      "status": "skipped-existing",
+      "out": "decisions_2024.json"
+    },
+    {
+      "id": "orig_decisions_2025",
+      "status": "skipped-existing",
+      "out": "decisions_2025.json"
+    },
+    {
+      "id": "orig_decisions_2026",
+      "status": "skipped-existing",
+      "out": "decisions_2026.json"
+    },
+    {
+      "id": "orig_decisions_1985",
+      "status": "skipped-existing",
+      "out": "decisions_1985.json"
+    },
+    {
+      "id": "orig_decisions_1986",
+      "status": "skipped-existing",
+      "out": "decisions_1986.json"
+    },
+    {
+      "id": "orig_decisions_1987",
+      "status": "skipped-existing",
+      "out": "decisions_1987.json"
+    },
+    {
+      "id": "orig_decisions_1988",
+      "status": "skipped-existing",
+      "out": "decisions_1988.json"
+    },
+    {
+      "id": "orig_decisions_1989",
+      "status": "skipped-existing",
+      "out": "decisions_1989.json"
+    },
+    {
+      "id": "orig_decisions_1990",
+      "status": "skipped-existing",
+      "out": "decisions_1990.json"
+    },
+    {
+      "id": "orig_decisions_1991",
+      "status": "skipped-existing",
+      "out": "decisions_1991.json"
+    },
+    {
+      "id": "orig_decisions_1992",
+      "status": "skipped-existing",
+      "out": "decisions_1992.json"
+    },
+    {
+      "id": "orig_decisions_1993",
+      "status": "skipped-existing",
+      "out": "decisions_1993.json"
+    },
+    {
+      "id": "orig_decisions_1994",
+      "status": "skipped-existing",
+      "out": "decisions_1994.json"
+    },
+    {
+      "id": "orig_decisions_1995",
+      "status": "skipped-existing",
+      "out": "decisions_1995.json"
+    },
+    {
+      "id": "orig_decisions_1996",
+      "status": "skipped-existing",
+      "out": "decisions_1996.json"
+    },
+    {
+      "id": "orig_decisions_1997",
+      "status": "skipped-existing",
+      "out": "decisions_1997.json"
+    },
+    {
+      "id": "orig_decisions_1998",
+      "status": "skipped-existing",
+      "out": "decisions_1998.json"
     },
     {
       "id": "orig_decisions_1999",

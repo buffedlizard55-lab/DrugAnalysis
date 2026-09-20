@@ -1,6 +1,6 @@
 {
   "job": "source_captures_2026_09_17",
-  "generated_utc": "2026-09-20T00:01:32Z",
+  "generated_utc": "2026-09-20T18:04:28Z",
   "requests": [
     {
       "id": "cder_nme_cy1998_table",
@@ -401,6 +401,86 @@
       "bytes": 159,
       "sha256": "eaa836528b408486d4f7d64067335c19225eab03ff2c54afc938db2300350065",
       "written_at_utc": "2026-09-20T00:01:31Z"
+    },
+    {
+      "id": "cder_nme_cy1998_table",
+      "url": "https://web.archive.org/web/20051016001622/http://www.fda.gov/cder/rdmt/nmecy98.htm",
+      "status": 200,
+      "bytes": 22081,
+      "sha256": "6245c22ad19c52bfc6371905e0fea65de441098569451096afe3254cbe7f6d82",
+      "written_at_utc": "2026-09-20T18:03:34Z"
+    },
+    {
+      "id": "cder_nme_cy1999_table",
+      "url": "https://web.archive.org/web/20031206120537/http://www.fda.gov/cder/rdmt/nmecy99.htm",
+      "status": 200,
+      "bytes": 38949,
+      "sha256": "8e6c18332d2e2f90f1bec0dc888f9643e02c9b37931a670af5c32ae8a0b89b42",
+      "written_at_utc": "2026-09-20T18:03:40Z"
+    },
+    {
+      "id": "cder_nme_cy2000_table",
+      "url": "https://web.archive.org/web/20031206203139/http://www.fda.gov/cder/rdmt/nmecy2000.htm",
+      "status": 200,
+      "bytes": 31727,
+      "sha256": "d02055be6d6160a251020b4a978e6d336078ed7f2975365a90980e8ec929d250",
+      "written_at_utc": "2026-09-20T18:03:50Z"
+    },
+    {
+      "id": "cder_rdmt_index_2003",
+      "url": "https://web.archive.org/web/20031208110717/http://www.fda.gov/CDER/rdmt/default.htm",
+      "status": 200,
+      "bytes": 15824,
+      "sha256": "d968c6c2931f4851dccf0cd80bbe6bbf7ef30bb70a94f6030676f8aa37c6dc84",
+      "written_at_utc": "2026-09-20T18:03:59Z"
+    },
+    {
+      "id": "fda_novel_2014_table_wayback",
+      "url": "https://web.archive.org/web/20150123034253/http://www.fda.gov/Drugs/DevelopmentApprovalProcess/DrugInnovation/ucm429247.htm",
+      "status": 200,
+      "bytes": 64205,
+      "sha256": "77654d0232b8d79639dd87b815cae9aede2b510a6cbfc2d5c54536b647dbc9d0",
+      "written_at_utc": "2026-09-20T18:04:25Z"
+    },
+    {
+      "id": "fda_novel_2026_live",
+      "url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+      "status": 200,
+      "bytes": 41785,
+      "sha256": "bd9fe81290a5f210a6c0d16c394cdc559871ad360d25fcf0b7aab629f1a92449",
+      "written_at_utc": "2026-09-20T18:04:26Z"
+    },
+    {
+      "id": "openfda_contrave_200063",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA200063%22&limit=1",
+      "status": 200,
+      "bytes": 12628,
+      "sha256": "8a747a4d6730548b94e81cc2f43ab30b28fa52fe97856ac179f0d67d204b8947",
+      "written_at_utc": "2026-09-20T18:04:26Z"
+    },
+    {
+      "id": "openfda_ofev_205832",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA205832%22&limit=1",
+      "status": 200,
+      "bytes": 15334,
+      "sha256": "3029fe0efad49c2bf26f664e59601bab6c861c720619ed3751e2024abbf9538b",
+      "written_at_utc": "2026-09-20T18:04:27Z"
+    },
+    {
+      "id": "openfda_pixclara_218592",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA218592%22&limit=1",
+      "status": 200,
+      "bytes": 2096,
+      "sha256": "2c340cabc88677f2b70e02dca259090f791290cff236f16a354e007fa7e6fa23",
+      "written_at_utc": "2026-09-20T18:04:27Z"
+    },
+    {
+      "id": "ctgov_total_2026_2027",
+      "url": "https://clinicaltrials.gov/api/v2/studies?query.term=AREA[Phase]PHASE3+AND+AREA[PrimaryCompletionDate]RANGE[2026-01-01,2027-12-31]&pageSize=1&countTotal=true&format=json&fields=NCTId",
+      "status": 200,
+      "bytes": 159,
+      "sha256": "eaa836528b408486d4f7d64067335c19225eab03ff2c54afc938db2300350065",
+      "written_at_utc": "2026-09-20T18:04:28Z"
     }
   ],
   "job_file": "fetch_jobs/source_captures_2026_09_17.json"

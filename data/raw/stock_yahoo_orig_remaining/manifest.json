@@ -1,6 +1,6 @@
 {
   "job": "stock_yahoo_orig_remaining",
-  "generated_utc": "2026-09-20T01:05:08Z",
+  "generated_utc": "2026-09-20T19:09:34Z",
   "requests": [
     {
       "id": "GILD_2026-08-27_O-NDA221104",
@@ -22264,6 +22264,4269 @@
       "status": "FAILED",
       "error": "HTTPError: HTTP Error 400: Bad Request",
       "at_utc": "2026-09-20T01:05:08Z"
+    },
+    {
+      "id": "AZN_1997-06-24_O-NDA020441",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_1997-06-19_O-NDA050737",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_1997-06-19_O-NDA050738",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_1997-05-22_O-NDA050735",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_1997-05-22_O-NDA050736",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2026-08-27_O-NDA221104",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2026-08-27_O-NDA221443",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2026-08-14_O-NDA218524",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDY_2026-07-31_O-BLA761376",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2026-07-29_O-NDA220381",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2026-07-28_O-NDA219990",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_2026-07-24_O-NDA219962",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2026-07-09_O-BLA761445",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2026-07-09_O-NDA220790",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2026-05-22_O-NDA220736",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2026-05-01_O-NDA217180",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-04-24_O-BLA761451",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2026-03-30_O-NDA220626",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2026-03-27_O-BLA761385",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-02-27_O-NDA220092",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-02-13_O-BLA761484",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RBGLY_2025-12-22_O-NDA217338",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2025-12-22_O-NDA218316",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2025-12-19_O-BLA761456",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2025-12-19_O-BLA761457",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-12-17_O-BLA761433",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BCRX_2025-12-11_O-NDA219776",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ACAD_2025-12-11_O-NDA219884",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-10-15_O-BLA761495",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-09-10_O-NDA219943",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-09-09_O-NDA219683",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2025-08-29_O-BLA761375",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1755388800&period2=1757462400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:35:18Z"
+    },
+    {
+      "id": "AMGN_2025-08-29_O-NDA210745",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2025-07-31_O-BLA761428",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-06-18_O-NDA220018",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-06-18_O-NDA220020",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-06-10_O-NDA218785",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2025-06-09_O-NDA217472",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDY_2025-05-30_O-NDA216830",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2025-05-14_O-NDA215400",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2025-04-30_O-BLA761379-2025-04-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-04-17_O-NDA220073",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MIRM_2025-04-10_O-NDA219485",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2025-03-25_O-BLA761398",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TLX_2025-03-20_O-NDA219592",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2025-03-14_O-BLA761449",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2025-03-13_O-NDA215425",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-03-03_O-BLA761380",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2025-02-28_O-NDA218475",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MIRM_2025-02-21_O-NDA219488",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2025-02-14_O-BLA761325",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-02-07_O-NDA217906",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2024-12-27_O-BLA761381",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2024-12-27_O-BLA761429",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2024-12-26_O-BLA761417",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2024-10-16_O-NDA216962",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2024-10-04_O-NDA217604",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2024-09-27_O-BLA761379",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-08-30_O-NDA219104",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2024-08-23_O-BLA761298",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2024-08-07_O-NDA217186",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2024-07-26_O-NDA218343",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PHAT_2024-07-17_O-NDA218710",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2024-05-28_O-BLA761333",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NBIX_2024-04-30_O-NDA218390",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2024-04-26_O-NDA218347",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-04-24_O-NDA218466",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2024-04-19_O-NDA218424",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2024-04-18_O-BLA761359",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-04-12_O-NDA218591",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-04-10_O-NDA218160",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-03-22_O-NDA218490",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-03-15_O-NDA219016",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2024-03-07_O-NDA217439",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2024-03-05_O-BLA761275",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2024-03-04_O-NDA218158",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2024-02-14_O-NDA217512",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2024-02-09_O-NDA213976",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2024-01-05_O-BLA761255-2024-01-05",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2023-11-29_O-NDA216774",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2023-11-08_O-NDA217806",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PHAT_2023-11-01_O-NDA215151",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2023-10-31_O-BLA761285",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2023-10-31_O-BLA761331",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2023-10-20_O-NDA216632",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARDX_2023-10-17_O-NDA213931",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-10-06_O-BLA761349",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2023-09-29_O-BLA761354",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2023-09-29_O-NDA216142",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2023-09-29_O-NDA217569",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2023-09-27_O-BLA761133",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-09-26_O-NDA217729",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-09-07_O-NDA217581",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2023-08-11_O-NDA216793",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2023-06-27_O-NDA217651",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HALO_2023-06-20_O-BLA761313",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2023-05-30_O-NDA217469",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INDV_2023-05-22_O-NDA217470",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2023-05-11_O-NDA216338",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EYEN_2023-05-05_O-NDA215352",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/EYEN?period1=1682208000&period2=1684281600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:35:28Z"
+    },
+    {
+      "id": "ALKS_2023-05-01_O-NDA214755",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2023-04-28_O-NDA213586",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2023-04-28_O-NDA216579",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2023-04-26_O-NDA214876",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2023-04-26_O-NDA217660",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-03-16_O-NDA217513",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-03-16_O-NDA217514",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMPH_2023-03-07_O-NDA208969",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2023-02-17_O-NDA216354",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "APLS_2023-02-17_O-NDA217171",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APLS?period1=1675555200&period2=1677628800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:35:37Z"
+    },
+    {
+      "id": "AZN_2023-01-10_O-NDA214070",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-12-15_O-NDA211530",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2022-12-15_O-NDA216078",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2022-12-13_O-BLA761255",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-11-16_O-BLA761215-2022-11-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-11-10_O-BLA761270",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2022-09-27_O-NDA216227",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HRTX_2022-09-16_O-NDA216457",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2022-09-01_O-BLA761173",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-08-03_O-NDA216387",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-06-22_O-NDA214218",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-06-16_O-BLA761262",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-06-10_O-NDA208746",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "UTHR_2022-05-23_O-NDA214324",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SIGA_2022-05-18_O-NDA214518",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SGIOF_2022-05-12_O-NDA215446",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-05-02_O-NDA209191",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2022-04-29_O-NDA215809",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2022-04-21_O-NDA214919",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2022-04-13_O-BLA761231",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-04-05_O-NDA215039",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PRGO_2022-03-17_O-NDA215712",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2022-03-15_O-NDA213581",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1646265600&period2=1648339200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:35:46Z"
+    },
+    {
+      "id": "JNJ_2022-02-25_O-NDA022388",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2022-01-25_O-NDA213645",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-12-20_O-NDA215859",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TLX_2021-12-17_O-NDA214032",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TLX?period1=1638662400&period2=1640736000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:35:56Z"
+    },
+    {
+      "id": "OGN_2021-12-07_O-NDA215650",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-10-28_O-NDA214028",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2021-10-22_O-NDA211950",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1633824000&period2=1635897600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:36:05Z"
+    },
+    {
+      "id": "INCY_2021-09-21_O-NDA215309",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2021-08-17_O-BLA761223",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2021-07-30_O-NDA212125",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-07-29_O-NDA214275",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2021-07-28_O-BLA761201",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2021-06-23_O-NDA214965",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-06-21_O-NDA210282",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2021-06-17_O-NDA213872",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDY_2021-06-14_O-NDA213536",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2021-06-10_O-NDA214187",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-06-10_O-NDA215110",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2021-06-04_O-NDA215256",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-05-31_O-NDA214770",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HRTX_2021-05-12_O-NDA211988",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MLNT_2021-03-12_O-NDA214155",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MLNT?period1=1614470400&period2=1616544000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:36:14Z"
+    },
+    {
+      "id": "BAX_2021-01-15_O-NDA214313",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2020-12-17_O-BLA761140",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VNDA_2020-12-01_O-NDA214517",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BPMC_2020-12-01_O-NDA214701",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BPMC?period1=1605744000&period2=1607817600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:36:24Z"
+    },
+    {
+      "id": "ALC_2020-10-26_O-NDA210933",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2020-09-25_O-NDA213082",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2020-09-01_O-NDA214120",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2020-08-04_O-NDA213674",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDY_2020-07-30_O-NDA212501",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2020-07-23_O-NDA212122",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2020-07-21_O-NDA212690",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2020-07-06_O-BLA761154",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EPZM_2020-06-18_O-NDA213400",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/EPZM?period1=1591401600&period2=1593475200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:36:33Z"
+    },
+    {
+      "id": "LLY_2020-06-15_O-BLA761109",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2020-06-11_O-BLA210605",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2020-06-10_O-BLA761111",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2020-05-29_O-NDA213388",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2020-05-26_O-NDA209529",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SCLX_2020-05-05_O-NDA212157",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCLX?period1=1587600000&period2=1589673600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:36:42Z"
+    },
+    {
+      "id": "JNJ_2020-05-01_O-BLA761145",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2020-03-13_O-NDA208574",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2020-03-09_O-NDA211039",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1582675200&period2=1584748800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:36:52Z"
+    },
+    {
+      "id": "ABBV_2020-03-04_O-NDA211911",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2020-02-28_O-NDA211733",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1581811200&period2=1583884800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:37:01Z"
+    },
+    {
+      "id": "AGRX_2020-02-14_O-NDA204017",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AGRX?period1=1580601600&period2=1582675200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:37:10Z"
+    },
+    {
+      "id": "HZNP_2020-02-14_O-NDA213491",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HZNP?period1=1580601600&period2=1582675200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:37:20Z"
+    },
+    {
+      "id": "EGRX_2020-02-08_O-NDA209472",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2020-01-16_O-NDA213182",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2019-12-18_O-NDA211882",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2019-12-13_O-NDA212535",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2019-12-06_O-BLA761086",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2019-11-26_O-NDA212832",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2019-11-15_O-BLA761118",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2019-11-05_O-NDA209359",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2019-11-01_O-NDA212436",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2019-10-29_O-NDA211855",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDY_2019-10-21_O-NDA212909",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDY_2019-10-04_O-NDA206927",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2019-09-20_O-NDA213051",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2019-09-05_O-NDA210064",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2019-08-28_O-NDA212477",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2019-08-28_O-NDA212480",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMPH_2019-07-24_O-NDA210134",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2019-07-23_O-BLA761103",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2019-06-27_O-BLA761099",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2019-06-20_O-BLA208157",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2019-06-13_O-BLA761073",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2019-06-06_O-BLA761122",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2019-05-20_O-NDA210326",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2019-05-02_O-NDA210874",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2019-04-25_O-NDA209354",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2019-04-22_O-NDA209964",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2019-04-11_O-NDA210632",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2019-03-18_O-NDA211225",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2019-03-12_O-NDA208259",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1551312000&period2=1553385600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:37:29Z"
+    },
+    {
+      "id": "BLCO_2019-03-12_O-NDA210821",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1551312000&period2=1553385600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:37:39Z"
+    },
+    {
+      "id": "PFE_2019-03-11_O-BLA761081",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2019-03-05_O-NDA211243",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2019-02-22_O-NDA208219",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1549756800&period2=1551830400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:37:48Z"
+    },
+    {
+      "id": "SCLX_2019-01-30_O-NDA210942",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCLX?period1=1547769600&period2=1549843200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:37:57Z"
+    },
+    {
+      "id": "BAYRY_2018-11-26_O-NDA211710",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2018-11-06_O-NDA209355",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "CHRS_2018-11-02_O-BLA761039",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INSM_2018-09-28_O-NDA207356",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2018-09-07_O-NDA208042",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2018-08-23_O-NDA209353",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2018-08-22_O-NDA210565",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1533859200&period2=1535932800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:38:07Z"
+    },
+    {
+      "id": "SOLV_2018-08-08_O-NDA208288",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SOLV?period1=1532649600&period2=1534723200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:38:16Z"
+    },
+    {
+      "id": "VRTX_2018-08-07_O-NDA211358",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2018-08-02_O-NDA211158",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "UTHR_2018-07-30_O-NDA208276",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INDV_2018-07-27_O-NDA210655",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2018-07-24_O-NDA208614",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2018-07-20_O-BLA761080",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2018-07-17_O-NDA210455",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2018-07-10_O-NDA209481",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALKS_2018-06-29_O-NDA209830",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ACAD_2018-06-28_O-NDA210793",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2018-06-04_O-BLA761075",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2018-05-24_O-NDA210115",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2018-05-15_O-BLA125545",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EGRX_2018-05-15_O-NDA205580",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2018-03-22_O-NDA022142",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2018-02-28_O-NDA022141",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SCLX_2018-02-28_O-NDA207962",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SCLX?period1=1518739200&period2=1520812800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:38:25Z"
+    },
+    {
+      "id": "LLY_2018-02-26_O-NDA208855",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ZVRA_2018-02-23_O-NDA208653",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SUPN_2018-02-16_O-NDA209410",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2018-02-05_O-NDA208255",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2018-01-26_O-NDA209260",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2017-12-22_O-NDA208144",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1512864000&period2=1514937600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:38:35Z"
+    },
+    {
+      "id": "BAX_2017-12-21_O-NDA208374",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2017-12-13_O-BLA761072",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2017-12-11_O-BLA209196",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2017-12-01_O-BLA761074",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INDV_2017-11-30_O-NDA209819",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2017-11-21_O-NDA208109",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HRTX_2017-11-09_O-NDA209296",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2017-11-06_O-NDA205004",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2017-10-20_O-NDA209210",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2017-10-11_O-NDA209501",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2017-09-29_O-BLA208751",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2017-09-18_O-NDA209482",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2017-09-14_O-BLA761028",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2017-09-05_O-NDA209279",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2017-09-01_O-BLA761060",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2017-08-30_O-NDA209885",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SUPN_2017-08-24_O-NDA208944",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2017-08-17_O-NDA208558",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2017-08-03_O-NDA209401",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2017-07-20_O-BLA761043",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2017-06-20_O-NDA022063",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ADMP_2017-06-15_O-NDA207534",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADMP?period1=1496448000&period2=1498521600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:38:44Z"
+    },
+    {
+      "id": "FSNUY_2017-06-15_O-NDA208418",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2017-06-07_O-NDA209512",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2017-05-30_O-NDA208694",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2017-05-18_O-NDA207968",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2017-05-04_O-NDA209935",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2017-04-20_O-NDA208083",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2017-02-27_O-NDA209091",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2017-01-31_O-NDA209089",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2017-01-31_O-NDA209090",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2017-01-28_O-NDA208510",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2017-01-27_O-NDA208798",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2017-01-27_O-NDA208799",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2017-01-17_O-NDA207975",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2016-12-30_O-NDA206110",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2016-12-01_O-NDA205645",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2016-12-01_O-NDA208151",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1479513600&period2=1481587200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:38:53Z"
+    },
+    {
+      "id": "NVO_2016-11-21_O-BLA208583",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2016-11-21_O-BLA208673",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2016-11-10_O-NDA208464",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2016-10-19_O-NDA208398",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OTSKY_2016-10-07_O-NDA206030",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2016-09-23_O-BLA761024",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2016-09-23_O-BLA761044",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2016-09-20_O-NDA205879",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2016-09-16_O-NDA208224",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2016-08-19_O-NDA207621",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HRTX_2016-08-09_O-NDA022445",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2016-07-22_O-NDA208624",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2016-07-19_O-NDA208271",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2016-07-13_O-NDA207648",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2016-06-03_O-NDA206302",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BFRI_2016-05-10_O-NDA208081",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BFRI?period1=1461801600&period2=1463875200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:39:03Z"
+    },
+    {
+      "id": "CPRX_2016-04-29_O-NDA208277",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CPRX?period1=1460851200&period2=1462924800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:39:12Z"
+    },
+    {
+      "id": "AZN_2016-04-25_O-NDA208294",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EXEL_2016-04-25_O-NDA208692",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2016-04-04_O-NDA208215",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2016-03-01_O-NDA208351",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2016-02-29_O-NDA208135",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1455667200&period2=1457740800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:39:22Z"
+    },
+    {
+      "id": "PFE_2016-02-23_O-NDA208246",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2016-01-26_O-NDA208056",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2015-12-28_O-NDA204016",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2015-12-17_O-NDA207865",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2015-12-16_O-BLA205692",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EGRX_2015-12-07_O-NDA208194",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2015-11-23_O-NDA207920",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2015-10-29_O-NDA207923",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2015-10-29_O-NDA207930",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2015-10-28_O-NDA204767",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2015-08-24_O-NDA207027",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2015-08-07_O-NDA207131",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2015-07-24_O-NDA207931",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2015-07-15_O-NDA207917",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1435881600&period2=1437955200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:39:31Z"
+    },
+    {
+      "id": "AZN_2015-07-13_O-NDA206995",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2015-06-18_O-NDA206473",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2015-05-26_O-BLA205747",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2015-05-18_O-NDA207946",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2015-05-08_O-NDA201849",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2015-04-03_O-NDA205572",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2015-03-31_O-NDA205636",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2015-03-30_O-NDA206910",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2015-03-23_O-NDA201811",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2015-03-17_O-NDA207925",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2015-03-04_O-BLA125527",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2015-02-25_O-BLA206538",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2015-02-06_O-NDA206510",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2015-01-30_O-NDA206276",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1421539200&period2=1423612800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:39:40Z"
+    },
+    {
+      "id": "JNJ_2015-01-29_O-NDA205395",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2015-01-29_O-NDA206353",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2015-01-15_O-NDA207926",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1420243200&period2=1422316800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:39:50Z"
+    },
+    {
+      "id": "ABBV_2015-01-09_O-NDA203952",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2015-01-08_O-NDA203629",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2015-01-07_O-NDA203312",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMRX?period1=1419552000&period2=1421625600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:39:59Z"
+    },
+    {
+      "id": "NVO_2014-12-23_O-NDA206321",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2014-12-23_O-NDA206439",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2014-12-19_O-NDA206255",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1417910400&period2=1419984000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:40:08Z"
+    },
+    {
+      "id": "TEVA_2014-12-15_O-NDA206769",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2014-10-29_O-NDA205649",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2014-10-21_O-NDA201657",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2014-10-07_O-NDA205613",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2014-09-24_O-NDA203094",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2014-09-24_O-NDA204734",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2014-09-23_O-NDA206088",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2014-08-25_O-NDA200656",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2014-08-20_O-NDA205625",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2014-08-08_O-NDA204353",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2014-07-23_O-NDA205434",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1405036800&period2=1407110400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:40:18Z"
+    },
+    {
+      "id": "EGRX_2014-07-22_O-NDA205579",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2014-06-02_O-NDA206352",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2014-05-15_O-NDA204822",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2014-05-05_O-NDA205060",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2014-04-25_O-NDA205641",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1397347200&period2=1399420800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:40:27Z"
+    },
+    {
+      "id": "AZN_2014-03-28_O-NDA204655",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2014-03-13_O-NDA202356",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2014-03-13_O-NDA205596",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2014-01-17_O-NDA205352",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HZNP_2014-01-16_O-NDA204623",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HZNP?period1=1388793600&period2=1390867200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:40:36Z"
+    },
+    {
+      "id": "UTHR_2013-12-20_O-NDA203496",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2013-12-20_O-NDA205786",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMRN_2013-12-19_O-NDA205065",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2013-11-25_O-NDA205053",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2013-10-30_O-NDA204223",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2013-10-11_O-NDA205208",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2013-10-03_O-NDA204508",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "UTHR_2013-08-31_O-NDA205992",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2013-08-23_O-NDA204708",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1376179200&period2=1378252800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:40:46Z"
+    },
+    {
+      "id": "SUPN_2013-08-16_O-NDA201635",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2013-07-25_O-NDA204168",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2013-07-19_O-NDA204096",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2013-07-18_O-BLA125433",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INVA_2013-06-21_O-NDA022407",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2013-05-03_O-NDA200153",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1366502400&period2=1368576000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:40:55Z"
+    },
+    {
+      "id": "HZNP_2013-04-30_O-NDA203389",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HZNP?period1=1366243200&period2=1368316800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:41:04Z"
+    },
+    {
+      "id": "ALC_2013-04-19_O-NDA204251",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1365292800&period2=1367366400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:41:14Z"
+    },
+    {
+      "id": "LGND_2013-04-12_O-NDA203791",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2013-04-05_O-NDA203168",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1364083200&period2=1366156800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:41:23Z"
+    },
+    {
+      "id": "TEVA_2013-03-28_O-NDA204061",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2013-03-22_O-NDA201688",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2013-02-25_O-NDA204369",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2013-02-01_O-NDA204412",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PRGO_2013-01-31_O-NDA203098",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2013-01-25_O-NDA022426",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2013-01-25_O-NDA202211",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2013-01-25_O-NDA203414",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2013-01-17_O-NDA202278",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2013-01-14_O-NDA203634",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2013-01-09_O-NDA203159",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2012-12-14_O-NDA203696",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1354406400&period2=1356480000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:41:32Z"
+    },
+    {
+      "id": "OTSKY_2012-12-14_O-NDA203993",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SUPN_2012-10-19_O-NDA202810",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2012-10-16_O-NDA203491",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2012-09-28_O-NDA202872",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1347753600&period2=1349827200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:41:42Z"
+    },
+    {
+      "id": "VTRS_2012-08-30_O-NDA203109",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2012-08-29_O-NDA203985",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HZNP_2012-07-26_O-NDA202020",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HZNP?period1=1342224000&period2=1344297600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:41:51Z"
+    },
+    {
+      "id": "VVUS_2012-07-17_O-NDA022580",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VVUS?period1=1341446400&period2=1343520000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:42:00Z"
+    },
+    {
+      "id": "HLN_2012-06-12_O-NDA201803",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1338422400&period2=1340496000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:42:10Z"
+    },
+    {
+      "id": "TEVA_2012-03-23_O-NDA202813",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDUS_2012-03-12_O-NDA202344",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RDUS?period1=1330473600&period2=1332547200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:42:19Z"
+    },
+    {
+      "id": "ANIP_2012-02-14_O-NDA202763",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2012-02-03_O-NDA022205",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2012-02-02_O-NDA202270",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2012-01-27_O-NDA022200",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2012-01-18_O-NDA022577",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2011-12-21_O-NDA022113",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1323388800&period2=1325462400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:42:28Z"
+    },
+    {
+      "id": "MRK_2011-12-21_O-NDA203045",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2011-12-16_O-NDA202895",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2011-12-07_O-NDA202513",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1322179200&period2=1324252800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:42:38Z"
+    },
+    {
+      "id": "PFE_2011-12-01_O-NDA200403",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2011-11-14_O-NDA202515",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2011-10-07_O-NDA202343",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2011-08-10_O-NDA202123",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2011-07-21_O-NDA201370",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2011-06-24_O-NDA202231",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/FSNUY?period1=1307836800&period2=1309910400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:42:47Z"
+    },
+    {
+      "id": "ABBV_2011-06-21_O-NDA021359",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1307577600&period2=1309651200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:42:56Z"
+    },
+    {
+      "id": "HZNP_2011-04-23_O-NDA022519",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HZNP?period1=1302480000&period2=1304553600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:43:06Z"
+    },
+    {
+      "id": "FMS_2011-04-18_O-NDA022581",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2011-04-15_O-NDA200738",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1301788800&period2=1303862400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:43:15Z"
+    },
+    {
+      "id": "PFE_2011-03-08_O-NDA022234",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2011-03-03_O-NDA201367",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1298073600&period2=1300147200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:43:25Z"
+    },
+    {
+      "id": "PFE_2011-02-02_O-NDA200582",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2011-01-24_O-NDA201373",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2010-12-22_O-NDA022573",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2010-12-21_O-NDA200045",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2010-12-16_O-NDA022574",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2010-11-23_O-NDA022504",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2010-11-19_O-NDA022428",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2010-11-05_O-NDA200678",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2010-11-04_O-NDA022516",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2010-09-24_O-NDA022532",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_2010-09-03_O-NDA022578",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=1282435200&period2=1284508800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:43:34Z"
+    },
+    {
+      "id": "ABBV_2010-08-31_O-NDA022184",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1282176000&period2=1284249600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:43:43Z"
+    },
+    {
+      "id": "INDV_2010-08-30_O-NDA022410",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/INDV?period1=1282089600&period2=1284163200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:43:53Z"
+    },
+    {
+      "id": "NVS_2010-08-26_O-NDA022545",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2010-07-23_O-NDA022568",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1278806400&period2=1280880000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:44:02Z"
+    },
+    {
+      "id": "OGN_2010-06-22_O-NDA022518",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1276128000&period2=1278201600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:44:11Z"
+    },
+    {
+      "id": "ABBV_2010-06-21_O-NDA022525",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1276041600&period2=1278115200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:44:20Z"
+    },
+    {
+      "id": "BAYRY_2010-06-17_O-NDA200179",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2010-05-27_O-NDA022565",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1273881600&period2=1275955200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:44:30Z"
+    },
+    {
+      "id": "ABBV_2010-05-18_O-NDA022548",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1273104000&period2=1275177600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:44:39Z"
+    },
+    {
+      "id": "HZNP_2010-04-30_O-NDA022511",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HZNP?period1=1271548800&period2=1273622400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:44:49Z"
+    },
+    {
+      "id": "NVS_2010-04-20_O-NDA021560",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VVUS_2010-04-12_O-BLA022523",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VVUS?period1=1269993600&period2=1272067200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:44:58Z"
+    },
+    {
+      "id": "BHC_2010-03-25_O-NDA022483",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2010-03-24_O-NDA022554",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2010-03-17_O-NDA022502",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1267747200&period2=1269820800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:45:07Z"
+    },
+    {
+      "id": "FSNUY_2010-03-17_O-NDA022536",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/FSNUY?period1=1267747200&period2=1269820800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:45:17Z"
+    },
+    {
+      "id": "GILD_2010-02-22_O-NDA050814",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2010-02-10_O-NDA022417",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1264723200&period2=1266796800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:45:26Z"
+    },
+    {
+      "id": "GSK_2010-01-29_O-NDA022509",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2010-01-04_O-NDA022488",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2009-12-04_O-NDA022456",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2009-11-25_O-NDA022470",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2009-11-18_O-NDA022473",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2009-10-30_O-NDA021919",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2009-09-16_O-NDA022217",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2009-09-15_O-NDA022211",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1251936000&period2=1254009600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:45:35Z"
+    },
+    {
+      "id": "BHC_2009-09-04_O-NDA022246",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2009-09-02_O-NDA022037",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1250812800&period2=1252886400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:45:45Z"
+    },
+    {
+      "id": "VTRS_2009-08-31_O-NDA022371",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OTSKY_2009-08-21_O-NDA022006",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OTSKY?period1=1249776000&period2=1251849600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:45:54Z"
+    },
+    {
+      "id": "SNY_2009-08-12_O-NDA022318",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2009-08-07_O-NDA022160",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2009-07-31_O-NDA022264",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2009-07-31_O-NDA022436",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "UTHR_2009-07-30_O-NDA022387",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2009-07-29_O-NDA022352",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1247788800&period2=1249862400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:46:03Z"
+    },
+    {
+      "id": "ABBV_2009-07-22_O-NDA022427",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1247184000&period2=1249257600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:46:12Z"
+    },
+    {
+      "id": "ABBV_2009-06-17_O-NDA022315",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1244160000&period2=1246233600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:46:22Z"
+    },
+    {
+      "id": "GSK_2009-05-29_O-NDA022115",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2009-05-22_O-NDA022332",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PRGO_2009-05-18_O-NDA022327",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2009-05-18_O-NDA022360",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1241568000&period2=1243641600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:46:31Z"
+    },
+    {
+      "id": "TAK_2009-05-12_O-NDA022024",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1241049600&period2=1243123200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:46:40Z"
+    },
+    {
+      "id": "GSK_2009-05-08_O-NDA022251",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2009-04-30_O-BLA020725",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1240012800&period2=1242086400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:46:50Z"
+    },
+    {
+      "id": "NVS_2009-04-30_O-NDA022314",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2009-04-28_O-NDA022154",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2009-03-13_O-NDA021997",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2009-03-13_O-NDA050285",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2009-02-27_O-NDA022277",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2009-02-13_O-NDA050818",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2009-01-30_O-NDA022287",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1232236800&period2=1234310400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:46:59Z"
+    },
+    {
+      "id": "ABBV_2009-01-27_O-NDA022204",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1231977600&period2=1234051200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:47:09Z"
+    },
+    {
+      "id": "GALDY_2009-01-23_O-NDA022087",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1231632000&period2=1233705600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:47:18Z"
+    },
+    {
+      "id": "BAX_2008-12-24_O-NDA022325",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2008-12-24_O-NDA022369",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1229040000&period2=1231113600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:47:27Z"
+    },
+    {
+      "id": "AZN_2008-12-19_O-NDA022310",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2008-12-18_O-NDA022273",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2008-12-15_O-NDA022224",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1228262400&period2=1230336000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:47:37Z"
+    },
+    {
+      "id": "GALDY_2008-12-08_O-NDA022320",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1227657600&period2=1229731200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:47:46Z"
+    },
+    {
+      "id": "AZN_2008-12-05_O-NDA022214",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2008-11-28_O-NDA021788",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2008-10-31_O-NDA022301",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2008-10-31_O-NDA022303",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2008-10-24_O-NDA022262",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2008-10-23_O-NDA050819",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2008-10-15_O-NDA022203",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2008-08-26_O-BLA021810",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2008-08-05_O-NDA050817",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2008-07-24_O-NDA022193",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1215820800&period2=1217894400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:47:55Z"
+    },
+    {
+      "id": "JNJ_2008-06-27_O-NDA022260",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2008-06-23_O-NDA022386",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2008-06-16_O-NDA021952",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2008-06-16_O-NDA022220",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1212537600&period2=1214611200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:48:04Z"
+    },
+    {
+      "id": "GSK_2008-06-13_O-NDA022008",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2008-06-13_O-NDA022148",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2008-05-29_O-NDA021830",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1210982400&period2=1213056000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:48:14Z"
+    },
+    {
+      "id": "PFE_2008-05-07_O-NDA018904",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2008-04-23_O-NDA022108",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2008-04-15_O-NDA021861",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2008-04-14_O-NDA022235",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2008-03-24_O-NDA022267",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1205280000&period2=1207353600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:48:23Z"
+    },
+    {
+      "id": "JAZZ_2008-02-28_O-NDA022033",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2008-02-27_O-NDA022101",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2008-01-28_O-NDA022157",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ANIP_2007-12-20_O-NDA021519",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2007-11-29_O-NDA022048",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2007-11-29_O-NDA022223",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1195257600&period2=1197331200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:48:32Z"
+    },
+    {
+      "id": "KVUE_2007-11-16_O-NDA022155",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=1194134400&period2=1196208000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:48:42Z"
+    },
+    {
+      "id": "PFE_2007-11-14_O-NDA022020",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2007-10-30_O-NDA021398",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1192665600&period2=1194739200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:48:51Z"
+    },
+    {
+      "id": "SNY_2007-10-19_O-NDA022127",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2007-10-17_O-NDA022122",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1191542400&period2=1193616000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:49:01Z"
+    },
+    {
+      "id": "NVS_2007-09-28_O-NDA022071",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2007-09-13_O-NDA022042",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GEHC_2007-09-05_O-NDA022066",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GEHC?period1=1187913600&period2=1189987200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:49:10Z"
+    },
+    {
+      "id": "BHC_2007-08-10_O-NDA022118",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2007-08-03_O-NDA022103",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1185062400&period2=1187136000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:49:19Z"
+    },
+    {
+      "id": "SNY_2007-07-26_O-NDA021909",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2007-07-26_O-NDA022070",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2007-06-20_O-NDA021990",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2007-06-19_O-NDA021753",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1181174400&period2=1183248000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:49:29Z"
+    },
+    {
+      "id": "SNY_2007-05-25_O-NDA022064",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2007-05-22_O-NDA021864",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2007-05-18_O-NDA022076",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2007-05-16_O-NDA022138",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2007-05-11_O-NDA022007",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2007-04-27_O-NDA022043",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2007-04-27_O-NDA022051",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1176595200&period2=1178668800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:49:38Z"
+    },
+    {
+      "id": "BHC_2007-04-25_O-NDA021412",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2007-03-30_O-NDA022044",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2007-02-27_O-NDA022021",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2007-02-07_O-NDA021887",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1169769600&period2=1171843200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:49:47Z"
+    },
+    {
+      "id": "TEVA_2007-02-01_O-NDA021777",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2007-01-26_O-NDA022045",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2007-01-16_O-NDA022000",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1167868800&period2=1169942400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:49:57Z"
+    },
+    {
+      "id": "NVO_2006-12-29_O-NDA022001",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2006-12-19_O-NDA050809",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2006-12-15_O-NDA021592",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2006-12-15_O-NDA021813",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2006-12-12_O-NDA021993",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2006-12-01_O-NDA021996",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1163894400&period2=1165968000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:50:06Z"
+    },
+    {
+      "id": "BHC_2006-11-07_O-NDA050802",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2006-10-20_O-NDA021957",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2006-10-20_O-NDA022027",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2006-10-16_O-NDA021963",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2006-10-06_O-NDA022015",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2006-10-04_O-NDA021873",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SOLV_2006-09-29_O-NDA021586",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SOLV?period1=1158451200&period2=1160524800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:50:15Z"
+    },
+    {
+      "id": "TEVA_2006-09-25_O-NDA021947",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2006-09-15_O-NDA050807",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2006-08-23_O-NDA021891",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2006-08-02_O-NDA021881",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2006-07-28_O-NDA021925",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1153008000&period2=1155081600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:50:25Z"
+    },
+    {
+      "id": "AZN_2006-07-21_O-NDA021929",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2006-07-17_O-NDA021529",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1152057600&period2=1154131200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:50:34Z"
+    },
+    {
+      "id": "GILD_2006-07-12_O-NDA021937",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2006-06-14_O-NDA021479",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2006-05-26_O-NDA050805",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1147564800&period2=1149638400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:50:43Z"
+    },
+    {
+      "id": "BMY_2006-05-25_O-NDA021430",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2006-05-25_O-NDA021840",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2006-05-08_O-NDA050808",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALKS_2006-04-13_O-NDA021897",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2006-03-29_O-NDA021483",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2006-03-28_O-NDA021980",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1142467200&period2=1144540800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:50:53Z"
+    },
+    {
+      "id": "BHC_2006-03-24_O-NDA021850",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2006-03-16_O-NDA021676",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2006-03-16_O-NDA021892",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2006-02-27_O-NDA021849",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2006-02-17_O-NDA021871",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2006-02-17_O-NDA021948",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2006-02-16_O-NDA021026",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2006-02-01_O-NDA021313",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1137715200&period2=1139788800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:51:02Z"
+    },
+    {
+      "id": "KVUE_2006-01-20_O-NDA021812",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=1136678400&period2=1138752000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:51:12Z"
+    },
+    {
+      "id": "HLN_2005-12-21_O-NDA021393",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1134086400&period2=1136160000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:51:21Z"
+    },
+    {
+      "id": "HLN_2005-12-21_O-NDA021394",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1134086400&period2=1136160000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:51:30Z"
+    },
+    {
+      "id": "BHC_2005-12-20_O-NDA021763",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2005-10-28_O-NDA021906",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1129420800&period2=1131494400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:51:40Z"
+    },
+    {
+      "id": "GALDY_2005-10-27_O-NDA021835",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1129334400&period2=1131408000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:51:49Z"
+    },
+    {
+      "id": "NVO_2005-10-19_O-BLA021878",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2005-09-28_O-NDA021355",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2005-09-28_O-NDA021896",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2005-09-08_O-NDA021692",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2005-08-29_O-NDA021842",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1124236800&period2=1126310400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:51:58Z"
+    },
+    {
+      "id": "OGN_2005-08-26_O-BLA021273",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1123977600&period2=1126051200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:52:08Z"
+    },
+    {
+      "id": "ABBV_2005-08-19_O-NDA021770",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1123372800&period2=1125446400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:52:17Z"
+    },
+    {
+      "id": "GALDY_2005-06-30_O-NDA021789",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1119052800&period2=1121126400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:52:26Z"
+    },
+    {
+      "id": "VTRS_2005-06-10_O-NDA021793",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2005-06-10_O-NDA050797",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2005-06-03_O-NDA021748",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2005-06-03_O-NDA021845",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2005-05-26_O-NDA021606",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1116028800&period2=1118102400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:52:36Z"
+    },
+    {
+      "id": "TEVA_2005-05-20_O-NDA021806",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2005-05-13_O-NDA021690",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SGIOF_2005-05-05_O-NDA021693",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SGIOF?period1=1114214400&period2=1116288000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:52:45Z"
+    },
+    {
+      "id": "SAGE_2005-04-25_O-NDA021669",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SAGE?period1=1113350400&period2=1115424000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:52:54Z"
+    },
+    {
+      "id": "ABBV_2005-04-18_O-NDA021627",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1112745600&period2=1114819200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:53:04Z"
+    },
+    {
+      "id": "BLCO_2005-04-08_O-NDA021737",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1111881600&period2=1113955200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:53:13Z"
+    },
+    {
+      "id": "OGN_2005-04-07_O-NDA021762",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1111795200&period2=1113868800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:53:23Z"
+    },
+    {
+      "id": "JNJ_2005-04-01_O-NDA021615",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2005-03-31_O-NDA021689",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2005-03-30_O-NDA021067",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1111104000&period2=1113177600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:53:32Z"
+    },
+    {
+      "id": "BLCO_2005-03-24_O-NDA021664",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1110585600&period2=1112659200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:53:41Z"
+    },
+    {
+      "id": "OGN_2005-03-03_O-NDA021605",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1108771200&period2=1110844800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:53:51Z"
+    },
+    {
+      "id": "VTRS_2005-02-22_O-NDA021269",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2005-02-17_O-NDA020645",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2005-02-11_O-NDA021758",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2005-01-31_O-NDA021759",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2005-01-07_O-NDA021660",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_2004-12-22_O-NDA021545",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=1102636800&period2=1104710400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:54:00Z"
+    },
+    {
+      "id": "BHC_2004-12-21_O-NDA021706",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2004-12-17_O-NDA021583",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2004-12-14_O-NDA050804",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1101945600&period2=1104019200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:54:09Z"
+    },
+    {
+      "id": "PFE_2004-12-06_O-NDA020988-2004-12-06",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2004-11-26_O-NDA021378",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1100390400&period2=1102464000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:54:19Z"
+    },
+    {
+      "id": "ABBV_2004-11-05_O-NDA021656",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1098576000&period2=1100649600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:54:28Z"
+    },
+    {
+      "id": "TEVA_2004-10-29_O-NDA021457",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2004-10-21_O-NDA021721",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2004-10-19_O-NDA021704",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2004-10-18_O-NDA021719",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1097020800&period2=1099094400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:54:37Z"
+    },
+    {
+      "id": "ESALY_2004-10-18_O-NDA021720",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1097020800&period2=1099094400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:54:47Z"
+    },
+    {
+      "id": "LLY_2004-09-03_O-NDA021733",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2004-09-01_O-NDA021300",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1092960000&period2=1095033600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:54:56Z"
+    },
+    {
+      "id": "MRK_2004-09-01_O-NDA021563",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2004-08-31_O-NDA021698",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2004-08-19_O-NDA021677",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2004-08-02_O-NDA021752",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2004-07-27_O-NDA021415",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1089849600&period2=1091923200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:55:05Z"
+    },
+    {
+      "id": "OGN_2004-07-23_O-NDA021687",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1089504000&period2=1091577600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:55:15Z"
+    },
+    {
+      "id": "FSNUY_2004-07-13_O-NDA050789",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/FSNUY?period1=1088640000&period2=1090713600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:55:24Z"
+    },
+    {
+      "id": "PRGO_2004-06-24_O-NDA021512",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RBGLY_2004-06-22_O-NDA021585",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RBGLY?period1=1086825600&period2=1088899200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:55:33Z"
+    },
+    {
+      "id": "BHC_2004-06-15_O-NDA021636",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2004-06-08_O-NDA021674",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BLCO_2004-06-04_O-NDA021516",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLCO?period1=1085270400&period2=1087344000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:55:43Z"
+    },
+    {
+      "id": "TAK_2004-05-27_O-NDA021566",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1084579200&period2=1086652800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:55:52Z"
+    },
+    {
+      "id": "RBGLY_2004-04-29_O-NDA021620",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RBGLY?period1=1082160000&period2=1084233600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:56:01Z"
+    },
+    {
+      "id": "SNY_2004-04-07_O-NDA020784",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2004-03-26_O-NDA021647",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2004-03-23_O-BLA021211",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1078963200&period2=1081036800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:56:11Z"
+    },
+    {
+      "id": "ANIP_2004-03-17_O-NDA050606-2004-03-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_2004-03-16_O-NDA021621",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=1078358400&period2=1080432000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:56:20Z"
+    },
+    {
+      "id": "NVS_2004-02-27_O-NDA050791",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2004-02-24_O-NDA021587",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1076544000&period2=1078617600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:56:29Z"
+    },
+    {
+      "id": "PFE_2004-02-18_O-NDA021643",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2004-02-10_O-NDA021590",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/JAZZ?period1=1075334400&period2=1077408000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:56:39Z"
+    },
+    {
+      "id": "GALDY_2004-02-05_O-NDA021644",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1074902400&period2=1076976000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:56:48Z"
+    },
+    {
+      "id": "PFE_2004-01-30_O-NDA021540",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2004-01-30_O-NDA021625",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2003-12-24_O-NDA021520",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2003-12-19_O-NDA021630",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2003-11-21_O-NDA021258",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2003-11-14_O-NDA021464",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2003-11-14_O-NDA021466",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2003-11-14_O-NDA021507",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1067731200&period2=1069804800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:56:57Z"
+    },
+    {
+      "id": "RDY_2003-10-31_O-NDA021435",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2003-10-29_O-NDA021346",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2003-10-10_O-NDA021023",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1064707200&period2=1066780800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:57:07Z"
+    },
+    {
+      "id": "AMRX_2003-09-30_O-NDA021450",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMRX?period1=1063843200&period2=1065916800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:57:16Z"
+    },
+    {
+      "id": "MRK_2003-09-17_O-NDA021575",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2003-09-05_O-NDA021544",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2003-09-04_O-NDA021416",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2003-08-28_O-NDA021515",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2003-08-28_O-NDA021554",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2003-07-29_O-NDA021546",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2003-07-24_O-NDA021535",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1057968000&period2=1060041600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:57:25Z"
+    },
+    {
+      "id": "PFE_2003-07-16_O-NDA021417",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2003-06-24_O-NDA021387",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2003-06-20_O-NDA021229",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2003-06-11_O-NDA021485",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2003-06-04_O-NDA021396",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2003-05-30_O-NDA020800",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMRX?period1=1053216000&period2=1055289600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:57:35Z"
+    },
+    {
+      "id": "ABBV_2003-05-30_O-NDA021528",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1053216000&period2=1055289600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:57:44Z"
+    },
+    {
+      "id": "AMPH_2003-05-23_O-NDA021496",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMPH?period1=1052611200&period2=1054684800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:57:53Z"
+    },
+    {
+      "id": "NVS_2003-04-18_O-NDA021588",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HROW_2003-04-15_O-NDA021598",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HROW?period1=1049328000&period2=1051401600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:58:03Z"
+    },
+    {
+      "id": "BHC_2003-04-04_O-BLA021271",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2003-04-02_O-NDA021444",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2003-03-28_O-NDA021493",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1047772800&period2=1049846400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:58:12Z"
+    },
+    {
+      "id": "ANIP_2003-03-12_O-NDA021438",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2003-02-28_O-NDA021159",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2003-02-26_O-NDA021351",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1045180800&period2=1047254400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:58:21Z"
+    },
+    {
+      "id": "BHC_2003-02-06_O-NDA021392",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2003-01-17_O-NDA021434",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2002-12-31_O-NDA021453",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2002-12-30_O-NDA021478",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2002-12-23_O-NDA050790",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1039564800&period2=1041638400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:58:31Z"
+    },
+    {
+      "id": "ABT_2002-12-20_O-NDA020782",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2002-12-19_O-NDA021441",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1039219200&period2=1041292800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:58:40Z"
+    },
+    {
+      "id": "BAYRY_2002-12-13_O-NDA021473",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2002-11-27_O-NDA021365",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1037318400&period2=1039392000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:58:49Z"
+    },
+    {
+      "id": "ESALY_2002-11-08_O-NDA021456",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1035676800&period2=1037750400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T18:58:59Z"
+    },
+    {
+      "id": "HLN_2002-10-31_O-NDA021330",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1034985600&period2=1037059200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:59:08Z"
+    },
+    {
+      "id": "BMY_2002-10-21_O-NDA021460",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2002-10-17_O-NDA020776",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INDV_2002-10-08_O-NDA020732",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/INDV?period1=1032998400&period2=1035072000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:59:17Z"
+    },
+    {
+      "id": "INDV_2002-10-08_O-NDA020733",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/INDV?period1=1032998400&period2=1035072000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:59:27Z"
+    },
+    {
+      "id": "BDX_2002-10-07_O-NDA021555",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2002-09-20_O-NDA021425",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2002-08-30_O-NDA021428",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1029628800&period2=1031702400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:59:36Z"
+    },
+    {
+      "id": "ABBV_2002-08-29_O-NDA021440",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1029542400&period2=1031616000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:59:45Z"
+    },
+    {
+      "id": "JNJ_2002-08-22_O-NDA021241",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2002-08-14_O-NDA021323",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1028246400&period2=1030320000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T18:59:55Z"
+    },
+    {
+      "id": "OGN_2002-07-26_O-NDA021409",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1026604800&period2=1028678400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:00:04Z"
+    },
+    {
+      "id": "ABBV_2002-07-24_O-NDA021402",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1026432000&period2=1028505600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:00:13Z"
+    },
+    {
+      "id": "RBGLY_2002-07-12_O-NDA021282",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RBGLY?period1=1025395200&period2=1027468800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:00:23Z"
+    },
+    {
+      "id": "OGN_2002-06-26_O-NDA021312",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=1024012800&period2=1026086400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:00:32Z"
+    },
+    {
+      "id": "VTRS_2002-06-21_O-NDA020919",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2002-06-11_O-NDA021212",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_2002-05-30_O-NDA021374",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1021680000&period2=1023753600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:00:41Z"
+    },
+    {
+      "id": "HLN_2002-04-18_O-NDA021373",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=1018051200&period2=1020124800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:00:51Z"
+    },
+    {
+      "id": "BAX_2002-03-21_O-NDA020855",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2002-03-20_O-NDA021260",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2002-02-22_O-NDA021386",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2002-02-08_O-NDA021297",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2002-02-08_O-NDA021363",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2002-02-01_O-NDA021360",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2002-01-18_O-NDA021112",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=1010275200&period2=1012348800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:01:00Z"
+    },
+    {
+      "id": "BAYRY_2001-12-07_O-NDA021307",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2001-11-30_O-NDA021277",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2001-11-01_O-BLA021172",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2001-11-01_O-NDA021268",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=1003536000&period2=1005609600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:01:09Z"
+    },
+    {
+      "id": "BAYRY_2001-10-18_O-NDA021317",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2001-10-11_O-NDA021303",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=1001721600&period2=1003795200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:01:19Z"
+    },
+    {
+      "id": "NVS_2001-09-25_O-NDA021279",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMRX_2001-09-17_O-NDA009458",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMRX?period1=999648000&period2=1001721600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:01:28Z"
+    },
+    {
+      "id": "ABBV_2001-09-04_O-NDA021203",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=998524800&period2=1000598400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:01:38Z"
+    },
+    {
+      "id": "JNJ_2001-08-15_O-NDA021123",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_2001-08-10_O-NDA021150",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=996364800&period2=998438400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:01:47Z"
+    },
+    {
+      "id": "NVS_2001-07-18_O-NDA021283",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2001-07-09_O-NDA021146",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2001-06-22_O-NDA021224",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SOLV_2001-06-07_O-NDA021074",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SOLV?period1=990835200&period2=992908800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:01:56Z"
+    },
+    {
+      "id": "NVS_2001-05-25_O-NDA021285",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2001-05-25_O-NDA021301",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2001-05-03_O-NDA021281",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=987811200&period2=989884800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:02:06Z"
+    },
+    {
+      "id": "BAYRY_2001-04-27_O-NDA021334",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2001-04-19_O-NDA020983",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FMS_2001-04-02_O-NDA021160",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2001-03-22_O-NDA020988",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2001-03-16_O-NDA021262",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=983664000&period2=985737600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:02:15Z"
+    },
+    {
+      "id": "NVS_2001-03-01_O-NDA021082",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2001-02-26_O-NDA021235",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2001-02-20_O-NDA021153",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2001-02-16_O-NDA050781",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2001-02-13_O-NDA021231",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2001-02-02_O-NDA050783",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=980035200&period2=982108800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:02:24Z"
+    },
+    {
+      "id": "OGN_2001-01-12_O-NDA021208",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=978220800&period2=980294400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:02:34Z"
+    },
+    {
+      "id": "ABBV_2001-01-05_O-NDA021252",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=977616000&period2=979689600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:02:43Z"
+    },
+    {
+      "id": "VTRS_2000-12-22_O-NDA021228",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2000-12-21_O-NDA050756",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2000-12-20_O-NDA021190",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2000-12-08_O-NDA020010",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2000-12-06_O-NDA021225",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_2000-11-30_O-NDA021140",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=974505600&period2=976579200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:02:52Z"
+    },
+    {
+      "id": "BFRI_2000-11-27_O-NDA050769",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BFRI?period1=974246400&period2=976320000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:03:02Z"
+    },
+    {
+      "id": "BHC_2000-11-27_O-NDA050782",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2000-10-31_O-NDA021183",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_2000-10-16_O-NDA020958",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=970617600&period2=972691200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:03:11Z"
+    },
+    {
+      "id": "PFE_2000-10-12_O-NDA021216",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2000-10-05_O-NDA020874",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2000-09-21_O-NDA021097",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2000-09-15_O-NDA020911",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2000-09-15_O-NDA021251",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=967939200&period2=970012800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:03:20Z"
+    },
+    {
+      "id": "ANIP_2000-09-05_O-NDA021093",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_2000-08-31_O-NDA021108",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2000-08-25_O-NDA021110",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2000-08-18_O-NDA021243",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2000-08-16_O-NDA021167",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2000-08-08_O-NDA020929",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2000-08-04_O-NDA021168",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=964310400&period2=966384000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:03:30Z"
+    },
+    {
+      "id": "JNJ_2000-08-01_O-NDA021121",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_2000-08-01_O-NDA021128",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=964051200&period2=966124800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:03:39Z"
+    },
+    {
+      "id": "BMY_2000-07-31_O-NDA021178",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2000-07-27_O-NDA021145",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=963619200&period2=965692800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:03:48Z"
+    },
+    {
+      "id": "BDX_2000-07-14_O-NDA020832",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2000-07-14_O-NDA021078",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2000-07-12_O-NDA021179",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=962323200&period2=964396800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:03:58Z"
+    },
+    {
+      "id": "BHC_2000-06-28_O-NDA021056",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2000-06-20_O-BLA021148",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_2000-05-26_O-NDA020748",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=958262400&period2=960336000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:04:07Z"
+    },
+    {
+      "id": "VTRS_2000-05-01_O-NDA021134",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2000-04-18_O-NDA021131",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2000-04-18_O-NDA021132",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2000-04-11_O-NDA021103",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2000-04-06_O-NDA021027",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=953942400&period2=956016000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:04:16Z"
+    },
+    {
+      "id": "BAYRY_2000-03-10_O-NDA021037",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2000-03-07_O-NDA021043",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2000-03-03_O-NDA021088",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2000-03-03_O-NDA050775",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=951004800&period2=953078400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:04:25Z"
+    },
+    {
+      "id": "VTRS_2000-03-02_O-NDA021129",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2000-02-25_O-NDA020872",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=950400000&period2=952473600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:04:35Z"
+    },
+    {
+      "id": "ALC_2000-02-23_O-NDA021114",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=950227200&period2=952300800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:04:44Z"
+    },
+    {
+      "id": "BHC_2000-01-28_O-NDA020939",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2000-01-28_O-NDA021117",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1999-12-28_O-NDA020125",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1999-12-23_O-NDA021156",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1999-12-22_O-BLA021017",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1999-12-22_O-BLA021018",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_1999-12-22_O-NDA021046",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=944784000&period2=946857600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:04:53Z"
+    },
+    {
+      "id": "BHC_1999-12-17_O-NDA021022",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_1999-12-08_O-NDA021009",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=943574400&period2=945648000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:05:03Z"
+    },
+    {
+      "id": "VTRS_1999-12-07_O-NDA020990",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_1999-11-29_O-NDA021076",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_1999-10-22_O-NDA021040",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1999-10-06_O-NDA021019",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_1999-10-01_O-NDA020746",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=937699200&period2=939772800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:05:12Z"
+    },
+    {
+      "id": "PFE_1999-09-21_O-NDA050748",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1999-09-20_O-NDA021048",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1999-08-13_O-NDA050767",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1999-07-09_O-NDA020951",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_1999-06-29_O-NDA020945",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=929577600&period2=931651200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:05:21Z"
+    },
+    {
+      "id": "JNJ_1999-03-30_O-NDA020966",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_1999-03-26_O-NDA020908",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1999-03-09_O-NDA020974",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_1998-12-18_O-NDA020944",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=912902400&period2=914976000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:05:31Z"
+    },
+    {
+      "id": "PFE_1998-12-18_O-NDA050762",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1998-12-16_O-NDA020897",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1998-12-08_O-NDA021003",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1998-12-08_O-NDA021004",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_1998-11-25_O-NDA021008",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_1998-11-24_O-NDA020574",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GALDY_1998-11-24_O-NDA020901",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GALDY?period1=910828800&period2=912902400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:05:40Z"
+    },
+    {
+      "id": "AMRX_1998-11-18_O-NDA020907",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMRX?period1=910310400&period2=912384000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:05:49Z"
+    },
+    {
+      "id": "TEVA_1998-11-04_O-NDA020747",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1998-10-26_O-NDA020844",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_1998-10-09_O-NDA020882",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_1998-09-24_O-NDA020801",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=905558400&period2=907632000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:05:59Z"
+    },
+    {
+      "id": "NVS_1998-09-22_O-NDA020927",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1998-09-11_O-NDA020928",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_1998-09-01_O-NDA020946",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_1998-08-26_O-NDA020849",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1998-08-24_O-NDA020764",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_1998-07-13_O-NDA020860",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_1998-06-29_O-NDA020865",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=898041600&period2=900115200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:06:08Z"
+    },
+    {
+      "id": "NVO_1998-06-22_O-NDA020918",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1998-06-03_O-NDA020903",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1998-05-28_O-NDA020752",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1998-05-12_O-NDA011446",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_1998-04-22_O-NDA020713",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_1998-03-06_O-NDA020818",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1998-02-27_O-NDA020906",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_1998-02-26_O-NDA020745",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=887414400&period2=889488000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:06:17Z"
+    },
+    {
+      "id": "BAX_1998-02-24_O-NDA050750",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_1998-02-20_O-NDA020830",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=886896000&period2=888969600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:06:27Z"
+    },
+    {
+      "id": "AZN_1998-02-04_O-NDA020962",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HLN_1998-01-30_O-NDA020812",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=885081600&period2=887155200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:06:36Z"
+    },
+    {
+      "id": "HLN_1998-01-14_O-NDA020802",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HLN?period1=883699200&period2=885772800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:06:45Z"
+    },
+    {
+      "id": "PFE_1998-01-13_O-NDA020181",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GEHC_1997-12-31_O-NDA020899",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GEHC?period1=882489600&period2=884563200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:06:55Z"
+    },
+    {
+      "id": "PFE_1997-12-24_O-NDA020607",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_1997-12-24_O-NDA020786",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=881884800&period2=883958400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:07:04Z"
+    },
+    {
+      "id": "VTRS_1997-12-22_O-NDA050753",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_1997-12-19_O-NDA020788",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=881452800&period2=883526400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:07:14Z"
+    },
+    {
+      "id": "DSNKY_1997-12-16_O-NDA020799",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DSNKY?period1=881193600&period2=883267200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:07:23Z"
+    },
+    {
+      "id": "GSK_1997-12-11_O-NDA050746",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_1997-12-10_O-NDA020675",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=880675200&period2=882748800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:07:32Z"
+    },
+    {
+      "id": "ALC_1997-12-10_O-NDA020742",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=880675200&period2=882748800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:07:42Z"
+    },
+    {
+      "id": "BHC_1997-12-08_O-NDA020148",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_1997-12-02_O-NDA050757",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=879984000&period2=882057600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:07:51Z"
+    },
+    {
+      "id": "PFE_1997-11-26_O-NDA020868",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KVUE_1997-11-14_O-NDA020834",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KVUE?period1=878428800&period2=880502400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:08:00Z"
+    },
+    {
+      "id": "GSK_1997-11-07_O-NDA020549",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1997-11-07_O-NDA020767",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_1997-11-03_O-NDA020811",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=877478400&period2=879552000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:08:10Z"
+    },
+    {
+      "id": "PFE_1997-10-31_O-NDA020755",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_1997-10-20_O-NDA020699",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_1997-10-01_O-NDA020750",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=874627200&period2=876700800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:08:19Z"
+    },
+    {
+      "id": "OGN_1997-10-01_O-NDA020762",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=874627200&period2=876700800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:08:28Z"
+    },
+    {
+      "id": "TAK_1997-09-30_O-NDA020712",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TAK?period1=874540800&period2=876614400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:08:38Z"
+    },
+    {
+      "id": "OGN_1997-09-29_O-BLA020582",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/OGN?period1=874454400&period2=876528000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:08:47Z"
+    },
+    {
+      "id": "BAX_1997-09-29_O-NDA020734",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BHC_1997-09-26_O-NDA020743",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_1997-09-26_O-NDA020780",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_1997-09-23_O-NDA020716",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=873936000&period2=876009600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:08:56Z"
+    },
+    {
+      "id": "BHC_1997-09-05_O-NDA020792",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GEHC_1997-08-29_O-NDA020808",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GEHC?period1=871776000&period2=873849600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:09:06Z"
+    },
+    {
+      "id": "GSK_1997-08-26_O-NDA020626",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_1997-08-11_O-NDA050740",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALPMY?period1=870220800&period2=872294400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:09:15Z"
+    },
+    {
+      "id": "ABBV_1997-07-31_O-NDA020701",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=869270400&period2=871344000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:09:24Z"
+    },
+    {
+      "id": "BHC_1997-07-29_O-NDA020648",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_1997-07-28_O-NDA020381",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ABBV?period1=869011200&period2=871084800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:09:34Z"
     },
     {
       "id": "AZN_1997-06-24_O-NDA020441",

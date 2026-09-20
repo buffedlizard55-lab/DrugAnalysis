@@ -1,6 +1,6 @@
 {
   "job": "stock_yahoo_suppl_remaining",
-  "generated_utc": "2026-09-20T01:11:50Z",
+  "generated_utc": "2026-09-20T19:16:25Z",
   "requests": [
     {
       "id": "PHAR_2026-09-11_S2026-NDA217759-6",
@@ -22861,6 +22861,3738 @@
       "status": "FAILED",
       "error": "HTTPError: HTTP Error 404: Not Found",
       "at_utc": "2026-09-20T01:11:50Z"
+    },
+    {
+      "id": "REGN_2021-04-01_S2021-BLA125559-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2021-03-31_S2021-BLA761113-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "UTHR_2021-03-31_S2021-NDA022387-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2021-03-30_S2021-NDA209401-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-03-29_S2021-NDA011719-131",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2021-03-25_S2021-NDA210861-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2021-03-25_S2021-NDA211710-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-03-22_S2021-BLA125514-96",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-03-16_S2021-BLA125514-91",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-03-16_S2021-BLA125514-93",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2021-03-11_S2021-BLA103979-5309",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2021-03-11_S2021-BLA125557-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2021-03-11_S2021-BLA125557-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2021-03-11_S2021-NDA208558-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDY_2021-03-11_S2021-NDA212909-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-03-03_S2021-NDA210868-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-02-24_S2021-BLA125057-417",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2021-02-24_S2021-NDA210251-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2021-02-22_S2021-BLA761097-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2021-02-19_S2021-BLA761069-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2021-02-16_S2021-NDA207620-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-02-09_S2021-BLA103000-5318",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2021-02-09_S2021-BLA761097-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2021-02-09_S2021-BLA761097-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-02-09_S2021-BLA761099-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2021-02-05_S2021-NDA210251-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-02-01_S2021-BLA125433-32",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2021-02-01_S2021-NDA207131-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SUPN_2021-02-01_S2021-NDA208944-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-02-01_S2021-NDA210450-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-02-01_S2021-NDA210450-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-02-01_S2021-NDA210450-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-01-30_S2021-NDA207947-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2021-01-29_S2021-BLA125499-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2021-01-28_S2021-BLA125268-167",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BCRX_2021-01-28_S2021-NDA206426-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-01-22_S2021-BLA125554-90",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-01-22_S2021-NDA022225-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2021-01-22_S2021-NDA204447-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EXEL_2021-01-22_S2021-NDA208692-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-01-21_S2021-NDA202022-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2021-01-15_S2021-BLA761139-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-01-15_S2021-BLA761145-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-01-14_S2021-NDA202570-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-01-11_S2021-BLA761145-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2021-01-07_S2021-NDA212099-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RARE_2020-12-23_S2020-BLA761047-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2020-12-21_S2020-NDA203188-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2020-12-21_S2020-NDA207925-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2020-12-21_S2020-NDA210491-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2020-12-21_S2020-NDA212273-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2020-12-18_S2020-NDA201023-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2020-12-18_S2020-NDA203469-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2020-12-18_S2020-NDA208065-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KPTI_2020-12-18_S2020-NDA212306-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2020-12-16_S2020-BLA125057-419",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2020-12-16_S2020-BLA125370-73",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2020-12-16_S2020-BLA761043-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2020-12-09_S2020-NDA208065-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2020-12-07_S2020-NDA208558-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2020-12-04_S2020-NDA020246-60",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2020-12-04_S2020-NDA020246-62",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2020-12-04_S2020-NDA021583-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2020-12-04_S2020-NDA021583-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2020-12-04_S2020-NDA021995-47",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2020-12-04_S2020-NDA022044-48",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2020-12-04_S2020-NDA202270-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2020-12-04_S2020-NDA206321-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VNDA_2020-12-01_S2020-NDA205677-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2020-11-24_S2020-NDA207997-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2020-11-24_S2020-NDA209606-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2020-11-20_S2020-NDA204026-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2020-11-20_S2020-NDA210951-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2020-11-18_S2020-BLA761069-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2020-11-18_S2020-BLA761069-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2020-11-16_S2020-NDA021318-54",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2020-11-13_S2020-BLA125514-88",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2020-11-13_S2020-NDA204447-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2020-11-05_S2020-NDA022433-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2020-10-23_S2020-NDA203415-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PHAR_2026-09-11_S2026-NDA217759-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BFRI_2026-09-09_S2026-NDA208081-40",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2026-09-09_S2026-NDA219972-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-08-28_S2026-BLA761044-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2026-08-27_S2026-NDA215866-44",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2026-08-27_S2026-NDA215866-45",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2026-08-27_S2026-NDA215973-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2026-08-27_S2026-NDA215974-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2026-08-26_S2026-NDA217806-41",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2026-08-25_S2026-BLA761232-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2026-08-25_S2026-BLA761416-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-08-24_S2026-BLA761430-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "APLS_2026-08-20_S2026-NDA215014-12",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APLS?period1=1786147200&period2=1788220800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:09:43Z"
+    },
+    {
+      "id": "NVS_2026-07-31_S2026-NDA215833-37",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2026-07-24_S2026-NDA203415-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2026-07-24_S2026-NDA213674-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AEZS_2026-07-23_S2026-NDA205598-5",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AEZS?period1=1783728000&period2=1785801600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:09:52Z"
+    },
+    {
+      "id": "NVS_2026-07-16_S2026-NDA218276-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2026-07-14_S2026-NDA213246-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2026-07-14_S2026-NDA218160-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2026-07-13_S2026-BLA761375-1",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1782864000&period2=1784937600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:10:02Z"
+    },
+    {
+      "id": "LLY_2026-07-13_S2026-NDA208716-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-07-10_S2026-BLA125514-194",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2026-07-10_S2026-BLA761137-37",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-07-10_S2026-BLA761467-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2026-07-01_S2026-NDA209092-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2026-07-01_S2026-NDA209935-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2026-06-26_S2026-BLA761105-45",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-06-24_S2026-BLA125514-187",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "IMMU_2026-06-24_S2026-BLA761115-63",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IMMU?period1=1781222400&period2=1783296000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:10:11Z"
+    },
+    {
+      "id": "IMMU_2026-06-24_S2026-BLA761115-64",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IMMU?period1=1781222400&period2=1783296000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:10:20Z"
+    },
+    {
+      "id": "MRK_2026-06-24_S2026-BLA761467-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2026-06-24_S2026-NDA207103-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2026-06-24_S2026-NDA212436-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "IONS_2026-06-24_S2026-NDA218614-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ZLDPF_2026-06-18_S2026-NDA214231-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMPH_2026-06-16_S2026-NDA208969-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-06-12_S2026-BLA125514-192",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2026-06-12_S2026-BLA761105-44",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-06-12_S2026-BLA761467-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-06-12_S2026-NDA215383-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-06-12_S2026-NDA218197-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2026-06-09_S2026-BLA761306-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2026-06-05_S2026-BLA761369-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-05-28_S2026-BLA761061-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-05-28_S2026-BLA761069-53",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-05-23_S2026-NDA207947-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2026-05-22_S2026-BLA761394-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2026-05-21_S2026-NDA202811-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2026-05-20_S2026-NDA208573-32",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2026-05-18_S2026-BLA761334-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2026-05-15_S2026-BLA761139-41",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2026-05-15_S2026-BLA761139-43",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-05-13_S2026-BLA761070-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OTSKY_2026-05-13_S2026-NDA212576-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2026-04-27_S2026-BLA761139-39",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ACAD_2026-04-27_S2026-NDA207318-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ACAD_2026-04-27_S2026-NDA210793-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-04-27_S2026-NDA212122-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-04-27_S2026-NDA216579-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-04-24_S2026-BLA761467-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RARE_2026-04-23_S2026-BLA761068-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "KPTI_2026-04-23_S2026-NDA212306-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2026-04-22_S2026-BLA761055-74",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2026-04-17_S2026-BLA125504-97",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2026-04-17_S2026-BLA125504-98",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-04-15_S2026-BLA761044-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-04-15_S2026-NDA217388-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TVTX_2026-04-13_S2026-NDA216403-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2026-04-09_S2026-NDA214120-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2026-04-02_S2026-BLA761355-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2026-03-30_S2026-BLA761334-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GMAB_2026-03-27_S2026-BLA761324-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2026-03-27_S2026-NDA209531-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2026-03-27_S2026-NDA212273-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ACAD_2026-03-27_S2026-NDA217026-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2026-03-27_S2026-NDA217660-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2026-03-27_S2026-NDA218730-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2026-03-20_S2026-BLA125554-135",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RYTM_2026-03-19_S2026-NDA213793-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2026-03-19_S2026-NDA215256-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2026-03-12_S2026-BLA125504-91",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2026-03-09_S2026-NDA018342-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2026-03-06_S2026-BLA761105-42",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2026-03-06_S2026-NDA203214-41",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2026-03-06_S2026-NDA208246-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2026-03-06_S2026-NDA213082-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2026-03-06_S2026-NDA214958-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-03-05_S2026-BLA761291-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMRN_2026-02-27_S2026-BLA761079-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2026-02-27_S2026-BLA761156-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2026-02-27_S2026-BLA761156-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2026-02-27_S2026-BLA761156-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-02-27_S2026-NDA205395-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2026-02-24_S2026-NDA210496-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2026-02-24_S2026-NDA210496-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2026-02-23_S2026-BLA761055-75",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2026-02-19_S2026-NDA208573-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-02-19_S2026-NDA210259-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-02-19_S2026-NDA216387-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HRMY_2026-02-13_S2026-NDA211150-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2026-02-12_S2026-NDA214012-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2026-02-12_S2026-NDA214012-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-02-10_S2026-BLA125514-186",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-02-10_S2026-BLA761467-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-01-27_S2026-BLA761145-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-01-27_S2026-NDA022003-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-01-27_S2026-NDA205053-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-01-27_S2026-NDA205596-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2026-01-27_S2026-NDA209401-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-01-27_S2026-NDA214770-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-01-21_S2026-NDA214377-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2026-01-16_S2026-NDA021529-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2026-01-12_S2026-BLA020367-123",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AGIO_2025-12-23_S2025-NDA216196-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2025-12-19_S2025-NDA215866-39",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-12-18_S2025-NDA204370-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-12-18_S2025-NDA204370-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-12-18_S2025-NDA204370-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-12-18_S2025-NDA204370-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2025-12-17_S2025-BLA761334-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2025-12-15_S2025-BLA761139-38",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-12-12_S2025-NDA216793-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VIE_2025-12-11_S2025-BLA761142-4",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VIE?period1=1764374400&period2=1766448000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:10:30Z"
+    },
+    {
+      "id": "GSK_2025-12-11_S2025-NDA218230-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-12-09_S2025-BLA761232-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-12-09_S2025-BLA761232-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-12-09_S2025-BLA761232-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-12-09_S2025-NDA212819-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-11-25_S2025-BLA761069-52",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-11-25_S2025-NDA215358-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-11-24_S2025-BLA761381-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-11-21_S2025-BLA125514-188",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2025-11-21_S2025-BLA761137-32",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-11-21_S2025-BLA761467-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2025-11-21_S2025-NDA215256-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2025-11-21_S2025-NDA215596-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2025-11-20_S2025-NDA213246-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2025-11-20_S2025-NDA218160-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-11-19_S2025-BLA761145-32",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2025-11-19_S2025-BLA761344-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2025-11-19_S2025-BLA761355-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-11-19_S2025-NDA213756-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GMAB_2025-11-18_S2025-BLA761324-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-11-06_S2025-BLA761145-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-11-04_S2025-NDA202811-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2025-10-29_S2025-BLA761097-32",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-10-27_S2025-BLA761381-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-10-27_S2025-BLA761381-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-10-24_S2025-BLA761363-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNDX_2025-10-24_S2025-NDA218944-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-10-20_S2025-BLA761328-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-10-17_S2025-BLA761224-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2025-10-17_S2025-NDA213051-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-10-16_S2025-NDA203214-39",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-10-16_S2025-NDA213082-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2025-10-10_S2025-NDA203469-38",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-10-10_S2025-NDA211675-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2025-10-10_S2025-NDA213586-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2025-10-09_S2025-BLA125559-47",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2025-10-08_S2025-BLA761097-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-10-07_S2025-BLA125289-157",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2025-10-02_S2025-NDA213702-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-10-02_S2025-NDA215358-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-09-26_S2025-BLA761061-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-09-26_S2025-BLA761061-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2025-09-25_S2025-BLA761181-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-09-19_S2025-BLA761061-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2025-09-18_S2025-NDA215309-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-09-16_S2025-NDA207103-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-09-16_S2025-NDA212436-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-09-15_S2025-NDA214070-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EXEL_2025-09-10_S2025-NDA208692-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-09-10_S2025-NDA213756-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-09-03_S2025-BLA761105-39",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-09-03_S2025-BLA761262-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TVTX_2025-08-27_S2025-NDA216403-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DAWN_2025-08-27_S2025-NDA217700-2",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DAWN?period1=1755216000&period2=1757289600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:10:39Z"
+    },
+    {
+      "id": "DAWN_2025-08-27_S2025-NDA218033-2",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DAWN?period1=1755216000&period2=1757289600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:10:48Z"
+    },
+    {
+      "id": "NVO_2025-08-15_S2025-NDA215256-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-08-14_S2025-BLA761210-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-08-14_S2025-NDA219008-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2025-08-05_S2025-BLA761089-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-07-31_S2025-NDA214012-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-07-30_S2025-NDA210251-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-07-28_S2025-NDA204384-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "APLS_2025-07-28_S2025-NDA215014-11",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APLS?period1=1752624000&period2=1754697600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:10:58Z"
+    },
+    {
+      "id": "ASND_2025-07-25_S2025-BLA761177-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-07-24_S2025-BLA125514-178",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2025-07-23_S2025-NDA205437-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2025-07-16_S2025-NDA214919-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2025-07-11_S2025-NDA215341-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-07-10_S2025-BLA761345-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2025-07-10_S2025-NDA210166-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2025-07-01_S2025-BLA761248-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GEHC_2025-06-23_S2025-NDA203137-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LNTH_2025-06-23_S2025-NDA204677-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2025-06-20_S2025-BLA761043-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-06-20_S2025-NDA203094-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-06-20_S2025-NDA203094-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-06-20_S2025-NDA208215-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-06-20_S2025-NDA208215-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2025-06-18_S2025-BLA761055-70",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2025-06-18_S2025-NDA214876-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-06-12_S2025-BLA125514-180",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-06-12_S2025-NDA211651-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-06-12_S2025-NDA217439-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2025-06-11_S2025-NDA020862-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-06-10_S2025-NDA209394-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-06-10_S2025-NDA215110-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-06-06_S2025-BLA125514-183",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2025-06-06_S2025-BLA761365-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-06-03_S2025-BLA125514-173",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2025-06-03_S2025-NDA212099-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-05-23_S2025-BLA125377-136",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-05-23_S2025-BLA125554-133",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2025-05-22_S2025-BLA125320-219",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-05-22_S2025-BLA125514-182",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2025-05-22_S2025-BLA125526-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-05-22_S2025-NDA020263-56",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2025-05-22_S2025-NDA202714-36",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2025-05-22_S2025-NDA203188-41",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2025-05-22_S2025-NDA207925-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2025-05-20_S2025-BLA761024-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2025-05-15_S2025-BLA761334-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-05-14_S2025-NDA215383-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GEHC_2025-05-09_S2025-NDA020899-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2025-04-28_S2025-NDA211675-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-04-23_S2025-NDA207103-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-04-23_S2025-NDA212436-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-04-22_S2025-BLA761232-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-04-22_S2025-BLA761232-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-04-22_S2025-BLA761232-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-04-22_S2025-BLA761232-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-04-22_S2025-BLA761232-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2025-04-22_S2025-BLA761232-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-04-21_S2025-BLA125514-174",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2025-04-17_S2025-BLA761055-51",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-04-17_S2025-NDA202155-39",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-04-17_S2025-NDA202155-40",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-04-17_S2025-NDA214998-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-04-15_S2025-NDA215383-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-04-15_S2025-NDA215383-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-04-11_S2025-BLA125377-133",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-04-11_S2025-BLA125554-129",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-04-10_S2025-BLA761036-54",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2025-04-09_S2025-NDA210861-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2025-04-09_S2025-NDA211710-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-04-08_S2025-BLA125377-135",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2025-04-08_S2025-BLA125554-132",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2025-04-07_S2025-BLA125477-49",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2025-04-07_S2025-BLA761024-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VIE_2025-04-03_S2025-BLA761142-3",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VIE?period1=1742601600&period2=1744675200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:11:07Z"
+    },
+    {
+      "id": "AZN_2025-03-28_S2025-BLA761069-50",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-03-28_S2025-NDA215833-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2025-03-27_S2025-NDA215842-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EXEL_2025-03-26_S2025-NDA208692-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-03-21_S2025-NDA205395-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-03-20_S2025-BLA761061-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALNY_2025-03-20_S2025-NDA215515-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-03-20_S2025-NDA218276-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-03-19_S2025-BLA125514-170",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMPH_2025-03-17_S2025-NDA210134-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2025-03-12_S2025-NDA210496-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2025-03-12_S2025-NDA210498-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-03-07_S2025-NDA202806-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-03-07_S2025-NDA204114-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-03-07_S2025-NDA217513-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2025-03-07_S2025-NDA217514-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-02-28_S2025-BLA761069-51",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-02-28_S2025-NDA204410-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-02-21_S2025-NDA203214-38",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-02-21_S2025-NDA208246-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INDV_2025-02-21_S2025-NDA209819-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2025-02-21_S2025-NDA213082-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-02-19_S2025-NDA208351-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2025-02-19_S2025-NDA208351-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2025-02-12_S2025-NDA217225-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SGEN_2025-02-11_S2025-BLA125388-108",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SGEN?period1=1738195200&period2=1740268800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:11:16Z"
+    },
+    {
+      "id": "PFE_2025-01-31_S2025-NDA217188-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2025-01-29_S2025-NDA206947-33",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1737072000&period2=1739145600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:11:26Z"
+    },
+    {
+      "id": "BMY_2025-01-28_S2025-BLA125377-132",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2025-01-28_S2025-BLA125514-172",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2025-01-28_S2025-NDA209637-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2025-01-27_S2025-BLA125477-48",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2025-01-27_S2025-BLA761139-32",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2025-01-24_S2025-BLA761269-5",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1736640000&period2=1738713600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:11:35Z"
+    },
+    {
+      "id": "JNJ_2025-01-23_S2025-BLA761036-51",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2025-01-17_S2025-NDA211243-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2025-01-16_S2025-BLA125147-213",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-01-16_S2025-NDA210259-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2025-01-16_S2025-NDA214665-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2025-01-16_S2025-NDA216387-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2025-01-15_S2025-BLA761279-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2025-01-15_S2025-BLA761279-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2024-12-26_S2024-BLA761285-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2024-12-23_S2024-NDA021345-52",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-12-20_S2024-NDA205649-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2024-12-20_S2024-NDA210496-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RYTM_2024-12-20_S2024-NDA213793-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2024-12-20_S2024-NDA216718-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-12-20_S2024-NDA217806-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-12-18_S2024-NDA204042-43",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-12-18_S2024-NDA204353-46",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-12-18_S2024-NDA205879-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2024-12-13_S2024-NDA206038-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2024-12-13_S2024-NDA211358-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-12-12_S2024-NDA022225-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OGN_2024-12-12_S2024-NDA215272-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-12-11_S2024-BLA125514-162",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2024-12-09_S2024-NDA213051-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-12-04_S2024-BLA761069-49",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2024-11-27_S2024-NDA215256-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2024-11-25_S2024-NDA215973-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2024-11-25_S2024-NDA215974-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "IMMU_2024-11-22_S2024-BLA761115-58",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IMMU?period1=1731196800&period2=1733270400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:11:45Z"
+    },
+    {
+      "id": "JNJ_2024-11-22_S2024-BLA761291-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2024-11-22_S2024-NDA212862-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-11-13_S2024-NDA208716-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-10-29_S2024-NDA215358-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-10-29_S2024-NDA215358-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2024-10-25_S2024-BLA761113-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2024-10-25_S2024-BLA761113-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2024-10-18_S2024-BLA103000-5331",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-10-18_S2024-NDA217806-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALKS_2024-10-16_S2024-NDA214755-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2024-10-15_S2024-NDA020287-80",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-10-11_S2024-NDA022350-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-10-11_S2024-NDA200678-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BFRI_2024-10-04_S2024-NDA208081-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2024-10-03_S2024-BLA125554-127",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ACAD_2024-09-30_S2024-NDA217026-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2024-09-27_S2024-BLA761055-64",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-09-27_S2024-NDA213246-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-09-27_S2024-NDA213246-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-09-27_S2024-NDA218160-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-09-27_S2024-NDA218160-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-09-25_S2024-NDA208065-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2024-09-20_S2024-BLA761113-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-09-19_S2024-BLA761210-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-09-17_S2024-BLA125514-161",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-09-17_S2024-BLA761070-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-09-17_S2024-NDA209092-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-09-17_S2024-NDA209935-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VVUS_2024-09-13_S2024-NDA022580-25",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VVUS?period1=1725148800&period2=1727222400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:11:54Z"
+    },
+    {
+      "id": "REGN_2024-09-12_S2024-BLA761055-66",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2024-09-12_S2024-NDA210496-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2024-09-12_S2024-NDA210498-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-09-11_S2024-BLA761061-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TVTX_2024-09-05_S2024-NDA216403-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2024-08-30_S2024-NDA209899-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-08-30_S2024-NDA209939-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-08-30_S2024-NDA209939-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-08-30_S2024-NDA209940-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-08-30_S2024-NDA209940-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-08-22_S2024-BLA761328-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2024-08-20_S2024-BLA761024-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-08-15_S2024-BLA761069-43",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MDWD_2024-08-15_S2024-BLA761192-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2024-08-12_S2024-NDA020988-70",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-08-07_S2024-BLA125514-157",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-08-07_S2024-NDA218276-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2024-08-01_S2024-BLA761174-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-07-31_S2024-BLA761036-50",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-07-30_S2024-BLA761145-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMRN_2024-07-24_S2024-BLA761052-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MIRM_2024-07-24_S2024-NDA214662-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-07-22_S2024-NDA209092-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-06-26_S2024-BLA761128-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GMAB_2024-06-26_S2024-BLA761324-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2024-06-26_S2024-NDA209481-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-06-21_S2024-NDA204384-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HRMY_2024-06-21_S2024-NDA211150-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2024-06-21_S2024-NDA216340-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-06-17_S2024-BLA125514-155",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2024-06-14_S2024-BLA125557-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-06-14_S2024-BLA761069-45",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2024-06-13_S2024-NDA218213-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-06-12_S2024-NDA202293-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-06-12_S2024-NDA205649-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-06-12_S2024-NDA213246-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2024-06-12_S2024-NDA218160-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2024-06-10_S2024-BLA761037-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-06-07_S2024-BLA125514-154",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2024-06-07_S2024-NDA206947-31",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1716681600&period2=1718755200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:12:03Z"
+    },
+    {
+      "id": "BAX_2024-05-31_S2024-NDA207131-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "CPRX_2024-05-30_S2024-NDA208078-12",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CPRX?period1=1715990400&period2=1718064000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:12:13Z"
+    },
+    {
+      "id": "LLY_2024-05-29_S2024-NDA213246-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2024-05-16_S2024-BLA761043-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2024-04-29_S2024-BLA761208-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AUPH_2024-04-29_S2024-NDA213716-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2024-04-26_S2024-NDA211675-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2024-04-26_S2024-NDA211675-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2024-04-25_S2024-NDA205437-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2024-04-24_S2024-NDA204508-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2024-04-24_S2024-NDA210251-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-04-24_S2024-NDA215039-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-04-12_S2024-NDA207620-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-04-05_S2024-BLA761070-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2024-04-05_S2024-BLA761097-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2024-04-05_S2024-BLA761139-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2024-04-03_S2024-NDA206947-30",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1711065600&period2=1713139200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:12:22Z"
+    },
+    {
+      "id": "VNDA_2024-04-02_S2024-NDA022192-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2024-03-27_S2024-NDA208464-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2024-03-27_S2024-NDA208464-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-03-22_S2024-NDA022433-35",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2024-03-19_S2024-NDA203469-37",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-03-15_S2024-NDA202022-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-03-15_S2024-NDA202022-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MIRM_2024-03-13_S2024-NDA214662-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2024-03-08_S2024-BLA125559-39",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2024-03-08_S2024-NDA215256-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2024-03-07_S2024-NDA022405-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2024-03-07_S2024-NDA213217-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2024-03-06_S2024-BLA125554-125",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2024-03-06_S2024-BLA761040-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2024-03-05_S2024-BLA125320-213",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-03-01_S2024-BLA761210-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LNTH_2024-03-01_S2024-NDA021064-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2024-02-28_S2024-NDA214787-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2024-02-23_S2024-NDA210251-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-02-20_S2024-BLA761291-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-02-16_S2024-NDA208065-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2024-02-15_S2024-BLA761139-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2024-02-01_S2024-NDA207131-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-01-31_S2024-NDA208065-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2024-01-26_S2024-BLA125554-122",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2024-01-26_S2024-NDA206494-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-01-25_S2024-BLA125514-124",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2024-01-25_S2024-BLA761055-57",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2024-01-24_S2024-NDA213756-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-01-19_S2024-NDA212018-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2024-01-19_S2024-NDA212018-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2024-01-18_S2024-NDA212526-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2024-01-12_S2024-BLA125514-147",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2024-01-12_S2024-BLA761055-55",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "CHRS_2023-12-22_S2023-BLA761039-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2023-12-21_S2023-NDA213217-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2023-12-19_S2023-NDA210951-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-12-15_S2023-BLA125514-151",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-12-15_S2023-BLA125514-152",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2023-12-15_S2023-BLA761137-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2023-12-15_S2023-BLA761137-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-12-14_S2023-NDA213871-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-12-14_S2023-NDA215383-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2023-12-08_S2023-NDA207500-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2023-12-08_S2023-NDA207501-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2023-12-01_S2023-BLA761123-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2023-11-21_S2023-NDA216338-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-11-16_S2023-BLA125514-143",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2023-11-16_S2023-NDA203415-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2023-11-16_S2023-NDA213674-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-11-07_S2023-BLA125514-148",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2023-11-06_S2023-NDA208558-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2023-11-01_S2023-BLA761113-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-10-31_S2023-BLA125504-63",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-10-31_S2023-BLA125514-144",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-10-31_S2023-BLA125514-145",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2023-10-30_S2023-BLA125118-250",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-10-23_S2023-BLA125514-142",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2023-10-23_S2023-NDA022425-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2023-10-23_S2023-NDA206947-28",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1696982400&period2=1699056000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:12:31Z"
+    },
+    {
+      "id": "JAZZ_2023-10-20_S2023-NDA210365-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMRN_2023-10-20_S2023-NDA214938-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2023-10-18_S2023-NDA206316-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2023-10-18_S2023-NDA206316-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-10-16_S2023-BLA125514-139",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2023-10-13_S2023-BLA125554-121",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-10-12_S2023-BLA125514-138",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2023-10-11_S2023-NDA210496-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ARRY_2023-10-11_S2023-NDA210498-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-10-04_S2023-BLA761118-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-09-26_S2023-NDA203341-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2023-09-15_S2023-BLA761194-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ACAD_2023-09-15_S2023-NDA207318-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ACAD_2023-09-15_S2023-NDA210793-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-09-14_S2023-NDA021029-36",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-09-14_S2023-NDA021029-37",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-09-14_S2023-NDA021029-38",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-09-14_S2023-NDA022277-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-09-14_S2023-NDA022277-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-09-14_S2023-NDA022277-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-09-07_S2023-NDA202570-36",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-09-06_S2023-NDA207103-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-09-06_S2023-NDA212436-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-08-31_S2023-NDA202806-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-08-31_S2023-NDA204114-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2023-08-28_S2023-BLA761136-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-08-25_S2023-BLA125319-107",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2023-08-23_S2023-NDA204447-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NBIX_2023-08-18_S2023-NDA209241-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-08-14_S2023-BLA125514-134",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-08-14_S2023-BLA125514-135",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2023-08-14_S2023-BLA761024-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2023-08-11_S2023-BLA103000-5325",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RIGL_2023-08-09_S2023-NDA213721-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OTSKY_2023-08-02_S2023-NDA207981-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-08-02_S2023-NDA209939-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-08-02_S2023-NDA209940-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2023-07-31_S2023-BLA761174-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-07-27_S2023-BLA021106-74",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2023-07-27_S2023-NDA022271-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2023-07-27_S2023-NDA203414-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2023-07-21_S2023-NDA215256-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2023-07-20_S2023-NDA205437-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2023-07-13_S2023-NDA214787-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2023-07-06_S2023-BLA761269-1",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1687564800&period2=1689638400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:12:41Z"
+    },
+    {
+      "id": "ABBV_2023-06-22_S2023-NDA211675-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2023-06-20_S2023-BLA125557-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2023-06-20_S2023-BLA125557-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-06-20_S2023-NDA211651-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2023-06-15_S2023-NDA214998-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SGEN_2023-06-14_S2023-BLA125388-107",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SGEN?period1=1685664000&period2=1687737600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:12:50Z"
+    },
+    {
+      "id": "PFE_2023-06-14_S2023-BLA761118-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2023-06-12_S2023-NDA202811-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-06-05_S2023-NDA209939-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-06-05_S2023-NDA209940-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2023-06-02_S2023-NDA213464-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2023-05-31_S2023-NDA208558-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-05-26_S2023-BLA761046-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2023-05-25_S2023-NDA020220-54",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2023-05-25_S2023-NDA021425-36",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BPMC_2023-05-22_S2023-NDA212608-13",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BPMC?period1=1683676800&period2=1685750400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:12:59Z"
+    },
+    {
+      "id": "ABBV_2023-05-18_S2023-NDA211675-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2023-05-12_S2023-NDA021323-55",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2023-05-12_S2023-NDA021365-39",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-05-11_S2023-BLA125504-44",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2023-05-08_S2023-NDA202293-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2023-05-03_S2023-NDA207925-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2023-04-28_S2023-BLA761097-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2023-04-28_S2023-BLA761097-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2023-04-28_S2023-BLA761156-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2023-04-26_S2023-NDA208447-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2023-04-20_S2023-NDA212028-8",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1680912000&period2=1682985600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:13:09Z"
+    },
+    {
+      "id": "ABBV_2023-04-17_S2023-NDA215206-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2023-04-14_S2023-NDA020263-53",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-04-03_S2023-BLA125514-136",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2023-04-03_S2023-BLA761137-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-03-28_S2023-BLA125514-132",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2023-03-28_S2023-NDA214028-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2023-03-24_S2023-NDA204168-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2023-03-22_S2023-BLA761024-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2023-03-21_S2023-BLA761181-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-03-16_S2023-NDA202806-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2023-03-16_S2023-NDA204114-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MIRM_2023-03-13_S2023-NDA214662-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "CHRS_2023-03-03_S2023-BLA761039-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2023-03-03_S2023-NDA022473-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2023-03-03_S2023-NDA203109-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2023-03-03_S2023-NDA208716-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2023-03-03_S2023-NDA208716-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2023-03-01_S2023-NDA205625-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2023-02-28_S2023-BLA761037-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAX_2023-02-27_S2023-NDA213645-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2023-02-15_S2023-BLA125377-129",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2023-02-15_S2023-BLA125554-117",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2023-02-15_S2023-BLA125554-118",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2023-02-15_S2023-BLA125554-119",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2023-02-15_S2023-BLA761043-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2023-02-10_S2023-NDA204063-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2023-02-10_S2023-NDA211855-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2023-02-09_S2023-BLA761174-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2023-02-09_S2023-BLA761174-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2023-02-09_S2023-NDA213871-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2023-02-08_S2023-BLA125387-75",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2023-02-08_S2023-BLA761178-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "APLS_2023-02-08_S2023-NDA215014-2",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/APLS?period1=1674777600&period2=1676851200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:13:18Z"
+    },
+    {
+      "id": "IMMU_2023-02-03_S2023-BLA761115-35",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IMMU?period1=1674345600&period2=1676419200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:13:27Z"
+    },
+    {
+      "id": "AZN_2023-02-01_S2023-BLA761224-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2023-01-31_S2023-NDA021845-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2023-01-26_S2023-BLA125514-128",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2023-01-25_S2023-BLA125476-48",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SOLV_2023-01-20_S2023-NDA208288-4",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SOLV?period1=1673136000&period2=1675209600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:13:37Z"
+    },
+    {
+      "id": "JNJ_2023-01-19_S2023-BLA761036-44",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2023-01-19_S2023-NDA213217-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2023-01-19_S2023-NDA213411-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALNY_2023-01-13_S2023-NDA210922-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2022-12-23_S2022-NDA215256-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-12-20_S2022-NDA206494-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2022-12-19_S2022-NDA202192-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDUS_2022-12-19_S2022-NDA208743-13",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RDUS?period1=1670371200&period2=1672444800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:13:46Z"
+    },
+    {
+      "id": "MRK_2022-12-16_S2022-BLA125514-127",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-12-16_S2022-NDA021038-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-12-16_S2022-NDA204370-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INDV_2022-12-15_S2022-NDA210655-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-12-13_S2022-NDA207103-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-12-13_S2022-NDA212436-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-12-09_S2022-NDA209191-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2022-12-08_S2022-NDA208447-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2022-11-30_S2022-NDA214900-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "CHRS_2022-11-28_S2022-BLA761039-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-11-22_S2022-NDA212526-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2022-11-18_S2022-BLA761179-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-11-17_S2022-BLA125469-51",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SGEN_2022-11-10_S2022-BLA125388-106",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SGEN?period1=1667001600&period2=1669075200&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:13:55Z"
+    },
+    {
+      "id": "AZN_2022-11-10_S2022-BLA761069-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2022-11-08_S2022-BLA761097-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2022-11-04_S2022-BLA761139-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2022-11-04_S2022-BLA761210-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GEHC_2022-11-01_S2022-NDA022454-10",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GEHC?period1=1666224000&period2=1668297600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-20T19:14:05Z"
+    },
+    {
+      "id": "ABBV_2022-10-21_S2022-NDA211675-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VVUS_2022-10-18_S2022-NDA202276-20",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VVUS?period1=1665014400&period2=1667088000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:14:14Z"
+    },
+    {
+      "id": "GILD_2022-10-17_S2022-NDA208464-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-10-14_S2022-BLA761109-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2022-10-14_S2022-NDA210251-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2022-10-14_S2022-NDA211810-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-10-12_S2022-NDA215358-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2022-10-06_S2022-NDA211810-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALNY_2022-10-06_S2022-NDA214103-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2022-10-03_S2022-BLA761077-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-10-03_S2022-NDA209092-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-10-03_S2022-NDA209935-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "CPRX_2022-09-29_S2022-NDA208078-8",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CPRX?period1=1663372800&period2=1665446400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:14:23Z"
+    },
+    {
+      "id": "REGN_2022-09-28_S2022-BLA761055-44",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2022-09-27_S2022-NDA209401-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-09-23_S2022-BLA761105-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-09-22_S2022-NDA202324-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-09-21_S2022-NDA213246-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-09-21_S2022-NDA213246-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2022-09-13_S2022-NDA201532-23",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1661990400&period2=1664064000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:14:33Z"
+    },
+    {
+      "id": "ALPMY_2022-09-09_S2022-NDA203415-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2022-09-09_S2022-NDA213674-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-09-02_S2022-BLA761069-35",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2022-09-02_S2022-NDA211358-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2022-09-01_S2022-NDA215341-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-08-31_S2022-NDA021462-55",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-08-26_S2022-NDA208558-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2022-08-26_S2022-NDA213736-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2022-08-12_S2022-NDA021225-43",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2022-08-11_S2022-BLA761139-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-08-10_S2022-NDA213591-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2022-08-05_S2022-BLA761139-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2022-08-05_S2022-NDA212099-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2022-07-29_S2022-BLA125261-161",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-07-29_S2022-BLA761118-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2022-07-28_S2022-BLA761024-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2022-07-26_S2022-BLA125370-78",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2022-07-18_S2022-NDA021673-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2022-07-18_S2022-NDA215309-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-07-14_S2022-BLA125554-114",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2022-07-14_S2022-BLA761154-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-07-14_S2022-NDA202570-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "EXEL_2022-07-14_S2022-NDA208692-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "HZNP_2022-07-07_S2022-BLA125293-104",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HZNP?period1=1656115200&period2=1658188800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:14:42Z"
+    },
+    {
+      "id": "NVO_2022-07-01_S2022-BLA203314-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2022-06-30_S2022-NDA202714-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VVUS_2022-06-24_S2022-NDA022580-21",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VVUS?period1=1654992000&period2=1657065600&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:14:51Z"
+    },
+    {
+      "id": "NVS_2022-06-22_S2022-NDA202806-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-06-22_S2022-NDA204114-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-06-16_S2022-BLA761105-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RYTM_2022-06-16_S2022-NDA213793-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-06-13_S2022-NDA207924-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2022-06-07_S2022-BLA761055-42",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2022-06-03_S2022-BLA761140-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-05-27_S2022-BLA125377-122",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-05-27_S2022-BLA125554-105",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-05-27_S2022-BLA125554-106",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-05-27_S2022-BLA761125-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-05-27_S2022-NDA202806-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-05-27_S2022-NDA204114-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2022-05-20_S2022-BLA125514-123",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2022-05-20_S2022-BLA761055-40",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-05-20_S2022-NDA050794-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SIGA_2022-05-18_S2022-NDA208627-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-05-11_S2022-BLA125377-124",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-05-11_S2022-BLA125554-108",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-05-10_S2022-NDA207924-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-05-09_S2022-NDA022433-34",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2022-05-04_S2022-BLA125521-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2022-05-04_S2022-BLA761139-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "DSNKY_2022-05-04_S2022-BLA761139-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2022-05-02_S2022-NDA022023-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-04-29_S2022-NDA211675-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SUPN_2022-04-29_S2022-NDA211964-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2022-04-28_S2022-NDA208462-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2022-04-27_S2022-NDA208341-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2022-04-27_S2022-NDA214187-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2022-04-25_S2022-NDA214787-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-04-18_S2022-NDA019732-45",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-04-18_S2022-NDA020517-43",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-04-11_S2022-NDA205649-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2022-04-11_S2022-NDA212728-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2022-03-29_S2022-NDA202022-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2022-03-29_S2022-NDA202022-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2022-03-28_S2022-NDA209637-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-03-22_S2022-BLA761035-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2022-03-22_S2022-NDA207648-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2022-03-21_S2022-BLA125514-110",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-03-16_S2022-NDA211675-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-03-11_S2022-NDA208558-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2022-03-04_S2022-BLA125554-112",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2022-03-04_S2022-BLA761036-41",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-03-01_S2022-NDA209884-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2022-02-28_S2022-NDA208772-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2022-02-15_S2022-NDA203469-35",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2022-02-04_S2022-BLA125514-95",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-02-03_S2022-NDA205649-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2022-01-31_S2022-NDA202022-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2022-01-31_S2022-NDA208558-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_2022-01-28_S2022-NDA020825-63",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-01-28_S2022-NDA202806-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2022-01-28_S2022-NDA204114-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2022-01-27_S2022-NDA210806-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2022-01-27_S2022-NDA210807-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-01-21_S2022-BLA761105-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2022-01-21_S2022-NDA214787-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2022-01-14_S2022-NDA211675-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2022-01-13_S2022-NDA020505-62",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2022-01-13_S2022-NDA020844-53",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2022-01-07_S2022-NDA207561-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2022-01-07_S2022-NDA208215-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2021-12-30_S2021-NDA022334-50",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDUS_2021-12-22_S2021-NDA208743-10",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RDUS?period1=1639094400&period2=1641168000&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:15:01Z"
+    },
+    {
+      "id": "AMGN_2021-12-20_S2021-NDA205437-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2021-12-19_S2021-NDA206947-21",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1638835200&period2=1640908800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:15:10Z"
+    },
+    {
+      "id": "MRK_2021-12-17_S2021-BLA125514-120",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-12-15_S2021-BLA125118-240",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-12-14_S2021-NDA203214-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-12-14_S2021-NDA208246-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-12-14_S2021-NDA211675-2",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-12-10_S2021-NDA022134-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2021-12-10_S2021-NDA209092-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2021-12-10_S2021-NDA209935-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-12-09_S2021-NDA208261-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-12-03_S2021-BLA125514-112",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-11-30_S2021-BLA761145-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2021-11-30_S2021-NDA202714-33",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SIGA_2021-11-23_S2021-NDA208627-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-11-17_S2021-BLA125514-113",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2021-11-15_S2021-BLA761028-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-11-15_S2021-BLA761103-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2021-11-04_S2021-NDA021773-45",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2021-10-20_S2021-BLA761055-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-10-13_S2021-BLA125514-121",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-10-13_S2021-BLA125514-122",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2021-10-12_S2021-NDA208716-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2021-10-12_S2021-NDA208716-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2021-10-12_S2021-NDA208716-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2021-10-07_S2021-NDA210251-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-10-04_S2021-NDA208573-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2021-09-24_S2021-BLA125522-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2021-09-23_S2021-NDA022068-35",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2021-09-23_S2021-NDA022068-36",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "INCY_2021-09-22_S2021-NDA202192-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2021-09-20_S2021-NDA205004-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RDUS_2021-09-20_S2021-NDA208743-9",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RDUS?period1=1631059200&period2=1633132800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:15:20Z"
+    },
+    {
+      "id": "EXEL_2021-09-17_S2021-NDA208692-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-09-17_S2021-NDA209803-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-09-17_S2021-NDA209805-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-09-17_S2021-NDA209806-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2021-09-14_S2021-NDA213217-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-09-09_S2021-NDA211651-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-09-07_S2021-NDA210951-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-08-31_S2021-BLA125514-117",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-08-31_S2021-BLA125514-118",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ONC_2021-08-31_S2021-NDA213217-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-08-30_S2021-NDA207946-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-08-23_S2021-NDA202439-35",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-08-19_S2021-BLA125554-97",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2021-08-13_S2021-BLA761109-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JAZZ_2021-08-12_S2021-NDA212690-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2021-08-11_S2021-NDA021225-42",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-08-10_S2021-BLA125514-102",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2021-08-10_S2021-NDA206947-19",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1627516800&period2=1629590400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:15:29Z"
+    },
+    {
+      "id": "SNY_2021-07-30_S2021-BLA208471-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-07-30_S2021-NDA022393-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2021-07-29_S2021-BLA125526-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2021-07-29_S2021-BLA761122-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2021-07-29_S2021-NDA021977-46",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TAK_2021-07-29_S2021-NDA208510-3",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-07-28_S2021-BLA103000-5320",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-07-26_S2021-BLA125514-114",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-07-26_S2021-BLA125514-89",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-07-22_S2021-NDA021883-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2021-07-22_S2021-NDA022200-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2021-07-22_S2021-NDA209210-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-07-21_S2021-BLA125514-105",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ESALY_2021-07-21_S2021-NDA206947-20",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ESALY?period1=1625788800&period2=1627862400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:15:38Z"
+    },
+    {
+      "id": "ALPMY_2021-07-16_S2021-NDA050708-53",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2021-07-16_S2021-NDA050709-45",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2021-07-16_S2021-NDA210115-5",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-07-15_S2021-BLA125554-99",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2021-07-09_S2021-BLA761137-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALPMY_2021-07-09_S2021-BLA761137-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2021-07-09_S2021-BLA761145-7",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2021-07-09_S2021-NDA208798-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2021-07-09_S2021-NDA208799-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-07-01_S2021-BLA125514-100",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-06-25_S2021-NDA022225-8",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "TEVA_2021-06-24_S2021-NDA208082-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-06-17_S2021-NDA022030-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-06-17_S2021-NDA205053-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-06-17_S2021-NDA205596-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BPMC_2021-06-16_S2021-NDA212608-6",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BPMC?period1=1622764800&period2=1624838400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:15:47Z"
+    },
+    {
+      "id": "BPMC_2021-06-16_S2021-NDA212608-7",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BPMC?period1=1622764800&period2=1624838400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:15:57Z"
+    },
+    {
+      "id": "REGN_2021-06-14_S2021-BLA761055-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2021-06-10_S2021-NDA208341-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-06-10_S2021-NDA209394-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2021-06-08_S2021-NDA212273-4",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-05-31_S2021-NDA205053-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-05-31_S2021-NDA205596-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2021-05-28_S2021-BLA125504-43",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-05-27_S2021-NDA209899-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-05-27_S2021-NDA212728-6",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-05-25_S2021-BLA125377-121",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-05-20_S2021-BLA125554-92",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-05-14_S2021-NDA203341-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "FSNUY_2021-05-12_S2021-NDA210326-1",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2021-05-05_S2021-BLA125514-97",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2021-04-30_S2021-NDA202293-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2021-04-30_S2021-NDA202992-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_2021-04-29_S2021-NDA202515-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-04-26_S2021-BLA761105-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2021-04-26_S2021-BLA761105-9",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NBIX_2021-04-23_S2021-NDA209241-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVS_2021-04-19_S2021-NDA021283-58",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2021-04-16_S2021-BLA125554-91",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "IMMU_2021-04-13_S2021-BLA761115-9",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IMMU?period1=1617235200&period2=1619308800&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:16:06Z"
+    },
+    {
+      "id": "IMMU_2021-04-07_S2021-BLA761115-13",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IMMU?period1=1616716800&period2=1618790400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:16:15Z"
+    },
+    {
+      "id": "IMMU_2021-04-07_S2021-BLA761115-5",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IMMU?period1=1616716800&period2=1618790400&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-20T19:16:25Z"
     },
     {
       "id": "REGN_2021-04-01_S2021-BLA125559-29",
