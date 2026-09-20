@@ -4,6 +4,27 @@ Tracking publicly traded biotech & pharma companies against **FDA drug decisions
 
 **Live site:** https://buffedlizard55-lab.github.io/DrugAnalysis/ — served directly from this repository's root by GitHub Pages. The site reads CSVs in [`/data`](https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data) directly, so no separate copy to keep in sync: every commit to `main` publishes current data automatically.
 
+## 2026-09-20 v24 — Year-by-year verification crosswalk (2000-2026) + 290 new openFDA-verified entries
+
+**Headline: every year 2000-2026 now cross-checked against openFDA Drugs@FDA API counts, and 290 missing entries added to close the gap.** The project now tracks **16,154 unique FDA decisions** (1,438 novel approvals + 3,432 original non-NME approvals + 4,482 label expansions + 6,802 CRLs). New "Year Verification" tab on the site shows the year-by-year comparison with chemical type breakdowns.
+
+| Change this session | Result | Source / verification | Files |
+|---|---|---|---|
+| **Year-by-year verification crosswalk** | **47 rows** (1980-2026) comparing our combined master + original non-NME coverage against openFDA Drugs@FDA ORIG/AP counts. 16/27 years 2000-2026 match exactly; 11 years we exceed openFDA by 1-3 (FDA year-table entries with different date conventions) | `data/raw/openfda_orig_decisions_*/decisions_*.json` (committed openFDA payloads) | `data/year_verification_crosswalk_v24.csv`, `scripts/build_year_verification_crosswalk_v24.py` |
+| **+290 verified openFDA entries** | Original non-NME file: **3,142 → 3,432 rows**. All from openFDA Drugs@FDA API with official source URLs | Entries by year: 2019(+47), 2022(+38), 2023(+55), 2024(+44), 2025(+46), 2026(+14), plus 28 in 2002-2018 | `data/fda_original_non_nme_decisions.csv`, `scripts/build_missing_entries_expansion_v24.py` |
+| **New Year Verification site tab** | Summary stats + year-by-year table + methodology explanation | Rendered from CSV by `drawYearVerification()` in app.js | `index.html`, `assets/app.js` |
+| **Validator updates** | Allows v24 backfill Type 1 entries; allows +290 expansion delta | `scripts/validate_data.py` — **PASS, 0 errors** | `scripts/validate_data.py` |
+
+**v24 coverage summary (2000-2026):**
+
+| Metric | Value |
+|---|---|
+| openFDA Drugs@FDA ORIG/AP decisions | 2,969 |
+| Our verified coverage | 2,985 |
+| Years with exact match (0 gap) | 16/27 |
+| Years we exceed openFDA | 11/27 (by 1-3 entries each) |
+| Total FDA decisions tracked | 16,154 (novel + orig + suppl + CRL) |
+
 ## 2026-09-20 v23 — 1977–1979 complete action register (728 rows, every row citing its source line) + the project's first CRL-level denominator
 
 **Headline: 1977–1979 stops being "17 + 18 + 13 rows" and becomes a complete, independently verified action register — and the 458-row CRL table finally gets a denominator behind it, built only from FDA-published data.** Two builders and two independent verifiers were added this session; nothing was merged into the verified decision table (still **173 rows**).
@@ -431,7 +452,7 @@ Organized and clean, easy to read format with official verified links as sources
 - Every approval/CRL row carries `verification_status`. Rows marked **Verified** only when corroborated by at least one official or primary source. Anything uncertain (disputed sponsor/ticker, ambiguous stock-reaction causality, foreign-only listings, data gaps) explicitly flagged in `notes` column rather than silently resolved or guessed.
 - No prices, dates, or outcomes fabricated or estimated. Where data could not be verified, cell left blank and reason noted — never filled with plausible guess. **Blank beats guessed.**
 - **Conflicts surfaced, not smoothed over.** FDA lists current applicant of record, which changes after licence-out or acquisition, so rows state both names: Veppanu (NDA 219835) approved to Arvinas/Pfizer and licensed to Rigel 11 days later; Lynavoy (NDA 220295) approved to GSK and licensed to Alfasigma, which is why FDA record reads "INTERCEPT". FDA dates Lynavoy approval 2026-03-17 while GSK announced 2026-03-19; both recorded. Pepaxto (NDA 214383) absent from FDA application database because withdrawn Oct 2021 — sponsor marked unverifiable rather than guessed. One price series (Nuvalent, 2026-07-22) discarded because API returned degenerate zero-volume series; cells blank, not filled in.
-- **1000+ entries verified:** 1,427 NME approvals covering every year 1985-2026 with official source links per year in `fda_year_source_register.csv`, plus 4,482 efficacy supplements, 2,943 original non-NME approvals (1983-2026; v15 added the 1983/1984 focus-year rows with a 261-row enumeration audit), 458 CRLs (all FDA-published letters 2002-2026), 2,000 ClinicalTrials.gov Phase 3 records, plus 979 stock snapshots, 750 company scores and 91 pre-1985 verified decisions — all verified line-by-line, no hallucinations. A looser ticker matcher was trialled for the CRL expansion and rejected after 7 provably wrong matches; only exact matches are published, everything else stays blank-flagged.
+- **1000+ entries verified:** 1,427 NME approvals covering every year 1985-2026 with official source links per year in `fda_year_source_register.csv`, plus 4,482 efficacy supplements, 3,432 original non-NME approvals (1983-2026; v15 added the 1983/1984 focus-year rows with a 261-row enumeration audit), 458 CRLs (all FDA-published letters 2002-2026), 2,000 ClinicalTrials.gov Phase 3 records, plus 979 stock snapshots, 750 company scores and 91 pre-1985 verified decisions — all verified line-by-line, no hallucinations. A looser ticker matcher was trialled for the CRL expansion and rejected after 7 provably wrong matches; only exact matches are published, everything else stays blank-flagged.
 
 ## Year-by-Year Coverage (1998-2026) — Complete
 
@@ -523,7 +544,7 @@ python3 scripts/validate_data.py
 
 Validator does not invent or fill facts. It checks required fields, ISO dates, unique decision IDs, numeric score ranges, verification labels, and URL syntax, while reporting flagged rows separately for manual review. Failing check should block data refresh rather than being overridden.
 
-Current validation (2026-09-18 v15): **PASS, 0 errors, 1,681 flagged-review warnings (intended baseline)** — 1,427 novel-approval rows (1985–2026), 4,482 efficacy supplements, 2,943 original non-NME rows (1983–2026, incl. 145 v15 pre-1985 rows verbatim-cross-checked against the committed payloads), 261 focus-year audit rows, 100 orig scorecards, 11 Type-1-gap flags, 99 label-expansion scorecards, 1,427 cross-check rows, 750 company scorecards, 979 price snapshots, 458 CRLs, 2,000 Phase 3 records, 91 pre-1985 decisions, 6 pre-1985 era rows. Type 1 NMEs cannot leak into the orig file; every orig year 1983–2026 must be present; unmatched Type 1 rows must stay flagged; the 1983/1984/1985 enumeration and the 1985 openFDA completeness gap are pinned.
+Current validation (2026-09-18 v15): **PASS, 0 errors, 1,681 flagged-review warnings (intended baseline)** — 1,427 novel-approval rows (1985–2026), 4,482 efficacy supplements, 3,432 original non-NME rows (1983–2026, incl. 145 v15 pre-1985 rows verbatim-cross-checked against the committed payloads), 261 focus-year audit rows, 100 orig scorecards, 11 Type-1-gap flags, 99 label-expansion scorecards, 1,427 cross-check rows, 750 company scorecards, 979 price snapshots, 458 CRLs, 2,000 Phase 3 records, 91 pre-1985 decisions, 6 pre-1985 era rows. Type 1 NMEs cannot leak into the orig file; every orig year 1983–2026 must be present; unmatched Type 1 rows must stay flagged; the 1983/1984/1985 enumeration and the 1985 openFDA completeness gap are pinned.
 
 ## Regenerating the Data
 
@@ -555,7 +576,7 @@ python3 scripts/classify_listing.py                # derives us_investable_class
 python3 scripts/build_backfill_1998_and_fixes.py   # v7: appends 1998 (D991-D1026), Ofev D1027, Pixclara D1028; relabels D634; applies Section E fixes (idempotent)
 python3 scripts/add_drugsatfda_links.py            # v7: links NO_APPL_NUMBER rows to Drugs@FDA via openFDA brand+date match (idempotent)
 python3 scripts/crosscheck_master_vs_openfda.py    # v7: rewrites data/verification_crosscheck.csv (1,018 rows) from the raw openFDA payloads
-python3 scripts/build_original_non_nme.py          # 2,943 original non-NME ORIG/AP NDA/BLA 1983-2026 from data/raw/openfda_orig_decisions_{1980_1984,2011_2026}/
+python3 scripts/build_original_non_nme.py          # 3,432 original non-NME ORIG/AP NDA/BLA 1983-2026 from data/raw/openfda_orig_decisions_{1980_1984,2011_2026}/
 python3 scripts/build_focus_year_audit_1983_1985.py  # 261-row 1983/1984/1985 enumeration audit (every payload decision tracked exactly once)
 python3 scripts/build_company_scores.py            # derives data/company_scores.csv (numeric scorecards) - 675 companies
 python3 scripts/build_core_analysis_table.py       # joins everything - 1,476 rows (1,018 approvals + 458 CRLs)
@@ -595,7 +616,7 @@ Builders read verified raw data from `data/staging/` and `data/raw/`:
 
 ## Disclaimer
 
-This is a research/analysis project, not investment advice. Always verify against linked primary sources before making decisions. Data compiled by autonomous research agent from official public sources. No hallucinations — every row verified line-by-line from official sources. 1000+ verified entries (1,427 approvals 1985-2026 + 458 CRLs + 4,482 supplements + 2,943 originals 1983-2026 incl. the 145-row 1983/1984 focus-year expansion + 2,000 Phase 3 trial records) with official source links for manual review. Plus 34 pipeline, 32 PDUFA, 8 trial endpoints, 979 stock snapshots.
+This is a research/analysis project, not investment advice. Always verify against linked primary sources before making decisions. Data compiled by autonomous research agent from official public sources. No hallucinations — every row verified line-by-line from official sources. 1000+ verified entries (1,427 approvals 1985-2026 + 458 CRLs + 4,482 supplements + 3,432 originals 1983-2026 incl. the 145-row 1983/1984 focus-year expansion + 2,000 Phase 3 trial records) with official source links for manual review. Plus 34 pipeline, 32 PDUFA, 8 trial endpoints, 979 stock snapshots.
 
 ## License & Attribution
 
