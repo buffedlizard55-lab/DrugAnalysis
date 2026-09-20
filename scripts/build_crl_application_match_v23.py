@@ -145,6 +145,58 @@ def norm_appl(raw: str) -> tuple[str, str]:
     return f"{kind}{m.group(2).zfill(6)}", kind
 
 
+def norm_company(name: str) -> str:
+    """Company-name normalisation for the curated master join.
+
+    The curated master rows carry hand-written holder names ("Sanofi") while
+    FDA's CRL dataset carries the name the applicant filed under
+    ("sanofi-aventis U.S. LLC"), so case, punctuation and a conservative list of
+    legal-form tokens are removed. Nothing else is changed; the verbatim strings
+    stay published in both tables.
+    """
+    t = re.sub(r"[^A-Z0-9 ]", " ", as_text(name).upper())
+    drop = {"INC", "INCORPORATED", "LLC", "LTD", "LIMITED", "PLC", "CORP", "CORPORATION",
+            "COMPANY", "CO", "GMBH", "AG", "SA", "SE", "NV", "BV", "AB", "KK", "LP",
+            "SPA", "SAS", "KGAA", "USA", "US", "THE", "AND"}
+    return " ".join(x for x in t.split() if x not in drop)
+
+
+def companies_correspond(a: str, b: str) -> bool:
+    """True only when two published holder names describe the same company family.
+
+    Equality after normalisation, or containment where the shorter name is a
+    prefix-token of the longer one *and* the first token (the corporate family)
+    agrees - so "Pfizer" and "Pfizer Inc." correspond, while "Hospira" and
+    "Pfizer" do not, even though Pfizer acquired Hospira. Attribution cases stay
+    flagged, never silently linked.
+    """
+    na, nb = norm_company(a), norm_company(b)
+    if not na or not nb:
+        return False
+    if na == nb:
+        return True
+    short, long = sorted((na, nb), key=len)
+    if len(short) < 5 or short not in long:
+        return False
+    return short.split()[0] == long.split()[0]
+
+
+def load_curated_rows() -> list[tuple[str, str, str]]:
+    """(crl_id, company_name, crl_date) for the hand-verified C-rows.
+
+    Those rows do not publish an application number, so the only honest join
+    key they support is (letter date, company name).
+    """
+    out: list[tuple[str, str, str]] = []
+    with MASTER.open(newline="", encoding="utf-8-sig") as fh:
+        for r in csv.DictReader(fh):
+            cid = (r.get("crl_id") or "").strip()
+            if re.fullmatch(r"C\d+", cid):
+                out.append((cid, (r.get("company_name") or "").strip(),
+                            (r.get("crl_date") or "").strip()))
+    return out
+
+
 def iso_date(raw: str) -> str:
     t = as_text(raw).strip()
     m = re.match(r"^(\d{2})/(\d{2})/(\d{4})$", t)
@@ -360,6 +412,7 @@ def main() -> int:
             "crl_row_id": crl_id,
             "master_crl_id": master_hit,
             "master_link_status": master_link,
+            "curated_candidate_ids": "",
             "duplicate_letter_same_app_same_date": dup_flag,
             "raw_file_name": file_name,
             "company_name_verbatim": as_text(rec.get("company_name")),
@@ -393,6 +446,68 @@ def main() -> int:
                       f"failed. conflict_flag=" + (conflict or "NONE") +
                       "; the flag is raised for human review, never resolved by preference."),
         })
+
+    # ---- secondary master join: curated rows (no application number) --------
+    # 58 FDA letters are not covered by the application-keyed CR- master rows, and
+    # 55 of them share their letter date with a hand-verified C-row. A link is
+    # made only when it is unambiguous: exactly one curated row on that date whose
+    # company name corresponds, and exactly one letter it can belong to. Every
+    # other case is flagged for human review and never resolved by preference.
+    curated_rows = load_curated_rows()
+    curated_by_date: dict[str, list[tuple[str, str]]] = {}
+    for cid, cname, cdate in curated_rows:
+        curated_by_date.setdefault(cdate, []).append((cid, cname))
+    letters_by_date: dict[str, list[dict]] = {}
+    for r in match_rows:
+        if r["master_link_status"] == "NO_MASTER_ROW":
+            letters_by_date.setdefault(r["letter_date"], []).append(r)
+    n_curated_joined = 0
+    n_curated_flagged = 0
+    for date, letters in sorted(letters_by_date.items()):
+        candidates = curated_by_date.get(date, [])
+        if not candidates:
+            for r in letters:
+                r["notes"] += (" No master row exists for this letter on either key: no "
+                               "application-keyed CR- row covers this application and no curated "
+                               "C-row carries this letter date. Flagged, not guessed.")
+            continue
+        per_letter: dict[str, list[str]] = {}
+        per_curated: dict[str, list[str]] = {}
+        for cid, cname in candidates:
+            for r in letters:
+                if companies_correspond(r["company_name_verbatim"], cname):
+                    per_letter.setdefault(r["crl_row_id"], []).append(cid)
+                    per_curated.setdefault(cid, []).append(r["crl_row_id"])
+        for r in letters:
+            cids = sorted(per_letter.get(r["crl_row_id"], []))
+            if len(cids) == 1 and len(per_curated.get(cids[0], [])) == 1:
+                r["master_crl_id"] = cids[0]
+                r["curated_candidate_ids"] = cids[0]
+                r["master_link_status"] = "JOINED_CURATED_DATE_COMPANY"
+                r["notes"] += (f" Linked to curated master row {cids[0]} on letter date plus "
+                               f"corresponding company name, because the curated rows in "
+                               f"data/fda_crl_master.csv publish no application number and cannot "
+                               f"be joined on one. The link is date+name evidence; both verbatim "
+                               f"names stay visible in the tables.")
+                n_curated_joined += 1
+            else:
+                if len(cids) > 1:
+                    why = "more than one curated row on this date corresponds to the company"
+                elif len(cids) == 1:
+                    why = ("the single candidate row is claimed by a same-day sibling letter from "
+                           "the same company, so the pairing is not unique")
+                else:
+                    why = ("the candidate curated row's company name does not correspond to the "
+                           "name FDA publishes on the letter (parent/subsidiary or acquirer "
+                           "attribution)")
+                r["curated_candidate_ids"] = "|".join(cids or [c for c, _ in candidates])
+                r["master_link_status"] = "CURATED_CANDIDATE_NOT_JOINED"
+                r["notes"] += (f" Curated master candidate(s) {r['curated_candidate_ids']} share "
+                               f"this letter date but the link is not unambiguous: {why}. Flagged "
+                               f"for human review, never resolved by preference.")
+                n_curated_flagged += 1
+    print(f"curated master rows: {len(curated_rows)}; letters linked by date+company: "
+          f"{n_curated_joined}; curated candidates flagged without a link: {n_curated_flagged}")
 
     # ------------------------------------------------------------------ rates
     rate_rows = []
@@ -505,6 +620,10 @@ def main() -> int:
                            "master stores it as CR--20260227 with an empty application segment. "
                            "That master id is flagged here as an irregularity, not corrected.")
 
+    _status_counts: dict[str, int] = {}
+    for r in match_rows:
+        _status_counts[r["master_link_status"]] = _status_counts.get(r["master_link_status"], 0) + 1
+
     sources.insert(0, {
         "file": "data/raw/probe/crl_page1.json",
         "role": "FDA openFDA Complete Response Letter transparency dataset, captured verbatim (458 records)",
@@ -540,6 +659,8 @@ def main() -> int:
     print(f"wrote data/crl_match_sources.csv ({len(sources)} rows)")
     print(f"CRLs without a published application number: {n_without_appl}")
     print(f"CRL master rows not joined by (application, letter date): {len(unmatched_master)}")
+    print("master link status: " + ", ".join(
+        f"{k}={v}" for k, v in sorted(_status_counts.items())))
     print(f"later ORIGINAL approval action observed: {total_obs}/{total_n} = "
           f"{100.0 * total_obs / total_n:.1f}% (Wilson 95% lower "
           f"{100.0 * wilson_lower(total_obs, total_n):.1f}%)")

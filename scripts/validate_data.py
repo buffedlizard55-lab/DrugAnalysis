@@ -60,7 +60,7 @@ def _not_on_nme_table(r):
 master_years = {}
 _flagged_not_on = [r.get("decision_id") for r in master if _not_on_nme_table(r)]
 if _flagged_not_on != ["D634"]:
-    errs.append(f"NOT_ON_FDA_NME_TABLE detector must isolate exactly [D634], got {_flagged_not_on}")
+    errors.append(f"NOT_ON_FDA_NME_TABLE detector must isolate exactly [D634], got {_flagged_not_on}")
 for r in master:
     if _not_on_nme_table(r):
         continue
@@ -1793,6 +1793,32 @@ if _unmatched_master != _malformed_master:
                   f"CR--20260227 for the letter FDA publishes without an application number)")
 if _malformed_master & _matched_master:
     errors.append("crl_application_match: malformed master id unexpectedly joined")
+# The 58 letters with no application-keyed master row are re-joined against the
+# hand-verified curated C-rows (which publish no application number) on (letter
+# date, company name); only unambiguous links are made and every other case
+# stays flagged. Pin the split so it cannot drift silently.
+_v23_mls = Counter(r.get("master_link_status", "") for r in _v23_match)
+_v23_mls_pin = {"JOINED": 399, "JOINED_CURATED_DATE_COMPANY": 36,
+                "CURATED_CANDIDATE_NOT_JOINED": 19, "NO_MASTER_ROW": 3,
+                "FDA_PUBLISHED_NO_APPLICATION_NUMBER": 1}
+if dict(_v23_mls) != _v23_mls_pin:
+    errors.append(f"crl_application_match: master_link_status split drifted "
+                  f"{dict(_v23_mls)} != {_v23_mls_pin}")
+_v23_curated_ids = {r["crl_id"] for r in _crl_master_rows if re.fullmatch(r"C\d+", r.get("crl_id", ""))}
+_v23_curated_claims = [r["master_crl_id"] for r in _v23_match
+                       if r.get("master_crl_id") in _v23_curated_ids]
+if len(_v23_curated_claims) != len(set(_v23_curated_claims)):
+    errors.append("crl_application_match: a curated master row is claimed by more than one letter")
+for _r in _v23_match:
+    _st = _r.get("master_link_status", "")
+    if _st.startswith("JOINED_CURATED") and _r.get("master_crl_id") not in _v23_curated_ids:
+        errors.append(f"crl_application_match {_r['crl_row_id']}: curated link to an unknown id")
+    if _st == "CURATED_CANDIDATE_NOT_JOINED":
+        _cand = (_r.get("curated_candidate_ids") or "").split("|")
+        if not any(_cand):
+            errors.append(f"crl_application_match {_r['crl_row_id']}: flagged without candidate ids")
+        elif any(_c not in _v23_curated_ids for _c in _cand if _c):
+            errors.append(f"crl_application_match {_r['crl_row_id']}: unknown curated candidate")
 for _r in _v23_match:
     if _r.get("fda_approval_status_verbatim", "") not in ("Approved", "Unapproved", ""):
         errors.append(f"crl_application_match {_r['crl_row_id']}: unexpected FDA approval_status "

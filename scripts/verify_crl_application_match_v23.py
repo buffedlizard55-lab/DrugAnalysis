@@ -24,7 +24,11 @@ What it checks
    (closed-form quadratic) implementation.
 6. The CRL master join is complete and the one malformed master id
    (``CR--20260227``, the letter FDA publishes without an application number)
-   is exactly the unmatched one.
+   is exactly the unmatched one. The hand-verified curated rows (``C###``,
+   which publish no application number) are re-joined independently on
+   (letter date, corresponding company name); every link, every flagged
+   candidate and every letter left unlinked is recomputed, and pinned counts
+   are asserted.
 7. Honesty guards: no likelihood/probability column exists, and the coverage
    notes keep the "not a census", "lower bound" and "still in review" caveats.
 """
@@ -285,8 +289,109 @@ def main() -> int:
           f"master join incomplete: {sorted(set(master_cr) - joined)[:5]} unmatched "
           f"(only the malformed {malformed} may be unmatched)")
     check(malformed not in joined, "the malformed master id unexpectedly joined a letter")
-    check(len(joined) == len(master_cr) - 1,
-          f"master join count {len(joined)} != {len(master_cr) - 1} well-formed master ids")
+    joined_cr = {m for m in joined if m.startswith("CR-")}
+    check(len(joined_cr) == len(master_cr) - 1,
+          f"application-keyed master join count {len(joined_cr)} != "
+          f"{len(master_cr) - 1} well-formed master ids")
+
+    # ---- curated master rows (hand-verified, no application number) ---------
+    master_rows = list(csv.DictReader(MASTER.open(newline="", encoding="utf-8-sig")))
+    curated = [(r["crl_id"], text(r.get("company_name", "")), text(r.get("crl_date", "")))
+               for r in master_rows if re.fullmatch(r"C\d+", text(r.get("crl_id", "")))]
+    check(len(curated) == 58, f"curated master rows: expected 58, got {len(curated)}")
+    curated_ids = {c[0] for c in curated}
+    curated_by_date: dict[str, list[tuple[str, str]]] = {}
+    for cid, cname, cdate in curated:
+        curated_by_date.setdefault(cdate, []).append((cid, cname))
+
+    _drop = {"INC", "INCORPORATED", "LLC", "LTD", "LIMITED", "PLC", "CORP", "CORPORATION",
+             "COMPANY", "CO", "GMBH", "AG", "SA", "SE", "NV", "BV", "AB", "KK", "LP",
+             "SPA", "SAS", "KGAA", "USA", "US", "THE", "AND"}
+
+    def nco(name: str) -> str:
+        t = re.sub(r"[^A-Z0-9 ]", " ", text(name).upper())
+        return " ".join(x for x in t.split() if x not in _drop)
+
+    def correspond(a: str, b: str) -> bool:
+        na, nb = nco(a), nco(b)
+        if not na or not nb:
+            return False
+        if na == nb:
+            return True
+        short, long = sorted((na, nb), key=len)
+        if len(short) < 5 or short not in long:
+            return False
+        return short.split()[0] == long.split()[0]
+
+    # independent recomputation of the unambiguous links: a curated row links to
+    # a letter only when exactly one letter on that date corresponds and that
+    # letter corresponds to exactly one curated row
+    per_letter: dict[str, list[str]] = {}
+    per_curated: dict[str, list[str]] = {}
+    for cid, cname, cdate in curated:
+        for row in rows:
+            if row["letter_date"] != cdate:
+                continue
+            if correspond(row["company_name_verbatim"], cname):
+                per_letter.setdefault(row["crl_row_id"], []).append(cid)
+                per_curated.setdefault(cid, []).append(row["crl_row_id"])
+    expect_join = {rid for rid, cids in per_letter.items()
+                   if len(cids) == 1 and len(per_curated[cids[0]]) == 1}
+    got_join = {r["crl_row_id"] for r in rows
+                if r["master_link_status"] == "JOINED_CURATED_DATE_COMPANY"}
+    check(got_join == expect_join,
+          f"curated link set drifted: published {len(got_join)} rows, recomputed {len(expect_join)} "
+          f"(only-in-csv {sorted(got_join - expect_join)[:3]}, only-in-scan "
+          f"{sorted(expect_join - got_join)[:3]})")
+    status_counts: dict[str, int] = {}
+    for row in rows:
+        status_counts[row["master_link_status"]] = status_counts.get(row["master_link_status"], 0) + 1
+    unlinked = [r for r in rows if r["master_link_status"] not in
+                ("JOINED", "FDA_PUBLISHED_NO_APPLICATION_NUMBER")]
+    check(len(unlinked) == 58,
+          f"letters without an application-keyed master row: {len(unlinked)} != 58")
+    with_candidate = [r for r in unlinked if curated_by_date.get(r["letter_date"])]
+    expect_flagged = len(with_candidate) - len(expect_join)
+    expect_nomaster = len(unlinked) - len(with_candidate)
+    check(status_counts.get("JOINED") == 399,
+          f"application-keyed joins: {status_counts.get('JOINED')} != 399")
+    check(status_counts.get("JOINED_CURATED_DATE_COMPANY") == len(expect_join),
+          f"curated joins: {status_counts.get('JOINED_CURATED_DATE_COMPANY')} != {len(expect_join)}")
+    check(status_counts.get("CURATED_CANDIDATE_NOT_JOINED") == expect_flagged,
+          f"flagged curated candidates: {status_counts.get('CURATED_CANDIDATE_NOT_JOINED')} "
+          f"!= {expect_flagged}")
+    check(status_counts.get("NO_MASTER_ROW") == expect_nomaster,
+          f"letters with no master key at all: {status_counts.get('NO_MASTER_ROW')} != {expect_nomaster}")
+    check(status_counts.get("FDA_PUBLISHED_NO_APPLICATION_NUMBER") == 1,
+          "expected exactly one letter published without an application number")
+
+    claimed_curated: dict[str, str] = {}
+    for row in rows:
+        cid = row["master_crl_id"]
+        if cid in curated_ids:
+            check(cid not in claimed_curated,
+                  f"curated master row {cid} is claimed by two letters "
+                  f"({claimed_curated.get(cid)} and {row['crl_row_id']})")
+            claimed_curated[cid] = row["crl_row_id"]
+            match = next((c for c in curated if c[0] == cid), None)
+            check(match is not None and match[2] == row["letter_date"],
+                  f"{row['crl_row_id']}: curated link {cid} does not carry the letter date")
+            check(match is not None and correspond(row["company_name_verbatim"], match[1]),
+                  f"{row['crl_row_id']}: curated link {cid} company names do not correspond")
+        if row["master_link_status"] == "CURATED_CANDIDATE_NOT_JOINED":
+            cands = [c for c in row["curated_candidate_ids"].split("|") if c]
+            check(bool(cands), f"{row['crl_row_id']}: flagged row lost its curated candidates")
+            for c in cands:
+                check(c in curated_ids, f"{row['crl_row_id']}: unknown curated candidate {c}")
+                check(any(cc[0] == c and cc[2] == row["letter_date"] for cc in curated),
+                      f"{row['crl_row_id']}: candidate {c} does not carry the letter date")
+            check(row["crl_row_id"] not in expect_join,
+                  f"{row['crl_row_id']}: flagged row is in fact an unambiguous link")
+        if row["master_link_status"] == "NO_MASTER_ROW":
+            check(not curated_by_date.get(row["letter_date"]),
+                  f"{row['crl_row_id']}: labelled NO_MASTER_ROW but a curated row shares the date")
+    check(len(claimed_curated) == len(expect_join),
+          f"curated links claimed {len(claimed_curated)} != recomputed {len(expect_join)}")
 
     # ---- aggregates --------------------------------------------------------
     rates = list(csv.DictReader(RATES.open(newline="", encoding="utf-8")))

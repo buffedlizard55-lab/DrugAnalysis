@@ -16,9 +16,9 @@ this branch into `main` is part of the session deliverable.
 | 1977–1979 actions | `data/pre1980_1977_1979_submission_actions.csv` | 5,483 rows (1,489 / 2,061 / 1,933), all status `AP` |
 | Document index | `data/pre1980_1977_1979_application_docs.csv` | 899 rows across 120 applications |
 | Year analysis | `data/pre1980_1977_1979_year_analysis.csv` | 3 rows with the verdicts, supplement mix, priority split, marketing census, caveats |
-| CRL match | `data/crl_application_match.csv` | 458 rows; 327 later-ORIG observed; 40 conflict flags for human review |
+| CRL match | `data/crl_application_match.csv` | 458 rows; 327 later-ORIG observed; 40 conflict flags for human review; master link 399 application-keyed + 36 curated (date+company) + 19 flagged candidates + 3 no-key + 1 no-appl |
 | CRL rates | `data/crl_year_base_rates.csv` | 25 rows incl. `ALL_MATURE_2Y` 301/342 = 88.0% (Wilson LB 84.1%) and `ALL_MATURE_3Y` 282/290 = 97.2% (LB 94.7%) |
-| Verifiers | `scripts/verify_pre1980_year_register_v23.py`, `scripts/verify_crl_application_match_v23.py` | **7,164 checks / 0 errors** and **5,247 checks / 0 errors**; neither shares code with its builder |
+| Verifiers | `scripts/verify_pre1980_year_register_v23.py`, `scripts/verify_crl_application_match_v23.py` | **7,164 checks / 0 errors** and **5,456 checks / 0 errors**; neither shares code with its builder |
 | Validator | `scripts/validate_data.py` | **PASS, 0 errors** (1751 standing warnings); v23 gates are fail-closed |
 
 Official vs enumerated: **1977 25 vs 17 (−8 unnamed)**; **1978 17 vs 18 (+1 Motofen TYPE 1/4, CLOSED)**;
@@ -33,7 +33,7 @@ python3 scripts/build_pre1980_focus_1977_1979_v22.py  # year-focus / gap ledger
 python3 scripts/build_pre1980_year_register_v23.py    # 728 / 5,483 / 899 / 3 / sources
 python3 scripts/verify_pre1980_year_register_v23.py   # expect 7164 checks, 0 errors
 python3 scripts/build_crl_application_match_v23.py    # 458 rows + 25 rate rows
-python3 scripts/verify_crl_application_match_v23.py   # expect 5247 checks, 0 errors
+python3 scripts/verify_crl_application_match_v23.py   # expect 5456 checks, 0 errors
 python3 scripts/validate_data.py                      # expect PASS (0 errors)
 node --check assets/app.js
 ```

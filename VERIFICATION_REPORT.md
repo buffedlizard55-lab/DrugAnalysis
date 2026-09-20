@@ -2,7 +2,7 @@
 
 **Branch:** `arena/01a0bfa7-druganalysis`
 **Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors** (warnings are the standing manual-review baseline).
-**Independent verifiers:** `scripts/verify_pre1980_year_register_v23.py` → **7,164 checks, 0 errors**; `scripts/verify_crl_application_match_v23.py` → **5,247 checks, 0 errors**. Neither verifier imports or shares code with the builder it checks.
+**Independent verifiers:** `scripts/verify_pre1980_year_register_v23.py` → **7,164 checks, 0 errors**; `scripts/verify_crl_application_match_v23.py` → **5,456 checks, 0 errors**. Neither verifier imports or shares code with the builder it checks.
 
 ## v23 result
 
@@ -17,6 +17,7 @@
 | CRL row layer | **458 rows**, unique ids, every row joined back to its raw FDA record by `(file_name, letter_date, company, application_number)` (the quadruple is unique across the dataset; `file_name` alone is not); "later" dates strictly after the letter date; every conflict flag recomputed from the independent payload scan | `data/crl_application_match.csv`; independent scan sees 11,570 applications |
 | CRL rates | Per-year, `ALL`, `ALL_MATURE_2Y` and `ALL_MATURE_3Y` denominators/numerators/percentages recomputed; Wilson lower bounds recomputed with a **closed-form quadratic** implementation (the builder uses the standard centre-minus-margin form) and required to be ≤ the point estimate; medians and conflict counts recomputed per row subset | `data/crl_year_base_rates.csv` (25 rows) |
 | CRL master join | Every well-formed `CR-<APP>-<MMDDYYYY>` master id joins to exactly one letter; the only unmatched master id is `CR--20260227`, the letter FDA publishes **without an application number** — an irregularity preserved, not corrected | `data/fda_crl_master.csv`, `data/crl_application_match.csv` |
+| Curated master join (three-pass review fix) | The 58 letters with no application-keyed row are re-joined to the 58 hand-verified `C###` rows — which publish no application number — on (letter date, corresponding company name): **36 linked** (`JOINED_CURATED_DATE_COMPANY`), **19 flagged** (`CURATED_CANDIDATE_NOT_JOINED`: two curated rows on the date, a same-day sibling letter claiming the only candidate, or a parent/subsidiary name mismatch), **3 with no curated row on the letter date**. Before this fix all 58 read `NO_MASTER_ROW`, which was false for the 55 letters whose date matched a curated row | Independent verifier rebuilds the bipartite match from the raw master and the letter names, then pins 399 / 36 / 19 / 3 / 1 | `scripts/verify_crl_application_match_v23.py`, `data/crl_application_match.csv` (column `curated_candidate_ids`) |
 | Denominators are labelled | Every rate row carries `cohort_maturity`; every row's `coverage_note` must contain "not a census"; `ALL*` rows must add "lower bound"; calendar-year rows must add "upper bound" (the any-action column counts same-application supplements, which need not relate to the letter) | Verifier caveat-text gate |
 | Unchanged invariants | `data/pre1980_fda_decisions.csv` still **173 rows**; `fda_decisions_master.csv` still 1,427; no `fetch_jobs/**` payload was rewritten; stock/scorecard tables untouched | `validate_data.py`, `git diff --stat` |
 
