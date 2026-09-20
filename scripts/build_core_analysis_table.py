@@ -29,6 +29,7 @@ with `d["decision_date"]` (the last APPROVAL row's date) instead of
 `c["crl_date"]`, so every CRL row matched the wrong snapshot or none at all.
 """
 import csv
+import re
 
 decisions = list(csv.DictReader(open("data/fda_decisions_master.csv")))
 crls = list(csv.DictReader(open("data/fda_crl_master.csv")))
@@ -176,6 +177,84 @@ for c in crls:
         flag_of(c["verification_status"], c.get("notes", "")), c["verification_status"],
     ])
 
+# ---- v25 (2026-09-20): join the v24 openFDA backfill entries ---------------
+# The 290 v24 rows in fda_original_non_nme_decisions.csv (marked "v24 backfill"
+# in verification_status) are openFDA-verified ORIG/AP decisions. 242 of the 290
+# are already present in fda_decisions_master.csv under the same drug_brand +
+# decision_date, so they are already in this table through the master loop
+# above; appending them again would double-count the same FDA decision. The
+# rest (48 today) are joined here exactly once, with their openFDA provenance
+# kept intact: no ticker is invented (blank until the ticker resolution pass
+# fills it), no listing class is asserted (the row's UNRESOLVED class string is
+# not a class), and no indication is invented (the openFDA original-approval
+# extract carries no structured indication field - same convention as the
+# pre-1985 rows). Fail-closed on the one case that would make the dedupe
+# ambiguous: a v24 row sharing (company, date) with a master row under a
+# DIFFERENT brand.
+_orig = list(csv.DictReader(open("data/fda_original_non_nme_decisions.csv")))
+
+
+def _norm_key(s):
+    return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
+
+_master_brand_date = {(_norm_key(d["drug_brand"]), d["decision_date"]) for d in decisions}
+_master_company_date = {(_norm_key(d["company_name"]), d["decision_date"]) for d in decisions}
+_v24_rows = [r for r in _orig if "v24 backfill" in (r.get("verification_status") or "").lower()]
+# TYPE 1 / TYPE 1/4 are NME decisions: they read as approvals in the engine's
+# statistics (which bucket on decision_type.startswith("Approval")). Every
+# other class is labelled as a non-NME original so it never mixes into them.
+_NME_CLASSES = {"TYPE 1", "TYPE 1/4"}
+_v24_joined = 0
+_v24_already = 0
+for r in _v24_rows:
+    dt = r["decision_date"]
+    if (_norm_key(r["drug_brand"]), dt) in _master_brand_date:
+        _v24_already += 1            # already in the table via its master row
+        continue
+    if (_norm_key(r["company_name"]), dt) in _master_company_date:
+        raise SystemExit(
+            f"FATAL v25 join: {r.get('orig_id')} ({r['drug_brand']}, {dt}) shares "
+            "(company, date) with a master row under a different brand - ambiguous "
+            "dedupe, needs human review before joining")
+    t = real_ticker(r.get("ticker", ""))
+    snap = snapshots.get((t, dt)) if t else None
+    before, after, pct, t1, t1_pct, status = price_cells(snap, t)
+    score, grade, conf, cls = score_cells(t, r["company_name"])
+    # 22 of the 48 v24 rows carry no product name at all in the openFDA
+    # payload; the application number is then the only verifiable identifier
+    # (blank beats guessed), and a NO-PRODUCT-NAME flag marks the gap.
+    brand = (r.get("drug_brand") or "").strip()
+    generic = (r.get("drug_generic") or "").strip()
+    if brand:
+        drug = f"{brand} ({generic})" if generic else brand
+    else:
+        drug = r.get("application_number") or "UNKNOWN"
+    # the row's own committed class, only if it is a real listing class
+    own_cls = (r.get("us_investable_class") or "").strip()
+    if own_cls.startswith("UNRESOLVED"):
+        own_cls = ""
+    ctype = (r.get("chemical_type_code") or "").strip()
+    cdesc = (r.get("chemical_type_description") or "").strip()
+    if ctype in _NME_CLASSES:
+        dtype = f"Approval ({cdesc}; v24 openFDA backfill)"
+    else:
+        dtype = f"Original Approval (non-NME; {cdesc}; v24 openFDA backfill)"
+    flags = flag_of(r.get("verification_status"), r.get("notes"))
+    if not t:
+        flags = (flags + "; " if flags else "") + "TICKER-UNRESOLVED"
+    if not brand:
+        flags = (flags + "; " if flags else "") + "NO-PRODUCT-NAME"
+    rows.append([
+        r["company_name"], t, drug,
+        dtype, dt, "", r.get("review_priority", ""),
+        before, after, pct, t1, t1_pct, status, summary_for(t, r["company_name"]),
+        score, grade, conf, cls or own_cls,
+        r.get("source_url_1", ""), r.get("source_url_2", ""),
+        flags, r.get("verification_status", ""),
+    ])
+    _v24_joined += 1
+
 # newest decisions first - the table is used as a forward-looking decision engine
 rows.sort(key=lambda r: r[4], reverse=True)
 
@@ -186,3 +265,5 @@ with open("data/core_analysis_table.csv", "w", newline="", encoding="utf-8") as 
 
 matched = sum(1 for r in rows if str(r[12]).startswith("Verified"))
 print(f"Wrote {len(rows)} core analysis rows ({matched} with verified price data)")
+print(f"v25 join: {len(_v24_rows)} v24-backfill rows -> {_v24_joined} joined "
+      f"(not in master), {_v24_already} already covered by the master")

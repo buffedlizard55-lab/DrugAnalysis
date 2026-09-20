@@ -890,17 +890,23 @@ if int(_era_p1985.get("1985", {}).get("priority_reviews", -1)) != _1985_pri:
 if int(_era_p1985.get("1985", {}).get("standard_reviews", -1)) != _1985_std:
     errors.append(f"pre1985_era_analysis:1985: standard_reviews does not match master ({_1985_std})")
 
-# 7. Core analysis table <-> master integrity (v11 2026-09-18).
+# 7. Core analysis table <-> master integrity (v11 2026-09-18; v25 2026-09-20).
 #    build_core_analysis_table.py writes one row per master row plus one per CRL
-#    (then sorts by date desc), and it derives a TICKER-KEYED class map with
+#    plus one per v24 openFDA-backfill row that is not already in the master
+#    (deduped on normalised brand + date; then sorts by date desc), and it
+#    derives a TICKER-KEYED class map with
 #    setdefault() in master order which it applies to EVERY row sharing that
 #    ticker. So filling a master `ticker` can silently re-class a DIFFERENT row:
 #    that is exactly why D1338's verified IMMU and D1357/D1381's verified CYTO
 #    are kept out of the ticker column (NO_TICKER_FILL in
 #    scripts/resolve_pre2000_sponsors_v11.py). This section makes that hazard
 #    measurable instead of invisible:
-#      (a) shape: one core row per master row + one per CRL row;
+#      (a) shape: one core row per master row + one per CRL row + one per
+#          v24-backfill row not already in the master (v25);
 #      (b) coverage: every master row is present in the core table;
+#      (b2) v25 coverage: every joined v24-backfill row is present, and no
+#          v24 row is ambiguously deduped (company+date match under a
+#          different brand);
 #      (c) ratchet: the number of rows whose core class disagrees with the
 #          master row's OWN committed class must stay at the audited baseline.
 #    Baseline history: 145 when this gate was added. The same pass then found and
@@ -918,9 +924,38 @@ if int(_era_p1985.get("1985", {}).get("standard_reviews", -1)) != _1985_std:
 CORE_CLASS_BASELINE = 141
 _core = read("core_analysis_table.csv")
 _crl_master = read("fda_crl_master.csv")
-if len(_core) != len(master) + len(_crl_master):
-    errors.append(f"core_analysis_table: expected {len(master)} master + {len(_crl_master)} CRL = "
-                  f"{len(master) + len(_crl_master)} rows, got {len(_core)}")
+# v25 (2026-09-20): the core table also carries the v24 openFDA-backfill entries
+# from the original non-NME file that are NOT already in the master. The builder
+# dedupes on (normalised drug_brand, decision_date): a v24 row whose brand+date
+# matches a master row is already in the table through that master row (242 of
+# the 290 v24 rows today), so it is NOT appended - appending it would
+# double-count the same FDA decision. This gate mirrors that join exactly so the
+# shape and coverage checks follow the data; and it fails closed on the one
+# case that would make the dedupe ambiguous (a v24 row sharing company+date
+# with a master row under a different brand), exactly as the builder does.
+def _norm_key(v):
+    return re.sub(r"[^a-z0-9]", "", (v or "").lower())
+
+_mk_bd = {(_norm_key(r["drug_brand"]), r["decision_date"]) for r in master}
+_mk_cd = {(_norm_key(r["company_name"]), r["decision_date"]) for r in master}
+_v24_all = [r for r in orig if "v24 backfill" in (r.get("verification_status") or "").lower()]
+_v24_new, _v24_amb = [], []
+for r in _v24_all:
+    if (_norm_key(r["drug_brand"]), r["decision_date"]) in _mk_bd:
+        continue
+    if (_norm_key(r["company_name"]), r["decision_date"]) in _mk_cd:
+        _v24_amb.append(r.get("orig_id"))
+    else:
+        _v24_new.append(r)
+if _v24_amb:
+    errors.append(f"core_analysis_table: v25 join ambiguous - v24 row(s) share (company, date) "
+                  f"with a master row under a different brand (ambiguous dedupe, needs human "
+                  f"review): {_v24_amb[:5]}")
+_expected_core = len(master) + len(_crl_master) + len(_v24_new)
+if len(_core) != _expected_core:
+    errors.append(f"core_analysis_table: expected {len(master)} master + {len(_crl_master)} CRL + "
+                  f"{len(_v24_new)} v24-backfill (not in master) = {_expected_core} rows, "
+                  f"got {len(_core)}")
 _core_key = lambda r: (r["company_name"], r["decision_date"], r["drug_name"])
 _master_key = lambda r: (r["company_name"], r["decision_date"],
                          f"{r['drug_brand']} ({r['drug_generic']})")
@@ -931,6 +966,22 @@ _missing_core = [r["decision_id"] for r in master if _master_key(r) not in _core
 if _missing_core:
     errors.append(f"core_analysis_table: {len(_missing_core)} master rows are missing from the "
                   f"joined table: {_missing_core[:5]}")
+# (b2) v25: every v24-backfill row the builder joins must be present, keyed the
+# way the builder writes it (company, date, drug name - "brand (generic)",
+# brand alone, or the application number when the openFDA payload carried no
+# product name).
+def _v24_core_name(r):
+    brand = (r.get("drug_brand") or "").strip()
+    generic = (r.get("drug_generic") or "").strip()
+    if brand:
+        return f"{brand} ({generic})" if generic else brand
+    return r.get("application_number") or "UNKNOWN"
+
+_v24_key = lambda r: (r["company_name"], r["decision_date"], _v24_core_name(r))
+_missing_v24 = [r.get("orig_id") for r in _v24_new if _v24_key(r) not in _core_by_key]
+if _missing_v24:
+    errors.append(f"core_analysis_table: {len(_missing_v24)} v24-backfill rows are missing from the "
+                  f"joined table: {_missing_v24[:5]}")
 _class_dis = [(r["decision_id"], r["ticker"], r["us_investable_class"],
                _core_by_key[_master_key(r)]["us_investable_class"])
               for r in master
