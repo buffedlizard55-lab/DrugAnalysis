@@ -77,6 +77,25 @@ jobs:
             echo "pre-1980 payload blocks incomplete; no table write (fail-closed)"
           fi
 
+      - name: Build v23 pre-1980 action register + CRL match layer
+        if: always()
+        run: |
+          set -euo pipefail
+          required=(
+            data/raw/drugsatfda_data_files_2026_09/manifest.json
+            data/raw/drugsatfda_data_files_2026_09/Submissions_1965_1979.txt
+            data/raw/probe/crl_page1.json
+          )
+          ready=true
+          for f in "${required[@]}"; do test -s "$f" || ready=false; done
+          if [ "$ready" = true ]; then
+            python3 scripts/build_pre1980_year_register_v23.py
+            python3 scripts/verify_pre1980_year_register_v23.py
+            python3 scripts/build_crl_application_match_v23.py
+          else
+            echo "v23 inputs incomplete; no table write (fail-closed)"
+          fi
+
       - name: Ingest all captured stock events
         if: always()
         run: python3 scripts/build_stock_snapshots_from_all_events.py
@@ -87,9 +106,9 @@ jobs:
           set -euo pipefail
           git config user.name  "arena-ai-coding-agent[bot]"
           git config user.email "298482267+arena-ai-coding-agent[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain data/raw)" ]; then
-            git add data/raw
-            git commit -m "data: raw official-source payloads (run ${{ github.run_number }})"
+          if [ -n "$(git status --porcelain data/raw data/*.csv)" ]; then
+            git add data/raw data/*.csv
+            git commit -m "data: raw official-source payloads + deterministic tables (run ${{ github.run_number }})"
             for i in 1 2 3 4 5; do
               if git pull --rebase origin "$BRANCH"; then break; fi
               sleep 5
