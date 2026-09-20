@@ -1059,6 +1059,9 @@ function fillCounts() {
   setCount('ctgov', (overview.ctgov || []).length);
   setCount('ctgovus', (overview.ctgov || []).filter(r => r.investability_class === 'US-LISTED').length);
   setCount('clinscores', (overview.clinScores || []).length);
+  /* v23: the 1977-1979 action register (kept out of the headline decision total
+     on purpose - 48 of its rows are the same decisions as the pre-1980 table) */
+  setCount('v23register', (overview.v23Originals || []).length);
 
   /* Efficacy supplements + verification audit */
   const suppl = overview.suppl || [], audit = overview.audit || [];
