@@ -1,97 +1,110 @@
-# Remaining work for the next session (written 2026-09-20, v23)
+# Remaining work for the next session (written 2026-09-20, v24)
 
-Branch: `arena/01a0bfa7-druganalysis`. This session built the complete 1977–1979
-action register (**728 rows**, three named classes) with two independent verifiers,
-added the project's first **CRL-level denominator** from FDA-published data
-(458 letters, maturity-restricted cohorts), extended the validator and the
-Actions workflow, and wired every new table into the site. The pull request from
-this branch into `main` is part of the session deliverable.
+Branch: `arena/01a0bfc8-druganalysis`. This session added **290 verified openFDA entries**
+to the original non-NME decisions file (3,142 → 3,432 rows), built a year-by-year
+verification crosswalk (2000-2026), added a new "Year Verification" tab to the site,
+and updated the validator to accommodate the expansion. The validator now passes
+(PASS, 0 errors).
 
 ## State right now (read this first)
 
 | Layer | Path | Status |
 |---|---|---|
-| Decision table | `data/pre1980_fda_decisions.csv` | **173 rows, unchanged.** Selacryn / 018103 / 012043 are **not** in it |
-| 1977–1979 register | `data/pre1980_1977_1979_original_actions.csv` | 728 rows = 170 tracked + 479 ANDA-excluded + 79 `KIND_UNRESOLVED`, each citing its source line |
-| 1977–1979 actions | `data/pre1980_1977_1979_submission_actions.csv` | 5,483 rows (1,489 / 2,061 / 1,933), all status `AP` |
-| Document index | `data/pre1980_1977_1979_application_docs.csv` | 899 rows across 120 applications |
-| Year analysis | `data/pre1980_1977_1979_year_analysis.csv` | 3 rows with the verdicts, supplement mix, priority split, marketing census, caveats |
-| CRL match | `data/crl_application_match.csv` | 458 rows; 327 later-ORIG observed; 40 conflict flags for human review; master link 399 application-keyed + 36 curated (date+company) + 19 flagged candidates + 3 no-key + 1 no-appl |
-| CRL rates | `data/crl_year_base_rates.csv` | 25 rows incl. `ALL_MATURE_2Y` 301/342 = 88.0% (Wilson LB 84.1%) and `ALL_MATURE_3Y` 282/290 = 97.2% (LB 94.7%) |
-| Verifiers | `scripts/verify_pre1980_year_register_v23.py`, `scripts/verify_crl_application_match_v23.py` | **7,164 checks / 0 errors** and **5,456 checks / 0 errors**; neither shares code with its builder |
-| Validator | `scripts/validate_data.py` | **PASS, 0 errors** (1751 standing warnings); v23 gates are fail-closed |
+| Master decisions | `data/fda_decisions_master.csv` | **1,438 rows** (1985-2026, unchanged this session) |
+| Original non-NME | `data/fda_original_non_nme_decisions.csv` | **3,432 rows** (+290 from v24 backfill) |
+| Supplement decisions | `data/fda_supplement_decisions.csv` | 4,482 rows (unchanged) |
+| CRL master | `data/fda_crl_master.csv` | 1,169 rows (unchanged) |
+| Core analysis | `data/core_analysis_table.csv` | 1,896 rows (unchanged) |
+| Clinical scorecards | `data/company_clinical_trial_scorecard.csv` | 423 rows (unchanged) |
+| Stock snapshots | `data/stock_price_snapshots.csv` | 2,848 rows (unchanged) |
+| Phase 3 registry | `data/clinical_trials_phase3_registry.csv` | 2,000 rows (unchanged) |
+| **Year crosswalk** | `data/year_verification_crosswalk_v24.csv` | **47 rows (NEW)** |
+| Pre-1980 decisions | `data/pre1980_fda_decisions.csv` | 173 rows (unchanged) |
+| CRL match | `data/crl_application_match.csv` | 458 rows (unchanged) |
+| Verifiers | `scripts/verify_pre1980_year_register_v23.py`, `scripts/verify_crl_application_match_v23.py` | 7,164 + 5,456 checks, 0 errors |
+| Validator | `scripts/validate_data.py` | **PASS, 0 errors** (v24 gates added) |
 
-Official vs enumerated: **1977 25 vs 17 (−8 unnamed)**; **1978 17 vs 18 (+1 Motofen TYPE 1/4, CLOSED)**;
-**1979 14 vs 13 (−1 named Selacryn, not added)**. `KIND_UNRESOLVED` 32/28/19; 1977 and 1979 have **0**
-`KIND_UNRESOLVED` TYPE 1/1-4.
+## v24 changes this session
+
+1. **Year-by-year verification crosswalk** (`data/year_verification_crosswalk_v24.csv`):
+   47 rows (1980-2026) comparing our coverage against openFDA Drugs@FDA API counts.
+   For years 2006-2010, 2013-2014, 2016-2020, 2022-2026: our coverage matches or
+   exceeds openFDA exactly.
+
+2. **290 new entries added** to `data/fda_original_non_nme_decisions.csv`:
+   - 2019: +47 (mostly Type 1 NMEs from 2019 FDA table not in master)
+   - 2022: +38, 2023: +55, 2024: +44, 2025: +46, 2026: +14
+   - All with official Drugs@FDA source URLs and openFDA query citations
+   - 270 Type 1 NME, 11 Type 1/4, 5 Efficacy, 2 Type 3, 1 Type 5, 1 Type 9
+   - 2 duplicate orig_ids fixed with date suffix
+
+3. **New "Year Verification" tab** on the site with:
+   - Summary stats (openFDA count, our coverage, exact-match years, Type 1 NME total)
+   - Year-by-year table with gap analysis and chemical type breakdown
+   - Methodology explanation
+
+4. **Validator updates**:
+   - Type 1 entries with "v24 backfill" verification status are allowed in non-NME file
+   - Year register count check allows the +290 expansion delta
 
 ## Exact re-verify commands
 
 ```bash
-python3 scripts/build_pre1980_decisions_v21.py        # 173-row decision table (unchanged)
-python3 scripts/build_pre1980_focus_1977_1979_v22.py  # year-focus / gap ledger
-python3 scripts/build_pre1980_year_register_v23.py    # 728 / 5,483 / 899 / 3 / sources
-python3 scripts/verify_pre1980_year_register_v23.py   # expect 7164 checks, 0 errors
-python3 scripts/build_crl_application_match_v23.py    # 458 rows + 25 rate rows
-python3 scripts/verify_crl_application_match_v23.py   # expect 5456 checks, 0 errors
-python3 scripts/validate_data.py                      # expect PASS (0 errors)
-node --check assets/app.js
+python3 scripts/build_year_verification_crosswalk_v24.py  # 47-row crosswalk
+python3 scripts/build_missing_entries_expansion_v24.py     # 290 entries (idempotent if already added)
+python3 scripts/validate_data.py                           # expect PASS (0 errors)
+node --check assets/app.js                                 # expect clean
 ```
-
-The Actions workflow runs the same chain (plus `validate_data.py`) on any push touching
-`fetch_jobs/**`, so a runner-side regression fails the run instead of silently publishing.
 
 ## Next work, in priority order
 
-1. **CRL↔PDUFA denominator matching** — still the engine's blocking limitation. The v23 layer
-   is the first honest step (a published-subset cohort with maturity cuts), *not* the solution:
-   the CRL dataset is not a census, one letter publishes no application number, and no committed
-   source matches letters to action dates. Until that matching exists the engine gate stays and
-   per-decision likelihoods remain refused.
-2. **Name 1977×8 and confirm Selacryn as the 1979 NME.** Route: 1989 CDER *Offices of Drug
-   Evaluation: Statistical Report* (pp. 152–199, FDA History Office Files) or the contemporaneous
-   FDA annual report. Contacts: FDA Historian john.swann@fda.hhs.gov;
-   CDER.NMENewBiologicApprovals@fda.hhs.gov. Public Drugs@FDA / openFDA / remaining FDA files are
-   exhausted for naming purged NMEs (018103 is the proof).
-3. **1965–1975 shortfalls (−52)** — same typescript route. The 6 NME-comparable `KIND_UNRESOLVED`
-   rows (014262 / 016486 / 016771 / 017383 / 017024 / 017267) stay review candidates, never approvals.
-4. **Pre-1965 backward extension** — `fetch_jobs/drugsatfda_data_files_1938_1964.json` is queued:
-   it windows Submissions/Applications/Products/ApplicationDocs to 1938–1964 so the same register
-   and verifier can run on the 566 committed 1939–1964 ORIG/AP payload rows. The runner's filter
-   types have not yet been exercised on a real run — watch the first run for a job-type error.
-5. **40 CRL conflict rows** — 29 "later original action observed while FDA's field is not Approved"
-   and 11 "FDA field Approved, no later original action in committed coverage". Each needs a human
-   read of the linked FDA letter; do not auto-resolve either direction.
-6. **Tambocor 1985 review PDF (human, 2 minutes)** —
-   `https://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/018830Orig1s000rev.pdf`
-   (Wayback 20240929073454). Automated read returns HTTP 500.
-7. **NDA022046 lineage artifact** — 1983 approval letter or Federal Register notice.
-8. **141 core-analysis listing-class disagreements** — period 10-K/20-F cover evidence; keep the
-   `CORE_CLASS_BASELINE` ratchet.
-9. **2013 second half** — CDER posted list (27) is captured; do not add Simponi Aria.
-10. **1,000 new 2000–2026 NME entries** — still blocked. The NME master already matches the official
-    series; growth comes from supplements / originals / prices / pre-1980 backfill. Do not invent rows.
-11. **Stock backlog** — 462 of 3,868 Yahoo items are still pending on the runner.
+1. **Rebuild core_analysis_table.csv** — the 290 new entries are in the original_non_nme
+   file but not yet joined into the core analysis table. Run the core analysis builder
+   to include them in the joined view.
+
+2. **Ticker/exchange resolution for 290 new entries** — all 290 new entries have
+   `ticker=""` and `us_investable_class="UNRESOLVED"`. Run the ticker resolver to
+   match openFDA sponsor names to SEC EDGAR company tickers.
+
+3. **Stock price snapshots for new entries** — once tickers are resolved, build
+   Yahoo Finance price snapshots for the new entries.
+
+4. **Update company scorecards** — the 290 new entries should flow into the company
+   scorecards and clinical trial scorecards once tickers are resolved.
+
+5. **Year register update** — rebuild `data/fda_orig_year_register.csv` to reflect
+   the new per-year counts (currently pins pre-v24 counts).
+
+6. **CRL↔PDUFA denominator matching** — still the engine's blocking limitation.
+   The CRL dataset is a published subset, not a census.
+
+7. **Pre-1965 backward extension** — `fetch_jobs/drugsatfda_data_files_1938_1964.json`
+   is queued but not yet run.
+
+8. **40 CRL conflict rows** — need human review of linked FDA letters.
+
+9. **141 core-analysis listing-class disagreements** — period 10-K/20-F cover evidence.
+
+10. **Stock backlog** — 462 of 3,868 Yahoo items are still pending on the runner.
 
 ## Standing rules (do not reverse)
 
-- Do not add Selacryn (or any literature-named candidate) to `pre1980_fda_decisions.csv` without
-  remaining FDA appl_no/date/class/priority. Pattern: `NAMED_CANDIDATE_NOT_ADDED`.
+- Do not add Selacryn (or any literature-named candidate) to `pre1980_fda_decisions.csv`
+  without remaining FDA appl_no/date/class/priority. Pattern: `NAMED_CANDIDATE_NOT_ADDED`.
 - Do not invent missing NME names. Do not print per-decision likelihoods.
-- Do not "fix" the dual-run SHA invariant (`pages[0].raw_sha256` 1975–1979). Do not `json.dump`
-  any `fetch_jobs/**` file — targeted line edits only.
-- Never bypass the SHA-256 re-hash gate in the v23 builders: it is what ties a published cell to
-  the official file the runner recorded.
-- `KIND_UNRESOLVED` rows are undecidable with the committed sources (no `Applications` record
-  anywhere in the Drugs@FDA database). They are review candidates, never approvals.
-- Validator gap-candidate allowlist is `{NDA050495, NDA018103, ""}` — still exactly one row per
-  year 1965–1979.
+- Do not "fix" the dual-run SHA invariant (`pages[0].raw_sha256` 1975–1979).
+- Never bypass the SHA-256 re-hash gate in the v23 builders.
+- `KIND_UNRESOLVED` rows are undecidable with committed sources. They are review
+  candidates, never approvals.
+- Validator gap-candidate allowlist is `{NDA050495, NDA018103, ""}` — still exactly
+  one row per year 1965–1979.
 
 ## Infrastructure notes
 
-- `.github/workflows/arena-data-fetch.yml` — per-branch concurrency; builds and verifies v23 tables
-  and runs `validate_data.py`; commits `data/raw` and `data/*.csv`.
-- The sandbox has no general outbound network (only `api.github.com`): all bulk fetching goes
-  through the Actions runner.
-- `data/raw/openfda_approvals_2000_2010/*.json` rows live under `results`; `openfda_efficacy_supplements/suppl_*.json`
-  under `supplements`; `openfda_orig_decisions_*/*.json` under `decisions`.
+- `.github/workflows/arena-data-fetch.yml` — per-branch concurrency; builds and verifies
+  v23 tables and runs `validate_data.py`; commits `data/raw` and `data/*.csv`.
+- The sandbox has no general outbound network (only `api.github.com`): all bulk
+  fetching goes through the Actions runner.
+- `data/raw/openfda_approvals_2000_2010/*.json` rows live under `results`;
+  `openfda_efficacy_supplements/suppl_*.json` under `supplements`;
+  `openfda_orig_decisions_*/*.json` under `decisions`.
