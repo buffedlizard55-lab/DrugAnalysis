@@ -1,0 +1,37 @@
+{
+  "version": "v22-pre1980-1977-1979-focus",
+  "capture_date": "2026-09-20",
+  "provenance": "v22 primary captures for the 1977-1979 year-by-year workbench. V22-C01 is a live page-fetch of Federal Register 61 FR 25228 (govinfo HTML 96-12570.htm) transcribed verbatim. V22-C02 and V22-C03 are membership tests against the committed Drugs@FDA database extracts in data/raw/drugsatfda_data_files_2026_09/ (Applications_all_types.txt, Applications_appl_window.txt, Submissions_1965_1979.txt, Products_appl_window.txt) plus the committed 1965-1979 ORIG/AP payloads. No names are invented; Selacryn is named only because the Federal Register still cites NDA 18-103.",
+  "captures": [
+    {
+      "capture_id": "V22-C01",
+      "system": "Federal Register / GPO govinfo (www.govinfo.gov)",
+      "subject": "61 FR 25228 (1996-05-20) Docket 96N-0151 - withdrawal of NDA 18-103 Selacryn (ticrynafen) Tablets",
+      "query_url": "https://www.govinfo.gov/content/pkg/FR-1996-05-20/html/96-12570.htm",
+      "finding": "Federal Register Volume 61, Number 98 (Monday, May 20, 1996), pages 25228-25229, FR Doc 96-12570. FDA withdraws approval of NDA 18-103 for Selacryn (ticrynafen) Tablets held by SmithKline Beecham Pharmaceuticals. SmithKline requested withdrawal because the product is no longer being marketed and waived its opportunity for a hearing. Supplementary information: by letter dated June 30, 1994, SmithKline requested that FDA withdraw NDA 18-103, stating that the company discontinued marketing the product in 1980 because of liver toxicity observed after approval of the NDA. Effective date May 20, 1996. The notice does NOT state the original approval date, class, or review priority.",
+      "verbatim_excerpt": "[Federal Register Volume 61, Number 98 (Monday, May 20, 1996)] [Notices] [Pages 25228-25229] From the Federal Register Online via the Government Publishing Office [www.gpo.gov] [FR Doc No: 96-12570] DEPARTMENT OF HEALTH AND HUMAN SERVICES [Docket No. 96N-0151] SmithKline Beecham Pharmaceuticals; Withdrawal of Approval of a New Drug Application for Selacryn Tablets AGENCY: Food and Drug Administration, HHS. ACTION: Notice. SUMMARY: The Food and Drug Administration (FDA) is withdrawing approval of a new drug application (NDA) for Selacryn (ticrynafen) Tablets held by SmithKline Beecham Pharmaceuticals (Smithkline). SmithKline requested that the NDA be withdrawn because the product is no longer being marketed. SmithKline also waived its opportunity for a hearing. EFFECTIVE DATE: May 20, 1996. SUPPLEMENTARY INFORMATION: By letter dated June 30, 1994, SmithKline, Four Falls Corp. Center, Route 23 and Woodmont Ave., P.O. Box 1510, FF0410, King of Prussia, PA 19406, requested that FDA withdraw NDA 18-103 for Selacryn (ticrynafen) Tablets, stating that the company discontinued marketing the product in 1980 because of liver toxicity observed after approval of the NDA. SmithKline waived its opportunity for a hearing. Therefore, under section 505(e) of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 355(e)) and under authority delegated to the Director, Center for Drug Evaluation and Research (21 CFR 5.82), approval of NDA 18-103, and all amendments and supplements thereto, is hereby withdrawn effective May 20, 1996. Dated: May 6, 1996. Murray M. Lumpkin, Deputy Director, Center for Drug Evaluation and Research.",
+      "project_row_ids": "GAP-1979-01",
+      "project_effect": "names NDA 18-103 Selacryn (ticrynafen) as a 1979 gap candidate; does not supply an ORIG date/class/priority, so the candidate is recorded as NAMED_CANDIDATE_NOT_ADDED and is never written to pre1980_fda_decisions.csv"
+    },
+    {
+      "capture_id": "V22-C02",
+      "system": "Committed Drugs@FDA database files (data/raw/drugsatfda_data_files_2026_09) plus 1965-1979 ORIG/AP payloads",
+      "subject": "Application 018103 / NDA 18-103 / SELACRYN / TICRYNAFEN membership test",
+      "query_url": "data/raw/drugsatfda_data_files_2026_09/Applications_all_types.txt",
+      "finding": "0 hits for 018103, 18103, 18-103, SELACRYN, TICRYNAFEN in Applications_all_types.txt (29,336 data rows), Applications_appl_window.txt, Submissions_1965_1979.txt, Products_appl_window.txt, and every committed 1965-1979 ORIG/AP payload. The Federal Register still cites NDA 18-103, but no remaining FDA database file carries it. This is the Seldane-class purge proven by a named NDA, distinct from amikacin NDA050495 (openFDA shell, no submissions array).",
+      "verbatim_excerpt": "Applications_all_types.txt header ApplNo\\tApplType\\tApplPublicNotes\\tSponsorName; 29,336 data rows; 0 lines contain 018103, 18103, SELACRYN, or TICRYNAFEN. Submissions_1965_1979.txt header ApplNo\\tSubmissionClassCodeID\\tSubmissionType\\tSubmissionNo\\tSubmissionStatus\\tSubmissionStatusDate\\tSubmissionsPublicNotes\\tReviewPriority; 0 lines contain 018103. Products_appl_window.txt: 0 hits. Payloads 1965-1979: 0 application_number NDA018103.",
+      "project_row_ids": "GAP-1979-01",
+      "project_effect": "proves the named NDA is absent from every remaining FDA file; candidate is not added as an approval"
+    },
+    {
+      "capture_id": "V22-C03",
+      "system": "Committed Drugs@FDA Submissions extract (data/raw/drugsatfda_data_files_2026_09/Submissions_1965_1979.txt)",
+      "subject": "ApplNo 012043 ORIG/AP 1978-10-16 TYPE 1/4 STANDARD - KIND_UNRESOLVED inventory",
+      "query_url": "data/raw/drugsatfda_data_files_2026_09/Submissions_1965_1979.txt",
+      "finding": "Exactly one matching Submissions row: ApplNo 012043, SubmissionClassCodeID 8 (TYPE 1/4 - Type 1 - New Molecular Entity and Type 4 - New Combination), SubmissionType ORIG, SubmissionNo 1, SubmissionStatus AP, SubmissionStatusDate 1978-10-16 00:00:00, ReviewPriority STANDARD. ApplNo 012043 is absent from Applications_all_types.txt, Applications_appl_window.txt, Products_appl_window.txt, and the 1978 ORIG/AP payload. 1978 has no official NME shortfall (17 official vs 18 enumerated, Motofen TYPE 1/4 is the +1), so 012043 is inventory, not a gap-filler, and is never added as an approval.",
+      "verbatim_excerpt": "012043\\t8\\tORIG\\t1\\tAP\\t1978-10-16 00:00:00\\t\\tSTANDARD  (SubmissionClass_Lookup.txt: 8 = TYPE 1/4 'Type 1 - New Molecular Entity and Type 4 - New Combination'). Applications_all_types.txt: 0 hits for ApplNo 012043. Products_appl_window.txt: 0 hits.",
+      "project_row_ids": "KINDUNRES-1978-012043",
+      "project_effect": "adjudicates 012043 as KIND_UNRESOLVED NME-comparable inventory for a year with no shortfall; not added to the decision table"
+    }
+  ]
+}

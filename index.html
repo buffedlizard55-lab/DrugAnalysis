@@ -471,7 +471,7 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
     </div>
 
     <div class="notice">
-      <strong>One gap is named, and only because the mechanism is proven.</strong> 1976's single missing NME is <strong>amikacin (AMIKIN, NDA050495)</strong>: the openFDA record for that application exists but carries <strong>no <code>submissions</code> array</strong>, so no approval date or class is published anywhere queryable, and the Drugs@FDA page renders products with no approval-history table. It is recorded in <code>data/missing_nme_candidates.csv</code> as <code>NAMED_CANDIDATE_NOT_ADDED</code> — never as an approval. Every other year's gap is reported as an unsized official-source gap. Flagged data conditions, never smoothed over: the <strong>Cyclapen inversion</strong> (tablet NDA050509 typed Type 3 one day <em>before</em> suspension NDA050508 typed Type 1, same ingredient and sponsor — counted once), the <strong>sulfamethoxazole inversion</strong> (Gantanol-DS tablets Type 1 1965-08-25 vs the sibling suspension Type 5 1965-07-01, 55 days earlier), the <strong>Imodium duplicate-product condition</strong> (NDA017694 Type 1 and NDA017690 Type 5 carry the identical product string and the same 1976-12-28 ORIG date), the <strong>Cuprimine numbering anomaly</strong> (NDA019853 approved 1970-12-04, out of sequence for its year), the <strong>Cordran inversion</strong> surfaced by the extended 1939–1979 screen (Cordran lotion NDA013790, Type 3, 1963-03-19 — same brand and ingredient as the Type 1 Cordran NDA012806 of 1965-10-18, 27 months earlier, with no parent application published — flurandrenolide counted once, flagged not corrected), and the <strong>Kinlytic UNKNOWN-candidate</strong> (urokinase BLA021846 publishes UNKNOWN class/priority — flagged, not counted). No ticker or indication is asserted on any pre-1980 row: sponsors are the qualified Drugs@FDA holders of record, and approval-era labels were not verified in this pass.
+      <strong>Two gaps are named, and only because the mechanism is proven.</strong> 1976's single missing NME is <strong>amikacin (AMIKIN, NDA050495)</strong>: the openFDA record for that application exists but carries <strong>no <code>submissions</code> array</strong>, so no approval date or class is published anywhere queryable, and the Drugs@FDA page renders products with no approval-history table. 1979's single missing NME is <strong>Selacryn (ticrynafen) NDA 18-103 / NDA018103</strong>: Federal Register 61 FR 25228 (1996-05-20, Docket 96N-0151) still cites the NDA, but application 018103 is absent from every remaining FDA database file (Applications, Submissions, Products, payloads) — the Seldane-class purge proven by a named NDA. Both are recorded in <code>data/missing_nme_candidates.csv</code> as <code>NAMED_CANDIDATE_NOT_ADDED</code> — never as approvals. 1977's remaining 8 NMEs are still unnamed (KIND_UNRESOLVED for 1977 includes 0 TYPE 1/1-4). Every other year's gap is reported as an unsized official-source gap. Flagged data conditions, never smoothed over: the <strong>Cyclapen inversion</strong> (tablet NDA050509 typed Type 3 one day <em>before</em> suspension NDA050508 typed Type 1, same ingredient and sponsor — counted once), the <strong>sulfamethoxazole inversion</strong> (Gantanol-DS tablets Type 1 1965-08-25 vs the sibling suspension Type 5 1965-07-01, 55 days earlier), the <strong>Imodium duplicate-product condition</strong> (NDA017694 Type 1 and NDA017690 Type 5 carry the identical product string and the same 1976-12-28 ORIG date), the <strong>Cuprimine numbering anomaly</strong> (NDA019853 approved 1970-12-04, out of sequence for its year), the <strong>Cordran inversion</strong> surfaced by the extended 1939–1979 screen (Cordran lotion NDA013790, Type 3, 1963-03-19 — same brand and ingredient as the Type 1 Cordran NDA012806 of 1965-10-18, 27 months earlier, with no parent application published — flurandrenolide counted once, flagged not corrected), and the <strong>Kinlytic UNKNOWN-candidate</strong> (urokinase BLA021846 publishes UNKNOWN class/priority — flagged, not counted). No ticker or indication is asserted on any pre-1980 row: sponsors are the qualified Drugs@FDA holders of record, and approval-era labels were not verified in this pass.
     </div>
 
     <div class="panel highlight" style="margin-bottom:1.5rem">
@@ -536,8 +536,32 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 
     <div class="panel">
       <h3>🚩 Missing-NME Candidate Ledger 1965–1979 (<code>data/missing_nme_candidates.csv</code>)</h3>
-      <p class="section-desc">One row per year for every year where FDA's official NME count and the project's NME-comparable enumeration disagree. Each row states the gap size, names a candidate application only where the invisibility mechanism is <em>proven</em> from primary sources (1976: amikacin NDA050495 — the openFDA record exists but carries no <code>submissions</code> array, so no approval date is published), and marks every other year as an unsized official-source gap. Candidates are never added as approvals.</p>
+      <p class="section-desc">One row per year for every year where FDA's official NME count and the project's NME-comparable enumeration disagree. Each row states the gap size, names a candidate application only where the invisibility mechanism is <em>proven</em> from primary sources (1976: amikacin NDA050495 — the openFDA record exists but carries no <code>submissions</code> array; 1979: Selacryn NDA018103 — Federal Register 61 FR 25228 still cites NDA 18-103, but 018103 is absent from every remaining FDA file), and marks every other year as an unsized official-source gap. Candidates are never added as approvals.</p>
       <div id="pre1980-gapcands-view"></div>
+    </div>
+
+    <div class="panel highlight" style="margin-bottom:1.5rem">
+      <h3>📅 1977–1979 Year-by-Year Workbench (<code>data/pre1980_year_focus_1977_1979.csv</code>)</h3>
+      <p class="section-desc">v22 (2026-09-20) starts the requested year-by-year pass at 1979, then 1978, then 1977. Official vs enumerated: <strong>1979 14 vs 13 (−1, named Selacryn NDA018103, not added)</strong>; <strong>1978 17 vs 18 (+1 Motofen TYPE 1/4, CLOSED; 012043 is inventory)</strong>; <strong>1977 25 vs 17 (−8, still unnamed)</strong>. The 173-row decision table is unchanged. Jump: <a href="#pre1980-yearfocus-view">1977–1979</a> · <a href="#pre1980-kindunres-view">KIND_UNRESOLVED NME-comparable</a> · <a href="#pre1980-searchlog-view">1977 search log</a>.</p>
+      <div id="pre1980-yearfocus-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>⚖️ KIND_UNRESOLVED NME-comparable adjudication — 7 rows (<code>data/pre1980_kind_unresolved_nme_adjudication.csv</code>)</h3>
+      <p class="section-desc">The seven TYPE 1 / TYPE 1-4 ORIG/AP rows that sit in Submissions but have no Applications record: 1966 014262, 1969 016486, 1970 016771, 1973 017383 Priority, 1973 017024, 1973 017267 Priority, and 1978 <strong>012043</strong> (1978-10-16 TYPE 1/4 STANDARD). 012043 is inventory — 1978 has no official shortfall — and cannot fill 1977×8 or 1979×1. None is added as an approval.</p>
+      <div id="pre1980-kindunres-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>🔎 1977–1979 public-data search log (<code>data/pre1980_1977_gap_search_log.csv</code>)</h3>
+      <p class="section-desc">Every naming search this session, including negative results. <strong>No 1977 NME name is invented.</strong> The only name asserted is Selacryn (ticrynafen) NDA 18-103, because Federal Register 61 FR 25228 still cites it. Hussar 1978 AJN is paywalled and was not used as names.</p>
+      <div id="pre1980-searchlog-view"></div>
+    </div>
+
+    <div class="panel">
+      <h3>🔬 Live Primary Captures v22, 2026-09-20 (<code>data/pre1980_v22_captures_index.csv</code>)</h3>
+      <p class="section-desc">Three captures: <strong>V22-C01</strong> Federal Register 61 FR 25228 (Selacryn NDA 18-103 withdrawal, verbatim); <strong>V22-C02</strong> 018103 membership test (0 hits in Applications / Submissions / Products / payloads); <strong>V22-C03</strong> 012043 Submissions ORIG/AP 1978-10-16 TYPE 1/4 STANDARD. Verbatim excerpts in <code>data/raw/source_captures_2026_09_20/live_primary_captures_v22_2026_09_20.json</code>.</p>
+      <div id="pre1980-v22caps-view"></div>
     </div>
   </section>
 
@@ -716,6 +740,9 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
 
       <h3>📁 Raw Data & Regeneration</h3>
       <p>All tables generated directly from CSVs in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data" target="_blank">/data</a>; each has matching builder in <a href="https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/scripts" target="_blank">/scripts</a> that writes it from explicit, source-cited data, so any number can be diffed and re-verified. Use Export CSV button on any table to download rows you are currently looking at.</p>
+
+      <h3>🏛️ Pre-1980 year-by-year workbench 1977–1979 — v22 (2026-09-20)</h3>
+      <p>The requested year-by-year pass starts at 1979. <strong>1979 ×1</strong> is named from Federal Register 61 FR 25228: Selacryn (ticrynafen) NDA 18-103, recorded as <code>NAMED_CANDIDATE_NOT_ADDED</code> because remaining FDA files carry 0 hits for 018103 and the FR notice does not state ORIG date/class/priority. <strong>1978</strong> is CLOSED (+1 Motofen TYPE 1/4); KIND_UNRESOLVED 012043 is inventory, not a gap-filler. <strong>1977 ×8</strong> remain unnamed — KIND_UNRESOLVED for 1977 includes 0 TYPE 1/1-4, and no 1977 NME name was invented. The 173-row decision table is unchanged. Rebuild with <code>python3 scripts/build_pre1980_decisions_v21.py</code> and <code>python3 scripts/build_pre1980_focus_1977_1979_v22.py</code>.</p>
 
       <h3>⚖️ Disclaimer</h3>
       <p>This is a research/analysis project, not investment advice. Always verify against linked primary sources before making decisions. Data compiled by autonomous research agent from official public sources. No hallucinations — every row verified line-by-line.</p>

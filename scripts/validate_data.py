@@ -1263,9 +1263,37 @@ else:
                       "never an added decision row")
     if "no submissions array" not in (_amik["evidence_mechanism"] + _amik["notes"]).lower():
         errors.append("missing_nme_candidates: amikacin row lost its proven mechanism")
+_sela = next((r for r in _gapc if r["candidate_application"] == "NDA018103"), None)
+if _sela is None:
+    errors.append("missing_nme_candidates: the 1979 Selacryn (ticrynafen) candidate row is missing")
+else:
+    if _sela["year"] != "1979" or _sela["gap_size"] != "1":
+        errors.append(f"missing_nme_candidates: Selacryn row drifted ({_sela['year']}, "
+                      f"gap {_sela['gap_size']})")
+    if _sela["status"] != "NAMED_CANDIDATE_NOT_ADDED":
+        errors.append("missing_nme_candidates: Selacryn must stay a named candidate, "
+                      "never an added decision row")
+    if "selacryn" not in (_sela.get("candidate_label") or "").lower():
+        errors.append("missing_nme_candidates: Selacryn row lost its candidate label")
+    _sela_blob = ((_sela.get("evidence_mechanism") or "") + " " + (_sela.get("notes") or "")).lower()
+    if "61 fr 25228" not in _sela_blob and "61 fr 25228" not in (_sela.get("primary_source_urls") or "").lower():
+        if "25228" not in ((_sela.get("notes") or "") + (_sela.get("primary_source_urls") or "")):
+            errors.append("missing_nme_candidates: Selacryn row lost its Federal Register citation")
+    if "absent" not in _sela_blob:
+        errors.append("missing_nme_candidates: Selacryn row lost its remaining-FDA-files absence")
 if any(r["candidate_application"] for r in _gapc
-       if r["candidate_application"] not in ("NDA050495", "")):
+       if r["candidate_application"] not in ("NDA050495", "NDA018103", "")):
     errors.append("missing_nme_candidates: an unadjudicated candidate application appeared")
+if any("018103" in (r.get("application_number") or "") or
+       (r.get("drug_brand") or "").upper() == "SELACRYN" for r in _p1980):
+    errors.append("pre1980_fda_decisions: Selacryn / NDA 018103 was added as a decision row")
+_r1979 = next((r for r in _p1980_audit if r["year"] == "1979"), None)
+if _r1979 is None or "Selacryn" not in (_r1979.get("evidence_note") or "") or \
+        "25228" not in (_r1979.get("evidence_note") or ""):
+    errors.append("pre1980_year_audit 1979: v22 Selacryn / 61 FR 25228 evidence note missing")
+_r1977 = next((r for r in _p1980_audit if r["year"] == "1977"), None)
+if _r1977 is None or "0 TYPE 1/1-4" not in (_r1977.get("evidence_note") or ""):
+    errors.append("pre1980_year_audit 1977: v22 KIND_UNRESOLVED 0 TYPE 1/1-4 note missing")
 
 _x2013 = next(r for r in _cross if r["year"] == "2013")
 if "v19 (2026-09-19)" not in (_x2013.get("evidence_note") or "") or \
@@ -1540,6 +1568,89 @@ print(f"v20: {len(_v20a)} original-application audit rows, "
       f"{len(_v20_invisible) if '_v20_invisible' in dir() else 0} payload-invisible "
       f"full-DB approvals flagged.")
 
+
+# v22 (2026-09-20): 1977-1979 year-by-year workbench. Four new tables; the
+# 173-row decision table must stay unchanged and must not gain Selacryn.
+_v22_adj = read_opt("pre1980_kind_unresolved_nme_adjudication.csv")
+_v22_focus = read_opt("pre1980_year_focus_1977_1979.csv")
+_v22_log = read_opt("pre1980_1977_gap_search_log.csv")
+_v22_caps = read_opt("pre1980_v22_captures_index.csv")
+if len(_v22_adj) != 7:
+    errors.append(f"pre1980_kind_unresolved_nme_adjudication: expected 7 rows, got {len(_v22_adj)}")
+_v22_want_appl = ["014262", "016486", "016771", "017383", "017024", "017267", "012043"]
+_v22_got_appl = [r.get("appl_no", "") for r in _v22_adj]
+if _v22_got_appl != _v22_want_appl:
+    errors.append(f"pre1980_kind_unresolved_nme_adjudication: appl_no order drifted {_v22_got_appl}")
+for _r in _v22_adj:
+    if _r.get("status") != "KIND_UNRESOLVED_NOT_ADDED":
+        errors.append(f"pre1980_kind_unresolved_nme_adjudication: {_r.get('appl_no')} status drifted")
+    if _r.get("nme_comparable") != "TRUE":
+        errors.append(f"pre1980_kind_unresolved_nme_adjudication: {_r.get('appl_no')} not nme_comparable")
+    if _r.get("in_applications_all_types") != "FALSE" or _r.get("in_openfda_payload") != "FALSE":
+        errors.append(f"pre1980_kind_unresolved_nme_adjudication: {_r.get('appl_no')} membership drifted")
+    check_url(_r.get("drugsatfda_url", ""), f"kindunres:{_r.get('appl_no')}:drugsatfda_url")
+_r012043 = next((r for r in _v22_adj if r.get("appl_no") == "012043"), None)
+if _r012043 is None or _r012043.get("year") != "1978" or _r012043.get("decision_date") != "1978-10-16":
+    errors.append("pre1980_kind_unresolved_nme_adjudication: 012043 pin drifted")
+elif _r012043.get("role_vs_gap") != "INVENTORY_NOT_GAP_FILLER":
+    errors.append("pre1980_kind_unresolved_nme_adjudication: 012043 must stay INVENTORY_NOT_GAP_FILLER")
+elif (_r012043.get("submission_class_code") or "").upper() != "TYPE 1/4":
+    errors.append("pre1980_kind_unresolved_nme_adjudication: 012043 class drifted")
+if [r.get("year") for r in _v22_focus] != ["1977", "1978", "1979"]:
+    errors.append("pre1980_year_focus_1977_1979: expected 1977/1978/1979 in that order")
+_v22_focus_pin = {
+    "1977": ("25", "17", "-8", "PROJECT_SHORT_FLAGGED", "8", ""),
+    "1978": ("17", "18", "1", "PROJECT_EXCEEDS_OFFICIAL", "0", ""),
+    "1979": ("14", "13", "-1", "PROJECT_SHORT_FLAGGED", "0", "NDA018103"),
+}
+for _r in _v22_focus:
+    _w = _v22_focus_pin[_r["year"]]
+    _got = (_r.get("official_nmes"), _r.get("enumerated_type1_14"),
+            _r.get("delta_nme_comparable_vs_official"), _r.get("verdict"),
+            _r.get("remaining_unnamed_nme_slots"), _r.get("named_purge_application"))
+    if _got != _w:
+        errors.append(f"pre1980_year_focus_1977_1979 {_r['year']}: pin drifted {_got} != {_w}")
+_r1979f = next((r for r in _v22_focus if r.get("year") == "1979"), None)
+if _r1979f is None or "Selacryn" not in (_r1979f.get("named_purge_candidate") or ""):
+    errors.append("pre1980_year_focus_1977_1979: 1979 named_purge_candidate lost Selacryn")
+if _r1979f is not None and _r1979f.get("named_purge_status") != "NAMED_CANDIDATE_NOT_ADDED":
+    errors.append("pre1980_year_focus_1977_1979: 1979 named_purge_status drifted")
+if len(_v22_log) < 8:
+    errors.append(f"pre1980_1977_gap_search_log: expected >=8 rows, got {len(_v22_log)}")
+_v22_log_ids = [r.get("search_id") for r in _v22_log]
+if len(set(_v22_log_ids)) != len(_v22_log_ids):
+    errors.append("pre1980_1977_gap_search_log: duplicate search_id")
+for _r in _v22_log:
+    if _r.get("year") == "1977" and (_r.get("names_asserted") or "").strip():
+        errors.append(f"pre1980_1977_gap_search_log: {_r.get('search_id')} asserted a 1977 name "
+                      f"{_r.get('names_asserted')!r} — names must not be invented")
+    if _r.get("year") == "1979" and "Selacryn" not in (_r.get("names_asserted") or "") and \
+            _r.get("search_id") in ("SEARCH-1979-01", "SEARCH-1979-02", "SEARCH-1979-03"):
+        errors.append(f"pre1980_1977_gap_search_log: {_r.get('search_id')} lost the Selacryn assertion")
+if [r.get("capture_id") for r in _v22_caps] != ["V22-C01", "V22-C02", "V22-C03"]:
+    errors.append("pre1980_v22_captures_index: expected V22-C01..V22-C03")
+for _r in _v22_caps:
+    check_url(_r.get("url", ""), f"v22caps:{_r.get('capture_id')}:url") if str(_r.get("url","")).startswith("http") else None
+_v22_ev = DATA / "raw" / "source_captures_2026_09_20" / "live_primary_captures_v22_2026_09_20.json"
+try:
+    _evd22 = json.loads(_v22_ev.read_text(encoding="utf-8"))
+    if [c["capture_id"] for c in _evd22.get("captures", [])] != ["V22-C01", "V22-C02", "V22-C03"]:
+        errors.append("live_primary_captures_v22: evidence file must carry V22-C01..V22-C03")
+    _c01 = next(c for c in _evd22["captures"] if c["capture_id"] == "V22-C01")
+    if "NDA 18-103" not in (_c01.get("verbatim_excerpt") or "") or \
+            "Selacryn" not in (_c01.get("verbatim_excerpt") or ""):
+        errors.append("live_primary_captures_v22: V22-C01 lost the FR NDA 18-103 / Selacryn excerpt")
+    _c02 = next(c for c in _evd22["captures"] if c["capture_id"] == "V22-C02")
+    if "0 hits" not in (_c02.get("finding") or "") and "0 hits" not in (_c02.get("verbatim_excerpt") or ""):
+        errors.append("live_primary_captures_v22: V22-C02 lost the 0-hit membership finding")
+    _c03 = next(c for c in _evd22["captures"] if c["capture_id"] == "V22-C03")
+    if "012043" not in (_c03.get("verbatim_excerpt") or "") or "1978-10-16" not in (_c03.get("verbatim_excerpt") or ""):
+        errors.append("live_primary_captures_v22: V22-C03 lost the 012043 Submissions excerpt")
+except (OSError, ValueError, KeyError, StopIteration) as _exc:
+    errors.append(f"live_primary_captures_v22: unreadable evidence file: {_exc}")
+print(f"v22: {len(_v22_adj)} KIND_UNRESOLVED NME adjudications, "
+      f"{len(_v22_focus)} 1977-1979 year-focus rows, "
+      f"{len(_v22_log)} gap-search log rows, {len(_v22_caps)} v22 captures.")
 
 print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-supplement rows, "
       f"{len(orig)} original non-NME rows (incl. {sum(_pre_orig_years.values())} v15/v16 pre-1985 rows), "
