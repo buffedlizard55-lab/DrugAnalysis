@@ -4,6 +4,20 @@ Tracking publicly traded biotech & pharma companies against **FDA drug decisions
 
 **Live site:** https://buffedlizard55-lab.github.io/DrugAnalysis/ — served directly from this repository's root by GitHub Pages. The site reads CSVs in [`/data`](https://github.com/buffedlizard55-lab/DrugAnalysis/tree/main/data) directly, so no separate copy to keep in sync: every commit to `main` publishes current data automatically.
 
+## 2026-09-20 v22 — 1977–1979 year-by-year workbench: 1979×1 named (Selacryn NDA 18-103, not added), 1978 CLOSED, 1977×8 still unnamed
+
+**Headline: the requested year-by-year pass starts at 1979.** Federal Register 61 FR 25228 (1996-05-20, Docket 96N-0151) still cites **NDA 18-103 Selacryn (ticrynafen) Tablets** (SmithKline Beecham). Application **018103 is absent from every remaining FDA database file** (Applications_all_types 29,336 rows, Submissions, Products, 1965–1979 payloads) — the Seldane-class purge proven by a named NDA. It is recorded as `NAMED_CANDIDATE_NOT_ADDED` and is **never** written to `pre1980_fda_decisions.csv` (still 173 Type 1/1-4 rows). 1978 stays CLOSED (+1 Motofen); KIND_UNRESOLVED **012043** (1978-10-16 TYPE 1/4 STANDARD) is inventory, not a gap-filler. 1977's remaining 8 NMEs are still unnamed: the year's 32 KIND_UNRESOLVED rows include **0 TYPE 1/1-4**, and public FR / Drugs@FDA / openFDA searches this session named no 1977 NME.
+
+| Change this session | Result | Source / verification | Files |
+|---|---|---|---|
+| **1979×1 named, not added** | GAP-1979-01 Selacryn (ticrynafen) NDA018103, `NAMED_CANDIDATE_NOT_ADDED`. FR notice does **not** state ORIG date/class/priority; literature 1979-05-02 is recorded as literature-reported, never as an FDA-database date | Live govinfo HTML 96-12570.htm (V22-C01); 0-hit membership test (V22-C02) | `data/missing_nme_candidates.csv`, `scripts/build_pre1980_decisions_v21.py` |
+| **1978 CLOSED; 012043 inventory** | Official 17 vs 18 enumerated. 012043 is the only 1977–1979 KIND_UNRESOLVED TYPE 1/1-4 and cannot fill 1977×8 or 1979×1 | Submissions_1965_1979.txt verbatim ORIG/AP 1978-10-16 TYPE 1/4 STANDARD (V22-C03) | `data/pre1980_kind_unresolved_nme_adjudication.csv` |
+| **1977×8 unnamed** | Official 25 vs 17. KIND_UNRESOLVED 1977 = 32 rows, 0 TYPE 1/1-4. Search log asserts **no 1977 names** | Committed full-DB cross-check + public-data search log | `data/pre1980_1977_gap_search_log.csv`, `data/pre1980_year_focus_1977_1979.csv` |
+| **7 KIND_UNRESOLVED NME-comparable adjudicated** | 1966 014262, 1969 016486, 1970 016771, 1973 017383/017024/017267, 1978 012043 — all `KIND_UNRESOLVED_NOT_ADDED` | Pinned against the committed cross-check CSVs | `data/pre1980_kind_unresolved_nme_adjudication.csv` |
+| **Site workbench** | Pre-1980 tab: year-focus, KIND_UNRESOLVED adjudication, search log, v22 captures | `node --check assets/app.js` | `index.html`, `assets/app.js` |
+
+**Still open:** 1977×8 and confirming Selacryn as *the* 1979 NME still need the 1989 CDER statistical typescript. 1,000 new 2000–2026 NME entries still do not exist (the NME master already matches the official series); growth remains supplements / originals / prices / pre-1980 backfill. CRL↔PDUFA matching remains the engine's blocking limitation.
+
 ## 2026-09-20 v21.1 — v21 data landed from the Actions runner, all 75 pending errors closed, first-appearance screen extended to 1939, 308-row gap class classified, 1977–1979 cross-check re-derived
 
 **Headline: the pre-1980 spine is now built, validated (0 errors) and published — and the queued `Applications_all_types.txt` deliverable changed the answer to "where are the missing NMEs?" from *cannot be typed* to *no Applications record exists anywhere in the Drugs@FDA database*.** The v21 branch merged to `main` on 2026-09-19 *before* its runner commit (run 26, `24ab5ca`) landed; this session merged that runner commit in, ran the v21 builders, and adjudicated every newly-visible earlier appearance in the 1939–1979 payload universe. `python3 scripts/validate_data.py` now reports **PASS with 0 errors** (previously exactly 75 "v21 data not built yet" errors).

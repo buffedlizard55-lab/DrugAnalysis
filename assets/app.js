@@ -1975,6 +1975,105 @@ Promise.all([
     filters: [{ key: 'status', label: 'All statuses', field: 'status' }]
   });
 
+  /* ---- v22 (2026-09-20): 1977-1979 year-by-year workbench ---- */
+
+  DataTable({
+    id: 'pre1980-yearfocus', mount: '#pre1980-yearfocus-view', csv: 'data/pre1980_year_focus_1977_1979.csv',
+    columns: [
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('official_nmes', 'FDA official NMEs', { core: true, num: true, render: r => `<span class="num-strong">${escapeHtml(r.official_nmes)}</span>` }),
+      c('official_ndas', 'FDA NDAs approved', { core: true, num: true, render: r => num(r.official_ndas, 0) }),
+      c('payload_orig_ap', 'Payload ORIG/AP', { core: true, num: true, render: r => num(r.payload_orig_ap, 0) }),
+      c('enumerated_type1_14', 'Type 1/1-4', { core: true, num: true, render: r => num(r.enumerated_type1_14, 0) }),
+      c('delta_nme_comparable_vs_official', 'Δ vs official', { core: true, render: r => deltaBadge(r.delta_nme_comparable_vs_official) }),
+      c('verdict', 'Verdict', { core: true, render: r => verdictBadge(r.verdict) }),
+      c('kind_unresolved_total', 'KIND_UNRESOLVED', { core: true, num: true, render: r => num(r.kind_unresolved_total, 0) }),
+      c('kind_unresolved_nme_comparable', 'UNRESOLVED NME', { core: true, num: true, render: r => num(r.kind_unresolved_nme_comparable, 0) }),
+      c('kind_unresolved_class_census', 'UNRESOLVED census', { trunc: true, render: r => truncCell(r.kind_unresolved_class_census) }),
+      c('named_purge_candidate', 'Named purge candidate', { core: true, trunc: true, render: r => r.named_purge_candidate ? escapeHtml(r.named_purge_candidate) : '<span class="badge neutral">none named</span>' }),
+      c('named_purge_application', 'Named NDA', { core: true, render: r => r.named_purge_application ? `<code>${escapeHtml(r.named_purge_application)}</code>` : '—' }),
+      c('named_purge_status', 'Named status', { core: true, render: r => r.named_purge_status ? statusBadge(r.named_purge_status) : '—' }),
+      c('remaining_unnamed_nme_slots', 'Unnamed slots', { core: true, num: true, render: r => num(r.remaining_unnamed_nme_slots, 0) }),
+      c('enumerated_brands', 'Enumerated brands', { trunc: true, render: r => truncCell(r.enumerated_brands) }),
+      c('workbench_note', 'Workbench note', { trunc: true, render: r => truncCell(r.workbench_note) }),
+      c('primary_source_urls', 'Sources', { core: true, render: r => (r.primary_source_urls || '').split('|').filter(Boolean).map((u, k) => linkify(u, 'source ' + (k + 1))).join(' '), detail: r => (r.primary_source_urls || '').split('|').join('\n') })
+    ],
+    searchFields: ['year', 'verdict', 'named_purge_candidate', 'workbench_note'],
+    searchPlaceholder: 'Search 1977–1979 year focus…',
+    sort: { key: 'year', dir: 'desc' }, pageSize: 10,
+    filters: [{ key: 'verdict', label: 'All verdicts', field: 'verdict' }]
+  });
+
+  DataTable({
+    id: 'pre1980-kindunres', mount: '#pre1980-kindunres-view', csv: 'data/pre1980_kind_unresolved_nme_adjudication.csv',
+    columns: [
+      c('adjudication_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.adjudication_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('appl_no', 'ApplNo', { core: true, render: r => `<code>${escapeHtml(r.appl_no)}</code>` }),
+      c('decision_date', 'Date', { core: true }),
+      c('submission_class_code', 'Class', { core: true, render: r => `<code>${escapeHtml(r.submission_class_code)}</code>` }),
+      c('review_priority', 'Priority', { core: true, render: r => r.review_priority === 'PRIORITY' ? `<span class="badge pos">PRIORITY</span>` : `<span class="badge neutral">${escapeHtml(r.review_priority || '—')}</span>` }),
+      c('nme_comparable', 'NME-comparable', { core: true, render: r => r.nme_comparable === 'TRUE' ? '<span class="badge pos">TRUE</span>' : '<span class="badge neutral">FALSE</span>' }),
+      c('in_submissions_1965_1979', 'In Submissions', { core: true, render: r => r.in_submissions_1965_1979 === 'TRUE' ? '<span class="badge verified">YES</span>' : '<span class="badge flagged">NO</span>' }),
+      c('in_applications_all_types', 'In Applications', { core: true, render: r => r.in_applications_all_types === 'FALSE' ? '<span class="badge flagged">NO</span>' : escapeHtml(r.in_applications_all_types) }),
+      c('in_openfda_payload', 'In payload', { core: true, render: r => r.in_openfda_payload === 'FALSE' ? '<span class="badge flagged">NO</span>' : escapeHtml(r.in_openfda_payload) }),
+      c('official_shortfall', 'Year shortfall', { core: true, render: r => deltaBadge(r.official_shortfall) }),
+      c('year_verdict', 'Year verdict', { core: true, render: r => verdictBadge(r.year_verdict) }),
+      c('role_vs_gap', 'Role vs gap', { core: true, trunc: true, render: r => r.role_vs_gap === 'INVENTORY_NOT_GAP_FILLER' ? `<span class="badge caveat">${escapeHtml(r.role_vs_gap)}</span>` : `<span class="badge flagged">${escapeHtml(r.role_vs_gap)}</span>` }),
+      c('adjudication', 'Adjudication', { trunc: true, render: r => truncCell(r.adjudication) }),
+      c('status', 'Status', { core: true, render: r => statusBadge(r.status) }),
+      c('drugsatfda_url', 'Drugs@FDA', { core: true, render: r => linkify(r.drugsatfda_url, 'Drugs@FDA'), detail: r => r.drugsatfda_url }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['adjudication_id', 'appl_no', 'year', 'role_vs_gap', 'status'],
+    searchPlaceholder: 'Search the 7 KIND_UNRESOLVED NME-comparable rows…',
+    sort: { key: 'year', dir: 'asc' }, pageSize: 10,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'role', label: 'All roles', field: 'role_vs_gap' }
+    ]
+  });
+
+  DataTable({
+    id: 'pre1980-searchlog', mount: '#pre1980-searchlog-view', csv: 'data/pre1980_1977_gap_search_log.csv',
+    columns: [
+      c('search_id', 'ID', { core: true, render: r => `<code>${escapeHtml(r.search_id)}</code>` }),
+      c('year', 'Year', { core: true, render: r => `<span class="num-strong">${escapeHtml(r.year)}</span>` }),
+      c('query', 'Query', { core: true, trunc: true, render: r => truncCell(r.query) }),
+      c('source', 'Source', { core: true, trunc: true, render: r => truncCell(r.source) }),
+      c('result', 'Result', { core: true, trunc: true, render: r => truncCell(r.result) }),
+      c('names_asserted', 'Names asserted', { core: true, render: r => r.names_asserted ? escapeHtml(r.names_asserted) : '<span class="badge verified">none</span>' }),
+      c('status', 'Status', { core: true, render: r => statusBadge(r.status) }),
+      c('url', 'URL', { core: true, render: r => linkify(r.url, 'open'), detail: r => r.url }),
+      c('notes', 'Notes', { trunc: true, render: r => truncCell(r.notes) })
+    ],
+    searchFields: ['search_id', 'year', 'query', 'result', 'names_asserted', 'status'],
+    searchPlaceholder: 'Search the 1977–1979 naming log…',
+    sort: { key: 'search_id', dir: 'asc' }, pageSize: 15,
+    filters: [
+      { key: 'year', label: 'All years', field: 'year' },
+      { key: 'status', label: 'All statuses', field: 'status' }
+    ]
+  });
+
+  DataTable({
+    id: 'pre1980-v22caps', mount: '#pre1980-v22caps-view', csv: 'data/pre1980_v22_captures_index.csv',
+    columns: [
+      c('capture_id', 'Capture', { core: true, render: r => `<code>${escapeHtml(r.capture_id)}</code>` }),
+      c('capture_date', 'Date', { core: true }),
+      c('system', 'FDA / FR system', { core: true, trunc: true, render: r => truncCell(r.system) }),
+      c('subject', 'Subject', { core: true, trunc: true, render: r => truncCell(r.subject) }),
+      c('finding_summary', 'Finding', { core: true, trunc: true, render: r => truncCell(r.finding_summary) }),
+      c('project_row_ids', 'Rows', { core: true, render: r => `<code>${escapeHtml(r.project_row_ids)}</code>` }),
+      c('project_effect', 'Effect', { trunc: true, render: r => truncCell(r.project_effect) }),
+      c('url', 'Source URL', { core: true, render: r => linkify(r.url, 'open'), detail: r => r.url })
+    ],
+    searchFields: ['capture_id', 'subject', 'finding_summary', 'project_row_ids'],
+    searchPlaceholder: 'Search the v22 live primary captures…',
+    sort: { key: 'capture_id', dir: 'asc' }, pageSize: 10,
+    filters: []
+  });
+
   DataTable({
     id: 'official-series', mount: '#official-series-view', csv: 'data/fda_official_year_series.csv',
     columns: [

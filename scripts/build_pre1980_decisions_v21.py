@@ -947,6 +947,42 @@ def build_gap_rows(payloads: dict[int, list], probes: dict[str, dict],
                 "never fills those in. The 1976 gap is sized 1 (22 official NMEs vs 21 enumerated), "
                 "so amikacin is a candidate for that single slot, not a confirmed identity - "
                 "confirming it needs the contemporaneous record.")],
+        1979: [("NDA018103", "Selacryn (ticrynafen) tablets",
+                "MECHANISM_PROVEN_NAMED_NDA_ABSENT_FROM_ALL_REMAINING_FDA_FILES",
+                "Federal Register 61 FR 25228 (1996-05-20, Docket 96N-0151) still cites NDA 18-103 "
+                "for Selacryn (ticrynafen) Tablets held by SmithKline Beecham Pharmaceuticals. "
+                "Application 018103 is absent from Applications_all_types.txt (29,336 rows), "
+                "Applications_appl_window.txt, Submissions_1965_1979.txt, Products_appl_window.txt, "
+                "and every 1965-1979 ORIG/AP payload (0 hits). This is the Seldane-class purge "
+                "proven by a named NDA: the Federal Register still cites the application, but no "
+                "remaining FDA database file carries it. Distinct from amikacin NDA050495, which "
+                "still has an openFDA shell with no submissions array.",
+                "https://www.govinfo.gov/content/pkg/FR-1996-05-20/html/96-12570.htm|"
+                "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process"
+                "&varApplNo=018103",
+                "NAMED_CANDIDATE_NOT_ADDED",
+                "Named from Federal Register 61 FR 25228 (1996-05-20, Docket 96N-0151, FR Doc "
+                "96-12570): FDA withdrew NDA 18-103 Selacryn (ticrynafen) Tablets at SmithKline "
+                "Beecham's request; the company 'discontinued marketing the product in 1980 "
+                "because of liver toxicity observed after approval of the NDA.' NCATS Inxight "
+                "Drugs cites the Orange Book NME Appendix 1950-1993 as the source for a 1979 "
+                "first-approval year. Secondary literature (Pink Sheet/Citeline, ScienceDirect, "
+                "Wikipedia) reports FDA approval on 1979-05-02; that calendar date is NOT in "
+                "remaining FDA databases and is recorded as literature-reported, not as an "
+                "FDA-database date. The 1979 Type 1 list has no May 2 approval (gap Apr 4 Ceclor "
+                "NDA050521 -> May 15 Nubain NDA018024). NOT added to the decision table: FDA "
+                "publishes no remaining ORIG date, class or priority for 018103, and the project "
+                "never fills those in. The 1979 gap is sized 1 (14 official NMEs vs 13 enumerated), "
+                "so Selacryn is a candidate for that single slot, not a confirmed identity - "
+                "confirming it needs the 1989 CDER statistical typescript.")],
+    }
+    year_gap_tail = {
+        1977: (" v22 (2026-09-20): the 32 KIND_UNRESOLVED ORIG/AP rows for 1977 include 0 "
+               "TYPE 1/1-4 (27 unpublished class, 2 TYPE 5, 2 TYPE 3, 1 TYPE 2); public "
+               "Drugs@FDA/openFDA/Federal-Register searches this session named no 1977 NME. "
+               "The remaining 8 still require the 1989 CDER typescript."),
+        1978: (" v22 (2026-09-20): KIND_UNRESOLVED 012043 (1978-10-16, TYPE 1/4 STANDARD) is "
+               "inventory, not a gap-filler - 1978 has no official shortfall."),
     }
     rows = []
     for year in YEARS:
@@ -966,15 +1002,16 @@ def build_gap_rows(payloads: dict[int, list], probes: dict[str, dict],
                 "primary_source_urls": ("https://www.fda.gov/about-fda/histories-fda-regulated-"
                                         "products/summary-nda-approvals-receipts-1938-present"),
                 "status": ("UNRESOLVED_NEEDS_1989_CDER_TYPESCRIPT" if gap > 0 else "CLOSED"),
-                "notes": (f"Official {official_nme} NMEs vs {len(t1)} enumerated TYPE 1/1-4 "
-                          f"payload rows (delta {gap}). " +
-                          ("The v20 full-Drugs@FDA-database cross-check proved 0 payload-invisible "
-                           "originals for 1977-1979, so the missing NMEs sit in applications no "
-                           "longer present anywhere in modern FDA databases; naming them requires "
-                           "the 1989 CDER 'Offices of Drug Evaluation: Statistical Report' "
-                           "(FDA History Office Files) or the contemporaneous annual report."
-                           if gap > 0 else
-                           "No shortfall against the official series for this year.")
+                "notes": ((f"Official {official_nme} NMEs vs {len(t1)} enumerated TYPE 1/1-4 "
+                           f"payload rows (delta {gap}). " +
+                           ("The v20 full-Drugs@FDA-database cross-check proved 0 payload-invisible "
+                            "originals for 1977-1979, so the missing NMEs sit in applications no "
+                            "longer present anywhere in modern FDA databases; naming them requires "
+                            "the 1989 CDER 'Offices of Drug Evaluation: Statistical Report' "
+                            "(FDA History Office Files) or the contemporaneous annual report."
+                            if gap > 0 else
+                            "No shortfall against the official series for this year.")
+                           + year_gap_tail.get(year, ""))
                           if gap != 0 else
                           f"Enumerated rows exceed the official count by {-gap}; see "
                           f"data/pre1980_year_audit.csv for the adjudication."),
@@ -997,8 +1034,8 @@ def build_gap_rows(payloads: dict[int, list], probes: dict[str, dict],
 AUDIT_CAPTURES = {
     1965: "V21-C02", 1970: "V21-C03", 1976: "V21-C01; V21-C06; V21-C07",
     1977: "V19-C01; V19-C04; V19-C06; V19-C10",
-    1978: "V19-C02; V19-C05; V19-C07; V19-C12",
-    1979: "V19-C03; V19-C08; V19-C09; V19-C11",
+    1978: "V19-C02; V19-C05; V19-C07; V19-C12; V22-C03",
+    1979: "V19-C03; V19-C08; V19-C09; V19-C11; V22-C01; V22-C02",
 }
 
 AUDIT_IRREGULARITIES = {
@@ -1084,7 +1121,10 @@ AUDIT_IRREGULARITIES = {
            "is a genuine FDA-data condition; counted once via the Type-1 row. Five blank-class "
            "rows: furosemide (molecule first approved 1966-07-01 per the payloads), IV "
            "electrolytes/dextrose, and potassium iodide (Thyro-Block, historically marketed) - "
-           "none an NME."),
+           "none an NME. v22 NAMED candidate (not added): Selacryn (ticrynafen) NDA 18-103 / "
+           "NDA018103, Federal Register 61 FR 25228 (1996-05-20); application 018103 is absent "
+           "from every remaining FDA database file (Applications_all_types, Submissions, "
+           "Products, payloads) - Seldane-class purge proven by a named NDA."),
 }
 
 AUDIT_NOTES = {
@@ -1136,14 +1176,24 @@ AUDIT_NOTES = {
            "cross-check (2026-09-19): the complete Drugs@FDA database files (fda.gov media 89850 "
            "zip, SHA-manifested) enumerate exactly 42 ORIG/AP approvals for 1977 - identical to "
            "the payload, 0 payload-invisible - so the 8 sit in applications no longer present "
-           "anywhere in modern FDA databases, the Seldane purge class."),
+           "anywhere in modern FDA databases, the Seldane purge class. v22 (2026-09-20): the 32 "
+           "KIND_UNRESOLVED ORIG/AP rows for 1977 include 0 TYPE 1/1-4, so they cannot name the "
+           "8; public Federal Register / Drugs@FDA / openFDA searches this session named no 1977 "
+           "NME. The 8 remain unnamed."),
     1978: ("Official 17 NMEs vs 18 NME-comparable payload rows: the project exceeds the official "
            "count by 1 because the NME-comparable basis counts the Type 1/4 Motofen row, "
            "consistent with 1981/1984. No shortfall; the uncounted Kinlytic UNKNOWN-candidate is "
-           "flagged, not guessed."),
+           "flagged, not guessed. v22 (2026-09-20): KIND_UNRESOLVED 012043 (1978-10-16 TYPE 1/4 "
+           "STANDARD) is inventory, not a gap-filler."),
     1979: ("Official 14 NMEs vs 13 Type-1 payload rows: shortfall of 1 sits in an application "
-           "absent from the ORIG/AP payload (1985-proven gap class); the 1989 CDER statistical "
-           "typescript names it."),
+           "absent from the ORIG/AP payload (1985-proven gap class). v22 (2026-09-20): that "
+           "single slot now has a NAMED candidate - Selacryn (ticrynafen) NDA 18-103 / NDA018103, "
+           "named by Federal Register 61 FR 25228 (1996-05-20, Docket 96N-0151). Application "
+           "018103 is absent from Applications_all_types.txt, Submissions_1965_1979.txt, "
+           "Products_appl_window.txt and every 1965-1979 payload (0 hits). Recorded in "
+           "data/missing_nme_candidates.csv as NAMED_CANDIDATE_NOT_ADDED; not added to the "
+           "decision table (FDA publishes no remaining ORIG date/class/priority). Confirming "
+           "the identity still needs the 1989 CDER statistical typescript."),
 }
 
 ERA_NOTES = {
