@@ -68,6 +68,7 @@ import json
 import math
 import re
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -86,7 +87,22 @@ CRL_DATASET_PAGE = ("https://open.fda.gov/apis/transparency/"
                     "completeresponseletters/")
 DAF = ("https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm"
        "?event=overview.process&varApplNo={num}")
-CRL_QUERY = ('https://api.fda.gov/transparency/crl.json?search=file_name:"{fn}"')
+CRL_QUERY = "https://api.fda.gov/transparency/crl.json?search="
+
+
+def crl_replay_url(file_name: str, raw_letter_date: str) -> str:
+    """A per-record replay link.
+
+    Some file_name values repeat in FDA's dataset (multi-application letters), so
+    the letter date is added to the query when it is known. Values are
+    percent-encoded; the api.fda.gov search syntax itself is passed through.
+    """
+    parts = []
+    if file_name:
+        parts.append(quote(f'file_name:"{file_name}"', safe=""))
+    if raw_letter_date:
+        parts.append(quote(f'letter_date:"{raw_letter_date}"', safe=""))
+    return CRL_QUERY + "+AND+".join(parts) if parts else CRL_DATASET_URL
 
 
 def fail(msg: str) -> None:
@@ -260,6 +276,7 @@ def main() -> int:
     index, sources = build_approval_index()
 
     match_rows: list[dict] = []
+    seen_ids: dict[str, int] = {}
     per_year: dict[str, dict[str, int]] = {}
     days_by_year: dict[str, list[int]] = {}
     unmatched_master: set[tuple[str, str]] = set(master_ids)
@@ -300,11 +317,23 @@ def main() -> int:
         primary = normalised[0] if normalised else ("", "")
         crl_id = (f"CR-{primary[0]}-{letter_date.replace('-', '')}"
                   if primary[0] and letter_date else f"CRL-NOKEY-{i:03d}")
+        # FDA publishes two distinct letter documents for the same application on
+        # the same date in two cases (BLA761215 2021-12-17, BLA761303 2024-03-22).
+        # Both are kept; the id gets a deterministic suffix so it stays unique.
+        dup_flag = "FALSE"
+        seen_ids[crl_id] = seen_ids.get(crl_id, 0) + 1
+        if seen_ids[crl_id] > 1:
+            dup_flag = "TRUE"
+            crl_id = f"{crl_id}-{seen_ids[crl_id]}"
         master_hit = ""
+        master_link = "NO_MASTER_ROW"
         if primary[0] and letter_date:
             master_hit = master_ids.get((primary[0], letter_date), "")
             if master_hit:
+                master_link = "JOINED"
                 unmatched_master.discard((primary[0], letter_date))
+        else:
+            master_link = "APPLICATION_NUMBER_NOT_PUBLISHED_BY_FDA"
         if not normalised:
             n_without_appl += 1
 
@@ -330,6 +359,8 @@ def main() -> int:
         match_rows.append({
             "crl_row_id": crl_id,
             "master_crl_id": master_hit,
+            "master_link_status": master_link,
+            "duplicate_letter_same_app_same_date": dup_flag,
             "raw_file_name": file_name,
             "company_name_verbatim": as_text(rec.get("company_name")),
             "application_number_verbatim": verbatim,
@@ -348,7 +379,7 @@ def main() -> int:
             "later_any_action_types": "; ".join(sorted({f"{d} {t}" for d, t, _s in later[:6]})),
             "conflict_flag": conflict,
             "fda_application_url": DAF.format(num=normalised[0][0]) if normalised else "",
-            "replay_query_url": CRL_QUERY.format(fn=file_name) if file_name else CRL_DATASET_URL,
+            "replay_query_url": crl_replay_url(file_name, as_text(rec.get("letter_date"))),
             "dataset_last_updated": raw.get("meta", {}).get("last_updated", ""),
             "evidence_source_files": ("data/raw/probe/crl_page1.json|"
                                       "data/raw/openfda_approvals_2000_2010/*.json|"
@@ -375,6 +406,7 @@ def main() -> int:
         median = str(days[len(days) // 2]) if days else ""
         rate_rows.append({
             "letter_year": year,
+            "cohort_maturity": "ALL_LETTERS_IN_YEAR",
             "published_crl_letters": str(n),
             "fda_field_approved_letters": str(approved),
             "fda_field_approved_pct": f"{100.0 * approved / n:.1f}" if n else "",
@@ -401,6 +433,7 @@ def main() -> int:
     all_days = sorted(d for lst in days_by_year.values() for d in lst)
     rate_rows.append({
         "letter_year": "ALL",
+        "cohort_maturity": "ALL_PUBLISHED_LETTERS_2002_2026",
         "published_crl_letters": str(total_n),
         "fda_field_approved_letters": str(total_approved),
         "fda_field_approved_pct": f"{100.0 * total_approved / total_n:.1f}",
@@ -411,11 +444,66 @@ def main() -> int:
         "observed_any_action_pct": f"{100.0 * total_obs_any / total_n:.1f}",
         "median_days_to_first_later_original_action": str(all_days[len(all_days) // 2]) if all_days else "",
         "conflict_rows": str(sum(b["conflict"] for b in per_year.values())),
-        "coverage_note": ("All published letters 2002-2026. This is the project's first CRL-level "
-                          "denominator built from FDA-published data; it is a lower bound on "
-                          "conversion because payload coverage is partial and letters whose "
-                          "application number is not published cannot be matched at all."),
+        "coverage_note": ("All published letters 2002-2026. FDA's CRL dataset is its published "
+                          "subset, not a census of every CRL FDA issued, and it is the denominator "
+                          "here. The observed figure is a lower bound on conversion: payload "
+                          "coverage is partial and one letter publishes no application number, so "
+                          "it cannot be matched at all. This all-years figure is diluted by recent "
+                          "letters whose resubmissions are still in review; see the ALL_MATURE_2Y "
+                          "and ALL_MATURE_3Y rows for the maturity-restricted cohorts."),
     })
+
+    last_updated = raw.get("meta", {}).get("last_updated", "")
+
+    def _cohort_row(label: str, years: int):
+        if not last_updated:
+            return None
+        cut = (_dt.date.fromisoformat(last_updated) - _dt.timedelta(days=365 * years)).isoformat()
+        sel = [r for r in match_rows if r["letter_date"] and r["letter_date"] <= cut]
+        n = len(sel)
+        if not n:
+            return None
+        obs = sum(1 for r in sel if r["later_original_approval_actions_observed"] != "0")
+        obs_any = sum(1 for r in sel if r["later_any_approval_actions_observed"] != "0")
+        approved = sum(1 for r in sel if r["fda_approval_status_verbatim"] == "Approved")
+        days = sorted(int(r["days_letter_to_first_later_original_action"])
+                      for r in sel if r["days_letter_to_first_later_original_action"])
+        return {
+            "letter_year": label,
+            "cohort_maturity": f"LETTER_DATE_ON_OR_BEFORE_{cut} (at least {years}y before dataset last_updated)",
+            "published_crl_letters": str(n),
+            "fda_field_approved_letters": str(approved),
+            "fda_field_approved_pct": f"{100.0 * approved / n:.1f}",
+            "letters_with_later_original_action_observed": str(obs),
+            "observed_later_original_action_pct": f"{100.0 * obs / n:.1f}",
+            "observed_original_pct_wilson_lower_95": f"{100.0 * wilson_lower(obs, n):.1f}",
+            "letters_with_any_later_action_observed": str(obs_any),
+            "observed_any_action_pct": f"{100.0 * obs_any / n:.1f}",
+            "median_days_to_first_later_original_action": str(days[len(days) // 2]) if days else "",
+            "conflict_rows": str(sum(1 for r in sel if r["conflict_flag"])),
+            "coverage_note": (f"FDA's CRL dataset is its published subset, not a census of every "
+                              f"CRL FDA issued, and it is the denominator here. Maturity cohort, "
+                              f"not a calendar year: letters dated on or before "
+                              f"{cut}, i.e. at least {years} years before the CRL dataset's own "
+                              f"last_updated date ({last_updated}). Letters younger than that still "
+                              f"have resubmissions in review, so their observed rate is a lower "
+                              f"bound by construction and must not be read as a failure rate."),
+        }
+
+    for _label, _years in (("ALL_MATURE_2Y", 2), ("ALL_MATURE_3Y", 3)):
+        _row = _cohort_row(_label, _years)
+        if _row:
+            rate_rows.append(_row)
+
+    # the one published letter with no application number: record why its master
+    # id is malformed (empty application segment) instead of hiding it
+    for r in match_rows:
+        if r["application_number_normalised"] == "":
+            r["master_link_status"] = "FDA_PUBLISHED_NO_APPLICATION_NUMBER"
+            r["notes"] += (" FDA published this letter with no application_number field at all "
+                           "(file_name " + (r["raw_file_name"] or "blank") + "); the published CRL "
+                           "master stores it as CR--20260227 with an empty application segment. "
+                           "That master id is flagged here as an irregularity, not corrected.")
 
     sources.insert(0, {
         "file": "data/raw/probe/crl_page1.json",
@@ -424,10 +512,12 @@ def main() -> int:
         "bytes": str(CRL_RAW.stat().st_size),
         "sha256": sha256_file(CRL_RAW),
     })
+    with MASTER.open(newline="", encoding="utf-8-sig") as fh:
+        master_records = sum(1 for _ in csv.reader(fh)) - 1  # rows, not lines
     sources.append({
         "file": "data/fda_crl_master.csv",
         "role": "Published CRL master (join target; read-only)",
-        "records": str(sum(1 for _ in MASTER.open(encoding="utf-8-sig")) - 1),
+        "records": str(master_records),
         "bytes": str(MASTER.stat().st_size),
         "sha256": sha256_file(MASTER),
     })

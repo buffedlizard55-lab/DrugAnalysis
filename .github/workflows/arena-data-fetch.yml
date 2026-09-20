@@ -92,6 +92,8 @@ jobs:
             python3 scripts/build_pre1980_year_register_v23.py
             python3 scripts/verify_pre1980_year_register_v23.py
             python3 scripts/build_crl_application_match_v23.py
+            python3 scripts/verify_crl_application_match_v23.py
+            python3 scripts/validate_data.py
           else
             echo "v23 inputs incomplete; no table write (fail-closed)"
           fi

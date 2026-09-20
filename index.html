@@ -164,7 +164,7 @@
     </div>
 
     <div class="notice">
-      <strong>Data-quality gate (v19, 2026-09-19).</strong> The engine's project-data inputs are only as complete as the year they come from: <a href="data/decision_engine_year_inputs.csv"><code>data/decision_engine_year_inputs.csv</code></a> scores every year 1977–2026 against FDA's official NME counts (17 MATCH years at 1.0; short years must be down-weighted, never treated as the full approval population). The repository additionally refuses to print priority-conditioned approval "likelihoods" from its own tables until the CRL set is matched to PDUFA action dates — the master is approvals-only, so any such rate today would be a biased numerator-only statistic. That matched denominator is the engine's next build step.
+      <strong>Data-quality gate (v19, 2026-09-19; v23 update 2026-09-20).</strong> The engine's project-data inputs are only as complete as the year they come from: <a href="data/decision_engine_year_inputs.csv"><code>data/decision_engine_year_inputs.csv</code></a> scores every year 1977–2026 against FDA's official NME counts (17 MATCH years at 1.0; short years must be down-weighted, never treated as the full approval population). v23 has built the project's <strong>first CRL-level denominator</strong> from FDA-published data — <a href="#crls"><code>data/crl_year_base_rates.csv</code></a>, with a maturity-restricted cohort — but the gate <strong>still refuses to print a per-decision approval likelihood</strong>: the CRL dataset is FDA's published subset rather than a census of every letter issued, one published letter carries no application number at all, and no committed source matches letters to PDUFA action dates. Cohort observations are published as observations with their Wilson bounds; they are never converted into a probability for an individual pending decision.
     </div>
 
     <div class="engine-grid">
@@ -359,6 +359,19 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
     <p class="section-desc"><strong><span data-count="crl">…</span> CRL rows</strong>: the 58 deep-verified rows (news-corroborated, stock-reaction notes where available) plus <strong>400 rows added 2026-09-17</strong> from FDA's own <a href="https://open.fda.gov/apis/transparency/completeresponseletters/" target="_blank" rel="noopener noreferrer">CRL transparency database</a> — every FDA-published CRL 2002–2026 naming a letter date and application number, each row with two official source links (openFDA CRL API query + Drugs@FDA application page). Irregularities worth tracking, including repeat-CRL cases. C004 (Outlook Therapeutics / Lytenava) marked <em>RESOLVED</em>: after third CRL on 2025-12-31 BLA resubmitted and approved on 2026-07-24.</p>
     <div class="notice"><strong>CRL = Complete Response Letter</strong> — FDA's formal rejection stating application cannot be approved in present form. Requires sponsor to address deficiencies and resubmit. Track record of CRLs is critical for decision engine — repeat CRLs (e.g. Aldeyra/Reproxalap: 3 CRLs same indication) are strong negative signal. <strong>How tickers were assigned to the 400 new rows:</strong> only a repository-verified name match or an exact SEC-registrant title match (legal suffixes removed) was accepted; the trial of a looser matcher produced 7 provably wrong matches (e.g. biotech "Swedish Orphan Biovitrum" → wave-energy company Eco Wave Power) and was rejected. <span data-count="crlunres">…</span> new rows therefore carry a blank ticker and an explicit unresolved-sponsor flag; drug/indication text stays "See FDA letter" because FDA's database has no structured field for them.</div>
     <div id="crls-view"></div>
+
+    <div class="panel highlight" style="margin-top:1.5rem">
+      <h3>📉 Observed outcomes after an FDA CRL — cohort rates (<code>data/crl_year_base_rates.csv</code>)</h3>
+      <p class="section-desc"><strong>What this is.</strong> The project's first denominator behind the rejection table, built only from FDA-published data (v23, 2026-09-20): every published CRL letter is matched by application number against the committed FDA approval payloads, and the table reports how many letters are followed by a later <em>original</em> (ORIG) approval action on the same application, with a 95% Wilson lower bound and the median days to it. <strong>What this is not.</strong> Not a per-decision probability, not investment advice, and not a claim that a letter without an observed action failed — absence of evidence inside partial payload coverage is reported as exactly that. The all-years figure is diluted by recent letters whose resubmissions are still in review, which is why each row now carries an explicit <code>cohort_maturity</code> and the maturity-restricted cohorts are published alongside it.</p>
+      <div id="crl-rates-headline"></div>
+      <div id="crl-rates-view" style="margin-top:14px"></div>
+    </div>
+
+    <div class="panel">
+      <h3>🔁 Letter-by-letter evidence — later FDA actions observed per CRL (<code>data/crl_application_match.csv</code>)</h3>
+      <p class="section-desc">One row per published letter (458), carrying FDA's own <code>approval_status</code> string verbatim, the normalised application number, the first later ORIGINAL approval action found in the committed payloads with the days elapsed, every conflict flag raised for human review (FDA's field disagreeing with the observed payloads), the CRL master join status, and a replayable openFDA query for the exact letter. Nothing on this table is inferred from news or third parties.</p>
+      <div id="crl-evidence-view"></div>
+    </div>
   </section>
 
   <!-- VERIFICATION AUDIT -->
@@ -562,6 +575,20 @@ Pipeline progression (10)   = 10 × advanced_to_next_phase / (advanced + paused/
       <h3>🔬 Live Primary Captures v22, 2026-09-20 (<code>data/pre1980_v22_captures_index.csv</code>)</h3>
       <p class="section-desc">Three captures: <strong>V22-C01</strong> Federal Register 61 FR 25228 (Selacryn NDA 18-103 withdrawal, verbatim); <strong>V22-C02</strong> 018103 membership test (0 hits in Applications / Submissions / Products / payloads); <strong>V22-C03</strong> 012043 Submissions ORIG/AP 1978-10-16 TYPE 1/4 STANDARD. Verbatim excerpts in <code>data/raw/source_captures_2026_09_20/live_primary_captures_v22_2026_09_20.json</code>.</p>
       <div id="pre1980-v22caps-view"></div>
+    </div>
+
+    <div class="panel highlight" style="margin-top:1.5rem">
+      <h3>🧱 v23 Complete 1977–1979 Action Register — every ORIG/AP approval action, source-line cited (<code>data/pre1980_1977_1979_original_actions.csv</code>)</h3>
+      <p class="section-desc">
+        v23 (2026-09-20) answers "how complete is 1977–1979, really?" with the answer split into three named classes instead of one number: <strong>170 <code>TRACKED_NDA_ORIGINAL</code></strong> (42 / 66 / 62 for 1977 / 1978 / 1979 — the NME-capable basis), <strong>479 <code>ANDA_ORIGINAL_EXCLUDED</code></strong> (192 / 178 / 109 generic-application originals, excluded from the NME basis and never counted as approvals of new molecules), and <strong>79 <code>KIND_UNRESOLVED</code></strong> (32 / 28 / 19 ORIG/AP rows whose application number has no <code>Applications</code> record anywhere in the Drugs@FDA database). All 728 rows are reproduced verbatim from the SHA-verified Drugs@FDA database extract, each citing the exact <code>evidence_source_file</code> + <code>evidence_source_line</code> it was read from, and an independent verifier (sharing no code with the builder) re-parses every published cell from that cited line — <strong>7,164 checks, 0 errors</strong>. The NME-comparable split stays honest: 1977 17 vs official 25 (8 unnamed), 1978 18 vs 17 (+1 Motofen TYPE 1/4), 1979 13 vs 14 (Selacryn, named and still not added).
+      </p>
+      <p class="section-desc">
+        Companion tables: <strong>5,483 approval actions</strong> in the three years (<code>data/pre1980_1977_1979_submission_actions.csv</code> — 1,489 / 2,061 / 1,933 rows, every status <code>AP</code>), <strong>899 official document rows</strong> across 120 applications (<code>data/pre1980_1977_1979_application_docs.csv</code>, each with its FDA document URL), and the per-year analysis row (<code>data/pre1980_1977_1979_year_analysis.csv</code>) including the supplement mix, review-priority split, current marketing-status census and the FR safety-marker count. Two limitations are printed on the rows themselves rather than hidden: Drugs@FDA's <code>ReviewPriority</code> is a <em>modern database attribute</em> (PDUFA dates from 1992) and is therefore never described here as a contemporaneous 1977–79 designation, and <strong>review time cannot be computed</strong> for these years because no receipt dates are published.
+      </p>
+      <div id="pre1980-yearanalysis-view"></div>
+      <div id="pre1980-v23originals-view" style="margin-top:14px"></div>
+      <div id="pre1980-v23subactions-view" style="margin-top:14px"></div>
+      <div id="pre1980-v23docs-view" style="margin-top:14px"></div>
     </div>
   </section>
 

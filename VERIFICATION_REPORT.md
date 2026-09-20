@@ -1,3 +1,33 @@
+# Verification Report — v23 1977–1979 Action Register + CRL Denominator (2026-09-20)
+
+**Branch:** `arena/01a0bfa7-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors** (warnings are the standing manual-review baseline).
+**Independent verifiers:** `scripts/verify_pre1980_year_register_v23.py` → **7,164 checks, 0 errors**; `scripts/verify_crl_application_match_v23.py` → **5,247 checks, 0 errors**. Neither verifier imports or shares code with the builder it checks.
+
+## v23 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| 1977–1979 action register | **728 rows** = 170 `TRACKED_NDA_ORIGINAL` + 479 `ANDA_ORIGINAL_EXCLUDED` + 79 `KIND_UNRESOLVED` (42/192/32 · 66/178/28 · 62/109/19) | `data/pre1980_1977_1979_original_actions.csv`; built from `data/raw/drugsatfda_data_files_2026_09/Submissions_1965_1979.txt` after re-hashing all six official inputs against the runner manifest |
+| Line-by-line reproduction | Every published cell (appl no, date, type, class code, priority, status) re-parsed from its cited `evidence_source_line`; the same source line may be cited by exactly one register row; document rows re-checked against their FDA URL column | `scripts/verify_pre1980_year_register_v23.py` (independent parser) |
+| Set equality with the earlier layers | Tracked set == the v20 170-row audit's applications, one for one; `KIND_UNRESOLVED` set == the v20.1 cross-check's 79 applications (all absent from `Applications_all_types.txt`); 1978's sole NME-comparable unresolved row is 012043 | Verifier set comparisons; `data/pre1980_originals_audit_1977_1979.csv`, `data/pre1980_full_db_crosscheck_1977_1979.csv` |
+| Per-year aggregates | ORIG/AP 266 / 272 / 190; all-AP actions 1,489 / 2,061 / 1,933; supplements 1,223 / 1,789 / 1,743; NME-comparable 17 / 18 / 13 against official 25 / 17 / 14; deltas −8 / +1 / −1 with verdicts `PROJECT_SHORT_FLAGGED` / `PROJECT_EXCEEDS_OFFICIAL` / `PROJECT_SHORT_FLAGGED`; delta arithmetic checked as `tracked − delta = official` | `data/pre1980_1977_1979_year_analysis.csv`; all aggregates recomputed by the verifier |
+| Document index | **899 rows across 120 applications**; every row's `doc_url` re-read from the cited `ApplicationDocs_appl_window.txt` line; conflicting claims about which applications have documents are impossible because the doc count is recomputed | `data/pre1980_1977_1979_application_docs.csv` |
+| Honesty guards | No column name in any v23 table contains likelihood/probability/odds; `KIND_UNRESOLVED` rows must carry a cross-check id; the decision table is asserted at **173 rows** and asserted free of Selacryn / 018103 / 012043; blank-document applications are never described as approved | Validator + both verifiers |
+| CRL row layer | **458 rows**, unique ids, every row joined back to its raw FDA record by `(file_name, letter_date, company, application_number)` (the quadruple is unique across the dataset; `file_name` alone is not); "later" dates strictly after the letter date; every conflict flag recomputed from the independent payload scan | `data/crl_application_match.csv`; independent scan sees 11,570 applications |
+| CRL rates | Per-year, `ALL`, `ALL_MATURE_2Y` and `ALL_MATURE_3Y` denominators/numerators/percentages recomputed; Wilson lower bounds recomputed with a **closed-form quadratic** implementation (the builder uses the standard centre-minus-margin form) and required to be ≤ the point estimate; medians and conflict counts recomputed per row subset | `data/crl_year_base_rates.csv` (25 rows) |
+| CRL master join | Every well-formed `CR-<APP>-<MMDDYYYY>` master id joins to exactly one letter; the only unmatched master id is `CR--20260227`, the letter FDA publishes **without an application number** — an irregularity preserved, not corrected | `data/fda_crl_master.csv`, `data/crl_application_match.csv` |
+| Denominators are labelled | Every rate row carries `cohort_maturity`; every row's `coverage_note` must contain "not a census"; `ALL*` rows must add "lower bound"; calendar-year rows must add "upper bound" (the any-action column counts same-application supplements, which need not relate to the letter) | Verifier caveat-text gate |
+| Unchanged invariants | `data/pre1980_fda_decisions.csv` still **173 rows**; `fda_decisions_master.csv` still 1,427; no `fetch_jobs/**` payload was rewritten; stock/scorecard tables untouched | `validate_data.py`, `git diff --stat` |
+
+## Method notes and limitations (v23)
+
+- The register describes **approval actions**, not molecule novelty: `TRACKED_NDA_ORIGINAL` is the NME-capable basis, `ANDA_ORIGINAL_EXCLUDED` rows are generic-application originals and are never counted as new molecules, and `KIND_UNRESOLVED` rows are undecidable with the committed sources (their application numbers have no `Applications` record anywhere in the Drugs@FDA database).
+- `ReviewPriority` in the Drugs@FDA files is a *current* database attribute, not a 1977–79 contemporaneous designation; the analysis row says so in `review_priority_basis`. Review **time** cannot be computed because no receipt dates are published for these years (`review_time_computable = NO`).
+- The Federal Register "safety determination" text detected on 623 Products rows is FDA's *current-status* marker; the counts are reported with `fr_safety_determination_basis` making clear they are not a 1977–79 fact.
+- CRL rates are rates over **FDA's published subset of letters**, restricted to what the committed payloads can observe. They are cohort observations with a published maturity cut, not per-decision probabilities, not PDUFA-date-matched, and not a statement about any pending application.
+- Two published letters per application on the same date (BLA761215 2021-12-17, BLA761303 2024-03-22) are both kept, with deterministic `-2` id suffixes documented by `duplicate_letter_same_app_same_date`.
+
 # Verification Report — v19 Pre-1980 Years 1977–1979 + 8,369 New Verified Entries (2026-09-19)
 
 **Branch:** `arena/01a0bad8-druganalysis`
