@@ -98,9 +98,28 @@ jobs:
             echo "v23 inputs incomplete; no table write (fail-closed)"
           fi
 
-      - name: Ingest all captured stock events
-        if: always()
-        run: python3 scripts/build_stock_snapshots_from_all_events.py
+  - name: Build v26 pre-1965 decision tables (1939-1964) + live-probe join
+    if: always()
+    run: |
+      set -euo pipefail
+      # Base build: rewrites the four v26 tables from the SHA-verified
+      # payloads (fail-closed on any drift). The builder auto-joins the
+      # per-row live probes when their manifest exists; rows without a
+      # captured probe stay PROBE_PENDING.
+      python3 scripts/build_pre1965_decisions_v26.py
+      if [ -f data/raw/pre1965_row_probes_1939_1964/manifest.json ]; then
+        n=$(python3 -c "import json;print(len([e for e in json.load(open('data/raw/pre1965_row_probes_1939_1964/manifest.json'))['requests'] if e.get('sha256') and e.get('status')==200]))")
+        echo "v26 probe layer: $n/535 captured"
+        if [ "$n" -lt 535 ]; then
+          echo "v26 probe layer partial; remaining items retry on the next push (skip_existing)"
+        fi
+      fi
+      python3 scripts/verify_pre1965_year_register_v26.py
+      python3 scripts/validate_data.py
+
+  - name: Ingest all captured stock events
+    if: always()
+    run: python3 scripts/build_stock_snapshots_from_all_events.py
 
       - name: Commit fetched raw payloads and deterministic tables
         if: always()
