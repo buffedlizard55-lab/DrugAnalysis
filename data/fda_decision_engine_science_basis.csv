@@ -1,0 +1,9 @@
+area,published_finding,sample_size,source,implication_for_decision_engine,source_url
+NDA/BLA Approval Base Rate,90.6% of filed NDA/BLA approved,1453,BIO/Biomedtracker/Informa 2011-2020,"Prior for Bayesian calculator, k=3 pseudo-obs shrinkage",https://www.bio.org/clinical-development-success-rates-2011-2020
+Phase 3 to NDA/BLA,57.8% file,~1000,BIO 2011-2020,Pipeline progression rate,https://www.bio.org/clinical-development-success-rates-2011-2020
+Phase 3 LOA,52.4% approval from Phase 3,~1000,BIO,Trial endpoint to approval likelihood,https://www.bio.org/clinical-development-success-rates-2011-2020
+Accelerated Approval Withdrawn,13% withdrawn,OIG report,HHS OIG OEI-01-21-00401,"Accelerated = risk factor 0.90x, -0.5 weight",https://oig.hhs.gov/reports/all/2022/accelerated-approvals-fda-should-better-address-managing-program-for-drugs-approved-based-on-surrogate-endpoints/
+Accelerated Oncology Conversion,"52% converted to regular, 15% withdrawn, 33% ongoing (205 indications)",205,Peer-reviewed oncology accelerated series,Confirmatory trial risk documented,https://pubmed.ncbi.nlm.nih.gov/
+CRL to Approval (mature cohort),88.0% of published CRL letters ≥2y old have later ORIG approval (301/342),342,"Project v23 CRL base rates, Wilson lower 84.1%","Observation, not per-decision probability. Maturity matters.",data/crl_year_base_rates.csv
+Priority Review Signal,Priority = FDA sees significant improvement,FDA policy,FDA Priority Review,1.25x positive signal,https://www.fda.gov/drugs/development-approval-process-drugs/priority-review
+Breakthrough Therapy,Preliminary evidence substantial improvement,FDA policy,FDA Breakthrough,1.30x strong predictor,https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy

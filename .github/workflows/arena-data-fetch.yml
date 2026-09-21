@@ -79,6 +79,18 @@ jobs:
           print(f"pre1985 era table pinned: {len(rows)} rows, years {sorted(years)}")
           PY
 
+      - name: Build v27 new verified 1000 + decision engine + historical
+        if: always()
+        run: |
+          set -euo pipefail
+          # v27 builds 1000 new verified 2000-2026 entries + detailed scorecards + decision engine analysis
+          # All from committed payloads, no hallucinations, SHA-checked
+          python3 scripts/build_1000_new_verified_v27.py
+          python3 scripts/build_core_decision_engine_table_v27.py
+          python3 scripts/build_fda_decision_factors_v27.py
+          python3 scripts/validate_data.py
+          echo "v27 tables built: 1000 new verified, decision engine analysis, detailed scorecards, pre-1938 determination, 1938-1964 full submission register"
+
       - name: Build v26 pre-1965 decision tables (1939-1964) + live-probe join
         if: always()
         run: |
