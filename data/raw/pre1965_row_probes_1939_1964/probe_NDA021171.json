@@ -1,0 +1,373 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "2",
+          "submission_status": "AP",
+          "submission_status_date": "19991209",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "20191007",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "60282",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2019/021171s032lbl.pdf",
+              "date": "20191007",
+              "type": "Label"
+            },
+            {
+              "id": "60434",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2019/021171Orig1s032ltr.pdf",
+              "date": "20191009",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19421110",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "UNKNOWN"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "20161216",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "46276",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/021171Orig1s024,s025ltr.pdf",
+              "date": "20161220",
+              "type": "Letter"
+            },
+            {
+              "id": "46358",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/021171s024s025lbl.pdf",
+              "date": "20161221",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "20130419",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "63",
+          "submission_status": "AP",
+          "submission_status_date": "20251222",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "84567",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/021171Orig1s063ltr.pdf",
+              "date": "20251229",
+              "type": "Letter"
+            },
+            {
+              "id": "84651",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2026/021171s063lbl.pdf",
+              "date": "20260106",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "53",
+          "submission_status": "AP",
+          "submission_status_date": "20231215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "76903",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/021171s053lbl.pdf",
+              "date": "20231218",
+              "type": "Label"
+            },
+            {
+              "id": "77000",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/021171Orig1s053ltr.pdf",
+              "date": "20231219",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "51",
+          "submission_status": "AP",
+          "submission_status_date": "20221021",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "72475",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2022/021171Orig1s051lbl.pdf",
+              "date": "20221026",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "20010131",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19981117",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "20161216",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "46277",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/021171Orig1s024,s025ltr.pdf",
+              "date": "20161220",
+              "type": "Letter"
+            },
+            {
+              "id": "46359",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/021171s024s025lbl.pdf",
+              "date": "20161221",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "20160624",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "60",
+          "submission_status": "AP",
+          "submission_status_date": "20250107",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "80821",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/021171s060lbl.pdf",
+              "date": "20250108",
+              "type": "Label"
+            },
+            {
+              "id": "80822",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/021171Orig1s060ltr.pdf",
+              "date": "20250108",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "20010824",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA021171",
+      "sponsor_name": "HOSPIRA",
+      "openfda": {
+        "application_number": [
+          "NDA021171"
+        ],
+        "brand_name": [
+          "DEMEROL"
+        ],
+        "generic_name": [
+          "MEPERIDINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Hospira, Inc."
+        ],
+        "product_ndc": [
+          "0409-1176",
+          "0409-1181",
+          "0409-1178",
+          "0409-1179",
+          "0409-1180",
+          "0409-1362",
+          "0409-1418"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS",
+          "SUBCUTANEOUS"
+        ],
+        "substance_name": [
+          "MEPERIDINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "860792",
+          "861463",
+          "861473",
+          "861493",
+          "861494",
+          "861522",
+          "861529",
+          "861617",
+          "1242106",
+          "1242503",
+          "2539186",
+          "2539188",
+          "2539191",
+          "2539192"
+        ],
+        "spl_id": [
+          "b6935f73-7b93-496d-871b-de6f9b379649"
+        ],
+        "spl_set_id": [
+          "b31d1308-28c3-43f4-e0a6-2f3ed76b8975"
+        ],
+        "package_ndc": [
+          "0409-1181-30",
+          "0409-1176-03",
+          "0409-1176-30",
+          "0409-1178-03",
+          "0409-1178-30",
+          "0409-1179-03",
+          "0409-1179-30",
+          "0409-1180-59",
+          "0409-1180-69",
+          "0409-1362-11",
+          "0409-1362-01",
+          "0409-1418-11",
+          "0409-1418-01"
+        ],
+        "unii": [
+          "N8E7F7Q170"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "DEMEROL",
+          "active_ingredients": [
+            {
+              "name": "MEPERIDINE HYDROCHLORIDE",
+              "strength": "75MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "DEMEROL",
+          "active_ingredients": [
+            {
+              "name": "MEPERIDINE HYDROCHLORIDE",
+              "strength": "25MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "DEMEROL",
+          "active_ingredients": [
+            {
+              "name": "MEPERIDINE HYDROCHLORIDE",
+              "strength": "100MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "DEMEROL",
+          "active_ingredients": [
+            {
+              "name": "MEPERIDINE HYDROCHLORIDE",
+              "strength": "50MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        }
+      ]
+    }
+  ]
+}

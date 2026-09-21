@@ -1,0 +1,467 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "77",
+          "submission_status": "AP",
+          "submission_status_date": "20190826",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "66204",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2019/011153Orig1s077ltr.pdf",
+              "date": "20210212",
+              "type": "Letter"
+            },
+            {
+              "id": "66314",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2019/011153Orig1s077lbl.pdf",
+              "date": "20210222",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "83",
+          "submission_status": "AP",
+          "submission_status_date": "20240605",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "78672",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2024/011153s083lbl.pdf",
+              "date": "20240606",
+              "type": "Label"
+            },
+            {
+              "id": "78704",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2024/011153Orig1s083ltr.pdf",
+              "date": "20240607",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "75",
+          "submission_status": "AP",
+          "submission_status_date": "20180724",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "54965",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/011153Orig1s077lbl.pdf",
+              "date": "20180725",
+              "type": "Label"
+            },
+            {
+              "id": "54996",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/011153Orig1s075Ltr.pdf",
+              "date": "20180726",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "81",
+          "submission_status": "AP",
+          "submission_status_date": "20231219",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "77098",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/011153s081lbl.pdf",
+              "date": "20231221",
+              "type": "Label"
+            },
+            {
+              "id": "77106",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/011153Orig1s081ltr.pdf",
+              "date": "20231222",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "59",
+          "submission_status": "AP",
+          "submission_status_date": "20021025",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "71",
+          "submission_status": "AP",
+          "submission_status_date": "20130718",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "49",
+          "submission_status": "AP",
+          "submission_status_date": "19890105",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "19870224",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19790405",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19760910",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "51",
+          "submission_status": "AP",
+          "submission_status_date": "19931228",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "33035",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/pre96/011153s051lbl.pdf",
+              "date": "20151231",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "19800414",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "19780411",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "82",
+          "submission_status": "AP",
+          "submission_status_date": "20251104",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "84066",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/011153Orig1s082ltr.pdf",
+              "date": "20251105",
+              "type": "Letter"
+            },
+            {
+              "id": "84122",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/011153s082lbl.pdf",
+              "date": "20251107",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "58",
+          "submission_status": "AP",
+          "submission_status_date": "19991201",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "19830309",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "19930128",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "19801008",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19571024",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "19790405",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "19790530",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA011153",
+      "sponsor_name": "PFIZER",
+      "openfda": {
+        "application_number": [
+          "NDA011153"
+        ],
+        "brand_name": [
+          "MEDROL",
+          "METHYLPREDNISOLONE"
+        ],
+        "generic_name": [
+          "METHYLPREDNISOLONE"
+        ],
+        "manufacturer_name": [
+          "Pharmacia & Upjohn Company LLC",
+          "Mylan Pharmaceuticals Inc."
+        ],
+        "product_ndc": [
+          "0009-0020",
+          "0009-0049",
+          "0009-0056",
+          "0009-0022",
+          "0009-0073",
+          "0009-0176",
+          "59762-0049",
+          "59762-4440",
+          "59762-0050",
+          "59762-0051"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "METHYLPREDNISOLONE"
+        ],
+        "rxcui": [
+          "197969",
+          "197971",
+          "197973",
+          "207136",
+          "207137",
+          "207138",
+          "207141",
+          "259966",
+          "260330",
+          "328161",
+          "762675",
+          "834023"
+        ],
+        "spl_id": [
+          "e4a8e5b4-af77-4eca-92de-cd0982969b82",
+          "bc3419a0-22a3-4eaf-a4f2-3133e9380663"
+        ],
+        "spl_set_id": [
+          "39d5270b-d957-4821-93d6-501b7b9f02d4",
+          "22dd75d6-f89a-44f7-8ca6-b64c4e9806dd"
+        ],
+        "package_ndc": [
+          "0009-0049-02",
+          "0009-0056-02",
+          "0009-0056-04",
+          "0009-0022-01",
+          "0009-0073-01",
+          "0009-0176-01",
+          "0009-0020-01",
+          "59762-4440-3",
+          "59762-4440-2",
+          "59762-0049-1",
+          "59762-0050-1",
+          "59762-0051-1"
+        ],
+        "nui": [
+          "N0000175576",
+          "N0000175450"
+        ],
+        "pharm_class_epc": [
+          "Corticosteroid [EPC]"
+        ],
+        "pharm_class_moa": [
+          "Corticosteroid Hormone Receptor Agonists [MoA]"
+        ],
+        "unii": [
+          "X4W7ZR7023"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "005",
+          "reference_drug": "No",
+          "brand_name": "MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE",
+              "strength": "24MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE",
+              "strength": "16MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE",
+              "strength": "4MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "006",
+          "reference_drug": "Yes",
+          "brand_name": "MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE",
+              "strength": "32MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE",
+              "strength": "8MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE",
+              "strength": "2MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}

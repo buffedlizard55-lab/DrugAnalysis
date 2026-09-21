@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19870713",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19470728",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "UNKNOWN"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19960426",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19791212",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19851010",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "NDA006071",
+      "sponsor_name": "ROCHE",
+      "products": [
+        {
+          "product_number": "003",
+          "reference_drug": "No",
+          "brand_name": "BEROCCA PN",
+          "active_ingredients": [
+            {
+              "name": "ASCORBIC ACID",
+              "strength": "50MG/ML"
+            },
+            {
+              "name": "BIOTIN",
+              "strength": "0.03MG/ML"
+            },
+            {
+              "name": "CYANOCOBALAMIN",
+              "strength": "0.0025MG/ML"
+            },
+            {
+              "name": "DEXPANTHENOL",
+              "strength": "7.5MG/ML"
+            },
+            {
+              "name": "ERGOCALCIFEROL",
+              "strength": "100 IU/ML"
+            },
+            {
+              "name": "FOLIC ACID",
+              "strength": "0.2MG/ML"
+            },
+            {
+              "name": "NIACINAMIDE",
+              "strength": "20MG/ML"
+            },
+            {
+              "name": "PYRIDOXINE HYDROCHLORIDE",
+              "strength": "2MG/ML"
+            },
+            {
+              "name": "RIBOFLAVIN 5'-PHOSPHATE SODIUM",
+              "strength": "1.8MG/ML"
+            },
+            {
+              "name": "THIAMINE HYDROCHLORIDE",
+              "strength": "1.5MG/ML"
+            },
+            {
+              "name": "VITAMIN A PALMITATE",
+              "strength": "1,650 IU/ML"
+            },
+            {
+              "name": "VITAMIN E",
+              "strength": "5 IU/ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

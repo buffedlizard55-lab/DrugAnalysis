@@ -1,0 +1,684 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "20220225",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "70284",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2022/011522Orig1s044ltr.pdf",
+              "date": "20220228",
+              "type": "Letter"
+            },
+            {
+              "id": "70324",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2022/011522s044lbl.pdf",
+              "date": "20220301",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19600119",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 2/4",
+          "submission_class_code_description": "Type 2 New Active Ingredient and Type 4 New Combination",
+          "application_docs": [
+            {
+              "id": "43997",
+              "url": "http://www.fda.gov/Drugs/DrugSafety/PostmarketDrugSafetyInformationforPatientsandProviders/ucm111441.htm",
+              "date": "20070531",
+              "type": "Other Important Information from FDA"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "20011210",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "20151001",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10763",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/011522s042lbl.pdf",
+              "date": "20151007",
+              "type": "Label"
+            },
+            {
+              "id": "266",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/011522Orig1s042ltr.pdf",
+              "date": "20151006",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "20060726",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "263",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2006/011522s034, 037, 021303s013LTR.pdf",
+              "date": "20060727",
+              "type": "Letter"
+            },
+            {
+              "id": "10762",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2006/011522s034s037,021303s013lbl.pdf",
+              "date": "20060727",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "20000831",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "20070607",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "265",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2007/011522s040ltr.pdf",
+              "date": "20070614",
+              "type": "Letter"
+            },
+            {
+              "id": "33045",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2007/011522s040lbl.pdf",
+              "date": "20070612",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19980108",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "20050802",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10761",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2005/011522s032,033lbl.pdf",
+              "date": "20050804",
+              "type": "Label"
+            },
+            {
+              "id": "262",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/011522s032,033ltr.pdf",
+              "date": "20050804",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "20000126",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19971114",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "20021108",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "40671",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2002/11-522S030_Adderall.html",
+              "date": "20040414",
+              "type": "Review"
+            },
+            {
+              "id": "261",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/11522scf030ltr.pdf",
+              "date": "20021108",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19991112",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19970613",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19990223",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19970129",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19960213",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "40670",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/96/11522S010_Adderall.pdf",
+              "date": "20000612",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "45",
+          "submission_status": "AP",
+          "submission_status_date": "20231013",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "75733",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/011522s045lbl.pdf",
+              "date": "20231016",
+              "type": "Label"
+            },
+            {
+              "id": "75734",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/011522s045lbl.pdf#page=15",
+              "date": "20231016",
+              "type": "Medication Guide"
+            },
+            {
+              "id": "75779",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/011522Orig1s045ltr.pdf",
+              "date": "20231016",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "20060726",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "264",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2006/011522s034, 037, 021303s013LTR.pdf",
+              "date": "20060727",
+              "type": "Letter"
+            },
+            {
+              "id": "33044",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2006/011522s034s037,021303s013lbl.pdf",
+              "date": "20060727",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "20020411",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "20170104",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "46684",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/011522s043lbl.pdf",
+              "date": "20170106",
+              "type": "Label"
+            },
+            {
+              "id": "46726",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/011522Orig1s043ltr.pdf",
+              "date": "20170109",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "20000724",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "20150417",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11938",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/011522Orig1s041ltr.pdf",
+              "date": "20150420",
+              "type": "Letter"
+            },
+            {
+              "id": "33046",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/011522s041lbl.pdf",
+              "date": "20150419",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19980316",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "20050802",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11937",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/011522s032,033ltr.pdf",
+              "date": "20050804",
+              "type": "Letter"
+            },
+            {
+              "id": "33043",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2005/011522s032,033lbl.pdf",
+              "date": "20050804",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "20000215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19970725",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19990920",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19970717",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19990521",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19970512",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19960213",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19970717",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "NDA011522",
+      "sponsor_name": "TEVA WOMENS",
+      "products": [
+        {
+          "product_number": "009",
+          "reference_drug": "Yes",
+          "brand_name": "ADDERALL 5",
+          "active_ingredients": [
+            {
+              "name": "AMPHETAMINE ASPARTATE",
+              "strength": "1.25MG"
+            },
+            {
+              "name": "AMPHETAMINE SULFATE",
+              "strength": "1.25MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SACCHARATE",
+              "strength": "1.25MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SULFATE",
+              "strength": "1.25MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "007",
+          "reference_drug": "Yes",
+          "brand_name": "ADDERALL 10",
+          "active_ingredients": [
+            {
+              "name": "AMPHETAMINE ASPARTATE",
+              "strength": "2.5MG"
+            },
+            {
+              "name": "AMPHETAMINE SULFATE",
+              "strength": "2.5MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SACCHARATE",
+              "strength": "2.5MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SULFATE",
+              "strength": "2.5MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "013",
+          "reference_drug": "Yes",
+          "brand_name": "ADDERALL 15",
+          "active_ingredients": [
+            {
+              "name": "AMPHETAMINE ASPARTATE",
+              "strength": "3.75MG"
+            },
+            {
+              "name": "AMPHETAMINE SULFATE",
+              "strength": "3.75MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SACCHARATE",
+              "strength": "3.75MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SULFATE",
+              "strength": "3.75MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "011",
+          "reference_drug": "Yes",
+          "brand_name": "ADDERALL 7.5",
+          "active_ingredients": [
+            {
+              "name": "AMPHETAMINE ASPARTATE",
+              "strength": "1.875MG"
+            },
+            {
+              "name": "AMPHETAMINE SULFATE",
+              "strength": "1.875MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SACCHARATE",
+              "strength": "1.875MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SULFATE",
+              "strength": "1.875MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "008",
+          "reference_drug": "Yes",
+          "brand_name": "ADDERALL 20",
+          "active_ingredients": [
+            {
+              "name": "AMPHETAMINE ASPARTATE",
+              "strength": "5MG"
+            },
+            {
+              "name": "AMPHETAMINE SULFATE",
+              "strength": "5MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SACCHARATE",
+              "strength": "5MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SULFATE",
+              "strength": "5MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "012",
+          "reference_drug": "Yes",
+          "brand_name": "ADDERALL 12.5",
+          "active_ingredients": [
+            {
+              "name": "AMPHETAMINE ASPARTATE",
+              "strength": "3.125MG"
+            },
+            {
+              "name": "AMPHETAMINE SULFATE",
+              "strength": "3.125MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SACCHARATE",
+              "strength": "3.125MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SULFATE",
+              "strength": "3.125MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "010",
+          "reference_drug": "Yes",
+          "brand_name": "ADDERALL 30",
+          "active_ingredients": [
+            {
+              "name": "AMPHETAMINE ASPARTATE",
+              "strength": "7.5MG"
+            },
+            {
+              "name": "AMPHETAMINE SULFATE",
+              "strength": "7.5MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SACCHARATE",
+              "strength": "7.5MG"
+            },
+            {
+              "name": "DEXTROAMPHETAMINE SULFATE",
+              "strength": "7.5MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

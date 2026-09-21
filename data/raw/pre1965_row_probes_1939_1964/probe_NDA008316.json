@@ -1,0 +1,331 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "19760911",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19851028",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "20250310",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "81536",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/008316s025lbl.pdf",
+              "date": "20250311",
+              "type": "Label"
+            },
+            {
+              "id": "81537",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/008316Orig1s025ltr.pdf",
+              "date": "20250312",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "20080728",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "94",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/008316s017ltr.pdf",
+              "date": "20080813",
+              "type": "Letter"
+            },
+            {
+              "id": "32960",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/008316s017lbl.pdf",
+              "date": "20080813",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "20170622",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "48826",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/008316Orig1s023ltr.pdf",
+              "date": "20170626",
+              "type": "Letter"
+            },
+            {
+              "id": "48831",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/008316s023lbl.pdf",
+              "date": "20170626",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19850910",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "20030611",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "93",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2003/08316slr015ltr.pdf",
+              "date": "20030622",
+              "type": "Letter"
+            },
+            {
+              "id": "10699",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/08316slr015_primaquine_lbl.pdf",
+              "date": "20030622",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "20150416",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "95",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/008316Orig1s021ltr.pdf",
+              "date": "20150417",
+              "type": "Letter"
+            },
+            {
+              "id": "10700",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/008316s021lbl.pdf",
+              "date": "20150417",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19861110",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19930923",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19770207",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19520123",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 5",
+          "submission_class_code_description": "Type 5 - New Formulation or New Manufacturer"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19900529",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "20260202",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "84900",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/008316s026lbl.pdf",
+              "date": "20260203",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "20160727",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "96",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/008316Orig1s022ltr.pdf",
+              "date": "20160729",
+              "type": "Letter"
+            },
+            {
+              "id": "32961",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/008316s022lbl.pdf",
+              "date": "20160728",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19841030",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19931027",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19810515",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA008316",
+      "sponsor_name": "SANOFI AVENTIS US",
+      "openfda": {
+        "application_number": [
+          "NDA008316"
+        ],
+        "brand_name": [
+          "PRIMAQUINE PHOSPHATE"
+        ],
+        "generic_name": [
+          "PRIMAQUINE PHOSPHATE"
+        ],
+        "manufacturer_name": [
+          "Sanofi-Aventis U.S. LLC"
+        ],
+        "product_ndc": [
+          "0024-1596"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "PRIMAQUINE PHOSPHATE"
+        ],
+        "rxcui": [
+          "904170"
+        ],
+        "spl_id": [
+          "7e15f87d-f34f-4ec2-9da8-a041db792623"
+        ],
+        "spl_set_id": [
+          "1bfbf4ae-81b8-4160-a00d-6322aadd4b59"
+        ],
+        "package_ndc": [
+          "0024-1596-01"
+        ],
+        "unii": [
+          "H0982HF78B"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "PRIMAQUINE",
+          "active_ingredients": [
+            {
+              "name": "PRIMAQUINE PHOSPHATE",
+              "strength": "EQ 15MG BASE"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "20150811",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "60",
+          "submission_status": "AP",
+          "submission_status_date": "20220216",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "70180",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2022/009402Orig1s060ltr.pdf",
+              "date": "20220217",
+              "type": "Letter"
+            },
+            {
+              "id": "70232",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2022/009402Orig1s060lbl.pdf",
+              "date": "20220223",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "20020717",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "20171101",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "50267",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/009402s052lbl.pdf",
+              "date": "20171102",
+              "type": "Label"
+            },
+            {
+              "id": "50306",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/009402Orig1s052ltr.pdf",
+              "date": "20171106",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19980617",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19890505",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "19850115",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "20040726",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "190",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/09402s040ltr.pdf",
+              "date": "20040728",
+              "type": "Letter"
+            },
+            {
+              "id": "33002",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/09402s040lbl.pdf",
+              "date": "20040728",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19841116",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19870911",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19850731",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19830718",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "49",
+          "submission_status": "AP",
+          "submission_status_date": "20160310",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "63",
+          "submission_status": "AP",
+          "submission_status_date": "20240215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "77542",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2024/009402Orig1s063ltr.pdf",
+              "date": "20240216",
+              "type": "Letter"
+            },
+            {
+              "id": "77565",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2024/009402s063lbl.pdf",
+              "date": "20240220",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "20151020",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "20031212",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "189",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2003/09402slr037ltr.pdf",
+              "date": "20031216",
+              "type": "Letter"
+            },
+            {
+              "id": "33001",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/09402slr037_delestrogen_lbl.pdf",
+              "date": "20031216",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19540715",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "UNKNOWN"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "20031212",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10728",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/09402slr037_delestrogen_lbl.pdf",
+              "date": "20040602",
+              "type": "Label"
+            },
+            {
+              "id": "188",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2003/09402slr037ltr.pdf",
+              "date": "20031216",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19890302",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19900112",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19860505",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "20071011",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "191",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2007/009402s041ltr.pdf",
+              "date": "20071015",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19820907",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "19890302",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19841126",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "19871228",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19840601",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19840319",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "NDA009402",
+      "sponsor_name": "PH HEALTH",
+      "openfda": {
+        "application_number": [
+          "NDA009402"
+        ],
+        "brand_name": [
+          "DELESTROGEN"
+        ],
+        "generic_name": [
+          "ESTRADIOL VALERATE"
+        ],
+        "manufacturer_name": [
+          "Par Health USA, LLC"
+        ],
+        "product_ndc": [
+          "42023-110",
+          "42023-111"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR"
+        ],
+        "substance_name": [
+          "ESTRADIOL VALERATE"
+        ],
+        "rxcui": [
+          "206620",
+          "206715",
+          "310189",
+          "310190"
+        ],
+        "spl_id": [
+          "58569bae-90e9-492c-a026-9a7b8797b3b4"
+        ],
+        "spl_set_id": [
+          "e8f94df9-0692-4462-a7f0-fe019a0a3f07"
+        ],
+        "package_ndc": [
+          "42023-110-01",
+          "42023-111-01"
+        ],
+        "unii": [
+          "OKG364O896"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "DELESTROGEN",
+          "active_ingredients": [
+            {
+              "name": "ESTRADIOL VALERATE",
+              "strength": "40MG/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued",
+          "te_code": "AO"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "DELESTROGEN",
+          "active_ingredients": [
+            {
+              "name": "ESTRADIOL VALERATE",
+              "strength": "20MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AO"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "DELESTROGEN",
+          "active_ingredients": [
+            {
+              "name": "ESTRADIOL VALERATE",
+              "strength": "10MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AO"
+        }
+      ]
+    }
+  ]
+}

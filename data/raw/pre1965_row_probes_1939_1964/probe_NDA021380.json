@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19481119",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "UNKNOWN"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "20181102",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "56267",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/021380s007lbl.pdf",
+              "date": "20181105",
+              "type": "Label"
+            },
+            {
+              "id": "56332",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/021380Orig1s007ltr.pdf",
+              "date": "20181107",
+              "type": "Letter"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA021380",
+      "sponsor_name": "DENTSPLY PHARM",
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "XYLOCAINE DENTAL",
+          "active_ingredients": [
+            {
+              "name": "LIDOCAINE HYDROCHLORIDE",
+              "strength": "2%"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

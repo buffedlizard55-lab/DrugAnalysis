@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19820405",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19500719",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 2",
+          "submission_class_code_description": "Type 2 - New Active Ingredient",
+          "application_docs": [
+            {
+              "id": "23527",
+              "url": "http://www.fda.gov/Drugs/DrugSafety/PostmarketDrugSafetyInformationforPatientsandProviders/ucm101557.htm",
+              "date": "20070316",
+              "type": "Other Important Information from FDA"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19810624",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "3",
+          "submission_status": "AP",
+          "submission_status_date": "19740723",
+          "review_priority": "STANDARD",
+          "submission_class_code": "REMS",
+          "submission_class_code_description": "REMS"
+        }
+      ],
+      "application_number": "NDA007392",
+      "sponsor_name": "LILLY",
+      "products": [
+        {
+          "product_number": "002",
+          "reference_drug": "No",
+          "brand_name": "SECONAL SODIUM",
+          "active_ingredients": [
+            {
+              "name": "SECOBARBITAL SODIUM",
+              "strength": "50MG/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

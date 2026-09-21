@@ -1,0 +1,573 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "79",
+          "submission_status": "AP",
+          "submission_status_date": "20020522",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "85",
+          "submission_status": "AP",
+          "submission_status_date": "20090407",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10777",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2009/011757s085s086lbl.pdf",
+              "date": "20090416",
+              "type": "Label"
+            },
+            {
+              "id": "11957",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2009/011757s085,s086ltr.pdf",
+              "date": "20090416",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19590527",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 2",
+          "submission_class_code_description": "Type 2 - New Active Ingredient"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "124",
+          "submission_status": "AP",
+          "submission_status_date": "20251104",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "84067",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/011757Orig1s124ltr.pdf",
+              "date": "20251105",
+              "type": "Letter"
+            },
+            {
+              "id": "84123",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/011757s124lbl.pdf",
+              "date": "20251107",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "75",
+          "submission_status": "AP",
+          "submission_status_date": "19950124",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "114",
+          "submission_status": "AP",
+          "submission_status_date": "20180724",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "54964",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/011757s114lbl.pdf",
+              "date": "20180725",
+              "type": "Label"
+            },
+            {
+              "id": "54997",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/011757Orig1s114Ltr.pdf",
+              "date": "20180726",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "59",
+          "submission_status": "AP",
+          "submission_status_date": "19890105",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "120",
+          "submission_status": "AP",
+          "submission_status_date": "20210527",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "67629",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2021/09866Orig1s115; 11856Orig1s136; 11757Origs120ltr.pdf",
+              "date": "20210528",
+              "type": "Letter"
+            },
+            {
+              "id": "67702",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2021/011757s120lbl.pdf",
+              "date": "20210604",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "57",
+          "submission_status": "AP",
+          "submission_status_date": "19830309",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "104",
+          "submission_status": "AP",
+          "submission_status_date": "20160908",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "45251",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/011757Orig1s104ltr.pdf",
+              "date": "20160909",
+              "type": "Letter"
+            },
+            {
+              "id": "45261",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/011757s104lbl.pdf",
+              "date": "20160909",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "63",
+          "submission_status": "AP",
+          "submission_status_date": "19891214",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "55",
+          "submission_status": "AP",
+          "submission_status_date": "19860512",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "102",
+          "submission_status": "AP",
+          "submission_status_date": "20140609",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "53",
+          "submission_status": "AP",
+          "submission_status_date": "19860512",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "98",
+          "submission_status": "AP",
+          "submission_status_date": "20131011",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "86",
+          "submission_status": "AP",
+          "submission_status_date": "20090407",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11958",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2009/011757s085,s086ltr.pdf",
+              "date": "20090416",
+              "type": "Letter"
+            },
+            {
+              "id": "33055",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2009/011757s085s086lbl.pdf",
+              "date": "20090416",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "119",
+          "submission_status": "AP",
+          "submission_status_date": "20210211",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "66208",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2021/011757Orig1s119ltr.pdf",
+              "date": "20210216",
+              "type": "Letter"
+            },
+            {
+              "id": "66223",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2021/011757s119lbl.pdf",
+              "date": "20210216",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "78",
+          "submission_status": "AP",
+          "submission_status_date": "20000404",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "125",
+          "submission_status": "AP",
+          "submission_status_date": "20240605",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "78674",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2024/011757s125lbl.pdf",
+              "date": "20240606",
+              "type": "Label"
+            },
+            {
+              "id": "78707",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2024/011757Orig1s125ltr.pdf",
+              "date": "20240607",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "123",
+          "submission_status": "AP",
+          "submission_status_date": "20231220",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "77104",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/011757s123lbl.pdf",
+              "date": "20231221",
+              "type": "Label"
+            },
+            {
+              "id": "77122",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/011757Orig1s123ltr.pdf",
+              "date": "20231222",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "58",
+          "submission_status": "AP",
+          "submission_status_date": "19830309",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "72",
+          "submission_status": "AP",
+          "submission_status_date": "19940107",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "64",
+          "submission_status": "AP",
+          "submission_status_date": "19901115",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "111",
+          "submission_status": "AP",
+          "submission_status_date": "20170315",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "47598",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/011757Orig1s111ltr.pdf",
+              "date": "20170320",
+              "type": "Letter"
+            },
+            {
+              "id": "64124",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/011757Orig1s111lbl.pdf",
+              "date": "20200729",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "70",
+          "submission_status": "AP",
+          "submission_status_date": "19931228",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "103",
+          "submission_status": "AP",
+          "submission_status_date": "20140703",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "285",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2014/011757Orig1s103ltr.pdf",
+              "date": "20140708",
+              "type": "Letter"
+            },
+            {
+              "id": "10778",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2014/011757s103lbl.pdf",
+              "date": "20140709",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "54",
+          "submission_status": "AP",
+          "submission_status_date": "19800729",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "60",
+          "submission_status": "AP",
+          "submission_status_date": "19860512",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "19780712",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "97",
+          "submission_status": "AP",
+          "submission_status_date": "20131007",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "50",
+          "submission_status": "AP",
+          "submission_status_date": "19810217",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA011757",
+      "sponsor_name": "PFIZER",
+      "openfda": {
+        "application_number": [
+          "NDA011757"
+        ],
+        "brand_name": [
+          "DEPO-MEDROL"
+        ],
+        "generic_name": [
+          "METHYLPREDNISOLONE ACETATE"
+        ],
+        "manufacturer_name": [
+          "Pharmacia & Upjohn Company LLC"
+        ],
+        "product_ndc": [
+          "0009-0274",
+          "0009-0280",
+          "0009-0306",
+          "0009-3073",
+          "0009-3475"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRALESIONAL",
+          "INTRAMUSCULAR",
+          "INTRASYNOVIAL",
+          "SOFT TISSUE",
+          "INTRA-ARTICULAR"
+        ],
+        "substance_name": [
+          "METHYLPREDNISOLONE ACETATE"
+        ],
+        "rxcui": [
+          "1358510",
+          "1358512",
+          "1358610",
+          "1358612",
+          "1358617",
+          "1358619",
+          "1743779",
+          "1743781",
+          "1743855",
+          "1743856"
+        ],
+        "spl_id": [
+          "267dd735-f800-4735-ba1c-d39d00f0cee5",
+          "e4917f75-3e1c-4f3c-803d-d9ec65df06c7",
+          "742fcec7-8db3-4cc6-b276-42587a993810"
+        ],
+        "spl_set_id": [
+          "823b0010-2b57-4e76-b5ac-4a8c2963438f",
+          "bf1b104d-85cb-414d-a366-78068c82c883",
+          "9a7b3837-e038-48bf-97e9-78ad463760dc"
+        ],
+        "package_ndc": [
+          "0009-0274-01",
+          "0009-0280-02",
+          "0009-0280-51",
+          "0009-0280-03",
+          "0009-0280-52",
+          "0009-0306-02",
+          "0009-0306-12",
+          "0009-3073-22",
+          "0009-3073-23",
+          "0009-3475-22",
+          "0009-3475-23",
+          "0009-3073-01",
+          "0009-3073-03",
+          "0009-3475-01",
+          "0009-3475-03"
+        ],
+        "unii": [
+          "43502P7F0P"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "DEPO-MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE ACETATE",
+              "strength": "40MG/ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "DEPO-MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE ACETATE",
+              "strength": "80MG/ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "DEPO-MEDROL",
+          "active_ingredients": [
+            {
+              "name": "METHYLPREDNISOLONE ACETATE",
+              "strength": "20MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}

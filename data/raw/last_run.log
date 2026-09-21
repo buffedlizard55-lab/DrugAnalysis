@@ -2,6 +2,12 @@
 == job clinicaltrials_phase3_2026_2027 (1 spec(s)) ==
 == job clinicaltrials_phase3_2026_2027_windows (4 spec(s)) ==
 == job clinicaltrials_phase3_2028_2029_windows (4 spec(s)) ==
+== job drugsatfda_data_files_1938_1964 (1 spec(s)) ==
+ok drugsatfda_data_files_1938_1964:Submissions.txt: kept 1215/193752 rows (55638 bytes) -> Submissions_1938_1964.txt
+ok drugsatfda_data_files_1938_1964:Applications.txt: kept 568/29336 rows (13325 bytes) -> Applications_1938_1964_window.txt
+ok drugsatfda_data_files_1938_1964:Products.txt: kept 1133/51779 rows (126043 bytes) -> Products_1938_1964_window.txt
+ok drugsatfda_data_files_1938_1964:ApplicationDocs.txt: kept 1920/81081 rows (255520 bytes) -> ApplicationDocs_1938_1964_window.txt
+ok drugsatfda_data_files_1938_1964: zip 6081382 bytes, 12 members
 == job drugsatfda_data_files_2026_09 (1 spec(s)) ==
 ok drugsatfda_data_files:Submissions.txt: kept 10753/193752 rows (491792 bytes) -> Submissions_1965_1979.txt
 ok drugsatfda_data_files:Applications.txt: kept 2325/29336 rows (57312 bytes) -> Applications_appl_window.txt
@@ -43,191 +49,563 @@ ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
 ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
 == job openfda_efficacy_supplements (1 spec(s)) ==
 == job openfda_orig_decisions_1939_1964 (1 spec(s)) ==
-ok orig_decisions_1939: 7 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1939.json
-ok orig_decisions_1940: 3 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1940.json
-ok orig_decisions_1941: 5 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1941.json
-ok orig_decisions_1942: 5 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1942.json
-ok orig_decisions_1943: 4 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1943.json
-ok orig_decisions_1944: 4 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1944.json
-ok orig_decisions_1945: 3 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1945.json
-ok orig_decisions_1946: 10 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1946.json
-ok orig_decisions_1947: 14 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1947.json
-ok orig_decisions_1948: 10 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1948.json
-ok orig_decisions_1949: 13 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1949.json
-ok orig_decisions_1950: 16 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1950.json
-ok orig_decisions_1951: 18 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1951.json
-ok orig_decisions_1952: 18 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1952.json
-ok orig_decisions_1953: 35 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1953.json
-ok orig_decisions_1954: 26 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1954.json
-ok orig_decisions_1955: 31 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1955.json
-ok orig_decisions_1956: 23 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1956.json
-ok orig_decisions_1957: 45 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1957.json
-ok orig_decisions_1958: 26 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1958.json
-ok orig_decisions_1959: 49 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1959.json
-ok orig_decisions_1960: 45 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1960.json
-ok orig_decisions_1961: 33 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1961.json
-ok orig_decisions_1962: 29 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1962.json
-ok orig_decisions_1963: 25 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1963.json
-ok orig_decisions_1964: 38 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1964.json
 == job openfda_orig_decisions_1965_1969 (1 spec(s)) ==
 == job openfda_orig_decisions_1970_1974 (1 spec(s)) ==
 == job openfda_orig_decisions_1975_1979 (1 spec(s)) ==
 == job openfda_orig_decisions_1980_1984 (1 spec(s)) ==
 == job openfda_orig_decisions_2011_2026 (1 spec(s)) ==
+== job pre1965_row_probes_1939_1964 (1 spec(s)) ==
+ok probe_1939_NDA000552 200 11561 bytes
+ok probe_1939_NDA000159 200 1843 bytes
+ok probe_1939_NDA000734 200 2514 bytes
+ok probe_1939_NDA000793 200 11523 bytes
+ok probe_1939_NDA001104 200 1598 bytes
+ok probe_1939_NDA001504 200 1632 bytes
+ok probe_1939_NDA001546 200 5819 bytes
+ok probe_1940_NDA002386 200 6892 bytes
+ok probe_1940_NDA002282 200 4998 bytes
+ok probe_1940_NDA002918 200 1624 bytes
+ok probe_1941_NDA003444 200 6860 bytes
+ok probe_1941_NDA003977 200 4773 bytes
+ok probe_1941_NDA003718 200 3562 bytes
+ok probe_1941_NDA004054 200 3197 bytes
+ok probe_1941_NDA004122 200 2431 bytes
+ok probe_1942_NDA004570 200 12313 bytes
+ok probe_1942_NDA004782 200 42567 bytes
+ok probe_1942_NDA005010 200 28574 bytes
+ok probe_1942_NDA021171 200 11837 bytes
+ok probe_1942_NDA005151 200 2236 bytes
+ok probe_1943_NDA005213 200 11787 bytes
+ok probe_1943_NDA005264 200 10770 bytes
+ok probe_1943_NDA005292 200 6562 bytes
+ok probe_1943_NDA005378 200 17039 bytes
+ok probe_1944_NDA005490 200 1791 bytes
+ok probe_1944_NDA005521 200 6598 bytes
+ok probe_1944_NDA005545 200 5023 bytes
+ok probe_1944_NDA005619 200 8415 bytes
+ok probe_1945_NDA005657 200 4797 bytes
+ok probe_1945_NDA005794 200 3933 bytes
+ok probe_1945_NDA005795 200 4807 bytes
+ok probe_1946_NDA004589 200 4033 bytes
+ok probe_1946_NDA005856 200 7172 bytes
+ok probe_1946_NDA005845 200 5657 bytes
+ok probe_1946_NDA005929 200 11262 bytes
+ok probe_1946_NDA005939 200 5452 bytes
+ok probe_1946_NDA005963 200 4089 bytes
+ok probe_1946_NDA005970 200 9754 bytes
+ok probe_1946_NDA006012 200 1942 bytes
+ok probe_1946_NDA006008 200 10619 bytes
+ok probe_1946_NDA006035 200 20491 bytes
+ok probe_1947_NDA006110 200 6539 bytes
+ok probe_1947_NDA006095 200 12547 bytes
+ok probe_1947_NDA006146 200 4015 bytes
+ok probe_1947_NDA006170 200 2460 bytes
+ok probe_1947_NDA006135 200 2609 bytes
+ok probe_1947_NDA005897 200 6149 bytes
+ok probe_1947_NDA006071 200 3696 bytes
+ok probe_1947_NDA006188 200 11341 bytes
+ok probe_1947_NDA006213 200 4223 bytes
+ok probe_1947_NDA006134 200 20989 bytes
+ok probe_1947_NDA021624 200 8453 bytes
+ok probe_1947_NDA006333 200 1392 bytes
+ok probe_1947_NDA006325 200 3558 bytes
+ok probe_1947_NDA006383 200 5760 bytes
+ok probe_1948_NDA005914 200 2516 bytes
+ok probe_1948_NDA006328 200 4404 bytes
+ok probe_1948_NDA006403 200 4880 bytes
+ok probe_1948_NDA006412 200 1879 bytes
+ok probe_1948_NDA006525 200 2785 bytes
+ok probe_1948_NDA006536 200 12861 bytes
+ok probe_1948_NDA006488 200 37099 bytes
+ok probe_1948_NDA021380 200 2209 bytes
+ok probe_1948_NDA021381 200 2899 bytes
+ok probe_1948_NDA006620 200 11254 bytes
+ok probe_1949_NDA006632 200 3209 bytes
+ok probe_1949_NDA006695 200 8064 bytes
+ok probe_1949_NDA006772 200 2682 bytes
+ok probe_1949_NDA006882 200 4936 bytes
+ok probe_1949_NDA006773 200 9850 bytes
+ok probe_1949_NDA006823 200 6169 bytes
+ok probe_1949_NDA006800 200 4204 bytes
+ok probe_1949_NDA006927 200 10383 bytes
+ok probe_1949_NDA006921 200 2664 bytes
+ok probe_1949_NDA006920 200 3708 bytes
+ok probe_1949_NDA007012 200 1287 bytes
+ok probe_1949_NDA006002 200 12354 bytes
+ok probe_1949_NDA007085 200 1951 bytes
+ok probe_1950_NDA050404 200 6717 bytes
+ok probe_1950_NDA007320 200 1473 bytes
+ok probe_1950_NDA007337 200 20943 bytes
+ok probe_1950_NDA007409 200 9415 bytes
+ok probe_1950_NDA007335 200 14814 bytes
+ok probe_1950_NDA007110 200 4225 bytes
+ok probe_1950_NDA007073 200 28618 bytes
+ok probe_1950_NDA007517 200 7515 bytes
+ok probe_1950_NDA007504 200 4837 bytes
+ok probe_1950_NDA007529 200 5604 bytes
+ok probe_1950_NDA007513 200 8126 bytes
+ok probe_1950_NDA007392 200 2845 bytes
+ok probe_1950_NDA007638 200 10736 bytes
+ok probe_1950_NDA006799 200 5931 bytes
+ok probe_1950_NDA006459 200 3148 bytes
+ok probe_1950_NDA007750 200 4549 bytes
+ok probe_1951_NDA007794 200 2276 bytes
+ok probe_1951_NDA007935 200 10624 bytes
+ok probe_1951_NDA007898 200 9552 bytes
+ok probe_1951_NDA007961 200 6377 bytes
+ok probe_1951_NDA007959 200 4993 bytes
+ok probe_1951_NDA007936 200 6220 bytes
+ok probe_1951_NDA008048 200 6285 bytes
+ok probe_1951_NDA050143 200 5418 bytes
+ok probe_1951_NDA050156 200 12681 bytes
+ok probe_1951_NDA007942 200 6345 bytes
+ok probe_1951_NDA007707 200 2885 bytes
+ok probe_1951_NDA007390 200 2354 bytes
+ok probe_1951_NDA008032 200 5749 bytes
+ok probe_1951_NDA007883 200 7828 bytes
+ok probe_1951_NDA008126 200 4375 bytes
+ok probe_1951_NDA050126 200 1387 bytes
+ok probe_1951_NDA008228 200 5270 bytes
+ok probe_1951_NDA008248 200 3263 bytes
+ok probe_1952_NDA008284 200 2177 bytes
+ok probe_1952_NDA008306 200 13997 bytes
+ok probe_1952_NDA008316 200 11153 bytes
+ok probe_1952_NDA008278 200 6576 bytes
+ok probe_1952_NDA008317 200 4349 bytes
+ok probe_1952_NDA008381 200 9811 bytes
+ok probe_1952_NDA008372 200 18585 bytes
+ok probe_1952_NDA008107 200 17259 bytes
+ok probe_1952_NDA050141 200 74389 bytes
+ok probe_1952_NDA008506 200 4097 bytes
+ok probe_1952_NDA008370 200 9642 bytes
+ok probe_1952_NDA008453 200 14791 bytes
+ok probe_1952_NDA008592 200 5292 bytes
+ok probe_1952_NDA008662 200 6069 bytes
+ok probe_1952_NDA008173 200 5269 bytes
+ok probe_1952_NDA008678 200 10555 bytes
+ok probe_1952_NDA008697 200 10087 bytes
+ok probe_1952_NDA060014 200 1894 bytes
+ok probe_1953_NDA008762 200 31998 bytes
+ok probe_1953_NDA008719 200 8582 bytes
+ok probe_1953_NDA008720 200 4549 bytes
+ok probe_1953_NDA008303 200 17504 bytes
+ok probe_1953_NDA008578 200 7796 bytes
+ok probe_1953_NDA008708 200 6505 bytes
+ok probe_1953_NDA008693 200 6833 bytes
+ok probe_1953_NDA008809 200 20834 bytes
+ok probe_1953_NDA008816 200 11819 bytes
+ok probe_1953_NDA050205 200 9321 bytes
+ok probe_1953_NDA008732 200 5425 bytes
+ok probe_1953_NDA008848 200 6510 bytes
+ok probe_1953_NDA008847 200 4285 bytes
+ok probe_1953_NDA009000 200 10868 bytes
+ok probe_1953_NDA009008 200 2595 bytes
+ok probe_1953_NDA008845 200 21970 bytes
+ok probe_1953_NDA050138 200 78694 bytes
+ok probe_1953_NDA008883 200 4824 bytes
+ok probe_1953_NDA008922 200 6489 bytes
+ok probe_1953_NDA008951 200 1874 bytes
+ok probe_1953_NDA008943 200 15727 bytes
+ok probe_1953_NDA008917 200 4942 bytes
+ok probe_1953_NDA008855 200 1725 bytes
+ok probe_1953_NDA009053 200 12899 bytes
+ok probe_1953_NDA009088 200 2010 bytes
+ok probe_1953_NDA008565 200 6605 bytes
+ok probe_1953_NDA009087 200 13018 bytes
+ok probe_1953_NDA050273 200 9414 bytes
+ok probe_1953_NDA009127 200 1867 bytes
+ok probe_1953_NDA009182 200 4696 bytes
+ok probe_1953_NDA008085 200 17863 bytes
+ok probe_1953_NDA050202 200 5865 bytes
+ok probe_1953_NDA009166 200 2827 bytes
+ok probe_1953_NDA009175 200 16246 bytes
+ok probe_1953_NDA009165 200 10975 bytes
+ok probe_1954_NDA009276 200 2329 bytes
+ok probe_1954_NDA009193 200 11773 bytes
+ok probe_1954_NDA009170 200 12558 bytes
+ok probe_1954_NDA009190 200 9308 bytes
+ok probe_1954_NDA009296 200 3521 bytes
+ok probe_1954_NDA008983 200 2310 bytes
+ok probe_1954_NDA009321 200 6900 bytes
+ok probe_1954_NDA009319 200 6075 bytes
+ok probe_1954_NDA009218 200 32537 bytes
+ok probe_1954_NDA008975 200 6965 bytes
+ok probe_1954_NDA009388 200 5944 bytes
+ok probe_1954_NDA009386 200 10170 bytes
+ok probe_1954_NDA050276 200 12505 bytes
+ok probe_1954_NDA007600 200 3745 bytes
+ok probe_1954_NDA009452 200 1468 bytes
+ok probe_1954_NDA009402 200 14913 bytes
+ok probe_1954_NDA009434 200 2011 bytes
+ok probe_1954_NDA009470 200 8927 bytes
+ok probe_1954_NDA008604 200 5993 bytes
+ok probe_1954_NDA009489 200 3107 bytes
+ok probe_1954_NDA009410 200 2866 bytes
+ok probe_1954_NDA009495 200 2600 bytes
+ok probe_1954_NDA009509 200 6913 bytes
+ok probe_1954_NDA009330 200 13909 bytes
+ok probe_1954_NDA009561 200 19035 bytes
+ok probe_1954_NDA009048 200 8465 bytes
+ok probe_1955_NDA009660 200 4967 bytes
+ok probe_1955_NDA009659 200 2166 bytes
+ok probe_1955_NDA050263 200 17970 bytes
+ok probe_1955_NDA009766 200 5839 bytes
+ok probe_1955_NDA009435 200 17507 bytes
+ok probe_1955_NDA009750 200 2287 bytes
+ok probe_1955_NDA009838 200 3393 bytes
+ok probe_1955_NDA009829 200 6696 bytes
+ok probe_1955_NDA009768 200 17809 bytes
+ok probe_1955_NDA009866 200 23366 bytes
+ok probe_1955_NDA009698 200 6276 bytes
+ok probe_1955_NDA009112 200 8254 bytes
+ok probe_1955_NDA009900 200 3063 bytes
+ok probe_1955_NDA010255 200 1781 bytes
+ok probe_1955_NDA009986 200 9989 bytes
+ok probe_1955_NDA009987 200 1777 bytes
+ok probe_1955_NDA009996 200 1731 bytes
+ok probe_1955_NDA010028 200 5549 bytes
+ok probe_1955_NDA009818 200 5426 bytes
+ok probe_1955_NDA009854 200 3070 bytes
+ok probe_1955_NDA010040 200 36749 bytes
+ok probe_1955_NDA009115 200 2682 bytes
+ok probe_1955_NDA010060 200 4375 bytes
+ok probe_1955_NDA010093 200 3808 bytes
+ok probe_1955_NDA010104 200 10159 bytes
+ok probe_1955_NDA009830 200 4776 bytes
+ok probe_1955_NDA010124 200 2773 bytes
+ok probe_1955_NDA010220 200 11090 bytes
+ok probe_1955_NDA009395 200 1882 bytes
+ok probe_1955_NDA050268 200 9961 bytes
+ok probe_1955_NDA010187 200 32413 bytes
+ok probe_1956_NDA010209 200 2288 bytes
+ok probe_1956_NDA010151 200 19782 bytes
+ok probe_1956_NDA010251 200 6994 bytes
+ok probe_1956_NDA010374 200 4883 bytes
+ok probe_1956_NDA010375 200 5795 bytes
+ok probe_1956_NDA011386 200 7855 bytes
+ok probe_1956_NDA010392 200 6019 bytes
+ok probe_1956_NDA010349 200 1893 bytes
+ok probe_1956_NDA010423 200 2305 bytes
+ok probe_1956_NDA010155 200 8381 bytes
+ok probe_1956_NDA010379 200 10443 bytes
+ok probe_1956_NDA010515 200 9471 bytes
+ok probe_1956_NDA010485 200 2727 bytes
+ok probe_1956_NDA010533 200 5758 bytes
+ok probe_1956_NDA010562 200 5125 bytes
+ok probe_1956_NDA010598 200 5396 bytes
+ok probe_1956_NDA008857 200 6264 bytes
+ok probe_1956_NDA010554 200 1455 bytes
+ok probe_1956_NDA010611 200 4692 bytes
+ok probe_1956_NDA010571 200 4733 bytes
+ok probe_1956_NDA010686 200 1866 bytes
+ok probe_1956_NDA010679 200 5267 bytes
+ok probe_1956_NDA010402 200 14932 bytes
+ok probe_1957_NDA009102 200 2176 bytes
+ok probe_1957_NDA010596 200 10229 bytes
+ok probe_1957_NDA010599 200 2586 bytes
+ok probe_1957_NDA010721 200 9204 bytes
+ok probe_1957_NDA050212 200 1755 bytes
+ok probe_1957_NDA010775 200 7382 bytes
+ok probe_1957_NDA010669 200 12571 bytes
+ok probe_1957_NDA050168 200 21789 bytes
+ok probe_1957_NDA010656 200 6170 bytes
+ok probe_1957_NDA010909 200 4229 bytes
+ok probe_1957_NDA010348 200 3154 bytes
+ok probe_1957_NDA010742 200 2475 bytes
+ok probe_1957_NDA010911 200 1448 bytes
+ok probe_1957_NDA009519 200 3136 bytes
+ok probe_1957_NDA010753 200 4462 bytes
+ok probe_1957_NDA010796 200 4015 bytes
+ok probe_1957_NDA050266 200 1977 bytes
+ok probe_1957_NDA010841 200 9690 bytes
+ok probe_1957_NDA010787 200 7159 bytes
+ok probe_1957_NDA010927 200 3585 bytes
+ok probe_1957_NDA010929 200 8252 bytes
+ok probe_1957_NDA010653 200 2464 bytes
+ok probe_1957_NDA010670 200 3528 bytes
+ok probe_1957_NDA010971 200 4430 bytes
+ok probe_1957_NDA011000 200 3729 bytes
+ok probe_1957_NDA011011 200 17516 bytes
+ok probe_1957_NDA011073 200 1437 bytes
+ok probe_1957_NDA010585 200 2309 bytes
+ok probe_1957_NDA010997 200 13693 bytes
+ok probe_1957_NDA010799 200 9444 bytes
+ok probe_1957_NDA010831 200 7188 bytes
+ok probe_1957_NDA011123 200 2329 bytes
+ok probe_1957_NDA011111 200 3355 bytes
+ok probe_1957_NDA011120 200 4892 bytes
+ok probe_1957_NDA050278 200 10364 bytes
+ok probe_1957_NDA010744 200 4650 bytes
+ok probe_1957_NDA011153 200 14989 bytes
+ok probe_1957_NDA010942 200 2659 bytes
+ok probe_1957_NDA010996 200 14093 bytes
+ok probe_1957_NDA009149 200 8478 bytes
+ok probe_1957_NDA011161 200 6986 bytes
+ok probe_1957_NDA011265 200 9211 bytes
+ok probe_1957_NDA011188 200 2349 bytes
+ok probe_1957_NDA009486 200 5876 bytes
+ok probe_1957_NDA011228 200 2367 bytes
+ok probe_1958_NDA011325 200 2348 bytes
+ok probe_1958_NDA011283 200 6056 bytes
+ok probe_1958_NDA011245 200 7974 bytes
+ok probe_1958_NDA011323 200 3468 bytes
+ok probe_1958_NDA011213 200 8245 bytes
+ok probe_1958_NDA011210 200 9968 bytes
+ok probe_1958_NDA010496 200 5813 bytes
+ok probe_1958_NDA011338 200 5920 bytes
+ok probe_1958_NDA010926 200 8740 bytes
+ok probe_1958_NDA011287 200 9757 bytes
+ok probe_1958_NDA011340 200 6009 bytes
+ok probe_1958_NDA050201 200 8339 bytes
+ok probe_1958_NDA011483 200 13667 bytes
+ok probe_1958_NDA010791 200 3193 bytes
+ok probe_1958_NDA011366 200 10165 bytes
+ok probe_1958_NDA011529 200 9948 bytes
+ok probe_1958_NDA011324 200 9509 bytes
+ok probe_1958_NDA011145 200 21809 bytes
+ok probe_1958_NDA011418 200 5852 bytes
+ok probe_1958_NDA011601 200 9908 bytes
+ok probe_1958_NDA011641 200 11095 bytes
+ok probe_1958_NDA011664 200 16695 bytes
+ok probe_1958_NDA011620 200 5873 bytes
+ok probe_1958_NDA011635 200 4550 bytes
+ok probe_1958_NDA011557 200 4905 bytes
+ok probe_1958_NDA050131 200 1309 bytes
+ok probe_1959_NDA011665 200 7391 bytes
+ok probe_1959_NDA011127 200 4572 bytes
+ok probe_1959_NDA011721 200 4882 bytes
+ok probe_1959_NDA011525 200 11008 bytes
+ok probe_1959_NDA011793 200 15064 bytes
+ok probe_1959_NDA050155 200 10744 bytes
+ok probe_1959_NDA011835 200 6677 bytes
+ok probe_1959_NDA011777 200 5690 bytes
+ok probe_1959_NDA011683 200 4379 bytes
+ok probe_1959_NDA011685 200 6465 bytes
+ok probe_1959_NDA011707 200 9843 bytes
+ok probe_1959_NDA011792 200 15881 bytes
+ok probe_1959_NDA011552 200 6580 bytes
+ok probe_1959_NDA011836 200 9763 bytes
+ok probe_1959_NDA011613 200 8793 bytes
+ok probe_1959_NDA011878 200 3509 bytes
+ok probe_1959_NDA010417 200 10295 bytes
+ok probe_1959_NDA011556 200 10084 bytes
+ok probe_1959_NDA011856 200 27239 bytes
+ok probe_1959_NDA011757 200 19498 bytes
+ok probe_1959_NDA011795 200 6915 bytes
+ok probe_1959_NDA011790 200 11055 bytes
+ok probe_1959_NDA011657 200 3445 bytes
+ok probe_1959_NDA011839 200 14332 bytes
+ok probe_1959_NDA011961 200 8543 bytes
+ok probe_1959_NDA011971 200 4902 bytes
+ok probe_1959_NDA011949 200 6908 bytes
+ok probe_1959_NDA011860 200 9323 bytes
+ok probe_1959_NDA011722 200 7723 bytes
+ok probe_1959_NDA011719 200 39900 bytes
+ok probe_1959_NDA011673 200 2794 bytes
+ok probe_1959_NDA011983 200 3258 bytes
+ok probe_1959_NDA011960 200 2454 bytes
+ok probe_1959_NDA011977 200 7507 bytes
+ok probe_1959_NDA011984 200 11659 bytes
+ok probe_1959_NDA012003 200 7241 bytes
+ok probe_1959_NDA012034 200 4798 bytes
+ok probe_1959_NDA011679 200 3489 bytes
+ok probe_1959_NDA011838 200 5563 bytes
+ok probe_1959_NDA012071 200 6203 bytes
+ok probe_1959_NDA011891 200 3847 bytes
+ok probe_1959_NDA012157 200 5695 bytes
+ok probe_1959_NDA012093 200 8032 bytes
+ok probe_1959_NDA012141 200 19648 bytes
+ok probe_1959_NDA012142 200 30340 bytes
+ok probe_1959_NDA012164 200 7028 bytes
+ok probe_1959_NDA012148 200 4600 bytes
+ok probe_1959_NDA012015 200 9339 bytes
+ok probe_1959_NDA012145 200 5055 bytes
+ok probe_1960_NDA012041 200 17017 bytes
+ok probe_1960_NDA012125 200 9484 bytes
+ok probe_1960_NDA012102 200 2131 bytes
+ok probe_1960_NDA050262 200 16736 bytes
+ok probe_1960_NDA011522 200 24305 bytes
+ok probe_1960_NDA012151 200 20672 bytes
+ok probe_1960_NDA012193 200 2276 bytes
+ok probe_1960_NDA012111 200 2111 bytes
+ok probe_1960_NDA012249 200 7572 bytes
+ok probe_1960_NDA012097 200 8037 bytes
+ok probe_1960_NDA012265 200 2376 bytes
+ok probe_1960_NDA012283 200 2103 bytes
+ok probe_1960_NDA012281 200 12522 bytes
+ok probe_1960_NDA011689 200 7860 bytes
+ok probe_1960_NDA012179 200 5155 bytes
+ok probe_1960_NDA012250 200 10537 bytes
+ok probe_1960_NDA011467 200 8640 bytes
+ok probe_1960_NDA011702 200 8066 bytes
+ok probe_1960_NDA011738 200 3129 bytes
+ok probe_1960_NDA012052 200 6648 bytes
+ok probe_1960_NDA012359 200 11134 bytes
+ok probe_1960_NDA012421 200 3448 bytes
+ok probe_1960_NDA012419 200 1461 bytes
+ok probe_1960_NDA011559 200 14561 bytes
+ok probe_1960_NDA011963 200 13242 bytes
+ok probe_1960_NDA012223 200 13328 bytes
+ok probe_1960_NDA012329 200 11587 bytes
+ok probe_1960_NDA012376 200 3764 bytes
+ok probe_1960_NDA011751 200 14448 bytes
+ok probe_1960_NDA012365 200 8667 bytes
+ok probe_1960_NDA012402 200 3142 bytes
+ok probe_1960_NDA012462 200 10050 bytes
+ok probe_1960_NDA012541 200 13313 bytes
+ok probe_1960_NDA013055 200 5406 bytes
+ok probe_1960_NDA012366 200 10114 bytes
+ok probe_1960_NDA012489 200 7514 bytes
+ok probe_1960_NDA012524 200 4425 bytes
+ok probe_1960_NDA012427 200 5578 bytes
+ok probe_1960_NDA012380 200 14862 bytes
+ok probe_1960_NDA012122 200 12154 bytes
+ok probe_1960_NDA050257 200 16264 bytes
+ok probe_1960_NDA012546 200 8377 bytes
+ok probe_1960_NDA012382 200 1797 bytes
+ok probe_1960_NDA012542 200 7494 bytes
+ok probe_1960_NDA012674 200 3308 bytes
+ok probe_1961_NDA012583 200 12200 bytes
+ok probe_1961_NDA012616 200 14550 bytes
+ok probe_1961_NDA012342 200 14504 bytes
+ok probe_1961_NDA010976 200 7299 bytes
+ok probe_1961_NDA011270 200 3119 bytes
+ok probe_1961_NDA012515 200 3933 bytes
+ok probe_1961_NDA012731 200 3243 bytes
+ok probe_1961_NDA012254 200 3106 bytes
+ok probe_1961_NDA012703 200 22566 bytes
+ok probe_1961_NDA012704 200 10586 bytes
+ok probe_1961_NDA012657 200 7176 bytes
+ok probe_1961_NDA012772 200 3290 bytes
+ok probe_1961_NDA012418 200 4538 bytes
+ok probe_1961_NDA010021 200 7769 bytes
+ok probe_1961_NDA011909 200 9092 bytes
+ok probe_1961_NDA012095 200 2494 bytes
+ok probe_1961_NDA012770 200 9998 bytes
+ok probe_1961_NDA012753 200 10133 bytes
+ok probe_1961_NDA012754 200 5705 bytes
+ok probe_1961_NDA012301 200 6100 bytes
+ok probe_1961_NDA012383 200 5995 bytes
+ok probe_1961_NDA012775 200 6423 bytes
+ok probe_1961_NDA012827 200 20881 bytes
+ok probe_1961_NDA012802 200 9226 bytes
+ok probe_1961_NDA012813 200 13265 bytes
+ok probe_1961_NDA012845 200 6567 bytes
+ok probe_1961_NDA011870 200 11323 bytes
+ok probe_1961_NDA012649 200 9525 bytes
+ok probe_1961_NDA012699 200 6114 bytes
+ok probe_1961_NDA011730 200 8620 bytes
+ok probe_1961_NDA012911 200 14255 bytes
+ok probe_1961_NDA012836 200 11136 bytes
+ok probe_1961_NDA012940 200 5114 bytes
+ok probe_1962_NDA012885 200 4677 bytes
+ok probe_1962_NDA012945 200 6836 bytes
+ok probe_1962_NDA012516 200 8859 bytes
+ok probe_1962_NDA012796 200 14367 bytes
+ok probe_1962_NDA011808 200 20950 bytes
+ok probe_1962_NDA012968 200 3113 bytes
+ok probe_1962_NDA012928 200 4580 bytes
+ok probe_1962_NDA012487 200 4304 bytes
+ok probe_1962_NDA013220 200 7577 bytes
+ok probe_1962_NDA012947 200 3466 bytes
+ok probe_1962_NDA012675 200 5243 bytes
+ok probe_1962_NDA012209 200 12001 bytes
+ok probe_1962_NDA013056 200 3162 bytes
+ok probe_1962_NDA012486 200 5842 bytes
+ok probe_1962_NDA050356 200 18425 bytes
+ok probe_1962_NDA012728 200 17705 bytes
+ok probe_1962_NDA013422 200 15348 bytes
+ok probe_1962_NDA012967 200 8862 bytes
+ok probe_1962_NDA013334 200 4268 bytes
+ok probe_1962_NDA013217 200 18815 bytes
+ok probe_1962_NDA013295 200 21223 bytes
+ok probe_1962_NDA050051 200 19216 bytes
+ok probe_1962_NDA012892 200 3768 bytes
+ok probe_1962_NDA013413 200 3471 bytes
+ok probe_1962_NDA013132 200 5093 bytes
+ok probe_1962_NDA013428 200 4134 bytes
+ok probe_1962_NDA013400 200 22193 bytes
+ok probe_1962_NDA013401 200 11888 bytes
+ok probe_1962_NDA013402 200 22097 bytes
+ok probe_1963_NDA012787 200 17069 bytes
+ok probe_1963_NDA013790 200 6270 bytes
+ok probe_1963_NDA014173 200 1453 bytes
+ok probe_1963_NDA013264 200 3807 bytes
+ok probe_1963_NDA013247 200 2812 bytes
+ok probe_1963_NDA050218 200 16893 bytes
+ok probe_1963_NDA050081 200 8474 bytes
+ok probe_1963_NDA050023 200 13071 bytes
+ok probe_1963_NDA013935 200 7649 bytes
+ok probe_1963_NDA013960 200 14337 bytes
+ok probe_1963_NDA014169 200 3108 bytes
+ok probe_1963_NDA014359 200 10447 bytes
+ok probe_1963_NDA014103 200 16715 bytes
+ok probe_1963_NDA012623 200 21839 bytes
+ok probe_1963_NDA050065 200 20731 bytes
+ok probe_1963_NDA014547 200 3789 bytes
+ok probe_1963_NDA011600 200 7918 bytes
+ok probe_1963_NDA014882 200 3760 bytes
+ok probe_1963_NDA013157 200 2575 bytes
+ok probe_1963_NDA013601 200 11399 bytes
+ok probe_1963_NDA014295 200 9202 bytes
+ok probe_1963_NDA013636 200 3461 bytes
+ok probe_1963_NDA013483 200 11600 bytes
+ok probe_1963_NDA013263 200 30259 bytes
+ok probe_1963_NDA014349 200 6539 bytes
+ok probe_1964_NDA014691 200 10468 bytes
+ok probe_1964_NDA013416 200 7222 bytes
+ok probe_1964_NDA013625 200 19749 bytes
+ok probe_1964_NDA013077 200 1439 bytes
+ok probe_1964_NDA014214 200 18113 bytes
+ok probe_1964_NDA014127 200 3460 bytes
+ok probe_1964_NDA014134 200 11192 bytes
+ok probe_1964_NDA014122 200 4807 bytes
+ok probe_1964_BLA050294 200 8052 bytes
+ok probe_1964_NDA013934 200 2896 bytes
+ok probe_1964_NDA014215 200 8492 bytes
+ok probe_1964_NDA015072 200 1452 bytes
+ok probe_1964_NDA015103 200 7464 bytes
+ok probe_1964_NDA015296 200 14299 bytes
+ok probe_1964_NDA014005 200 1443 bytes
+ok probe_1964_NDA015197 200 12953 bytes
+ok probe_1964_NDA015230 200 10999 bytes
+ok probe_1964_NDA013684 200 34359 bytes
+ok probe_1964_NDA015229 200 7968 bytes
+ok probe_1964_NDA050182 200 37216 bytes
+ok probe_1964_NDA050368 200 13460 bytes
+ok probe_1964_NDA012697 200 4059 bytes
+ok probe_1964_NDA014738 200 4811 bytes
+ok probe_1964_NDA013174 200 15508 bytes
+ok probe_1964_NDA050339 200 12156 bytes
+ok probe_1964_NDA050286 200 1828 bytes
+ok probe_1964_NDA050261 200 29639 bytes
+ok probe_1964_NDA050237 200 3107 bytes
+ok probe_1964_NDA014684 200 11578 bytes
+ok probe_1964_NDA014685 200 9439 bytes
+ok probe_1964_NDA014399 200 24646 bytes
+ok probe_1964_NDA014694 200 7916 bytes
+ok probe_1964_NDA050682 200 12081 bytes
+ok probe_1964_NDA015417 200 2528 bytes
+ok probe_1964_NDA050169 200 11787 bytes
+ok probe_1964_NDA013378 200 7263 bytes
+ok probe_1964_NDA050316 200 27922 bytes
+ok probe_1964_NDA050317 200 52986 bytes
 == job pre1980_row_probes_1965_1976 (1 spec(s)) ==
-ok probe_1965_NDA014602 200 17183 bytes
-ok probe_1965_NDA013026 200 12203 bytes
-ok probe_1965_BLA101995 200 2332 bytes
-ok probe_1965_NDA015539 200 10720 bytes
-ok probe_1965_NDA016059 200 23026 bytes
-ok probe_1965_NDA014879 200 14242 bytes
-ok probe_1965_NDA012715 200 3576 bytes
-ok probe_1965_NDA012806 200 11123 bytes
-ok probe_1965_NDA014763 200 10130 bytes
-ok probe_1965_NDA012665 200 12334 bytes
-ok probe_1965_NDA013025 200 12486 bytes
-ok probe_1966_NDA012429 200 10448 bytes
-ok probe_1966_NDA016029 200 6041 bytes
-ok probe_1966_NDA016000 200 5801 bytes
-ok probe_1966_NDA016245 200 2850 bytes
-ok probe_1966_NDA016273 200 18167 bytes
-ok probe_1966_NDA015500 200 5415 bytes
-ok probe_1966_NDA016084 200 14349 bytes
-ok probe_1967_NDA016092 200 14558 bytes
-ok probe_1967_NDA016131 200 6868 bytes
-ok probe_1967_NDA016099 200 5767 bytes
-ok probe_1967_NDA015034 200 15707 bytes
-ok probe_1967_NDA016033 200 4228 bytes
-ok probe_1967_NDA016096 200 10246 bytes
-ok probe_1967_NDA015921 200 15977 bytes
-ok probe_1967_NDA016194 200 16774 bytes
-ok probe_1967_NDA016584 200 16080 bytes
-ok probe_1967_NDA016012 200 11994 bytes
-ok probe_1967_NDA016320 200 18075 bytes
-ok probe_1967_NDA016418 200 24160 bytes
-ok probe_1967_NDA016295 200 29432 bytes
-ok probe_1968_NDA016608 200 41243 bytes
-ok probe_1968_NDA016324 200 14313 bytes
-ok probe_1968_NDA016267 200 19353 bytes
-ok probe_1968_NDA016672 200 8777 bytes
-ok probe_1969_NDA013615 200 3827 bytes
-ok probe_1969_NDA016119 200 3504 bytes
-ok probe_1969_NDA012828 200 6271 bytes
-ok probe_1969_NDA016793 200 10715 bytes
-ok probe_1969_NDA016785 200 9807 bytes
-ok probe_1969_NDA016798 200 18610 bytes
-ok probe_1969_NDA013731 200 8185 bytes
-ok probe_1969_NDA016624 200 11694 bytes
-ok probe_1970_NDA016769 200 8820 bytes
-ok probe_1970_NDA016812 200 15663 bytes
-ok probe_1970_NDA016774 200 19326 bytes
-ok probe_1970_NDA016782 200 8518 bytes
-ok probe_1970_NDA016721 200 18782 bytes
-ok probe_1970_NDA016750 200 10156 bytes
-ok probe_1970_NDA050109 200 1788 bytes
-ok probe_1970_NDA016912 200 11622 bytes
-ok probe_1970_NDA016885 200 13994 bytes
-ok probe_1970_NDA019853 200 9247 bytes
-ok probe_1970_NDA016929 200 8105 bytes
-ok probe_1971_NDA016636 200 18803 bytes
-ok probe_1971_NDA016908 200 15301 bytes
-ok probe_1971_NDA016942 200 2583 bytes
-ok probe_1971_NDA016979 200 15727 bytes
-ok probe_1971_NDA016921 200 8475 bytes
-ok probe_1971_NDA016224 200 3608 bytes
-ok probe_1971_NDA017001 200 14755 bytes
-ok probe_1972_NDA017010 200 8241 bytes
-ok probe_1972_NDA017042 200 1586 bytes
-ok probe_1972_NDA017105 200 27010 bytes
-ok probe_1972_NDA017087 200 15771 bytes
-ok probe_1972_NDA016968 200 10390 bytes
-ok probe_1972_NDA016964 200 29366 bytes
-ok probe_1972_NDA017015 200 7986 bytes
-ok probe_1973_NDA016996 200 8784 bytes
-ok probe_1973_NDA017047 200 4875 bytes
-ok probe_1973_NDA017129 200 2014 bytes
-ok probe_1973_NDA017247 200 10314 bytes
-ok probe_1973_NDA017376 200 25692 bytes
-ok probe_1973_NDA016402 200 10868 bytes
-ok probe_1973_NDA050443 200 13331 bytes
-ok probe_1973_NDA017454 200 6509 bytes
-ok probe_1973_NDA016211 200 6609 bytes
-ok probe_1973_NDA017386 200 15520 bytes
-ok probe_1973_NDA016729 200 3065 bytes
-ok probe_1974_NDA017443 200 18939 bytes
-ok probe_1974_NDA017111 200 20447 bytes
-ok probe_1974_NDA050459 200 2095 bytes
-ok probe_1974_NDA017450 200 22940 bytes
-ok probe_1974_NDA017395 200 11813 bytes
-ok probe_1974_NDA016820 200 6126 bytes
-ok probe_1974_NDA017466 200 8444 bytes
-ok probe_1974_NDA017546 200 3453 bytes
-ok probe_1974_NDA017481 200 14206 bytes
-ok probe_1974_BLA050114 200 5896 bytes
-ok probe_1974_NDA017048 200 5288 bytes
-ok probe_1974_NDA050467 200 30551 bytes
-ok probe_1974_NDA017503 200 12143 bytes
-ok probe_1974_NDA017463 200 24868 bytes
-ok probe_1974_NDA017551 200 3085 bytes
-ok probe_1974_NDA017556 200 13304 bytes
-ok probe_1975_NDA016832 200 9664 bytes
-ok probe_1975_NDA017613 200 9952 bytes
-ok probe_1975_NDA017525 200 18381 bytes
-ok probe_1975_NDA017555 200 29647 bytes
-ok probe_1975_NDA017575 200 6387 bytes
-ok probe_1975_NDA017533 200 27313 bytes
-ok probe_1975_NDA050477 200 9413 bytes
-ok probe_1975_NDA017577 200 16405 bytes
-ok probe_1975_NDA017569 200 3461 bytes
-ok probe_1976_BLA017835 200 4533 bytes
-ok probe_1976_BLA017836 200 5294 bytes
-ok probe_1976_NDA017518 200 2128 bytes
-ok probe_1976_NDA017581 200 36227 bytes
-ok probe_1976_NDA017604 200 15606 bytes
-ok probe_1976_NDA017628 200 20286 bytes
-ok probe_1976_NDA017630 200 6291 bytes
-ok probe_1976_NDA017657 200 11329 bytes
-ok probe_1976_NDA017573 200 13203 bytes
-ok probe_1976_NDA017478 200 6309 bytes
-ok probe_1976_NDA017557 200 15200 bytes
-ok probe_1976_NDA017442 200 16695 bytes
-ok probe_1976_NDA017697 200 14530 bytes
-ok probe_1976_NDA017588 200 20279 bytes
-ok probe_1976_NDA017751 200 8451 bytes
-ok probe_1976_NDA017594 200 6520 bytes
-ok probe_1976_NDA017638 200 3771 bytes
-ok probe_1976_NDA050497 200 11015 bytes
-ok probe_1976_NDA017869 200 3245 bytes
-ok probe_1976_NDA050486 200 6420 bytes
-ok probe_1976_NDA017694 200 17488 bytes
-ok probe_1976gap_NDA050495 200 1761 bytes
 == job pre1980_row_probes_1977_1979 (1 spec(s)) ==
 == job pre1980_year_populations_1965_1976 (1 spec(s)) ==
-ok population_1965 200 4544 bytes
-ok population_1966 200 6763 bytes
-ok population_1967 200 2316 bytes
-ok population_1968 200 14311 bytes
-ok population_1969 200 8183 bytes
-ok population_1970 200 6599 bytes
-ok population_1971 200 3488 bytes
-ok population_1972 200 5564 bytes
-ok population_1973 200 26132 bytes
-ok population_1974 200 11121 bytes
-ok population_1975 200 2077 bytes
-ok population_1976 200 2895 bytes
 == job probe (5 spec(s)) ==
 FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
 ok sec_company_tickers_plain_ua 200 799073 bytes -> data/raw/probe/sec_company_tickers_alt.json
 ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
-ok yahoo_symbol_search_probe 200 2758 bytes -> data/raw/probe/yahoo_search_probe.json
+ok yahoo_symbol_search_probe 200 2780 bytes -> data/raw/probe/yahoo_search_probe.json
 == job source_captures_2026_09_17 (10 spec(s)) ==
-ok cder_nme_cy1998_table 200 22083 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
+ok cder_nme_cy1998_table 200 22080 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
 ok cder_nme_cy1999_table 200 38954 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
-ok cder_nme_cy2000_table 200 31733 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
-ok cder_rdmt_index_2003 200 15822 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
-ok fda_novel_2014_table_wayback 200 64200 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
-ok fda_novel_2026_live 200 41785 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
+ok cder_nme_cy2000_table 200 31730 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
+ok cder_rdmt_index_2003 200 15827 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
+ok fda_novel_2014_table_wayback 200 64197 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
+ok fda_novel_2026_live 200 41772 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
 ok openfda_contrave_200063 200 12628 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA200063_contrave.json
 ok openfda_ofev_205832 200 15334 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA205832_ofev.json
 ok openfda_pixclara_218592 200 2096 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA218592_pixclara.json

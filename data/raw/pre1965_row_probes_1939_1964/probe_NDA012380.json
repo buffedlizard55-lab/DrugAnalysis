@@ -1,0 +1,438 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19801211",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19601102",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "20211028",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "69161",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2021/012380Orig1s037ltr.pdf",
+              "date": "20211029",
+              "type": "Letter"
+            },
+            {
+              "id": "69167",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2021/012380s037lbl.pdf",
+              "date": "20211029",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "20020419",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12011",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/12380s029.pdf",
+              "date": "20020419",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "20000628",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19831108",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "20110615",
+          "review_priority": "N/A",
+          "submission_class_code": "REMS",
+          "submission_class_code_description": "REMS",
+          "application_docs": [
+            {
+              "id": "328",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2011/012380s033ltr.pdf",
+              "date": "20110617",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "20010409",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12010",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2001/12380S25ltr.pdf",
+              "date": "20010409",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19811209",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "20090423",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12012",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2009/012380s031ltr.pdf",
+              "date": "20090429",
+              "type": "Letter"
+            },
+            {
+              "id": "33084",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2009/012380s031lbl.pdf",
+              "date": "20090428",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "20010409",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "325",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2001/12380S25ltr.pdf",
+              "date": "20010409",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19810528",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19910108",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19800602",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "20160517",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "330",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/012380Orig1s036ltr.pdf",
+              "date": "20160520",
+              "type": "Letter"
+            },
+            {
+              "id": "33085",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/012380s036lbl.pdf",
+              "date": "20160520",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "20000922",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "20120503",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "43585",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2012/012380s034mg.pdf",
+              "date": "20120507",
+              "type": "Medication Guide"
+            },
+            {
+              "id": "329",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/012380s034ltr.pdf",
+              "date": "20120509",
+              "type": "Letter"
+            },
+            {
+              "id": "10808",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2012/012380s034lbl.pdf",
+              "date": "20120507",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19820903",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "20100914",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10807",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2010/012380s032lbl.pdf",
+              "date": "20100920",
+              "type": "Label"
+            },
+            {
+              "id": "327",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2010/012380s032ltr.pdf",
+              "date": "20100920",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19960222",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19810528",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "20060901",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "326",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2006/012380s030ltr.pdf",
+              "date": "20060918",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "20010409",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12009",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2001/12380S25ltr.pdf",
+              "date": "20010409",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19810203",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19840731",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA012380",
+      "sponsor_name": "PARKE DAVIS",
+      "openfda": {
+        "application_number": [
+          "NDA012380"
+        ],
+        "brand_name": [
+          "ZARONTIN"
+        ],
+        "generic_name": [
+          "ETHOSUXIMIDE"
+        ],
+        "manufacturer_name": [
+          "Parke-Davis Div of Pfizer Inc"
+        ],
+        "product_ndc": [
+          "0071-0237"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ETHOSUXIMIDE"
+        ],
+        "rxcui": [
+          "197682",
+          "201737"
+        ],
+        "spl_id": [
+          "b5966080-3265-4027-b1f6-67af24097f18"
+        ],
+        "spl_set_id": [
+          "0e008f33-70a1-4bc6-b3a0-d45214418ab6"
+        ],
+        "package_ndc": [
+          "0071-0237-24"
+        ],
+        "nui": [
+          "N0000175753",
+          "N0000008486"
+        ],
+        "pharm_class_epc": [
+          "Anti-epileptic Agent [EPC]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Central Nervous System Disorganized Electrical Activity [PE]"
+        ],
+        "unii": [
+          "5SEH9X1D1D"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "ZARONTIN",
+          "active_ingredients": [
+            {
+              "name": "ETHOSUXIMIDE",
+              "strength": "250MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "CAPSULE",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19480219",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19990423",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19980324",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy"
+        }
+      ],
+      "application_number": "NDA005914",
+      "sponsor_name": "NOVARTIS",
+      "products": [
+        {
+          "product_number": "004",
+          "reference_drug": "No",
+          "brand_name": "PBZ",
+          "active_ingredients": [
+            {
+              "name": "TRIPELENNAMINE CITRATE",
+              "strength": "EQ 25MG HYDROCHLORIDE/5ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "ELIXIR",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "No",
+          "brand_name": "PBZ",
+          "active_ingredients": [
+            {
+              "name": "TRIPELENNAMINE HYDROCHLORIDE",
+              "strength": "50MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

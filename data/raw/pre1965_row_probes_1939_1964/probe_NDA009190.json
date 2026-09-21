@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "20140321",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "176",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2014/009190Orig1s021ltr.pdf",
+              "date": "20140324",
+              "type": "Letter"
+            },
+            {
+              "id": "32992",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2014/009190s021lbl.pdf",
+              "date": "20140325",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19791114",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19540331",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity",
+          "submission_property_type": [
+            {
+              "code": "Orphan"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "20230405",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "submission_property_type": [
+            {
+              "code": "Orphan"
+            }
+          ],
+          "application_docs": [
+            {
+              "id": "73953",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/009190Orig1s032ltr.pdf",
+              "date": "20230406",
+              "type": "Letter"
+            },
+            {
+              "id": "73966",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/009190s032lbl.pdf",
+              "date": "20230410",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "20140404",
+          "review_priority": "STANDARD",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "application_docs": [
+            {
+              "id": "10720",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2014/009190s024lbl.pdf",
+              "date": "20140408",
+              "type": "Label"
+            },
+            {
+              "id": "177",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2014/009190Orig1s024ltr.pdf",
+              "date": "20140407",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19850910",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "20140123",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19780207",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19791114",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "20200610",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "submission_property_type": [
+            {
+              "code": "Orphan"
+            }
+          ],
+          "application_docs": [
+            {
+              "id": "63494",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/009190Orig1s029, s031ltr.pdf",
+              "date": "20200612",
+              "type": "Letter"
+            },
+            {
+              "id": "63509",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2020/009190s029s031lbl.pdf",
+              "date": "20200612",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "20180928",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "submission_property_type": [
+            {
+              "code": "Orphan"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "20200610",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "submission_property_type": [
+            {
+              "code": "Orphan"
+            }
+          ],
+          "application_docs": [
+            {
+              "id": "63493",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/009190Orig1s029, s031ltr.pdf",
+              "date": "20200612",
+              "type": "Letter"
+            },
+            {
+              "id": "63508",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2020/009190s029s031lbl.pdf",
+              "date": "20200612",
+              "type": "Label"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA009190",
+      "sponsor_name": "GUERBET",
+      "openfda": {
+        "application_number": [
+          "NDA009190"
+        ],
+        "brand_name": [
+          "LIPIODOL"
+        ],
+        "generic_name": [
+          "ETHIODIZED OIL"
+        ],
+        "manufacturer_name": [
+          "Guerbet LLC"
+        ],
+        "product_ndc": [
+          "67684-1901"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRA-ARTERIAL",
+          "INTRALYMPHATIC",
+          "INTRAUTERINE"
+        ],
+        "substance_name": [
+          "ETHIODIZED OIL"
+        ],
+        "spl_id": [
+          "46155dba-f0cf-22b8-e063-6294a90a5997"
+        ],
+        "spl_set_id": [
+          "511d1f64-5cb9-4baa-a123-96205467e59a"
+        ],
+        "package_ndc": [
+          "67684-1901-1",
+          "67684-1901-2"
+        ],
+        "nui": [
+          "N0000180185",
+          "N0000010258"
+        ],
+        "pharm_class_epc": [
+          "Radiographic Contrast Agent [EPC]"
+        ],
+        "pharm_class_moa": [
+          "X-Ray Contrast Activity [MoA]"
+        ],
+        "unii": [
+          "KZW0R0686Q"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "LIPIODOL",
+          "active_ingredients": [
+            {
+              "name": "ETHIODIZED OIL",
+              "strength": "EQ 4.8GM IODINE/10ML (EQ 480MG IODINE/ML)"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "OIL",
+          "route": "INTRALYMPHATIC, INTRAUTERINE",
+          "marketing_status": "Prescription"
+        }
+      ]
+    }
+  ]
+}

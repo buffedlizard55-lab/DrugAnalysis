@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19770610",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19471215",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "UNKNOWN"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "20180201",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "52252",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/006383s018lbl.pdf",
+              "date": "20180201",
+              "type": "Label"
+            },
+            {
+              "id": "52283",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/006383Orig1s018ltr.pdf",
+              "date": "20180202",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "20150605",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19970604",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19800201",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "20161216",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "46198",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/006383Orig1s017ltr.pdf",
+              "date": "20161219",
+              "type": "Letter"
+            },
+            {
+              "id": "46418",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/006383s017lbl.pdf",
+              "date": "20161221",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "20140922",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19930602",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA006383",
+      "sponsor_name": "MALLINCKRODT INC",
+      "products": [
+        {
+          "product_number": "003",
+          "reference_drug": "No",
+          "brand_name": "METHADONE HYDROCHLORIDE",
+          "active_ingredients": [
+            {
+              "name": "METHADONE HYDROCHLORIDE",
+              "strength": "100GM/BOT"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "POWDER",
+          "route": "FOR RX COMPOUNDING",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "No",
+          "brand_name": "METHADONE HYDROCHLORIDE",
+          "active_ingredients": [
+            {
+              "name": "METHADONE HYDROCHLORIDE",
+              "strength": "500GM/BOT"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "POWDER",
+          "route": "FOR RX COMPOUNDING",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "No",
+          "brand_name": "METHADONE HYDROCHLORIDE",
+          "active_ingredients": [
+            {
+              "name": "METHADONE HYDROCHLORIDE",
+              "strength": "50GM/BOT"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "POWDER",
+          "route": "FOR RX COMPOUNDING",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

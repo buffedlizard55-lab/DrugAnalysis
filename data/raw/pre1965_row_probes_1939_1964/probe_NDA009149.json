@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "173",
+          "submission_status": "AP",
+          "submission_status_date": "19920214",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "165",
+          "submission_status": "AP",
+          "submission_status_date": "19980422",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19571120",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "151",
+          "submission_status": "AP",
+          "submission_status_date": "19940819",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "178",
+          "submission_status": "AP",
+          "submission_status_date": "19960920",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA009149",
+      "sponsor_name": "GLAXOSMITHKLINE",
+      "products": [
+        {
+          "product_number": "002",
+          "reference_drug": "No",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "10MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "043",
+          "reference_drug": "Yes",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "100MG/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CONCENTRATE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "033",
+          "reference_drug": "Yes",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE",
+              "strength": "100MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SUPPOSITORY",
+          "route": "RECTAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "007",
+          "reference_drug": "No",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "25MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "013",
+          "reference_drug": "No",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "50MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "011",
+          "reference_drug": "Yes",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "25MG/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "018",
+          "reference_drug": "No",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "100MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "032",
+          "reference_drug": "Yes",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "30MG/ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CONCENTRATE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "024",
+          "reference_drug": "Yes",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE",
+              "strength": "25MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SUPPOSITORY",
+          "route": "RECTAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "022",
+          "reference_drug": "Yes",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "10MG/5ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SYRUP",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "020",
+          "reference_drug": "No",
+          "brand_name": "THORAZINE",
+          "active_ingredients": [
+            {
+              "name": "CHLORPROMAZINE HYDROCHLORIDE",
+              "strength": "200MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

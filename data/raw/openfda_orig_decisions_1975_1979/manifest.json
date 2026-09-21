@@ -1,6 +1,6 @@
 {
   "job": "openfda_orig_decisions_1975_1979",
-  "generated_utc": "2026-09-19T23:54:41Z",
+  "generated_utc": "2026-09-21T04:57:19Z",
   "requests": [
     {
       "id": "orig_decisions_1975",
@@ -96,6 +96,31 @@
       "bytes": 85008,
       "sha256": "17c7074ade8c287b96b5b515817717102d01384982194f6d0ad520108f80a9ce",
       "written_at_utc": "2026-09-19T06:19:48Z"
+    },
+    {
+      "id": "orig_decisions_1975",
+      "status": "skipped-existing",
+      "out": "decisions_1975.json"
+    },
+    {
+      "id": "orig_decisions_1976",
+      "status": "skipped-existing",
+      "out": "decisions_1976.json"
+    },
+    {
+      "id": "orig_decisions_1977",
+      "status": "skipped-existing",
+      "out": "decisions_1977.json"
+    },
+    {
+      "id": "orig_decisions_1978",
+      "status": "skipped-existing",
+      "out": "decisions_1978.json"
+    },
+    {
+      "id": "orig_decisions_1979",
+      "status": "skipped-existing",
+      "out": "decisions_1979.json"
     },
     {
       "id": "orig_decisions_1975",

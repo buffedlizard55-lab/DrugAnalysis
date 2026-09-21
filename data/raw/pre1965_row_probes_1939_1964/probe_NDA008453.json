@@ -1,0 +1,442 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19931029",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19850501",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19811222",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19810515",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19850522",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19730622",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "20010",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/8453S1S4S6S12_Anectine.pdf",
+              "date": "20000612",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "20180726",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "55028",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/008453s036lbl.pdf",
+              "date": "20180727",
+              "type": "Label"
+            },
+            {
+              "id": "55042",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/008453Orig1s036Ltr.pdf",
+              "date": "20180730",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19520820",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "20221101",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "72528",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2022/008453Orig1s040ltr.pdf",
+              "date": "20221102",
+              "type": "Letter"
+            },
+            {
+              "id": "72540",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2022/008453s040lbl.pdf",
+              "date": "20221102",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19970410",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "20160125",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "20000926",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "20130117",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19871110",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19820211",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "20013",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/8453S1S4S6S12_Anectine.pdf",
+              "date": "20000612",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19801121",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19810212",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19780330",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "20012",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/8453S1S4S6S12_Anectine.pdf",
+              "date": "20000612",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "4",
+          "submission_status": "AP",
+          "submission_status_date": "19751205",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "20011",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/8453S1S4S6S12_Anectine.pdf",
+              "date": "20000612",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "20201220",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "65693",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2020/008453Orig1s037ltr.pdf",
+              "date": "20201223",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "20101122",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10703",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2010/008453s027lbl.pdf",
+              "date": "20101122",
+              "type": "Label"
+            },
+            {
+              "id": "101",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2010/008453s027ltr.pdf",
+              "date": "20101130",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "20231121",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "20001002",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "20170623",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19941128",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "NDA008453",
+      "sponsor_name": "SANDOZ",
+      "openfda": {
+        "application_number": [
+          "NDA008453"
+        ],
+        "brand_name": [
+          "ANECTINE"
+        ],
+        "generic_name": [
+          "SUCCINYLCHOLINE CHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Sandoz Inc",
+          "Civica, Inc."
+        ],
+        "product_ndc": [
+          "0781-9053",
+          "0781-3411",
+          "72572-750"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS",
+          "PARENTERAL"
+        ],
+        "substance_name": [
+          "SUCCINYLCHOLINE CHLORIDE"
+        ],
+        "rxcui": [
+          "1594589",
+          "1594591"
+        ],
+        "spl_id": [
+          "f50e1a8c-f9db-49b1-96f0-d0238a7f7d7e",
+          "38c016c1-43d4-4221-b087-48d2458d5adc",
+          "ac9b6062-a797-4abb-9896-6d38bd6cb120"
+        ],
+        "spl_set_id": [
+          "04a4e6f5-6fa1-42e1-a3f9-21fca7786b15",
+          "a1e5d29f-111e-4a44-addf-beeb6ea81711",
+          "0b990f84-9515-44bd-a97d-a97bbead065c"
+        ],
+        "package_ndc": [
+          "0781-9053-70",
+          "0781-9053-95",
+          "0781-3411-70",
+          "0781-3411-95",
+          "72572-750-01",
+          "72572-750-10"
+        ],
+        "unii": [
+          "I9L0DDD30I"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "004",
+          "reference_drug": "No",
+          "brand_name": "ANECTINE",
+          "active_ingredients": [
+            {
+              "name": "SUCCINYLCHOLINE CHLORIDE",
+              "strength": "1GM/VIAL"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "ANECTINE",
+          "active_ingredients": [
+            {
+              "name": "SUCCINYLCHOLINE CHLORIDE",
+              "strength": "20MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "003",
+          "reference_drug": "No",
+          "brand_name": "ANECTINE",
+          "active_ingredients": [
+            {
+              "name": "SUCCINYLCHOLINE CHLORIDE",
+              "strength": "50MG/ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "ANECTINE",
+          "active_ingredients": [
+            {
+              "name": "SUCCINYLCHOLINE CHLORIDE",
+              "strength": "500MG/VIAL"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

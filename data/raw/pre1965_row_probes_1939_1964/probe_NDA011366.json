@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "19950613",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19861105",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19910212",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "19791220",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "20150807",
+          "submission_public_notes": "Label and Letter for KEVEYIS",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "submission_property_type": [
+            {
+              "code": "Orphan"
+            }
+          ],
+          "application_docs": [
+            {
+              "id": "11932",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/011366Orig1s030ltr.pdf",
+              "date": "20150810",
+              "type": "Letter"
+            },
+            {
+              "id": "33039",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/011366s030lbl.pdf",
+              "date": "20150810",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19850906",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19820226",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "20131219",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19941024",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "20191122",
+          "submission_public_notes": "Label and Letter for KEVEYIS",
+          "review_priority": "STANDARD",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "submission_property_type": [
+            {
+              "code": "Orphan"
+            }
+          ],
+          "application_docs": [
+            {
+              "id": "61049",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2019/011366Orig1s033ltr.pdf",
+              "date": "20191122",
+              "type": "Letter"
+            },
+            {
+              "id": "61098",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2019/011366s033lbl.pdf",
+              "date": "20191203",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19890602",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "19791218",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19850906",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19580722",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity",
+          "submission_property_type": [
+            {
+              "code": "Orphan"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19780728",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19840806",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "20120316",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "11931",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/011366s028ltr.pdf",
+              "date": "20120319",
+              "type": "Letter"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA011366",
+      "sponsor_name": "XERIS",
+      "openfda": {
+        "application_number": [
+          "NDA011366"
+        ],
+        "brand_name": [
+          "KEVEYIS"
+        ],
+        "generic_name": [
+          "DICHLORPHENAMIDE"
+        ],
+        "manufacturer_name": [
+          "Xeris Pharmaceuticals, Inc."
+        ],
+        "product_ndc": [
+          "72065-001"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DICHLORPHENAMIDE"
+        ],
+        "rxcui": [
+          "197594",
+          "1661799"
+        ],
+        "spl_id": [
+          "1a581a6b-8813-42ed-8892-21c2341b62c0"
+        ],
+        "spl_set_id": [
+          "d30a87b9-90fb-35b2-e053-2995a90aea2c"
+        ],
+        "package_ndc": [
+          "72065-001-01"
+        ],
+        "nui": [
+          "N0000175517",
+          "N0000000235",
+          "M0020790"
+        ],
+        "pharm_class_epc": [
+          "Carbonic Anhydrase Inhibitor [EPC]"
+        ],
+        "pharm_class_moa": [
+          "Carbonic Anhydrase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Sulfonamides [CS]"
+        ],
+        "unii": [
+          "VVJ6673MHY"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "KEVEYIS",
+          "active_ingredients": [
+            {
+              "name": "DICHLORPHENAMIDE",
+              "strength": "50MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "DARANIDE",
+          "active_ingredients": [
+            {
+              "name": "DICHLORPHENAMIDE",
+              "strength": "50MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

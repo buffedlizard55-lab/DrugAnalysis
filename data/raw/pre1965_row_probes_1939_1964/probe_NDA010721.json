@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "51",
+          "submission_status": "AP",
+          "submission_status_date": "19930917",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "58",
+          "submission_status": "AP",
+          "submission_status_date": "20121023",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "234",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/010721Orig1s058ltr.pdf",
+              "date": "20121024",
+              "type": "Letter"
+            },
+            {
+              "id": "33027",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2012/010721s058lbl.pdf",
+              "date": "20121024",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "62",
+          "submission_status": "AP",
+          "submission_status_date": "20181212",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "56729",
+              "title": "Carton",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/010721Orig1s062_CartonLbl.pdf",
+              "date": "20181213",
+              "type": "Label"
+            },
+            {
+              "id": "56855",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/010721Orig1s062ltr.pdf",
+              "date": "20181220",
+              "type": "Letter"
+            },
+            {
+              "id": "58931",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/017210s062lbl.pdf",
+              "date": "20190603",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "54",
+          "submission_status": "AP",
+          "submission_status_date": "19991214",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "19930902",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "50",
+          "submission_status": "AP",
+          "submission_status_date": "19930312",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19570214",
+          "review_priority": "STANDARD",
+          "submission_class_code": "UNKNOWN"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "63",
+          "submission_status": "AP",
+          "submission_status_date": "20190628",
+          "review_priority": "STANDARD",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "application_docs": [
+            {
+              "id": "59203",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2019/010721Orig1s063ltr.pdf",
+              "date": "20190701",
+              "type": "Letter"
+            },
+            {
+              "id": "59240",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2019/010721s063lbl.pdf",
+              "date": "20190705",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "61",
+          "submission_status": "AP",
+          "submission_status_date": "20180413",
+          "review_priority": "STANDARD",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "application_docs": [
+            {
+              "id": "53682",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/010721s061lbl.pdf",
+              "date": "20180416",
+              "type": "Label"
+            },
+            {
+              "id": "53694",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/010721Orig1s061ltr.pdf",
+              "date": "20180416",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "53",
+          "submission_status": "AP",
+          "submission_status_date": "19991110",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA010721",
+      "sponsor_name": "CASPER PHARMA LLC",
+      "openfda": {
+        "application_number": [
+          "NDA010721"
+        ],
+        "brand_name": [
+          "MECLIZINE HYDROCHLORIDE"
+        ],
+        "generic_name": [
+          "MECLIZINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Rising Pharma Holdings, Inc."
+        ],
+        "product_ndc": [
+          "16571-660",
+          "16571-661",
+          "16571-662",
+          "16571-663"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "MECLIZINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "995624",
+          "995632",
+          "995666",
+          "995686"
+        ],
+        "spl_id": [
+          "2be27ea6-3d0a-4036-ab42-fea4720daa34"
+        ],
+        "spl_set_id": [
+          "c9ddc39c-bc6b-42f1-8c5f-5aff2d79c4bd"
+        ],
+        "package_ndc": [
+          "16571-660-01",
+          "16571-660-50",
+          "16571-661-01",
+          "16571-661-10",
+          "16571-662-01",
+          "16571-663-01"
+        ],
+        "unii": [
+          "HDP7W44CIO"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "006",
+          "reference_drug": "Yes",
+          "brand_name": "ANTIVERT",
+          "active_ingredients": [
+            {
+              "name": "MECLIZINE HYDROCHLORIDE",
+              "strength": "12.5MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AA"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "ANTIVERT",
+          "active_ingredients": [
+            {
+              "name": "MECLIZINE HYDROCHLORIDE",
+              "strength": "25MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AA"
+        },
+        {
+          "product_number": "005",
+          "reference_drug": "Yes",
+          "brand_name": "ANTIVERT",
+          "active_ingredients": [
+            {
+              "name": "MECLIZINE HYDROCHLORIDE",
+              "strength": "25MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET, CHEWABLE",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AA"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "ANTIVERT",
+          "active_ingredients": [
+            {
+              "name": "MECLIZINE HYDROCHLORIDE",
+              "strength": "50MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AA"
+        }
+      ]
+    }
+  ]
+}
