@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DrugAnalysis — FDA Decision Engine (v27)</title>
-<meta name="description" content="FDA Decision Engine for Biotech Investors — 1000+ verified FDA decisions 2000-2026, company success rates, verified stock reactions, pre-1965 back to 1939. No hallucinations, official source links.">
+<title>DrugAnalysis — FDA Decision Engine (v28)</title>
+<meta name="description" content="FDA Decision Engine for Biotech Investors — verified FDA decisions 1939-2026, 1000 new verified 2000-2026, company success rates, verified stock reactions, pre-1939 boundary evidence and 1902-1938 regulatory register. No hallucinations, official source links.">
 <link rel="stylesheet" href="assets/style.css">
 <style>
 /* v27 clean additions */
@@ -37,7 +37,7 @@
 <div class="hero">
   <div class="wrap">
     <h1>💊 DrugAnalysis — FDA Decision Engine</h1>
-    <p class="lead">Clean, verified, no hallucinations. Tracking <strong>publicly traded biotech companies</strong> with upcoming clinical trial endpoints reviewed by FDA, plus forward-tracking <strong>verified stock prices</strong>. Every row has <strong>official source links</strong> for manual review. Year-by-year 2000–2026 verified, plus historical back to 1939.</p>
+    <p class="lead">Clean, verified, no hallucinations. Tracking <strong>publicly traded biotech companies</strong> with upcoming clinical trial endpoints reviewed by FDA, plus forward-tracking <strong>verified stock prices</strong>. Every row has <strong>official source links</strong> for manual review. Year-by-year 2000–2026 verified, historical decisions back to <strong>1939-02-09</strong>, and the pre-1939 boundary proven with primary sources back to the <strong>Biologics Control Act of 1902</strong>.</p>
     <div class="hero-stats">
       <div class="hero-stat"><span class="num" id="count-master">1,427</span><span class="label">Novel Approvals 1985-2026</span></div>
       <div class="hero-stat"><span class="num" id="count-1000">1,000</span><span class="label">New Verified 2000-2026</span></div>
@@ -45,6 +45,7 @@
       <div class="hero-stat"><span class="num" id="count-prices">2,848</span><span class="label">Verified Price Snapshots</span></div>
       <div class="hero-stat"><span class="num" id="count-companies">485</span><span class="label">Companies Scored</span></div>
       <div class="hero-stat"><span class="num" id="count-pre1965">535</span><span class="label">Pre-1965 Originals 1939-64</span></div>
+      <div class="hero-stat"><span class="num" id="count-pre1939">37</span><span class="label">Pre-1939 Register Years 1902-38</span></div>
     </div>
     <div class="clean-tabs" id="clean-tabs">
       <button class="clean-tab active" data-tab="overview">📊 Overview</button>
@@ -55,6 +56,7 @@
       <button class="clean-tab" data-tab="new1000">✅ 1000 New Verified 2000-2026</button>
       <button class="clean-tab" data-tab="year2000">📅 Year-by-Year 2000-2026</button>
       <button class="clean-tab" data-tab="historical">⏳ Historical 1938-1985</button>
+      <button class="clean-tab" data-tab="pre1939">🏛️ Pre-1939 Boundary</button>
       <button class="clean-tab" data-tab="verification">🔍 Verification</button>
       <button class="clean-tab" data-tab="method">📚 Methodology</button>
     </div>
@@ -83,7 +85,7 @@
     </div>
     <div class="panel-clean">
       <h3>📅 Historical Coverage Audit</h3>
-      <p style="color:#64748b; font-size:.88rem;">1939–2026 verified. 1938 determined as no official record (0 submissions in official Drugs@FDA database window). 1939 is earliest assertable year. Official FDA series quoted verbatim per year.</p>
+      <p style="color:#64748b; font-size:.88rem;">1939–2026 verified decisions. 1938 determined as no official record (0 of 1,215 rows in the official Drugs@FDA window are dated 1938). <strong>1939-02-09 (NDA000552) is the earliest assertable FDA drug-approval action.</strong> The pre-1939 boundary is proven with 12 evidence lines and a 1902–1938 statutory register — see the 🏛️ Pre-1939 Boundary tab. Official FDA series quoted verbatim per year.</p>
       <div id="coverage-view"></div>
     </div>
     <div class="grid-2">
@@ -159,8 +161,8 @@
       <div id="pre1965-decisions-view"></div>
     </div>
     <div class="panel-clean">
-      <h3>🗂️ Full Submission Register 1938-1964 (1215 rows) — All Statuses</h3>
-      <p style="color:#64748b; font-size:.85rem">Submissions-level census: ORIG/AP plus other statuses (RE, W, etc.) — this is where non-approval decisions (rejections/withdrawals) live. Verbatim from official Drugs@FDA data files.</p>
+      <h3>🗂️ Full Submission Register 1938-1964 (1215 rows) — Approval Actions Only</h3>
+      <p style="color:#64748b; font-size:.85rem">Submissions-level census of the official Drugs@FDA data files: 850 ORIG/AP originals + 365 SUPPL/AP supplements, every row <code>submission_status = AP</code>. <strong>Corrected in v28:</strong> an earlier version of this page described this table as holding "ORIG/AP plus RE, W, etc." and said non-approval decisions (rejections/withdrawals) lived here. Re-counted verbatim: <strong>0 non-AP rows</strong>. The official Drugs@FDA <code>Submissions.txt</code> publishes approval actions only, so refused/withdrawn decisions are not obtainable from this source for any year — see the Pre-1939 Boundary tab, evidence line PRE1939EV-08. The project's non-approval evidence comes from FDA's separate CRL database (458 letters).</p>
       <div id="full-1938-1964-view"></div>
     </div>
     <div class="panel-clean">
@@ -170,6 +172,48 @@
     <div class="panel-clean">
       <h3>📋 Pre-1985 Decisions 1980-1984 (91 rows)</h3>
       <div id="pre1985-decisions-view"></div>
+    </div>
+  </section>
+
+  <!-- Pre-1939 Boundary -->
+  <section id="pre1939" class="tab-panel">
+    <h2>🏛️ Pre-1939 Boundary — FDA Decisions Before the Earliest Year</h2>
+    <p style="color:#64748b">The project's verified decision coverage starts at <strong>1939-02-09</strong>. This tab answers the question completely and honestly: <em>is there anything before 1939 in any official record, what exactly proves it, and what governed drugs before the approval system existed?</em> <strong>No pre-1939 decision row is invented anywhere.</strong> Where the official record is silent, the silence is the published result — with the evidence line that establishes it.</p>
+
+    <div class="kpi">
+      <div class="kpi-card"><div class="k">Earliest official FDA drug-approval action</div><div class="v" style="font-size:1.15rem">1939-02-09</div><div class="s">NDA000552 · ORIG 1 · AP · class 19</div></div>
+      <div class="kpi-card"><div class="k">Actions dated 1938</div><div class="v">0</div><div class="s">of 1,215 rows in the official 1938-1964 window</div></div>
+      <div class="kpi-card"><div class="k">Applications below the boundary</div><div class="v">2</div><div class="s">NDA000004, NDA000159 of 29,336 official apps</div></div>
+      <div class="kpi-card"><div class="k">Register years covered</div><div class="v">1902-1938</div><div class="s">37 years, 0 recorded decisions each</div></div>
+    </div>
+
+    <div class="panel-clean" style="background:#eff6ff; border-color:#c8dcff">
+      <h3 style="margin-top:0">What this means for the decision engine</h3>
+      <p style="font-size:.9rem; margin:0">The new-drug application was <strong>created by the 1938 FD&amp;C Act</strong> (ch. 675, 52 Stat. 1040; now 21 U.S.C. §&nbsp;355(a)). Before that there was no application, no filing and no approval to predict — so a pre-1938 "FDA decision" table would necessarily be fabricated, and none exists here. The one pre-1938 federal drug pre-market authorisation regime was the <strong>Biologics Control Act of 1902</strong> (ch. 1378, 32 Stat. 728): establishment licensure by the Secretary of the Treasury for viruses, serums, toxins and antitoxins. No official machine-readable census of those 1902-1938 licenses is published, so <strong>no per-license rows are asserted</strong> — logged as an open data gap, not filled by inference.</p>
+    </div>
+
+    <div class="panel-clean">
+      <h3>🧾 Boundary Evidence — every claim with its method and primary source</h3>
+      <p style="color:#64748b; font-size:.85rem">Click any row to expand the full method, observed value, source file, SHA-256 prefix and official link.</p>
+      <div id="pre1939-evidence-view"></div>
+    </div>
+
+    <div class="panel-clean">
+      <h3>🔢 Application Census Below the Boundary</h3>
+      <p style="color:#64748b; font-size:.85rem">Every application in the 29,336-row unfiltered official Drugs@FDA map numbered below NDA000552 — exhaustively enumerated, not sampled. Applications 000001-000003 and 000005-000158 do not exist in the official database at all.</p>
+      <div id="pre1939-census-view"></div>
+    </div>
+
+    <div class="panel-clean">
+      <h3>📜 Regulatory Register 1902-1938 — Year by Year</h3>
+      <p style="color:#64748b; font-size:.85rem">The governing statute, agency of record and pre-market regime for every year before the approval system, each with a govinfo.gov Statutes-at-Large or fda.gov source. Every year records <strong>0</strong> FDA drug-approval decisions because no official record of one exists.</p>
+      <div id="pre1939-register-view"></div>
+    </div>
+
+    <div class="panel-clean">
+      <h3>🗳️ Submission Status Census 1939-1979 — Why Non-Approval Decisions Are Absent</h3>
+      <p style="color:#64748b; font-size:.85rem">Per-year census of the official Drugs@FDA Submissions extracts. Every row is an approval (<code>AP</code>): the source publishes no refused (RE) or withdrawn (W) actions. Counts recomputed verbatim; parts sum to the total on every row.</p>
+      <div id="pre1939-status-view"></div>
     </div>
   </section>
 

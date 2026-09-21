@@ -1,3 +1,49 @@
+# Verification Report — v28 Pre-1939 Boundary (2026-09-21)
+
+**Branch:** `arena/01a0c638-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors** (1,751 warnings = the standing manual-review baseline, unchanged by this session).
+**Independent verifier:** `python3 scripts/verify_pre1939_boundary_v28.py` — **2,428 checks, 0 errors**; 137 URL citations re-checked against the verified official host allow-list.
+**Existing verifiers re-run unchanged:** v26 pre-1965 register 22,105 checks / 0 errors; v23 pre-1980 register 7,164 / 0; v23 CRL match 5,456 / 0.
+
+## What was being verified
+
+The session task was to expand FDA decisions **before the earliest year in the project** (1939 after v26/v27). The verification question is therefore not "are the new rows right" but **"is the absence of earlier rows itself proven, and is anything asserted that no official record supports?"**
+
+## v28 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| Below-boundary application census is exhaustive | **Exactly 2** applications in the 29,336-row unfiltered official map have `ApplNo < 000552`: `000004` (NDA, PHARMICS) and `000159` (NDA, LILLY). Numbers 000001-000003 and 000005-000158 are absent from the map entirely | Full enumeration of `Applications_all_types.txt`; SHA-256 re-verified against the runner manifest |
+| Boundary date | Earliest `SubmissionStatusDate` over all 1,215 rows of the official 1938-1964 window = **1939-02-09 00:00:00**, on ApplNo **000552** (ORIG 1, AP, class 19, priority UNKNOWN) | `min()` over the extract; recomputed independently by the verifier |
+| 1938 is empty | **0** of 1,215 rows are dated in 1938 (the year distribution starts at 1939 with 15 rows). Re-verifies `data/pre1938_determination.csv` line by line | `Counter(year)` over the extract |
+| openFDA payload block | 26 payload years **1939-1964**; `decisions_1939.json` re-hashed and equal to its manifest entry (`48b665f9cd80ecf5…`, 7 decisions); **no `decisions_1938.json` exists** | `sha256_file()` vs `data/raw/openfda_orig_decisions_1939_1964/manifest.json` |
+| v27 register integrity | `data/fda_1938_1964_full_submission_register.csv` (1,215 rows) reproduces the official extract **key-for-key** on (ApplNo, SubmissionType, SubmissionNo, SubmissionStatus, SubmissionStatusDate) | `Counter` equality of the two key multisets |
+| **Corrected claim (RE/W)** | v27 stated the register held "ORIG/AP plus RE, W, etc." and that non-approval decisions lived there. Recounted: **statuses = {'AP': 1215}** and **{'AP': 10753}** for the 1965-1979 window; types are ORIG/SUPPL only. **0 non-AP rows.** Site, README and EV-08 corrected; validator now fails the build if any `non_ap_rows != 0` appears | `Counter(submission_status)` over both windows; validator pin |
+| **Corrected claim (tracking)** | A v28 draft said NDA000004 was tracked in `pre1980_fda_decisions.csv`. **False** — that table holds Type 1 / 1-4 NME rows only and NDA000004's class is UNKNOWN. Correct location: `pre1980_originals_audit_1965_1976.csv` row **PRE1980AUDIT-1969-10** (`tracked_in: none (not a Type 1/1-4 original approval)`). Caught by the verifier, not by the author | verifier error `NDA000004 is not tracked in pre1980_fda_decisions.csv` on first run |
+| Products of record (verbatim) | NDA000004 = **PAREDRINE**, `HYDROXYAMPHETAMINE HYDROBROMIDE 1%`, `SOLUTION/DROPS; OPHTHALMIC`, Discontinued, 1969-07-16; NDA000159 = **SULFAPYRIDINE**, `SULFAPYRIDINE 500MG`, `TABLET; ORAL`, Discontinued, 1939-03-09 | Copied from the committed SHA-verified era audit tables, which are themselves verbatim openFDA payload extracts |
+| Register completeness | Exactly **37** rows, years **1902..1938** in order, `fda_drug_approval_decisions_recorded == "0"` on every row, determination states the verified zero on every row | builder self-check + verifier + validator all three assert it |
+| Statute citations | 1902 ch. 1378 / 32 Stat. 728 / 1902-07-01; 1906 ch. 3915 / 34 Stat. 768 / 1906-06-30; 1912 ch. 352 / 37 Stat. 416 / 1912-08-23; 1938 ch. 675 / 52 Stat. 1040 / 1938-06-25. **All four statute texts retrieved and read from govinfo.gov during this session**; the quoted language is copied from what was retrieved | `STATUTE-32-Pg728.pdf`, `STATUTE-34-Pg768.pdf`, `STATUTE-37-Pg416.pdf`, `STATUTE-52-Pg1040.pdf` |
+| Codification of the NDA requirement | 21 U.S.C. 355(a) retrieved and read: "No person shall introduce or deliver for introduction into interstate commerce any new drug, unless an approval of an application filed pursuant to subsection (b) or (j) is effective with respect to such drug." | `uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title21-section355` |
+| Agency-history quotes | FDA history page retrieved and read verbatim: "In 1927 Congress authorized the formation of the Food, Drug, and Insecticide Administration … shortened to the Food and Drug Administration in **1930**"; and "So-called Elixir Sulfanilamide employed an untested solvent … diethylene glycol, and eventually it killed over a hundred people, most of whom were children." | `fda.gov/about-fda/fda-history-research-tools/background-research-tools-fda-history` |
+| **Source conflict flagged, not resolved** | USDA FSIS history page retrieved and read verbatim: "In 1927, USDA's Bureau of Chemistry was reorganized and renamed the Food, Drug, and Insecticide Administration. In **1931**, it was renamed the Food and Drug Administration (FDA)." Two official .gov pages disagree. Both quotes published in the 1930/1931 register rows with both URLs; FDA treated as agency of record | `fsis.usda.gov/about-fsis/history`; validator pins that the flag and the FSIS citation survive |
+| No invented content | No likelihood / probability / ticker / exchange / indication column in any v28 table (builder self-check + verifier + validator). Every non-empty URL in every v28 cell is on the official host allow-list — **137 citations checked** | verifier §8 |
+| Mutation-tested | Injected `fda_drug_approval_decisions_recorded = 3` into the 1937 row and swapped the 1902 statute URL for a Wikipedia link → verifier reported **4 errors** (`1937: asserts 3 recorded decisions`, `host en.wikipedia.org not in the verified allow-list`, `1902 row lost its Biologics Control Act source`, URL allow-list). Restored → 2,428 checks / 0 errors | mutation run + rebuild |
+| Site integrity | 18 DataTable mounts, 11 tabs and 11 panels, 18 referenced CSVs — every one present. `node --check assets/app_v27.js` clean. The **shipped** `parseCSV` extracted from `assets/app_v27.js` and run against 10 site CSVs agrees with Python's `csv` module on every table (12, 2, 37, 41, 1933, 485, 1933, 2848, 1000, 1215 records); **201,222 cells rendered through the shipped renderers, 0 failures**. All new tables served HTTP 200 from a local static server | `node /tmp/render_test2.mjs`; `curl` on the local server |
+| Runner filter selectors | 5 new recorded row selectors (`date_year_before`, `date_unparseable`, `applno_in_list`, `applno_numeric_below`, `column_counts`) exercised **end-to-end through the real job code path** against a synthetic official-shaped ZIP before the job spec was written: 0/5 pre-1939 rows, 1/5 undated, 2/5 applno-in-list, 2/4 numeric-below, status census `AP 5`, type census `ORIG 4 / SUPPL 1`. A shadowing bug (`want` reused for both member spec and value set) was caught by that run and fixed | `python3 scripts/run_fetch_jobs.py` on a `file://` test ZIP |
+| Job spec validity | All 6 member filters resolve to implemented selector types; generator output is byte-identical on regeneration | `gen_pre1939_census_job_v28.py` re-run |
+
+## Standing invariants re-checked and unchanged
+
+`fda_decisions_master.csv` 1,427 · `fda_supplement_decisions.csv` 4,482 · `fda_original_non_nme_decisions.csv` 3,432 · `fda_crl_master.csv` 458 · `core_analysis_table.csv` 1,933 · `company_success_rate_detailed_scorecard.csv` 485 · `stock_price_snapshots.csv` 2,848 · `clinical_trials_phase3_registry.csv` 2,000 · pre-1985 91 · pre-1980 173 · pre-1965 audit 535 / decisions 178 · pre-1965 probes 535/535 complete. `git diff --stat` for this session touches only v28 files plus the corrected site/README copy.
+
+## Known limits stated on the published tables (not smoothed)
+
+1. **Year-filter scope.** The 0-rows-in-1938 finding is a count over the *committed year-filtered windows* (1,215 + 10,753 rows). Rows with an empty or unparseable `SubmissionStatusDate` are invisible to any year filter. EV-12 records this as **pending**, and `fetch_jobs/drugsatfda_pre1939_census_v28.json` counts both (`Submissions_before_1939.txt`, `Submissions_undated.txt`) over all 193,752 rows.
+2. **1902-1938 biologic licenses.** The regime existed; no official machine-readable census of individual licenses is published. Zero rows asserted.
+3. **Non-approval decisions for every era.** Not obtainable from Drugs@FDA `Submissions.txt`. The project's only non-approval evidence is FDA's CRL database (458 published letters, 2011+), which remains a subset rather than a census — still the decision engine's blocking denominator limitation.
+
+---
+
 # Verification Report — v26 Pre-1965 Backward Extension: 1939–1964, 535 Verified Rows (2026-09-21)
 
 **Branch:** `arena/01a0c21f-druganalysis`

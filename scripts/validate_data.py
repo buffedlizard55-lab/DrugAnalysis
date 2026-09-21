@@ -2062,6 +2062,115 @@ print(f"v26: {len(_v26_audit)} pre-1965 audit rows (1939-1964), {len(_v26_dec)} 
       f"decision rows, {len(_v26_reg)} register rows, {len(_v26_era)} era rows, "
       f"probe layer {'complete (535/535 live probes)' if _v26_probes_complete else 'pending/queued'}.")
 
+# ---- v28 (2026-09-21): pre-1939 boundary tables -----------------------------
+# The project's verified coverage starts at 1939. These gates pin the boundary
+# evidence so a future edit cannot (a) invent a pre-1939 decision row,
+# (b) drop the 1938 negative determination, (c) re-introduce the corrected
+# "RE/W rows live in the 1938-1964 register" claim, or (d) cite a non-official
+# source for the statutory framework.
+_V28_OFFICIAL_HOSTS = {"www.govinfo.gov", "www.fda.gov", "uscode.house.gov",
+                       "www.accessdata.fda.gov", "api.fda.gov", "www.fsis.usda.gov"}
+_v28_ev = read_opt("pre1939_boundary_determination.csv")
+_v28_cen = read_opt("pre1939_application_census.csv")
+_v28_reg = read_opt("pre1939_regulatory_register_1902_1938.csv")
+_v28_st = read_opt("pre1939_submission_status_census.csv")
+
+if len(_v28_ev) < 12:
+    errors.append(f"pre1939_boundary_determination: expected >= 12 evidence lines, got {len(_v28_ev)}")
+if [r["evidence_id"] for r in _v28_ev] != [f"PRE1939EV-{i:02d}" for i in range(1, len(_v28_ev) + 1)]:
+    errors.append("pre1939_boundary_determination: evidence IDs are not sequential from PRE1939EV-01")
+if len(_v28_reg) != 37 or [r["year"] for r in _v28_reg] != [str(y) for y in range(1902, 1939)]:
+    errors.append(f"pre1939_regulatory_register: expected exactly 1902-1938 (37 rows), "
+                  f"got {len(_v28_reg)} rows")
+for _r in _v28_reg:
+    # a non-zero pre-1939 decision count would be an invented decision
+    if _r["fda_drug_approval_decisions_recorded"] != "0":
+        errors.append(f"pre1939_regulatory_register:{_r['year']}: asserts "
+                      f"{_r['fda_drug_approval_decisions_recorded']} recorded FDA drug-approval "
+                      "decisions before 1939 - no official record supports any")
+    if "0 FDA drug-approval decision rows recorded" not in _r["determination"]:
+        errors.append(f"pre1939_regulatory_register:{_r['year']}: determination does not state the "
+                      "verified zero result")
+    for _k in ("source_url_1", "source_url_2", "source_url_3"):
+        if _r[_k]:
+            _host = urlparse(_r[_k]).netloc
+            if _host not in _V28_OFFICIAL_HOSTS:
+                errors.append(f"pre1939_regulatory_register:{_r['year']}:{_k}: host {_host} is not "
+                              "an official source")
+# the three statute rows must keep their govinfo Statutes-at-Large citations
+for _y, _stat, _d in (("1902", "32 Stat. 728", "1902-07-01"),
+                      ("1906", "34 Stat. 768", "1906-06-30"),
+                      ("1912", "37 Stat. 416", "1912-08-23"),
+                      ("1938", "52 Stat. 1040", "1938-06-25")):
+    _r = next((r for r in _v28_reg if r["year"] == _y), None)
+    if _r is None:
+        errors.append(f"pre1939_regulatory_register: year {_y} missing")
+        continue
+    if _stat not in _r["statute_citation"] or _r["statute_enacted_date"] != _d:
+        errors.append(f"pre1939_regulatory_register:{_y}: statute citation/date drifted "
+                      f"({_r['statute_citation']} / {_r['statute_enacted_date']})")
+_r30 = next((r for r in _v28_reg if r["year"] == "1930"), None)
+if _r30 is None or "FLAGGED irregularity" not in _r30["notes"] or "1931" not in _r30["notes"]:
+    errors.append("pre1939_regulatory_register:1930: the FDA(1930)/USDA-FSIS(1931) renaming "
+                  "conflict flag was dropped")
+if _r30 is None or "fsis.usda.gov" not in _r30["notes"]:
+    errors.append("pre1939_regulatory_register:1930: the conflict flag must cite the USDA FSIS "
+                  "history page as the source of the 1931 date")
+
+# below-boundary application census: exactly 000004 and 000159, no pre-1939 decision
+if [r["appl_no"] for r in _v28_cen] != ["000004", "000159"]:
+    errors.append(f"pre1939_application_census: expected ApplNo [000004, 000159], "
+                  f"got {[r['appl_no'] for r in _v28_cen]}")
+for _r in _v28_cen:
+    if _r["decision_recorded_before_1939"] != "False":
+        errors.append(f"pre1939_application_census:{_r['appl_no']}: asserts a pre-1939 decision")
+    if not _r["drugsatfda_url"].endswith("varApplNo=" + _r["appl_no"]):
+        errors.append(f"pre1939_application_census:{_r['appl_no']}: Drugs@FDA link does not match "
+                      "the application number")
+    if "pre1980_fda_decisions" in _r["tracked_in_project_table"]:
+        errors.append(f"pre1939_application_census:{_r['appl_no']}: tracked_in_project_table "
+                      "names pre1980_fda_decisions.csv, which holds Type 1/1-4 NME rows only")
+_c4 = next((r for r in _v28_cen if r["appl_no"] == "000004"), None)
+if _c4 is None or "FLAG-LOWEST-APPLNO-APPROVED-1969" not in _c4["flags"]:
+    errors.append("pre1939_application_census:000004: the lowest-application-number 1969-approval "
+                  "irregularity flag was dropped")
+if _c4 is None or not _c4["earliest_recorded_action_date"].startswith("1969-07-16"):
+    errors.append("pre1939_application_census:000004: earliest recorded action is not 1969-07-16")
+
+# status census: every row must sum, and the AP-only finding must stay stated
+for _r in _v28_st:
+    if int(_r["orig_ap_rows"]) + int(_r["suppl_ap_rows"]) + int(_r["other_type_rows"]) != int(_r["total_rows"]):
+        errors.append(f"pre1939_submission_status_census:{_r['census_id']}: parts do not sum to total")
+    if _r["non_ap_rows"] != "0":
+        errors.append(f"pre1939_submission_status_census:{_r['census_id']}: non-AP rows appeared "
+                      f"({_r['non_ap_rows']}) - the Drugs@FDA Submissions table would then publish "
+                      "non-approval decisions and the v28 correction must be revisited")
+    if "publishes no refused (RE) or withdrawn (W) actions" not in _r["determination"]:
+        errors.append(f"pre1939_submission_status_census:{_r['census_id']}: lost the RE/W statement")
+    for _k in ("source_url",):
+        if urlparse(_r[_k]).netloc not in _V28_OFFICIAL_HOSTS:
+            errors.append(f"pre1939_submission_status_census:{_r['census_id']}:{_k}: non-official host")
+# the v28 correction must still be recorded in the evidence table
+_ev8 = next((r for r in _v28_ev if r["evidence_id"] == "PRE1939EV-08"), None)
+if _ev8 is None or "CORRECTION" not in _ev8["notes"]:
+    errors.append("pre1939_boundary_determination: EV-08 lost the v27 RE/W correction note")
+# no likelihood / probability / ticker column anywhere in the v28 tables
+for _name, _rows in (("pre1939_boundary_determination", _v28_ev),
+                     ("pre1939_application_census", _v28_cen),
+                     ("pre1939_regulatory_register_1902_1938", _v28_reg),
+                     ("pre1939_submission_status_census", _v28_st)):
+    if not _rows:
+        continue
+    for _col in _rows[0].keys():
+        if any(b in _col.lower() for b in ("likelihood", "probability", "ticker", "exchange",
+                                           "indication")):
+            errors.append(f"{_name}: banned column {_col!r}")
+
+print(f"v28: {len(_v28_ev)} pre-1939 evidence lines, {len(_v28_cen)} below-boundary applications "
+      f"(000004 PAREDRINE 1969-07-16, 000159 SULFAPYRIDINE 1939-03-09), "
+      f"{len(_v28_reg)} regulatory register years (1902-1938, 0 decisions each), "
+      f"{len(_v28_st)} submission status census rows (all AP - Drugs@FDA publishes no RE/W).")
+
 print(f"v23: {len(_v23_orig)} original actions ({dict(_v23_split)}), "
       f"{len(_v23_subs)} approval actions, {len(_v23_docs)} document rows, "
       f"{len(_v23_match)} CRL->application matches, {len(_v23_rates)} CRL base-rate rows.")
