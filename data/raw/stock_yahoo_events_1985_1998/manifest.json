@@ -1,6 +1,6 @@
 {
   "job": "stock_yahoo_events_1985_1998",
-  "generated_utc": "2026-09-21T05:22:50Z",
+  "generated_utc": "2026-09-21T07:54:26Z",
   "requests": [
     {
       "id": "GSK_1985-05-24",
@@ -5055,6 +5055,805 @@
       "status": "FAILED",
       "error": "HTTPError: HTTP Error 400: Bad Request",
       "at_utc": "2026-09-21T05:22:50Z"
+    },
+    {
+      "id": "ABT_2002-12-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2003-01-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMRN_2003-04-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1985-05-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1985-07-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_1985-08-30",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=493171200&period2=495331199&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:50:40Z"
+    },
+    {
+      "id": "MMM_1985-10-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1985-11-08",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1985-11-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1985-12-20",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=502848000&period2=505007999&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:50:49Z"
+    },
+    {
+      "id": "JNJ_1985-12-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1985-12-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1985-12-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1985-12-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1985-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1985-12-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1986-03-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1986-06-04",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=517190400&period2=519350399&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:50:59Z"
+    },
+    {
+      "id": "JNJ_1986-06-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1986-09-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1986-09-30",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=527385600&period2=529545599&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:51:08Z"
+    },
+    {
+      "id": "MRK_1986-10-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1986-10-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1986-10-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1986-10-31",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=530064000&period2=532223999&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:51:18Z"
+    },
+    {
+      "id": "BMY_1986-12-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1986-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1986-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1986-12-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1986-12-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1987-01-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1987-03-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1987-08-07",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1987-08-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1987-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1987-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1987-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_1987-12-31",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=566870400&period2=569030399&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:51:27Z"
+    },
+    {
+      "id": "GSK_1987-12-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1987-12-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1987-12-31",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=566870400&period2=569030399&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:51:36Z"
+    },
+    {
+      "id": "LLY_1988-04-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1988-12-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1988-12-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1988-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1988-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1988-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1988-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1989-03-03",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_1989-06-01",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1989-09-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1989-11-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1989-12-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1989-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1989-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1989-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1990-01-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1990-06-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1990-08-02",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1990-11-02",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1990-12-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1990-12-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1990-12-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1990-12-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1990-12-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1990-12-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1991-01-04",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1991-01-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_1991-02-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1991-03-07",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1991-05-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1991-07-01",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1991-07-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_1991-09-27",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AZN?period1=684892800&period2=687052799&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:51:46Z"
+    },
+    {
+      "id": "BMY_1991-10-09",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1991-10-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1991-10-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1991-11-01",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1991-12-20",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=692150400&period2=694310399&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:51:55Z"
+    },
+    {
+      "id": "BMY_1991-12-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1991-12-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1991-12-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1991-12-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1991-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1991-12-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1992-01-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1992-01-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1992-06-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1992-06-19",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=707875200&period2=710035199&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:52:04Z"
+    },
+    {
+      "id": "BMY_1992-07-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1992-07-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1992-07-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1992-09-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1992-10-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1992-11-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1992-11-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1992-12-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1992-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1992-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1993-02-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1993-07-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_1993-09-23",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=747705600&period2=749865599&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:52:14Z"
+    },
+    {
+      "id": "JNJ_1993-11-10",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1993-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1993-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1993-12-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1993-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1994-02-04",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1994-03-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1994-06-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1994-06-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VTRS_1994-08-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1994-12-09",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1994-12-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1994-12-23",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1994-12-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_1994-12-30",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=787708800&period2=789868799&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:52:23Z"
+    },
+    {
+      "id": "JNJ_1995-03-03",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1995-04-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1995-06-07",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1995-06-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1995-09-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1995-09-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1995-09-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1995-09-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_1995-10-04",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1995-11-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1995-12-06",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=817171200&period2=819331199&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:52:32Z"
+    },
+    {
+      "id": "PFE_1995-12-08",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_1995-12-12",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=817689600&period2=819849599&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:52:42Z"
+    },
+    {
+      "id": "AZN_1995-12-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_1996-01-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1996-03-01",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_1996-03-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_1996-05-14",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=830995200&period2=833155199&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:52:51Z"
+    },
+    {
+      "id": "LLY_1996-05-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_1996-05-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1996-05-28",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1996-06-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1996-06-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_1996-06-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_1996-06-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1996-07-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_1996-09-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1996-09-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_1996-09-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_1996-09-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ORPH_1996-10-25",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORPH?period1=845164800&period2=847324799&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-21T07:53:00Z"
+    },
+    {
+      "id": "MRK_1996-11-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1996-12-09",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_1996-12-18",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=849830400&period2=851990399&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:53:10Z"
+    },
+    {
+      "id": "TEVA_1996-12-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_1996-12-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MMM_1997-02-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_1997-03-07",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=856656000&period2=858815999&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:53:19Z"
+    },
+    {
+      "id": "RHHBY_1997-06-20",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=865728000&period2=867887999&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:53:29Z"
+    },
+    {
+      "id": "NVS_1997-07-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1997-09-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_1997-09-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABT_1997-09-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_1997-09-30",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=874540800&period2=876700799&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:53:38Z"
+    },
+    {
+      "id": "AMGN_1997-10-06",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1997-11-06",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_1997-11-17",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNY?period1=878688000&period2=880847999&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:53:48Z"
+    },
+    {
+      "id": "AZN_1997-11-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ORPH_1997-12-04",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ORPH?period1=880156800&period2=882316799&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "at_utc": "2026-09-21T07:53:58Z"
+    },
+    {
+      "id": "LLY_1997-12-09",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_1997-12-10",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=880675200&period2=882835199&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:54:07Z"
+    },
+    {
+      "id": "JNJ_1997-12-16",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1997-12-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "PFE_1997-12-18",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_1997-12-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_1997-12-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ALC_1997-12-29",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ALC?period1=882316800&period2=884476799&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:54:17Z"
+    },
+    {
+      "id": "AMGN_2001-09-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2001-11-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2001-11-21",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AMGN_2002-01-31",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BIIB_2002-02-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SNY_2002-07-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RHHBY_2002-10-16",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/RHHBY?period1=1033689600&period2=1035849599&interval=1d&includePrePost=false",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 400: Bad Request",
+      "at_utc": "2026-09-21T07:54:26Z"
     },
     {
       "id": "ABT_2002-12-31",
