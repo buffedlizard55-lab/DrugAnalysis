@@ -1603,18 +1603,24 @@ else:
     _pre65_m = json.loads((_pre65_dir / "manifest.json").read_text(encoding="utf-8"))
     # request ids are "<job-id>_<year>" (e.g. orig_decisions_1939); the payload
     # file is always decisions_<year>.json per the job's out_template.
-    _pre65_req = [e for e in _pre65_m["requests"]
-                  if str(e.get("id", "")).rsplit("_", 1)[-1].isdigit()
-                  and 1939 <= int(str(e["id"]).rsplit("_", 1)[-1]) <= 1964]
-    if len(_pre65_req) != 26:
+    # The manifest accumulates across runner runs (skip_existing re-runs append
+    # no-op "skipped-existing" markers without a sha256). The committed payload
+    # file is pinned to the LATEST real fetch (an entry with a sha256) per year,
+    # matching the builder's by-year semantics.
+    _pre65_req_by_year = {}
+    for _e in _pre65_m["requests"]:
+        _tail = str(_e.get("id", "")).rsplit("_", 1)[-1]
+        if _tail.isdigit() and 1939 <= int(_tail) <= 1964 and _e.get("sha256"):
+            _pre65_req_by_year[int(_tail)] = _e
+    if len(_pre65_req_by_year) != 26:
         errors.append(f"openfda_orig_decisions_1939_1964: expected 26 year requests, "
-                      f"got {len(_pre65_req)}")
-    for _e in _pre65_req:
-        _year = int(str(_e["id"]).rsplit("_", 1)[-1])
+                      f"got {len(_pre65_req_by_year)}")
+    for _year, _e in sorted(_pre65_req_by_year.items()):
         _pf = _pre65_dir / f"decisions_{_year}.json"
         if _e.get("status") != 200 or not _pf.exists() or \
                 hashlib.sha256(_pf.read_bytes()).hexdigest() != _e.get("sha256"):
-            errors.append(f"openfda_orig_decisions_1939_1964: {_e['id']} missing or SHA drift")
+            errors.append(f"openfda_orig_decisions_1939_1964: {_e['id']} "
+                          f"(latest fetch) missing or SHA drift")
 print(f"v21: {len(_v21a)} original-application audit rows (1965-1976), "
       f"{len(_v21_probeidx)} live probe rows, "
       f"{len(_v21_invisible)} payload-invisible + {len(_v21_unres)} kind-unresolved "
@@ -2005,8 +2011,8 @@ for _i, _r in enumerate(_v26_dec):
         errors.append(f"pre1965_fda_decisions:{_r['decision_id']}: indication asserted without an approval-era source")
     if "no inference" not in _r["corporate_lineage_and_ticker"].lower() and "no ticker" not in _r["corporate_lineage_and_ticker"].lower():
         errors.append(f"pre1965_fda_decisions:{_r['decision_id']}: ticker discipline line missing")
-    if _r["verification_status"] not in ("Verified (live probe match)",) and \
-            not _r["verification_status"].startswith(("Payload-verified", "Flagged")):
+    if not _r["verification_status"].startswith(
+            ("Verified (live probe match)", "Payload-verified", "Flagged")):
         errors.append(f"pre1965_fda_decisions:{_r['decision_id']}: unexpected status {_r['verification_status']!r}")
     for _u, _lab in ((_r["source_url_1"], "Drugs@FDA"), (_r["source_url_2"], "openFDA")):
         check_url(_u, f"pre1965_fda_decisions:{_r['decision_id']} {_lab} url")
