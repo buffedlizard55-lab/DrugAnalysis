@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "19940602",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "54",
+          "submission_status": "AP",
+          "submission_status_date": "20181221",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "57014",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/010379s054lbl.pdf",
+              "date": "20181226",
+              "type": "Label"
+            },
+            {
+              "id": "57070",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/010379Orig1s054Ltr.pdf",
+              "date": "20181231",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "20020227",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19900806",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "20010414",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19840307",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19560508",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "20001116",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19840307",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "19950317",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19750616",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "57",
+          "submission_status": "AP",
+          "submission_status_date": "20200121",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "61576",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2019/010379Orig1s057ltr.pdf",
+              "date": "20200115",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "20020517",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11898",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/10379S047ltr.pdf",
+              "date": "20020517",
+              "type": "Letter"
+            },
+            {
+              "id": "33015",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2002/10379s47lbl.pdf",
+              "date": "20020517",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19940328",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "45",
+          "submission_status": "AP",
+          "submission_status_date": "20010913",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "217",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2001/10379s45ltr.pdf",
+              "date": "20010913",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19860219",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "20000718",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA010379",
+      "sponsor_name": "KING PHARMS",
+      "openfda": {
+        "application_number": [
+          "NDA010379"
+        ],
+        "brand_name": [
+          "CYTOMEL",
+          "LIOTHYRONINE SODIUM"
+        ],
+        "generic_name": [
+          "LIOTHYRONINE SODIUM"
+        ],
+        "manufacturer_name": [
+          "Pfizer Laboratories Div Pfizer Inc",
+          "Mylan Pharmaceuticals Inc."
+        ],
+        "product_ndc": [
+          "60793-115",
+          "60793-116",
+          "60793-117",
+          "59762-1206",
+          "59762-1207",
+          "59762-1208"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "LIOTHYRONINE SODIUM"
+        ],
+        "rxcui": [
+          "903456",
+          "903458",
+          "903697",
+          "903699",
+          "903703",
+          "903705"
+        ],
+        "spl_id": [
+          "5c1150d8-903d-4c39-aa66-5a095ee1b00a",
+          "4f442ced-f23b-4005-95e2-4ce01636ac19"
+        ],
+        "spl_set_id": [
+          "51452b31-ff68-4e0c-b982-c15502ebf1d3",
+          "115a84c2-0126-4dd7-816e-1873875f1e49"
+        ],
+        "package_ndc": [
+          "60793-115-01",
+          "60793-116-01",
+          "60793-117-01",
+          "59762-1206-1",
+          "59762-1207-1",
+          "59762-1208-1"
+        ],
+        "unii": [
+          "GCA9VV7D2N"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "CYTOMEL",
+          "active_ingredients": [
+            {
+              "name": "LIOTHYRONINE SODIUM",
+              "strength": "EQ 0.025MG BASE"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "CYTOMEL",
+          "active_ingredients": [
+            {
+              "name": "LIOTHYRONINE SODIUM",
+              "strength": "EQ 0.05MG BASE"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "CYTOMEL",
+          "active_ingredients": [
+            {
+              "name": "LIOTHYRONINE SODIUM",
+              "strength": "EQ 0.005MG BASE"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "job": "clinicaltrials_phase3_2028_2029_windows",
-  "generated_utc": "2026-09-19T23:47:57Z",
+  "generated_utc": "2026-09-21T07:43:23Z",
   "requests": [
     {
       "id": "phase3_2028H1",
@@ -367,6 +367,46 @@
       "bytes": 513206,
       "sha256": "e0db381b695e15ea5c283be66420a72a7e22ce44dcaf4cc663d002b0d2db73a5",
       "written_at_utc": "2026-09-19T06:13:22Z"
+    },
+    {
+      "id": "phase3_2028H1",
+      "status": "skipped-existing",
+      "out": "studies_2028H1.json"
+    },
+    {
+      "id": "phase3_2028H2",
+      "status": "skipped-existing",
+      "out": "studies_2028H2.json"
+    },
+    {
+      "id": "phase3_2029H1",
+      "status": "skipped-existing",
+      "out": "studies_2029H1.json"
+    },
+    {
+      "id": "phase3_2029H2",
+      "status": "skipped-existing",
+      "out": "studies_2029H2.json"
+    },
+    {
+      "id": "phase3_2028H1",
+      "status": "skipped-existing",
+      "out": "studies_2028H1.json"
+    },
+    {
+      "id": "phase3_2028H2",
+      "status": "skipped-existing",
+      "out": "studies_2028H2.json"
+    },
+    {
+      "id": "phase3_2029H1",
+      "status": "skipped-existing",
+      "out": "studies_2029H1.json"
+    },
+    {
+      "id": "phase3_2029H2",
+      "status": "skipped-existing",
+      "out": "studies_2029H2.json"
     },
     {
       "id": "phase3_2028H1",

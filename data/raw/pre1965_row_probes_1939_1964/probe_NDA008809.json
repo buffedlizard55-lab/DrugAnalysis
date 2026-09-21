@@ -1,0 +1,615 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "20010417",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "19970922",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19930203",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "19990802",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "19981118",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "19840920",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19901207",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19950526",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "69",
+          "submission_status": "AP",
+          "submission_status_date": "20130319",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "67",
+          "submission_status": "AP",
+          "submission_status_date": "20150203",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "19850424",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "73",
+          "submission_status": "AP",
+          "submission_status_date": "20171109",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "50369",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/008809Orig1s073ltr.pdf",
+              "date": "20171113",
+              "type": "Letter"
+            },
+            {
+              "id": "50386",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/008809s073lbl.pdf",
+              "date": "20171113",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "65",
+          "submission_status": "AP",
+          "submission_status_date": "20120614",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10711",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2012/008809s065lbl.pdf",
+              "date": "20120618",
+              "type": "Label"
+            },
+            {
+              "id": "170",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2012/008809s065ltr.pdf",
+              "date": "20120615",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "20020604",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19980512",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "45",
+          "submission_status": "AP",
+          "submission_status_date": "20010417",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19980330",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19930224",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "20010410",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19970213",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19930202",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "19990525",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19530220",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 4",
+          "submission_class_code_description": "Type 4 - New Combination"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19850425",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "19960119",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19910419",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "AP",
+          "submission_status_date": "19951027",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19890622",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19800623",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "21",
+          "submission_status": "AP",
+          "submission_status_date": "19850808",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "66",
+          "submission_status": "AP",
+          "submission_status_date": "20130326",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10712",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2013/008809s066lbl.pdf",
+              "date": "20130401",
+              "type": "Label"
+            },
+            {
+              "id": "115",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2013/008809Orig1s066ltr.pdf",
+              "date": "20130328",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "72",
+          "submission_status": "AP",
+          "submission_status_date": "20150918",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "48",
+          "submission_status": "AP",
+          "submission_status_date": "20021114",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "54",
+          "submission_status": "AP",
+          "submission_status_date": "20040909",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "application_docs": [
+            {
+              "id": "10710",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/08809s054lbl.pdf",
+              "date": "20040910",
+              "type": "Label"
+            },
+            {
+              "id": "114",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/08809s054ltr.pdf",
+              "date": "20040910",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "20020604",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "168",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/8809s046ltr.pdf",
+              "date": "20020604",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "60",
+          "submission_status": "AP",
+          "submission_status_date": "20091124",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "19971231",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "20040422",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "169",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/08809scf052ltr.pdf",
+              "date": "20040429",
+              "type": "Letter"
+            },
+            {
+              "id": "32978",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/08809scf052_mvi-12_lbl.pdf",
+              "date": "20040504",
+              "type": "Label"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA008809",
+      "sponsor_name": "HOSPIRA",
+      "products": [
+        {
+          "product_number": "005",
+          "reference_drug": "No",
+          "brand_name": "M.V.I.-12 ADULT",
+          "active_ingredients": [
+            {
+              "name": "ASCORBIC ACID",
+              "strength": "20MG/ML"
+            },
+            {
+              "name": "BIOTIN",
+              "strength": "0.006MG/ML"
+            },
+            {
+              "name": "CYANOCOBALAMIN",
+              "strength": "0.5MCG/ML"
+            },
+            {
+              "name": "DEXPANTHENOL",
+              "strength": "1.5MG/ML"
+            },
+            {
+              "name": "ERGOCALCIFEROL",
+              "strength": "20 IU/ML"
+            },
+            {
+              "name": "FOLIC ACID",
+              "strength": "0.6MG/ML"
+            },
+            {
+              "name": "NIACINAMIDE",
+              "strength": "4MG/ML"
+            },
+            {
+              "name": "PYRIDOXINE HYDROCHLORIDE",
+              "strength": "0.4MG/ML"
+            },
+            {
+              "name": "RIBOFLAVIN",
+              "strength": "0.36MG/ML"
+            },
+            {
+              "name": "THIAMINE HYDROCHLORIDE",
+              "strength": "0.6MG/ML"
+            },
+            {
+              "name": "VITAMIN A",
+              "strength": "330 UNITS/ML"
+            },
+            {
+              "name": "VITAMIN E",
+              "strength": "1 IU/ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "006",
+          "reference_drug": "Yes",
+          "brand_name": "M.V.I.-12 ADULT",
+          "active_ingredients": [
+            {
+              "name": "ASCORBIC ACID",
+              "strength": "20MG/ML"
+            },
+            {
+              "name": "BIOTIN",
+              "strength": "0.006MG/ML"
+            },
+            {
+              "name": "CYANOCOBALAMIN",
+              "strength": "0.05MCG/ML"
+            },
+            {
+              "name": "DEXPANTHENOL",
+              "strength": "1.5MG/ML"
+            },
+            {
+              "name": "ERGOCALCIFEROL",
+              "strength": "0.0005MG/ML"
+            },
+            {
+              "name": "FOLIC ACID",
+              "strength": "0.06MG/ML"
+            },
+            {
+              "name": "NIACINAMIDE",
+              "strength": "4MG/ML"
+            },
+            {
+              "name": "PYRIDOXINE HYDROCHLORIDE",
+              "strength": "0.6MG/ML"
+            },
+            {
+              "name": "RIBOFLAVIN 5'-PHOSPHATE SODIUM",
+              "strength": "0.36MG/ML"
+            },
+            {
+              "name": "THIAMINE HYDROCHLORIDE",
+              "strength": "0.6MG/ML"
+            },
+            {
+              "name": "VITAMIN A",
+              "strength": "0.1MG/ML"
+            },
+            {
+              "name": "VITAMIN E",
+              "strength": "1MG/ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "No",
+          "brand_name": "M.V.I.-12 ADULT",
+          "active_ingredients": [
+            {
+              "name": "ASCORBIC ACID",
+              "strength": "10MG/ML"
+            },
+            {
+              "name": "BIOTIN",
+              "strength": "0.006MG/ML"
+            },
+            {
+              "name": "CYANOCOBALAMIN",
+              "strength": "0.5MCG/ML"
+            },
+            {
+              "name": "DEXPANTHENOL",
+              "strength": "1.5MG/ML"
+            },
+            {
+              "name": "ERGOCALCIFEROL",
+              "strength": "20 IU/ML"
+            },
+            {
+              "name": "FOLIC ACID",
+              "strength": "0.04MG/ML"
+            },
+            {
+              "name": "NIACINAMIDE",
+              "strength": "4MG/ML"
+            },
+            {
+              "name": "PYRIDOXINE HYDROCHLORIDE",
+              "strength": "0.4MG/ML"
+            },
+            {
+              "name": "RIBOFLAVIN 5'-PHOSPHATE SODIUM",
+              "strength": "0.36MG/ML"
+            },
+            {
+              "name": "THIAMINE HYDROCHLORIDE",
+              "strength": "0.3MG/ML"
+            },
+            {
+              "name": "VITAMIN A",
+              "strength": "330 UNITS/ML"
+            },
+            {
+              "name": "VITAMIN E",
+              "strength": "1 IU/ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

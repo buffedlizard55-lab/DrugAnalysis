@@ -1,3 +1,47 @@
+# Verification Report — v26 Pre-1965 Backward Extension: 1939–1964, 535 Verified Rows (2026-09-21)
+
+**Branch:** `arena/01a0c21f-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors** (warnings are the standing manual-review baseline; unchanged by this session).
+**Independent verifier:** `python3 scripts/verify_pre1965_year_register_v26.py` — **16,157 checks, 0 errors**.
+
+## v26 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| Task: decisions before the previous earliest year (1965) | The 26 openFDA Drugs@FDA year payloads for **1939–1964** (committed 2026-09-19 by the Actions runner, per-file SHA-256 in the manifest) are now the project's verified tables: **535 original-approval rows** (census), **178 NME-comparable (Type 1 / Type 1-4) decision rows**, 26-row year register, 26-row era analysis. 1938 is the earliest *statutory* year (1938 FD&C Act) but has **no official Drugs@FDA/openFDA record** — the FDA official series itself starts 1938 and publishes 1938-40 only combined — so no 1938 row is invented; 1939 is the earliest assertable year | `scripts/build_pre1965_decisions_v26.py`; `data/raw/openfda_orig_decisions_1939_1964/` |
+| Payload integrity (26 files) | Every `decisions_YYYY.json` re-hashes to its runner-manifest SHA-256; `count` field == decisions list length; every `decision_date` inside its payload year; per-year raw-record totals re-read from the manifest (7, 3, 5, 5, 4, 4, 3, 11, 15, 14, …, 65 raw → 7, 3, 5, 5, 4, 4, 3, 10, 14, 10, …, 38 unique application+date decisions after the extractor's de-duplication) | builder + verifier both re-derive (no shared code) |
+| Full official-database cross-check | All 535 application numbers present in the unfiltered official Drugs@FDA database map `Applications_all_types.txt` (29,336 applications, SHA-manifested, 2026-09-19 fetch): **0 absent, 0 application-type mismatches, 0 holder mismatches**. A mismatch aborts the build; each row carries the per-cell `full_db_holder_match` result | `data/raw/drugsatfda_data_files_2026_09/`; per-row cell |
+| NME enumeration + counted-once | 178 Type 1 / Type 1-4 rows (per-year: 1942 2, 1943 1, 1945 1, 1946 2, 1948 2, 1949 2, 1950 7, 1951 7, 1952 5, 1953 15, 1954 12, 1955 9, 1956 10, 1957 18, 1958 8, 1959 20, 1960 15, 1961 13, 1962 11, 1963 8, 1964 10; 1939-41, 1944, 1947: 0). **Counted-once: 173** — the 5 re-screening/sibling rows keep their verbatim row + `FLAG-RESCREEN`, excluded only from the counted-once statistic | verifier recomputes both numbers |
+| Five irregularities flagged, never corrected | NDA008592 (1952, norepinephrine — after NDA007513 1950-07-13); NDA010028 (1955, meprobamate — after NDA009698 1955-04-28); NDA009149 (1957, chlorpromazine — after NDA011120 1957-09-18; the payloads carry no earlier chlorpromazine original — pre-1965 coverage gap, not a conclusion); NDA012265 (1960, reserpine — after NDA009296 1954-04-01); NDA012486 (1962, chlorprothixene — sibling of NDA012487 1962-03-23). The validator pins all five flags — deleting any of them fails the build | `ingredient_screen` cells; validator pin list |
+| Official series reconciliation, quoted verbatim | The FDA "Summary of NDA approvals and receipts, 1938-present" series (committed `data/fda_official_year_series.csv`, source URL per row) is compared per year: 1941-1964 carry official NME figures (17, 13, 10, 13, 13, 19, 26, 29, 38, 32, 10, 14, 19, 25, 19, 19, 16, 20, 26, 21, 23, 16, 13, 15); **1957 shows +2** (18 Type 1 rows vs 16 official) — an excess of the same class as the earlier 1969 +3, reported and pinned, never smoothed; 1939 has no official per-year figure (1938-40 published combined: 1,782 NDAs, NMEs 14 qualified "1940 only"); 1940 carries the combined note. Deltas are published for every year | `data/pre1965_year_register.csv` |
+| Independent line-by-line verifier | `scripts/verify_pre1965_year_register_v26.py` (shares no code with the builder): re-hashes all inputs, reproduces **every cell of all four tables** from the cited primary sources, recomputes every aggregate (per-year counts, class splits, priority splits, deltas, counted-once), verifies ID sequences, URL formats, probe consistency, the landmark-brand provenance (every era landmark brand exists verbatim among that year's payload NME products), and asserts no likelihood/probability column in any v26 output — **16,157 checks, 0 errors** | `python3 scripts/verify_pre1965_year_register_v26.py` |
+| Historical facts source-checked | 1939: NDA000552 (heparin sodium, LIQUAEMIN SODIUM, Aspen Global) is the first heparin NDA — independently confirmed by Federal Register 91 FR (2026-03-09) and a D.D.C. complaint citing Drugs@FDA. 1942: Premarin NDA 004782 approved 1942 — confirmed by the HHS-OIG conjugated-estrogens report (1997) and Pfizer's 2018 citizen petition. 1961: thalidomide application pending, never approved, withdrawn 1962 (Kelsey) — confirmed by Wikipedia/Science History sources. Kefauver-Harris enacted 1962-09-22 — standard documented date; the era table dates each 1962 approval against the enactment from payload dates | search citations in this section; `era_analysis.csv` `primary_source_basis` |
+| Live-probe layer (queued) | 535-item job `fetch_jobs/pre1965_row_probes_1939_1964.json` (deterministically generated from the payloads; one complete openFDA record per application). On push the Actions runner commits the raw captures + SHA-256; the builder auto-joins (date/class/priority/holder field-by-field; mismatch aborts; empty live record → `ABSENT_LIVE` flag). Until then rows read `live probe layer pending` and the probe-index table shows a load placeholder (documented expected state) | workflow v26 step; builder `load_probes()` |
+| Site | New **Pre-1965 Era** tab (year register, 178-row NME decisions, 535-row full audit, era analysis, probe index) with the standard searchable DataTable UI; every row carries the Drugs@FDA link + the replayable openFDA query. `node --check assets/app.js` clean. The Pre-1980 tab's "coverage reaches back to 1965" claim was updated to point at the new earliest year (1939) | `index.html`, `assets/app.js` |
+| Untouched invariants | Master 1,427 rows (values unchanged), CRL 458, original non-NME 3,432, pre-1980 173, pre-1985 91, core table 1,933, all scorecards, 2,848 snapshots, 2000-2026 coverage — `git diff` touches only v26 files | `git diff --stat` |
+
+## Method notes and limitations (v26)
+
+- **Source of record.** All 535 rows derive from the committed openFDA Drugs@FDA extract (endpoint `api.fda.gov/drug/drugsfda.json`, filter `submissions.submission_type:"ORIG" AND submissions.submission_status:"AP" AND submissions.submission_status_date` within the year) — the same extraction discipline as every other era block. Nothing is inferred: blank class codes (33 rows) and UNKNOWN (67 rows) are preserved verbatim, sponsors are the qualified "Drugs@FDA holder of record" (cross-checked against the full official database), and no ticker, indication, or approval-era applicant lineage is asserted anywhere.
+- **Pre-1965 coverage is incomplete by source definition.** Drugs@FDA's own database predates complete record-keeping; the official series shows far more NMEs than the payload publishes for early years (e.g. 1950: 32 official NMEs vs 7 payload NME rows; 1957: 16 official vs 18 payload rows — the one excess). The register publishes the official figure, the payload figure, and the delta for every year; the gap is reported as a source-definition gap, never smoothed into agreement and never filled with guessed names.
+- **Counted-once statistic.** A molecule-conservative count: an NME row counts once only if none of its ingredients appears on an earlier row of the 1939-1964 payload universe (sibling pairs and re-screening rows are excluded from this statistic only). 178 rows → 173 counted once.
+- **What is out of scope (next session).** Non-approval decisions (rejections/withdrawals) for 1939-1964; the submissions-level census for the period (queued job `drugsatfda_data_files_1938_1964.json` — Submissions filtered to 1938-1964 plus the application/product/document windows, same `zip_extract` discipline as the 1965-1979 window); historical ticker/exchange resolution for the 535 holders (most pre-1965 applicants are not the current listed issuers — corporate lineage work); price data (no historical listing for most pre-1965 applicants).
+
+## v26 files
+
+- `data/pre1965_originals_audit_1939_1964.csv` (new, 535 rows)
+- `data/pre1965_fda_decisions.csv` (new, 178 rows)
+- `data/pre1965_year_register.csv` (new, 26 rows)
+- `data/pre1965_era_analysis.csv` (new, 26 rows)
+- `fetch_jobs/pre1965_row_probes_1939_1964.json` (new, 535 probe items — lands raw captures + `data/pre1965_row_probe_index.csv` on the next Actions run)
+- `scripts/build_pre1965_decisions_v26.py` (new builder, fail-closed, auto probe-join)
+- `scripts/gen_pre1965_probe_job_v26.py` (deterministic probe-job generator)
+- `scripts/verify_pre1965_year_register_v26.py` (new independent verifier)
+- `scripts/validate_data.py` (v26 gate: shapes, payload cross-checks, URL/ticker/indication discipline, irregularity pins, probe-completeness gate)
+- `.github/workflows/arena-data-fetch.yml` (v26 build+verify step)
+- `index.html`, `assets/app.js` (Pre-1965 Era tab)
+- `README.md` (v26 section), `VERIFICATION_REPORT.md` (this section), `NEXT_SESSION.md` (v26 state + next work)
+
 # Verification Report — v25 Core Analysis Table Joins the v24 OpenFDA Backfill (2026-09-20)
 
 **Branch:** `arena/01a0c036-druganalysis`

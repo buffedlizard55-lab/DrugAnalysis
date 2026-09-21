@@ -1,0 +1,353 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "20090126",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "14",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2009/005213s037ltr.pdf",
+              "date": "20090130",
+              "type": "Letter"
+            },
+            {
+              "id": "32926",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2009/005213s037lbl.pdf",
+              "date": "20090204",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "20010615",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "20000710",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19881108",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "40643",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/pre96/005213Orig1s023.pdf",
+              "date": "20130227",
+              "type": "Review"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19880726",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19880726",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "48",
+          "submission_status": "AP",
+          "submission_status_date": "20251222",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "84527",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/005213Orig1s048ltr.pdf",
+              "date": "20251223",
+              "type": "Letter"
+            },
+            {
+              "id": "84714",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/005213Orig1s048lbl.pdf",
+              "date": "20260107",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "20231215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "76906",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/005213s046lbl.pdf",
+              "date": "20231218",
+              "type": "Label"
+            },
+            {
+              "id": "76907",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/005213s046lbl.pdf#page=27",
+              "date": "20231218",
+              "type": "Medication Guide"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "20170113",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "46872",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/005213s038lbl.pdf",
+              "date": "20170113",
+              "type": "Label"
+            },
+            {
+              "id": "46896",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/005213Orig1s038ltr.pdf",
+              "date": "20170119",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "20210927",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "68865",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2021/005213Orig1s044lbl.pdf",
+              "date": "20211004",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19430323",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19990423",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19920422",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "20020116",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19881223",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19880726",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "20180628",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "54750",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2018/005213s039lbl.pdf",
+              "date": "20180705",
+              "type": "Label"
+            },
+            {
+              "id": "54850",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2018/005213Orig1s039ltr.pdf",
+              "date": "20180706",
+              "type": "Letter"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA005213",
+      "sponsor_name": "GENUS",
+      "openfda": {
+        "application_number": [
+          "NDA005213"
+        ],
+        "brand_name": [
+          "HYDROCODONE BITARTRATE AND HOMATROPINE METHYLBROMIDE"
+        ],
+        "generic_name": [
+          "HYDROCODONE BITARTRATE AND HOMATROPINE METHYLBROMIDE"
+        ],
+        "manufacturer_name": [
+          "Genus Lifesciences Inc.",
+          "PAI Holdings, LLC dba PAI Pharma"
+        ],
+        "product_ndc": [
+          "64950-206",
+          "64950-371",
+          "0121-1036"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "HYDROCODONE BITARTRATE",
+          "HOMATROPINE METHYLBROMIDE"
+        ],
+        "rxcui": [
+          "992656",
+          "992668"
+        ],
+        "spl_id": [
+          "d2e40c65-781a-410f-a6e1-5fe01b76c24f",
+          "17bce1b5-fe40-42c4-b167-51f48ea47c9e"
+        ],
+        "spl_set_id": [
+          "320ff639-9854-407b-9bbd-a035c4f173e1",
+          "71319a6f-aaf4-4bc5-8b40-a16c6f139be6"
+        ],
+        "package_ndc": [
+          "64950-206-03",
+          "64950-206-10",
+          "64950-371-47",
+          "0121-1036-05",
+          "0121-1036-40"
+        ],
+        "unii": [
+          "68JRS2HC1C",
+          "NO70W886KK"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "HYCODAN",
+          "active_ingredients": [
+            {
+              "name": "HOMATROPINE METHYLBROMIDE",
+              "strength": "1.5MG/5ML"
+            },
+            {
+              "name": "HYDROCODONE BITARTRATE",
+              "strength": "5MG/5ML"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SYRUP",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AA"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "HYCODAN",
+          "active_ingredients": [
+            {
+              "name": "HOMATROPINE METHYLBROMIDE",
+              "strength": "1.5MG"
+            },
+            {
+              "name": "HYDROCODONE BITARTRATE",
+              "strength": "5MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AA"
+        }
+      ]
+    }
+  ]
+}

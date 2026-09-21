@@ -2,6 +2,12 @@
 == job clinicaltrials_phase3_2026_2027 (1 spec(s)) ==
 == job clinicaltrials_phase3_2026_2027_windows (4 spec(s)) ==
 == job clinicaltrials_phase3_2028_2029_windows (4 spec(s)) ==
+== job drugsatfda_data_files_1938_1964 (1 spec(s)) ==
+ok drugsatfda_data_files_1938_1964:Submissions.txt: kept 1215/193752 rows (55638 bytes) -> Submissions_1938_1964.txt
+ok drugsatfda_data_files_1938_1964:Applications.txt: kept 568/29336 rows (13325 bytes) -> Applications_1938_1964_window.txt
+ok drugsatfda_data_files_1938_1964:Products.txt: kept 1133/51779 rows (126043 bytes) -> Products_1938_1964_window.txt
+ok drugsatfda_data_files_1938_1964:ApplicationDocs.txt: kept 1920/81081 rows (255520 bytes) -> ApplicationDocs_1938_1964_window.txt
+ok drugsatfda_data_files_1938_1964: zip 6081382 bytes, 12 members
 == job drugsatfda_data_files_2026_09 (1 spec(s)) ==
 ok drugsatfda_data_files:Submissions.txt: kept 10753/193752 rows (491792 bytes) -> Submissions_1965_1979.txt
 ok drugsatfda_data_files:Applications.txt: kept 2325/29336 rows (57312 bytes) -> Applications_appl_window.txt
@@ -43,191 +49,28 @@ ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
 ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
 == job openfda_efficacy_supplements (1 spec(s)) ==
 == job openfda_orig_decisions_1939_1964 (1 spec(s)) ==
-ok orig_decisions_1939: 7 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1939.json
-ok orig_decisions_1940: 3 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1940.json
-ok orig_decisions_1941: 5 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1941.json
-ok orig_decisions_1942: 5 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1942.json
-ok orig_decisions_1943: 4 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1943.json
-ok orig_decisions_1944: 4 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1944.json
-ok orig_decisions_1945: 3 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1945.json
-ok orig_decisions_1946: 10 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1946.json
-ok orig_decisions_1947: 14 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1947.json
-ok orig_decisions_1948: 10 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1948.json
-ok orig_decisions_1949: 13 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1949.json
-ok orig_decisions_1950: 16 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1950.json
-ok orig_decisions_1951: 18 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1951.json
-ok orig_decisions_1952: 18 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1952.json
-ok orig_decisions_1953: 35 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1953.json
-ok orig_decisions_1954: 26 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1954.json
-ok orig_decisions_1955: 31 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1955.json
-ok orig_decisions_1956: 23 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1956.json
-ok orig_decisions_1957: 45 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1957.json
-ok orig_decisions_1958: 26 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1958.json
-ok orig_decisions_1959: 49 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1959.json
-ok orig_decisions_1960: 45 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1960.json
-ok orig_decisions_1961: 33 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1961.json
-ok orig_decisions_1962: 29 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1962.json
-ok orig_decisions_1963: 25 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1963.json
-ok orig_decisions_1964: 38 decisions -> data/raw/openfda_orig_decisions_1939_1964/decisions_1964.json
 == job openfda_orig_decisions_1965_1969 (1 spec(s)) ==
 == job openfda_orig_decisions_1970_1974 (1 spec(s)) ==
 == job openfda_orig_decisions_1975_1979 (1 spec(s)) ==
 == job openfda_orig_decisions_1980_1984 (1 spec(s)) ==
 == job openfda_orig_decisions_2011_2026 (1 spec(s)) ==
+== job pre1965_row_probes_1939_1964 (1 spec(s)) ==
 == job pre1980_row_probes_1965_1976 (1 spec(s)) ==
-ok probe_1965_NDA014602 200 17183 bytes
-ok probe_1965_NDA013026 200 12203 bytes
-ok probe_1965_BLA101995 200 2332 bytes
-ok probe_1965_NDA015539 200 10720 bytes
-ok probe_1965_NDA016059 200 23026 bytes
-ok probe_1965_NDA014879 200 14242 bytes
-ok probe_1965_NDA012715 200 3576 bytes
-ok probe_1965_NDA012806 200 11123 bytes
-ok probe_1965_NDA014763 200 10130 bytes
-ok probe_1965_NDA012665 200 12334 bytes
-ok probe_1965_NDA013025 200 12486 bytes
-ok probe_1966_NDA012429 200 10448 bytes
-ok probe_1966_NDA016029 200 6041 bytes
-ok probe_1966_NDA016000 200 5801 bytes
-ok probe_1966_NDA016245 200 2850 bytes
-ok probe_1966_NDA016273 200 18167 bytes
-ok probe_1966_NDA015500 200 5415 bytes
-ok probe_1966_NDA016084 200 14349 bytes
-ok probe_1967_NDA016092 200 14558 bytes
-ok probe_1967_NDA016131 200 6868 bytes
-ok probe_1967_NDA016099 200 5767 bytes
-ok probe_1967_NDA015034 200 15707 bytes
-ok probe_1967_NDA016033 200 4228 bytes
-ok probe_1967_NDA016096 200 10246 bytes
-ok probe_1967_NDA015921 200 15977 bytes
-ok probe_1967_NDA016194 200 16774 bytes
-ok probe_1967_NDA016584 200 16080 bytes
-ok probe_1967_NDA016012 200 11994 bytes
-ok probe_1967_NDA016320 200 18075 bytes
-ok probe_1967_NDA016418 200 24160 bytes
-ok probe_1967_NDA016295 200 29432 bytes
-ok probe_1968_NDA016608 200 41243 bytes
-ok probe_1968_NDA016324 200 14313 bytes
-ok probe_1968_NDA016267 200 19353 bytes
-ok probe_1968_NDA016672 200 8777 bytes
-ok probe_1969_NDA013615 200 3827 bytes
-ok probe_1969_NDA016119 200 3504 bytes
-ok probe_1969_NDA012828 200 6271 bytes
-ok probe_1969_NDA016793 200 10715 bytes
-ok probe_1969_NDA016785 200 9807 bytes
-ok probe_1969_NDA016798 200 18610 bytes
-ok probe_1969_NDA013731 200 8185 bytes
-ok probe_1969_NDA016624 200 11694 bytes
-ok probe_1970_NDA016769 200 8820 bytes
-ok probe_1970_NDA016812 200 15663 bytes
-ok probe_1970_NDA016774 200 19326 bytes
-ok probe_1970_NDA016782 200 8518 bytes
-ok probe_1970_NDA016721 200 18782 bytes
-ok probe_1970_NDA016750 200 10156 bytes
-ok probe_1970_NDA050109 200 1788 bytes
-ok probe_1970_NDA016912 200 11622 bytes
-ok probe_1970_NDA016885 200 13994 bytes
-ok probe_1970_NDA019853 200 9247 bytes
-ok probe_1970_NDA016929 200 8105 bytes
-ok probe_1971_NDA016636 200 18803 bytes
-ok probe_1971_NDA016908 200 15301 bytes
-ok probe_1971_NDA016942 200 2583 bytes
-ok probe_1971_NDA016979 200 15727 bytes
-ok probe_1971_NDA016921 200 8475 bytes
-ok probe_1971_NDA016224 200 3608 bytes
-ok probe_1971_NDA017001 200 14755 bytes
-ok probe_1972_NDA017010 200 8241 bytes
-ok probe_1972_NDA017042 200 1586 bytes
-ok probe_1972_NDA017105 200 27010 bytes
-ok probe_1972_NDA017087 200 15771 bytes
-ok probe_1972_NDA016968 200 10390 bytes
-ok probe_1972_NDA016964 200 29366 bytes
-ok probe_1972_NDA017015 200 7986 bytes
-ok probe_1973_NDA016996 200 8784 bytes
-ok probe_1973_NDA017047 200 4875 bytes
-ok probe_1973_NDA017129 200 2014 bytes
-ok probe_1973_NDA017247 200 10314 bytes
-ok probe_1973_NDA017376 200 25692 bytes
-ok probe_1973_NDA016402 200 10868 bytes
-ok probe_1973_NDA050443 200 13331 bytes
-ok probe_1973_NDA017454 200 6509 bytes
-ok probe_1973_NDA016211 200 6609 bytes
-ok probe_1973_NDA017386 200 15520 bytes
-ok probe_1973_NDA016729 200 3065 bytes
-ok probe_1974_NDA017443 200 18939 bytes
-ok probe_1974_NDA017111 200 20447 bytes
-ok probe_1974_NDA050459 200 2095 bytes
-ok probe_1974_NDA017450 200 22940 bytes
-ok probe_1974_NDA017395 200 11813 bytes
-ok probe_1974_NDA016820 200 6126 bytes
-ok probe_1974_NDA017466 200 8444 bytes
-ok probe_1974_NDA017546 200 3453 bytes
-ok probe_1974_NDA017481 200 14206 bytes
-ok probe_1974_BLA050114 200 5896 bytes
-ok probe_1974_NDA017048 200 5288 bytes
-ok probe_1974_NDA050467 200 30551 bytes
-ok probe_1974_NDA017503 200 12143 bytes
-ok probe_1974_NDA017463 200 24868 bytes
-ok probe_1974_NDA017551 200 3085 bytes
-ok probe_1974_NDA017556 200 13304 bytes
-ok probe_1975_NDA016832 200 9664 bytes
-ok probe_1975_NDA017613 200 9952 bytes
-ok probe_1975_NDA017525 200 18381 bytes
-ok probe_1975_NDA017555 200 29647 bytes
-ok probe_1975_NDA017575 200 6387 bytes
-ok probe_1975_NDA017533 200 27313 bytes
-ok probe_1975_NDA050477 200 9413 bytes
-ok probe_1975_NDA017577 200 16405 bytes
-ok probe_1975_NDA017569 200 3461 bytes
-ok probe_1976_BLA017835 200 4533 bytes
-ok probe_1976_BLA017836 200 5294 bytes
-ok probe_1976_NDA017518 200 2128 bytes
-ok probe_1976_NDA017581 200 36227 bytes
-ok probe_1976_NDA017604 200 15606 bytes
-ok probe_1976_NDA017628 200 20286 bytes
-ok probe_1976_NDA017630 200 6291 bytes
-ok probe_1976_NDA017657 200 11329 bytes
-ok probe_1976_NDA017573 200 13203 bytes
-ok probe_1976_NDA017478 200 6309 bytes
-ok probe_1976_NDA017557 200 15200 bytes
-ok probe_1976_NDA017442 200 16695 bytes
-ok probe_1976_NDA017697 200 14530 bytes
-ok probe_1976_NDA017588 200 20279 bytes
-ok probe_1976_NDA017751 200 8451 bytes
-ok probe_1976_NDA017594 200 6520 bytes
-ok probe_1976_NDA017638 200 3771 bytes
-ok probe_1976_NDA050497 200 11015 bytes
-ok probe_1976_NDA017869 200 3245 bytes
-ok probe_1976_NDA050486 200 6420 bytes
-ok probe_1976_NDA017694 200 17488 bytes
-ok probe_1976gap_NDA050495 200 1761 bytes
 == job pre1980_row_probes_1977_1979 (1 spec(s)) ==
 == job pre1980_year_populations_1965_1976 (1 spec(s)) ==
-ok population_1965 200 4544 bytes
-ok population_1966 200 6763 bytes
-ok population_1967 200 2316 bytes
-ok population_1968 200 14311 bytes
-ok population_1969 200 8183 bytes
-ok population_1970 200 6599 bytes
-ok population_1971 200 3488 bytes
-ok population_1972 200 5564 bytes
-ok population_1973 200 26132 bytes
-ok population_1974 200 11121 bytes
-ok population_1975 200 2077 bytes
-ok population_1976 200 2895 bytes
 == job probe (5 spec(s)) ==
 FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
 ok sec_company_tickers_plain_ua 200 799073 bytes -> data/raw/probe/sec_company_tickers_alt.json
 ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
-ok yahoo_symbol_search_probe 200 2758 bytes -> data/raw/probe/yahoo_search_probe.json
+ok yahoo_symbol_search_probe 200 2651 bytes -> data/raw/probe/yahoo_search_probe.json
 == job source_captures_2026_09_17 (10 spec(s)) ==
 ok cder_nme_cy1998_table 200 22083 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
-ok cder_nme_cy1999_table 200 38954 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
-ok cder_nme_cy2000_table 200 31733 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
-ok cder_rdmt_index_2003 200 15822 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
-ok fda_novel_2014_table_wayback 200 64200 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
-ok fda_novel_2026_live 200 41785 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
+ok cder_nme_cy1999_table 200 38952 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
+ok cder_nme_cy2000_table 200 31729 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
+ok cder_rdmt_index_2003 200 15823 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
+ok fda_novel_2014_table_wayback 200 64201 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
+ok fda_novel_2026_live 200 41772 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
 ok openfda_contrave_200063 200 12628 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA200063_contrave.json
 ok openfda_ofev_205832 200 15334 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA205832_ofev.json
 ok openfda_pixclara_218592 200 2096 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA218592_pixclara.json

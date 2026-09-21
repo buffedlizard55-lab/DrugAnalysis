@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19590603",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 3",
+          "submission_class_code_description": "Type 3 - New Dosage Form"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "20160218",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11965",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/011459Orig1s050,011795Orig1s027ltr.pdf",
+              "date": "20160222",
+              "type": "Letter"
+            },
+            {
+              "id": "33060",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/011459s050,011795s027lbl.pdf",
+              "date": "20160310",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "19741202",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "20000720",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "20140603",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11964",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2014/011459Orig1s048,011795Orig1s025ltr.pdf",
+              "date": "20140605",
+              "type": "Letter"
+            },
+            {
+              "id": "33059",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2014/011459s048,011795s025lbl.pdf",
+              "date": "20140604",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19790521",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "20161108",
+          "review_priority": "901 REQUIRED",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "45865",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/011459Orig1s051,011795Orig1s028ltr.pdf",
+              "date": "20161110",
+              "type": "Letter"
+            },
+            {
+              "id": "45870",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/011459s051_011795s028lbl.pdf",
+              "date": "20161110",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "19750606",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "20010321",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "288",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2001/11795S18LTR.PDF",
+              "date": "20010321",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "20000830",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "20041224",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11963",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/11459s039,11795s020ltr.pdf",
+              "date": "20041229",
+              "type": "Letter"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA011795",
+      "sponsor_name": "PFIZER",
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "VISTARIL",
+          "active_ingredients": [
+            {
+              "name": "HYDROXYZINE PAMOATE",
+              "strength": "EQ 25MG HYDROCHLORIDE/5ML **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "SUSPENSION",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

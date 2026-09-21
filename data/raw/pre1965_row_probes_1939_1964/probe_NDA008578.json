@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "20031118",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "102",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2003/08578slr016ltr.pdf",
+              "date": "20031125",
+              "type": "Letter"
+            },
+            {
+              "id": "10704",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/08578slr016_daraprim_lbl.pdf",
+              "date": "20031201",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19980408",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19881017",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "20",
+          "submission_status": "AP",
+          "submission_status_date": "20170621",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "48807",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/008578s020lbl.pdf",
+              "date": "20170622",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19980408",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "20170316",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "47580",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/008578s019lbl.pdf",
+              "date": "20170317",
+              "type": "Label"
+            },
+            {
+              "id": "47592",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/008578Orig1s019ltr.pdf",
+              "date": "20170320",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "20021010",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "153",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2002/8578slr015ltr.pdf",
+              "date": "20040602",
+              "type": "Letter"
+            },
+            {
+              "id": "32966",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2002/8578s15lbl.pdf",
+              "date": "20021010",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19970325",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "8",
+          "submission_status": "AP",
+          "submission_status_date": "19870220",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19530123",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity",
+          "application_docs": [
+            {
+              "id": "48806",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/pre96/008578s020lbl.pdf",
+              "date": "20170622",
+              "type": "Label"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA008578",
+      "sponsor_name": "TILDE SCIENCES",
+      "openfda": {
+        "application_number": [
+          "NDA008578"
+        ],
+        "brand_name": [
+          "PYRIMETHAMINE",
+          "DARAPRIM"
+        ],
+        "generic_name": [
+          "PYRIMETHAMINE"
+        ],
+        "manufacturer_name": [
+          "OAKRUM PHARMA, LLC",
+          "Vyera Pharmaceuticals LLC"
+        ],
+        "product_ndc": [
+          "72647-330",
+          "69413-330"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "PYRIMETHAMINE"
+        ],
+        "rxcui": [
+          "198182",
+          "201912"
+        ],
+        "spl_id": [
+          "d61ffa19-149f-4402-884a-4d16becb80ba",
+          "ca65359c-029c-44f4-ba89-c4058ddd4e30"
+        ],
+        "spl_set_id": [
+          "8ed8141b-e6c0-4a6b-8a08-2858c8c8bd4a",
+          "5368616d-6520-6f6e-2053-686b72656c69"
+        ],
+        "package_ndc": [
+          "72647-330-01",
+          "72647-330-03",
+          "72647-330-10",
+          "72647-330-30",
+          "69413-330-10",
+          "69413-330-30",
+          "69413-330-06"
+        ],
+        "nui": [
+          "N0000175934",
+          "N0000000191"
+        ],
+        "pharm_class_epc": [
+          "Dihydrofolate Reductase Inhibitor Antimalarial [EPC]"
+        ],
+        "pharm_class_moa": [
+          "Dihydrofolate Reductase Inhibitors [MoA]"
+        ],
+        "unii": [
+          "Z3614QOX8W"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "DARAPRIM",
+          "active_ingredients": [
+            {
+              "name": "PYRIMETHAMINE",
+              "strength": "25MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}

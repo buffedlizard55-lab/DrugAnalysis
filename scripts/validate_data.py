@@ -1603,18 +1603,24 @@ else:
     _pre65_m = json.loads((_pre65_dir / "manifest.json").read_text(encoding="utf-8"))
     # request ids are "<job-id>_<year>" (e.g. orig_decisions_1939); the payload
     # file is always decisions_<year>.json per the job's out_template.
-    _pre65_req = [e for e in _pre65_m["requests"]
-                  if str(e.get("id", "")).rsplit("_", 1)[-1].isdigit()
-                  and 1939 <= int(str(e["id"]).rsplit("_", 1)[-1]) <= 1964]
-    if len(_pre65_req) != 26:
+    # The manifest accumulates across runner runs (skip_existing re-runs append
+    # no-op "skipped-existing" markers without a sha256). The committed payload
+    # file is pinned to the LATEST real fetch (an entry with a sha256) per year,
+    # matching the builder's by-year semantics.
+    _pre65_req_by_year = {}
+    for _e in _pre65_m["requests"]:
+        _tail = str(_e.get("id", "")).rsplit("_", 1)[-1]
+        if _tail.isdigit() and 1939 <= int(_tail) <= 1964 and _e.get("sha256"):
+            _pre65_req_by_year[int(_tail)] = _e
+    if len(_pre65_req_by_year) != 26:
         errors.append(f"openfda_orig_decisions_1939_1964: expected 26 year requests, "
-                      f"got {len(_pre65_req)}")
-    for _e in _pre65_req:
-        _year = int(str(_e["id"]).rsplit("_", 1)[-1])
+                      f"got {len(_pre65_req_by_year)}")
+    for _year, _e in sorted(_pre65_req_by_year.items()):
         _pf = _pre65_dir / f"decisions_{_year}.json"
         if _e.get("status") != 200 or not _pf.exists() or \
                 hashlib.sha256(_pf.read_bytes()).hexdigest() != _e.get("sha256"):
-            errors.append(f"openfda_orig_decisions_1939_1964: {_e['id']} missing or SHA drift")
+            errors.append(f"openfda_orig_decisions_1939_1964: {_e['id']} "
+                          f"(latest fetch) missing or SHA drift")
 print(f"v21: {len(_v21a)} original-application audit rows (1965-1976), "
       f"{len(_v21_probeidx)} live probe rows, "
       f"{len(_v21_invisible)} payload-invisible + {len(_v21_unres)} kind-unresolved "
@@ -1929,6 +1935,133 @@ if _appjs.exists():
               not in _txt):
             errors.append("app.js: the v23 prior no longer quotes its k/n counts from the published table")
 
+
+# ---------------------------------------------------------------------------
+# v26 (2026-09-21): pre-1965 backward extension (1939-1964).
+# Owned by scripts/build_pre1965_decisions_v26.py; independently re-verified
+# line-by-line by scripts/verify_pre1965_year_register_v26.py. These gates
+# pin the shape, the payload cross-checks, the source-URL discipline and the
+# irregularity flags so a silent drift fails the build.
+_v26_years = tuple(range(1939, 1965))
+_v26_block = DATA / "raw" / "openfda_orig_decisions_1939_1964"
+_v26_audit = read("pre1965_originals_audit_1939_1964.csv")
+_v26_dec = read("pre1965_fda_decisions.csv")
+_v26_reg = read("pre1965_year_register.csv")
+_v26_era = read("pre1965_era_analysis.csv")
+_v26_payloads = {}
+try:
+    _m26 = json.loads((_v26_block / "manifest.json").read_text(encoding="utf-8"))
+    _m26_by_year = {int(r["id"].split("_")[-1]): r for r in _m26["requests"] if r.get("sha256")}
+    for _y in _v26_years:
+        _p26 = _v26_block / f"decisions_{_y}.json"
+        _h26 = hashlib.sha256(_p26.read_bytes()).hexdigest()
+        if _h26 != _m26_by_year[_y]["sha256"]:
+            errors.append(f"pre1965 payload {_y}: SHA-256 drift vs runner manifest")
+        _o26 = json.loads(_p26.read_text(encoding="utf-8"))
+        _v26_payloads[_y] = _o26["decisions"]
+except (OSError, ValueError, KeyError) as _exc:
+    errors.append(f"pre1965 payloads: openFDA payload missing: {_exc}")
+if len(_v26_audit) != 535:
+    errors.append(f"pre1965_originals_audit: expected 535 rows (1939-1964 census), got {len(_v26_audit)}")
+_v26_audit_apps = set()
+for _i, _r in enumerate(_v26_audit):
+    if not re.fullmatch(r"PRE1965AUDIT-19(3[9]|4\d|5\d|6[0-4])-\d{2}", _r["row_id"] or ""):
+        errors.append(f"pre1965_originals_audit:{_i}: invalid ID {_r['row_id']!r}")
+    _y = _r["year"]
+    if _y not in {str(y) for y in _v26_years}:
+        errors.append(f"pre1965_originals_audit:{_i}: unexpected year {_y!r}")
+        continue
+    _ap = _r["application_number"]
+    _v26_audit_apps.add((_ap, _r["decision_date"]))
+    for _u, _lab in ((_r["drugsatfda_url"], "Drugs@FDA"), (_r["openfda_url"], "openFDA")):
+        check_url(_u, f"pre1965_originals_audit:{_r['row_id']} {_lab} url")
+    _pl = next((d for d in _v26_payloads.get(int(_y), [])
+                if d["application_number"] == _ap), None)
+    if _pl is None:
+        errors.append(f"pre1965_originals_audit:{_r['row_id']} not reproducible from the committed payload")
+        continue
+    if _r["decision_date"] != _pl["decision_date"]:
+        errors.append(f"pre1965_originals_audit:{_r['row_id']} date != payload")
+    if _r["submission_class_code"] != (_pl.get("submission_class_code") or "").strip():
+        errors.append(f"pre1965_originals_audit:{_r['row_id']} class != payload")
+    if (_r["review_priority"] or "") != (_pl.get("review_priority") or "").strip():
+        errors.append(f"pre1965_originals_audit:{_r['row_id']} priority != payload")
+    if _r["sponsor_name_drugsatfda_holder"] != (_pl.get("sponsor_name") or "").strip():
+        errors.append(f"pre1965_originals_audit:{_r['row_id']} holder != payload")
+for _y in _v26_years:
+    _n = sum(1 for r in _v26_audit if r["year"] == str(_y))
+    if _y in _v26_payloads and _n != len(_v26_payloads[_y]):
+        errors.append(f"pre1965_originals_audit:{_y}: {_n} rows != {len(_v26_payloads[_y])} payload rows")
+    _payload_keys = {(d["application_number"], d["decision_date"]) for d in _v26_payloads.get(_y, [])}
+    if _payload_keys - _v26_audit_apps:
+        errors.append(f"pre1965_originals_audit:{_y}: payload rows missing from the audit table")
+if len(_v26_dec) != 178:
+    errors.append(f"pre1965_fda_decisions: expected 178 NME-comparable rows, got {len(_v26_dec)}")
+_v26_dec_apps = set()
+for _i, _r in enumerate(_v26_dec):
+    if not re.fullmatch(r"PRE1965-19(3[9]|4\d|5\d|6[0-4])-\d{2}", _r["decision_id"] or ""):
+        errors.append(f"pre1965_fda_decisions:{_i}: invalid ID {_r['decision_id']!r}")
+    _m = re.fullmatch(r"(NDA|BLA) (\d{6})", _r["application_number"] or "")
+    if not _m:
+        errors.append(f"pre1965_fda_decisions:{_i}: bad application_number {_r['application_number']!r}")
+        continue
+    _ap = _m.group(1) + _m.group(2)
+    _v26_dec_apps.add(_ap)
+    if (_r["indication"] or "").strip():
+        errors.append(f"pre1965_fda_decisions:{_r['decision_id']}: indication asserted without an approval-era source")
+    if "no inference" not in _r["corporate_lineage_and_ticker"].lower() and "no ticker" not in _r["corporate_lineage_and_ticker"].lower():
+        errors.append(f"pre1965_fda_decisions:{_r['decision_id']}: ticker discipline line missing")
+    if not _r["verification_status"].startswith(
+            ("Verified (live probe match)", "Payload-verified", "Flagged")):
+        errors.append(f"pre1965_fda_decisions:{_r['decision_id']}: unexpected status {_r['verification_status']!r}")
+    for _u, _lab in ((_r["source_url_1"], "Drugs@FDA"), (_r["source_url_2"], "openFDA")):
+        check_url(_u, f"pre1965_fda_decisions:{_r['decision_id']} {_lab} url")
+_v26_payload_nme = set()
+for _y in _v26_years:
+    _v26_payload_nme |= {d["application_number"] for d in _v26_payloads.get(_y, [])
+                         if (d.get("submission_class_code") or "").strip().upper() in ("TYPE 1", "TYPE 1/4")}
+if _v26_payload_nme != _v26_dec_apps:
+    errors.append(f"pre1965_fda_decisions: applications do not equal the payload TYPE 1/1-4 enumeration "
+                  f"(missing={sorted(_v26_payload_nme - _v26_dec_apps)[:5]}, extra={sorted(_v26_dec_apps - _v26_payload_nme)[:5]})")
+_v26_probe_manifest = DATA / "raw" / "pre1965_row_probes_1939_1964" / "manifest.json"
+_v26_probes_complete = False
+if _v26_probe_manifest.exists():
+    _pm26 = json.loads(_v26_probe_manifest.read_text(encoding="utf-8"))
+    _reqs26 = [e for e in _pm26.get("requests", []) if e.get("sha256")]
+    if len(_reqs26) == 535 and all(e.get("status") == 200 for e in _reqs26):
+        _v26_probes_complete = True
+        _idx26 = read_opt("pre1965_row_probe_index.csv") or []
+        if len(_idx26) != 535:
+            errors.append(f"pre1965_row_probe_index: expected 535 rows once the probe layer is complete, got {len(_idx26)}")
+    for _r in _v26_audit:
+        if "live probe layer pending" in _r["verification_status"]:
+            errors.append(f"pre1965_originals_audit:{_r['row_id']}: probe layer is complete but the row is still pending")
+# irregularity pins: the five adjudicated NME re-screening/sibling flags must stay flagged,
+# and the 1957 +2 official-series anomaly must stay reported (never smoothed).
+_v26_audit_by_appl = {r["application_number"]: r for r in _v26_audit}
+for _ap in ("NDA008592", "NDA010028", "NDA009149", "NDA012265", "NDA012486"):
+    _r = _v26_audit_by_appl.get(_ap)
+    if _r is None or not _r["ingredient_screen"].startswith("FLAG-RESCREEN"):
+        errors.append(f"pre1965_originals_audit: {_ap} lost its re-screening flag")
+_v26_reg_1957 = next((r for r in _v26_reg if r["year"] == "1957"), None)
+if _v26_reg_1957 is None or _v26_reg_1957["delta_nme_rows_vs_official"] != "2":
+    errors.append("pre1965_year_register: the 1957 +2 official-series anomaly was smoothed or lost")
+_r39 = _v26_audit_by_appl.get("NDA000552")
+if _r39 is None or _r39["decision_date"] != "1939-02-09":
+    errors.append("pre1965_originals_audit: NDA000552 (first heparin NDA, 1939-02-09) anchor missing")
+if len(_v26_reg) != 26 or len(_v26_era) != 26:
+    errors.append(f"pre1965 register/era: expected 26 rows each, got {len(_v26_reg)}/{len(_v26_era)}")
+for _r in _v26_reg:
+    _off = next((r for r in read_opt("fda_official_year_series.csv") or []
+                 if r.get("year") == _r["year"]), None)
+    if _off is not None and _r["official_fda_nme_count"] != (_off.get("nmes_approved") or "").strip():
+        errors.append(f"pre1965_year_register:{_r['year']}: official NME not verbatim from the official series")
+    check_url(_r["query_url"], f"pre1965_year_register:{_r['year']} openFDA query url")
+
+print(f"v26: {len(_v26_audit)} pre-1965 audit rows (1939-1964), {len(_v26_dec)} NME-comparable "
+      f"decision rows, {len(_v26_reg)} register rows, {len(_v26_era)} era rows, "
+      f"probe layer {'complete (535/535 live probes)' if _v26_probes_complete else 'pending/queued'}.")
+
 print(f"v23: {len(_v23_orig)} original actions ({dict(_v23_split)}), "
       f"{len(_v23_subs)} approval actions, {len(_v23_docs)} document rows, "
       f"{len(_v23_match)} CRL->application matches, {len(_v23_rates)} CRL base-rate rows.")
@@ -1944,7 +2077,9 @@ print(f"Validated {len(master)} FDA novel-approval rows, {len(suppl)} efficacy-s
       f"{len(_pre1985_decisions)} pre-1985 decisions, {len(_pre1985_era)} pre-1985 era rows, "
       f"{len(_series)} official-series rows, {len(_cross)} crosswalk rows, {len(_gap)} NME-gap rows, "
       f"{len(_caps)} live primary captures, {len(_p1980)} pre-1980 decisions, "
-      f"{len(_p1980_audit)} pre-1980 audit rows, and {len(_p1980_caps)} v19 live captures.")
+      f"{len(_p1980_audit)} pre-1980 audit rows, {len(_p1980_caps)} v19 live captures, "
+      f"{len(_v26_audit)} pre-1965 audit rows (1939-1964), {len(_v26_dec)} pre-1965 NME decisions, "
+      f"{len(_v26_reg)} pre-1965 register rows and {len(_v26_era)} pre-1965 era rows.")
 print(f"Warnings requiring manual review: {len(warnings)}")
 for w in warnings[:12]: print("WARNING", w)
 if len(warnings) > 12: print(f"WARNING ... {len(warnings)-12} more")

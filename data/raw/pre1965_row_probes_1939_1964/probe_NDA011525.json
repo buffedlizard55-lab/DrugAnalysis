@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "20260422",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "85735",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/011525Orig1s043ltr.pdf",
+              "date": "20260424",
+              "type": "Letter"
+            },
+            {
+              "id": "85737",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/011525Orig1s043lbl.pdf",
+              "date": "20260424",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "20151005",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10764",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/011525s027lbl.pdf",
+              "date": "20151008",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "17",
+          "submission_status": "AP",
+          "submission_status_date": "20060922",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "267",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2006/011525s017LTR.pdf",
+              "date": "20060927",
+              "type": "Letter"
+            },
+            {
+              "id": "33047",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2006/011525s017lbl.pdf",
+              "date": "20060925",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "31",
+          "submission_status": "TA",
+          "submission_status_date": "20220808",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "73428",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/005939Orig1s012;011525Orig1s031;012015Orig1s036;016619Orig1s045;019353Orig1s024;208609Orig1s006correctedltr.pdf",
+              "date": "20230209",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19980302",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "13",
+          "submission_status": "AP",
+          "submission_status_date": "19950330",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "11",
+          "submission_status": "AP",
+          "submission_status_date": "19910605",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "20220317",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "70635",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2022/011525Orig1s036lbl.pdf",
+              "date": "20220329",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "20260130",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "86587",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/011525Orig1s042lbl.pdf",
+              "date": "20260720",
+              "type": "Label"
+            },
+            {
+              "id": "86588",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/011525Orig1s042ltr.pdf",
+              "date": "20260720",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "19971021",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "12",
+          "submission_status": "AP",
+          "submission_status_date": "19950330",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19590209",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "20241205",
+          "review_priority": "STANDARD",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "application_docs": [
+            {
+              "id": "80529",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2024/011525Orig1s039ltr.pdf",
+              "date": "20241206",
+              "type": "Letter"
+            },
+            {
+              "id": "80539",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/011525Orig1s039lbl.pdf",
+              "date": "20250314",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "9",
+          "submission_status": "AP",
+          "submission_status_date": "19890802",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA011525",
+      "sponsor_name": "RENEW PHARMS",
+      "openfda": {
+        "application_number": [
+          "NDA011525"
+        ],
+        "brand_name": [
+          "IC-GREEN"
+        ],
+        "generic_name": [
+          "INDOCYANINE GREEN"
+        ],
+        "manufacturer_name": [
+          "Renew Pharmaceuticals Limited"
+        ],
+        "product_ndc": [
+          "70100-810",
+          "70100-825"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "spl_id": [
+          "bb82db71-b087-4274-bd9c-cb388d7dbaeb"
+        ],
+        "spl_set_id": [
+          "ccd92843-1f0a-4ece-9978-4b300d158886"
+        ],
+        "package_ndc": [
+          "70100-825-02",
+          "70100-725-01",
+          "0409-4887-17",
+          "70100-810-02",
+          "70100-710-01"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "003",
+          "reference_drug": "No",
+          "brand_name": "IC-GREEN",
+          "active_ingredients": [
+            {
+              "name": "INDOCYANINE GREEN",
+              "strength": "10MG/VIAL"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "IC-GREEN",
+          "active_ingredients": [
+            {
+              "name": "INDOCYANINE GREEN",
+              "strength": "25MG/VIAL"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "No",
+          "brand_name": "IC-GREEN",
+          "active_ingredients": [
+            {
+              "name": "INDOCYANINE GREEN",
+              "strength": "40MG/VIAL **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "No",
+          "brand_name": "IC-GREEN",
+          "active_ingredients": [
+            {
+              "name": "INDOCYANINE GREEN",
+              "strength": "50MG/VIAL **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

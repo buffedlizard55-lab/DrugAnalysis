@@ -1,6 +1,6 @@
 {
   "job": "pre1980_year_populations_1965_1976",
-  "generated_utc": "2026-09-20T00:00:33Z",
+  "generated_utc": "2026-09-21T07:49:41Z",
   "requests": [
     {
       "id": "population_1965",
@@ -145,6 +145,102 @@
       "bytes": 2895,
       "sha256": "e400a38a1c1b03b6885113c26f6e6efb0e65977d16f1af67a9d76e38d9286758",
       "written_at_utc": "2026-09-20T00:00:31Z"
+    },
+    {
+      "id": "population_1965",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1966",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1967",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1968",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1969",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1970",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1971",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1972",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1973",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1974",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1975",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1976",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1965",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1966",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1967",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1968",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1969",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1970",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1971",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1972",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1973",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1974",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1975",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "population_1976",
+      "status": "skipped-existing"
     }
   ],
   "job_file": "fetch_jobs/pre1980_year_populations_1965_1976.json"

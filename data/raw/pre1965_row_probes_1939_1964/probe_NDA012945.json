@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "45",
+          "submission_status": "AP",
+          "submission_status_date": "20140319",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "20050315",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "10828",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2005/12945s037,038lbl.pdf",
+              "date": "20050318",
+              "type": "Label"
+            },
+            {
+              "id": "20039",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2005/012945Orig1s037.pdf",
+              "date": "20150128",
+              "type": "Review"
+            },
+            {
+              "id": "349",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/12945s037,038ltr.pdf",
+              "date": "20050318",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "48",
+          "submission_status": "AP",
+          "submission_status_date": "20240920",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "79696",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2024/012945s048lbl.pdf",
+              "date": "20240923",
+              "type": "Label"
+            },
+            {
+              "id": "79712",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2024/012945Orig1s048ltr.pdf",
+              "date": "20240924",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "20140409",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "20050315",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12043",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2005/12945s037,038ltr.pdf",
+              "date": "20050318",
+              "type": "Letter"
+            },
+            {
+              "id": "20040",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2005/012945Orig1s038.pdf",
+              "date": "20150128",
+              "type": "Review"
+            },
+            {
+              "id": "33098",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2005/12945s037,038lbl.pdf",
+              "date": "20050318",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19950425",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "20030721",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19620125",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 5",
+          "submission_class_code_description": "Type 5 - New Formulation or New Manufacturer"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19990927",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "47",
+          "submission_status": "AP",
+          "submission_status_date": "20220513",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "71076",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2022/012945Orig1s047ltr.pdf",
+              "date": "20220516",
+              "type": "Letter"
+            },
+            {
+              "id": "71083",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2022/012945s047lbl.pdf",
+              "date": "20220517",
+              "type": "Label"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA012945",
+      "sponsor_name": "TEVA BRANDED PHARM",
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "DIAMOX",
+          "active_ingredients": [
+            {
+              "name": "ACETAZOLAMIDE",
+              "strength": "500MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "CAPSULE, EXTENDED RELEASE",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

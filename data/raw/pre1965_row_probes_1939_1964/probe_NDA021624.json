@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19470813",
+          "review_priority": "UNKNOWN",
+          "submission_class_code": "UNKNOWN"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "6",
+          "submission_status": "AP",
+          "submission_status_date": "20161216",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "46289",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2016/021624Orig1s006ltr.pdf",
+              "date": "20161220",
+              "type": "Letter"
+            },
+            {
+              "id": "46352",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/021624s006lbl.pdf",
+              "date": "20161221",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "20220524",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "71145",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2022/021624Orig1s015ltr.pdf",
+              "date": "20220525",
+              "type": "Letter"
+            },
+            {
+              "id": "71188",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2022/021624Orig1s015lbl.pdf",
+              "date": "20220601",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "18",
+          "submission_status": "AP",
+          "submission_status_date": "20251222",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "84602",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/021624Orig1s018ltr.pdf",
+              "date": "20251231",
+              "type": "Letter"
+            },
+            {
+              "id": "84685",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/021624s018lbl.pdf",
+              "date": "20260106",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "5",
+          "submission_status": "AP",
+          "submission_status_date": "20130626",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "16",
+          "submission_status": "AP",
+          "submission_status_date": "20231215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "76916",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2023/021624s016lbl.pdf",
+              "date": "20231218",
+              "type": "Label"
+            },
+            {
+              "id": "77004",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/021624Orig1s016ltr.pdf",
+              "date": "20231219",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "20040212",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "5871",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/21624slr001ltr.pdf",
+              "date": "20040227",
+              "type": "Letter"
+            },
+            {
+              "id": "21760",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2004/021624Orig1s001.pdf",
+              "date": "20130603",
+              "type": "Review"
+            },
+            {
+              "id": "37346",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/21624slr001_methadone_hcl_lbl.pdf",
+              "date": "20040303",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "14",
+          "submission_status": "AP",
+          "submission_status_date": "20210602",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "67684",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2021/021624s014lbl.pdf",
+              "date": "20210603",
+              "type": "Label"
+            },
+            {
+              "id": "67697",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2021/021624Orig1s014ltr.pdf",
+              "date": "20210607",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "20191007",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "60287",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2019/021624s010lbl.pdf",
+              "date": "20191008",
+              "type": "Label"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA021624",
+      "sponsor_name": "MYLAN INSTITUTIONAL",
+      "openfda": {
+        "application_number": [
+          "NDA021624"
+        ],
+        "brand_name": [
+          "METHADONE HYDROCHLORIDE"
+        ],
+        "generic_name": [
+          "METHADONE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Mylan Institutional LLC"
+        ],
+        "product_ndc": [
+          "67457-217"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS",
+          "SUBCUTANEOUS"
+        ],
+        "substance_name": [
+          "METHADONE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "864714"
+        ],
+        "spl_id": [
+          "2576be5b-78c8-4e49-996f-3e34a4bc5ee2"
+        ],
+        "spl_set_id": [
+          "092d78eb-6423-495c-bf0d-e6532bea7138"
+        ],
+        "package_ndc": [
+          "67457-217-20"
+        ],
+        "unii": [
+          "229809935B"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "METHADONE HYDROCHLORIDE",
+          "active_ingredients": [
+            {
+              "name": "METHADONE HYDROCHLORIDE",
+              "strength": "10MG/ML"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "INJECTABLE",
+          "route": "INJECTION",
+          "marketing_status": "Prescription",
+          "te_code": "AP"
+        }
+      ]
+    }
+  ]
+}

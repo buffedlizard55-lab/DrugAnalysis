@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "42",
+          "submission_status": "AP",
+          "submission_status_date": "19911016",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "19890216",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19591109",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "19880729",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "51",
+          "submission_status": "AP",
+          "submission_status_date": "20141120",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "19990616",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "41",
+          "submission_status": "AP",
+          "submission_status_date": "19950111",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "20150114",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11987",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/012093Orig1s052ltr.pdf",
+              "date": "20150116",
+              "type": "Letter"
+            },
+            {
+              "id": "33072",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/012093s052lbl.pdf",
+              "date": "20150115",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "44",
+          "submission_status": "AP",
+          "submission_status_date": "20010926",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "11986",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2001/12093s44ltr.pdf",
+              "date": "20010926",
+              "type": "Letter"
+            }
+          ]
+        }
+      ],
+      "application_number": "NDA012093",
+      "sponsor_name": "BAUSCH",
+      "openfda": {
+        "application_number": [
+          "NDA012093"
+        ],
+        "brand_name": [
+          "ISOSORBIDE DINITRATE"
+        ],
+        "generic_name": [
+          "ISOSORBIDE DINITRATE"
+        ],
+        "manufacturer_name": [
+          "Oceanside Pharmaceuticals"
+        ],
+        "product_ndc": [
+          "68682-192",
+          "68682-193"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ISOSORBIDE DINITRATE"
+        ],
+        "rxcui": [
+          "197840",
+          "314055"
+        ],
+        "spl_id": [
+          "723d9f78-9d77-4575-af27-1aa117e6b8d7"
+        ],
+        "spl_set_id": [
+          "723d9f78-9d77-4575-af27-1aa117e6b8d7"
+        ],
+        "package_ndc": [
+          "68682-193-01",
+          "68682-192-01"
+        ],
+        "nui": [
+          "N0000175415",
+          "M0014874",
+          "N0000009909"
+        ],
+        "pharm_class_epc": [
+          "Nitrate Vasodilator [EPC]"
+        ],
+        "pharm_class_cs": [
+          "Nitrates [CS]"
+        ],
+        "pharm_class_pe": [
+          "Vasodilation [PE]"
+        ],
+        "unii": [
+          "IA7306519N"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "007",
+          "reference_drug": "Yes",
+          "brand_name": "ISORDIL",
+          "active_ingredients": [
+            {
+              "name": "ISOSORBIDE DINITRATE",
+              "strength": "5MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "005",
+          "reference_drug": "Yes",
+          "brand_name": "ISORDIL",
+          "active_ingredients": [
+            {
+              "name": "ISOSORBIDE DINITRATE",
+              "strength": "30MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "ISORDIL",
+          "active_ingredients": [
+            {
+              "name": "ISOSORBIDE DINITRATE",
+              "strength": "40MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "006",
+          "reference_drug": "Yes",
+          "brand_name": "ISORDIL",
+          "active_ingredients": [
+            {
+              "name": "ISOSORBIDE DINITRATE",
+              "strength": "20MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "ISORDIL",
+          "active_ingredients": [
+            {
+              "name": "ISOSORBIDE DINITRATE",
+              "strength": "10MG **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}

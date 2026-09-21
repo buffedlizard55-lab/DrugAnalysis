@@ -1,0 +1,381 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19640603",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "20040624",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "397",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/15197scm036,scf037,scp038,scm039ltr.pdf",
+              "date": "20040625",
+              "type": "Letter"
+            },
+            {
+              "id": "33133",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/15197scm036,scf037,scp038,scm039_amicar_lbl.pdf",
+              "date": "20040625",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "37",
+          "submission_status": "AP",
+          "submission_status_date": "20040624",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "396",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/15197scm036,scf037,scp038,scm039ltr.pdf",
+              "date": "20040625",
+              "type": "Letter"
+            },
+            {
+              "id": "33132",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/15197scm036,scf037,scp038,scm039_amicar_lbl.pdf",
+              "date": "20040625",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19920211",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "43",
+          "submission_status": "AP",
+          "submission_status_date": "20080819",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10856",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2008/015197s043,015230s035lbl.pdf",
+              "date": "20080826",
+              "type": "Label"
+            },
+            {
+              "id": "12079",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2008/015230s035, 015197s043ltr.pdf",
+              "date": "20080822",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "20001127",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "27",
+          "submission_status": "AP",
+          "submission_status_date": "19860117",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "19",
+          "submission_status": "AP",
+          "submission_status_date": "19810630",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "33",
+          "submission_status": "AP",
+          "submission_status_date": "20001002",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19821210",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "23",
+          "submission_status": "AP",
+          "submission_status_date": "19900403",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "15",
+          "submission_status": "AP",
+          "submission_status_date": "19770209",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "38",
+          "submission_status": "AP",
+          "submission_status_date": "20040624",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "10855",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/15197scm036,scf037,scp038,scm039_amicar_lbl.pdf",
+              "date": "20040625",
+              "type": "Label"
+            },
+            {
+              "id": "12077",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/15197scm036,scf037,scp038,scm039ltr.pdf",
+              "date": "20040625",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "36",
+          "submission_status": "AP",
+          "submission_status_date": "20040624",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "33131",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2004/15197scm036,scf037,scp038,scm039_amicar_lbl.pdf",
+              "date": "20040625",
+              "type": "Label"
+            },
+            {
+              "id": "395",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/15197scm036,scf037,scp038,scm039ltr.pdf",
+              "date": "20040625",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "28",
+          "submission_status": "AP",
+          "submission_status_date": "19920813",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "34",
+          "submission_status": "AP",
+          "submission_status_date": "20000403",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "26",
+          "submission_status": "AP",
+          "submission_status_date": "19830606",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "40",
+          "submission_status": "AP",
+          "submission_status_date": "20040824",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "12078",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2004/15197s040,15229s031,15230s031ltr.pdf",
+              "date": "20040825",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "32",
+          "submission_status": "AP",
+          "submission_status_date": "19991001",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "24",
+          "submission_status": "AP",
+          "submission_status_date": "19820922",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "30",
+          "submission_status": "AP",
+          "submission_status_date": "19970416",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "22",
+          "submission_status": "AP",
+          "submission_status_date": "19821022",
+          "review_priority": "PRIORITY",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        }
+      ],
+      "application_number": "NDA015197",
+      "sponsor_name": "HIKMA",
+      "openfda": {
+        "application_number": [
+          "NDA015197"
+        ],
+        "brand_name": [
+          "AMINOCAPROIC ACID"
+        ],
+        "generic_name": [
+          "AMINOCAPROIC ACID"
+        ],
+        "manufacturer_name": [
+          "Hikma Pharmaceuticals USA Inc."
+        ],
+        "product_ndc": [
+          "0054-1110",
+          "0054-1100"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "AMINOCAPROIC ACID"
+        ],
+        "rxcui": [
+          "476271",
+          "582299"
+        ],
+        "spl_id": [
+          "7b8f0ddb-00fd-4c22-afae-afe636f95f3a"
+        ],
+        "spl_set_id": [
+          "7b8f0ddb-00fd-4c22-afae-afe636f95f3a"
+        ],
+        "package_ndc": [
+          "0054-1110-13",
+          "0054-1100-58"
+        ],
+        "nui": [
+          "N0000175634",
+          "N0000175632"
+        ],
+        "pharm_class_epc": [
+          "Antifibrinolytic Agent [EPC]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Fibrinolysis [PE]"
+        ],
+        "unii": [
+          "U6F3787206"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "AMICAR",
+          "active_ingredients": [
+            {
+              "name": "AMINOCAPROIC ACID",
+              "strength": "500MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "002",
+          "reference_drug": "Yes",
+          "brand_name": "AMICAR",
+          "active_ingredients": [
+            {
+              "name": "AMINOCAPROIC ACID",
+              "strength": "1GM"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}

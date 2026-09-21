@@ -1,0 +1,429 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-16",
+    "results": {
+      "skip": 0,
+      "limit": 1000,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "25",
+          "submission_status": "AP",
+          "submission_status_date": "19731004",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "78",
+          "submission_status": "AP",
+          "submission_status_date": "20230918",
+          "review_priority": "N/A",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)",
+          "application_docs": [
+            {
+              "id": "75983",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/011839Orig1s078lbl.pdf",
+              "date": "20231030",
+              "type": "Label"
+            },
+            {
+              "id": "75986",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2023/011839Orig1s078ltr.pdf",
+              "date": "20231030",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "68",
+          "submission_status": "AP",
+          "submission_status_date": "19980804",
+          "review_priority": "STANDARD",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy",
+          "application_docs": [
+            {
+              "id": "40676",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/98/11839-S068_Provera.pdf",
+              "date": "19980804",
+              "type": "Review"
+            },
+            {
+              "id": "11966",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/1998/11839S68LTR.PDF",
+              "date": "19980804",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "66",
+          "submission_status": "AP",
+          "submission_status_date": "19951128",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "80",
+          "submission_status": "AP",
+          "submission_status_date": "20150507",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10783",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/011839s079s080lbl.pdf",
+              "date": "20150508",
+              "type": "Label"
+            },
+            {
+              "id": "290",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/011839Orig1s079,s080ltr.pdf",
+              "date": "20150511",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "58",
+          "submission_status": "AP",
+          "submission_status_date": "19911218",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "62",
+          "submission_status": "AP",
+          "submission_status_date": "19930430",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "46",
+          "submission_status": "AP",
+          "submission_status_date": "19851101",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "60",
+          "submission_status": "AP",
+          "submission_status_date": "19911119",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "52",
+          "submission_status": "AP",
+          "submission_status_date": "19880603",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "50",
+          "submission_status": "AP",
+          "submission_status_date": "19871026",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "79",
+          "submission_status": "AP",
+          "submission_status_date": "20150507",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10782",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/011839s079s080lbl.pdf",
+              "date": "20150508",
+              "type": "Label"
+            },
+            {
+              "id": "11968",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2015/011839Orig1s079,s080ltr.pdf",
+              "date": "20150511",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "77",
+          "submission_status": "AP",
+          "submission_status_date": "20161201",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "83",
+          "submission_status": "AP",
+          "submission_status_date": "20240215",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "77538",
+              "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2024/011839Orig1s083ltr.pdf",
+              "date": "20240216",
+              "type": "Letter"
+            },
+            {
+              "id": "77563",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2024/011839s083lbl.pdf",
+              "date": "20240220",
+              "type": "Label"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "67",
+          "submission_status": "AP",
+          "submission_status_date": "19980331",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19590618",
+          "review_priority": "STANDARD",
+          "submission_class_code": "TYPE 1",
+          "submission_class_code_description": "Type 1 - New Molecular Entity"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "59",
+          "submission_status": "AP",
+          "submission_status_date": "19920619",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "71",
+          "submission_status": "AP",
+          "submission_status_date": "20070928",
+          "review_priority": "STANDARD",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling",
+          "application_docs": [
+            {
+              "id": "10781",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2007/011839s071lbl.pdf",
+              "date": "20071004",
+              "type": "Label"
+            },
+            {
+              "id": "11967",
+              "url": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2007/011839s071ltr.pdf",
+              "date": "20071004",
+              "type": "Letter"
+            }
+          ]
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "63",
+          "submission_status": "AP",
+          "submission_status_date": "19930623",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "61",
+          "submission_status": "AP",
+          "submission_status_date": "19930623",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "39",
+          "submission_status": "AP",
+          "submission_status_date": "19790723",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "53",
+          "submission_status": "AP",
+          "submission_status_date": "19891006",
+          "review_priority": "STANDARD",
+          "submission_class_code": "MANUF (CMC)",
+          "submission_class_code_description": "Manufacturing (CMC)"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "29",
+          "submission_status": "AP",
+          "submission_status_date": "19751021",
+          "review_priority": "STANDARD",
+          "submission_class_code": "REMS",
+          "submission_class_code_description": "REMS"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "35",
+          "submission_status": "AP",
+          "submission_status_date": "19790606",
+          "submission_class_code": "EFFICACY",
+          "submission_class_code_description": "Efficacy"
+        }
+      ],
+      "application_number": "NDA011839",
+      "sponsor_name": "PFIZER",
+      "openfda": {
+        "application_number": [
+          "NDA011839"
+        ],
+        "brand_name": [
+          "MEDROXYPROGESTERONE ACETATE",
+          "PROVERA"
+        ],
+        "generic_name": [
+          "MEDROXYPROGESTERONE ACETATE"
+        ],
+        "manufacturer_name": [
+          "Mylan Pharmaceuticals Inc.",
+          "Pharmacia & Upjohn Company LLC"
+        ],
+        "product_ndc": [
+          "59762-0055",
+          "59762-0058",
+          "59762-0056",
+          "0009-0051",
+          "0009-0065",
+          "0009-0287"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "MEDROXYPROGESTERONE ACETATE"
+        ],
+        "rxcui": [
+          "1000114",
+          "1000135",
+          "1000141",
+          "1000124",
+          "1000139",
+          "1000145"
+        ],
+        "spl_id": [
+          "602a8237-8197-41ce-bfaf-03c6340cbe07",
+          "ebcdf2fb-760c-4a9a-80a1-a0c6b21a891a"
+        ],
+        "spl_set_id": [
+          "2627eb11-06bf-4a45-9172-094468e3ca07",
+          "a586be28-96af-4fed-a13f-9b94fd4c7405"
+        ],
+        "package_ndc": [
+          "59762-0055-1",
+          "59762-0055-2",
+          "59762-0058-1",
+          "59762-0058-2",
+          "59762-0056-1",
+          "59762-0056-2",
+          "0009-0065-01",
+          "0009-0287-01",
+          "0009-0051-01"
+        ],
+        "unii": [
+          "C2QI4IOI2G"
+        ]
+      },
+      "products": [
+        {
+          "product_number": "003",
+          "reference_drug": "Yes",
+          "brand_name": "PROVERA",
+          "active_ingredients": [
+            {
+              "name": "MEDROXYPROGESTERONE ACETATE",
+              "strength": "5MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "001",
+          "reference_drug": "Yes",
+          "brand_name": "PROVERA",
+          "active_ingredients": [
+            {
+              "name": "MEDROXYPROGESTERONE ACETATE",
+              "strength": "2.5MG"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        },
+        {
+          "product_number": "004",
+          "reference_drug": "Yes",
+          "brand_name": "PROVERA",
+          "active_ingredients": [
+            {
+              "name": "MEDROXYPROGESTERONE ACETATE",
+              "strength": "10MG"
+            }
+          ],
+          "reference_standard": "Yes",
+          "dosage_form": "TABLET",
+          "route": "ORAL",
+          "marketing_status": "Prescription",
+          "te_code": "AB"
+        }
+      ]
+    }
+  ]
+}

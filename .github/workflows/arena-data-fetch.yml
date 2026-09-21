@@ -60,22 +60,43 @@ jobs:
           python3 scripts/run_fetch_jobs.py "${JOBS[@]}" 2>&1 | tee data/raw/last_run.log
           exit "${PIPESTATUS[0]}"
 
-      - name: Build verified pre-1980 Type 1 expansion when all payload blocks exist
+      - name: Guard the pre-1985 era table (1980-1984 only, 91 rows)
         if: always()
         run: |
           set -euo pipefail
-          required=(
-            data/raw/openfda_orig_decisions_1965_1969/manifest.json
-            data/raw/openfda_orig_decisions_1970_1974/manifest.json
-            data/raw/openfda_orig_decisions_1975_1979/manifest.json
-          )
-          ready=true
-          for f in "${required[@]}"; do test -s "$f" || ready=false; done
-          if [ "$ready" = true ]; then
-            python3 scripts/expand_pre1980_decisions.py
-          else
-            echo "pre-1980 payload blocks incomplete; no table write (fail-closed)"
+          # scripts/expand_pre1980_decisions.py (v15/v16 legacy) is intentionally
+          # no longer run: the 1965-1979 rows live in data/pre1980_fda_decisions.csv
+          # (probe-verified, richer notes), and re-appending them into the pre-1985
+          # era table (run 30, 2026-09-21) broke the era-table separation. The
+          # 91-row 1980-1984 shape is pinned fail-closed here and in the validator.
+          python3 - << 'PY'
+          import csv, sys
+          rows = list(csv.DictReader(open("data/pre1985_fda_decisions.csv", newline="", encoding="utf-8-sig")))
+          years = {r["year"] for r in rows}
+          if len(rows) != 91 or years != {"1980", "1981", "1982", "1983", "1984"}:
+              sys.exit(f"pre1985 era table drifted: {len(rows)} rows, years {sorted(years)} - "
+                       "the 1965-1979 rows belong to pre1980_fda_decisions.csv; restore the 91-row file")
+          print(f"pre1985 era table pinned: {len(rows)} rows, years {sorted(years)}")
+          PY
+
+      - name: Build v26 pre-1965 decision tables (1939-1964) + live-probe join
+        if: always()
+        run: |
+          set -euo pipefail
+          # Base build: rewrites the four v26 tables from the SHA-verified
+          # payloads (fail-closed on any drift). The builder auto-joins the
+          # per-row live probes when their manifest exists; rows without a
+          # captured probe stay PROBE_PENDING.
+          python3 scripts/build_pre1965_decisions_v26.py
+          if [ -f data/raw/pre1965_row_probes_1939_1964/manifest.json ]; then
+            n=$(python3 -c "import json;print(len([e for e in json.load(open('data/raw/pre1965_row_probes_1939_1964/manifest.json'))['requests'] if e.get('sha256') and e.get('status')==200]))")
+            echo "v26 probe layer: $n/535 captured"
+            if [ "$n" -lt 535 ]; then
+              echo "v26 probe layer partial; remaining items retry on the next push (skip_existing)"
+            fi
           fi
+          python3 scripts/verify_pre1965_year_register_v26.py
+          python3 scripts/validate_data.py
 
       - name: Build v23 pre-1980 action register + CRL match layer
         if: always()
