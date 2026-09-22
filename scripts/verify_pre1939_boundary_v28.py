@@ -273,8 +273,30 @@ def main() -> int:
        "it is NOT in")
     ck(ev2 is not None and "PAREDRINE" in ev2["notes"],
        "EV-02 lost the verified product of record for NDA000004")
-    ck(any("PENDING" in r["observed_value"] or "0 rows dated before 1939" in r["observed_value"]
-           for r in ev[-1:]), "the whole-table census row is missing or silent")
+    # v29: EV-03 must name the table NDA000159 is actually tracked in. v28 wrote
+    # "already counted in data/pre1965_fda_decisions.csv" - false: that table
+    # holds NME-comparable rows only (earliest row 1942) and NDA000159 is a
+    # non-NME row of the pre-1965 originals AUDIT table. Pinned like EV-02.
+    ev3 = next((r for r in ev if r["evidence_id"] == "PRE1939EV-03"), None)
+    dec65 = csvrows(DATA / "pre1965_fda_decisions.csv") if (DATA / "pre1965_fda_decisions.csv").exists() else []
+    ck(not any("000159" in r["application_number"].replace(" ", "") for r in dec65),
+       "NDA000159 IS present in data/pre1965_fda_decisions.csv - EV-03 wording must be revisited")
+    ck(ev3 is not None and "PRE1965AUDIT-1939-02" in ev3["notes"] and "NOT in data/pre1965_fda_decisions.csv" in ev3["notes"],
+       "EV-03 must name the correct tracking row (PRE1965AUDIT-1939-02) and state that NDA000159 is "
+       "NOT in data/pre1965_fda_decisions.csv")
+    ck(ev3 is not None and "already counted in data/pre1965_fda_decisions.csv" not in
+       ev3["notes"].replace("v28 wrote 'already counted in data/pre1965_fda_decisions.csv'", ""),
+       "EV-03 still asserts the false v28 claim")
+    ck(ev3 is not None and "SULFAPYRIDINE" in ev3["notes"],
+       "EV-03 lost the verified product of record for NDA000159")
+    # census layer: either explicitly pending, or joined with EV-12..EV-16
+    census_dir = DATA / "raw" / "drugsatfda_pre1939_census_v28"
+    census_joined = (census_dir / "manifest.json").exists()
+    if census_joined:
+        ck(len(ev) == 16, f"census joined: evidence table has {len(ev)} rows, expected 16")
+    else:
+        ck(any("PENDING" in r["observed_value"] for r in ev[-1:]),
+           "the whole-table census row is missing or silent")
     for r in ev:
         ck(bool(r["claim"]) and bool(r["method"]) and bool(r["observed_value"]),
            f"{r['evidence_id']}: empty claim/method/observed_value")
@@ -380,8 +402,164 @@ def main() -> int:
     ck(any(r["source_window"] == "1938-1964 official window" and r["year"] == "1939" for r in stt),
        "status census has no 1939 row - the earliest year must be present")
 
+    # ---- 7b. (v29) whole-table census layer, re-derived from the captures --
+    # Independent of the builder: every number below is recomputed from the
+    # raw capture files themselves (re-hashed against the runner manifest),
+    # then compared with what the evidence lines, the register and the fifth
+    # table say. The adjudication rules are re-applied, not trusted.
+    FDCA = "1938-06-25"
+    if census_joined:
+        inputs["complete"] = DATA / "pre1939_complete_table_census.csv"
+        ck(inputs["complete"].exists(), "census joined but data/pre1939_complete_table_census.csv is missing")
+        man_c = manifest(census_dir / "manifest.json")
+        raw_c = json.loads((census_dir / "manifest.json").read_text(encoding="utf-8"))
+        zips = [e for e in raw_c.get("requests", []) if str(e.get("id", "")).endswith(":zip")]
+        ck(len(zips) == 1, f"census manifest records {len(zips)} ZIP downloads, expected 1")
+        zip_sha = zips[0]["zip_sha256"] if zips else ""
+        need = ["Submissions_before_1939.txt", "Submissions_undated.txt", "Submissions_status_counts.txt",
+                "Submissions_type_counts.txt", "Submissions_applno_below_boundary.txt",
+                "Applications_below_boundary.txt"]
+        cap: dict[str, list[dict]] = {}
+        cap_sha: dict[str, str] = {}
+        for n in need:
+            p = census_dir / n
+            e = man_c.get(n)
+            if not ck(p.exists() and e is not None, f"census capture {n} missing on disk or in the manifest"):
+                continue
+            cap_sha[n] = sha256_file(p)
+            ck(cap_sha[n] == e.get("out_sha256"), f"census capture {n}: SHA-256 != manifest out_sha256")
+            cap[n] = tsv(p)
+            ck(len(cap[n]) == int(e.get("rows_kept", -1)), f"census capture {n}: rows on disk != rows_kept")
+        if all(n in cap for n in need):
+            total = int(man_c["Submissions_before_1939.txt"]["rows_total"])
+            ck(len({man_c[n]["member_sha256"] for n in need if n.startswith("Submissions_")}) == 1,
+               "census Submissions captures come from more than one member SHA")
+            before, undated = cap["Submissions_before_1939.txt"], cap["Submissions_undated.txt"]
+            st_c = {r["SubmissionStatus"]: int(r["count"]) for r in cap["Submissions_status_counts.txt"]}
+            ty_c = {r["SubmissionType"]: int(r["count"]) for r in cap["Submissions_type_counts.txt"]}
+            # adjudication rules re-applied
+            ck(all(r["SubmissionStatusDate"][:10] < FDCA for r in before),
+               f"a pre-1939 row is dated on/after the FD&C Act ({FDCA}) - boundary contradicted")
+            ck(all(not r["SubmissionStatusDate"].strip()[:4].isdigit() for r in undated),
+               "undated capture contains a dated row")
+            ck(sum(st_c.values()) == total and sum(ty_c.values()) == total,
+               f"census counts do not sum to the member ({sum(st_c.values())}/{sum(ty_c.values())} vs {total})")
+            ck(set(st_c) <= {"AP", "TA", "<EMPTY>"}, f"status census holds non-approval-family statuses: {sorted(st_c)}")
+            ck(set(ty_c) <= {"ORIG", "SUPPL"}, f"type census holds unexpected types: {sorted(ty_c)}")
+            ck(sorted(r["ApplNo"] for r in cap["Applications_below_boundary.txt"]) == low_ids,
+               "census below-boundary application set != map-derived set")
+            hist = Counter((r["ApplNo"], r["SubmissionType"], r["SubmissionNo"], r["SubmissionStatus"],
+                            r["SubmissionStatusDate"]) for r in cap["Submissions_applno_below_boundary.txt"])
+            win = Counter((r["ApplNo"], r["SubmissionType"], r["SubmissionNo"], r["SubmissionStatus"],
+                           r["SubmissionStatusDate"]) for r in s64 + s79 if r["ApplNo"] in low_ids)
+            ck(not (win - hist), "a committed window row of a below-boundary application is absent from its complete history")
+            apps_ids = {a["ApplNo"] for a in apps}
+            irregular = sorted({r["ApplNo"] for r in before} | {r["ApplNo"] for r in undated if r["SubmissionType"] == "ORIG"})
+            ck(all(a not in apps_ids for a in irregular),
+               f"an irregular ORIG ApplNo has an application row after all: {irregular}")
+            ck(not ({r["ApplNo"] for r in s64 + s79} & set(irregular)),
+               "an irregular ApplNo appears in a committed window")
+            # evidence lines EV-12..EV-16 against the recomputed facts
+            evd = {r["evidence_id"]: r for r in ev}
+            ck(evd["PRE1939EV-12"]["observed_value"].startswith(f"{len(before)} row(s) dated before 1939 of {total:,}"),
+               f"EV-12 observed value drifted: {evd['PRE1939EV-12']['observed_value'][:80]}")
+            ck(f"rows dated {FDCA}..1938-12-31: 0" in evd["PRE1939EV-12"]["observed_value"],
+               "EV-12 must state the count of rows dated between the FD&C Act and 1938-12-31")
+            for r in before:
+                ck(f"ApplNo={r['ApplNo']}" in evd["PRE1939EV-12"]["observed_value"]
+                   and r["SubmissionStatusDate"] in evd["PRE1939EV-12"]["observed_value"],
+                   f"EV-12 does not quote pre-1939 row {r['ApplNo']} verbatim")
+            ck("FLAG-PRE-STATUTE-DATE" in evd["PRE1939EV-12"]["notes"] and "never counted" in evd["PRE1939EV-12"]["notes"],
+               "EV-12 lost the flag / never-counted statement")
+            ck(evd["PRE1939EV-12"]["source_sha256_prefix"] == cap_sha["Submissions_before_1939.txt"][:16],
+               "EV-12 sha prefix != capture")
+            ck(evd["PRE1939EV-13"]["observed_value"].startswith(f"{len(undated)} undated rows"),
+               f"EV-13 observed value drifted: {evd['PRE1939EV-13']['observed_value'][:60]}")
+            for r in undated:
+                ck(f"ApplNo={r['ApplNo']}; SubmissionClassCodeID={r['SubmissionClassCodeID'] or '(blank)'}; "
+                   f"SubmissionType={r['SubmissionType']}; SubmissionNo={r['SubmissionNo']}" in evd["PRE1939EV-13"]["observed_value"],
+                   f"EV-13 does not quote undated row {r['ApplNo']} {r['SubmissionType']} {r['SubmissionNo']} verbatim")
+            ck(f"{total:,} rows = {len(before)} pre-statute placeholder + {len(undated)} undated + "
+               f"{total - len(before) - len(undated):,} rows" in evd["PRE1939EV-13"]["notes"],
+               "EV-13 arithmetic (total = pre-statute + undated + dated>=1939) missing or wrong")
+            ck(evd["PRE1939EV-13"]["source_sha256_prefix"] == cap_sha["Submissions_undated.txt"][:16],
+               "EV-13 sha prefix != capture")
+            ck(f"SubmissionStatus census: {st_c}" in evd["PRE1939EV-14"]["observed_value"]
+               and f"SubmissionType census: {ty_c}" in evd["PRE1939EV-14"]["observed_value"],
+               f"EV-14 observed value drifted: {evd['PRE1939EV-14']['observed_value'][:120]}")
+            ck("tentative approval letter" in evd["PRE1939EV-14"]["notes"],
+               "EV-14 lost the verbatim FDA glossary definition of Tentative Approval")
+            ck("approval-family" in evd["PRE1939EV-08"]["claim"] and "TA" in evd["PRE1939EV-08"]["notes"],
+               "EV-08 claim/notes not refined to approval-family (AP + TA) after the census")
+            ck(evd["PRE1939EV-15"]["source_sha256_prefix"] == zip_sha[:16], "EV-15 sha prefix != census ZIP sha")
+            win_total = int(man_all["Submissions_1965_1979.txt"]["rows_total"])
+            ck(f"Submissions {total:,} rows (+{total - win_total})" in evd["PRE1939EV-15"]["observed_value"],
+               "EV-15 publication delta (submission rows) drifted")
+            ck(f"Submissions {win_total:,} rows" in evd["PRE1939EV-15"]["observed_value"],
+               "EV-15 must state the pinned windows' publication row count")
+            ck("updated each morning, Monday through Friday" in evd["PRE1939EV-15"]["notes"],
+               "EV-15 lost FDA's verbatim update-cadence statement")
+            ck("github.com" not in evd["PRE1939EV-15"]["notes"], "EV-15 cites a non-official URL")
+            for a in irregular:
+                ck(a in evd["PRE1939EV-16"]["observed_value"], f"EV-16 does not list irregular ApplNo {a}")
+            ck("no cause is inferred" in evd["PRE1939EV-16"]["notes"], "EV-16 lost its no-inference statement")
+            # register 1938 row must carry the whole-table sentence
+            r38 = next(r for r in reg if r["year"] == "1938")
+            ck(f"0 of all {total:,} rows" in r38["recorded_decisions_basis"] and f"{len(undated)} undated" in r38["recorded_decisions_basis"],
+               "register 1938 basis lost the whole-table census sentence")
+            ck(r38["fda_drug_approval_decisions_recorded"] == "0", "register 1938 decisions count must stay 0")
+            # fifth table, cell by cell
+            comp = csvrows(inputs["complete"])
+            ck([r["census_id"] for r in comp] == [f"PRE1939COMPLETE-{i:03d}" for i in range(1, 7)],
+               "complete-table census IDs are not PRE1939COMPLETE-001..006")
+            ck([r["capture_file"] for r in comp] == need, "complete-table census rows are not one per capture, in order")
+            for r in comp:
+                n = r["capture_file"]
+                e = man_c[n]
+                ck(r["member"] == e["member"], f"{n}: member drift")
+                ck(r["member_rows_total"] == str(e["rows_total"]) and r["rows_kept"] == str(e["rows_kept"]) == str(len(cap[n])),
+                   f"{n}: row counts drift vs manifest/capture")
+                ck(r["source_sha256_prefix"] == cap_sha[n][:16], f"{n}: source sha prefix != capture")
+                ck(r["member_sha256_prefix"] == e["member_sha256"][:16], f"{n}: member sha prefix drift")
+                ck(r["zip_sha256_prefix"] == zip_sha[:16], f"{n}: zip sha prefix drift")
+                ck(json.loads(r["selector"]) == e["filter"], f"{n}: selector != manifest filter")
+                ck(r["captured_at_utc"] == e.get("written_at_utc", ""), f"{n}: captured_at_utc drift")
+                ck(r["source_url"] == "https://www.fda.gov/media/89850/download?attachment", f"{n}: source_url drift")
+                hdr = list(cap[n][0].keys()) if cap[n] else []
+                want = " | ".join("; ".join(f"{h}={(x.get(h) or '(blank)')}" for h in hdr) for x in cap[n]) or "(no rows)"
+                ck(r["kept_rows_verbatim"] == want, f"{n}: kept_rows_verbatim is not the verbatim capture")
+                ck(r["verification_status"].startswith("Verified"), f"{n}: verification_status")
+            byname = {r["capture_file"]: r for r in comp}
+            ck(byname["Submissions_before_1939.txt"]["counted_as_fda_decision"].startswith("False"),
+               "pre-statute row must not be counted as a decision")
+            ck(byname["Submissions_undated.txt"]["counted_as_fda_decision"].startswith("False"),
+               "undated rows must not be counted as decisions")
+            ck(byname["Submissions_undated.txt"]["flags"] == "; ".join(
+                   f"FLAG-UNDATED-ROW ApplNo={r['ApplNo']} {r['SubmissionType']} {r['SubmissionNo']}" for r in undated),
+               "undated flags cell is not exactly one FLAG-UNDATED-ROW per captured row")
+            ck(byname["Submissions_before_1939.txt"]["flags"] == "; ".join(
+                   f"FLAG-PRE-STATUTE-DATE ApplNo={r['ApplNo']} date={r['SubmissionStatusDate']}" for r in before),
+               "pre-statute flags cell is not exactly one FLAG-PRE-STATUTE-DATE (with the verbatim date) per captured row")
+            for n in ("Submissions_status_counts.txt", "Submissions_type_counts.txt", "Applications_below_boundary.txt"):
+                ck(byname[n]["flags"] == "", f"{n}: unexpected flags")
+            ck(f"statuses {st_c}" in byname["Submissions_status_counts.txt"]["result"], "status census result drifted")
+            ck(f"types {ty_c}" in byname["Submissions_type_counts.txt"]["result"], "type census result drifted")
+            ck(byname["Submissions_before_1939.txt"]["result"].startswith(f"{len(before)} row(s) dated before 1939"),
+               "pre-statute result drifted")
+            ck(byname["Submissions_undated.txt"]["result"].startswith(f"{len(undated)} rows"), "undated result drifted")
+            ck("pre1965_fda_decisions.csv" not in byname["Submissions_applno_below_boundary.txt"]["counted_as_fda_decision"],
+               "complete-history row repeats the false 'counted in pre1965_fda_decisions.csv' claim")
+            ck("PRE1965AUDIT-1939-02" in byname["Submissions_applno_below_boundary.txt"]["counted_as_fda_decision"]
+               and "PRE1980AUDIT-1969-10" in byname["Submissions_applno_below_boundary.txt"]["counted_as_fda_decision"],
+               "complete-history row must name both era-audit rows")
+            extra = hist - win
+            ck(f"{sum(extra.values())} rows outside both windows" in byname["Submissions_applno_below_boundary.txt"]["cross_check_vs_committed_windows"],
+               "complete-history row: count of rows outside the windows drifted")
+            print(f"  census layer: {total:,} rows; {len(before)} pre-statute, {len(undated)} undated, statuses {st_c}; "
+                  f"{len(comp)} complete-table rows re-derived")
+
     # ---- 8. no invented fields anywhere ----------------------------------
-    for name in ("boundary", "census", "register", "status"):
+    for name in ("boundary", "census", "register", "status") + (("complete",) if census_joined else ()):
         rows = csvrows(inputs[name])
         for col in rows[0].keys():
             ck(not any(b in col.lower() for b in BANNED_SUBSTRINGS),
@@ -394,7 +572,7 @@ def main() -> int:
                    f"{k}: cell reads like an estimate")
     # every http(s) cell in every v28 table must be on the allow-list
     url_cells = 0
-    for name in ("boundary", "census", "register", "status"):
+    for name in ("boundary", "census", "register", "status") + (("complete",) if census_joined else ()):
         for r in csvrows(inputs[name]):
             for k, v in r.items():
                 for m in re.finditer(r"https?://[^\s,;)\]]+", v or ""):
@@ -412,8 +590,8 @@ def main() -> int:
         if len(errors) > 40:
             print(f"ERROR ... {len(errors) - 40} more")
         return 1
-    print("OK: every cell of the four v28 pre-1939 tables reproduces from the committed "
-          "official primary sources.")
+    print(f"OK: every cell of the {'five' if census_joined else 'four'} pre-1939 tables reproduces from the "
+          "committed official primary sources.")
     return 0
 
 

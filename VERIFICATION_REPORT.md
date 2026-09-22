@@ -1,3 +1,45 @@
+# Verification Report — v29 Whole-Table Census Joined (2026-09-22)
+
+**Branch:** `arena/01a0c7ef-druganalysis`
+**Validator:** `python3 scripts/validate_data.py` — **PASS, 0 errors** (1,751 warnings = the standing manual-review baseline, unchanged).
+**Independent verifier:** `python3 scripts/verify_pre1939_boundary_v28.py` — **2,763 checks, 0 errors**; 147 URL citations re-checked against the verified official host allow-list.
+**Runner self-test:** `python3 scripts/tests/test_run_fetch_jobs_zip_skip_existing.py` — OK.
+**Existing verifiers re-run unchanged:** v26 pre-1965 register 22,105 checks / 0 errors; v23 pre-1980 register 7,164 / 0; v23 CRL match 5,456 / 0. Every other data table byte-identical after the full workflow pipeline was run locally.
+
+## What was being verified
+
+v28 left the whole-table census **queued** and wrote its expectations into the builder as abort conditions: *0 rows dated before 1939* and *status census == [AP]*. The capture landed on Actions run 33. The verification question for v29 is: **what does the complete official table actually show, is every published cell a verbatim copy or a recomputable count of it, and is every place where the result differs from the v28 expectation stated as such rather than absorbed?**
+
+## v29 result
+
+| Check | Result | Evidence |
+|---|---|---|
+| Capture provenance | 7 files staged from run-33 commit `e6bd9b2`; every `out_sha256` re-hashed equal; `rows_kept` equals rows on disk for all 6 extracts; all 5 Submissions extracts cut from one member (`b006c37c42d7a34f…`, 193,810 rows) of one ZIP (`2e7342240fdb539a…`, 6,084,077 bytes, 2026-09-21T23:34:24Z); Applications member `a8d6bfd5bc3381fd…`, 29,343 rows | builder + verifier re-hash independently |
+| Rows dated before 1939 | **1** (v28 expected 0): ApplNo `060904`, class blank, ORIG 1, AP, `1900-01-01 00:00:00`, notes blank, priority blank. Date < 1938-06-25 → pre-statute placeholder, `FLAG-PRE-STATUTE-DATE`, `counted_as_fda_decision = False`. **0 rows dated 1938-06-25..1938-12-31** | verifier re-applies the rule to the raw capture, then checks EV-12 quotes the row verbatim |
+| Undated rows | **8** (`{'ORIG': 1, 'SUPPL': 7}`): 009658 ORIG 1; 021014 SUPPL 51; 022315 SUPPL 20; 022505 SUPPL 10; 204353 SUPPL 38; 214012 SUPPL 20; 215866 SUPPL 52; 217806 SUPPL 50 — all status AP, all status date empty. `FLAG-UNDATED-ROW` on each. Arithmetic pinned: 193,810 = 1 + 8 + 193,801 | verifier checks each row is quoted in EV-13 and the arithmetic sentence is present |
+| Status census | `{'<EMPTY>': 1, 'AP': 192604, 'TA': 1205}`, sum 193,810 = member (v28 expected `[AP]`). Set ⊆ {AP, TA, `<EMPTY>`}; **no RE / W / CR**. TA definition quoted verbatim from FDA's glossary in EV-14 | verifier re-sums and checks the set; validator scans the fifth table for RE/W/CR tokens |
+| Type census | `{'ORIG': 27862, 'SUPPL': 165948}`, sum 193,810 | re-summed |
+| Below-boundary set in the census publication | `['000004', '000159']` == map-derived set; complete history 6 rows; both committed window rows present; 4 rows outside both windows are supplements dated 1980-05-08, 1986-05-28, 1986-12-09, 1987-05-26 — asserted nowhere | `Counter` difference on the 5-column key |
+| Orphan check | `060904`, `009658` absent from the committed 29,336-row application map and from both committed windows | verifier set-tests; session page reads (empty overview pages; control 000552 shows 02/09/1939 ORIG-1 Approval) recorded as observation only, capture queued |
+| Publication drift | windows ZIP `e145bc0f21e0da7a…` 6,081,382 bytes, 6 identical downloads 2026-09-19T18:57:46Z..2026-09-21T07:43:25Z, 193,752 / 29,336; census ZIP 193,810 / 29,343 (+58 / +7). Windows left pinned. FDA cadence sentence quoted verbatim | EV-15 checked against both manifests; `github.com` banned from the cell |
+| **Corrected claim (EV-03)** | v28 note "already counted in `data/pre1965_fda_decisions.csv`" — **false**; `grep` of that table for 000159 returns nothing and its earliest row is 1942. Correct: `pre1965_originals_audit_1939_1964.csv` row `PRE1965AUDIT-1939-02` (`tracked_in = none (not a Type 1/1-4 original approval)`). Note now derived from the era index | verifier asserts NDA000159 ∉ `pre1965_fda_decisions.csv`, EV-03 names the audit row and does not repeat the false sentence; validator pins the same |
+| **Own-draft catch** | The first draft of the fifth table's `counted_as_fda_decision` cell repeated the same false sentence; caught on the line-by-line read of the output, replaced by the era-index derivation, and pinned by verifier + validator | `pre1965_fda_decisions.csv` string banned from that cell |
+| Builder key bug | v28 join compared `entry["sha256"]` (never written by `zip_extract`) with the file hash → reproduced "SHA-256 drift vs manifest" on all 6 files before the fix; now `out_sha256` | local reproduction before editing |
+| Fifth table | 6 rows `PRE1939COMPLETE-001..006`, one per capture in manifest order; member, selector (== manifest filter JSON), rows_total, rows_kept, verbatim rows, SHA prefixes (out / member / zip), capture time, official URL all re-derived cell by cell; flags cells re-built exactly | verifier §7b |
+| Runner: zip skip_existing | Synthetic ZIP through `run_job()`: run 1 downloads once and writes 6 extracts + manifest; run 2 downloads nothing and leaves `manifest.json` **byte-identical**; deleting one extract triggers a full re-extract; a job without `skip_existing` still re-downloads (legacy unchanged) | `scripts/tests/test_run_fetch_jobs_zip_skip_existing.py` |
+| Runner: failed paged fetch | `openfda_years` with a raising `http_get`: committed payload byte-identical afterwards, no status-200 manifest entry (before v29: 0-record payload written with status 200) | same test |
+| Runner: real job set, network disabled | All 29 job files run with `http_get` raising: no landed job re-downloads; zip jobs print `skip … (skip_existing)` and `no-op … manifest unchanged`; the only manifests touched are those of jobs whose items never landed (expected FAILED retries) and the new overview-page job | simulation, then `git checkout` of the touched manifests |
+| Mutation-tested | (a) reinstating the false EV-03 sentence → 2 errors; (b) changing `1900-01-01` to `1901-01-01` inside the fifth table's flags cell → 1 error (first draft of the verifier missed this — tightened to exact flag-cell equality); (c) appending one byte to `Submissions_undated.txt` → verifier 2 errors and builder aborts with "SHA-256 drift vs manifest" | run and restored |
+| Site | `node --check` clean; shipped `parseCSV` parses the fifth table (6 × 19, quoted JSON selectors intact); all 90 rendered cells of the new DataTable produce strings | node harness |
+
+## Known limits stated on the published tables (not smoothed)
+
+1. **Two publications.** The whole-table facts describe the 2026-09-21T23:34Z publication; the committed windows describe the 2026-09-19..21 publication. The below-boundary facts agree in both; nothing else is asserted to be identical.
+2. **Orphan rows are unexplained.** No cause is inferred for a Submissions row without an Applications row; the official overview-page observation is reproducible only once `fetch_jobs/drugsatfda_overview_pages_v29.json` lands.
+3. **Non-approval decisions for every era.** Now proven absent from the *complete* Drugs@FDA `Submissions.txt`, not just the windows. The CRL database remains the only non-approval source (458 letters, 2011+).
+
+---
+
 # Verification Report — v28 Pre-1939 Boundary (2026-09-21)
 
 **Branch:** `arena/01a0c638-druganalysis`
@@ -38,7 +80,7 @@ The session task was to expand FDA decisions **before the earliest year in the p
 
 ## Known limits stated on the published tables (not smoothed)
 
-1. **Year-filter scope.** The 0-rows-in-1938 finding is a count over the *committed year-filtered windows* (1,215 + 10,753 rows). Rows with an empty or unparseable `SubmissionStatusDate` are invisible to any year filter. EV-12 records this as **pending**, and `fetch_jobs/drugsatfda_pre1939_census_v28.json` counts both (`Submissions_before_1939.txt`, `Submissions_undated.txt`) over all 193,752 rows.
+1. **Year-filter scope.** The 0-rows-in-1938 finding is a count over the *committed year-filtered windows* (1,215 + 10,753 rows). Rows with an empty or unparseable `SubmissionStatusDate` are invisible to any year filter. *(Closed in v29: 8 such rows exist in the complete table, enumerated verbatim; 0 rows dated between the FD&C Act and 1938-12-31.)* EV-12 records this as **pending**, and `fetch_jobs/drugsatfda_pre1939_census_v28.json` counts both (`Submissions_before_1939.txt`, `Submissions_undated.txt`) over all 193,752 rows.
 2. **1902-1938 biologic licenses.** The regime existed; no official machine-readable census of individual licenses is published. Zero rows asserted.
 3. **Non-approval decisions for every era.** Not obtainable from Drugs@FDA `Submissions.txt`. The project's only non-approval evidence is FDA's CRL database (458 published letters, 2011+), which remains a subset rather than a census — still the decision engine's blocking denominator limitation.
 

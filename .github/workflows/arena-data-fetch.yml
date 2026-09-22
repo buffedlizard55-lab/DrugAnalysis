@@ -48,6 +48,18 @@ jobs:
           ref: ${{ github.ref_name }}
           fetch-depth: 0
 
+      - name: Runner self-test (v29, zip_extract skip_existing + no-op manifests)
+        run: |
+          set -euo pipefail
+          # v29 2026-09-22: run 33 re-downloaded the daily-updated official
+          # Drugs@FDA ZIP for every landed zip_extract job and overwrote the
+          # SHA-pinned window extracts, so every SHA-gated builder aborted.
+          # zip_extract now honours skip_existing and a run that only produces
+          # "skipped-existing" stubs leaves manifest.json byte-identical (no
+          # more stub-only data commits). Exercised end-to-end through
+          # run_job() against a synthetic ZIP before any real job runs.
+          python3 scripts/tests/test_run_fetch_jobs_zip_skip_existing.py
+
       - name: Run declarative fetch jobs
         id: runjobs
         continue-on-error: true
@@ -92,13 +104,20 @@ jobs:
           #   * regulatory register 1902-1938, 0 recorded decisions per year
           #   * submission status census (Drugs@FDA publishes AP only - corrects
           #     the v27 claim that RE/W rows lived in the 1938-1964 register)
-          # The builder auto-joins the runner captures from
-          # fetch_jobs/drugsatfda_pre1939_census_v28.json when they land, and
-          # aborts on any SHA-256 drift or disagreement with the window facts.
+          # v29 2026-09-22: the runner captures from
+          # fetch_jobs/drugsatfda_pre1939_census_v28.json landed (run 33) and
+          # are joined: whole-table census of all 193,810 official submission
+          # rows -> 1 pre-statute placeholder row (060904, dated 1900-01-01)
+          # and 8 undated rows, flagged and never counted; statuses AP/TA/
+          # empty only (no RE/W/CR); fifth table
+          # data/pre1939_complete_table_census.csv. The builder re-hashes every
+          # capture against its manifest and aborts on any status outside the
+          # approval family or any row dated between the FD&C Act (1938-06-25)
+          # and 1939.
           python3 scripts/build_pre1939_boundary_v28.py
           python3 scripts/verify_pre1939_boundary_v28.py
           python3 scripts/validate_data.py
-          echo "v28 tables built: pre-1939 boundary evidence, application census, 1902-1938 regulatory register, submission status census"
+          echo "v28/v29 tables built: pre-1939 boundary evidence (16 lines), application census, 1902-1938 regulatory register, submission status census, whole-table census"
 
       - name: Build v27 new verified 1000 + decision engine + historical
         if: always()

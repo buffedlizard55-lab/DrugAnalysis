@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DrugAnalysis — FDA Decision Engine (v28)</title>
+<title>DrugAnalysis — FDA Decision Engine (v29)</title>
 <meta name="description" content="FDA Decision Engine for Biotech Investors — verified FDA decisions 1939-2026, 1000 new verified 2000-2026, company success rates, verified stock reactions, pre-1939 boundary evidence and 1902-1938 regulatory register. No hallucinations, official source links.">
 <link rel="stylesheet" href="assets/style.css">
 <style>
@@ -85,7 +85,7 @@
     </div>
     <div class="panel-clean">
       <h3>📅 Historical Coverage Audit</h3>
-      <p style="color:#64748b; font-size:.88rem;">1939–2026 verified decisions. 1938 determined as no official record (0 of 1,215 rows in the official Drugs@FDA window are dated 1938). <strong>1939-02-09 (NDA000552) is the earliest assertable FDA drug-approval action.</strong> The pre-1939 boundary is proven with 12 evidence lines and a 1902–1938 statutory register — see the 🏛️ Pre-1939 Boundary tab. Official FDA series quoted verbatim per year.</p>
+      <p style="color:#64748b; font-size:.88rem;">1939–2026 verified decisions. 1938 determined as no official record (0 of 1,215 rows in the official Drugs@FDA window are dated 1938). <strong>1939-02-09 (NDA000552) is the earliest assertable FDA drug-approval action.</strong> The pre-1939 boundary is proven with 16 evidence lines, a 1902–1938 statutory register and (v29) a whole-table census of all 193,810 official submission rows — 0 rows dated between the FD&amp;C Act and 1939; the single pre-statute placeholder row (dated 1900-01-01) and 8 undated rows are flagged, not counted — see the 🏛️ Pre-1939 Boundary tab. Official FDA series quoted verbatim per year.</p>
       <div id="coverage-view"></div>
     </div>
     <div class="grid-2">
@@ -162,7 +162,7 @@
     </div>
     <div class="panel-clean">
       <h3>🗂️ Full Submission Register 1938-1964 (1215 rows) — Approval Actions Only</h3>
-      <p style="color:#64748b; font-size:.85rem">Submissions-level census of the official Drugs@FDA data files: 850 ORIG/AP originals + 365 SUPPL/AP supplements, every row <code>submission_status = AP</code>. <strong>Corrected in v28:</strong> an earlier version of this page described this table as holding "ORIG/AP plus RE, W, etc." and said non-approval decisions (rejections/withdrawals) lived here. Re-counted verbatim: <strong>0 non-AP rows</strong>. The official Drugs@FDA <code>Submissions.txt</code> publishes approval actions only, so refused/withdrawn decisions are not obtainable from this source for any year — see the Pre-1939 Boundary tab, evidence line PRE1939EV-08. The project's non-approval evidence comes from FDA's separate CRL database (458 letters).</p>
+      <p style="color:#64748b; font-size:.85rem">Submissions-level census of the official Drugs@FDA data files: 850 ORIG/AP originals + 365 SUPPL/AP supplements, every row <code>submission_status = AP</code>. <strong>Corrected in v28:</strong> an earlier version of this page described this table as holding "ORIG/AP plus RE, W, etc." and said non-approval decisions (rejections/withdrawals) lived here. Re-counted verbatim: <strong>0 non-AP rows</strong>. The official Drugs@FDA <code>Submissions.txt</code> publishes approval-family actions only (v29 whole-table census of all 193,810 rows: <code>AP</code> 192,604, <code>TA</code> 1,205 tentative approvals, 1 empty status — no RE/W/CR anywhere), so refused/withdrawn decisions are not obtainable from this source for any year — see the Pre-1939 Boundary tab, evidence lines PRE1939EV-08 and EV-14. The project's non-approval evidence comes from FDA's separate CRL database (458 letters).</p>
       <div id="full-1938-1964-view"></div>
     </div>
     <div class="panel-clean">
@@ -182,9 +182,11 @@
 
     <div class="kpi">
       <div class="kpi-card"><div class="k">Earliest official FDA drug-approval action</div><div class="v" style="font-size:1.15rem">1939-02-09</div><div class="s">NDA000552 · ORIG 1 · AP · class 19</div></div>
-      <div class="kpi-card"><div class="k">Actions dated 1938</div><div class="v">0</div><div class="s">of 1,215 rows in the official 1938-1964 window</div></div>
+      <div class="kpi-card"><div class="k">Actions dated 1938</div><div class="v">0</div><div class="s">of 1,215 rows in the official 1938-1964 window · and 0 of all 193,810 rows dated 1938-06-25..1938-12-31 (v29 whole-table census)</div></div>
       <div class="kpi-card"><div class="k">Applications below the boundary</div><div class="v">2</div><div class="s">NDA000004, NDA000159 of 29,336 official apps</div></div>
       <div class="kpi-card"><div class="k">Register years covered</div><div class="v">1902-1938</div><div class="s">37 years, 0 recorded decisions each</div></div>
+      <div class="kpi-card"><div class="k">Whole-table census (v29)</div><div class="v">193,810</div><div class="s">official submission rows · 1 pre-statute placeholder (dated 1900-01-01) + 8 undated rows, flagged, none counted</div></div>
+      <div class="kpi-card"><div class="k">Statuses in the complete table</div><div class="v" style="font-size:1.15rem">AP · TA · empty</div><div class="s">192,604 / 1,205 / 1 — no RE, W or CR status exists in any row</div></div>
     </div>
 
     <div class="panel-clean" style="background:#eff6ff; border-color:#c8dcff">
@@ -212,8 +214,24 @@
 
     <div class="panel-clean">
       <h3>🗳️ Submission Status Census 1939-1979 — Why Non-Approval Decisions Are Absent</h3>
-      <p style="color:#64748b; font-size:.85rem">Per-year census of the official Drugs@FDA Submissions extracts. Every row is an approval (<code>AP</code>): the source publishes no refused (RE) or withdrawn (W) actions. Counts recomputed verbatim; parts sum to the total on every row.</p>
+      <p style="color:#64748b; font-size:.85rem">Per-year census of the official Drugs@FDA Submissions extracts. Every row is an approval (<code>AP</code>): the source publishes no refused (RE) or withdrawn (W) actions. Counts recomputed verbatim; parts sum to the total on every row. The v29 whole-table census below extends this from the two committed windows to all 193,810 rows of the official table: statuses are <code>AP</code>, <code>TA</code> (tentative approval — an approval-family action per FDA's glossary) and one empty status; still no RE/W/CR anywhere.</p>
       <div id="pre1939-status-view"></div>
+    </div>
+
+    <div class="panel-clean" style="background:#fff7ed; border-color:#fed7aa">
+      <h3 style="margin-top:0">🚩 Two irregular rows, published verbatim — not decisions (v29)</h3>
+      <p style="font-size:.9rem; margin:0 0 .5rem 0">The whole-table census (a runner capture of the complete official <code>Submissions.txt</code>, SHA-256 manifested) contradicted two v28 working hypotheses in a specific, checkable way. Both are published exactly as observed:</p>
+      <ul style="font-size:.88rem; margin:0 0 .5rem 1.1rem">
+        <li><strong>1 row dated before 1939, not 0</strong> — ApplNo <code>060904</code>, ORIG 1, AP, dated <code>1900-01-01 00:00:00</code>. That date precedes every federal drug statute in the register (1902, 1906, 1938), so it cannot be the date of an action on an application; it is a placeholder value in the official table (<code>FLAG-PRE-STATUTE-DATE</code>). <strong>0 rows</strong> are dated between the FD&amp;C Act (1938-06-25) and 1938-12-31 — the 1939-02-09 boundary stands.</li>
+        <li><strong>8 undated rows</strong> — 1 ORIG (ApplNo <code>009658</code>) and 7 supplements with an empty status date: the rows no year filter in this repository could ever see, now enumerated (<code>FLAG-UNDATED-ROW</code>). 193,810 = 1 + 8 + 193,801 rows dated ≥ 1939.</li>
+      </ul>
+      <p style="font-size:.85rem; color:#64748b; margin:0">Neither <code>060904</code> nor <code>009658</code> has a row in the official Applications table, appears in any committed window, or is counted anywhere in this project. No cause is inferred. One further v28 error is corrected in evidence line EV-03: NDA000159 is tracked in the pre-1965 originals <em>audit</em> table (row <code>PRE1965AUDIT-1939-02</code>), not in <code>pre1965_fda_decisions.csv</code>, which holds NME-comparable rows only.</p>
+    </div>
+
+    <div class="panel-clean">
+      <h3>🧮 Whole-Table Census — every capture file, verbatim (v29)</h3>
+      <p style="color:#64748b; font-size:.85rem">One row per runner capture cut from the complete official Drugs@FDA data file (publication ZIP <code>2e7342240fdb539a…</code>, 2026-09-21T23:34Z). The recorded selector is the only transformation; every kept row is copied verbatim and re-hashed against its manifest. The committed 1938-1979 windows stay pinned to their own earlier publication (<code>e145bc0f21e0da7a…</code>, 193,752 rows) — the +58-row difference is evidence line EV-15, not a silent refresh.</p>
+      <div id="pre1939-complete-view"></div>
     </div>
   </section>
 

@@ -192,7 +192,7 @@ async function loadOverview(){
         <div class="kpi-card"><div class="k">Verified Price Snapshots</div><div class="v">${prices.length}</div><div class="s">Real Yahoo Finance, indexed for verification</div></div>
         <div class="kpi-card"><div class="k">Companies Scored Detailed</div><div class="v">${companies.length}</div><div class="s">Pipeline, phase, paused, advanced, success rate</div></div>
         <div class="kpi-card"><div class="k">Pre-1965 Originals 1939-64</div><div class="v">${pre1965.length}</div><div class="s">535 audit rows, 178 NME-comparable, 1939 earliest</div></div>
-        <div class="kpi-card"><div class="k">Pre-1939 Register Years (v28)</div><div class="v">${pre1939.length}</div><div class="s">1902-1938 statutory framework, 0 decisions each — boundary proven, nothing invented</div></div>
+        <div class="kpi-card"><div class="k">Pre-1939 Register Years (v28/v29)</div><div class="v">${pre1939.length}</div><div class="s">1902-1938 statutory framework, 0 decisions each — boundary proven over all 193,810 official submission rows, nothing invented</div></div>
       `;
     }
     // Coverage view simple
@@ -605,6 +605,31 @@ function loadTables(){
     searchFields:['year','source_window','determination','notes'],
     searchPlaceholder:'Search the submission status census…',
     sort:{key:'year', dir:'asc'}, pageSize:45
+  });
+
+  /* ---- v29: whole-table census (one row per runner capture, verbatim) ---- */
+  DataTable({
+    id:'pre1939-complete', mount:'#pre1939-complete-view', csv:'data/pre1939_complete_table_census.csv',
+    columns:[
+      c('census_id','ID',{core:true, render:r=>`<code>${escapeHtml(r.census_id)}</code>`}),
+      c('capture_file','Capture',{core:true, render:r=>`<code>${escapeHtml(r.capture_file)}</code>`}),
+      c('member','Official member',{render:r=>`<code>${escapeHtml(r.member)}</code>`}),
+      c('member_rows_total','Rows in member',{core:true, render:r=>num(r.member_rows_total,0)}),
+      c('rows_kept','Rows kept',{core:true, render:r=>`<span style="font-weight:800">${num(r.rows_kept,0)}</span>`}),
+      c('result','Result',{core:true, render:r=>truncCell(r.result, 150)}),
+      c('counted_as_fda_decision','Counted as decision?',{core:true, render:r=>r.counted_as_fda_decision.startsWith('False')?`<span class="badge verified">No</span> ${truncCell(r.counted_as_fda_decision.replace(/^False - /,''), 90)}`:truncCell(r.counted_as_fda_decision, 110)}),
+      c('flags','Flags',{render:r=>r.flags?`<span class="badge" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca" title="${escapeHtml(r.flags).slice(0,500)}">${escapeHtml(r.flags.length>60?r.flags.slice(0,60)+'…':r.flags)}</span>`:'—'}),
+      c('kept_rows_verbatim','Kept rows (verbatim)',{render:r=>truncCell(r.kept_rows_verbatim, 160)}),
+      c('cross_check_vs_committed_windows','Cross-check vs windows',{render:r=>truncCell(r.cross_check_vs_committed_windows, 120)}),
+      c('selector','Selector',{render:r=>`<code>${escapeHtml(r.selector)}</code>`}),
+      c('source_sha256_prefix','SHA-256',{render:r=>`<code>${escapeHtml(r.source_sha256_prefix)}</code>`}),
+      c('zip_sha256_prefix','Publication ZIP',{render:r=>`<code>${escapeHtml(r.zip_sha256_prefix)}</code> · ${escapeHtml(r.captured_at_utc)}`}),
+      c('source_url','Official Source',{render:r=>linkify(r.source_url,'FDA data files')}),
+      c('verification_status','Verification',{render:r=>statusBadge(r.verification_status)}),
+    ],
+    searchFields:['census_id','capture_file','result','kept_rows_verbatim','flags','counted_as_fda_decision'],
+    searchPlaceholder:'Search the whole-table census — 060904, 009658, TA, undated…',
+    sort:{key:'census_id', dir:'asc'}, pageSize:10
   });
 
   DataTable({
