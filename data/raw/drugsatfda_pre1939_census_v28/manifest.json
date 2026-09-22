@@ -1,0 +1,149 @@
+{
+  "job": "drugsatfda_pre1939_census_v28",
+  "generated_utc": "2026-09-21T23:34:24Z",
+  "requests": [
+    {
+      "id": "drugsatfda_pre1939_census_v28:Submissions.txt",
+      "member": "Submissions.txt",
+      "member_bytes": 9350417,
+      "member_sha256": "b006c37c42d7a34f622a71cd17cb8bf58056c913a5008a156822752c9304dd24",
+      "rows_total": 193810,
+      "rows_kept": 1,
+      "rows_dropped": 193809,
+      "filter": {
+        "type": "date_year_before",
+        "column": "SubmissionStatusDate",
+        "before_year": 1939
+      },
+      "collect_applnos_count": null,
+      "out": "Submissions_before_1939.txt",
+      "out_bytes": 173,
+      "out_sha256": "ef834847c55f51ddd353238bc6fab8e44e1f715deaab205ac6099f78f8871268",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:23Z"
+    },
+    {
+      "id": "drugsatfda_pre1939_census_v28:Submissions.txt",
+      "member": "Submissions.txt",
+      "member_bytes": 9350417,
+      "member_sha256": "b006c37c42d7a34f622a71cd17cb8bf58056c913a5008a156822752c9304dd24",
+      "rows_total": 193810,
+      "rows_kept": 8,
+      "rows_dropped": 193802,
+      "filter": {
+        "type": "date_unparseable",
+        "column": "SubmissionStatusDate"
+      },
+      "collect_applnos_count": null,
+      "out": "Submissions_undated.txt",
+      "out_bytes": 382,
+      "out_sha256": "abbef9ccd41314535474e79f4a7814e0da0cde1f915a40bcdef465711ed0bfb2",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:24Z"
+    },
+    {
+      "id": "drugsatfda_pre1939_census_v28:Submissions.txt",
+      "member": "Submissions.txt",
+      "member_bytes": 9350417,
+      "member_sha256": "b006c37c42d7a34f622a71cd17cb8bf58056c913a5008a156822752c9304dd24",
+      "rows_total": 193810,
+      "rows_kept": 3,
+      "rows_dropped": 0,
+      "filter": {
+        "type": "column_counts",
+        "column": "SubmissionStatus"
+      },
+      "collect_applnos_count": null,
+      "out": "Submissions_status_counts.txt",
+      "out_bytes": 51,
+      "out_sha256": "66587208fb0678f83945d949fd54fee7cbae90000bae2d03770622384f972cf8",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:24Z"
+    },
+    {
+      "id": "drugsatfda_pre1939_census_v28:Submissions.txt",
+      "member": "Submissions.txt",
+      "member_bytes": 9350417,
+      "member_sha256": "b006c37c42d7a34f622a71cd17cb8bf58056c913a5008a156822752c9304dd24",
+      "rows_total": 193810,
+      "rows_kept": 2,
+      "rows_dropped": 0,
+      "filter": {
+        "type": "column_counts",
+        "column": "SubmissionType"
+      },
+      "collect_applnos_count": null,
+      "out": "Submissions_type_counts.txt",
+      "out_bytes": 45,
+      "out_sha256": "2a621269890e7c3b57fb0997c3bee7aad87c66adb064385d6a53de00482b5ff5",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:24Z"
+    },
+    {
+      "id": "drugsatfda_pre1939_census_v28:Submissions.txt",
+      "member": "Submissions.txt",
+      "member_bytes": 9350417,
+      "member_sha256": "b006c37c42d7a34f622a71cd17cb8bf58056c913a5008a156822752c9304dd24",
+      "rows_total": 193810,
+      "rows_kept": 6,
+      "rows_dropped": 193804,
+      "filter": {
+        "type": "applno_in_list",
+        "column": "ApplNo",
+        "values": [
+          "000004",
+          "000159"
+        ]
+      },
+      "collect_applnos_count": null,
+      "out": "Submissions_applno_below_boundary.txt",
+      "out_bytes": 392,
+      "out_sha256": "0ecc7200f8a2659b5cdcd9ccfe1f5a40bf58e18a9fc0df9a369c1ca225c52f87",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:24Z"
+    },
+    {
+      "id": "drugsatfda_pre1939_census_v28:Applications.txt",
+      "member": "Applications.txt",
+      "member_bytes": 781058,
+      "member_sha256": "a8d6bfd5bc3381fdf2af25ae8f6b7fabde592ed0276b02ec5d71f8fe5535244b",
+      "rows_total": 29343,
+      "rows_kept": 2,
+      "rows_dropped": 29341,
+      "filter": {
+        "type": "applno_numeric_below",
+        "column": "ApplNo",
+        "below": 552
+      },
+      "collect_applnos_count": null,
+      "out": "Applications_below_boundary.txt",
+      "out_bytes": 83,
+      "out_sha256": "e92ebc39fb94fced1cdcd46dde32036db060afdcc9e49ee86307769528b98c84",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:24Z"
+    },
+    {
+      "id": "drugsatfda_pre1939_census_v28:zip",
+      "url": "https://www.fda.gov/media/89850/download?attachment",
+      "status": 200,
+      "zip_bytes": 6084077,
+      "zip_sha256": "2e7342240fdb539a3299ee0a1d593169c57a483f534c25b385b74f1cf540f9eb",
+      "members_seen": [
+        "ActionTypes_Lookup.txt",
+        "ApplicationDocs.txt",
+        "Applications.txt",
+        "ApplicationsDocsType_Lookup.txt",
+        "Join_Submission_ActionTypes_Lookup.txt",
+        "MarketingStatus.txt",
+        "MarketingStatus_Lookup.txt",
+        "Products.txt",
+        "SubmissionClass_Lookup.txt",
+        "SubmissionPropertyType.txt",
+        "Submissions.txt",
+        "TE.txt"
+      ],
+      "at_utc": "2026-09-21T23:34:24Z"
+    }
+  ],
+  "job_file": "fetch_jobs/drugsatfda_pre1939_census_v28.json"
+}

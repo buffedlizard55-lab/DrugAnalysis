@@ -1,6 +1,6 @@
 {
   "job": "drugsatfda_data_files_1938_1964",
-  "generated_utc": "2026-09-21T07:43:24Z",
+  "generated_utc": "2026-09-21T23:34:22Z",
   "requests": [
     {
       "id": "drugsatfda_data_files_1938_1964:Submissions.txt",
@@ -257,6 +257,134 @@
         "TE.txt"
       ],
       "at_utc": "2026-09-21T07:43:24Z"
+    },
+    {
+      "id": "drugsatfda_data_files_1938_1964:Submissions.txt",
+      "member": "Submissions.txt",
+      "member_bytes": 9350417,
+      "member_sha256": "b006c37c42d7a34f622a71cd17cb8bf58056c913a5008a156822752c9304dd24",
+      "rows_total": 193810,
+      "rows_kept": 1215,
+      "rows_dropped": 192595,
+      "filter": {
+        "type": "date_year_in",
+        "column": "SubmissionStatusDate",
+        "years": [
+          1938,
+          1939,
+          1940,
+          1941,
+          1942,
+          1943,
+          1944,
+          1945,
+          1946,
+          1947,
+          1948,
+          1949,
+          1950,
+          1951,
+          1952,
+          1953,
+          1954,
+          1955,
+          1956,
+          1957,
+          1958,
+          1959,
+          1960,
+          1961,
+          1962,
+          1963,
+          1964
+        ],
+        "collect_applnos": true
+      },
+      "collect_applnos_count": 850,
+      "out": "Submissions_1938_1964.txt",
+      "out_bytes": 55638,
+      "out_sha256": "61cd4605a7094f143e5473e7709ede0b00063233c038802a7ce6f5bf0934a355",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:22Z"
+    },
+    {
+      "id": "drugsatfda_data_files_1938_1964:Applications.txt",
+      "member": "Applications.txt",
+      "member_bytes": 781058,
+      "member_sha256": "a8d6bfd5bc3381fdf2af25ae8f6b7fabde592ed0276b02ec5d71f8fe5535244b",
+      "rows_total": 29343,
+      "rows_kept": 568,
+      "rows_dropped": 28775,
+      "filter": {
+        "type": "applno_in_collected",
+        "column": "ApplNo"
+      },
+      "collect_applnos_count": null,
+      "out": "Applications_1938_1964_window.txt",
+      "out_bytes": 13325,
+      "out_sha256": "8f2b7bad916c44237f097333d822bc46da4053ae9395c76545e6e4e4a45e0fdc",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:22Z"
+    },
+    {
+      "id": "drugsatfda_data_files_1938_1964:Products.txt",
+      "member": "Products.txt",
+      "member_bytes": 4647731,
+      "member_sha256": "7044ad2e0b793cf035f88315960124261f2f06fca1d18c4dba31a7e13b75c8ca",
+      "rows_total": 51794,
+      "rows_kept": 1133,
+      "rows_dropped": 50661,
+      "filter": {
+        "type": "applno_in_collected",
+        "column": "ApplNo"
+      },
+      "collect_applnos_count": null,
+      "out": "Products_1938_1964_window.txt",
+      "out_bytes": 126043,
+      "out_sha256": "7791f326fb9d9c887052ac0fc0e29963b64367bc100bcc4af7698820bc5637b5",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:22Z"
+    },
+    {
+      "id": "drugsatfda_data_files_1938_1964:ApplicationDocs.txt",
+      "member": "ApplicationDocs.txt",
+      "member_bytes": 11113528,
+      "member_sha256": "ac9d859f854ca505749a21e243f0aa3062701af0191ce7ecc951569ae2999536",
+      "rows_total": 81090,
+      "rows_kept": 1920,
+      "rows_dropped": 79170,
+      "filter": {
+        "type": "applno_in_collected",
+        "column": "ApplNo"
+      },
+      "collect_applnos_count": null,
+      "out": "ApplicationDocs_1938_1964_window.txt",
+      "out_bytes": 255520,
+      "out_sha256": "f049333c3cbf67846fd991ab799d995329d6181847066f0797ffbe9ea87aabe2",
+      "status": 200,
+      "written_at_utc": "2026-09-21T23:34:22Z"
+    },
+    {
+      "id": "drugsatfda_data_files_1938_1964:zip",
+      "url": "https://www.fda.gov/media/89850/download?attachment",
+      "status": 200,
+      "zip_bytes": 6084077,
+      "zip_sha256": "2e7342240fdb539a3299ee0a1d593169c57a483f534c25b385b74f1cf540f9eb",
+      "members_seen": [
+        "ActionTypes_Lookup.txt",
+        "ApplicationDocs.txt",
+        "Applications.txt",
+        "ApplicationsDocsType_Lookup.txt",
+        "Join_Submission_ActionTypes_Lookup.txt",
+        "MarketingStatus.txt",
+        "MarketingStatus_Lookup.txt",
+        "Products.txt",
+        "SubmissionClass_Lookup.txt",
+        "SubmissionPropertyType.txt",
+        "Submissions.txt",
+        "TE.txt"
+      ],
+      "at_utc": "2026-09-21T23:34:22Z"
     }
   ],
   "job_file": "fetch_jobs/drugsatfda_data_files_1938_1964.json"
