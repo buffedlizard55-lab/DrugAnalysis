@@ -1,6 +1,6 @@
 {
   "job": "stock_yahoo_batch_2026_09",
-  "generated_utc": "2026-09-21T07:50:30Z",
+  "generated_utc": "2026-09-21T22:58:59Z",
   "requests": [
     {
       "id": "SRRK_2026-09-11",
@@ -2641,6 +2641,126 @@
       "bytes": 2883,
       "sha256": "edc7d1f565cd4278c82839ac447cff4949cb3a69cf5be437e5fab9bdf798a54e",
       "written_at_utc": "2026-09-19T19:07:20Z"
+    },
+    {
+      "id": "SRRK_2026-09-11",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-09-04",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "IONS_2026-09-03",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "REGN_2026-08-19",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BMY_2026-08-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LNTH_2026-08-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "OTLK_2026-07-24",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NUVL_2026-07-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-07-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "CELC_2026-07-14",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VERA_2026-07-07",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRDN_2026-06-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BAYRY_2026-06-12",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "SGIOF_2026-05-29",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ABBV_2026-05-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GILD_2026-05-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "AZN_2026-05-15",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "RIGL_2026-05-01",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "MRK_2026-04-20",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "LLY_2026-04-01",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NVO_2026-03-26",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "CORT_2026-03-25",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "JNJ_2026-03-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "GSK_2026-03-17",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ASND_2026-02-27",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VNDA_2025-12-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "VRTX_2025-01-30",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "NBIX_2024-12-13",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "BBIO_2024-11-22",
+      "status": "skipped-existing"
+    },
+    {
+      "id": "ZYME_2024-11-20",
+      "status": "skipped-existing"
     },
     {
       "id": "SRRK_2026-09-11",
