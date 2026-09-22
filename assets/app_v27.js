@@ -167,19 +167,22 @@ function initTabs(){
 /* Overview KPI */
 async function loadOverview(){
   try{
-    const [master, core, prices, companies, pre1965, yearDetailed] = await Promise.all([
+    const [master, core, prices, companies, pre1965, yearDetailed, pre1939] = await Promise.all([
       loadCSV('data/fda_decisions_master.csv').then(x=>x.records).catch(()=>[]),
       loadCSV('data/decision_engine_analysis_table.csv').then(x=>x.records).catch(()=>[]),
       loadCSV('data/stock_price_snapshots.csv').then(x=>x.records).catch(()=>[]),
       loadCSV('data/company_success_rate_detailed_scorecard.csv').then(x=>x.records).catch(()=>[]),
       loadCSV('data/pre1965_originals_audit_1939_1964.csv').then(x=>x.records).catch(()=>[]),
       loadCSV('data/fda_decisions_year_by_year_2000_2026_detailed.csv').then(x=>x.records).catch(()=>[]),
+      loadCSV('data/pre1939_regulatory_register_1902_1938.csv').then(x=>x.records).catch(()=>[]),
     ]);
     document.getElementById('count-master').textContent=master.length;
     document.getElementById('count-core').textContent=core.length;
     document.getElementById('count-prices').textContent=prices.length;
     document.getElementById('count-companies').textContent=companies.length;
     document.getElementById('count-pre1965').textContent=pre1965.length;
+    const c1939=document.getElementById('count-pre1939');
+    if(c1939) c1939.textContent=pre1939.length;
     const kpi=document.getElementById('overview-kpi');
     if(kpi){
       kpi.innerHTML=`
@@ -189,6 +192,7 @@ async function loadOverview(){
         <div class="kpi-card"><div class="k">Verified Price Snapshots</div><div class="v">${prices.length}</div><div class="s">Real Yahoo Finance, indexed for verification</div></div>
         <div class="kpi-card"><div class="k">Companies Scored Detailed</div><div class="v">${companies.length}</div><div class="s">Pipeline, phase, paused, advanced, success rate</div></div>
         <div class="kpi-card"><div class="k">Pre-1965 Originals 1939-64</div><div class="v">${pre1965.length}</div><div class="s">535 audit rows, 178 NME-comparable, 1939 earliest</div></div>
+        <div class="kpi-card"><div class="k">Pre-1939 Register Years (v28)</div><div class="v">${pre1939.length}</div><div class="s">1902-1938 statutory framework, 0 decisions each — boundary proven, nothing invented</div></div>
       `;
     }
     // Coverage view simple
@@ -521,6 +525,86 @@ function loadTables(){
       c('source_url','Source URL',{render:r=>linkify(r.source_url,'source')}),
     ],
     searchFields:['area','published_finding','source'], searchPlaceholder:'Search science basis…', sort:{key:'area', dir:'asc'}, pageSize:10
+  });
+
+  /* ---- v28: pre-1939 boundary tables ---- */
+  DataTable({
+    id:'pre1939-evidence', mount:'#pre1939-evidence-view', csv:'data/pre1939_boundary_determination.csv',
+    columns:[
+      c('evidence_id','ID',{core:true, render:r=>`<code>${escapeHtml(r.evidence_id)}</code>`}),
+      c('category','Category',{core:true, render:r=>`<span class="badge info">${escapeHtml(r.category)}</span>`}),
+      c('claim','Claim',{core:true, render:r=>`<strong>${escapeHtml(r.claim)}</strong>`}),
+      c('observed_value','Observed Value',{core:true, render:r=>truncCell(r.observed_value, 130)}),
+      c('method','Method',{render:r=>truncCell(r.method, 120)}),
+      c('source_file','Source File',{render:r=>r.source_file?`<code>${escapeHtml(r.source_file)}</code>`:'<span class="badge info">external primary source</span>'}),
+      c('source_sha256_prefix','SHA-256',{render:r=>r.source_sha256_prefix?`<code>${escapeHtml(r.source_sha256_prefix)}</code>`:'—'}),
+      c('source_url','Official Source',{core:true, render:r=>linkify(r.source_url,'source')}),
+      c('verification_status','Verification',{render:r=>statusBadge(r.verification_status)}),
+      c('notes','Notes',{render:r=>truncCell(r.notes, 160)}),
+    ],
+    searchFields:['evidence_id','category','claim','observed_value','notes'],
+    searchPlaceholder:'Search boundary evidence — application census, boundary date, statutes…',
+    sort:{key:'evidence_id', dir:'asc'}, pageSize:15
+  });
+
+  DataTable({
+    id:'pre1939-census', mount:'#pre1939-census-view', csv:'data/pre1939_application_census.csv',
+    columns:[
+      c('application_number','Application',{core:true, render:r=>`<code>${escapeHtml(r.application_number)}</code>`}),
+      c('appl_type','Type',{render:r=>`<span class="badge info">${escapeHtml(r.appl_type)}</span>`}),
+      c('sponsor_name_official_db','Sponsor (official DB)',{core:true}),
+      c('first_product_brand_official_payload','Product of Record',{core:true, render:r=>r.first_product_brand_official_payload?`<strong>${escapeHtml(r.first_product_brand_official_payload)}</strong>`:'<span class="badge warn">none published</span>'}),
+      c('first_product_ingredients','Ingredients',{render:r=>truncCell(r.first_product_ingredients, 90)}),
+      c('first_product_marketing_status','Marketing Status',{render:r=>r.first_product_marketing_status?`<span class="badge warn">${escapeHtml(r.first_product_marketing_status)}</span>`:'—'}),
+      c('earliest_recorded_action_date','Earliest Recorded Action',{core:true, render:r=>`<span style="font-weight:700">${escapeHtml(r.earliest_recorded_action_date)}</span>`}),
+      c('decision_recorded_before_1939','Decision Pre-1939?',{core:true, render:r=>r.decision_recorded_before_1939==='False'?'<span class="badge verified">No</span>':`<span class="badge warn">${escapeHtml(r.decision_recorded_before_1939)}</span>`}),
+      c('nme_comparable','NME Comparable',{render:r=>escapeHtml(r.nme_comparable||'—')}),
+      c('tracked_in_project_table','Tracked In',{render:r=>truncCell(r.tracked_in_project_table, 90)}),
+      c('flags','Flags',{render:r=>r.flags?`<span class="badge" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca">${escapeHtml(r.flags)}</span>`:'—'}),
+      c('drugsatfda_url','Drugs@FDA',{render:r=>linkify(r.drugsatfda_url,'Drugs@FDA')}),
+    ],
+    searchFields:['application_number','sponsor_name_official_db','first_product_brand_official_payload','first_product_ingredients','notes'],
+    searchPlaceholder:'Search below-boundary applications…',
+    sort:{key:'application_number', dir:'asc'}, pageSize:10
+  });
+
+  DataTable({
+    id:'pre1939-register', mount:'#pre1939-register-view', csv:'data/pre1939_regulatory_register_1902_1938.csv',
+    columns:[
+      c('year','Year',{core:true, render:r=>`<span style="font-weight:800">${escapeHtml(r.year)}</span>`}),
+      c('era','Era',{render:r=>truncCell(r.era, 70)}),
+      c('agency_of_record','Agency of Record',{core:true, render:r=>truncCell(r.agency_of_record, 70)}),
+      c('premarket_approval_regime','Pre-Market Approval Regime',{core:true, render:r=>truncCell(r.premarket_approval_regime, 150)}),
+      c('statute_citation','Statute',{core:true, render:r=>truncCell(r.statute_citation, 90)}),
+      c('statute_enacted_date','Enacted',{render:r=>escapeHtml(r.statute_enacted_date||'—')}),
+      c('fda_drug_approval_decisions_recorded','Decisions Recorded',{core:true, render:r=>`<span class="badge verified" style="font-size:.85rem">${escapeHtml(r.fda_drug_approval_decisions_recorded)}</span>`}),
+      c('official_fda_series_coverage','FDA Official Series',{render:r=>truncCell(r.official_fda_series_coverage, 110)}),
+      c('landmark_event','Landmark Event',{render:r=>truncCell(r.landmark_event, 110)}),
+      c('source_url_1','Primary Source',{core:true, render:r=>linkify(r.source_url_1,'source')}),
+      c('source_url_2','Source 2',{render:r=>linkify(r.source_url_2,'source')}),
+    ],
+    searchFields:['year','era','agency_of_record','statute_citation','landmark_event','determination','notes'],
+    searchPlaceholder:'Search the 1902-1938 regulatory register…',
+    sort:{key:'year', dir:'asc'}, pageSize:40
+  });
+
+  DataTable({
+    id:'pre1939-status', mount:'#pre1939-status-view', csv:'data/pre1939_submission_status_census.csv',
+    columns:[
+      c('year','Year',{core:true, render:r=>`<span style="font-weight:800">${escapeHtml(r.year)}</span>`}),
+      c('source_window','Source Window',{render:r=>truncCell(r.source_window, 60)}),
+      c('total_rows','Rows',{core:true, render:r=>num(r.total_rows,0)}),
+      c('orig_ap_rows','ORIG/AP',{core:true, render:r=>num(r.orig_ap_rows,0)}),
+      c('suppl_ap_rows','SUPPL/AP',{core:true, render:r=>num(r.suppl_ap_rows,0)}),
+      c('other_type_rows','Other Types',{render:r=>num(r.other_type_rows,0)}),
+      c('distinct_statuses','Statuses',{core:true, render:r=>`<span class="badge verified">${escapeHtml(r.distinct_statuses)}</span>`}),
+      c('non_ap_rows','Non-AP Rows',{core:true, render:r=>r.non_ap_rows==='0'?'<span class="badge verified">0</span>':`<span class="badge warn">${escapeHtml(r.non_ap_rows)}</span>`}),
+      c('determination','Determination',{render:r=>truncCell(r.determination, 150)}),
+      c('source_url','Official Source',{render:r=>linkify(r.source_url,'FDA data files')}),
+    ],
+    searchFields:['year','source_window','determination','notes'],
+    searchPlaceholder:'Search the submission status census…',
+    sort:{key:'year', dir:'asc'}, pageSize:45
   });
 
   DataTable({

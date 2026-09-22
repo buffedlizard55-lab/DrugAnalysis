@@ -583,6 +583,83 @@ def job_zip_extract(spec: dict, outdir: str, entries: list) -> None:
                     kept.append(ln)
                 else:
                     dropped += 1
+        # ---- v28 (2026-09-21): boundary-census filters ---------------------
+        # Used by fetch_jobs/drugsatfda_pre1939_census_v28.json to close the
+        # "is there anything before 1939?" question against the COMPLETE
+        # official table instead of a year-filtered window. All of them are
+        # row/value selectors only - no cell value is ever rewritten.
+        elif fkind == "date_year_before":
+            # rows whose date column parses to a year strictly before the
+            # cutoff (expect zero rows for the pre-1939 boundary test).
+            ci = _col_index(header, filt["column"])
+            cutoff = int(filt["before_year"])
+            for ln in lines[1:]:
+                if not ln.strip():
+                    continue
+                cols = ln.split("\t")
+                y = _date_year(cols[ci]) if ci < len(cols) else None
+                if y is not None and y.isdigit() and int(y) < cutoff:
+                    kept.append(ln)
+                else:
+                    dropped += 1
+        elif fkind == "date_unparseable":
+            # rows whose date column is empty or unparseable: the rows a
+            # year-based filter can never see. Counting them is what makes
+            # the "0 rows before 1939" claim exhaustive rather than
+            # "0 rows among the rows we could date".
+            ci = _col_index(header, filt["column"])
+            for ln in lines[1:]:
+                if not ln.strip():
+                    continue
+                cols = ln.split("\t")
+                y = _date_year(cols[ci]) if ci < len(cols) else None
+                if y is None:
+                    kept.append(ln)
+                else:
+                    dropped += 1
+        elif fkind == "applno_in_list":
+            ci = _col_index(header, filt.get("column", "ApplNo"))
+            # NB: deliberately not named `want` - that is the member spec.
+            wanted = {str(v) for v in filt["values"]}
+            for ln in lines[1:]:
+                if not ln.strip():
+                    continue
+                cols = ln.split("\t")
+                if ci < len(cols) and cols[ci].strip() in wanted:
+                    kept.append(ln)
+                else:
+                    dropped += 1
+        elif fkind == "applno_numeric_below":
+            ci = _col_index(header, filt.get("column", "ApplNo"))
+            below = int(filt["below"])
+            for ln in lines[1:]:
+                if not ln.strip():
+                    continue
+                cols = ln.split("\t")
+                v = cols[ci].strip() if ci < len(cols) else ""
+                if v.isdigit() and int(v) < below:
+                    kept.append(ln)
+                else:
+                    dropped += 1
+        elif fkind == "column_counts":
+            # value census for one column over the whole member. The output
+            # is tiny (one row per distinct value) and its counts must sum to
+            # the member's data-row count, which the verifier re-checks - so
+            # the census cannot silently drop rows.
+            ci = _col_index(header, filt["column"])
+            counts: dict[str, int] = {}
+            for ln in lines[1:]:
+                if not ln.strip():
+                    continue
+                cols = ln.split("\t")
+                v = cols[ci] if ci < len(cols) else ""
+                key = "<EMPTY>" if v.strip() == "" else v
+                counts[key] = counts.get(key, 0) + 1
+            kept = [f"{k}\t{counts[k]}" for k in sorted(counts)]
+            header = [filt["column"], "count"]
+            # every data row is represented by exactly one count, so nothing is
+            # dropped; the verifier re-checks sum(count) == rows_total.
+            dropped = 0
         else:
             raise SystemExit(f"run_fetch_jobs: unknown filter type {fkind!r}")
         out_name = want.get("out", name)

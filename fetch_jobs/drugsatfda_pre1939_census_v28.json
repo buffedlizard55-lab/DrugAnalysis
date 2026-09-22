@@ -1,0 +1,67 @@
+[
+ {
+  "type": "zip_extract",
+  "id": "drugsatfda_pre1939_census_v28",
+  "url": "https://www.fda.gov/media/89850/download?attachment",
+  "timeout": 900,
+  "retries": 4,
+  "max_member_out_bytes": 45000000,
+  "members": [
+   {
+    "name": "Submissions.txt",
+    "out": "Submissions_before_1939.txt",
+    "filter": {
+     "type": "date_year_before",
+     "column": "SubmissionStatusDate",
+     "before_year": 1939
+    }
+   },
+   {
+    "name": "Submissions.txt",
+    "out": "Submissions_undated.txt",
+    "filter": {
+     "type": "date_unparseable",
+     "column": "SubmissionStatusDate"
+    }
+   },
+   {
+    "name": "Submissions.txt",
+    "out": "Submissions_status_counts.txt",
+    "filter": {
+     "type": "column_counts",
+     "column": "SubmissionStatus"
+    }
+   },
+   {
+    "name": "Submissions.txt",
+    "out": "Submissions_type_counts.txt",
+    "filter": {
+     "type": "column_counts",
+     "column": "SubmissionType"
+    }
+   },
+   {
+    "name": "Submissions.txt",
+    "out": "Submissions_applno_below_boundary.txt",
+    "filter": {
+     "type": "applno_in_list",
+     "column": "ApplNo",
+     "values": [
+      "000004",
+      "000159"
+     ]
+    }
+   },
+   {
+    "name": "Applications.txt",
+    "out": "Applications_below_boundary.txt",
+    "filter": {
+     "type": "applno_numeric_below",
+     "column": "ApplNo",
+     "below": 552
+    }
+   }
+  ],
+  "_why": "v28 pre-1939 boundary census. Closes three questions the committed year-filtered windows cannot answer: (1) any submission action dated before 1939 anywhere in the 193,752-row official Submissions table (expect 0); (2) how many rows carry an empty/unparseable status date and are therefore invisible to every year filter used in this repository; (3) the complete SubmissionStatus / SubmissionType census of the official table, which settles whether Drugs@FDA publishes non-approval decisions (RE/W) at all - both committed windows are 100% AP, so the v27 claim that rejections and withdrawals 'live' in the 1938-1964 register is not supported by the data and is corrected in v28. Also captures the complete submission history of every official application numbered below NDA000552 (000004, 000159) so the below-boundary census is exhaustive. Values verbatim; only the recorded row selectors transform the extract."
+ }
+]

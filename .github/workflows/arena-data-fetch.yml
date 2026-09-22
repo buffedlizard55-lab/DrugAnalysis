@@ -79,6 +79,27 @@ jobs:
           print(f"pre1985 era table pinned: {len(rows)} rows, years {sorted(years)}")
           PY
 
+      - name: Build v28 pre-1939 boundary tables + independent verifier
+        if: always()
+        run: |
+          set -euo pipefail
+          # v28 answers "what is there before the earliest year (1939)?" from
+          # committed official primary sources only:
+          #   * below-boundary application census (exactly NDA000004 + NDA000159
+          #     in the 29,336-row official map)
+          #   * boundary evidence lines (earliest official action 1939-02-09 on
+          #     NDA000552; 0 rows dated 1938)
+          #   * regulatory register 1902-1938, 0 recorded decisions per year
+          #   * submission status census (Drugs@FDA publishes AP only - corrects
+          #     the v27 claim that RE/W rows lived in the 1938-1964 register)
+          # The builder auto-joins the runner captures from
+          # fetch_jobs/drugsatfda_pre1939_census_v28.json when they land, and
+          # aborts on any SHA-256 drift or disagreement with the window facts.
+          python3 scripts/build_pre1939_boundary_v28.py
+          python3 scripts/verify_pre1939_boundary_v28.py
+          python3 scripts/validate_data.py
+          echo "v28 tables built: pre-1939 boundary evidence, application census, 1902-1938 regulatory register, submission status census"
+
       - name: Build v27 new verified 1000 + decision engine + historical
         if: always()
         run: |
