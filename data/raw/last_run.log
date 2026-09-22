@@ -1,21 +1,24 @@
 == job clinicaltrials_phase3_2024_2025_windows (4 spec(s)) ==
+== job clinicaltrials_phase3_2024_2025_windows: no-op (4 item(s) already captured); manifest unchanged ==
 == job clinicaltrials_phase3_2026_2027 (1 spec(s)) ==
+== job clinicaltrials_phase3_2026_2027: no-op (1 item(s) already captured); manifest unchanged ==
 == job clinicaltrials_phase3_2026_2027_windows (4 spec(s)) ==
+== job clinicaltrials_phase3_2026_2027_windows: no-op (4 item(s) already captured); manifest unchanged ==
 == job clinicaltrials_phase3_2028_2029_windows (4 spec(s)) ==
+== job clinicaltrials_phase3_2028_2029_windows: no-op (4 item(s) already captured); manifest unchanged ==
 == job drugsatfda_data_files_1938_1964 (1 spec(s)) ==
-ok drugsatfda_data_files_1938_1964:Submissions.txt: kept 1215/193752 rows (55638 bytes) -> Submissions_1938_1964.txt
-ok drugsatfda_data_files_1938_1964:Applications.txt: kept 568/29336 rows (13325 bytes) -> Applications_1938_1964_window.txt
-ok drugsatfda_data_files_1938_1964:Products.txt: kept 1133/51779 rows (126043 bytes) -> Products_1938_1964_window.txt
-ok drugsatfda_data_files_1938_1964:ApplicationDocs.txt: kept 1920/81081 rows (255520 bytes) -> ApplicationDocs_1938_1964_window.txt
-ok drugsatfda_data_files_1938_1964: zip 6081382 bytes, 12 members
+skip drugsatfda_data_files_1938_1964: all 4 extract(s) already present (skip_existing)
+== job drugsatfda_data_files_1938_1964: no-op (4 item(s) already captured); manifest unchanged ==
 == job drugsatfda_data_files_2026_09 (1 spec(s)) ==
-ok drugsatfda_data_files:Submissions.txt: kept 10753/193752 rows (491792 bytes) -> Submissions_1965_1979.txt
-ok drugsatfda_data_files:Applications.txt: kept 2325/29336 rows (57312 bytes) -> Applications_appl_window.txt
-ok drugsatfda_data_files:Products.txt: kept 3630/51779 rows (365476 bytes) -> Products_appl_window.txt
-ok drugsatfda_data_files:ApplicationDocs.txt: kept 4449/81081 rows (609312 bytes) -> ApplicationDocs_appl_window.txt
-ok drugsatfda_data_files:Applications.txt: kept 29336/29336 rows (751544 bytes) -> Applications_all_types.txt
-ok drugsatfda_data_files:SubmissionClass_Lookup.txt: kept 28/28 rows (1276 bytes) -> SubmissionClass_Lookup.txt
-ok drugsatfda_data_files: zip 6081382 bytes, 12 members
+skip drugsatfda_data_files: all 6 extract(s) already present (skip_existing)
+== job drugsatfda_data_files_2026_09: no-op (6 item(s) already captured); manifest unchanged ==
+== job drugsatfda_overview_pages_v29 (3 spec(s)) ==
+FAIL daf_overview_060904: HTTPError: HTTP Error 404: Not Found
+FAIL daf_overview_009658: HTTPError: HTTP Error 404: Not Found
+FAIL daf_overview_000552_control: HTTPError: HTTP Error 404: Not Found
+== job drugsatfda_pre1939_census_v28 (1 spec(s)) ==
+skip drugsatfda_pre1939_census_v28: all 6 extract(s) already present (skip_existing)
+== job drugsatfda_pre1939_census_v28: no-op (6 item(s) already captured); manifest unchanged ==
 == job edgar_pre2000_symbols_2026_09 (18 spec(s)) ==
 FAIL pnu_fy1997_10k405: HTTPError: HTTP Error 403: Forbidden
 FAIL warner_lambert_fy1997_10k: HTTPError: HTTP Error 403: Forbidden
@@ -48,34 +51,46 @@ ok orig_ap_2008: 2015 records -> data/raw/openfda_approvals_2000_2010/2008.json
 ok orig_ap_2009: 2015 records -> data/raw/openfda_approvals_2000_2010/2009.json
 ok orig_ap_2010: 2114 records -> data/raw/openfda_approvals_2000_2010/2010.json
 == job openfda_efficacy_supplements (1 spec(s)) ==
+== job openfda_efficacy_supplements: no-op (27 item(s) already captured); manifest unchanged ==
 == job openfda_orig_decisions_1939_1964 (1 spec(s)) ==
+== job openfda_orig_decisions_1939_1964: no-op (26 item(s) already captured); manifest unchanged ==
 == job openfda_orig_decisions_1965_1969 (1 spec(s)) ==
+== job openfda_orig_decisions_1965_1969: no-op (5 item(s) already captured); manifest unchanged ==
 == job openfda_orig_decisions_1970_1974 (1 spec(s)) ==
+== job openfda_orig_decisions_1970_1974: no-op (5 item(s) already captured); manifest unchanged ==
 == job openfda_orig_decisions_1975_1979 (1 spec(s)) ==
+== job openfda_orig_decisions_1975_1979: no-op (5 item(s) already captured); manifest unchanged ==
 == job openfda_orig_decisions_1980_1984 (1 spec(s)) ==
+== job openfda_orig_decisions_1980_1984: no-op (5 item(s) already captured); manifest unchanged ==
 == job openfda_orig_decisions_2011_2026 (1 spec(s)) ==
+== job openfda_orig_decisions_2011_2026: no-op (42 item(s) already captured); manifest unchanged ==
 == job pre1965_row_probes_1939_1964 (1 spec(s)) ==
+== job pre1965_row_probes_1939_1964: no-op (535 item(s) already captured); manifest unchanged ==
 == job pre1980_row_probes_1965_1976 (1 spec(s)) ==
+== job pre1980_row_probes_1965_1976: no-op (126 item(s) already captured); manifest unchanged ==
 == job pre1980_row_probes_1977_1979 (1 spec(s)) ==
+== job pre1980_row_probes_1977_1979: no-op (170 item(s) already captured); manifest unchanged ==
 == job pre1980_year_populations_1965_1976 (1 spec(s)) ==
+== job pre1980_year_populations_1965_1976: no-op (12 item(s) already captured); manifest unchanged ==
 == job probe (5 spec(s)) ==
 FAIL sec_company_tickers_browser_ua: HTTPError: HTTP Error 403: Forbidden
-ok sec_company_tickers_plain_ua 200 799073 bytes -> data/raw/probe/sec_company_tickers_alt.json
+ok sec_company_tickers_plain_ua 200 800703 bytes -> data/raw/probe/sec_company_tickers_alt.json
 ok openfda_crl_probe 200 5266330 bytes -> data/raw/probe/crl_page1.json
 FAIL openfda_crl_count: HTTPError: HTTP Error 404: Not Found
-ok yahoo_symbol_search_probe 200 2651 bytes -> data/raw/probe/yahoo_search_probe.json
+ok yahoo_symbol_search_probe 200 2786 bytes -> data/raw/probe/yahoo_search_probe.json
 == job source_captures_2026_09_17 (10 spec(s)) ==
-ok cder_nme_cy1998_table 200 22083 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
-ok cder_nme_cy1999_table 200 38952 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
-ok cder_nme_cy2000_table 200 31729 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
-ok cder_rdmt_index_2003 200 15823 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
-ok fda_novel_2014_table_wayback 200 64201 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
-ok fda_novel_2026_live 200 41772 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
+ok cder_nme_cy1998_table 200 22074 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy98.html
+ok cder_nme_cy1999_table 200 38949 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy99.html
+ok cder_nme_cy2000_table 200 31730 bytes -> data/raw/source_captures_2026_09_17/cder_nmecy2000.html
+ok cder_rdmt_index_2003 200 15829 bytes -> data/raw/source_captures_2026_09_17/cder_rdmt_index_20031208.html
+ok fda_novel_2014_table_wayback 200 64200 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2014_ucm429247.html
+ok fda_novel_2026_live 200 41780 bytes -> data/raw/source_captures_2026_09_17/fda_novel_2026_live.html
 ok openfda_contrave_200063 200 12628 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA200063_contrave.json
 ok openfda_ofev_205832 200 15334 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA205832_ofev.json
 ok openfda_pixclara_218592 200 2096 bytes -> data/raw/source_captures_2026_09_17/openfda_NDA218592_pixclara.json
 ok ctgov_total_2026_2027 200 159 bytes -> data/raw/source_captures_2026_09_17/ctgov_totalcount_2026_2027.json
 == job stock_yahoo_batch_2026_09 (1 spec(s)) ==
+== job stock_yahoo_batch_2026_09: no-op (30 item(s) already captured); manifest unchanged ==
 == job stock_yahoo_events_1985_1998 (1 spec(s)) ==
 FAIL ALC_1985-08-30: HTTPError: HTTP Error 400: Bad Request
 FAIL RHHBY_1985-12-20: HTTPError: HTTP Error 400: Bad Request
