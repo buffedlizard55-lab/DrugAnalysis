@@ -182,6 +182,15 @@ def job_openfda_years(spec: dict, outdir: str, entries: list) -> None:
                 break
             page += 1
             time.sleep(spec.get("sleep", 0.3))
+        # v29 (2026-09-22): a failed or truncated fetch must never replace a
+        # committed payload with an empty/partial one. Before v29 a FAILED page 0
+        # fell through to write_payload() with 0 records and status 200, so an
+        # openFDA outage during a run would have zeroed the 2000-2010 payloads
+        # that build_crl_application_match_v23.py reads - and the workflow
+        # would have committed them.
+        if entries and entries[-1].get("id") == sid and entries[-1].get("status") in ("FAILED", "BAD_JSON"):
+            print(f"keep {sid}: fetch incomplete - existing payload left untouched", flush=True)
+            continue
         payload_out = {
             "meta": {
                 "source_endpoint": endpoint,
@@ -256,6 +265,9 @@ def job_openfda_decisions(spec: dict, outdir: str, entries: list) -> None:
                 break
             page += 1
             time.sleep(spec.get("sleep", 0.3))
+        if entries and entries[-1].get("id") == sid and entries[-1].get("status") in ("FAILED", "BAD_JSON"):
+            print(f"keep {sid}: fetch incomplete - existing payload left untouched (v29)", flush=True)
+            continue
         # de-duplicate across pages
         seen, uniq = set(), []
         for d in collected:
@@ -324,6 +336,9 @@ def job_openfda_supplements(spec: dict, outdir: str, entries: list) -> None:
                 break
             page += 1
             time.sleep(spec.get("sleep", 0.3))
+        if entries and entries[-1].get("id") == sid and entries[-1].get("status") in ("FAILED", "BAD_JSON"):
+            print(f"keep {sid}: fetch incomplete - existing payload left untouched (v29)", flush=True)
+            continue
         seen, uniq = set(), []
         for s in collected:
             key = (s["application_number"], s["submission_number"], s["decision_date"])
@@ -519,6 +534,25 @@ def job_zip_extract(spec: dict, outdir: str, entries: list) -> None:
     """
     sid = spec["id"]
     url = spec["url"]
+    # ---- v29 (2026-09-22): honour skip_existing like every other job kind --
+    # Until v29 a zip_extract job re-downloaded the official ZIP on EVERY
+    # runner invocation and overwrote its committed extracts. The Drugs@FDA
+    # data file "is updated each morning, Monday through Friday" (fda.gov data
+    # files page), so run 33 (2026-09-21T23:34Z) silently replaced the
+    # SHA-pinned 1938-1964 / 1965-1979 windows with a later publication (same
+    # row sets, different row order, +58 whole-table rows) and every SHA-gated
+    # builder step (v23/v26/v27/v28) aborted. With skip_existing the landed
+    # extracts are left exactly as manifested; a fresh capture needs a new job
+    # file (new outdir), which is also what keeps every capture datable.
+    if spec.get("skip_existing"):
+        outs = [w.get("out", w["name"]) for w in spec["members"]]
+        present = [os.path.exists(os.path.join(outdir, o)) and
+                   os.path.getsize(os.path.join(outdir, o)) > 0 for o in outs]
+        if outs and all(present):
+            for w, o in zip(spec["members"], outs):
+                entries.append({"id": f"{sid}:{w['name']}", "status": "skipped-existing", "out": o})
+            print(f"skip {sid}: all {len(outs)} extract(s) already present (skip_existing)", flush=True)
+            return
     try:
         status, zbody = http_get(url, timeout=spec.get("timeout", 600),
                                  retries=spec.get("retries", 3))
@@ -721,6 +755,7 @@ def run_job(job_path: str) -> None:
     entries = manifest.setdefault("requests", [])
     done = {e.get("id") for e in entries if e.get("status") not in (None, "FAILED", "BAD_JSON", "NO_DATA")}
     print(f"== job {job_id} ({len(specs)} spec(s)) ==", flush=True)
+    n_before = len(entries)
     for spec in specs:
         kind = spec.get("type", "url")
         fn = KINDS.get(kind)
@@ -728,6 +763,22 @@ def run_job(job_path: str) -> None:
             print(f"unknown job type {kind!r} in {job_path}", flush=True)
             continue
         fn(spec, outdir, entries)
+    # ---- v29 (2026-09-22): a pure no-op run leaves the manifest untouched --
+    # Before v29 every run appended one "skipped-existing" stub per already-
+    # captured item and bumped generated_utc, so a run that fetched nothing
+    # still produced a data commit on the branch (runs 32/33 each added
+    # ~20,000 stub lines). Those commits landed AFTER the session's PR had
+    # merged and were orphaned on the branch. If nothing but stubs was added,
+    # drop them and do not rewrite the manifest: the committed manifest then
+    # keeps describing exactly the captures on disk, and the workflow's
+    # "no new raw data to commit" branch is taken.
+    added = entries[n_before:]
+    if (added and all(e.get("status") == "skipped-existing" for e in added)
+            and os.path.exists(os.path.join(outdir, "manifest.json"))):
+        del entries[n_before:]
+        print(f"== job {job_id}: no-op ({len(added)} item(s) already captured); manifest unchanged ==",
+              flush=True)
+        return
     manifest["generated_utc"] = _now()
     manifest["job_file"] = job_path
     with open(os.path.join(outdir, "manifest.json"), "w") as fh:

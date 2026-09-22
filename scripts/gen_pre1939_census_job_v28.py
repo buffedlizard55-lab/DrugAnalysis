@@ -68,6 +68,11 @@ def build() -> list[dict]:
         "url": OFFICIAL_ZIP,
         "timeout": 900,
         "retries": 4,
+        # v29 (2026-09-22): the capture landed on run 33; never re-download it.
+        # Re-running a landed zip_extract overwrote the SHA-pinned extracts with
+        # a later publication of the daily-updated official file (see
+        # scripts/run_fetch_jobs.py job_zip_extract).
+        "skip_existing": True,
         "max_member_out_bytes": 45_000_000,
         "members": [
             {"name": "Submissions.txt",

@@ -1,0 +1,35 @@
+[
+  {
+    "type": "url",
+    "id": "daf_overview_060904",
+    "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=060904",
+    "out": "daf_overview_060904.html",
+    "skip_existing": true,
+    "timeout": 120,
+    "retries": 4,
+    "sleep": 2.0,
+    "_why": "v29 (2026-09-22) evidence line PRE1939EV-16. ApplNo 060904 is the only row of the complete official Submissions table dated before 1939 (ORIG 1, AP, 1900-01-01 00:00:00 - a pre-statute placeholder, flagged, never counted) and has no row in the official Applications table. Read in the v29 session: the official overview page renders no application section. This capture makes that observation reproducible from the committed tree; no project table is built from it."
+  },
+  {
+    "type": "url",
+    "id": "daf_overview_009658",
+    "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=009658",
+    "out": "daf_overview_009658.html",
+    "skip_existing": true,
+    "timeout": 120,
+    "retries": 4,
+    "sleep": 2.0,
+    "_why": "v29 (2026-09-22) evidence line PRE1939EV-16. ApplNo 009658 is the only undated ORIG row of the complete official Submissions table (ORIG 1, AP, empty SubmissionStatusDate) and has no row in the official Applications table. Read in the v29 session: the official overview page renders no application section. Capture for reproducibility only."
+  },
+  {
+    "type": "url",
+    "id": "daf_overview_000552_control",
+    "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=000552",
+    "out": "daf_overview_000552.html",
+    "skip_existing": true,
+    "timeout": 120,
+    "retries": 4,
+    "sleep": 2.0,
+    "_why": "Control for the two captures above: NDA000552 is the earliest verified FDA drug-approval action (1939-02-09, PRE1939EV-04). Read in the v29 session: the page lists '02/09/1939 ORIG-1 Approval' under 'Original Approvals or Tentative Approvals'. A control that also came back empty would mean the page format changed, not that the two orphan numbers are special."
+  }
+]

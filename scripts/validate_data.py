@@ -2154,11 +2154,74 @@ for _r in _v28_st:
 _ev8 = next((r for r in _v28_ev if r["evidence_id"] == "PRE1939EV-08"), None)
 if _ev8 is None or "CORRECTION" not in _ev8["notes"]:
     errors.append("pre1939_boundary_determination: EV-08 lost the v27 RE/W correction note")
-# no likelihood / probability / ticker column anywhere in the v28 tables
+
+# ---- v29 (2026-09-22): whole-table census layer ------------------------------
+# The runner capture landed (data/raw/drugsatfda_pre1939_census_v28/). These
+# gates pin what it showed so a later edit cannot (a) count the pre-statute
+# placeholder row (ApplNo 060904, dated 1900-01-01) or any undated row as a
+# decision, (b) drop the flags, (c) re-introduce v28's false "NDA000159 already
+# counted in pre1965_fda_decisions.csv" note, or (d) let a non-approval-family
+# status slip into the census unremarked.
+_v29_complete = read_opt("pre1939_complete_table_census.csv")
+_v29_capture_dir = DATA / "raw" / "drugsatfda_pre1939_census_v28"
+if (_v29_capture_dir / "manifest.json").exists():
+    if [r["census_id"] for r in _v29_complete] != [f"PRE1939COMPLETE-{i:03d}" for i in range(1, 7)]:
+        errors.append(f"pre1939_complete_table_census: expected PRE1939COMPLETE-001..006, got "
+                      f"{[r['census_id'] for r in _v29_complete]}")
+    if len(_v28_ev) != 16:
+        errors.append(f"pre1939_boundary_determination: census landed, expected 16 evidence lines, got {len(_v28_ev)}")
+    _by_cap = {r["capture_file"]: r for r in _v29_complete}
+    for _cap, _flag in (("Submissions_before_1939.txt", "FLAG-PRE-STATUTE-DATE"),
+                        ("Submissions_undated.txt", "FLAG-UNDATED-ROW")):
+        _r = _by_cap.get(_cap)
+        if _r is None:
+            errors.append(f"pre1939_complete_table_census: row for {_cap} missing")
+            continue
+        if not _r["counted_as_fda_decision"].startswith("False"):
+            errors.append(f"pre1939_complete_table_census:{_cap}: counts an irregular row as an FDA decision")
+        if int(_r["rows_kept"]) > 0 and _flag not in _r["flags"]:
+            errors.append(f"pre1939_complete_table_census:{_cap}: {_flag} flag dropped")
+        if _r["rows_kept"] != str(_r["kept_rows_verbatim"].count("ApplNo=")):
+            errors.append(f"pre1939_complete_table_census:{_cap}: kept_rows_verbatim does not hold rows_kept rows")
+    _st_row = _by_cap.get("Submissions_status_counts.txt")
+    if _st_row is not None:
+        for _tok in ("RE;", "W;", "CR;", "'RE'", "'W'", "'CR'"):
+            if _tok in _st_row["kept_rows_verbatim"] or _tok in _st_row["result"]:
+                errors.append("pre1939_complete_table_census: a refused/withdrawn/CR status appeared in the "
+                              "whole-table census - the RE/W correction must be revisited")
+        if "no RE/W/CR" not in _st_row["result"]:
+            errors.append("pre1939_complete_table_census: status row lost the no-RE/W/CR statement")
+    _hist_row = _by_cap.get("Submissions_applno_below_boundary.txt")
+    if _hist_row is not None and "pre1965_fda_decisions.csv" in _hist_row["counted_as_fda_decision"]:
+        errors.append("pre1939_complete_table_census: repeats the false 'counted in pre1965_fda_decisions.csv' claim")
+    for _r in _v29_complete:
+        if urlparse(_r["source_url"]).netloc not in _V28_OFFICIAL_HOSTS:
+            errors.append(f"pre1939_complete_table_census:{_r['census_id']}: non-official source host")
+        if not _r["source_file"].startswith("data/raw/drugsatfda_pre1939_census_v28/"):
+            errors.append(f"pre1939_complete_table_census:{_r['census_id']}: source_file outside the capture dir")
+        for _k in ("source_sha256_prefix", "member_sha256_prefix", "zip_sha256_prefix"):
+            if not re.fullmatch(r"[0-9a-f]{16}", _r[_k]):
+                errors.append(f"pre1939_complete_table_census:{_r['census_id']}:{_k}: not a 16-hex SHA prefix")
+    _ev3 = next((r for r in _v28_ev if r["evidence_id"] == "PRE1939EV-03"), None)
+    if _ev3 is None or "PRE1965AUDIT-1939-02" not in _ev3["notes"] or "NOT in data/pre1965_fda_decisions.csv" not in _ev3["notes"]:
+        errors.append("pre1939_boundary_determination: EV-03 must name PRE1965AUDIT-1939-02 and state NDA000159 is "
+                      "NOT in pre1965_fda_decisions.csv (v29 correction)")
+    for _eid, _needle in (("PRE1939EV-12", "FLAG-PRE-STATUTE-DATE"), ("PRE1939EV-13", "FLAG-UNDATED-ROW"),
+                          ("PRE1939EV-14", "tentative approval"), ("PRE1939EV-15", "Monday through Friday"),
+                          ("PRE1939EV-16", "no cause is inferred")):
+        _r = next((r for r in _v28_ev if r["evidence_id"] == _eid), None)
+        if _r is None or _needle not in (_r["notes"] + " " + _r["claim"]):
+            errors.append(f"pre1939_boundary_determination:{_eid}: lost its defining statement ({_needle!r})")
+elif _v29_complete:
+    errors.append("pre1939_complete_table_census.csv exists but its raw capture layer "
+                  "(data/raw/drugsatfda_pre1939_census_v28/manifest.json) does not")
+
+# no likelihood / probability / ticker column anywhere in the v28/v29 tables
 for _name, _rows in (("pre1939_boundary_determination", _v28_ev),
                      ("pre1939_application_census", _v28_cen),
                      ("pre1939_regulatory_register_1902_1938", _v28_reg),
-                     ("pre1939_submission_status_census", _v28_st)):
+                     ("pre1939_submission_status_census", _v28_st),
+                     ("pre1939_complete_table_census", _v29_complete)):
     if not _rows:
         continue
     for _col in _rows[0].keys():
@@ -2170,6 +2233,11 @@ print(f"v28: {len(_v28_ev)} pre-1939 evidence lines, {len(_v28_cen)} below-bound
       f"(000004 PAREDRINE 1969-07-16, 000159 SULFAPYRIDINE 1939-03-09), "
       f"{len(_v28_reg)} regulatory register years (1902-1938, 0 decisions each), "
       f"{len(_v28_st)} submission status census rows (all AP - Drugs@FDA publishes no RE/W).")
+if _v29_complete:
+    print(f"v29: {len(_v29_complete)} whole-table census rows "
+          f"({_v29_complete[0]['member_rows_total']} official submission rows; "
+          f"{_v29_complete[0]['rows_kept']} pre-statute placeholder row(s) and "
+          f"{_v29_complete[1]['rows_kept']} undated rows flagged, none counted as decisions).")
 
 print(f"v23: {len(_v23_orig)} original actions ({dict(_v23_split)}), "
       f"{len(_v23_subs)} approval actions, {len(_v23_docs)} document rows, "

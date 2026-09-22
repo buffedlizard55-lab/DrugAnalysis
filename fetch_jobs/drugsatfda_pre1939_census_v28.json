@@ -5,6 +5,7 @@
   "url": "https://www.fda.gov/media/89850/download?attachment",
   "timeout": 900,
   "retries": 4,
+  "skip_existing": true,
   "max_member_out_bytes": 45000000,
   "members": [
    {
