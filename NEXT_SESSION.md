@@ -143,15 +143,28 @@ node --check assets/app_v27.js                  # expect clean
 
 ## Next work, in priority order
 
-1. **Confirm run 34 and the overview-page capture.** Pushing this branch
-   triggers the workflow (paths `fetch_jobs/**`, `scripts/run_fetch_jobs.py`).
-   Expected: runner self-test green; every landed job prints `skip`/`no-op`;
-   only `drugsatfda_overview_pages_v29` fetches (3 HTML pages); all build
-   steps green; one data commit adding `data/raw/drugsatfda_overview_pages_v29/`
-   **to the branch** (it lands after the PR merges, like runs 32/33 - cherry-
-   pick or re-run on the next branch; do not re-pin anything). If the control
-   page (000552) also came back without an application section, the page
-   format changed and EV-16's web observation must be re-read, not assumed.
+1. **Run 34 outcome (2026-09-22T07:38-08:57Z) - first fully green run since
+   FDA republished the data file.** Runner self-test green; all three zip
+   jobs printed `skip … (skip_existing)` / `no-op … manifest unchanged`; the
+   SHA-pinned windows were untouched and every build/verify step (v28/v29,
+   v27, v26, v23, stock ingest) succeeded on the runner. Its data commit
+   (`46d4d6e`) landed **before** the merge this time and is in `main`. It
+   contains, besides `last_run.log`: refreshed `openfda_approvals_2000_2010`
+   payloads (job has no `skip_existing`, see item 2; record counts and byte
+   sizes identical, only `sha256` cells of `data/crl_match_sources.csv`
+   changed; v23 verifier green), refreshed live probes/source captures, and
+   ~17,000 lines of FAILED-retry entries in the stock/EDGAR manifests
+   (pre-existing backlog, items 7/8 below).
+   **The overview-page capture did not land: HTTP 404 on all three pages,
+   including the control (NDA000552).** Because the control failed too, this
+   is the runner's plain `urllib` request being refused by
+   `accessdata.fda.gov`, not evidence about the orphan numbers (the same
+   pages rendered in the sandbox's browser-style fetch on 2026-09-22). Next
+   step: add a `headers` block with a browser User-Agent to
+   `fetch_jobs/drugsatfda_overview_pages_v29.json` (pattern:
+   `fetch_jobs/probe.json` SEC items) and re-run; if the control still fails,
+   record the page as not machine-capturable and leave EV-16 as a session
+   observation. Do not build anything on it until the control captures.
 2. **`fetch_jobs/openfda_approvals_2000_2010.json` has no `skip_existing`.**
    It re-downloads 11 × ~13 MB openFDA payloads on every run (12 copies of
    `orig_ap_2000` in its manifest) and those payloads feed
